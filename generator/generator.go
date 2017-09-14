@@ -1,48 +1,8 @@
-/*
-Adapted from go-steam's generator/generator.go to generate dota 2 proto files.
-
-https://github.com/Philipp15b/go-steam/blob/master/generator/generator.go
-
--------------------------------------------------------------------------------
-
-Copyright (c) 2014 The go-steam Authors. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-   * Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-   * Redistributions in binary form must reproduce the above
-copyright notice, this list of conditions and the following disclaimer
-in the documentation and/or other materials provided with the
-distribution.
-   * The names of its contributors may not be used to endorse or promote
-products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
-/*
-This program generates the protobuf and SteamLanguage files from the SteamKit data.
-*/
 package main
 
 import (
 	"bytes"
-	"go/parser"
-	"go/token"
+	gofmt "go/format"
 	"io"
 	"io/ioutil"
 	"os"
@@ -53,6 +13,7 @@ import (
 )
 
 var printCommands = false
+var pkgImportPath = "github.com/paralin/go-dota2/protocol"
 
 func main() {
 	args := strings.Join(os.Args[1:], " ")
@@ -106,11 +67,14 @@ func buildProtoMap(files map[string]string, outDir string) {
 // Maps the proto files to their target files.
 // See `SteamKit/Resources/Protobufs/steamclient/generate-base.bat` for reference.
 var dota2ProtoFiles = map[string]string{
-	"base_gcmessages.proto":        "base.pb.go",
-	"gcsdk_gcmessages.proto":       "gcsdk.pb.go",
-	"dota_gcmessages_client.proto": "dota_client.pb.go",
-	"dota_gcmessages_common.proto": "dota_common.pb.go",
-	"gcsystemmsgs.proto":           "system.pb.go",
+	"base_gcmessages.proto":                         "base.pb.go",
+	"gcsdk_gcmessages.proto":                        "gcsdk.pb.go",
+	"dota_gcmessages_client.proto":                  "dota_client.pb.go",
+	"dota_gcmessages_common.proto":                  "dota_common.pb.go",
+	"dota_gcmessages_common_match_management.proto": "dota_common_match_management.pb.go",
+	"dota_shared_enums.proto":                       "dota_shared_enums.pb.go",
+	"steammessages.proto":                           "steammessages.pb.go",
+	"gcsystemmsgs.proto":                            "system.pb.go",
 }
 
 func compileProto(srcBase, proto, target string) {
@@ -134,52 +98,65 @@ func forceRename(from, to string) error {
 	return os.Rename(from, to)
 }
 
-var pkgRegex = regexp.MustCompile(`(package \w+)`)
+var pkgRegex = regexp.MustCompile(`(package )(\w+)`)
 var pkgCommentRegex = regexp.MustCompile(`(?s)(\/\*.*?\*\/\n)package`)
+var localImportRegex = regexp.MustCompile(`(import )(\w+)( ".")`)
 
 func fixProto(path string) {
 	// goprotobuf is really bad at dependencies, so we must fix them manually...
 	// It tries to load each dependency of a file as a seperate package (but in a very, very wrong way).
 	// Because we want some files in the same package, we'll remove those imports to local files.
-
 	file, err := ioutil.ReadFile(path)
 	if err != nil {
 		panic(err)
 	}
-
-	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, path, file, parser.ImportsOnly)
-	if err != nil {
-		panic("Error parsing " + path + ": " + err.Error())
-	}
-
-	importsToRemove := make([]string, 0)
-	for _, i := range f.Imports {
-		// We remove all imports that include ".pb". This assumes unified and protobuf packages don't share anything.
-		if i.Name.Name != "google_protobuf" && strings.Contains(i.Path.Value, ".pb") {
-			importsToRemove = append(importsToRemove, i.Name.Name)
-		}
-	}
-
-	for _, itr := range importsToRemove {
-		// remove the package name from all types
-		file = bytes.Replace(file, []byte(itr+"."), []byte{}, -1)
-		// and remove the import itself
-		file = bytes.Replace(file, []byte("import "+itr+" \"pb\"\n"), []byte{}, -1)
-	}
+	fileDir := filepath.Dir(path)
 
 	// remove the package comment because it just includes a list of all messages and
 	// creates collisions between the others.
 	file = cutAllSubmatch(pkgCommentRegex, file, 1)
 
 	// fix the package name
-	file = pkgRegex.ReplaceAll(file, []byte("package "+inferPackageName(path)))
+	// find the package name
+	pkgNameParts := pkgRegex.FindSubmatch(file)
+	if len(pkgNameParts) == 0 {
+		panic("Error determining package name in " + path)
+	}
+	packageName := string(pkgNameParts[2])
 
 	// fix the google dependency;
 	// we just reuse the one from protoc-gen-go
 	file = bytes.Replace(file, []byte("google/protobuf/descriptor.pb"), []byte("code.google.com/p/goprotobuf/protoc-gen-go/descriptor"), -1)
+	file = bytes.Replace(file, []byte("import _ \".\"\n"), []byte{}, 1)
+	file = bytes.Replace(file, []byte("import google_protobuf \"google/protobuf\""), []byte("import google_protobuf \"github.com/golang/protobuf/protoc-gen-go/descriptor\""), 1)
 
-	err = ioutil.WriteFile(path, file, os.ModePerm)
+	matches := localImportRegex.FindAllSubmatch(file, -1)
+	for _, match := range matches {
+		completeMatch := match[0]
+		pkgName := string(match[2])
+		replaceWith := "import " + pkgName + " \"" + pkgImportPath + "/" + pkgName + "\""
+		if pkgName == "_" {
+			replaceWith = ""
+		}
+		print("Replacing " + string(completeMatch) + " with " + replaceWith)
+		file = bytes.Replace(file, completeMatch, []byte(replaceWith), 1)
+	}
+
+	pkgSubdir := filepath.Join(fileDir, packageName)
+	finalPath := filepath.Join(pkgSubdir, packageName+".go")
+	if err := os.MkdirAll(pkgSubdir, 0755); err != nil {
+		panic(err)
+	}
+
+	fmted, err := gofmt.Source(file)
+	if err != nil {
+		panic(err)
+	}
+	if err := os.Remove(path); err != nil {
+		panic(err)
+	}
+
+	err = ioutil.WriteFile(finalPath, fmted, 0755)
 	if err != nil {
 		panic(err)
 	}
