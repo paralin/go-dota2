@@ -13,3 +13,19 @@
 
 Also see: the [C#/SteamKit Implementation](https://github.com/paralin/Dota2).
 
+## Implementation Progress
+
+Currently, the following client features have been implemented in this library:
+
+ - [x] GC session state management
+ - [ ] Player profile fetching / call tracking
+ - [ ] SOCache tracking / state management
+ - [ ] Lobby tracking / state management
+    - [ ] Read lobby state correctly
+    - [ ] Implement normal lobby operations
+ - [ ] Party tracking / state management
+    - [ ] Read party and invite state correctly
+    - [ ] Implement normal party operations
+
+... and others. This is the current short-term roadmap.
+
