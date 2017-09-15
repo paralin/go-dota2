@@ -15,6 +15,20 @@ import (
 var printCommands = false
 var pkgImportPath = "github.com/paralin/go-dota2/protocol"
 
+// Maps the proto files to their target files.
+var dota2ProtoFiles = map[string]string{
+	"base_gcmessages.proto":                         "base.pb.go",
+	"gcsdk_gcmessages.proto":                        "gcsdk.pb.go",
+	"dota_gcmessages_client.proto":                  "dota_client.pb.go",
+	"dota_gcmessages_msgid.proto":                   "dota_client_msgid.pb.go",
+	"dota_gcmessages_common.proto":                  "dota_common.pb.go",
+	"dota_gcmessages_common_match_management.proto": "dota_common_match_management.pb.go",
+	"dota_gcmessages_client_team.proto":             "dota_gcmessages_client_team.pb.go",
+	"dota_shared_enums.proto":                       "dota_shared_enums.pb.go",
+	"steammessages.proto":                           "steammessages.pb.go",
+	"gcsystemmsgs.proto":                            "system.pb.go",
+}
+
 func main() {
 	args := strings.Join(os.Args[1:], " ")
 
@@ -62,19 +76,6 @@ func buildProtoMap(files map[string]string, outDir string) {
 		compileProto("Protobufs", proto, full)
 		fixProto(full)
 	}
-}
-
-// Maps the proto files to their target files.
-// See `SteamKit/Resources/Protobufs/steamclient/generate-base.bat` for reference.
-var dota2ProtoFiles = map[string]string{
-	"base_gcmessages.proto":                         "base.pb.go",
-	"gcsdk_gcmessages.proto":                        "gcsdk.pb.go",
-	"dota_gcmessages_client.proto":                  "dota_client.pb.go",
-	"dota_gcmessages_common.proto":                  "dota_common.pb.go",
-	"dota_gcmessages_common_match_management.proto": "dota_common_match_management.pb.go",
-	"dota_shared_enums.proto":                       "dota_shared_enums.pb.go",
-	"steammessages.proto":                           "steammessages.pb.go",
-	"gcsystemmsgs.proto":                            "system.pb.go",
 }
 
 func compileProto(srcBase, proto, target string) {
