@@ -3529,7 +3529,6 @@ var E_KeyField = &proto.ExtensionDesc{
 	Field:         60000,
 	Name:          "key_field",
 	Tag:           "varint,60000,opt,name=key_field,json=keyField,def=0",
-	Filename:      "steammessages.proto",
 }
 
 var E_MsgpoolSoftLimit = &proto.ExtensionDesc{
@@ -3538,7 +3537,6 @@ var E_MsgpoolSoftLimit = &proto.ExtensionDesc{
 	Field:         60000,
 	Name:          "msgpool_soft_limit",
 	Tag:           "varint,60000,opt,name=msgpool_soft_limit,json=msgpoolSoftLimit,def=32",
-	Filename:      "steammessages.proto",
 }
 
 var E_MsgpoolHardLimit = &proto.ExtensionDesc{
@@ -3547,7 +3545,6 @@ var E_MsgpoolHardLimit = &proto.ExtensionDesc{
 	Field:         60001,
 	Name:          "msgpool_hard_limit",
 	Tag:           "varint,60001,opt,name=msgpool_hard_limit,json=msgpoolHardLimit,def=384",
-	Filename:      "steammessages.proto",
 }
 
 func init() {
