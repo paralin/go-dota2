@@ -7,8 +7,7 @@
 [Go Report Card Widget]: https://goreportcard.com/badge/github.com/paralin/go-dota2
 [Go Report Card]: https://goreportcard.com/report/github.com/paralin/go-dota2
 
-## Introduction
-
+## Introduction 
 **go-dota2** is a DOTA 2 client plugin for go-steam. The intent is to replicate as much of the client functionality as possible.
 
 Also see: the [C#/SteamKit Implementation](https://github.com/paralin/Dota2).
@@ -28,4 +27,8 @@ Currently, the following client features have been implemented in this library:
     - [ ] Implement normal party operations
 
 ... and others. This is the current short-term roadmap.
+
+## go-steam Dependency
+
+This library depends on `go-steam`. Currently we are using the [FACEIT fork](https://github.com/faceit/go-steam).
 
