@@ -5,7 +5,6 @@ import (
 
 	"github.com/Philipp15b/go-steam/protocol/gamecoordinator"
 	devents "github.com/paralin/go-dota2/events"
-	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	gcsm "github.com/paralin/go-dota2/protocol/gcsystemmsgs"
 	"github.com/paralin/go-dota2/state"
@@ -59,6 +58,17 @@ func (d *Dota2) handleClientWelcome(packet *gamecoordinator.GCPacket) error {
 	welcome := &gcsdkm.CMsgClientWelcome{}
 	if err := d.unmarshalBody(packet, welcome); err != nil {
 		return err
+	}
+
+	d.le.Debugf("welcome: %v", welcome)
+	for _, cache := range welcome.GetUptodateSubscribedCaches() {
+		d.RequestCacheSubscriptionRefresh(cache.GetOwnerSoid())
+	}
+
+	for _, cache := range welcome.GetOutofdateSubscribedCaches() {
+		if err := d.cache.HandleSubscribed(cache); err != nil {
+			d.le.WithError(err).Warn("unable to handle welcome cache")
+		}
 	}
 
 	d.setConnectionStatus(gcsdkm.GCConnectionStatus_GCConnectionStatus_HAVE_SESSION, nil)

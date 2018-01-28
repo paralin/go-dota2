@@ -15,6 +15,7 @@ import (
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	gcsm "github.com/paralin/go-dota2/protocol/gcsystemmsgs"
+	"github.com/paralin/go-dota2/socache"
 	"github.com/paralin/go-dota2/state"
 )
 
@@ -31,6 +32,7 @@ type handlerMap map[uint32]func(packet *gamecoordinator.GCPacket) error
 type Dota2 struct {
 	le     *logrus.Entry
 	client *steam.Client
+	cache  *socache.SOCache
 
 	connectionCtxMtx    sync.Mutex
 	connectionCtx       context.Context
@@ -43,12 +45,15 @@ type Dota2 struct {
 
 	profileResponseHandlersMtx sync.Mutex
 	profileResponseHandlers    map[uint32][]chan<- *gccm.CMsgDOTAProfileCard
+
+	joinChatChannelHandlers sync.Map // map[string]chan *gcmcc.CMsgDOTAJoinChatChannelResponse
 }
 
 // New builds a new Dota2 handler.
 func New(client *steam.Client, le *logrus.Entry) *Dota2 {
 	c := &Dota2{
 		le:     le,
+		cache:  socache.NewSOCache(le),
 		client: client,
 		state: state.Dota2State{
 			ConnectionStatus: gcsdkm.GCConnectionStatus_GCConnectionStatus_NO_SESSION,
@@ -58,6 +63,11 @@ func New(client *steam.Client, le *logrus.Entry) *Dota2 {
 	c.buildHandlerMap()
 	client.GC.RegisterPacketHandler(c)
 	return c
+}
+
+// GetCache returns the SO Cache.
+func (d *Dota2) GetCache() *socache.SOCache {
+	return d.cache
 }
 
 // Close kills any ongoing calls.
@@ -75,6 +85,14 @@ func (d *Dota2) buildHandlerMap() {
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientWelcome):           d.handleClientWelcome,
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientConnectionStatus):  d.handleConnectionStatus,
 		uint32(gcm.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse): d.handleGetProfileCardResponse,
+		uint32(gcsm.ESOMsg_k_ESOMsg_CacheSubscribed):                  d.handleCacheSubscribed,
+		uint32(gcsm.ESOMsg_k_ESOMsg_UpdateMultiple):                   d.handleCacheUpdateMultiple,
+		uint32(gcsm.ESOMsg_k_ESOMsg_CacheUnsubscribed):                d.handleCacheUnsubscribed,
+		uint32(gcsm.ESOMsg_k_ESOMsg_Destroy):                          d.handleCacheDestroy,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse):        d.handleJoinChatChannelResponse,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCChatMessage):                    d.handleChatMessage,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel):             d.handleJoinedChannel,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel):               d.handleLeftChannel,
 	}
 }
 
@@ -137,4 +155,9 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 	if err := handler(packet); err != nil {
 		le.WithError(err).Warn("error handling gc msg")
 	}
+}
+
+// Pong responds to a Ping.
+func (d *Dota2) Pong() {
+	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsdkm.CMsgGCClientPing{})
 }

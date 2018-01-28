@@ -18,15 +18,43 @@ Currently, the following client features have been implemented in this library:
 
  - [x] GC session state management
  - [x] Player profile fetching / call tracking
- - [ ] SOCache tracking / state management
- - [ ] Lobby tracking / state management
-    - [ ] Read lobby state correctly
+ - [x] SOCache tracking / state management
+ - [x] Basic chat interaction
+ - [~] Lobby tracking / state management
+    - [x] Read lobby state correctly
     - [ ] Implement normal lobby operations
- - [ ] Party tracking / state management
-    - [ ] Read party and invite state correctly
+ - [~] Party tracking / state management
+    - [x] Read party and invite state correctly
     - [ ] Implement normal party operations
 
 ... and others. This is the current short-term roadmap.
+
+## SOCache Mechanism
+
+The caching mechanism makes it easy to watch for changes to common objects, like `Lobby, LobbyInvite, Party, PartyInvite`.
+
+This mechanism is used everywhere, these objects are not exposed in their own events.
+
+```go
+import (
+	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
+	"github.com/paralin/go-dota2/cso"
+)
+
+eventCh, eventCancel, err := dota.GetCache().SubscribeType(cso.Lobby)
+if err != nil {
+    return err
+}
+
+defer eventCancel()
+
+lobbyEvent := <-eventCh
+lobby := lobbyEvent.Object.(*gcmm.CSODOTALobby)
+```
+
+Events for the object type are emitted on the eventCh. Be sure to call `eventCancel` once you are done with the channel to prevent resource leaks.
+
+The cache object also adds interfaces to get and list the current objects in the cache.
 
 ## go-steam Dependency
 
