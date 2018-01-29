@@ -22,9 +22,8 @@
 
 
 [[constraint]]
-  name = "github.com/Philipp15b/go-steam"
+  name = "github.com/faceit/go-steam"
   branch = "master"
-  source = "github.com/faceit/go-steam"
 
 [[constraint]]
   name = "github.com/Sirupsen/logrus"

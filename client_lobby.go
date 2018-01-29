@@ -27,6 +27,11 @@ func (d *Dota2) CreateLobby(details *gcccm.CMsgPracticeLobbySetDetails) {
 	})
 }
 
+// LaunchLobby launches the current lobby.
+func (d *Dota2) LaunchLobby() {
+	d.write(uint32(gcm.EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch), &gcccm.CMsgPracticeLobbyLaunch{})
+}
+
 // LeaveCreateLobby attempts to leave any current lobby and creates a new one.
 func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPracticeLobbySetDetails) error {
 	cacheCtr, err := d.cache.GetContainerForTypeID(uint32(cso.Lobby))

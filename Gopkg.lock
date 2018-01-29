@@ -2,11 +2,10 @@
 
 
 [[projects]]
-  branch = "master"
   name = "github.com/Philipp15b/go-steam"
-  packages = [".","cryptoutil","netutil","protocol","protocol/gamecoordinator","protocol/protobuf","protocol/steamlang","rwu","socialcache","steamid"]
-  revision = "cc80fb24c6cf07bd621967c025f9c2e94baa9214"
-  source = "github.com/faceit/go-steam"
+  packages = ["cryptoutil","netutil","protocol","protocol/gamecoordinator","protocol/protobuf","protocol/steamlang","rwu","socialcache","steamid"]
+  revision = "2f1da88ecc3d51b7cf31cd2045f9fadbf00636bb"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
@@ -16,9 +15,21 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/faceit/go-steam"
+  packages = [".","protocol/gamecoordinator"]
+  revision = "cc80fb24c6cf07bd621967c025f9c2e94baa9214"
+
+[[projects]]
+  branch = "master"
   name = "github.com/golang/protobuf"
-  packages = ["proto","protoc-gen-go/descriptor"]
+  packages = ["jsonpb","proto","protoc-gen-go/descriptor","ptypes/struct"]
   revision = "925541529c1fa6821df4e44ce2723319eb2be768"
+
+[[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
 
 [[projects]]
   branch = "master"
@@ -35,6 +46,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7dfc0654a2933a0202840a1ba38331ef6e8a3e3750ecadd30197b2e71df75f22"
+  inputs-digest = "a351e3d2c0c5c2c1928162303ad31252a6c93c1f668ce24f33bdcc624a61cb10"
   solver-name = "gps-cdcl"
   solver-version = 1

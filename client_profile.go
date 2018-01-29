@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/Philipp15b/go-steam/protocol/gamecoordinator"
+	"github.com/faceit/go-steam/protocol/gamecoordinator"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
 	gcclm "github.com/paralin/go-dota2/protocol/dota_gcmessages_client"
 	gccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
