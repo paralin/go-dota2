@@ -11,6 +11,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	devents "github.com/paralin/go-dota2/events"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
+	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
 	gccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
@@ -96,6 +97,8 @@ func (d *Dota2) buildHandlerMap() {
 		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket):    d.handleSteamDatagramTicket,
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest):             d.handlePingRequest,
 		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut):         d.handleMatchSignedOut,
+		uint32(bgcm.EGCBaseMsg_k_EMsgGCInvitationCreated):             d.handleGcInvitationCreated,
+		uint32(gcm.EDOTAGCMsg_k_EMsgDestroyLobbyResponse):             nil,
 	}
 }
 
@@ -155,8 +158,10 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 		return
 	}
 
-	if err := handler(packet); err != nil {
-		le.WithError(err).Warn("error handling gc msg")
+	if handler != nil {
+		if err := handler(packet); err != nil {
+			le.WithError(err).Warn("error handling gc msg")
+		}
 	}
 }
 

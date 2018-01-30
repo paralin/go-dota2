@@ -60,7 +60,7 @@ func (d *Dota2) handleClientWelcome(packet *gamecoordinator.GCPacket) error {
 		return err
 	}
 
-	d.le.Debugf("welcome: %v", welcome)
+	d.le.Debug("received GC welcome")
 	for _, cache := range welcome.GetUptodateSubscribedCaches() {
 		d.RequestCacheSubscriptionRefresh(cache.GetOwnerSoid())
 	}
