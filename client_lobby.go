@@ -33,7 +33,7 @@ func (d *Dota2) LaunchLobby() {
 }
 
 // LeaveCreateLobby attempts to leave any current lobby and creates a new one.
-func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPracticeLobbySetDetails) error {
+func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPracticeLobbySetDetails, destroyOldLobby bool) error {
 	cacheCtr, err := d.cache.GetContainerForTypeID(uint32(cso.Lobby))
 	if err != nil {
 		return err
@@ -57,6 +57,12 @@ func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPractic
 			}
 
 			le.Debug("attempting to leave lobby")
+			if destroyOldLobby && lob.GetLeaderId() == d.client.SteamId().ToUint64() {
+				d.DestroyLobby()
+			}
+			if lob.GetState() != gcmm.CSODOTALobby_UI {
+				d.AbandonLobby()
+			}
 			d.LeaveLobby()
 		} else {
 			wasInNoLobby = true
@@ -76,6 +82,11 @@ func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPractic
 // LeaveLobby attempts to leave the current lobby.
 func (d *Dota2) LeaveLobby() {
 	d.write(uint32(gcm.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave), &gcccm.CMsgPracticeLobbyLeave{})
+}
+
+// AbandonLobby abandons the current lobby.
+func (d *Dota2) AbandonLobby() {
+	d.write(uint32(gcm.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame), &gcccm.CMsgAbandonCurrentGame{})
 }
 
 // DestroyLobby attempts to destroy the lobby.

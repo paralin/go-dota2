@@ -5,9 +5,9 @@ import (
 	"errors"
 	"sync"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/faceit/go-steam"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
-	"github.com/Sirupsen/logrus"
 	"github.com/golang/protobuf/proto"
 	devents "github.com/paralin/go-dota2/events"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
@@ -93,6 +93,9 @@ func (d *Dota2) buildHandlerMap() {
 		uint32(gcm.EDOTAGCMsg_k_EMsgGCChatMessage):                    d.handleChatMessage,
 		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel):             d.handleJoinedChannel,
 		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel):               d.handleLeftChannel,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket):    d.handleSteamDatagramTicket,
+		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest):             d.handlePingRequest,
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut):         d.handleMatchSignedOut,
 	}
 }
 
@@ -157,7 +160,8 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 	}
 }
 
-// Pong responds to a Ping.
-func (d *Dota2) Pong() {
+// handlePingRequest handles an incoming ping request from the gc.
+func (d *Dota2) handlePingRequest(packet *gamecoordinator.GCPacket) error {
 	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsdkm.CMsgGCClientPing{})
+	return nil
 }
