@@ -25,6 +25,7 @@ func (d *Dota2) SetPlaying(playing bool) {
 
 // SayHello says hello to the Dota2 server, in an attempt to get a session.
 func (d *Dota2) SayHello() {
+	d.le.Debug("sending hello to GC")
 	partnerAccType := gcsdkm.PartnerAccountType_PARTNER_NONE
 	engine := gcsdkm.ESourceEngine_k_ESE_Source2
 	var clientSessionNeed uint32 = 104
@@ -42,12 +43,12 @@ func (d *Dota2) validateConnectionContext() (context.Context, error) {
 
 	cctx := d.connectionCtx
 	if cctx == nil {
-		return nil, NotReadyErr
+		return nil, ErrNotReady
 	}
 
 	select {
 	case <-cctx.Done():
-		return nil, NotReadyErr
+		return nil, ErrNotReady
 	default:
 		return cctx, nil
 	}

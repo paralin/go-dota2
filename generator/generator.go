@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	gofmt "go/format"
 	"io"
 	"io/ioutil"
@@ -15,21 +16,26 @@ import (
 var printCommands = false
 var pkgImportPath = "github.com/paralin/go-dota2/protocol"
 
-// Maps the proto files to their target files.
-var dota2ProtoFiles = map[string]string{
-	"base_gcmessages.proto":                         "base.pb.go",
-	"gcsdk_gcmessages.proto":                        "gcsdk.pb.go",
-	"dota_gcmessages_client.proto":                  "dota_client.pb.go",
-	"dota_gcmessages_client_chat.proto":             "dota_client_chat.pb.go",
-	"dota_gcmessages_client_match_management.proto": "dota_client_match_management.pb.go",
-	"dota_gcmessages_msgid.proto":                   "dota_client_msgid.pb.go",
-	"dota_gcmessages_common.proto":                  "dota_common.pb.go",
-	"dota_gcmessages_common_match_management.proto": "dota_common_match_management.pb.go",
-	"dota_gcmessages_client_team.proto":             "dota_gcmessages_client_team.pb.go",
-	"dota_shared_enums.proto":                       "dota_shared_enums.pb.go",
-	"dota_client_enums.proto":                       "dota_client_enums.pb.go",
-	"steammessages.proto":                           "steammessages.pb.go",
-	"gcsystemmsgs.proto":                            "system.pb.go",
+var dota2ProtoFiles = []string{
+	"base_gcmessages.proto",
+	"econ_gcmessages.proto",
+	"econ_shared_enums.proto",
+	"dota_client_enums.proto",
+	"dota_gcmessages_client.proto",
+	"dota_gcmessages_client_chat.proto",
+	"dota_gcmessages_client_guild.proto",
+	"dota_gcmessages_client_match_management.proto",
+	"dota_gcmessages_client_team.proto",
+	"dota_gcmessages_client_fantasy.proto",
+	"dota_gcmessages_client_watch.proto",
+	"dota_gcmessages_client_tournament.proto",
+	"dota_gcmessages_common.proto",
+	"dota_gcmessages_common_match_management.proto",
+	"dota_gcmessages_msgid.proto",
+	"dota_shared_enums.proto",
+	"gcsdk_gcmessages.proto",
+	"gcsystemmsgs.proto",
+	"steammessages.proto",
 }
 
 func main() {
@@ -69,16 +75,53 @@ func cleanGlob(pattern string) {
 func buildProto() {
 	print("# Building Protobufs")
 
-	buildProtoMap(dota2ProtoFiles, "../protocol")
+	outDir := "../protocol"
+	buildProtoMap(dota2ProtoFiles, outDir)
 }
 
-func buildProtoMap(files map[string]string, outDir string) {
+func buildProtoMap(files []string, outDir string) {
 	os.MkdirAll(outDir, os.ModePerm)
-	for proto, out := range files {
+	var imports []string
+	for _, proto := range files {
+		fnamePts := strings.Split(proto, ".")
+		outPkg := fnamePts[0]
+		out := fmt.Sprintf("%s.pb.go", outPkg)
 		full := filepath.Join(outDir, out)
 		compileProto("Protobufs", proto, full)
 		fixProto(full)
+		imports = append(imports, outPkg)
 	}
+
+	allDir := filepath.Join(outDir, "all")
+	os.MkdirAll(allDir, os.ModePerm)
+	{
+		srcBuf := &bytes.Buffer{}
+
+		fmt.Fprintf(srcBuf, "package all\n\nimport(\n")
+		for _, imp := range imports {
+			fmt.Fprintf(srcBuf, "\t// %s protocol\n", imp)
+			fmt.Fprintf(srcBuf, "\t_ \"%s/%s\"\n", pkgImportPath, imp)
+		}
+		srcBuf.WriteString(")\n\n// Packages is a list of all packages.\n")
+		srcBuf.WriteString("var Packages []string = []string{\n")
+		for _, imp := range imports {
+			fmt.Fprintf(srcBuf, "\t\"%s/%s\",\n", pkgImportPath, imp)
+		}
+		fmt.Fprintf(srcBuf, "}\n")
+
+		fmted, err := gofmt.Source(srcBuf.Bytes())
+		if err != nil {
+			panic(err)
+		}
+		if err := ioutil.WriteFile(filepath.Join(allDir, "all_protocols.go"), fmted, 0644); err != nil {
+			panic(err)
+		}
+	}
+
+}
+
+func buildAllPkg(outDir string) {
+
 }
 
 func compileProto(srcBase, proto, target string) {
@@ -89,16 +132,17 @@ func compileProto(srcBase, proto, target string) {
 	}
 	execute("protoc", "--go_out="+outDir, "-I="+srcBase, filepath.Join(srcBase, proto))
 	out := strings.Replace(filepath.Join(outDir, proto), ".proto", ".pb.go", 1)
-	err = forceRename(out, target)
-	if err != nil {
+	if err := forceRename(out, target); err != nil {
 		panic(err)
 	}
 }
 
 func forceRename(from, to string) error {
-	if from != to {
-		os.Remove(to)
+	if from == to {
+		return nil
 	}
+
+	os.Remove(to)
 	return os.Rename(from, to)
 }
 

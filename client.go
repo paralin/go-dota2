@@ -11,9 +11,6 @@ import (
 	"github.com/golang/protobuf/proto"
 	devents "github.com/paralin/go-dota2/events"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
-	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
-	gccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
-	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	gcsm "github.com/paralin/go-dota2/protocol/gcsystemmsgs"
 	"github.com/paralin/go-dota2/socache"
@@ -23,8 +20,8 @@ import (
 // AppID is the ID for dota2
 const AppID = 570
 
-// NotReadyErr is returned when the dota client is not ready.
-var NotReadyErr error = errors.New("the dota client is not ready to accept requests yet, or has just become unready")
+// ErrNotReady is returned when the dota client is not ready.
+var ErrNotReady = errors.New("the dota client is not ready to accept requests yet, or has just become unready")
 
 // handlerMap is the map of message types to handler functions.
 type handlerMap map[uint32]func(packet *gamecoordinator.GCPacket) error
@@ -44,22 +41,22 @@ type Dota2 struct {
 
 	handlers handlerMap
 
-	profileResponseHandlersMtx sync.Mutex
-	profileResponseHandlers    map[uint32][]chan<- *gccm.CMsgDOTAProfileCard
-
-	joinChatChannelHandlers sync.Map // map[string]chan *gcmcc.CMsgDOTAJoinChatChannelResponse
+	pendReqMtx sync.Mutex
+	pendReqID  uint32
+	pendReq    map[uint32]map[uint32]responseHandler
 }
 
 // New builds a new Dota2 handler.
 func New(client *steam.Client, le *logrus.Entry) *Dota2 {
 	c := &Dota2{
-		le:     le,
-		cache:  socache.NewSOCache(le),
-		client: client,
+		le:      le,
+		cache:   socache.NewSOCache(le),
+		client:  client,
+		pendReq: make(map[uint32]map[uint32]responseHandler),
+
 		state: state.Dota2State{
 			ConnectionStatus: gcsdkm.GCConnectionStatus_GCConnectionStatus_NO_SESSION,
 		},
-		profileResponseHandlers: make(map[uint32][]chan<- *gccm.CMsgDOTAProfileCard),
 	}
 	c.buildHandlerMap()
 	client.GC.RegisterPacketHandler(c)
@@ -83,22 +80,18 @@ func (d *Dota2) Close() {
 // buildHandlerMap builds the map of bound handler functions.
 func (d *Dota2) buildHandlerMap() {
 	d.handlers = handlerMap{
-		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientWelcome):           d.handleClientWelcome,
-		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientConnectionStatus):  d.handleConnectionStatus,
-		uint32(gcm.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse): d.handleGetProfileCardResponse,
-		uint32(gcsm.ESOMsg_k_ESOMsg_CacheSubscribed):                  d.handleCacheSubscribed,
-		uint32(gcsm.ESOMsg_k_ESOMsg_UpdateMultiple):                   d.handleCacheUpdateMultiple,
-		uint32(gcsm.ESOMsg_k_ESOMsg_CacheUnsubscribed):                d.handleCacheUnsubscribed,
-		uint32(gcsm.ESOMsg_k_ESOMsg_Destroy):                          d.handleCacheDestroy,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse):        d.handleJoinChatChannelResponse,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCChatMessage):                    d.handleChatMessage,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel):             d.handleJoinedChannel,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel):               d.handleLeftChannel,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket):    d.handleSteamDatagramTicket,
-		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest):             d.handlePingRequest,
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut):         d.handleMatchSignedOut,
-		uint32(bgcm.EGCBaseMsg_k_EMsgGCInvitationCreated):             d.handleGcInvitationCreated,
-		uint32(gcm.EDOTAGCMsg_k_EMsgDestroyLobbyResponse):             nil,
+		// Welcome and conn status
+		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientWelcome):          d.handleClientWelcome,
+		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientConnectionStatus): d.handleConnectionStatus,
+
+		// Caching
+		uint32(gcsm.ESOMsg_k_ESOMsg_CacheSubscribed):   d.handleCacheSubscribed,
+		uint32(gcsm.ESOMsg_k_ESOMsg_UpdateMultiple):    d.handleCacheUpdateMultiple,
+		uint32(gcsm.ESOMsg_k_ESOMsg_CacheUnsubscribed): d.handleCacheUnsubscribed,
+		uint32(gcsm.ESOMsg_k_ESOMsg_Destroy):           d.handleCacheDestroy,
+
+		// System events
+		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest): d.handlePingRequest,
 	}
 }
 
@@ -117,7 +110,7 @@ func (d *Dota2) accessState(cb func(nextState *state.Dota2State) (bool, error)) 
 	d.stateMtx.Lock()
 	defer d.stateMtx.Unlock()
 
-	var lastState state.Dota2State = d.state
+	lastState := d.state
 	changed, err := cb(&d.state)
 	if err != nil {
 		return err
@@ -150,18 +143,20 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 
 	le := d.le.WithField("msgtype", packet.MsgType)
 	handler, ok := d.handlers[packet.MsgType]
-	if !ok {
+	if ok && handler != nil {
+		if err := handler(packet); err != nil {
+			le.WithError(err).Warn("error handling gc msg")
+			ok = false
+		}
+	}
+
+	respHandled := d.handleResponsePacket(le, packet)
+
+	if !ok && !respHandled {
 		le.Debug("unhandled gc packet")
 		d.emit(&devents.UnhandledGCPacket{
 			Packet: packet,
 		})
-		return
-	}
-
-	if handler != nil {
-		if err := handler(packet); err != nil {
-			le.WithError(err).Warn("error handling gc msg")
-		}
 	}
 }
 

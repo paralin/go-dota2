@@ -2,6 +2,7 @@ package cso
 
 import (
 	"github.com/golang/protobuf/proto"
+	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
 	gcclm "github.com/paralin/go-dota2/protocol/dota_gcmessages_client"
 	gccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
 	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
@@ -53,6 +54,9 @@ const (
 
 // csoTypeCtors links type IDs to constructors.
 var csoTypeCtors = map[CSOType]func() proto.Message{
+	EconItem: func() proto.Message {
+		return &bgcm.CSOEconItem{}
+	},
 	GameAccountClient: func() proto.Message {
 		return &gccm.CSODOTAGameAccountClient{}
 	},
@@ -79,6 +83,12 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 	},
 	LobbyInvite: func() proto.Message {
 		return &gcmm.CSODOTALobbyInvite{}
+	},
+	LeagueViewPass: func() proto.Message {
+		return &bgcm.CSOEconItemLeagueViewPass{}
+	},
+	DropRateBonus: func() proto.Message {
+		return &bgcm.CSOEconItemDropRateBonus{}
 	},
 }
 
