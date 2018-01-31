@@ -23,8 +23,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: MsgSenderGC,
 	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel:   MsgSenderGC,
 
-	dm.EDOTAGCMsg_k_EMsgGCChatMessage: MsgSenderGC,
-
 	dm.EDOTAGCMsg_k_EMsgGCTeamData: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGC_TournamentItemEvent:         MsgSenderNone,
@@ -107,8 +105,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCLobbyList:         MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCLobbyListResponse: MsgSenderNone,
 
-	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyCreate: MsgSenderNone,
-
 	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyLeagueRequest:  MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyLeagueResponse: MsgSenderNone,
 
@@ -119,6 +115,12 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCLeagueAdminList:  MsgSenderGC,
 	dm.EDOTAGCMsg_k_EMsgGCLeagueAdminState: MsgSenderGC,
+
+	dm.EDOTAGCMsg_k_EMsgGCChatMessage: MsgSenderClient,
+
+	// Hand-written lobby code
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetTeamSlot: MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyCreate:      MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
@@ -138,6 +140,9 @@ var msgMethodNameOverrides = map[dm.EDOTAGCMsg]string{
 	dm.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInfoRequest:  "RequestPrivateChatInfo",
 	dm.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite:       "InvitePrivateChatMember",
 	dm.EDOTAGCMsg_k_EMsgCastMatchVote:                     "CastMatchVote",
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick:               "KickLobbyMember",
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam:       "KickLobbyMemberFromTeam",
+	dm.EDOTAGCMsg_k_EMsgGCBotGameCreate:                   "CreateBotGame",
 }
 
 // msgResponseOverrides maps request message IDs to response message IDs.

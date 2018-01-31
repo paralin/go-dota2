@@ -124,6 +124,24 @@ func (d *Dota2) CloseLobbyBroadcastChannel(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyCloseBroadcastChannel), req)
 }
 
+// CreateBotGame creates a bot game.
+func (d *Dota2) CreateBotGame(
+	searchKey string,
+	difficultyRadiant dota_shared_enums.DOTABotDifficulty,
+	team dota_shared_enums.DOTA_GC_TEAM,
+	gameMode uint32,
+	difficultyDire dota_shared_enums.DOTABotDifficulty,
+) {
+	req := &dota_gcmessages_client_match_management.CMsgBotGameCreate{
+		SearchKey:         &searchKey,
+		DifficultyRadiant: &difficultyRadiant,
+		Team:              &team,
+		GameMode:          &gameMode,
+		DifficultyDire:    &difficultyDire,
+	}
+	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCBotGameCreate), req)
+}
+
 // CreateDOTAStaticRecipe creates a dota static recipe.
 func (d *Dota2) CreateDOTAStaticRecipe(
 	ctx context.Context,
@@ -199,24 +217,6 @@ func (d *Dota2) CreateFantasyTeam(
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamCreateResponse),
 		resp,
 	)
-}
-
-// CreateGameBot creates a game bot.
-func (d *Dota2) CreateGameBot(
-	searchKey string,
-	difficultyRadiant dota_shared_enums.DOTABotDifficulty,
-	team dota_shared_enums.DOTA_GC_TEAM,
-	gameMode uint32,
-	difficultyDire dota_shared_enums.DOTABotDifficulty,
-) {
-	req := &dota_gcmessages_client_match_management.CMsgBotGameCreate{
-		SearchKey:         &searchKey,
-		DifficultyRadiant: &difficultyRadiant,
-		Team:              &team,
-		GameMode:          &gameMode,
-		DifficultyDire:    &difficultyDire,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCBotGameCreate), req)
 }
 
 // CreateGameCustom creates a game custom.
@@ -968,8 +968,8 @@ func (d *Dota2) JoinQuickCustomLobby(
 	)
 }
 
-// KickLobby kicks a lobby.
-func (d *Dota2) KickLobby(
+// KickLobbyMember kicks a lobby member.
+func (d *Dota2) KickLobbyMember(
 	accountID uint32,
 ) {
 	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyKick{
@@ -978,8 +978,8 @@ func (d *Dota2) KickLobby(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick), req)
 }
 
-// KickLobbyFromTeam kicks a lobby from team.
-func (d *Dota2) KickLobbyFromTeam(
+// KickLobbyMemberFromTeam kicks a lobby member from team.
+func (d *Dota2) KickLobbyMemberFromTeam(
 	accountID uint32,
 ) {
 	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyKickFromTeam{
@@ -3214,6 +3214,13 @@ func (d *Dota2) SendChatChannelMemberUpdate(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatChannelMemberUpdate), req)
 }
 
+// SendChatMessage sends a chat message.
+func (d *Dota2) SendChatMessage(
+	req *dota_gcmessages_client_chat.CMsgDOTAChatMessage,
+) {
+	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatMessage), req)
+}
+
 // SendClaimEventAction sends a claim event action.
 func (d *Dota2) SendClaimEventAction(
 	ctx context.Context,
@@ -3572,20 +3579,6 @@ func (d *Dota2) SetLobbyDetails(
 	req *dota_gcmessages_client_match_management.CMsgPracticeLobbySetDetails,
 ) {
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails), req)
-}
-
-// SetLobbyTeamSlot sets a lobby team slot.
-func (d *Dota2) SetLobbyTeamSlot(
-	team dota_shared_enums.DOTA_GC_TEAM,
-	slot uint32,
-	botDifficulty dota_shared_enums.DOTABotDifficulty,
-) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbySetTeamSlot{
-		Team:          &team,
-		Slot:          &slot,
-		BotDifficulty: &botDifficulty,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbySetTeamSlot), req)
 }
 
 // SetMapLocationState sets a map location state.
