@@ -39,7 +39,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	// responseMsgs are messages that are known to be responses.
 	responseMsgs := make(map[gcm.EDOTAGCMsg]struct{})
-	// eventHandlers := make(map[gcm.EDOTAGCMsg]*generatedEventHandler)
+	eventHandlers := make(map[gcm.EDOTAGCMsg]*generatedEventHandler)
 
 	for _, msgID := range msgIds {
 		sender := GetMessageSender(msgID)
@@ -59,7 +59,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 			}
 
 			requestFuncs = append(requestFuncs, genReqFunc)
-		} /* else if sender == MsgSenderGC {
+		} else if sender == MsgSenderGC {
 			msgStr := msgID.String()
 			if strings.HasSuffix(msgStr, "Response") {
 				continue
@@ -71,7 +71,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 			}
 
 			eventHandlers[msgID] = eventHandler
-		}*/
+		}
 	}
 
 	sort.Slice(requestFuncs, func(i int, j int) bool {

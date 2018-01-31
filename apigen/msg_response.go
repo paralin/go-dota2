@@ -85,38 +85,23 @@ func LookupMessageProtoType(protoMap map[string]*ProtoType, msgID gcm.EDOTAGCMsg
 	msgStr := msgID.String()
 	msgStr = strings.TrimPrefix(msgStr, "k_EMsg")
 
-	withoutGC := strings.TrimPrefix(msgStr, "GC")
-	withoutResponse := strings.TrimSuffix(msgStr, "Response")
-	withoutGCOrResponse := strings.TrimPrefix(withoutResponse, "GC")
+	msgStr = strings.TrimPrefix(msgStr, "GC")
 	withoutDota := strings.Replace(msgStr, "DOTA", "", -1)
 	withoutToFrom := strings.Replace(msgStr, "GCToClient", "", -1)
 	withoutToFrom = strings.Replace(withoutToFrom, "ClientToGC", "", -1)
+	responseToResult := strings.Replace(msgStr, "Response", "Result", -1)
 	toAttempt := []string{
 		msgStr,
+		"GC" + msgStr,
+		responseToResult,
+		"GC" + responseToResult,
 		withoutDota,
 		withoutToFrom,
-		"ClientToGC" + withoutDota,
-		"ClientToGC" + withoutDota + "Response",
-		"GCToClient" + withoutDota,
-		withoutGCOrResponse,
 		"DOTA" + msgStr,
-		withoutGC,
-		"DOTA" + withoutGC,
-		withoutResponse,
-		"DOTA" + withoutResponse,
-		withoutResponse + "Result",
-		"DOTA" + withoutResponse + "Result",
-		withoutGC + "Result",
-		"DOTA" + withoutGC + "Result",
-		"DOTA" + withoutGC + "Response",
-		withoutGC + "Response",
-		"DOTA" + withoutGCOrResponse + "Result",
-		"DOTA" + withoutGCOrResponse + "Response",
-		withoutGCOrResponse + "Response",
-		withoutGCOrResponse + "Result",
 	}
 
 	for _, att := range toAttempt {
+		fmt.Println(att)
 		if pt, ok := protoMap["CMsg"+att]; ok {
 			fmt.Printf("Request: %v matched to type: %v\n", msgID.String(), pt.TypeName)
 			return pt, nil

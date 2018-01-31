@@ -7,6 +7,7 @@ import (
 
 	"github.com/fatih/camelcase"
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	"github.com/pkg/errors"
 )
 
 // generatedRequestFunc is a auto-generated request.
@@ -53,10 +54,17 @@ func buildGeneratedRequestFunc(
 
 			genReqFunc.respType = respProtoType.Obj
 			clientImports[respProtoType.Pak.Path()] = struct{}{}
+			if genReqFunc.respType == genReqFunc.reqType {
+				return nil, errors.Errorf("request type cannot be the same as response type: %s %s", msgID.String(), respProtoType.TypeStr)
+			}
 		}
 
 		if genReqFunc.respType == nil {
 			genReqFunc.respMsgID = 0
+		}
+
+		if genReqFunc.respMsgID != 0 && genReqFunc.respMsgID == msgID {
+			return nil, errors.Errorf("request message cannot be the same as the response message: %s", msgID.String())
 		}
 	}
 
