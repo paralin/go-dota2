@@ -3271,29 +3271,6 @@ func (d *Dota2) RequestProfile(
 	)
 }
 
-// RequestProfile requests a profile.
-// Request ID: k_EMsgGCProfileRequest
-// Response ID: k_EMsgGCProfileResponse
-// Request type: CMsgProfileRequest
-// Response type: CMsgProfileResponse
-func (d *Dota2) RequestProfile(
-	ctx context.Context,
-	accountID uint32,
-) (*dota_gcmessages_client.CMsgProfileResponse, error) {
-	req := &dota_gcmessages_client.CMsgProfileRequest{
-		AccountId: &accountID,
-	}
-	resp := &dota_gcmessages_client.CMsgProfileResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCProfileRequest),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCProfileResponse),
-		resp,
-	)
-}
-
 // RequestQuickStats requests quick stats.
 // Request ID: k_EMsgClientToGCQuickStatsRequest
 // Response ID: k_EMsgClientToGCQuickStatsResponse

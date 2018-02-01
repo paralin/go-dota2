@@ -177,6 +177,9 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmit:      MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmitReply: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgGCProfileRequest:  MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCProfileResponse: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
