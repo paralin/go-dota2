@@ -25,3 +25,23 @@ func (e *ChatMessage) GetEventBody() proto.Message {
 func (e *ChatMessage) GetEventName() string {
 	return "ChatMessage"
 }
+
+// JoinedChatChannel is emitted when we join a chat channel.
+type JoinedChatChannel struct {
+	gcmcc.CMsgDOTAJoinChatChannelResponse
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *JoinedChatChannel) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
+	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse
+}
+
+// GetEventBody returns the event body.
+func (e *JoinedChatChannel) GetEventBody() proto.Message {
+	return &e.CMsgDOTAJoinChatChannelResponse
+}
+
+// GetEventName returns the chat message event name.
+func (e *JoinedChatChannel) GetEventName() string {
+	return "JoinedChatChannel"
+}
