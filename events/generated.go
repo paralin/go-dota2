@@ -224,6 +224,27 @@ func (e *ClientSuspended) GetEventName() string {
 	return "ClientSuspended"
 }
 
+// CommendNotification event.
+// MessageID: k_EMsgGCToClientCommendNotification
+type CommendNotification struct {
+	dota_gcmessages_client.CMsgGCToClientCommendNotification
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *CommendNotification) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
+	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientCommendNotification
+}
+
+// GetEventBody returns the event body.
+func (e *CommendNotification) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientCommendNotification
+}
+
+// GetEventName returns the event name.
+func (e *CommendNotification) GetEventName() string {
+	return "CommendNotification"
+}
+
 // CompendiumDataChanged event.
 // MessageID: k_EMsgGCCompendiumDataChanged
 type CompendiumDataChanged struct {

@@ -2531,6 +2531,26 @@ func (d *Dota2) RequestGetPlayerCardRoster(
 	)
 }
 
+// RequestGetRecentPlayTimeFriends requests to check if the target get recent play time friends.
+// Request ID: k_EMsgGetRecentPlayTimeFriendsRequest
+// Response ID: k_EMsgGetRecentPlayTimeFriendsResponse
+// Request type: CMsgDOTAGetRecentPlayTimeFriendsRequest
+// Response type: CMsgDOTAGetRecentPlayTimeFriendsResponse
+func (d *Dota2) RequestGetRecentPlayTimeFriends(
+	ctx context.Context,
+) (*dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsResponse, error) {
+	req := &dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsRequest{}
+	resp := &dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsResponse),
+		resp,
+	)
+}
+
 // RequestGuildCancelInvite requests a guild cancel invite.
 // Request ID: k_EMsgGCGuildCancelInviteRequest
 // Response ID: k_EMsgGCGuildCancelInviteResponse
@@ -3091,6 +3111,26 @@ func (d *Dota2) RequestOfferings(
 	)
 }
 
+// RequestPartyReadyCheck requests a party ready check.
+// Request ID: k_EMsgPartyReadyCheckRequest
+// Response ID: k_EMsgPartyReadyCheckResponse
+// Request type: CMsgPartyReadyCheckRequest
+// Response type: CMsgPartyReadyCheckResponse
+func (d *Dota2) RequestPartyReadyCheck(
+	ctx context.Context,
+) (*dota_gcmessages_common_match_management.CMsgPartyReadyCheckResponse, error) {
+	req := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckRequest{}
+	resp := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckResponse),
+		resp,
+	)
+}
+
 // RequestPartySetOpenGuild requests a party set open guild.
 // Request ID: k_EMsgGCPartySetOpenGuildRequest
 // Response ID: k_EMsgGCPartySetOpenGuildResponse
@@ -3209,20 +3249,41 @@ func (d *Dota2) RequestPrivateChatInfo(
 }
 
 // RequestProfile requests a profile.
-// Request ID: k_EMsgGCProfileRequest
-// Response ID: k_EMsgGCProfileResponse
-// Request type: CMsgDOTAProfileRequest
-// Response type: CMsgDOTAProfileResponse
+// Request ID: k_EMsgProfileRequest
+// Response ID: k_EMsgProfileResponse
+// Request type: CMsgProfileRequest
+// Response type: CMsgProfileResponse
 func (d *Dota2) RequestProfile(
 	ctx context.Context,
 	accountID uint32,
-	requestName bool,
-) (*dota_gcmessages_client.CMsgDOTAProfileResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAProfileRequest{
-		AccountId:   &accountID,
-		RequestName: &requestName,
+) (*dota_gcmessages_client.CMsgProfileResponse, error) {
+	req := &dota_gcmessages_client.CMsgProfileRequest{
+		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAProfileResponse{}
+	resp := &dota_gcmessages_client.CMsgProfileResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileResponse),
+		resp,
+	)
+}
+
+// RequestProfile requests a profile.
+// Request ID: k_EMsgGCProfileRequest
+// Response ID: k_EMsgGCProfileResponse
+// Request type: CMsgProfileRequest
+// Response type: CMsgProfileResponse
+func (d *Dota2) RequestProfile(
+	ctx context.Context,
+	accountID uint32,
+) (*dota_gcmessages_client.CMsgProfileResponse, error) {
+	req := &dota_gcmessages_client.CMsgProfileRequest{
+		AccountId: &accountID,
+	}
+	resp := &dota_gcmessages_client.CMsgProfileResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
@@ -4078,6 +4139,18 @@ func (d *Dota2) SendMergePartyInvite(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite), req)
 }
 
+// SendPartyReadyCheckAcknowledge sends a party ready check acknowledge.
+// Request ID: k_EMsgPartyReadyCheckAcknowledge
+// Request type: CMsgPartyReadyCheckAcknowledge
+func (d *Dota2) SendPartyReadyCheckAcknowledge(
+	readyStatus dota_gcmessages_common_match_management.EReadyCheckStatus,
+) {
+	req := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckAcknowledge{
+		ReadyStatus: &readyStatus,
+	}
+	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
+}
+
 // SendPeriodicResourceUpdated sends a periodic resource updated.
 // Request ID: k_EMsgDOTAPeriodicResourceUpdated
 // Request type: CMsgDOTAPeriodicResourceUpdated
@@ -4118,6 +4191,31 @@ func (d *Dota2) SendPingData(
 func (d *Dota2) SendPresentedClientTerminateDlg() {
 	req := &dota_gcmessages_client.CMsgPresentedClientTerminateDlg{}
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPresentedClientTerminateDlg), req)
+}
+
+// SendProfileUpdate sends a profile update.
+// Request ID: k_EMsgProfileUpdate
+// Response ID: k_EMsgProfileUpdateResponse
+// Request type: CMsgProfileUpdate
+// Response type: CMsgProfileUpdateResponse
+func (d *Dota2) SendProfileUpdate(
+	ctx context.Context,
+	backgroundItemID uint64,
+	featuredHeroIDs []uint32,
+) (*dota_gcmessages_client.CMsgProfileUpdateResponse, error) {
+	req := &dota_gcmessages_client.CMsgProfileUpdate{
+		BackgroundItemId: &backgroundItemID,
+		FeaturedHeroIds:  featuredHeroIDs,
+	}
+	resp := &dota_gcmessages_client.CMsgProfileUpdateResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileUpdate),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileUpdateResponse),
+		resp,
+	)
 }
 
 // SendReadyUp sends a ready up.
@@ -4163,6 +4261,22 @@ func (d *Dota2) SendSpectatorLobbyGameDetails(
 func (d *Dota2) SendStopFindingMatch() {
 	req := &dota_gcmessages_client_match_management.CMsgStopFindingMatch{}
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
+}
+
+// SendSuccessfulHero sends a successful hero.
+// Request ID: k_EMsgSuccessfulHero
+// Request type: CMsgSuccessfulHero
+func (d *Dota2) SendSuccessfulHero(
+	heroID uint32,
+	winPercent float32,
+	longestStreak uint32,
+) {
+	req := &dota_gcmessages_common.CMsgSuccessfulHero{
+		HeroId:        &heroID,
+		WinPercent:    &winPercent,
+		LongestStreak: &longestStreak,
+	}
+	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSuccessfulHero), req)
 }
 
 // SendSuspiciousActivity sends a suspicious activity.
@@ -4812,6 +4926,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCClientSuspended)] = d.getEventEmitter(func() events.Event {
 		return &events.ClientSuspended{}
+	})
+	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientCommendNotification)] = d.getEventEmitter(func() events.Event {
+		return &events.CommendNotification{}
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged)] = d.getEventEmitter(func() events.Event {
 		return &events.CompendiumDataChanged{}
