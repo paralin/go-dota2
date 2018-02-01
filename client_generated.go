@@ -1740,7 +1740,7 @@ func (d *Dota2) ReportChatPublicSpam(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatReportPublicSpam), req)
 }
 
-// RequestAnchorPhoneNumber requests a anchor phone number.
+// RequestAnchorPhoneNumber requests to check if the target anchor phone number.
 // Request ID: k_EMsgAnchorPhoneNumberRequest
 // Response ID: k_EMsgAnchorPhoneNumberResponse
 // Request type: CMsgDOTAAnchorPhoneNumberRequest
@@ -4783,18 +4783,6 @@ func (d *Dota2) VoteForMVP(
 
 // registerGeneratedHandlers registers the auto-generated event handlers.
 func (d *Dota2) registerGeneratedHandlers() {
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesReply)] = d.getEventEmitter(func() events.Event {
-		return &events.AllStarVotesReply{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesRequest)] = d.getEventEmitter(func() events.Event {
-		return &events.AllStarVotesRequest{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmit)] = d.getEventEmitter(func() events.Event {
-		return &events.AllStarVotesSubmit{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmitReply)] = d.getEventEmitter(func() events.Event {
-		return &events.AllStarVotesSubmitReply{}
-	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientArcanaVotesUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.ArcanaVotesUpdate{}
 	})
@@ -4918,17 +4906,17 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange)] = d.getEventEmitter(func() events.Event {
 		return &events.NotifyAccountFlagsChange{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel)] = d.getEventEmitter(func() events.Event {
-		return &events.OtherJoinedChannel{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherLeftChannel)] = d.getEventEmitter(func() events.Event {
-		return &events.OtherLeftChannel{}
-	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPartyLeaderWatchGamePrompt)] = d.getEventEmitter(func() events.Event {
 		return &events.PartyLeaderWatchGamePrompt{}
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.PlayerInfo{}
+	})
+	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel)] = d.getEventEmitter(func() events.Event {
+		return &events.PlayerJoinedChannel{}
+	})
+	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherLeftChannel)] = d.getEventEmitter(func() events.Event {
+		return &events.PlayerLeftChannel{}
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientPlaytestStatus)] = d.getEventEmitter(func() events.Event {
 		return &events.PlaytestStatus{}

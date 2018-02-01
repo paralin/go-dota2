@@ -11,6 +11,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	devents "github.com/paralin/go-dota2/events"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
+	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	gcsm "github.com/paralin/go-dota2/protocol/gcsystemmsgs"
 	"github.com/paralin/go-dota2/socache"
@@ -92,6 +93,10 @@ func (d *Dota2) buildHandlerMap() {
 
 		// System events
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest): d.handlePingRequest,
+
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCChatMessage): d.getEventEmitter(func() devents.Event {
+			return &devents.ChatMessage{}
+		}),
 	}
 
 	d.registerGeneratedHandlers()

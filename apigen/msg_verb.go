@@ -8,6 +8,7 @@ var verbs = make(map[string]struct{})
 
 func init() {
 	verbList := []string{
+		"Anchor",
 		"Abandon",
 		"Apply",
 		"Autograph",

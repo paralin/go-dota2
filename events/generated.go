@@ -14,78 +14,6 @@ import (
 	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 )
 
-// Event is a DOTA event.
-type Event interface {
-	// GetDotaEventMsgID returns the DOTA event message ID.
-	GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg
-	// GetEventBody event body.
-	GetEventBody() proto.Message
-}
-
-// AllStarVotesReply event.
-// MessageID: k_EMsgGCToClientAllStarVotesReply
-type AllStarVotesReply struct {
-	dota_gcmessages_client.CMsgGCToClientAllStarVotesReply
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *AllStarVotesReply) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesReply
-}
-
-// GetEventBody returns the event body.
-func (e *AllStarVotesReply) GetEventBody() proto.Message {
-	return &e.CMsgGCToClientAllStarVotesReply
-}
-
-// AllStarVotesRequest event.
-// MessageID: k_EMsgGCToClientAllStarVotesRequest
-type AllStarVotesRequest struct {
-	dota_gcmessages_client.CMsgGCToClientAllStarVotesRequest
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *AllStarVotesRequest) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesRequest
-}
-
-// GetEventBody returns the event body.
-func (e *AllStarVotesRequest) GetEventBody() proto.Message {
-	return &e.CMsgGCToClientAllStarVotesRequest
-}
-
-// AllStarVotesSubmit event.
-// MessageID: k_EMsgGCToClientAllStarVotesSubmit
-type AllStarVotesSubmit struct {
-	dota_gcmessages_client.CMsgGCToClientAllStarVotesSubmit
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *AllStarVotesSubmit) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmit
-}
-
-// GetEventBody returns the event body.
-func (e *AllStarVotesSubmit) GetEventBody() proto.Message {
-	return &e.CMsgGCToClientAllStarVotesSubmit
-}
-
-// AllStarVotesSubmitReply event.
-// MessageID: k_EMsgGCToClientAllStarVotesSubmitReply
-type AllStarVotesSubmitReply struct {
-	dota_gcmessages_client.CMsgGCToClientAllStarVotesSubmitReply
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *AllStarVotesSubmitReply) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmitReply
-}
-
-// GetEventBody returns the event body.
-func (e *AllStarVotesSubmitReply) GetEventBody() proto.Message {
-	return &e.CMsgGCToClientAllStarVotesSubmitReply
-}
-
 // ArcanaVotesUpdate event.
 // MessageID: k_EMsgGCToClientArcanaVotesUpdate
 type ArcanaVotesUpdate struct {
@@ -100,6 +28,11 @@ func (e *ArcanaVotesUpdate) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg
 // GetEventBody returns the event body.
 func (e *ArcanaVotesUpdate) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientArcanaVotesUpdate
+}
+
+// GetEventName returns the event name.
+func (e *ArcanaVotesUpdate) GetEventName() string {
+	return "ArcanaVotesUpdate"
 }
 
 // BalancedShuffleLobby event.
@@ -118,6 +51,11 @@ func (e *BalancedShuffleLobby) GetEventBody() proto.Message {
 	return &e.CMsgBalancedShuffleLobby
 }
 
+// GetEventName returns the event name.
+func (e *BalancedShuffleLobby) GetEventName() string {
+	return "BalancedShuffleLobby"
+}
+
 // BattlePassRollupListRequest event.
 // MessageID: k_EMsgGCToClientBattlePassRollupListRequest
 type BattlePassRollupListRequest struct {
@@ -132,6 +70,11 @@ func (e *BattlePassRollupListRequest) GetDotaEventMsgID() dota_gcmessages_msgid.
 // GetEventBody returns the event body.
 func (e *BattlePassRollupListRequest) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientBattlePassRollupListRequest
+}
+
+// GetEventName returns the event name.
+func (e *BattlePassRollupListRequest) GetEventName() string {
+	return "BattlePassRollupListRequest"
 }
 
 // BattlePassRollupRequest event.
@@ -150,6 +93,11 @@ func (e *BattlePassRollupRequest) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientBattlePassRollupRequest
 }
 
+// GetEventName returns the event name.
+func (e *BattlePassRollupRequest) GetEventName() string {
+	return "BattlePassRollupRequest"
+}
+
 // BroadcastNotification event.
 // MessageID: k_EMsgGCBroadcastNotification
 type BroadcastNotification struct {
@@ -164,6 +112,11 @@ func (e *BroadcastNotification) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAG
 // GetEventBody returns the event body.
 func (e *BroadcastNotification) GetEventBody() proto.Message {
 	return &e.CMsgDOTABroadcastNotification
+}
+
+// GetEventName returns the event name.
+func (e *BroadcastNotification) GetEventName() string {
+	return "BroadcastNotification"
 }
 
 // ChangeTeamSub event.
@@ -182,6 +135,11 @@ func (e *ChangeTeamSub) GetEventBody() proto.Message {
 	return &e.CMsgDOTAChangeTeamSub
 }
 
+// GetEventName returns the event name.
+func (e *ChangeTeamSub) GetEventName() string {
+	return "ChangeTeamSub"
+}
+
 // ChatRegionsEnabled event.
 // MessageID: k_EMsgGCToClientChatRegionsEnabled
 type ChatRegionsEnabled struct {
@@ -196,6 +154,11 @@ func (e *ChatRegionsEnabled) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMs
 // GetEventBody returns the event body.
 func (e *ChatRegionsEnabled) GetEventBody() proto.Message {
 	return &e.CMsgDOTAChatRegionsEnabled
+}
+
+// GetEventName returns the event name.
+func (e *ChatRegionsEnabled) GetEventName() string {
+	return "ChatRegionsEnabled"
 }
 
 // ClearPracticeLobbyTeam event.
@@ -214,6 +177,11 @@ func (e *ClearPracticeLobbyTeam) GetEventBody() proto.Message {
 	return &e.CMsgClearPracticeLobbyTeam
 }
 
+// GetEventName returns the event name.
+func (e *ClearPracticeLobbyTeam) GetEventName() string {
+	return "ClearPracticeLobbyTeam"
+}
+
 // ClientIgnoredUser event.
 // MessageID: k_EMsgGCClientIgnoredUser
 type ClientIgnoredUser struct {
@@ -228,6 +196,11 @@ func (e *ClientIgnoredUser) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg
 // GetEventBody returns the event body.
 func (e *ClientIgnoredUser) GetEventBody() proto.Message {
 	return &e.CMsgDOTAClientIgnoredUser
+}
+
+// GetEventName returns the event name.
+func (e *ClientIgnoredUser) GetEventName() string {
+	return "ClientIgnoredUser"
 }
 
 // ClientSuspended event.
@@ -246,6 +219,11 @@ func (e *ClientSuspended) GetEventBody() proto.Message {
 	return &e.CMsgClientSuspended
 }
 
+// GetEventName returns the event name.
+func (e *ClientSuspended) GetEventName() string {
+	return "ClientSuspended"
+}
+
 // CompendiumDataChanged event.
 // MessageID: k_EMsgGCCompendiumDataChanged
 type CompendiumDataChanged struct {
@@ -260,6 +238,11 @@ func (e *CompendiumDataChanged) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAG
 // GetEventBody returns the event body.
 func (e *CompendiumDataChanged) GetEventBody() proto.Message {
 	return &e.CMsgDOTACompendiumData
+}
+
+// GetEventName returns the event name.
+func (e *CompendiumDataChanged) GetEventName() string {
+	return "CompendiumDataChanged"
 }
 
 // DOTALiveLeagueGameUpdate event.
@@ -278,6 +261,11 @@ func (e *DOTALiveLeagueGameUpdate) GetEventBody() proto.Message {
 	return &e.CMsgDOTALiveLeagueGameUpdate
 }
 
+// GetEventName returns the event name.
+func (e *DOTALiveLeagueGameUpdate) GetEventName() string {
+	return "DOTALiveLeagueGameUpdate"
+}
+
 // DOTAWeekendTourneySchedule event.
 // MessageID: k_EMsgDOTAWeekendTourneySchedule
 type DOTAWeekendTourneySchedule struct {
@@ -292,6 +280,11 @@ func (e *DOTAWeekendTourneySchedule) GetDotaEventMsgID() dota_gcmessages_msgid.E
 // GetEventBody returns the event body.
 func (e *DOTAWeekendTourneySchedule) GetEventBody() proto.Message {
 	return &e.CMsgWeekendTourneySchedule
+}
+
+// GetEventName returns the event name.
+func (e *DOTAWeekendTourneySchedule) GetEventName() string {
+	return "DOTAWeekendTourneySchedule"
 }
 
 // EmoticonData event.
@@ -310,6 +303,11 @@ func (e *EmoticonData) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientEmoticonData
 }
 
+// GetEventName returns the event name.
+func (e *EmoticonData) GetEventName() string {
+	return "EmoticonData"
+}
+
 // EventStatusChanged event.
 // MessageID: k_EMsgGCToClientEventStatusChanged
 type EventStatusChanged struct {
@@ -324,6 +322,11 @@ func (e *EventStatusChanged) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMs
 // GetEventBody returns the event body.
 func (e *EventStatusChanged) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientEventStatusChanged
+}
+
+// GetEventName returns the event name.
+func (e *EventStatusChanged) GetEventName() string {
+	return "EventStatusChanged"
 }
 
 // FantasyFinalPlayerStats event.
@@ -342,6 +345,11 @@ func (e *FantasyFinalPlayerStats) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyPlayerHisoricalStatsResponse_PlayerStats
 }
 
+// GetEventName returns the event name.
+func (e *FantasyFinalPlayerStats) GetEventName() string {
+	return "FantasyFinalPlayerStats"
+}
+
 // FantasyLeagueDraftStatus event.
 // MessageID: k_EMsgGCFantasyLeagueDraftStatus
 type FantasyLeagueDraftStatus struct {
@@ -356,6 +364,11 @@ func (e *FantasyLeagueDraftStatus) GetDotaEventMsgID() dota_gcmessages_msgid.EDO
 // GetEventBody returns the event body.
 func (e *FantasyLeagueDraftStatus) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyLeagueDraftStatus
+}
+
+// GetEventName returns the event name.
+func (e *FantasyLeagueDraftStatus) GetEventName() string {
+	return "FantasyLeagueDraftStatus"
 }
 
 // FantasyLeagueInfo event.
@@ -374,6 +387,11 @@ func (e *FantasyLeagueInfo) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyLeagueInfo
 }
 
+// GetEventName returns the event name.
+func (e *FantasyLeagueInfo) GetEventName() string {
+	return "FantasyLeagueInfo"
+}
+
 // FantasyMessageAdd event.
 // MessageID: k_EMsgGCFantasyMessageAdd
 type FantasyMessageAdd struct {
@@ -388,6 +406,11 @@ func (e *FantasyMessageAdd) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg
 // GetEventBody returns the event body.
 func (e *FantasyMessageAdd) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyMessageAdd
+}
+
+// GetEventName returns the event name.
+func (e *FantasyMessageAdd) GetEventName() string {
+	return "FantasyMessageAdd"
 }
 
 // FantasyRemoveOwner event.
@@ -406,6 +429,11 @@ func (e *FantasyRemoveOwner) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyRemoveOwner
 }
 
+// GetEventName returns the event name.
+func (e *FantasyRemoveOwner) GetEventName() string {
+	return "FantasyRemoveOwner"
+}
+
 // FantasyTeamInfo event.
 // MessageID: k_EMsgGCFantasyTeamInfo
 type FantasyTeamInfo struct {
@@ -420,6 +448,11 @@ func (e *FantasyTeamInfo) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *FantasyTeamInfo) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFantasyTeamInfo
+}
+
+// GetEventName returns the event name.
+func (e *FantasyTeamInfo) GetEventName() string {
+	return "FantasyTeamInfo"
 }
 
 // FeaturedItems event.
@@ -438,6 +471,11 @@ func (e *FeaturedItems) GetEventBody() proto.Message {
 	return &e.CMsgDOTAFeaturedItems
 }
 
+// GetEventName returns the event name.
+func (e *FeaturedItems) GetEventName() string {
+	return "FeaturedItems"
+}
+
 // GuildInviteData event.
 // MessageID: k_EMsgGCGuildInviteData
 type GuildInviteData struct {
@@ -452,6 +490,11 @@ func (e *GuildInviteData) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *GuildInviteData) GetEventBody() proto.Message {
 	return &e.CMsgDOTAGuildInviteData
+}
+
+// GetEventName returns the event name.
+func (e *GuildInviteData) GetEventName() string {
+	return "GuildInviteData"
 }
 
 // GuildUpdateMessage event.
@@ -470,6 +513,11 @@ func (e *GuildUpdateMessage) GetEventBody() proto.Message {
 	return &e.CMsgDOTAGuildUpdateMessage
 }
 
+// GetEventName returns the event name.
+func (e *GuildUpdateMessage) GetEventName() string {
+	return "GuildUpdateMessage"
+}
+
 // HallOfFame event.
 // MessageID: k_EMsgGCHallOfFame
 type HallOfFame struct {
@@ -484,6 +532,11 @@ func (e *HallOfFame) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *HallOfFame) GetEventBody() proto.Message {
 	return &e.CMsgDOTAHallOfFame
+}
+
+// GetEventName returns the event name.
+func (e *HallOfFame) GetEventName() string {
+	return "HallOfFame"
 }
 
 // HeroStatueCreateResult event.
@@ -502,6 +555,11 @@ func (e *HeroStatueCreateResult) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientHeroStatueCreateResult
 }
 
+// GetEventName returns the event name.
+func (e *HeroStatueCreateResult) GetEventName() string {
+	return "HeroStatueCreateResult"
+}
+
 // KickedFromMatchmakingQueue event.
 // MessageID: k_EMsgGCKickedFromMatchmakingQueue
 type KickedFromMatchmakingQueue struct {
@@ -516,6 +574,11 @@ func (e *KickedFromMatchmakingQueue) GetDotaEventMsgID() dota_gcmessages_msgid.E
 // GetEventBody returns the event body.
 func (e *KickedFromMatchmakingQueue) GetEventBody() proto.Message {
 	return &e.CMsgDOTAKickedFromMatchmakingQueue
+}
+
+// GetEventName returns the event name.
+func (e *KickedFromMatchmakingQueue) GetEventName() string {
+	return "KickedFromMatchmakingQueue"
 }
 
 // LastHitChallengeHighScorePost event.
@@ -534,6 +597,11 @@ func (e *LastHitChallengeHighScorePost) GetEventBody() proto.Message {
 	return &e.CMsgDOTALastHitChallengeHighScorePost
 }
 
+// GetEventName returns the event name.
+func (e *LastHitChallengeHighScorePost) GetEventName() string {
+	return "LastHitChallengeHighScorePost"
+}
+
 // LeagueAdminList event.
 // MessageID: k_EMsgGCLeagueAdminList
 type LeagueAdminList struct {
@@ -548,6 +616,11 @@ func (e *LeagueAdminList) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *LeagueAdminList) GetEventBody() proto.Message {
 	return &e.CMsgLeagueAdminList
+}
+
+// GetEventName returns the event name.
+func (e *LeagueAdminList) GetEventName() string {
+	return "LeagueAdminList"
 }
 
 // LeagueAdminState event.
@@ -566,6 +639,11 @@ func (e *LeagueAdminState) GetEventBody() proto.Message {
 	return &e.CMsgGCLeagueAdminState
 }
 
+// GetEventName returns the event name.
+func (e *LeagueAdminState) GetEventName() string {
+	return "LeagueAdminState"
+}
+
 // LobbyMVPAwarded event.
 // MessageID: k_EMsgGCToClientLobbyMVPAwarded
 type LobbyMVPAwarded struct {
@@ -580,6 +658,11 @@ func (e *LobbyMVPAwarded) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *LobbyMVPAwarded) GetEventBody() proto.Message {
 	return &e.CMsgDOTALobbyMVPAwarded
+}
+
+// GetEventName returns the event name.
+func (e *LobbyMVPAwarded) GetEventName() string {
+	return "LobbyMVPAwarded"
 }
 
 // LobbyMVPNotifyRecipient event.
@@ -598,6 +681,11 @@ func (e *LobbyMVPNotifyRecipient) GetEventBody() proto.Message {
 	return &e.CMsgDOTALobbyMVPNotifyRecipient
 }
 
+// GetEventName returns the event name.
+func (e *LobbyMVPNotifyRecipient) GetEventName() string {
+	return "LobbyMVPNotifyRecipient"
+}
+
 // LobbyUpdateBroadcastChannelInfo event.
 // MessageID: k_EMsgGCLobbyUpdateBroadcastChannelInfo
 type LobbyUpdateBroadcastChannelInfo struct {
@@ -612,6 +700,11 @@ func (e *LobbyUpdateBroadcastChannelInfo) GetDotaEventMsgID() dota_gcmessages_ms
 // GetEventBody returns the event body.
 func (e *LobbyUpdateBroadcastChannelInfo) GetEventBody() proto.Message {
 	return &e.CMsgGCLobbyUpdateBroadcastChannelInfo
+}
+
+// GetEventName returns the event name.
+func (e *LobbyUpdateBroadcastChannelInfo) GetEventName() string {
+	return "LobbyUpdateBroadcastChannelInfo"
 }
 
 // MakeOffering event.
@@ -630,6 +723,11 @@ func (e *MakeOffering) GetEventBody() proto.Message {
 	return &e.CMsgMakeOffering
 }
 
+// GetEventName returns the event name.
+func (e *MakeOffering) GetEventName() string {
+	return "MakeOffering"
+}
+
 // MatchGroupsVersion event.
 // MessageID: k_EMsgGCToClientMatchGroupsVersion
 type MatchGroupsVersion struct {
@@ -644,6 +742,11 @@ func (e *MatchGroupsVersion) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMs
 // GetEventBody returns the event body.
 func (e *MatchGroupsVersion) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientMatchGroupsVersion
+}
+
+// GetEventName returns the event name.
+func (e *MatchGroupsVersion) GetEventName() string {
+	return "MatchGroupsVersion"
 }
 
 // MatchSignedOut event.
@@ -662,6 +765,11 @@ func (e *MatchSignedOut) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientMatchSignedOut
 }
 
+// GetEventName returns the event name.
+func (e *MatchSignedOut) GetEventName() string {
+	return "MatchSignedOut"
+}
+
 // MergeGroupInviteReply event.
 // MessageID: k_EMsgGCToClientMergeGroupInviteReply
 type MergeGroupInviteReply struct {
@@ -676,6 +784,11 @@ func (e *MergeGroupInviteReply) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAG
 // GetEventBody returns the event body.
 func (e *MergeGroupInviteReply) GetEventBody() proto.Message {
 	return &e.CMsgDOTAGroupMergeReply
+}
+
+// GetEventName returns the event name.
+func (e *MergeGroupInviteReply) GetEventName() string {
+	return "MergeGroupInviteReply"
 }
 
 // MergePartyResponseReply event.
@@ -694,6 +807,11 @@ func (e *MergePartyResponseReply) GetEventBody() proto.Message {
 	return &e.CMsgDOTAGroupMergeReply
 }
 
+// GetEventName returns the event name.
+func (e *MergePartyResponseReply) GetEventName() string {
+	return "MergePartyResponseReply"
+}
+
 // NewNotificationAdded event.
 // MessageID: k_EMsgGCToClientNewNotificationAdded
 type NewNotificationAdded struct {
@@ -708,6 +826,11 @@ func (e *NewNotificationAdded) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGC
 // GetEventBody returns the event body.
 func (e *NewNotificationAdded) GetEventBody() proto.Message {
 	return &e.CMsgGCNotificationsResponse_Notification
+}
+
+// GetEventName returns the event name.
+func (e *NewNotificationAdded) GetEventName() string {
+	return "NewNotificationAdded"
 }
 
 // NexonPartnerUpdate event.
@@ -726,6 +849,11 @@ func (e *NexonPartnerUpdate) GetEventBody() proto.Message {
 	return &e.CMsgNexonPartnerUpdate
 }
 
+// GetEventName returns the event name.
+func (e *NexonPartnerUpdate) GetEventName() string {
+	return "NexonPartnerUpdate"
+}
+
 // NotifyAccountFlagsChange event.
 // MessageID: k_EMsgGCNotifyAccountFlagsChange
 type NotifyAccountFlagsChange struct {
@@ -742,36 +870,9 @@ func (e *NotifyAccountFlagsChange) GetEventBody() proto.Message {
 	return &e.CMsgDOTANotifyAccountFlagsChange
 }
 
-// OtherJoinedChannel event.
-// MessageID: k_EMsgGCOtherJoinedChannel
-type OtherJoinedChannel struct {
-	dota_gcmessages_client_chat.CMsgDOTAOtherJoinedChatChannel
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *OtherJoinedChannel) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel
-}
-
-// GetEventBody returns the event body.
-func (e *OtherJoinedChannel) GetEventBody() proto.Message {
-	return &e.CMsgDOTAOtherJoinedChatChannel
-}
-
-// OtherLeftChannel event.
-// MessageID: k_EMsgGCOtherLeftChannel
-type OtherLeftChannel struct {
-	dota_gcmessages_client_chat.CMsgDOTAOtherLeftChatChannel
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *OtherLeftChannel) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherLeftChannel
-}
-
-// GetEventBody returns the event body.
-func (e *OtherLeftChannel) GetEventBody() proto.Message {
-	return &e.CMsgDOTAOtherLeftChatChannel
+// GetEventName returns the event name.
+func (e *NotifyAccountFlagsChange) GetEventName() string {
+	return "NotifyAccountFlagsChange"
 }
 
 // PartyLeaderWatchGamePrompt event.
@@ -790,6 +891,11 @@ func (e *PartyLeaderWatchGamePrompt) GetEventBody() proto.Message {
 	return &e.CMsgPartyLeaderWatchGamePrompt
 }
 
+// GetEventName returns the event name.
+func (e *PartyLeaderWatchGamePrompt) GetEventName() string {
+	return "PartyLeaderWatchGamePrompt"
+}
+
 // PlayerInfo event.
 // MessageID: k_EMsgGCPlayerInfo
 type PlayerInfo struct {
@@ -804,6 +910,53 @@ func (e *PlayerInfo) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *PlayerInfo) GetEventBody() proto.Message {
 	return &e.CMsgGCPlayerInfo
+}
+
+// GetEventName returns the event name.
+func (e *PlayerInfo) GetEventName() string {
+	return "PlayerInfo"
+}
+
+// PlayerJoinedChannel event.
+// MessageID: k_EMsgGCOtherJoinedChannel
+type PlayerJoinedChannel struct {
+	dota_gcmessages_client_chat.CMsgDOTAOtherJoinedChatChannel
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *PlayerJoinedChannel) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
+	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel
+}
+
+// GetEventBody returns the event body.
+func (e *PlayerJoinedChannel) GetEventBody() proto.Message {
+	return &e.CMsgDOTAOtherJoinedChatChannel
+}
+
+// GetEventName returns the event name.
+func (e *PlayerJoinedChannel) GetEventName() string {
+	return "PlayerJoinedChannel"
+}
+
+// PlayerLeftChannel event.
+// MessageID: k_EMsgGCOtherLeftChannel
+type PlayerLeftChannel struct {
+	dota_gcmessages_client_chat.CMsgDOTAOtherLeftChatChannel
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *PlayerLeftChannel) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
+	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherLeftChannel
+}
+
+// GetEventBody returns the event body.
+func (e *PlayerLeftChannel) GetEventBody() proto.Message {
+	return &e.CMsgDOTAOtherLeftChatChannel
+}
+
+// GetEventName returns the event name.
+func (e *PlayerLeftChannel) GetEventName() string {
+	return "PlayerLeftChannel"
 }
 
 // PlaytestStatus event.
@@ -822,6 +975,11 @@ func (e *PlaytestStatus) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientPlaytestStatus
 }
 
+// GetEventName returns the event name.
+func (e *PlaytestStatus) GetEventName() string {
+	return "PlaytestStatus"
+}
+
 // Popup event.
 // MessageID: k_EMsgGCPopup
 type Popup struct {
@@ -836,6 +994,11 @@ func (e *Popup) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *Popup) GetEventBody() proto.Message {
 	return &e.CMsgDOTAPopup
+}
+
+// GetEventName returns the event name.
+func (e *Popup) GetEventName() string {
+	return "Popup"
 }
 
 // ProcessFantasyScheduledEvent event.
@@ -854,6 +1017,11 @@ func (e *ProcessFantasyScheduledEvent) GetEventBody() proto.Message {
 	return &e.CMsgDOTAProcessFantasyScheduledEvent
 }
 
+// GetEventName returns the event name.
+func (e *ProcessFantasyScheduledEvent) GetEventName() string {
+	return "ProcessFantasyScheduledEvent"
+}
+
 // ProfileCardUpdated event.
 // MessageID: k_EMsgGCToClientProfileCardUpdated
 type ProfileCardUpdated struct {
@@ -868,6 +1036,11 @@ func (e *ProfileCardUpdated) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMs
 // GetEventBody returns the event body.
 func (e *ProfileCardUpdated) GetEventBody() proto.Message {
 	return &e.CMsgDOTAProfileCard
+}
+
+// GetEventName returns the event name.
+func (e *ProfileCardUpdated) GetEventName() string {
+	return "ProfileCardUpdated"
 }
 
 // QuestProgressUpdated event.
@@ -886,6 +1059,11 @@ func (e *QuestProgressUpdated) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientQuestProgressUpdated
 }
 
+// GetEventName returns the event name.
+func (e *QuestProgressUpdated) GetEventName() string {
+	return "QuestProgressUpdated"
+}
+
 // ReadyUpStatus event.
 // MessageID: k_EMsgGCReadyUpStatus
 type ReadyUpStatus struct {
@@ -900,6 +1078,11 @@ func (e *ReadyUpStatus) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *ReadyUpStatus) GetEventBody() proto.Message {
 	return &e.CMsgReadyUpStatus
+}
+
+// GetEventName returns the event name.
+func (e *ReadyUpStatus) GetEventName() string {
+	return "ReadyUpStatus"
 }
 
 // ResetMapLocations event.
@@ -918,6 +1101,11 @@ func (e *ResetMapLocations) GetEventBody() proto.Message {
 	return &e.CMsgResetMapLocations
 }
 
+// GetEventName returns the event name.
+func (e *ResetMapLocations) GetEventName() string {
+	return "ResetMapLocations"
+}
+
 // SteamDatagramTicket event.
 // MessageID: k_EMsgGCToClientSteamDatagramTicket
 type SteamDatagramTicket struct {
@@ -932,6 +1120,11 @@ func (e *SteamDatagramTicket) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCM
 // GetEventBody returns the event body.
 func (e *SteamDatagramTicket) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientSteamDatagramTicket
+}
+
+// GetEventName returns the event name.
+func (e *SteamDatagramTicket) GetEventName() string {
+	return "SteamDatagramTicket"
 }
 
 // TeamInfo event.
@@ -950,6 +1143,11 @@ func (e *TeamInfo) GetEventBody() proto.Message {
 	return &e.CMsgDOTATeamInfo
 }
 
+// GetEventName returns the event name.
+func (e *TeamInfo) GetEventName() string {
+	return "TeamInfo"
+}
+
 // TeamInviteGCImmediateResponseToInviter event.
 // MessageID: k_EMsgGCTeamInvite_GCImmediateResponseToInviter
 type TeamInviteGCImmediateResponseToInviter struct {
@@ -964,6 +1162,11 @@ func (e *TeamInviteGCImmediateResponseToInviter) GetDotaEventMsgID() dota_gcmess
 // GetEventBody returns the event body.
 func (e *TeamInviteGCImmediateResponseToInviter) GetEventBody() proto.Message {
 	return &e.CMsgDOTATeamInvite_GCImmediateResponseToInviter
+}
+
+// GetEventName returns the event name.
+func (e *TeamInviteGCImmediateResponseToInviter) GetEventName() string {
+	return "TeamInviteGCImmediateResponseToInviter"
 }
 
 // TeamInviteReceived event.
@@ -982,6 +1185,11 @@ func (e *TeamInviteReceived) GetEventBody() proto.Message {
 	return &e.CMsgDOTATeamInvite_GCRequestToInvitee
 }
 
+// GetEventName returns the event name.
+func (e *TeamInviteReceived) GetEventName() string {
+	return "TeamInviteReceived"
+}
+
 // TeamInviteResponseReceived event.
 // MessageID: k_EMsgGCTeamInvite_GCResponseToInviter
 type TeamInviteResponseReceived struct {
@@ -996,6 +1204,11 @@ func (e *TeamInviteResponseReceived) GetDotaEventMsgID() dota_gcmessages_msgid.E
 // GetEventBody returns the event body.
 func (e *TeamInviteResponseReceived) GetEventBody() proto.Message {
 	return &e.CMsgDOTATeamInvite_GCResponseToInviter
+}
+
+// GetEventName returns the event name.
+func (e *TeamInviteResponseReceived) GetEventName() string {
+	return "TeamInviteResponseReceived"
 }
 
 // TeamsInfo event.
@@ -1014,6 +1227,11 @@ func (e *TeamsInfo) GetEventBody() proto.Message {
 	return &e.CMsgDOTATeamsInfo
 }
 
+// GetEventName returns the event name.
+func (e *TeamsInfo) GetEventName() string {
+	return "TeamsInfo"
+}
+
 // TipNotification event.
 // MessageID: k_EMsgGCToClientTipNotification
 type TipNotification struct {
@@ -1028,6 +1246,11 @@ func (e *TipNotification) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *TipNotification) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientTipNotification
+}
+
+// GetEventName returns the event name.
+func (e *TipNotification) GetEventName() string {
+	return "TipNotification"
 }
 
 // TournamentItemDrop event.
@@ -1046,6 +1269,11 @@ func (e *TournamentItemDrop) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientTournamentItemDrop
 }
 
+// GetEventName returns the event name.
+func (e *TournamentItemDrop) GetEventName() string {
+	return "TournamentItemDrop"
+}
+
 // TrophyAwarded event.
 // MessageID: k_EMsgGCToClientTrophyAwarded
 type TrophyAwarded struct {
@@ -1060,6 +1288,11 @@ func (e *TrophyAwarded) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *TrophyAwarded) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientTrophyAwarded
+}
+
+// GetEventName returns the event name.
+func (e *TrophyAwarded) GetEventName() string {
+	return "TrophyAwarded"
 }
 
 // UpdateClientClippy event.
@@ -1078,6 +1311,11 @@ func (e *UpdateClientClippy) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientUpdateClientClippy
 }
 
+// GetEventName returns the event name.
+func (e *UpdateClientClippy) GetEventName() string {
+	return "UpdateClientClippy"
+}
+
 // WageringUpdate event.
 // MessageID: k_EMsgGCToClientWageringUpdate
 type WageringUpdate struct {
@@ -1092,6 +1330,11 @@ func (e *WageringUpdate) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *WageringUpdate) GetEventBody() proto.Message {
 	return &e.CMsgGCToClientWageringUpdate
+}
+
+// GetEventName returns the event name.
+func (e *WageringUpdate) GetEventName() string {
+	return "WageringUpdate"
 }
 
 // WatchDownloadedReplay event.
@@ -1110,6 +1353,11 @@ func (e *WatchDownloadedReplay) GetEventBody() proto.Message {
 	return &e.CMsgGCWatchDownloadedReplay
 }
 
+// GetEventName returns the event name.
+func (e *WatchDownloadedReplay) GetEventName() string {
+	return "WatchDownloadedReplay"
+}
+
 // WatchGame event.
 // MessageID: k_EMsgGCWatchGame
 type WatchGame struct {
@@ -1124,4 +1372,9 @@ func (e *WatchGame) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
 // GetEventBody returns the event body.
 func (e *WatchGame) GetEventBody() proto.Message {
 	return &e.CMsgWatchGame
+}
+
+// GetEventName returns the event name.
+func (e *WatchGame) GetEventName() string {
+	return "WatchGame"
 }

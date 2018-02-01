@@ -259,13 +259,6 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	}
 	fmt.Fprintf(eventsOutput, ")\n")
 
-	fmt.Fprintf(eventsOutput, "\n\n// Event is a DOTA event.\ntype Event interface {\n")
-	fmt.Fprintf(eventsOutput, "\t// GetDotaEventMsgID returns the DOTA event message ID.\n")
-	fmt.Fprintf(eventsOutput, "\tGetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg\n")
-	fmt.Fprintf(eventsOutput, "\t// GetEventBody event body.\n")
-	fmt.Fprintf(eventsOutput, "\tGetEventBody() proto.Message\n")
-	fmt.Fprintf(eventsOutput, "}\n")
-
 	for _, eventHandler := range eventHandlersOrdered {
 		fmt.Fprintf(eventsOutput, "\n")
 		fmt.Fprintf(eventsOutput, eventHandler.generateComment())
@@ -284,6 +277,11 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		fmt.Fprintf(eventsOutput, "\n// GetEventBody returns the event body.\n")
 		fmt.Fprintf(eventsOutput, "func (e *%s) GetEventBody() proto.Message {\n", eventHandler.eventName)
 		fmt.Fprintf(eventsOutput, "\treturn &e.%s\n", eventHandler.eventType.TypeName)
+		fmt.Fprintf(eventsOutput, "}\n")
+
+		fmt.Fprintf(eventsOutput, "\n// GetEventName returns the event name.\n")
+		fmt.Fprintf(eventsOutput, "func (e *%s) GetEventName() string {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "\treturn \"%s\"\n", eventHandler.eventName)
 		fmt.Fprintf(eventsOutput, "}\n")
 
 		fmt.Fprintf(

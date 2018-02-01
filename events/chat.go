@@ -1,7 +1,9 @@
 package events
 
 import (
+	"github.com/golang/protobuf/proto"
 	gcmcc "github.com/paralin/go-dota2/protocol/dota_gcmessages_client_chat"
+	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 )
 
 // ChatMessage is emitted when a chat message is observed.
@@ -9,12 +11,17 @@ type ChatMessage struct {
 	gcmcc.CMsgDOTAChatMessage
 }
 
-// LeftChatChannel is emitted when we left a channel.
-type LeftChatChannel struct {
-	gcmcc.CMsgDOTAOtherLeftChatChannel
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *ChatMessage) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
+	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatMessage
 }
 
-// JoinedChatChannel is emitted when we joined a channel.
-type JoinedChatChannel struct {
-	gcmcc.CMsgDOTAOtherJoinedChatChannel
+// GetEventBody returns the event body.
+func (e *ChatMessage) GetEventBody() proto.Message {
+	return &e.CMsgDOTAChatMessage
+}
+
+// GetEventName returns the chat message event name.
+func (e *ChatMessage) GetEventName() string {
+	return "ChatMessage"
 }
