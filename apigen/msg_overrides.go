@@ -25,6 +25,8 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCSuggestTeamMatchmaking:    MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCUpdateClippy:              MsgSenderNone,
 
+	dm.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels: MsgSenderClient,
+
 	dm.EDOTAGCMsg_k_EMsgGCConsumeFantasyTicket:        MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCConsumeFantasyTicketFailure: MsgSenderNone,
 
@@ -162,6 +164,13 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPNotifyRecipient: MsgSenderGC,
 	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded:         MsgSenderGC,
+
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC:                  MsgSenderClient,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter: MsgSenderGC,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee:           MsgSenderGC,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC:          MsgSenderClient,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee:          MsgSenderClient,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter:          MsgSenderGC,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
@@ -184,6 +193,9 @@ var msgMethodNameOverrides = map[dm.EDOTAGCMsg]string{
 	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick:               "KickLobbyMember",
 	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam:       "KickLobbyMemberFromTeam",
 	dm.EDOTAGCMsg_k_EMsgGCBotGameCreate:                   "CreateBotGame",
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC:          "InvitePlayerToTeam",
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC:  "RespondToTeamInvite",
+	dm.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels:         "RejoinAllChatChannels",
 }
 
 // msgResponseOverrides maps request message IDs to response message IDs.
@@ -193,6 +205,9 @@ var msgResponseOverrides = map[dm.EDOTAGCMsg]dm.EDOTAGCMsg{
 	// dm.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack: dm.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse,
 	dm.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest: 0,
 	dm.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest:    dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo,
+
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC:         dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter,
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC: dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee,
 }
 
 // msgProtoTypeOverrides overrides the GC message to proto mapping.
@@ -267,4 +282,9 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 
 var msgArgAsParameterOverrides = map[dm.EDOTAGCMsg]bool{
 	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails: true,
+}
+
+var msgEventNameOverrides = map[dm.EDOTAGCMsg]string{
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee:  "TeamInviteReceived",
+	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter: "TeamInviteResponseReceived",
 }

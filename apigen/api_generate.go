@@ -28,18 +28,21 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	msgIds := getSortedMsgIDs()
 	var requestFuncs []*generatedRequestFunc
 
+	eventsImports := make(map[string]struct{})
+	eventsImports["github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"] = struct{}{}
+	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
+
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/protocol/dota_shared_enums"] = struct{}{}
 	clientImports["github.com/faceit/go-steam/steamid"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"] = struct{}{}
-
-	eventsImports := make(map[string]struct{})
-	eventsImports["context"] = struct{}{}
+	clientImports["github.com/paralin/go-dota2/events"] = struct{}{}
 
 	// responseMsgs are messages that are known to be responses.
 	responseMsgs := make(map[gcm.EDOTAGCMsg]struct{})
 	eventHandlers := make(map[gcm.EDOTAGCMsg]*generatedEventHandler)
+	var eventHandlersOrdered []*generatedEventHandler
 
 	for _, msgID := range msgIds {
 		sender := GetMessageSender(msgID)
@@ -71,18 +74,18 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 			}
 
 			eventHandlers[msgID] = eventHandler
+			eventHandlersOrdered = append(eventHandlersOrdered, eventHandler)
 		}
 	}
-
-	sort.Slice(requestFuncs, func(i int, j int) bool {
-		return requestFuncs[i].methodName < requestFuncs[j].methodName
-	})
 
 	for pakPath := range clientImports {
 		fmt.Fprintf(clientOutput, "\t\"%s\"\n", pakPath)
 	}
-
 	fmt.Fprintf(clientOutput, ")\n")
+
+	sort.Slice(requestFuncs, func(i int, j int) bool {
+		return requestFuncs[i].methodName < requestFuncs[j].methodName
+	})
 
 	steamIDFieldOverrides := make(map[string]string)
 	for _, f := range requestFuncs {
@@ -243,6 +246,55 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		fmt.Fprintf(clientOutput, "}\n")
 	}
 
+	sort.Slice(eventHandlersOrdered, func(i int, j int) bool {
+		return eventHandlersOrdered[i].eventName < eventHandlersOrdered[j].eventName
+	})
+
+	fmt.Fprintf(clientOutput, "\n// registerGeneratedHandlers registers the auto-generated event handlers.\n")
+	fmt.Fprintf(clientOutput, "func (d *Dota2) registerGeneratedHandlers() {\n")
+
+	fmt.Fprintf(eventsOutput, "package events\n\nimport (\n")
+	for pakPath := range eventsImports {
+		fmt.Fprintf(eventsOutput, "\t\"%s\"\n", pakPath)
+	}
+	fmt.Fprintf(eventsOutput, ")\n")
+
+	fmt.Fprintf(eventsOutput, "\n\n// Event is a DOTA event.\ntype Event interface {\n")
+	fmt.Fprintf(eventsOutput, "\t// GetDotaEventMsgID returns the DOTA event message ID.\n")
+	fmt.Fprintf(eventsOutput, "\tGetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg\n")
+	fmt.Fprintf(eventsOutput, "\t// GetEventBody event body.\n")
+	fmt.Fprintf(eventsOutput, "\tGetEventBody() proto.Message\n")
+	fmt.Fprintf(eventsOutput, "}\n")
+
+	for _, eventHandler := range eventHandlersOrdered {
+		fmt.Fprintf(eventsOutput, "\n")
+		fmt.Fprintf(eventsOutput, eventHandler.generateComment())
+		fmt.Fprintf(eventsOutput, "type %s struct {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "\t")
+		if err := printFieldType(eventsOutput, eventHandler.eventType.Obj.Type()); err != nil {
+			return err
+		}
+		fmt.Fprintf(eventsOutput, "\n}\n")
+
+		fmt.Fprintf(eventsOutput, "\n// GetDotaEventMsgID returns the dota message ID of the event.\n")
+		fmt.Fprintf(eventsOutput, "func (e *%s) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "\treturn dota_gcmessages_msgid.EDOTAGCMsg_%s\n", eventHandler.msgID.String())
+		fmt.Fprintf(eventsOutput, "}\n")
+
+		fmt.Fprintf(eventsOutput, "\n// GetEventBody returns the event body.\n")
+		fmt.Fprintf(eventsOutput, "func (e *%s) GetEventBody() proto.Message {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "\treturn &e.%s\n", eventHandler.eventType.TypeName)
+		fmt.Fprintf(eventsOutput, "}\n")
+
+		fmt.Fprintf(
+			clientOutput,
+			"\td.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_%s)] = d.getEventEmitter(func() events.Event {\n",
+			eventHandler.msgID.String(),
+		)
+		fmt.Fprintf(clientOutput, "\t\treturn &events.%s{}\n\t})\n", eventHandler.eventName)
+	}
+
+	fmt.Fprintf(clientOutput, "}\n")
 	return nil
 }
 

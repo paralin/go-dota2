@@ -43,25 +43,27 @@ func init() {
 
 			clientFileDat, err := gofmt.Source(clientFileBuf.Bytes())
 			if err != nil {
-				return err
+				clientFileDat = clientFileBuf.Bytes()
 			}
 
 			if err := ioutil.WriteFile(clientOutFile, clientFileDat, 0655); err != nil {
 				return err
 			}
 
-			/*
-				eventsFileDat, err := gofmt.Source(eventsFileBuf.Bytes())
-				if err != nil {
-					return err
-				}
+			if err != nil {
+				return err
+			}
 
-				if err := ioutil.WriteFile(eventsOutFile, eventsFileDat, 0655); err != nil {
-					return err
-				}
-			*/
+			eventsFileDat, err := gofmt.Source(eventsFileBuf.Bytes())
+			if err != nil {
+				eventsFileDat = eventsFileBuf.Bytes()
+			}
 
-			return nil
+			if err := ioutil.WriteFile(eventsOutFile, eventsFileDat, 0655); err != nil {
+				return err
+			}
+
+			return err
 		},
 	})
 }

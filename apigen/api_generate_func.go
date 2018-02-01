@@ -115,5 +115,15 @@ func (f *generatedRequestFunc) generateComment() string {
 		)
 	}
 
-	return fmt.Sprintf("%s %s", f.methodName, purpose)
+	acA := "// Request ID: " + f.reqMsgID.String()
+	if f.respMsgID != 0 {
+		acA += "\n// Response ID: " + f.respMsgID.String()
+	}
+
+	acB := "// Request type: " + f.reqType.Name()
+	if f.respMsgID != 0 {
+		acB += "\n// Response type: " + f.respType.Name()
+	}
+
+	return fmt.Sprintf("%s %s\n%s\n%s", f.methodName, purpose, acA, acB)
 }

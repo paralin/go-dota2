@@ -93,6 +93,8 @@ func (d *Dota2) buildHandlerMap() {
 		// System events
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest): d.handlePingRequest,
 	}
+
+	d.registerGeneratedHandlers()
 }
 
 // write sends a message to the game coordinator.
@@ -164,4 +166,17 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 func (d *Dota2) handlePingRequest(packet *gamecoordinator.GCPacket) error {
 	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsdkm.CMsgGCClientPing{})
 	return nil
+}
+
+// getEventEmitter returns a handler that emits an event, used by the generated code.
+func (d *Dota2) getEventEmitter(ctor func() devents.Event) func(packet *gamecoordinator.GCPacket) error {
+	return func(packet *gamecoordinator.GCPacket) error {
+		obj := ctor()
+		if err := d.unmarshalBody(packet, obj.GetEventBody()); err != nil {
+			return err
+		}
+
+		d.emit(obj)
+		return nil
+	}
 }

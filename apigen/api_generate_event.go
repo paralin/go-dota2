@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
 )
 
@@ -27,4 +29,8 @@ func buildGeneratedEventHandler(
 		eventName: GetMessageEventName(msgID),
 		eventType: eventProtoType,
 	}, nil
+}
+
+func (g *generatedEventHandler) generateComment() string {
+	return fmt.Sprintf("// %s event.\n// MessageID: %s\n", g.eventName, g.msgID.String())
 }
