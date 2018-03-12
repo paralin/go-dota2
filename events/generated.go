@@ -476,27 +476,6 @@ func (e *FantasyTeamInfo) GetEventName() string {
 	return "FantasyTeamInfo"
 }
 
-// FeaturedItems event.
-// MessageID: k_EMsgGCFeaturedItems
-type FeaturedItems struct {
-	dota_gcmessages_client.CMsgDOTAFeaturedItems
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *FeaturedItems) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFeaturedItems
-}
-
-// GetEventBody returns the event body.
-func (e *FeaturedItems) GetEventBody() proto.Message {
-	return &e.CMsgDOTAFeaturedItems
-}
-
-// GetEventName returns the event name.
-func (e *FeaturedItems) GetEventName() string {
-	return "FeaturedItems"
-}
-
 // GuildInviteData event.
 // MessageID: k_EMsgGCGuildInviteData
 type GuildInviteData struct {
@@ -1314,27 +1293,6 @@ func (e *TrophyAwarded) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *TrophyAwarded) GetEventName() string {
 	return "TrophyAwarded"
-}
-
-// UpdateClientClippy event.
-// MessageID: k_EMsgGCUpdateClientClippy
-type UpdateClientClippy struct {
-	dota_gcmessages_client.CMsgGCToClientUpdateClientClippy
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *UpdateClientClippy) GetDotaEventMsgID() dota_gcmessages_msgid.EDOTAGCMsg {
-	return dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCUpdateClientClippy
-}
-
-// GetEventBody returns the event body.
-func (e *UpdateClientClippy) GetEventBody() proto.Message {
-	return &e.CMsgGCToClientUpdateClientClippy
-}
-
-// GetEventName returns the event name.
-func (e *UpdateClientClippy) GetEventName() string {
-	return "UpdateClientClippy"
 }
 
 // WageringUpdate event.

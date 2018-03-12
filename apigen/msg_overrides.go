@@ -23,7 +23,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnect:          MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnectresponse:  MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCSuggestTeamMatchmaking:    MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCUpdateClippy:              MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels: MsgSenderClient,
 
@@ -51,10 +50,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGC_TournamentItemEventResponse: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule: MsgSenderGC,
-
-	dm.EDOTAGCMsg_k_EMsgGCFeaturedItems: MsgSenderGC,
-
-	dm.EDOTAGCMsg_k_EMsgGCSetFeaturedItems: MsgSenderClient,
 
 	dm.EDOTAGCMsg_k_EMsgGCMatchHistoryList: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCGetRecentMatches: MsgSenderNone,
@@ -177,9 +172,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmit:      MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmitReply: MsgSenderNone,
-
-	dm.EDOTAGCMsg_k_EMsgGCProfileRequest:  MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCProfileResponse: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
@@ -187,7 +179,6 @@ var msgMethodNameOverrides = map[dm.EDOTAGCMsg]string{
 	dm.EDOTAGCMsg_k_EMsgGameAutographReward:               "AutographReward",
 	dm.EDOTAGCMsg_k_EMsgDestroyLobbyRequest:               "DestroyLobby",
 	dm.EDOTAGCMsg_k_EMsgGCReadyUp:                         "SendReadyUp",
-	dm.EDOTAGCMsg_k_EMsgGCRequestInternatinalTicketEmail:  "RequestInternationalTicketEmail",
 	dm.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame:              "AbandonLobby",
 	dm.EDOTAGCMsg_k_EMsgGCDOTAClearNotifySuccessfulReport: "ClearSuccessfulReportNotification",
 	dm.EDOTAGCMsg_k_EMsgClientToGCGetTrophyList:           "ListTrophies",
@@ -240,8 +231,6 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats:         &dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStatsRequest{},
 	dm.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule:                  &dota_gcmessages_client_tournament.CMsgRequestWeekendTourneySchedule{},
 
-	dm.EDOTAGCMsg_k_EMsgGCRequestInternatinalTicketEmail: &dota_gcmessages_client.CMsgRequestInternationalTicket{},
-
 	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader:     &dota_gcmessages_client_match_management.CMsgDOTASetGroupLeader{},
 	dm.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites: &dota_gcmessages_client_match_management.CMsgDOTACancelGroupInvites{},
 
@@ -269,8 +258,6 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated:   &dota_gcmessages_common.CMsgDOTAProfileCard{},
 	dm.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded: &dota_gcmessages_client.CMsgGCNotificationsResponse_Notification{},
-
-	dm.EDOTAGCMsg_k_EMsgGCUpdateClientClippy: &dota_gcmessages_client.CMsgGCToClientUpdateClientClippy{},
 
 	dm.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse: &dota_gcmessages_client.CMsgMatchVoteResponse{},
 

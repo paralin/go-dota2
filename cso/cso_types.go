@@ -75,9 +75,6 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 	MapLocationState: func() proto.Message {
 		return &gccm.CSODOTAMapLocationState{}
 	},
-	Tournament: func() proto.Message {
-		return &gccm.CMsgDOTALeagueTournament{}
-	},
 	PlayerChallenge: func() proto.Message {
 		return &gccm.CSODOTAPlayerChallenge{}
 	},

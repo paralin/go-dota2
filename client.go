@@ -168,7 +168,6 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 	}
 
 	respHandled := d.handleResponsePacket(le, packet)
-
 	if !ok && !respHandled {
 		le.Debug("unhandled gc packet")
 		d.emit(&devents.UnhandledGCPacket{

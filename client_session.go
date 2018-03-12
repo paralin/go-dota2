@@ -24,15 +24,16 @@ func (d *Dota2) SetPlaying(playing bool) {
 }
 
 // SayHello says hello to the Dota2 server, in an attempt to get a session.
-func (d *Dota2) SayHello() {
+func (d *Dota2) SayHello(haveCacheVersions ...*gcsdkm.CMsgSOCacheHaveVersion) {
 	d.le.Debug("sending hello to GC")
 	partnerAccType := gcsdkm.PartnerAccountType_PARTNER_NONE
 	engine := gcsdkm.ESourceEngine_k_ESE_Source2
 	var clientSessionNeed uint32 = 104
 	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCClientHello), &gcsdkm.CMsgClientHello{
-		ClientLauncher:    &partnerAccType,
-		Engine:            &engine,
-		ClientSessionNeed: &clientSessionNeed,
+		ClientLauncher:      &partnerAccType,
+		Engine:              &engine,
+		ClientSessionNeed:   &clientSessionNeed,
+		SocacheHaveVersions: haveCacheVersions,
 	})
 }
 

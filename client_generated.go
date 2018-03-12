@@ -765,12 +765,10 @@ func (d *Dota2) GetHeroStatsHistory(
 // Response type: CMsgGCGetHeroTimedStatsResponse
 func (d *Dota2) GetHeroTimedStats(
 	ctx context.Context,
-	accountID uint32,
 	heroID uint32,
 ) (*dota_gcmessages_client.CMsgGCGetHeroTimedStatsResponse, error) {
 	req := &dota_gcmessages_client.CMsgGCGetHeroTimedStats{
-		AccountId: &accountID,
-		HeroId:    &heroID,
+		HeroId: &heroID,
 	}
 	resp := &dota_gcmessages_client.CMsgGCGetHeroTimedStatsResponse{}
 
@@ -1380,16 +1378,14 @@ func (d *Dota2) ListGuildmateLobby(
 // Response type: CMsgPracticeLobbyListResponse
 func (d *Dota2) ListLobbies(
 	ctx context.Context,
-	tournamentGames bool,
 	passKey string,
 	region uint32,
 	gameMode dota_shared_enums.DOTA_GameMode,
 ) (*dota_gcmessages_client_match_management.CMsgPracticeLobbyListResponse, error) {
 	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyList{
-		TournamentGames: &tournamentGames,
-		PassKey:         &passKey,
-		Region:          &region,
-		GameMode:        &gameMode,
+		PassKey:  &passKey,
+		Region:   &region,
+		GameMode: &gameMode,
 	}
 	resp := &dota_gcmessages_client_match_management.CMsgPracticeLobbyListResponse{}
 
@@ -1542,6 +1538,54 @@ func (d *Dota2) PublishUserStat(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPublishUserStat), req)
 }
 
+// PurchaseHeroRandomRelic purchases a hero random relic.
+// Request ID: k_EMsgPurchaseHeroRandomRelic
+// Response ID: k_EMsgPurchaseHeroRandomRelicResponse
+// Request type: CMsgPurchaseHeroRandomRelic
+// Response type: CMsgPurchaseHeroRandomRelicResponse
+func (d *Dota2) PurchaseHeroRandomRelic(
+	ctx context.Context,
+	heroID uint32,
+) (*dota_gcmessages_client.CMsgPurchaseHeroRandomRelicResponse, error) {
+	req := &dota_gcmessages_client.CMsgPurchaseHeroRandomRelic{
+		HeroId: &heroID,
+	}
+	resp := &dota_gcmessages_client.CMsgPurchaseHeroRandomRelicResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelic),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelicResponse),
+		resp,
+	)
+}
+
+// PurchaseHeroRelic purchases a hero relic.
+// Request ID: k_EMsgPurchaseHeroRelic
+// Response ID: k_EMsgPurchaseHeroRelicResponse
+// Request type: CMsgPurchaseHeroRelic
+// Response type: CMsgPurchaseHeroRelicResponse
+func (d *Dota2) PurchaseHeroRelic(
+	ctx context.Context,
+	heroID uint32,
+	killEaterType uint32,
+) (*dota_gcmessages_client.CMsgPurchaseHeroRelicResponse, error) {
+	req := &dota_gcmessages_client.CMsgPurchaseHeroRelic{
+		HeroId:        &heroID,
+		KillEaterType: &killEaterType,
+	}
+	resp := &dota_gcmessages_client.CMsgPurchaseHeroRelicResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRelic),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRelicResponse),
+		resp,
+	)
+}
+
 // PurchaseItemWithEventPoints purchases item with event points.
 // Request ID: k_EMsgPurchaseItemWithEventPoints
 // Response ID: k_EMsgPurchaseItemWithEventPointsResponse
@@ -1629,6 +1673,29 @@ func (d *Dota2) RecordCompendiumStats(
 		LinksFollowed: &linksFollowed,
 	}
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecordCompendiumStats), req)
+}
+
+// RecycleHeroRelic recycles a hero relic.
+// Request ID: k_EMsgClientToGCRecycleHeroRelic
+// Response ID: k_EMsgClientToGCRecycleHeroRelicResponse
+// Request type: CMsgClientToGCRecycleHeroRelic
+// Response type: CMsgClientToGCRecycleHeroRelicResponse
+func (d *Dota2) RecycleHeroRelic(
+	ctx context.Context,
+	itemIDs []uint64,
+) (*dota_gcmessages_client.CMsgClientToGCRecycleHeroRelicResponse, error) {
+	req := &dota_gcmessages_client.CMsgClientToGCRecycleHeroRelic{
+		ItemIds: itemIDs,
+	}
+	resp := &dota_gcmessages_client.CMsgClientToGCRecycleHeroRelicResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelic),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelicResponse),
+		resp,
+	)
 }
 
 // RecyclePlayerCard recycles a player card.
@@ -1738,6 +1805,26 @@ func (d *Dota2) ReportChatPublicSpam(
 		ChannelUserId: &channelUserID,
 	}
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatReportPublicSpam), req)
+}
+
+// RequestActivatePlusFreeTrial requests a activate plus free trial.
+// Request ID: k_EMsgActivatePlusFreeTrialRequest
+// Response ID: k_EMsgActivatePlusFreeTrialResponse
+// Request type: CMsgActivatePlusFreeTrialRequest
+// Response type: CMsgActivatePlusFreeTrialResponse
+func (d *Dota2) RequestActivatePlusFreeTrial(
+	ctx context.Context,
+) (*dota_gcmessages_client.CMsgActivatePlusFreeTrialResponse, error) {
+	req := &dota_gcmessages_client.CMsgActivatePlusFreeTrialRequest{}
+	resp := &dota_gcmessages_client.CMsgActivatePlusFreeTrialResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialResponse),
+		resp,
+	)
 }
 
 // RequestAnchorPhoneNumber requests to check if the target anchor phone number.
@@ -2736,12 +2823,27 @@ func (d *Dota2) RequestHalloweenHighScore(
 	)
 }
 
-// RequestInternationalTicketEmail requests a international ticket email.
-// Request ID: k_EMsgGCRequestInternatinalTicketEmail
-// Request type: CMsgRequestInternationalTicket
-func (d *Dota2) RequestInternationalTicketEmail() {
-	req := &dota_gcmessages_client.CMsgRequestInternationalTicket{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestInternatinalTicketEmail), req)
+// RequestHeroGlobalData requests a hero global data.
+// Request ID: k_EMsgHeroGlobalDataRequest
+// Response ID: k_EMsgHeroGlobalDataResponse
+// Request type: CMsgHeroGlobalDataRequest
+// Response type: CMsgHeroGlobalDataResponse
+func (d *Dota2) RequestHeroGlobalData(
+	ctx context.Context,
+	heroID uint32,
+) (*dota_gcmessages_client.CMsgHeroGlobalDataResponse, error) {
+	req := &dota_gcmessages_client.CMsgHeroGlobalDataRequest{
+		HeroId: &heroID,
+	}
+	resp := &dota_gcmessages_client.CMsgHeroGlobalDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgHeroGlobalDataRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgHeroGlobalDataResponse),
+		resp,
+	)
 }
 
 // RequestItemEditorReservations requests item editor reservations.
@@ -2831,6 +2933,31 @@ func (d *Dota2) RequestJoinableCustomLobbies(
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesRequest),
 		req,
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesResponse),
+		resp,
+	)
+}
+
+// RequestLaneSuggest requests a lane suggest.
+// Request ID: k_EMsgLaneSuggestRequest
+// Response ID: k_EMsgLaneSuggestResponse
+// Request type: CMsgLaneSuggestRequest
+// Response type: CMsgLaneSuggestResponse
+func (d *Dota2) RequestLaneSuggest(
+	ctx context.Context,
+	radiantHeroIDs []uint32,
+	direHeroIDs []uint32,
+) (*dota_gcmessages_client.CMsgLaneSuggestResponse, error) {
+	req := &dota_gcmessages_client.CMsgLaneSuggestRequest{
+		RadiantHeroIds: radiantHeroIDs,
+		DireHeroIds:    direHeroIDs,
+	}
+	resp := &dota_gcmessages_client.CMsgLaneSuggestResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLaneSuggestRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLaneSuggestResponse),
 		resp,
 	)
 }
@@ -3225,6 +3352,31 @@ func (d *Dota2) RequestPlayerStats(
 	)
 }
 
+// RequestPlusWeeklyChallengeResult requests a plus weekly challenge result.
+// Request ID: k_EMsgClientToGCRequestPlusWeeklyChallengeResult
+// Response ID: k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse
+// Request type: CMsgClientToGCRequestPlusWeeklyChallengeResult
+// Response type: CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
+func (d *Dota2) RequestPlusWeeklyChallengeResult(
+	ctx context.Context,
+	eventID dota_shared_enums.EEvent,
+	week uint32,
+) (*dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse, error) {
+	req := &dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResult{
+		EventId: &eventID,
+		Week:    &week,
+	}
+	resp := &dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResult),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse),
+		resp,
+	)
+}
+
 // RequestPrivateChatInfo requests a private chat info.
 // Request ID: k_EMsgClientToGCPrivateChatInfoRequest
 // Response ID: k_EMsgGCToClientPrivateChatInfoResponse
@@ -3244,6 +3396,29 @@ func (d *Dota2) RequestPrivateChatInfo(
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInfoRequest),
 		req,
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientPrivateChatInfoResponse),
+		resp,
+	)
+}
+
+// RequestPrivateMetadataKey requests a private metadata key.
+// Request ID: k_EMsgPrivateMetadataKeyRequest
+// Response ID: k_EMsgPrivateMetadataKeyResponse
+// Request type: CMsgPrivateMetadataKeyRequest
+// Response type: CMsgPrivateMetadataKeyResponse
+func (d *Dota2) RequestPrivateMetadataKey(
+	ctx context.Context,
+	matchID uint64,
+) (*dota_gcmessages_client.CMsgPrivateMetadataKeyResponse, error) {
+	req := &dota_gcmessages_client.CMsgPrivateMetadataKeyRequest{
+		MatchId: &matchID,
+	}
+	resp := &dota_gcmessages_client.CMsgPrivateMetadataKeyResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPrivateMetadataKeyRequest),
+		req,
+		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPrivateMetadataKeyResponse),
 		resp,
 	)
 }
@@ -3574,29 +3749,6 @@ func (d *Dota2) RequestSteamDatagramTicket(
 	)
 }
 
-// RequestSteamProfile requests a steam profile.
-// Request ID: k_EMsgGCSteamProfileRequest
-// Response ID: k_EMsgGCSteamProfileRequestResponse
-// Request type: CMsgGCSteamProfileRequest
-// Response type: CMsgGCSteamProfileRequestResponse
-func (d *Dota2) RequestSteamProfile(
-	ctx context.Context,
-	accountID uint32,
-) (*dota_gcmessages_client.CMsgGCSteamProfileRequestResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCSteamProfileRequest{
-		AccountId: &accountID,
-	}
-	resp := &dota_gcmessages_client.CMsgGCSteamProfileRequestResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSteamProfileRequest),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSteamProfileRequestResponse),
-		resp,
-	)
-}
-
 // RequestStorePromoPages requests store promo pages.
 // Request ID: k_EMsgGCStorePromoPagesRequest
 // Response ID: k_EMsgGCStorePromoPagesResponse
@@ -3776,10 +3928,12 @@ func (d *Dota2) RequestWagering(
 func (d *Dota2) RerollPlayerChallenge(
 	eventID uint32,
 	sequenceID uint32,
+	heroID uint32,
 ) {
 	req := &dota_gcmessages_common.CMsgClientToGCRerollPlayerChallenge{
 		EventId:    &eventID,
 		SequenceId: &sequenceID,
+		HeroId:     &heroID,
 	}
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge), req)
 }
@@ -4092,6 +4246,18 @@ func (d *Dota2) SendLobbyEventPoints(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyEventPoints), req)
 }
 
+// SendLobbyPlayerPlusSubscriptionData sends a lobby player plus subscription data.
+// Request ID: k_EMsgLobbyPlayerPlusSubscriptionData
+// Request type: CMsgLobbyPlayerPlusSubscriptionData
+func (d *Dota2) SendLobbyPlayerPlusSubscriptionData(
+	heroBadges []*dota_gcmessages_common.CMsgLobbyPlayerPlusSubscriptionData_HeroBadge,
+) {
+	req := &dota_gcmessages_common.CMsgLobbyPlayerPlusSubscriptionData{
+		HeroBadges: heroBadges,
+	}
+	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyPlayerPlusSubscriptionData), req)
+}
+
 // SendLobbyPlaytestDetails sends lobby playtest details.
 // Request ID: k_EMsgLobbyPlaytestDetails
 // Request type: CMsgLobbyPlaytestDetails
@@ -4346,18 +4512,6 @@ func (d *Dota2) SetFavoriteTeam(
 	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTASetFavoriteTeam), req)
 }
 
-// SetFeaturedItems sets featured items.
-// Request ID: k_EMsgGCSetFeaturedItems
-// Request type: CMsgSetFeaturedItems
-func (d *Dota2) SetFeaturedItems(
-	featuredItemID []uint64,
-) {
-	req := &dota_gcmessages_client.CMsgSetFeaturedItems{
-		FeaturedItemId: featuredItemID,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetFeaturedItems), req)
-}
-
 // SetLobbyCoach sets a lobby coach.
 // Request ID: k_EMsgGCPracticeLobbySetCoach
 // Request type: CMsgPracticeLobbySetCoach
@@ -4516,18 +4670,6 @@ func (d *Dota2) SetProfilePrivacy(
 		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetProfilePrivacyResponse),
 		resp,
 	)
-}
-
-// SetShowcaseHero sets a showcase hero.
-// Request ID: k_EMsgGCSetShowcaseHero
-// Request type: CMsgSetShowcaseHero
-func (d *Dota2) SetShowcaseHero(
-	showcaseHeroID uint32,
-) {
-	req := &dota_gcmessages_client.CMsgSetShowcaseHero{
-		ShowcaseHeroId: &showcaseHeroID,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetShowcaseHero), req)
 }
 
 // SetSpectatorLobbyDetails sets spectator lobby details.
@@ -4940,9 +5082,6 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyTeamInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFeaturedItems)] = d.getEventEmitter(func() events.Event {
-		return &events.FeaturedItems{}
-	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildInviteData)] = d.getEventEmitter(func() events.Event {
 		return &events.GuildInviteData{}
 	})
@@ -5059,9 +5198,6 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded)] = d.getEventEmitter(func() events.Event {
 		return &events.TrophyAwarded{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCUpdateClientClippy)] = d.getEventEmitter(func() events.Event {
-		return &events.UpdateClientClippy{}
 	})
 	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientWageringUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.WageringUpdate{}
