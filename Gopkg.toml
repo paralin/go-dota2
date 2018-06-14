@@ -26,7 +26,10 @@
   branch = "master"
 
 [[constraint]]
-  name = "github.com/Sirupsen/logrus"
+  name = "github.com/sirupsen/logrus"
+  branch = "master"
 
 [[constraint]]
   name = "github.com/golang/protobuf"
+  branch = "master"
+

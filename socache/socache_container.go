@@ -4,12 +4,12 @@ import (
 	"math/rand"
 	"sync"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/paralin/go-dota2/cso"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
 
 // SOCacheContainer contains a type of object in the cache.
