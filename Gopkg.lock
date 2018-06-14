@@ -21,7 +21,6 @@
   revision = "44e46d280b43ec1531bb25252440e34f1b800b65"
 
 [[projects]]
-  branch = "master"
   name = "github.com/golang/protobuf"
   packages = [
     "jsonpb",
@@ -29,7 +28,8 @@
     "protoc-gen-go/descriptor",
     "ptypes/struct"
   ]
-  revision = "5831880292e721c76b58a16ecc60adc27d8e6355"
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/pkg/errors"
@@ -44,10 +44,10 @@
   revision = "a683aaf2d516deecd70cad0c72e3ca773ecfcef0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/sirupsen/logrus"
   packages = ["."]
-  revision = "ea8897e79973357ba785ac2533559a6297e83c44"
+  revision = "c155da19408a8799da419ed3eeb0cb5db0ad5dbc"
+  version = "v1.0.5"
 
 [[projects]]
   name = "github.com/urfave/cli"
@@ -73,6 +73,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6d3401d91984a8a6d3467fc145d6ce584f2d423f358bda2ca3c4aac80ba636a9"
+  inputs-digest = "3e14738bcb6651fcf518869a445adfe89d2a03d6a6b1bf3c7ba9474f28279b51"
   solver-name = "gps-cdcl"
   solver-version = 1
