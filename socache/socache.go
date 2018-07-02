@@ -3,9 +3,9 @@ package socache
 import (
 	"sync"
 
-	"github.com/Sirupsen/logrus"
 	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 	// gcsm "github.com/paralin/go-dota2/protocol/gcsystemmsgs"
 )
 

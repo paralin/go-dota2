@@ -5,11 +5,11 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/faceit/go-steam"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
 	devents "github.com/paralin/go-dota2/events"
+	"github.com/sirupsen/logrus"
 	// gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
 	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"

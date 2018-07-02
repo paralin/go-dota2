@@ -4,10 +4,10 @@ import (
 	"context"
 	"sync"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
 	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	"github.com/sirupsen/logrus"
 )
 
 // responseHandler returns handled, and any error

@@ -2,28 +2,34 @@
 
 
 [[projects]]
-  name = "github.com/Philipp15b/go-steam"
-  packages = ["cryptoutil","netutil","protocol","protocol/gamecoordinator","protocol/protobuf","protocol/steamlang","rwu","socialcache","steamid"]
-  revision = "2f1da88ecc3d51b7cf31cd2045f9fadbf00636bb"
-  version = "v1.0.0"
-
-[[projects]]
-  name = "github.com/Sirupsen/logrus"
-  packages = ["."]
-  revision = "d682213848ed68c0a260ca37d6dd5ace8423f5ba"
-  version = "v1.0.4"
-
-[[projects]]
   branch = "master"
   name = "github.com/faceit/go-steam"
-  packages = [".","protocol/gamecoordinator"]
-  revision = "cc80fb24c6cf07bd621967c025f9c2e94baa9214"
+  packages = [
+    "protocol",
+    "protocol/gamecoordinator",
+    "protocol/protobuf",
+    "protocol/steamlang",
+    "rwu",
+    "steamid"
+  ]
+  revision = "bda4bea3889c19a10e197fb09e40b1a0cde92792"
 
 [[projects]]
   branch = "master"
+  name = "github.com/fatih/camelcase"
+  packages = ["."]
+  revision = "44e46d280b43ec1531bb25252440e34f1b800b65"
+
+[[projects]]
   name = "github.com/golang/protobuf"
-  packages = ["jsonpb","proto","protoc-gen-go/descriptor","ptypes/struct"]
-  revision = "925541529c1fa6821df4e44ce2723319eb2be768"
+  packages = [
+    "jsonpb",
+    "proto",
+    "protoc-gen-go/descriptor",
+    "ptypes/struct"
+  ]
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/pkg/errors"
@@ -33,19 +39,40 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/serenize/snaker"
+  packages = ["."]
+  revision = "a683aaf2d516deecd70cad0c72e3ca773ecfcef0"
+
+[[projects]]
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "c155da19408a8799da419ed3eeb0cb5db0ad5dbc"
+  version = "v1.0.5"
+
+[[projects]]
+  name = "github.com/urfave/cli"
+  packages = ["."]
+  revision = "cfb38830724cc34fedffe9a2a29fb54fa9169cd1"
+  version = "v1.20.0"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
-  revision = "0efb9460aaf800c6376acf625be2853bceac2e06"
+  revision = "37a17fe027db43f76fd88b056ddf588563fc8722"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
-  packages = ["unix","windows"]
-  revision = "ff2a66f350cefa5c93a634eadb5d25bb60c85a9c"
+  packages = [
+    "unix",
+    "windows"
+  ]
+  revision = "56ede360ec1c541828fb88741b3f1049406d28f5"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a351e3d2c0c5c2c1928162303ad31252a6c93c1f668ce24f33bdcc624a61cb10"
+  inputs-digest = "3e14738bcb6651fcf518869a445adfe89d2a03d6a6b1bf3c7ba9474f28279b51"
   solver-name = "gps-cdcl"
   solver-version = 1
