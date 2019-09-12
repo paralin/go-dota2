@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/fatih/camelcase"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	"github.com/paralin/go-dota2/protocol"
 )
 
 // MsgSender is the sender type of a message.
@@ -18,7 +18,7 @@ const (
 )
 
 // GetMessageSender determines which party (GC, Client, None) would send this message in a session.
-func GetMessageSender(msg dota_gcmessages_msgid.EDOTAGCMsg) MsgSender {
+func GetMessageSender(msg protocol.EDOTAGCMsg) MsgSender {
 	if !IsValidMsg(msg) {
 		return MsgSenderNone
 	}

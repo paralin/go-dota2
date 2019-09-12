@@ -1,0 +1,3 @@
+[submodule "generator/GameTracking-Dota2"]
+	path = generator/GameTracking-Dota2
+	url = https://github.com/SteamDatabase/GameTracking-Dota2

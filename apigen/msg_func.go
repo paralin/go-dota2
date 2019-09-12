@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/fatih/camelcase"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	dota_gcmessages_msgid "github.com/paralin/go-dota2/protocol"
 )
 
 // GetMessageFuncName determines what function name we should assign a message.

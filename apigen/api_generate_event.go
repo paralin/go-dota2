@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	gcm "github.com/paralin/go-dota2/protocol"
 )
 
 type generatedEventHandler struct {

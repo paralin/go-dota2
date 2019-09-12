@@ -1,33 +1,55 @@
 #!/bin/bash
 set -eo pipefail
 
-PERSIST_TEMPDIR="yes"
+REPO_ROOT=$(git rev-parse --show-toplevel)
+GAME_DIR="GameTracking-Dota2"
+GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}"
 
-GAMETRACKING_REPO="https://github.com/SteamDatabase/GameTracking-Dota2/archive/master/gametracking-dota2.tar.gz"
+cd ${REPO_ROOT}/generator
+git submodule update --init ${GAME_DIR}
 
-if [ -n "$PERSIST_TEMPDIR" ]; then
-    WORK_DIR=/tmp/dota-proto-update
-    mkdir -p ${WORK_DIR}
-else
-    WORK_DIR=`mktemp -d`
-    # deletes the temp directory
-    function cleanup {
-        sync || true
-        if [ -d "$WORK_DIR" ]; then
-            rm -rf "$WORK_DIR" || true
-        fi
-    }
-    trap cleanup EXIT
-fi
+WORK_DIR=`mktemp -d`
+# deletes the temp directory
+function cleanup {
+    sync || true
+    if [ -d "$WORK_DIR" ]; then
+        rm -rf "$WORK_DIR" || true
+    fi
+}
+trap cleanup EXIT
+
+cd ${GAME_PATH}/Protobufs
+mkdir -p ${WORK_DIR}/orig ${WORK_DIR}/protos
+cp \
+    ./dota_gcmessages_*.proto \
+    ./dota_client_enums.proto \
+    ./network_connection.proto \
+    ./base_gcmessages.proto \
+    ./econ_*.proto \
+    ./dota_match_metadata.proto \
+    ./dota_shared_enums.proto \
+    ./gcsdk_gcmessages.proto \
+    ./steammessages.proto \
+    ./gcsystemmsgs.proto \
+    ${WORK_DIR}/orig/
 
 cd ${WORK_DIR}
-if [ ! -d Protobufs ]; then
-    echo "Pulling ${GAMETRACKING_REPO}"
-    curl -L ${GAMETRACKING_REPO} | tar --strip-components=1 -zxf-
-fi
-cd -
-ln -fs ${WORK_DIR}/Protobufs ./Protobufs
-go build -v
-./generator proto
-rm Protobufs
+# Add package lines to each protobuf file.
+for f in ${WORK_DIR}/orig/*.proto ; do
+    fname=$(basename $f)
+    printf 'syntax = "proto2";\npackage protocol;\n\n' |\
+        cat - $f |\
+        sed -e "s/optional \./optional /g" \
+            -e "s/required \./required /g" \
+            -e "s/repeated \./repeated /g" \
+            -e "s/\t\./\t/g" >\
+            ${WORK_DIR}/protos/${fname}
+done
+
+# Generate protobufs
+cd ${WORK_DIR}/protos
+protoc -I $(pwd) --go_out=. $(pwd)/*.proto
+
+# Move final files out.
+rsync -rv --delete $(pwd)/ ${REPO_ROOT}/protocol/
 

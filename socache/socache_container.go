@@ -7,7 +7,7 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/paralin/go-dota2/cso"
-	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
+	gcsdkm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

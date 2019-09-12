@@ -1,7 +1,7 @@
 package dota2
 
 import (
-	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
+	bgcm "github.com/paralin/go-dota2/protocol"
 )
 
 // LeaveParty attempts to leave the current party.

@@ -3,7 +3,7 @@ package main
 import (
 	"strings"
 
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	dota_gcmessages_msgid "github.com/paralin/go-dota2/protocol"
 )
 
 // GetMessageEventName returns the event name for the message.

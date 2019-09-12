@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/paralin/go-dota2/cso"
-	gcccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_client_match_management"
-	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
-	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	gcccm "github.com/paralin/go-dota2/protocol"
+	gcmm "github.com/paralin/go-dota2/protocol"
+	gcm "github.com/paralin/go-dota2/protocol"
 )
 
 // CreateLobby attempts to create a lobby with details.

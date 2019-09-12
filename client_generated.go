@@ -4,28 +4,15 @@ import (
 	"context"
 	"github.com/faceit/go-steam/steamid"
 	"github.com/paralin/go-dota2/events"
-	"github.com/paralin/go-dota2/protocol/base_gcmessages"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_chat"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_fantasy"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_guild"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_match_management"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_team"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_tournament"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_watch"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
-	"github.com/paralin/go-dota2/protocol/dota_shared_enums"
-	"github.com/paralin/go-dota2/protocol/econ_gcmessages"
+	"github.com/paralin/go-dota2/protocol"
 )
 
 // AbandonLobby abandons a lobby.
 // Request ID: k_EMsgGCAbandonCurrentGame
 // Request type: CMsgAbandonCurrentGame
 func (d *Dota2) AbandonLobby() {
-	req := &dota_gcmessages_client_match_management.CMsgAbandonCurrentGame{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame), req)
+	req := &protocol.CMsgAbandonCurrentGame{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame), req)
 }
 
 // ApplyGemCombiner applys a gem combiner.
@@ -35,11 +22,11 @@ func (d *Dota2) ApplyGemCombiner(
 	itemID1 uint64,
 	itemID2 uint64,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCApplyGemCombiner{
+	req := &protocol.CMsgClientToGCApplyGemCombiner{
 		ItemId_1: &itemID1,
 		ItemId_2: &itemID2,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCApplyGemCombiner), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCApplyGemCombiner), req)
 }
 
 // ApplyTeamToLobby applys a team to lobby.
@@ -48,10 +35,10 @@ func (d *Dota2) ApplyGemCombiner(
 func (d *Dota2) ApplyTeamToLobby(
 	teamID uint32,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgApplyTeamToPracticeLobby{
+	req := &protocol.CMsgApplyTeamToPracticeLobby{
 		TeamId: &teamID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCApplyTeamToPracticeLobby), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCApplyTeamToPracticeLobby), req)
 }
 
 // AutographReward autographs a reward.
@@ -62,17 +49,17 @@ func (d *Dota2) ApplyTeamToLobby(
 func (d *Dota2) AutographReward(
 	ctx context.Context,
 	badgeID string,
-) (*dota_gcmessages_client.CMsgDOTAGameAutographRewardResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAGameAutographReward{
+) (*protocol.CMsgDOTAGameAutographRewardResponse, error) {
+	req := &protocol.CMsgDOTAGameAutographReward{
 		BadgeId: &badgeID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAGameAutographRewardResponse{}
+	resp := &protocol.CMsgDOTAGameAutographRewardResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGameAutographReward),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGameAutographReward),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGameAutographRewardResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGameAutographRewardResponse),
 		resp,
 	)
 }
@@ -88,20 +75,20 @@ func (d *Dota2) CancelFantasyTeamTrade(
 	teamIndex1 uint32,
 	ownerAccountID2 uint32,
 	teamIndex2 uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradeCancelResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradeCancelRequest{
+) (*protocol.CMsgDOTAFantasyTeamTradeCancelResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamTradeCancelRequest{
 		FantasyLeagueId:  &fantasyLeagueID,
 		TeamIndex_1:      &teamIndex1,
 		OwnerAccountId_2: &ownerAccountID2,
 		TeamIndex_2:      &teamIndex2,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradeCancelResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamTradeCancelResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamTradeCancelRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamTradeCancelRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamTradeCancelResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamTradeCancelResponse),
 		resp,
 	)
 }
@@ -113,19 +100,19 @@ func (d *Dota2) CancelPartyInvites(
 	invitedSteamids []uint64,
 	invitedGroupids []uint64,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgDOTACancelGroupInvites{
+	req := &protocol.CMsgDOTACancelGroupInvites{
 		InvitedSteamids: invitedSteamids,
 		InvitedGroupids: invitedGroupids,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites), req)
 }
 
 // CancelWatchGame cancels a watch game.
 // Request ID: k_EMsgGCCancelWatchGame
 // Request type: CMsgCancelWatchGame
 func (d *Dota2) CancelWatchGame() {
-	req := &dota_gcmessages_client_watch.CMsgCancelWatchGame{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCancelWatchGame), req)
+	req := &protocol.CMsgCancelWatchGame{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCCancelWatchGame), req)
 }
 
 // CastMatchVote votes for/from a cast match.
@@ -133,21 +120,21 @@ func (d *Dota2) CancelWatchGame() {
 // Request type: CMsgCastMatchVote
 func (d *Dota2) CastMatchVote(
 	matchID uint64,
-	vote dota_shared_enums.DOTAMatchVote,
+	vote protocol.DOTAMatchVote,
 ) {
-	req := &dota_gcmessages_client.CMsgCastMatchVote{
+	req := &protocol.CMsgCastMatchVote{
 		MatchId: &matchID,
 		Vote:    &vote,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgCastMatchVote), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgCastMatchVote), req)
 }
 
 // ClearSuccessfulReportNotification is undocumented.
 // Request ID: k_EMsgGCDOTAClearNotifySuccessfulReport
 // Request type: CMsgDOTAClearNotifySuccessfulReport
 func (d *Dota2) ClearSuccessfulReportNotification() {
-	req := &dota_gcmessages_client.CMsgDOTAClearNotifySuccessfulReport{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCDOTAClearNotifySuccessfulReport), req)
+	req := &protocol.CMsgDOTAClearNotifySuccessfulReport{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCDOTAClearNotifySuccessfulReport), req)
 }
 
 // CloseLobbyBroadcastChannel closes a lobby broadcast channel.
@@ -156,30 +143,19 @@ func (d *Dota2) ClearSuccessfulReportNotification() {
 func (d *Dota2) CloseLobbyBroadcastChannel(
 	channel uint32,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyCloseBroadcastChannel{
+	req := &protocol.CMsgPracticeLobbyCloseBroadcastChannel{
 		Channel: &channel,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyCloseBroadcastChannel), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyCloseBroadcastChannel), req)
 }
 
 // CreateBotGame creates a bot game.
 // Request ID: k_EMsgGCBotGameCreate
 // Request type: CMsgBotGameCreate
 func (d *Dota2) CreateBotGame(
-	searchKey string,
-	difficultyRadiant dota_shared_enums.DOTABotDifficulty,
-	team dota_shared_enums.DOTA_GC_TEAM,
-	gameMode uint32,
-	difficultyDire dota_shared_enums.DOTABotDifficulty,
+	req *protocol.CMsgBotGameCreate,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgBotGameCreate{
-		SearchKey:         &searchKey,
-		DifficultyRadiant: &difficultyRadiant,
-		Team:              &team,
-		GameMode:          &gameMode,
-		DifficultyDire:    &difficultyDire,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCBotGameCreate), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBotGameCreate), req)
 }
 
 // CreateDOTAStaticRecipe creates a dota static recipe.
@@ -189,20 +165,20 @@ func (d *Dota2) CreateBotGame(
 // Response type: CMsgClientToGCCreateStaticRecipeResponse
 func (d *Dota2) CreateDOTAStaticRecipe(
 	ctx context.Context,
-	items []*econ_gcmessages.CMsgClientToGCCreateStaticRecipe_Item,
+	items []*protocol.CMsgClientToGCCreateStaticRecipe_Item,
 	recipeDefIndex uint32,
-) (*econ_gcmessages.CMsgClientToGCCreateStaticRecipeResponse, error) {
-	req := &econ_gcmessages.CMsgClientToGCCreateStaticRecipe{
+) (*protocol.CMsgClientToGCCreateStaticRecipeResponse, error) {
+	req := &protocol.CMsgClientToGCCreateStaticRecipe{
 		Items:          items,
 		RecipeDefIndex: &recipeDefIndex,
 	}
-	resp := &econ_gcmessages.CMsgClientToGCCreateStaticRecipeResponse{}
+	resp := &protocol.CMsgClientToGCCreateStaticRecipeResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCDOTACreateStaticRecipe),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCDOTACreateStaticRecipe),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCDOTACreateStaticRecipeResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCDOTACreateStaticRecipeResponse),
 		resp,
 	)
 }
@@ -214,28 +190,15 @@ func (d *Dota2) CreateDOTAStaticRecipe(
 // Response type: CMsgDOTAFantasyLeagueCreateResponse
 func (d *Dota2) CreateFantasyLeague(
 	ctx context.Context,
-	seasonID uint32,
-	fantasyLeagueName string,
-	password string,
-	teamName string,
-	logo uint64,
-	ticketItemID uint64,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueCreateResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueCreateRequest{
-		SeasonId:          &seasonID,
-		FantasyLeagueName: &fantasyLeagueName,
-		Password:          &password,
-		TeamName:          &teamName,
-		Logo:              &logo,
-		TicketItemId:      &ticketItemID,
-	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueCreateResponse{}
+	req *protocol.CMsgDOTAFantasyLeagueCreateRequest,
+) (*protocol.CMsgDOTAFantasyLeagueCreateResponse, error) {
+	resp := &protocol.CMsgDOTAFantasyLeagueCreateResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueCreateRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueCreateRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueCreateResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueCreateResponse),
 		resp,
 	)
 }
@@ -252,21 +215,21 @@ func (d *Dota2) CreateFantasyTeam(
 	teamName string,
 	logo uint64,
 	ticketItemID uint64,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamCreateResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamCreateRequest{
+) (*protocol.CMsgDOTAFantasyTeamCreateResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamCreateRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		Password:        &password,
 		TeamName:        &teamName,
 		Logo:            &logo,
 		TicketItemId:    &ticketItemID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamCreateResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamCreateResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamCreateRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamCreateRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamCreateResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamCreateResponse),
 		resp,
 	)
 }
@@ -275,40 +238,18 @@ func (d *Dota2) CreateFantasyTeam(
 // Request ID: k_EMsgGCCustomGameCreate
 // Request type: CMsgCustomGameCreate
 func (d *Dota2) CreateGameCustom(
-	searchKey string,
-	difficulty uint32,
-	gameMode string,
-	gameMap string,
-	customGameID uint64,
+	req *protocol.CMsgCustomGameCreate,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgCustomGameCreate{
-		SearchKey:    &searchKey,
-		Difficulty:   &difficulty,
-		GameMode:     &gameMode,
-		Map:          &gameMap,
-		CustomGameId: &customGameID,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCustomGameCreate), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCCustomGameCreate), req)
 }
 
 // CreateGameEvent creates a game event.
 // Request ID: k_EMsgGCEventGameCreate
 // Request type: CMsgEventGameCreate
 func (d *Dota2) CreateGameEvent(
-	searchKey string,
-	difficulty uint32,
-	gameMode string,
-	gameMap string,
-	customGameID uint64,
+	req *protocol.CMsgEventGameCreate,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgEventGameCreate{
-		SearchKey:    &searchKey,
-		Difficulty:   &difficulty,
-		GameMode:     &gameMode,
-		Map:          &gameMap,
-		CustomGameId: &customGameID,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCEventGameCreate), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCEventGameCreate), req)
 }
 
 // CreateGuild creates a guild.
@@ -323,21 +264,21 @@ func (d *Dota2) CreateGuild(
 	logo uint64,
 	baseLogo uint64,
 	bannerLogo uint64,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildCreateResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildCreateRequest{
+) (*protocol.CMsgDOTAGuildCreateResponse, error) {
+	req := &protocol.CMsgDOTAGuildCreateRequest{
 		Name:       &name,
 		Tag:        &tag,
 		Logo:       &logo,
 		BaseLogo:   &baseLogo,
 		BannerLogo: &bannerLogo,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildCreateResponse{}
+	resp := &protocol.CMsgDOTAGuildCreateResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildCreateRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCreateRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildCreateResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCreateResponse),
 		resp,
 	)
 }
@@ -346,9 +287,9 @@ func (d *Dota2) CreateGuild(
 // Request ID: k_EMsgClientToGCCreateHeroStatue
 // Request type: CMsgClientToGCCreateHeroStatue
 func (d *Dota2) CreateHeroStatue(
-	req *dota_gcmessages_client.CMsgClientToGCCreateHeroStatue,
+	req *protocol.CMsgClientToGCCreateHeroStatue,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCreateHeroStatue), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreateHeroStatue), req)
 }
 
 // CreatePlayerCardPack creates a player card pack.
@@ -361,19 +302,19 @@ func (d *Dota2) CreatePlayerCardPack(
 	cardDustItemID uint64,
 	eventID uint32,
 	premiumPack bool,
-) (*dota_gcmessages_client.CMsgClientToGCCreatePlayerCardPackResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCCreatePlayerCardPack{
+) (*protocol.CMsgClientToGCCreatePlayerCardPackResponse, error) {
+	req := &protocol.CMsgClientToGCCreatePlayerCardPack{
 		CardDustItemId: &cardDustItemID,
 		EventId:        &eventID,
 		PremiumPack:    &premiumPack,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCCreatePlayerCardPackResponse{}
+	resp := &protocol.CMsgClientToGCCreatePlayerCardPackResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse),
 		resp,
 	)
 }
@@ -382,12 +323,12 @@ func (d *Dota2) CreatePlayerCardPack(
 // Request ID: k_EMsgClientToGCCreateSpectatorLobby
 // Request type: CMsgCreateSpectatorLobby
 func (d *Dota2) CreateSpectatorLobby(
-	details dota_gcmessages_client_match_management.CMsgSetSpectatorLobbyDetails,
+	details protocol.CMsgSetSpectatorLobbyDetails,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgCreateSpectatorLobby{
+	req := &protocol.CMsgCreateSpectatorLobby{
 		Details: &details,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby), req)
 }
 
 // CreateTeam creates a team.
@@ -397,15 +338,15 @@ func (d *Dota2) CreateSpectatorLobby(
 // Response type: CMsgDOTACreateTeamResponse
 func (d *Dota2) CreateTeam(
 	ctx context.Context,
-	req *dota_gcmessages_client_team.CMsgDOTACreateTeam,
-) (*dota_gcmessages_client_team.CMsgDOTACreateTeamResponse, error) {
-	resp := &dota_gcmessages_client_team.CMsgDOTACreateTeamResponse{}
+	req *protocol.CMsgDOTACreateTeam,
+) (*protocol.CMsgDOTACreateTeamResponse, error) {
+	resp := &protocol.CMsgDOTACreateTeamResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCreateTeam),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCreateTeam),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCreateTeamResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCreateTeamResponse),
 		resp,
 	)
 }
@@ -417,11 +358,11 @@ func (d *Dota2) DemotePrivateChatMember(
 	privateChatChannelName string,
 	demoteAccountID uint32,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgClientToGCPrivateChatDemote{
+	req := &protocol.CMsgClientToGCPrivateChatDemote{
 		PrivateChatChannelName: &privateChatChannelName,
 		DemoteAccountId:        &demoteAccountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatDemote), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatDemote), req)
 }
 
 // DestroyLobby destroys a lobby.
@@ -431,15 +372,15 @@ func (d *Dota2) DemotePrivateChatMember(
 // Response type: CMsgDOTADestroyLobbyResponse
 func (d *Dota2) DestroyLobby(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTADestroyLobbyResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTADestroyLobbyRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTADestroyLobbyResponse{}
+) (*protocol.CMsgDOTADestroyLobbyResponse, error) {
+	req := &protocol.CMsgDOTADestroyLobbyRequest{}
+	resp := &protocol.CMsgDOTADestroyLobbyResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDestroyLobbyRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDestroyLobbyRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDestroyLobbyResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDestroyLobbyResponse),
 		resp,
 	)
 }
@@ -455,20 +396,20 @@ func (d *Dota2) EditFantasyTeam(
 	teamIndex uint32,
 	teamName string,
 	teamLogo uint64,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAEditFantasyTeamResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAEditFantasyTeamRequest{
+) (*protocol.CMsgDOTAEditFantasyTeamResponse, error) {
+	req := &protocol.CMsgDOTAEditFantasyTeamRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		TeamIndex:       &teamIndex,
 		TeamName:        &teamName,
 		TeamLogo:        &teamLogo,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAEditFantasyTeamResponse{}
+	resp := &protocol.CMsgDOTAEditFantasyTeamResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCEditFantasyTeamRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCEditFantasyTeamRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCEditFantasyTeamResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCEditFantasyTeamResponse),
 		resp,
 	)
 }
@@ -480,15 +421,15 @@ func (d *Dota2) EditFantasyTeam(
 // Response type: CMsgDOTAEditTeamDetailsResponse
 func (d *Dota2) EditTeamDetails(
 	ctx context.Context,
-	req *dota_gcmessages_client_team.CMsgDOTAEditTeamDetails,
-) (*dota_gcmessages_client_team.CMsgDOTAEditTeamDetailsResponse, error) {
-	resp := &dota_gcmessages_client_team.CMsgDOTAEditTeamDetailsResponse{}
+	req *protocol.CMsgDOTAEditTeamDetails,
+) (*protocol.CMsgDOTAEditTeamDetailsResponse, error) {
+	resp := &protocol.CMsgDOTAEditTeamDetailsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCEditTeamDetails),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCEditTeamDetails),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCEditTeamDetailsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCEditTeamDetailsResponse),
 		resp,
 	)
 }
@@ -502,18 +443,18 @@ func (d *Dota2) FindFantasyLeague(
 	ctx context.Context,
 	fantasyLeagueID uint32,
 	password string,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueFindResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueFindRequest{
+) (*protocol.CMsgDOTAFantasyLeagueFindResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueFindRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		Password:        &password,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueFindResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueFindResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAFantasyLeagueFindRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAFantasyLeagueFindRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAFantasyLeagueFindResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAFantasyLeagueFindResponse),
 		resp,
 	)
 }
@@ -525,28 +466,15 @@ func (d *Dota2) FindFantasyLeague(
 // Response type: CMsgGCToClientFindTopSourceTVGamesResponse
 func (d *Dota2) FindTopSourceTVGames(
 	ctx context.Context,
-	searchKey string,
-	leagueID uint32,
-	heroID uint32,
-	startGame uint32,
-	gameListIndex uint32,
-	lobbyIDs []uint64,
-) (*dota_gcmessages_client_watch.CMsgGCToClientFindTopSourceTVGamesResponse, error) {
-	req := &dota_gcmessages_client_watch.CMsgClientToGCFindTopSourceTVGames{
-		SearchKey:     &searchKey,
-		LeagueId:      &leagueID,
-		HeroId:        &heroID,
-		StartGame:     &startGame,
-		GameListIndex: &gameListIndex,
-		LobbyIds:      lobbyIDs,
-	}
-	resp := &dota_gcmessages_client_watch.CMsgGCToClientFindTopSourceTVGamesResponse{}
+	req *protocol.CMsgClientToGCFindTopSourceTVGames,
+) (*protocol.CMsgGCToClientFindTopSourceTVGamesResponse, error) {
+	resp := &protocol.CMsgGCToClientFindTopSourceTVGamesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCFindTopSourceTVGames),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFindTopSourceTVGames),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientFindTopSourceTVGamesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientFindTopSourceTVGamesResponse),
 		resp,
 	)
 }
@@ -555,8 +483,8 @@ func (d *Dota2) FindTopSourceTVGames(
 // Request ID: k_EMsgGCFlipLobbyTeams
 // Request type: CMsgFlipLobbyTeams
 func (d *Dota2) FlipLobbyTeams() {
-	req := &dota_gcmessages_client.CMsgFlipLobbyTeams{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams), req)
+	req := &protocol.CMsgFlipLobbyTeams{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams), req)
 }
 
 // GetAdditionalEquips gets additional equips.
@@ -566,15 +494,15 @@ func (d *Dota2) FlipLobbyTeams() {
 // Response type: CMsgClientToGCGetAdditionalEquipsResponse
 func (d *Dota2) GetAdditionalEquips(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgClientToGCGetAdditionalEquipsResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetAdditionalEquips{}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetAdditionalEquipsResponse{}
+) (*protocol.CMsgClientToGCGetAdditionalEquipsResponse, error) {
+	req := &protocol.CMsgClientToGCGetAdditionalEquips{}
+	resp := &protocol.CMsgClientToGCGetAdditionalEquipsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquips),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquips),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquipsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquipsResponse),
 		resp,
 	)
 }
@@ -586,15 +514,15 @@ func (d *Dota2) GetAdditionalEquips(
 // Response type: CMsgClientToGCGetAllHeroOrderResponse
 func (d *Dota2) GetAllHeroOrder(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgClientToGCGetAllHeroOrderResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetAllHeroOrder{}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetAllHeroOrderResponse{}
+) (*protocol.CMsgClientToGCGetAllHeroOrderResponse, error) {
+	req := &protocol.CMsgClientToGCGetAllHeroOrder{}
+	resp := &protocol.CMsgClientToGCGetAllHeroOrderResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrder),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrder),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrderResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrderResponse),
 		resp,
 	)
 }
@@ -607,17 +535,17 @@ func (d *Dota2) GetAllHeroOrder(
 func (d *Dota2) GetAllHeroProgress(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCGetAllHeroProgressResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetAllHeroProgress{
+) (*protocol.CMsgClientToGCGetAllHeroProgressResponse, error) {
+	req := &protocol.CMsgClientToGCGetAllHeroProgress{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetAllHeroProgressResponse{}
+	resp := &protocol.CMsgClientToGCGetAllHeroProgressResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgress),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgress),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgressResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgressResponse),
 		resp,
 	)
 }
@@ -630,19 +558,19 @@ func (d *Dota2) GetAllHeroProgress(
 func (d *Dota2) GetChatMemberCount(
 	ctx context.Context,
 	channelName string,
-	channelType dota_shared_enums.DOTAChatChannelTypeT,
-) (*dota_gcmessages_client_chat.CMsgDOTAChatGetMemberCountResponse, error) {
-	req := &dota_gcmessages_client_chat.CMsgDOTAChatGetMemberCount{
+	channelType protocol.DOTAChatChannelTypeT,
+) (*protocol.CMsgDOTAChatGetMemberCountResponse, error) {
+	req := &protocol.CMsgDOTAChatGetMemberCount{
 		ChannelName: &channelName,
 		ChannelType: &channelType,
 	}
-	resp := &dota_gcmessages_client_chat.CMsgDOTAChatGetMemberCountResponse{}
+	resp := &protocol.CMsgDOTAChatGetMemberCountResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCount),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCount),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCountResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCountResponse),
 		resp,
 	)
 }
@@ -655,17 +583,40 @@ func (d *Dota2) GetChatMemberCount(
 func (d *Dota2) GetChatUserList(
 	ctx context.Context,
 	channelID uint64,
-) (*dota_gcmessages_client_chat.CMsgDOTAChatGetUserListResponse, error) {
-	req := &dota_gcmessages_client_chat.CMsgDOTAChatGetUserList{
+) (*protocol.CMsgDOTAChatGetUserListResponse, error) {
+	req := &protocol.CMsgDOTAChatGetUserList{
 		ChannelId: &channelID,
 	}
-	resp := &dota_gcmessages_client_chat.CMsgDOTAChatGetUserListResponse{}
+	resp := &protocol.CMsgDOTAChatGetUserListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatGetUserList),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetUserList),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatGetUserListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetUserListResponse),
+		resp,
+	)
+}
+
+// GetCrawlCavernClaimedRoomCount gets a crawl cavern claimed room count.
+// Request ID: k_EMsgClientToGCCavernCrawlGetClaimedRoomCount
+// Response ID: k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
+// Request type: CMsgClientToGCCavernCrawlGetClaimedRoomCount
+// Response type: CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
+func (d *Dota2) GetCrawlCavernClaimedRoomCount(
+	ctx context.Context,
+	eventID uint32,
+) (*protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCount{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCount),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse),
 		resp,
 	)
 }
@@ -679,18 +630,63 @@ func (d *Dota2) GetEventPoints(
 	ctx context.Context,
 	eventID uint32,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgDOTAGetEventPointsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAGetEventPoints{
+) (*protocol.CMsgDOTAGetEventPointsResponse, error) {
+	req := &protocol.CMsgDOTAGetEventPoints{
 		EventId:   &eventID,
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAGetEventPointsResponse{}
+	resp := &protocol.CMsgDOTAGetEventPointsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetEventPoints),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetEventPoints),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetEventPointsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetEventPointsResponse),
+		resp,
+	)
+}
+
+// GetFavoritePlayers gets favorite players.
+// Request ID: k_EMsgClientToGCGetFavoritePlayers
+// Response ID: k_EMsgGCToClientGetFavoritePlayersResponse
+// Request type: CMsgClientToGCGetFavoritePlayers
+// Response type: CMsgGCToClientGetFavoritePlayersResponse
+func (d *Dota2) GetFavoritePlayers(
+	ctx context.Context,
+	paginationKey uint64,
+	paginationCount int32,
+) (*protocol.CMsgGCToClientGetFavoritePlayersResponse, error) {
+	req := &protocol.CMsgClientToGCGetFavoritePlayers{
+		PaginationKey:   &paginationKey,
+		PaginationCount: &paginationCount,
+	}
+	resp := &protocol.CMsgGCToClientGetFavoritePlayersResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetFavoritePlayers),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientGetFavoritePlayersResponse),
+		resp,
+	)
+}
+
+// GetFilteredPlayers gets filtered players.
+// Request ID: k_EMsgClientToGCGetFilteredPlayers
+// Response ID: k_EMsgGCToClientGetFilteredPlayersResponse
+// Request type: CMsgClientToGCGetFilteredPlayers
+// Response type: CMsgGCToClientGetFilteredPlayersResponse
+func (d *Dota2) GetFilteredPlayers(
+	ctx context.Context,
+) (*protocol.CMsgGCToClientGetFilteredPlayersResponse, error) {
+	req := &protocol.CMsgClientToGCGetFilteredPlayers{}
+	resp := &protocol.CMsgGCToClientGetFilteredPlayersResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetFilteredPlayers),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientGetFilteredPlayersResponse),
 		resp,
 	)
 }
@@ -702,15 +698,15 @@ func (d *Dota2) GetEventPoints(
 // Response type: CMsgClientToGCGetGiftPermissionsResponse
 func (d *Dota2) GetGiftPermissions(
 	ctx context.Context,
-) (*econ_gcmessages.CMsgClientToGCGetGiftPermissionsResponse, error) {
-	req := &econ_gcmessages.CMsgClientToGCGetGiftPermissions{}
-	resp := &econ_gcmessages.CMsgClientToGCGetGiftPermissionsResponse{}
+) (*protocol.CMsgClientToGCGetGiftPermissionsResponse, error) {
+	req := &protocol.CMsgClientToGCGetGiftPermissions{}
+	resp := &protocol.CMsgClientToGCGetGiftPermissionsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissions),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissions),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissionsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissionsResponse),
 		resp,
 	)
 }
@@ -722,15 +718,15 @@ func (d *Dota2) GetGiftPermissions(
 // Response type: CMsgGCGetHeroStandingsResponse
 func (d *Dota2) GetHeroStandings(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCGetHeroStandingsResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCGetHeroStandings{}
-	resp := &dota_gcmessages_client.CMsgGCGetHeroStandingsResponse{}
+) (*protocol.CMsgGCGetHeroStandingsResponse, error) {
+	req := &protocol.CMsgGCGetHeroStandings{}
+	resp := &protocol.CMsgGCGetHeroStandingsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroStandings),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroStandings),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroStandingsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroStandingsResponse),
 		resp,
 	)
 }
@@ -743,17 +739,17 @@ func (d *Dota2) GetHeroStandings(
 func (d *Dota2) GetHeroStatsHistory(
 	ctx context.Context,
 	heroID uint32,
-) (*dota_gcmessages_client.CMsgGCGetHeroStatsHistoryResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCGetHeroStatsHistory{
+) (*protocol.CMsgGCGetHeroStatsHistoryResponse, error) {
+	req := &protocol.CMsgGCGetHeroStatsHistory{
 		HeroId: &heroID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCGetHeroStatsHistoryResponse{}
+	resp := &protocol.CMsgGCGetHeroStatsHistoryResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroStatsHistory),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroStatsHistory),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroStatsHistoryResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroStatsHistoryResponse),
 		resp,
 	)
 }
@@ -766,40 +762,17 @@ func (d *Dota2) GetHeroStatsHistory(
 func (d *Dota2) GetHeroTimedStats(
 	ctx context.Context,
 	heroID uint32,
-) (*dota_gcmessages_client.CMsgGCGetHeroTimedStatsResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCGetHeroTimedStats{
+) (*protocol.CMsgGCGetHeroTimedStatsResponse, error) {
+	req := &protocol.CMsgGCGetHeroTimedStats{
 		HeroId: &heroID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCGetHeroTimedStatsResponse{}
+	resp := &protocol.CMsgGCGetHeroTimedStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroTimedStats),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroTimedStats),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetHeroTimedStatsResponse),
-		resp,
-	)
-}
-
-// GetLeagueSeries gets league series.
-// Request ID: k_EMsgClientToGCGetLeagueSeries
-// Response ID: k_EMsgClientToGCGetLeagueSeriesResponse
-// Request type: CMsgClientToGCGetLeagueSeries
-// Response type: CMsgClientToGCGetLeagueSeriesResponse
-func (d *Dota2) GetLeagueSeries(
-	ctx context.Context,
-	leagueID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCGetLeagueSeriesResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetLeagueSeries{
-		LeagueId: &leagueID,
-	}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetLeagueSeriesResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetLeagueSeries),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetLeagueSeriesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetHeroTimedStatsResponse),
 		resp,
 	)
 }
@@ -814,19 +787,19 @@ func (d *Dota2) GetPeriodicResource(
 	accountID uint32,
 	periodicResourceID uint32,
 	timestamp uint32,
-) (*dota_gcmessages_client.CMsgDOTAGetPeriodicResourceResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAGetPeriodicResource{
+) (*protocol.CMsgDOTAGetPeriodicResourceResponse, error) {
+	req := &protocol.CMsgDOTAGetPeriodicResource{
 		AccountId:          &accountID,
 		PeriodicResourceId: &periodicResourceID,
 		Timestamp:          &timestamp,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAGetPeriodicResourceResponse{}
+	resp := &protocol.CMsgDOTAGetPeriodicResourceResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetPeriodicResource),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetPeriodicResource),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetPeriodicResourceResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetPeriodicResourceResponse),
 		resp,
 	)
 }
@@ -840,18 +813,20 @@ func (d *Dota2) GetPlayerCardItemInfo(
 	ctx context.Context,
 	accountID uint32,
 	playerCardItemIDs []uint64,
-) (*dota_gcmessages_common.CMsgGCGetPlayerCardItemInfoResponse, error) {
-	req := &dota_gcmessages_common.CMsgGCGetPlayerCardItemInfo{
+	allForEvent uint32,
+) (*protocol.CMsgGCGetPlayerCardItemInfoResponse, error) {
+	req := &protocol.CMsgGCGetPlayerCardItemInfo{
 		AccountId:         &accountID,
 		PlayerCardItemIds: playerCardItemIDs,
+		AllForEvent:       &allForEvent,
 	}
-	resp := &dota_gcmessages_common.CMsgGCGetPlayerCardItemInfoResponse{}
+	resp := &protocol.CMsgGCGetPlayerCardItemInfoResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfo),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfo),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfoResponse),
 		resp,
 	)
 }
@@ -863,15 +838,15 @@ func (d *Dota2) GetPlayerCardItemInfo(
 // Response type: CMsgDOTAGetPlayerMatchHistoryResponse
 func (d *Dota2) GetPlayerMatchHistory(
 	ctx context.Context,
-	req *dota_gcmessages_client.CMsgDOTAGetPlayerMatchHistory,
-) (*dota_gcmessages_client.CMsgDOTAGetPlayerMatchHistoryResponse, error) {
-	resp := &dota_gcmessages_client.CMsgDOTAGetPlayerMatchHistoryResponse{}
+	req *protocol.CMsgDOTAGetPlayerMatchHistory,
+) (*protocol.CMsgDOTAGetPlayerMatchHistoryResponse, error) {
+	resp := &protocol.CMsgDOTAGetPlayerMatchHistoryResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistory),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistory),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistoryResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistoryResponse),
 		resp,
 	)
 }
@@ -884,17 +859,17 @@ func (d *Dota2) GetPlayerMatchHistory(
 func (d *Dota2) GetProfileCard(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_common.CMsgDOTAProfileCard, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetProfileCard{
+) (*protocol.CMsgDOTAProfileCard, error) {
+	req := &protocol.CMsgClientToGCGetProfileCard{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_common.CMsgDOTAProfileCard{}
+	resp := &protocol.CMsgDOTAProfileCard{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetProfileCard),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetProfileCard),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse),
 		resp,
 	)
 }
@@ -907,17 +882,17 @@ func (d *Dota2) GetProfileCard(
 func (d *Dota2) GetProfileTickets(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgDOTAProfileTickets, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetProfileTickets{
+) (*protocol.CMsgDOTAProfileTickets, error) {
+	req := &protocol.CMsgClientToGCGetProfileTickets{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAProfileTickets{}
+	resp := &protocol.CMsgDOTAProfileTickets{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetProfileTickets),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetProfileTickets),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse),
 		resp,
 	)
 }
@@ -930,17 +905,17 @@ func (d *Dota2) GetProfileTickets(
 func (d *Dota2) GetQuestProgress(
 	ctx context.Context,
 	questIDs []uint32,
-) (*dota_gcmessages_client.CMsgClientToGCGetQuestProgressResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetQuestProgress{
+) (*protocol.CMsgClientToGCGetQuestProgressResponse, error) {
+	req := &protocol.CMsgClientToGCGetQuestProgress{
 		QuestIds: questIDs,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetQuestProgressResponse{}
+	resp := &protocol.CMsgClientToGCGetQuestProgressResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetQuestProgress),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetQuestProgress),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetQuestProgressResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetQuestProgressResponse),
 		resp,
 	)
 }
@@ -954,18 +929,18 @@ func (d *Dota2) GetTourneyWeekendPlayerStats(
 	ctx context.Context,
 	accountID uint32,
 	seasonTrophyID uint32,
-) (*dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStats, error) {
-	req := &dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStatsRequest{
+) (*protocol.CMsgDOTAWeekendTourneyPlayerStats, error) {
+	req := &protocol.CMsgDOTAWeekendTourneyPlayerStatsRequest{
 		AccountId:      &accountID,
 		SeasonTrophyId: &seasonTrophyID,
 	}
-	resp := &dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStats{}
+	resp := &protocol.CMsgDOTAWeekendTourneyPlayerStats{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse),
 		resp,
 	)
 }
@@ -974,8 +949,8 @@ func (d *Dota2) GetTourneyWeekendPlayerStats(
 // Request ID: k_EMsgDOTAGetWeekendTourneySchedule
 // Request type: CMsgRequestWeekendTourneySchedule
 func (d *Dota2) GetWeekendTourneySchedule() {
-	req := &dota_gcmessages_client_tournament.CMsgRequestWeekendTourneySchedule{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule), req)
+	req := &protocol.CMsgRequestWeekendTourneySchedule{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule), req)
 }
 
 // GiveTip gives a tip.
@@ -988,19 +963,96 @@ func (d *Dota2) GiveTip(
 	recipientAccountID uint32,
 	matchID uint64,
 	eventID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCGiveTipResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGiveTip{
+) (*protocol.CMsgClientToGCGiveTipResponse, error) {
+	req := &protocol.CMsgClientToGCGiveTip{
 		RecipientAccountId: &recipientAccountID,
 		MatchId:            &matchID,
 		EventId:            &eventID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCGiveTipResponse{}
+	resp := &protocol.CMsgClientToGCGiveTipResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGiveTip),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGiveTip),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGiveTipResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGiveTipResponse),
+		resp,
+	)
+}
+
+// GrantDevEventAction grants a dev event action.
+// Request ID: k_EMsgDevGrantEventAction
+// Response ID: k_EMsgDevGrantEventActionResponse
+// Request type: CMsgDevGrantEventAction
+// Response type: CMsgDevGrantEventActionResponse
+func (d *Dota2) GrantDevEventAction(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	actionID uint32,
+	actionScore uint32,
+) (*protocol.CMsgDevGrantEventActionResponse, error) {
+	req := &protocol.CMsgDevGrantEventAction{
+		EventId:     &eventID,
+		ActionId:    &actionID,
+		ActionScore: &actionScore,
+	}
+	resp := &protocol.CMsgDevGrantEventActionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventAction),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventActionResponse),
+		resp,
+	)
+}
+
+// GrantDevEventPoints grants dev event points.
+// Request ID: k_EMsgDevGrantEventPoints
+// Response ID: k_EMsgDevGrantEventPointsResponse
+// Request type: CMsgDevGrantEventPoints
+// Response type: CMsgDevGrantEventPointsResponse
+func (d *Dota2) GrantDevEventPoints(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	eventPoints uint32,
+	premiumPoints uint32,
+) (*protocol.CMsgDevGrantEventPointsResponse, error) {
+	req := &protocol.CMsgDevGrantEventPoints{
+		EventId:       &eventID,
+		EventPoints:   &eventPoints,
+		PremiumPoints: &premiumPoints,
+	}
+	resp := &protocol.CMsgDevGrantEventPointsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventPoints),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventPointsResponse),
+		resp,
+	)
+}
+
+// GrantEventSupportConsumeItem grants a event support consume item.
+// Request ID: k_EMsgConsumeEventSupportGrantItem
+// Response ID: k_EMsgConsumeEventSupportGrantItemResponse
+// Request type: CMsgConsumeEventSupportGrantItem
+// Response type: CMsgConsumeEventSupportGrantItemResponse
+func (d *Dota2) GrantEventSupportConsumeItem(
+	ctx context.Context,
+	itemID uint64,
+) (*protocol.CMsgConsumeEventSupportGrantItemResponse, error) {
+	req := &protocol.CMsgConsumeEventSupportGrantItem{
+		ItemId: &itemID,
+	}
+	resp := &protocol.CMsgConsumeEventSupportGrantItemResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItem),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItemResponse),
 		resp,
 	)
 }
@@ -1014,18 +1066,18 @@ func (d *Dota2) InvitePlayerToTeam(
 	ctx context.Context,
 	accountID uint32,
 	teamID uint32,
-) (*dota_gcmessages_client_team.CMsgDOTATeamInvite_GCImmediateResponseToInviter, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTATeamInvite_InviterToGC{
+) (*protocol.CMsgDOTATeamInvite_GCImmediateResponseToInviter, error) {
+	req := &protocol.CMsgDOTATeamInvite_InviterToGC{
 		AccountId: &accountID,
 		TeamId:    &teamID,
 	}
-	resp := &dota_gcmessages_client_team.CMsgDOTATeamInvite_GCImmediateResponseToInviter{}
+	resp := &protocol.CMsgDOTATeamInvite_GCImmediateResponseToInviter{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter),
 		resp,
 	)
 }
@@ -1037,11 +1089,11 @@ func (d *Dota2) InvitePrivateChatMember(
 	privateChatChannelName string,
 	invitedAccountID uint32,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgClientToGCPrivateChatInvite{
+	req := &protocol.CMsgClientToGCPrivateChatInvite{
 		PrivateChatChannelName: &privateChatChannelName,
 		InvitedAccountId:       &invitedAccountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite), req)
 }
 
 // JoinChatChannel joins a chat channel.
@@ -1052,19 +1104,19 @@ func (d *Dota2) InvitePrivateChatMember(
 func (d *Dota2) JoinChatChannel(
 	ctx context.Context,
 	channelName string,
-	channelType dota_shared_enums.DOTAChatChannelTypeT,
-) (*dota_gcmessages_client_chat.CMsgDOTAJoinChatChannelResponse, error) {
-	req := &dota_gcmessages_client_chat.CMsgDOTAJoinChatChannel{
+	channelType protocol.DOTAChatChannelTypeT,
+) (*protocol.CMsgDOTAJoinChatChannelResponse, error) {
+	req := &protocol.CMsgDOTAJoinChatChannel{
 		ChannelName: &channelName,
 		ChannelType: &channelType,
 	}
-	resp := &dota_gcmessages_client_chat.CMsgDOTAJoinChatChannelResponse{}
+	resp := &protocol.CMsgDOTAJoinChatChannelResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinChatChannel),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinChatChannel),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse),
 		resp,
 	)
 }
@@ -1080,20 +1132,20 @@ func (d *Dota2) JoinLobby(
 	passKey string,
 	customGameCrc uint64,
 	customGameTimestamp uint32,
-) (*dota_gcmessages_client_match_management.CMsgPracticeLobbyJoinResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyJoin{
+) (*protocol.CMsgPracticeLobbyJoinResponse, error) {
+	req := &protocol.CMsgPracticeLobbyJoin{
 		LobbyId:             &lobbyID,
 		PassKey:             &passKey,
 		CustomGameCrc:       &customGameCrc,
 		CustomGameTimestamp: &customGameTimestamp,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgPracticeLobbyJoinResponse{}
+	resp := &protocol.CMsgPracticeLobbyJoinResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoin),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoin),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinResponse),
 		resp,
 	)
 }
@@ -1107,13 +1159,40 @@ func (d *Dota2) JoinLobbyBroadcastChannel(
 	preferredCountryCode string,
 	preferredLanguageCode string,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyJoinBroadcastChannel{
+	req := &protocol.CMsgPracticeLobbyJoinBroadcastChannel{
 		Channel:               &channel,
 		PreferredDescription:  &preferredDescription,
 		PreferredCountryCode:  &preferredCountryCode,
 		PreferredLanguageCode: &preferredLanguageCode,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinBroadcastChannel), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinBroadcastChannel), req)
+}
+
+// JoinPartyFromBeacon joins a party from beacon.
+// Request ID: k_EMsgClientToGCJoinPartyFromBeacon
+// Response ID: k_EMsgGCToClientJoinPartyFromBeaconResponse
+// Request type: CMsgClientToGCJoinPartyFromBeacon
+// Response type: CMsgGCToClientJoinPartyFromBeaconResponse
+func (d *Dota2) JoinPartyFromBeacon(
+	ctx context.Context,
+	partyID uint64,
+	accountID uint32,
+	beaconType int32,
+) (*protocol.CMsgGCToClientJoinPartyFromBeaconResponse, error) {
+	req := &protocol.CMsgClientToGCJoinPartyFromBeacon{
+		PartyId:    &partyID,
+		AccountId:  &accountID,
+		BeaconType: &beaconType,
+	}
+	resp := &protocol.CMsgGCToClientJoinPartyFromBeaconResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPartyFromBeacon),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientJoinPartyFromBeaconResponse),
+		resp,
+	)
 }
 
 // JoinPlaytest joins a playtest.
@@ -1123,15 +1202,15 @@ func (d *Dota2) JoinLobbyBroadcastChannel(
 // Response type: CMsgClientToGCJoinPlaytestResponse
 func (d *Dota2) JoinPlaytest(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgClientToGCJoinPlaytestResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCJoinPlaytest{}
-	resp := &dota_gcmessages_client.CMsgClientToGCJoinPlaytestResponse{}
+) (*protocol.CMsgClientToGCJoinPlaytestResponse, error) {
+	req := &protocol.CMsgClientToGCJoinPlaytest{}
+	resp := &protocol.CMsgClientToGCJoinPlaytestResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytestResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytestResponse),
 		resp,
 	)
 }
@@ -1143,28 +1222,15 @@ func (d *Dota2) JoinPlaytest(
 // Response type: CMsgQuickJoinCustomLobbyResponse
 func (d *Dota2) JoinQuickCustomLobby(
 	ctx context.Context,
-	legacyServerRegion uint32,
-	customGameID uint64,
-	createLobbyDetails dota_gcmessages_client_match_management.CMsgPracticeLobbySetDetails,
-	allowAnyMap bool,
-	legacyRegionPings []*dota_gcmessages_client_match_management.CMsgQuickJoinCustomLobby_LegacyRegionPing,
-	pingData base_gcmessages.CMsgClientPingData,
-) (*dota_gcmessages_client_match_management.CMsgQuickJoinCustomLobbyResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgQuickJoinCustomLobby{
-		LegacyServerRegion: &legacyServerRegion,
-		CustomGameId:       &customGameID,
-		CreateLobbyDetails: &createLobbyDetails,
-		AllowAnyMap:        &allowAnyMap,
-		LegacyRegionPings:  legacyRegionPings,
-		PingData:           &pingData,
-	}
-	resp := &dota_gcmessages_client_match_management.CMsgQuickJoinCustomLobbyResponse{}
+	req *protocol.CMsgQuickJoinCustomLobby,
+) (*protocol.CMsgQuickJoinCustomLobbyResponse, error) {
+	resp := &protocol.CMsgQuickJoinCustomLobbyResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobby),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobby),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobbyResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobbyResponse),
 		resp,
 	)
 }
@@ -1175,10 +1241,10 @@ func (d *Dota2) JoinQuickCustomLobby(
 func (d *Dota2) KickLobbyMember(
 	accountID uint32,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyKick{
+	req := &protocol.CMsgPracticeLobbyKick{
 		AccountId: &accountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick), req)
 }
 
 // KickLobbyMemberFromTeam kicks a lobby member from team.
@@ -1187,10 +1253,10 @@ func (d *Dota2) KickLobbyMember(
 func (d *Dota2) KickLobbyMemberFromTeam(
 	accountID uint32,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyKickFromTeam{
+	req := &protocol.CMsgPracticeLobbyKickFromTeam{
 		AccountId: &accountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam), req)
 }
 
 // KickPrivateChatMember kicks a private chat member.
@@ -1200,11 +1266,11 @@ func (d *Dota2) KickPrivateChatMember(
 	privateChatChannelName string,
 	kickAccountID uint32,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgClientToGCPrivateChatKick{
+	req := &protocol.CMsgClientToGCPrivateChatKick{
 		PrivateChatChannelName: &privateChatChannelName,
 		KickAccountId:          &kickAccountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatKick), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatKick), req)
 }
 
 // KickTeamMember kicks a team member.
@@ -1216,18 +1282,18 @@ func (d *Dota2) KickTeamMember(
 	ctx context.Context,
 	accountID uint32,
 	teamID uint32,
-) (*dota_gcmessages_client_team.CMsgDOTAKickTeamMemberResponse, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTAKickTeamMember{
+) (*protocol.CMsgDOTAKickTeamMemberResponse, error) {
+	req := &protocol.CMsgDOTAKickTeamMember{
 		AccountId: &accountID,
 		TeamId:    &teamID,
 	}
-	resp := &dota_gcmessages_client_team.CMsgDOTAKickTeamMemberResponse{}
+	resp := &protocol.CMsgDOTAKickTeamMemberResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCKickTeamMember),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCKickTeamMember),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCKickTeamMemberResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCKickTeamMemberResponse),
 		resp,
 	)
 }
@@ -1236,8 +1302,8 @@ func (d *Dota2) KickTeamMember(
 // Request ID: k_EMsgGCPracticeLobbyLaunch
 // Request type: CMsgPracticeLobbyLaunch
 func (d *Dota2) LaunchLobby() {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyLaunch{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch), req)
+	req := &protocol.CMsgPracticeLobbyLaunch{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch), req)
 }
 
 // LeaveChatChannel leaves a chat channel.
@@ -1246,18 +1312,18 @@ func (d *Dota2) LaunchLobby() {
 func (d *Dota2) LeaveChatChannel(
 	channelID uint64,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgDOTALeaveChatChannel{
+	req := &protocol.CMsgDOTALeaveChatChannel{
 		ChannelId: &channelID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLeaveChatChannel), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCLeaveChatChannel), req)
 }
 
 // LeaveLobby leaves a lobby.
 // Request ID: k_EMsgGCPracticeLobbyLeave
 // Request type: CMsgPracticeLobbyLeave
 func (d *Dota2) LeaveLobby() {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyLeave{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave), req)
+	req := &protocol.CMsgPracticeLobbyLeave{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave), req)
 }
 
 // LeaveTeam leaves a team.
@@ -1268,17 +1334,17 @@ func (d *Dota2) LeaveLobby() {
 func (d *Dota2) LeaveTeam(
 	ctx context.Context,
 	teamID uint32,
-) (*dota_gcmessages_client_team.CMsgDOTALeaveTeamResponse, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTALeaveTeam{
+) (*protocol.CMsgDOTALeaveTeamResponse, error) {
+	req := &protocol.CMsgDOTALeaveTeam{
 		TeamId: &teamID,
 	}
-	resp := &dota_gcmessages_client_team.CMsgDOTALeaveTeamResponse{}
+	resp := &protocol.CMsgDOTALeaveTeamResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLeaveTeam),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCLeaveTeam),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLeaveTeamResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCLeaveTeamResponse),
 		resp,
 	)
 }
@@ -1287,8 +1353,8 @@ func (d *Dota2) LeaveTeam(
 // Request ID: k_EMsgClientToGCWeekendTourneyLeave
 // Request type: CMsgWeekendTourneyLeave
 func (d *Dota2) LeaveTourneyWeekend() {
-	req := &dota_gcmessages_client_tournament.CMsgWeekendTourneyLeave{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave), req)
+	req := &protocol.CMsgWeekendTourneyLeave{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave), req)
 }
 
 // ListChatChannel lists a chat channel.
@@ -1298,15 +1364,15 @@ func (d *Dota2) LeaveTourneyWeekend() {
 // Response type: CMsgDOTARequestChatChannelListResponse
 func (d *Dota2) ListChatChannel(
 	ctx context.Context,
-) (*dota_gcmessages_client_chat.CMsgDOTARequestChatChannelListResponse, error) {
-	req := &dota_gcmessages_client_chat.CMsgDOTARequestChatChannelList{}
-	resp := &dota_gcmessages_client_chat.CMsgDOTARequestChatChannelListResponse{}
+) (*protocol.CMsgDOTARequestChatChannelListResponse, error) {
+	req := &protocol.CMsgDOTARequestChatChannelList{}
+	resp := &protocol.CMsgDOTARequestChatChannelListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestChatChannelList),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestChatChannelList),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestChatChannelListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestChatChannelListResponse),
 		resp,
 	)
 }
@@ -1318,11 +1384,11 @@ func (d *Dota2) ListCustomGamesTop(
 	topCustomGames []uint64,
 	gameOfTheDay uint64,
 ) {
-	req := &dota_gcmessages_common.CMsgGCTopCustomGamesList{
+	req := &protocol.CMsgGCTopCustomGamesList{
 		TopCustomGames: topCustomGames,
 		GameOfTheDay:   &gameOfTheDay,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTopCustomGamesList), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCTopCustomGamesList), req)
 }
 
 // ListFriendLobby lists a friend lobby.
@@ -1333,17 +1399,17 @@ func (d *Dota2) ListCustomGamesTop(
 func (d *Dota2) ListFriendLobby(
 	ctx context.Context,
 	friends []uint32,
-) (*dota_gcmessages_client_match_management.CMsgFriendPracticeLobbyListResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgFriendPracticeLobbyListRequest{
+) (*protocol.CMsgFriendPracticeLobbyListResponse, error) {
+	req := &protocol.CMsgFriendPracticeLobbyListRequest{
 		Friends: friends,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgFriendPracticeLobbyListResponse{}
+	resp := &protocol.CMsgFriendPracticeLobbyListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListResponse),
 		resp,
 	)
 }
@@ -1356,17 +1422,17 @@ func (d *Dota2) ListFriendLobby(
 func (d *Dota2) ListGuildmateLobby(
 	ctx context.Context,
 	guilds []uint32,
-) (*dota_gcmessages_client_match_management.CMsgGuildmatePracticeLobbyListResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgGuildmatePracticeLobbyListRequest{
+) (*protocol.CMsgGuildmatePracticeLobbyListResponse, error) {
+	req := &protocol.CMsgGuildmatePracticeLobbyListRequest{
 		Guilds: guilds,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgGuildmatePracticeLobbyListResponse{}
+	resp := &protocol.CMsgGuildmatePracticeLobbyListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListResponse),
 		resp,
 	)
 }
@@ -1380,20 +1446,20 @@ func (d *Dota2) ListLobbies(
 	ctx context.Context,
 	passKey string,
 	region uint32,
-	gameMode dota_shared_enums.DOTA_GameMode,
-) (*dota_gcmessages_client_match_management.CMsgPracticeLobbyListResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyList{
+	gameMode protocol.DOTA_GameMode,
+) (*protocol.CMsgPracticeLobbyListResponse, error) {
+	req := &protocol.CMsgPracticeLobbyList{
 		PassKey:  &passKey,
 		Region:   &region,
 		GameMode: &gameMode,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgPracticeLobbyListResponse{}
+	resp := &protocol.CMsgPracticeLobbyListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyList),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyList),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyListResponse),
 		resp,
 	)
 }
@@ -1405,15 +1471,15 @@ func (d *Dota2) ListLobbies(
 // Response type: CMsgSpectatorLobbyListResponse
 func (d *Dota2) ListLobbySpectator(
 	ctx context.Context,
-) (*dota_gcmessages_client_match_management.CMsgSpectatorLobbyListResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgSpectatorLobbyList{}
-	resp := &dota_gcmessages_client_match_management.CMsgSpectatorLobbyListResponse{}
+) (*protocol.CMsgSpectatorLobbyListResponse, error) {
+	req := &protocol.CMsgSpectatorLobbyList{}
+	resp := &protocol.CMsgSpectatorLobbyListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyList),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyList),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyListResponse),
 		resp,
 	)
 }
@@ -1424,10 +1490,10 @@ func (d *Dota2) ListLobbySpectator(
 func (d *Dota2) ListNotificationMarkRead(
 	notificationIDs []uint64,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCMarkNotificationListRead{
+	req := &protocol.CMsgClientToGCMarkNotificationListRead{
 		NotificationIds: notificationIDs,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMarkNotificationListRead), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMarkNotificationListRead), req)
 }
 
 // ListProTeam lists a pro team.
@@ -1437,15 +1503,15 @@ func (d *Dota2) ListNotificationMarkRead(
 // Response type: CMsgDOTAProTeamListResponse
 func (d *Dota2) ListProTeam(
 	ctx context.Context,
-) (*dota_gcmessages_client_team.CMsgDOTAProTeamListResponse, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTAProTeamListRequest{}
-	resp := &dota_gcmessages_client_team.CMsgDOTAProTeamListResponse{}
+) (*protocol.CMsgDOTAProTeamListResponse, error) {
+	req := &protocol.CMsgDOTAProTeamListRequest{}
+	resp := &protocol.CMsgDOTAProTeamListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCProTeamListRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCProTeamListRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCProTeamListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCProTeamListResponse),
 		resp,
 	)
 }
@@ -1458,17 +1524,17 @@ func (d *Dota2) ListProTeam(
 func (d *Dota2) ListTrophies(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCGetTrophyListResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetTrophyList{
+) (*protocol.CMsgClientToGCGetTrophyListResponse, error) {
+	req := &protocol.CMsgClientToGCGetTrophyList{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCGetTrophyListResponse{}
+	resp := &protocol.CMsgClientToGCGetTrophyListResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetTrophyList),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetTrophyList),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetTrophyListResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetTrophyListResponse),
 		resp,
 	)
 }
@@ -1478,13 +1544,13 @@ func (d *Dota2) ListTrophies(
 // Request type: CMsgDOTAGuildOpenPartyRefresh
 func (d *Dota2) OpenGuildPartyRefresh(
 	guildID uint32,
-	openParties []*dota_gcmessages_client_guild.CMsgDOTAGuildOpenPartyRefresh_OpenParty,
+	openParties []*protocol.CMsgDOTAGuildOpenPartyRefresh_OpenParty,
 ) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildOpenPartyRefresh{
+	req := &protocol.CMsgDOTAGuildOpenPartyRefresh{
 		GuildId:     &guildID,
 		OpenParties: openParties,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildOpenPartyRefresh), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildOpenPartyRefresh), req)
 }
 
 // OpenPlayerCardPack opens a player card pack.
@@ -1495,17 +1561,17 @@ func (d *Dota2) OpenGuildPartyRefresh(
 func (d *Dota2) OpenPlayerCardPack(
 	ctx context.Context,
 	playerCardPackItemID uint64,
-) (*dota_gcmessages_client.CMsgClientToGCOpenPlayerCardPackResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCOpenPlayerCardPack{
+) (*protocol.CMsgClientToGCOpenPlayerCardPackResponse, error) {
+	req := &protocol.CMsgClientToGCOpenPlayerCardPack{
 		PlayerCardPackItemId: &playerCardPackItemID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCOpenPlayerCardPackResponse{}
+	resp := &protocol.CMsgClientToGCOpenPlayerCardPackResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPack),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPack),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPackResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPackResponse),
 		resp,
 	)
 }
@@ -1517,11 +1583,11 @@ func (d *Dota2) PromotePrivateChatMember(
 	privateChatChannelName string,
 	promoteAccountID uint32,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgClientToGCPrivateChatPromote{
+	req := &protocol.CMsgClientToGCPrivateChatPromote{
 		PrivateChatChannelName: &privateChatChannelName,
 		PromoteAccountId:       &promoteAccountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatPromote), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatPromote), req)
 }
 
 // PublishUserStat publishs a user stat.
@@ -1531,11 +1597,11 @@ func (d *Dota2) PublishUserStat(
 	userStatsEvent uint32,
 	referenceData uint64,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCPublishUserStat{
+	req := &protocol.CMsgClientToGCPublishUserStat{
 		UserStatsEvent: &userStatsEvent,
 		ReferenceData:  &referenceData,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPublishUserStat), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPublishUserStat), req)
 }
 
 // PurchaseHeroRandomRelic purchases a hero random relic.
@@ -1546,17 +1612,17 @@ func (d *Dota2) PublishUserStat(
 func (d *Dota2) PurchaseHeroRandomRelic(
 	ctx context.Context,
 	heroID uint32,
-) (*dota_gcmessages_client.CMsgPurchaseHeroRandomRelicResponse, error) {
-	req := &dota_gcmessages_client.CMsgPurchaseHeroRandomRelic{
+) (*protocol.CMsgPurchaseHeroRandomRelicResponse, error) {
+	req := &protocol.CMsgPurchaseHeroRandomRelic{
 		HeroId: &heroID,
 	}
-	resp := &dota_gcmessages_client.CMsgPurchaseHeroRandomRelicResponse{}
+	resp := &protocol.CMsgPurchaseHeroRandomRelicResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelic),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelic),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelicResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelicResponse),
 		resp,
 	)
 }
@@ -1570,18 +1636,18 @@ func (d *Dota2) PurchaseHeroRelic(
 	ctx context.Context,
 	heroID uint32,
 	killEaterType uint32,
-) (*dota_gcmessages_client.CMsgPurchaseHeroRelicResponse, error) {
-	req := &dota_gcmessages_client.CMsgPurchaseHeroRelic{
+) (*protocol.CMsgPurchaseHeroRelicResponse, error) {
+	req := &protocol.CMsgPurchaseHeroRelic{
 		HeroId:        &heroID,
 		KillEaterType: &killEaterType,
 	}
-	resp := &dota_gcmessages_client.CMsgPurchaseHeroRelicResponse{}
+	resp := &protocol.CMsgPurchaseHeroRelicResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRelic),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseHeroRelic),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseHeroRelicResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseHeroRelicResponse),
 		resp,
 	)
 }
@@ -1595,22 +1661,49 @@ func (d *Dota2) PurchaseItemWithEventPoints(
 	ctx context.Context,
 	itemDef uint32,
 	quantity uint32,
-	eventID dota_shared_enums.EEvent,
+	eventID protocol.EEvent,
 	usePremiumPoints bool,
-) (*dota_gcmessages_client.CMsgPurchaseItemWithEventPointsResponse, error) {
-	req := &dota_gcmessages_client.CMsgPurchaseItemWithEventPoints{
+) (*protocol.CMsgPurchaseItemWithEventPointsResponse, error) {
+	req := &protocol.CMsgPurchaseItemWithEventPoints{
 		ItemDef:          &itemDef,
 		Quantity:         &quantity,
 		EventId:          &eventID,
 		UsePremiumPoints: &usePremiumPoints,
 	}
-	resp := &dota_gcmessages_client.CMsgPurchaseItemWithEventPointsResponse{}
+	resp := &protocol.CMsgPurchaseItemWithEventPointsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseItemWithEventPoints),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseItemWithEventPoints),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPurchaseItemWithEventPointsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPurchaseItemWithEventPointsResponse),
+		resp,
+	)
+}
+
+// PurchasePlayerCardSpecific purchases a player card specific.
+// Request ID: k_EMsgClientToGCPlayerCardSpecificPurchaseRequest
+// Response ID: k_EMsgClientToGCPlayerCardSpecificPurchaseResponse
+// Request type: CMsgClientToGCPlayerCardSpecificPurchaseRequest
+// Response type: CMsgClientToGCPlayerCardSpecificPurchaseResponse
+func (d *Dota2) PurchasePlayerCardSpecific(
+	ctx context.Context,
+	playerAccountID uint32,
+	eventID uint32,
+	cardDustItemID uint64,
+) (*protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse, error) {
+	req := &protocol.CMsgClientToGCPlayerCardSpecificPurchaseRequest{
+		PlayerAccountId: &playerAccountID,
+		EventId:         &eventID,
+		CardDustItemId:  &cardDustItemID,
+	}
+	resp := &protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseResponse),
 		resp,
 	)
 }
@@ -1622,11 +1715,11 @@ func (d *Dota2) QueryHasItem(
 	accountID uint32,
 	itemID uint64,
 ) {
-	req := &dota_gcmessages_common.CMsgDOTAHasItemQuery{
+	req := &protocol.CMsgDOTAHasItemQuery{
 		AccountId: &accountID,
 		ItemId:    &itemID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHasItemQuery), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCHasItemQuery), req)
 }
 
 // QueryHasItemDefs queries to check if the target has item defs.
@@ -1636,11 +1729,11 @@ func (d *Dota2) QueryHasItemDefs(
 	accountID uint32,
 	itemdefIDs []uint32,
 ) {
-	req := &dota_gcmessages_common.CMsgDOTAHasItemDefsQuery{
+	req := &protocol.CMsgDOTAHasItemDefsQuery{
 		AccountId:  &accountID,
 		ItemdefIds: itemdefIDs,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHasItemDefsQuery), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCHasItemDefsQuery), req)
 }
 
 // QueryIsPro queries to check if the target is pro.
@@ -1649,30 +1742,37 @@ func (d *Dota2) QueryHasItemDefs(
 func (d *Dota2) QueryIsPro(
 	accountID uint32,
 ) {
-	req := &dota_gcmessages_common.CMsgGCIsProQuery{
+	req := &protocol.CMsgGCIsProQuery{
 		AccountId: &accountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCIsProQuery), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCIsProQuery), req)
 }
 
-// RecordCompendiumStats records compendium stats.
-// Request ID: k_EMsgClientToGCRecordCompendiumStats
-// Request type: CMsgClientToGCRecordCompendiumStats
-func (d *Dota2) RecordCompendiumStats(
-	leagueID uint32,
-	viewDurationS uint32,
-	videosViewed uint32,
-	pageTurns uint32,
-	linksFollowed uint32,
-) {
-	req := &dota_gcmessages_client.CMsgClientToGCRecordCompendiumStats{
-		LeagueId:      &leagueID,
-		ViewDurationS: &viewDurationS,
-		VideosViewed:  &videosViewed,
-		PageTurns:     &pageTurns,
-		LinksFollowed: &linksFollowed,
+// RecordContestVote records a contest vote.
+// Request ID: k_EMsgClientToGCRecordContestVote
+// Response ID: k_EMsgGCToClientRecordContestVoteResponse
+// Request type: CMsgClientToGCRecordContestVote
+// Response type: CMsgGCToClientRecordContestVoteResponse
+func (d *Dota2) RecordContestVote(
+	ctx context.Context,
+	contestID uint32,
+	contestItemID uint64,
+	vote int32,
+) (*protocol.CMsgGCToClientRecordContestVoteResponse, error) {
+	req := &protocol.CMsgClientToGCRecordContestVote{
+		ContestId:     &contestID,
+		ContestItemId: &contestItemID,
+		Vote:          &vote,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecordCompendiumStats), req)
+	resp := &protocol.CMsgGCToClientRecordContestVoteResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecordContestVote),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRecordContestVoteResponse),
+		resp,
+	)
 }
 
 // RecycleHeroRelic recycles a hero relic.
@@ -1683,17 +1783,17 @@ func (d *Dota2) RecordCompendiumStats(
 func (d *Dota2) RecycleHeroRelic(
 	ctx context.Context,
 	itemIDs []uint64,
-) (*dota_gcmessages_client.CMsgClientToGCRecycleHeroRelicResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRecycleHeroRelic{
+) (*protocol.CMsgClientToGCRecycleHeroRelicResponse, error) {
+	req := &protocol.CMsgClientToGCRecycleHeroRelic{
 		ItemIds: itemIDs,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRecycleHeroRelicResponse{}
+	resp := &protocol.CMsgClientToGCRecycleHeroRelicResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelic),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelic),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelicResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelicResponse),
 		resp,
 	)
 }
@@ -1707,18 +1807,18 @@ func (d *Dota2) RecyclePlayerCard(
 	ctx context.Context,
 	playerCardItemIDs []uint64,
 	eventID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCRecyclePlayerCardResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRecyclePlayerCard{
+) (*protocol.CMsgClientToGCRecyclePlayerCardResponse, error) {
+	req := &protocol.CMsgClientToGCRecyclePlayerCard{
 		PlayerCardItemIds: playerCardItemIDs,
 		EventId:           &eventID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRecyclePlayerCardResponse{}
+	resp := &protocol.CMsgClientToGCRecyclePlayerCardResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCard),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCard),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCardResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCardResponse),
 		resp,
 	)
 }
@@ -1732,18 +1832,18 @@ func (d *Dota2) RedeemItem(
 	ctx context.Context,
 	currencyID uint64,
 	purchaseDef uint32,
-) (*dota_gcmessages_client.CMsgDOTARedeemItemResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTARedeemItem{
+) (*protocol.CMsgDOTARedeemItemResponse, error) {
+	req := &protocol.CMsgDOTARedeemItem{
 		CurrencyId:  &currencyID,
 		PurchaseDef: &purchaseDef,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTARedeemItemResponse{}
+	resp := &protocol.CMsgDOTARedeemItemResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTARedeemItem),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTARedeemItem),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTARedeemItemResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTARedeemItemResponse),
 		resp,
 	)
 }
@@ -1754,18 +1854,18 @@ func (d *Dota2) RedeemItem(
 func (d *Dota2) RefreshPartnerAccountLink(
 	partnerType int32,
 ) {
-	req := &dota_gcmessages_client.CMsgRefreshPartnerAccountLink{
+	req := &protocol.CMsgRefreshPartnerAccountLink{
 		PartnerType: &partnerType,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgRefreshPartnerAccountLink), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgRefreshPartnerAccountLink), req)
 }
 
 // RejoinAllChatChannels is undocumented.
 // Request ID: k_EMsgClientsRejoinChatChannels
 // Request type: CMsgClientsRejoinChatChannels
 func (d *Dota2) RejoinAllChatChannels() {
-	req := &dota_gcmessages_client.CMsgClientsRejoinChatChannels{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels), req)
+	req := &protocol.CMsgClientsRejoinChatChannels{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels), req)
 }
 
 // ReleaseEditorItemReservation releases a editor item reservation.
@@ -1777,18 +1877,18 @@ func (d *Dota2) ReleaseEditorItemReservation(
 	ctx context.Context,
 	defIndex uint32,
 	username string,
-) (*dota_gcmessages_client.CMsgGCItemEditorReleaseReservationResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCItemEditorReleaseReservation{
+) (*protocol.CMsgGCItemEditorReleaseReservationResponse, error) {
+	req := &protocol.CMsgGCItemEditorReleaseReservation{
 		DefIndex: &defIndex,
 		Username: &username,
 	}
-	resp := &dota_gcmessages_client.CMsgGCItemEditorReleaseReservationResponse{}
+	resp := &protocol.CMsgGCItemEditorReleaseReservationResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservation),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservation),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservationResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservationResponse),
 		resp,
 	)
 }
@@ -1800,11 +1900,11 @@ func (d *Dota2) ReportChatPublicSpam(
 	channelID uint64,
 	channelUserID uint32,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgGCChatReportPublicSpam{
+	req := &protocol.CMsgGCChatReportPublicSpam{
 		ChannelId:     &channelID,
 		ChannelUserId: &channelUserID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatReportPublicSpam), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCChatReportPublicSpam), req)
 }
 
 // RequestActivatePlusFreeTrial requests a activate plus free trial.
@@ -1814,15 +1914,35 @@ func (d *Dota2) ReportChatPublicSpam(
 // Response type: CMsgActivatePlusFreeTrialResponse
 func (d *Dota2) RequestActivatePlusFreeTrial(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgActivatePlusFreeTrialResponse, error) {
-	req := &dota_gcmessages_client.CMsgActivatePlusFreeTrialRequest{}
-	resp := &dota_gcmessages_client.CMsgActivatePlusFreeTrialResponse{}
+) (*protocol.CMsgActivatePlusFreeTrialResponse, error) {
+	req := &protocol.CMsgActivatePlusFreeTrialRequest{}
+	resp := &protocol.CMsgActivatePlusFreeTrialResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgActivatePlusFreeTrialResponse),
+		resp,
+	)
+}
+
+// RequestActiveBeaconParties requests active beacon parties.
+// Request ID: k_EMsgClientToGCRequestActiveBeaconParties
+// Response ID: k_EMsgGCToClientRequestActiveBeaconPartiesResponse
+// Request type: CMsgClientToGCRequestActiveBeaconParties
+// Response type: CMsgGCToClientRequestActiveBeaconPartiesResponse
+func (d *Dota2) RequestActiveBeaconParties(
+	ctx context.Context,
+) (*protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse, error) {
+	req := &protocol.CMsgClientToGCRequestActiveBeaconParties{}
+	resp := &protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestActiveBeaconParties),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRequestActiveBeaconPartiesResponse),
 		resp,
 	)
 }
@@ -1834,15 +1954,15 @@ func (d *Dota2) RequestActivatePlusFreeTrial(
 // Response type: CMsgDOTAAnchorPhoneNumberResponse
 func (d *Dota2) RequestAnchorPhoneNumber(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAAnchorPhoneNumberResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAAnchorPhoneNumberRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTAAnchorPhoneNumberResponse{}
+) (*protocol.CMsgDOTAAnchorPhoneNumberResponse, error) {
+	req := &protocol.CMsgDOTAAnchorPhoneNumberRequest{}
+	resp := &protocol.CMsgDOTAAnchorPhoneNumberResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgAnchorPhoneNumberRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgAnchorPhoneNumberRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgAnchorPhoneNumberResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgAnchorPhoneNumberResponse),
 		resp,
 	)
 }
@@ -1854,15 +1974,15 @@ func (d *Dota2) RequestAnchorPhoneNumber(
 // Response type: CMsgClientToGCRequestArcanaVotesRemainingResponse
 func (d *Dota2) RequestArcanaVotesRemaining(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgClientToGCRequestArcanaVotesRemainingResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestArcanaVotesRemaining{}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestArcanaVotesRemainingResponse{}
+) (*protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse, error) {
+	req := &protocol.CMsgClientToGCRequestArcanaVotesRemaining{}
+	resp := &protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemaining),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemaining),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemainingResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemainingResponse),
 		resp,
 	)
 }
@@ -1876,18 +1996,64 @@ func (d *Dota2) RequestCompendiumData(
 	ctx context.Context,
 	accountID uint32,
 	leagueid uint32,
-) (*dota_gcmessages_client.CMsgDOTACompendiumDataResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTACompendiumDataRequest{
+) (*protocol.CMsgDOTACompendiumDataResponse, error) {
+	req := &protocol.CMsgDOTACompendiumDataRequest{
 		AccountId: &accountID,
 		Leagueid:  &leagueid,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTACompendiumDataResponse{}
+	resp := &protocol.CMsgDOTACompendiumDataResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumDataRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumDataRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumDataResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumDataResponse),
+		resp,
+	)
+}
+
+// RequestContestVotes requests contest votes.
+// Request ID: k_EMsgClientToGCRequestContestVotes
+// Response ID: k_EMsgClientToGCRequestContestVotesResponse
+// Request type: CMsgClientToGCRequestContestVotes
+// Response type: CMsgClientToGCRequestContestVotesResponse
+func (d *Dota2) RequestContestVotes(
+	ctx context.Context,
+	contestID uint32,
+) (*protocol.CMsgClientToGCRequestContestVotesResponse, error) {
+	req := &protocol.CMsgClientToGCRequestContestVotes{
+		ContestId: &contestID,
+	}
+	resp := &protocol.CMsgClientToGCRequestContestVotesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestContestVotes),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestContestVotesResponse),
+		resp,
+	)
+}
+
+// RequestCrawlCavernMapState requests a crawl cavern map state.
+// Request ID: k_EMsgClientToGCCavernCrawlRequestMapState
+// Response ID: k_EMsgClientToGCCavernCrawlRequestMapStateResponse
+// Request type: CMsgClientToGCCavernCrawlRequestMapState
+// Response type: CMsgClientToGCCavernCrawlRequestMapStateResponse
+func (d *Dota2) RequestCrawlCavernMapState(
+	ctx context.Context,
+	eventID uint32,
+) (*protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlRequestMapState{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapState),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapStateResponse),
 		resp,
 	)
 }
@@ -1900,17 +2066,17 @@ func (d *Dota2) RequestCompendiumData(
 func (d *Dota2) RequestCustomGamePlayerCount(
 	ctx context.Context,
 	customGameID uint64,
-) (*dota_gcmessages_client.CMsgGCToClientCustomGamePlayerCountResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCCustomGamePlayerCountRequest{
+) (*protocol.CMsgGCToClientCustomGamePlayerCountResponse, error) {
+	req := &protocol.CMsgClientToGCCustomGamePlayerCountRequest{
 		CustomGameId: &customGameID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientCustomGamePlayerCountResponse{}
+	resp := &protocol.CMsgGCToClientCustomGamePlayerCountResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCustomGamePlayerCountRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCustomGamePlayerCountRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientCustomGamePlayerCountResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCustomGamePlayerCountResponse),
 		resp,
 	)
 }
@@ -1922,29 +2088,17 @@ func (d *Dota2) RequestCustomGamePlayerCount(
 // Response type: CMsgGCToClientCustomGamesFriendsPlayedResponse
 func (d *Dota2) RequestCustomGamesFriendsPlayed(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCToClientCustomGamesFriendsPlayedResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCCustomGamesFriendsPlayedRequest{}
-	resp := &dota_gcmessages_client.CMsgGCToClientCustomGamesFriendsPlayedResponse{}
+) (*protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse, error) {
+	req := &protocol.CMsgClientToGCCustomGamesFriendsPlayedRequest{}
+	resp := &protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCCustomGamesFriendsPlayedRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCustomGamesFriendsPlayedRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientCustomGamesFriendsPlayedResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCustomGamesFriendsPlayedResponse),
 		resp,
 	)
-}
-
-// RequestEditorItemLeagueInfo requests a editor item league info.
-// Request ID: k_EMsgGCItemEditorRequestLeagueInfo
-// Request type: CMsgGCItemEditorRequestLeagueInfo
-func (d *Dota2) RequestEditorItemLeagueInfo(
-	leagueID uint32,
-) {
-	req := &dota_gcmessages_client.CMsgGCItemEditorRequestLeagueInfo{
-		LeagueId: &leagueID,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorRequestLeagueInfo), req)
 }
 
 // RequestEmoticonData requests a emoticon data.
@@ -1954,15 +2108,15 @@ func (d *Dota2) RequestEditorItemLeagueInfo(
 // Response type: CMsgGCToClientEmoticonData
 func (d *Dota2) RequestEmoticonData(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCToClientEmoticonData, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCEmoticonDataRequest{}
-	resp := &dota_gcmessages_client.CMsgGCToClientEmoticonData{}
+) (*protocol.CMsgGCToClientEmoticonData, error) {
+	req := &protocol.CMsgClientToGCEmoticonDataRequest{}
+	resp := &protocol.CMsgGCToClientEmoticonData{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCEmoticonDataRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCEmoticonDataRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientEmoticonData),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientEmoticonData),
 		resp,
 	)
 }
@@ -1974,41 +2128,71 @@ func (d *Dota2) RequestEmoticonData(
 // Response type: CMsgEventGoals
 func (d *Dota2) RequestEventGoals(
 	ctx context.Context,
-	eventIDs []dota_shared_enums.EEvent,
-) (*dota_gcmessages_client.CMsgEventGoals, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCGetEventGoals{
+	eventIDs []protocol.EEvent,
+) (*protocol.CMsgEventGoals, error) {
+	req := &protocol.CMsgClientToGCGetEventGoals{
 		EventIds: eventIDs,
 	}
-	resp := &dota_gcmessages_client.CMsgEventGoals{}
+	resp := &protocol.CMsgEventGoals{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse),
 		resp,
 	)
 }
 
-// RequestEventPointLog requests a event point log.
-// Request ID: k_EMsgClientToGCRequestEventPointLog
-// Response ID: k_EMsgClientToGCRequestEventPointLogResponse
-// Request type: CMsgClientToGCRequestEventPointLog
-// Response type: CMsgClientToGCRequestEventPointLogResponse
-func (d *Dota2) RequestEventPointLog(
-	ctx context.Context,
+// RequestEventPointLogResponseV2 requests a event point log response v 2.
+// Request ID: k_EMsgClientToGCRequestEventPointLogResponseV2
+// Request type: CMsgClientToGCRequestEventPointLogResponseV2
+func (d *Dota2) RequestEventPointLogResponseV2(
+	result bool,
+	eventID protocol.EEvent,
+	logEntries []*protocol.CMsgClientToGCRequestEventPointLogResponseV2_LogEntry,
+) {
+	req := &protocol.CMsgClientToGCRequestEventPointLogResponseV2{
+		Result:     &result,
+		EventId:    &eventID,
+		LogEntries: logEntries,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogResponseV2), req)
+}
+
+// RequestEventPointLogV2 requests a event point log v 2.
+// Request ID: k_EMsgClientToGCRequestEventPointLogV2
+// Request type: CMsgClientToGCRequestEventPointLogV2
+func (d *Dota2) RequestEventPointLogV2(
 	eventID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCRequestEventPointLogResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestEventPointLog{
+) {
+	req := &protocol.CMsgClientToGCRequestEventPointLogV2{
 		EventId: &eventID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestEventPointLogResponse{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogV2), req)
+}
+
+// RequestEventTipsSummary requests a event tips summary.
+// Request ID: k_EMsgClientToGCRequestEventTipsSummary
+// Response ID: k_EMsgClientToGCRequestEventTipsSummaryResponse
+// Request type: CMsgEventTipsSummaryRequest
+// Response type: CMsgEventTipsSummaryResponse
+func (d *Dota2) RequestEventTipsSummary(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	accountID uint32,
+) (*protocol.CMsgEventTipsSummaryResponse, error) {
+	req := &protocol.CMsgEventTipsSummaryRequest{
+		EventId:   &eventID,
+		AccountId: &accountID,
+	}
+	resp := &protocol.CMsgEventTipsSummaryResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLog),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummary),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummaryResponse),
 		resp,
 	)
 }
@@ -2023,19 +2207,19 @@ func (d *Dota2) RequestFantasyLeagueDraftPlayer(
 	fantasyLeagueID uint32,
 	teamIndex uint32,
 	playerAccountID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftPlayerResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftPlayerRequest{
+) (*protocol.CMsgDOTAFantasyLeagueDraftPlayerResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueDraftPlayerRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		TeamIndex:       &teamIndex,
 		PlayerAccountId: &playerAccountID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftPlayerResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueDraftPlayerResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftPlayerRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftPlayerRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftPlayerResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftPlayerResponse),
 		resp,
 	)
 }
@@ -2048,17 +2232,17 @@ func (d *Dota2) RequestFantasyLeagueDraftPlayer(
 func (d *Dota2) RequestFantasyLeagueDraftStatus(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftStatus, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftStatusRequest{
+) (*protocol.CMsgDOTAFantasyLeagueDraftStatus, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueDraftStatusRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueDraftStatus{}
+	resp := &protocol.CMsgDOTAFantasyLeagueDraftStatus{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatusRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatusRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatus),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatus),
 		resp,
 	)
 }
@@ -2071,19 +2255,19 @@ func (d *Dota2) RequestFantasyLeagueDraftStatus(
 func (d *Dota2) RequestFantasyLeagueEditInfo(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-	editInfo dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueInfo,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInfoResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInfoRequest{
+	editInfo protocol.CMsgDOTAFantasyLeagueInfo,
+) (*protocol.CMsgDOTAFantasyLeagueEditInfoResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueEditInfoRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		EditInfo:        &editInfo,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInfoResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueEditInfoResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInfoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInfoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInfoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInfoResponse),
 		resp,
 	)
 }
@@ -2097,20 +2281,20 @@ func (d *Dota2) RequestFantasyLeagueEditInvites(
 	ctx context.Context,
 	fantasyLeagueID uint32,
 	password string,
-	inviteChange []*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInvitesRequest_InviteChange,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInvitesResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInvitesRequest{
+	inviteChange []*protocol.CMsgDOTAFantasyLeagueEditInvitesRequest_InviteChange,
+) (*protocol.CMsgDOTAFantasyLeagueEditInvitesResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueEditInvitesRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		Password:        &password,
 		InviteChange:    inviteChange,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueEditInvitesResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueEditInvitesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInvitesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInvitesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInvitesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueEditInvitesResponse),
 		resp,
 	)
 }
@@ -2123,17 +2307,17 @@ func (d *Dota2) RequestFantasyLeagueEditInvites(
 func (d *Dota2) RequestFantasyLeagueInfo(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueInfoResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueInfoRequest{
+) (*protocol.CMsgDOTAFantasyLeagueInfoResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueInfoRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueInfoResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueInfoResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfoResponse),
 		resp,
 	)
 }
@@ -2146,17 +2330,17 @@ func (d *Dota2) RequestFantasyLeagueInfo(
 func (d *Dota2) RequestFantasyLeagueMatchups(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueMatchupsResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueMatchupsRequest{
+) (*protocol.CMsgDOTAFantasyLeagueMatchupsResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeagueMatchupsRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeagueMatchupsResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeagueMatchupsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueMatchupsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueMatchupsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueMatchupsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueMatchupsResponse),
 		resp,
 	)
 }
@@ -2170,18 +2354,18 @@ func (d *Dota2) RequestFantasyLeaveLeague(
 	ctx context.Context,
 	fantasyLeagueID uint32,
 	fantasyTeamIndex uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeaveLeagueResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeaveLeagueRequest{
+) (*protocol.CMsgDOTAFantasyLeaveLeagueResponse, error) {
+	req := &protocol.CMsgDOTAFantasyLeaveLeagueRequest{
 		FantasyLeagueId:  &fantasyLeagueID,
 		FantasyTeamIndex: &fantasyTeamIndex,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyLeaveLeagueResponse{}
+	resp := &protocol.CMsgDOTAFantasyLeaveLeagueResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeaveLeagueRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeaveLeagueRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeaveLeagueResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeaveLeagueResponse),
 		resp,
 	)
 }
@@ -2196,19 +2380,19 @@ func (d *Dota2) RequestFantasyMessages(
 	fantasyLeagueID uint32,
 	startMessage uint32,
 	endMessage uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyMessagesResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyMessagesRequest{
+) (*protocol.CMsgDOTAFantasyMessagesResponse, error) {
+	req := &protocol.CMsgDOTAFantasyMessagesRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		StartMessage:    &startMessage,
 		EndMessage:      &endMessage,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyMessagesResponse{}
+	resp := &protocol.CMsgDOTAFantasyMessagesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyMessagesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyMessagesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyMessagesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyMessagesResponse),
 		resp,
 	)
 }
@@ -2221,37 +2405,17 @@ func (d *Dota2) RequestFantasyMessages(
 func (d *Dota2) RequestFantasyPlayerHisoricalStats(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerHisoricalStatsResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerHisoricalStatsRequest{
+) (*protocol.CMsgDOTAFantasyPlayerHisoricalStatsResponse, error) {
+	req := &protocol.CMsgDOTAFantasyPlayerHisoricalStatsRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerHisoricalStatsResponse{}
+	resp := &protocol.CMsgDOTAFantasyPlayerHisoricalStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerHisoricalStatsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerHisoricalStatsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerHisoricalStatsResponse),
-		resp,
-	)
-}
-
-// RequestFantasyPlayerInfo requests a fantasy player info.
-// Request ID: k_EMsgGCFantasyPlayerInfoRequest
-// Response ID: k_EMsgGCFantasyPlayerInfoResponse
-// Request type: CMsgDOTAFantasyPlayerInfoRequest
-// Response type: CMsgDOTAFantasyPlayerInfoResponse
-func (d *Dota2) RequestFantasyPlayerInfo(
-	ctx context.Context,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerInfoResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerInfoRequest{}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerInfoResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerInfoRequest),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerInfoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerHisoricalStatsResponse),
 		resp,
 	)
 }
@@ -2263,28 +2427,15 @@ func (d *Dota2) RequestFantasyPlayerInfo(
 // Response type: CMsgDOTAFantasyPlayerScoreResponse
 func (d *Dota2) RequestFantasyPlayerScore(
 	ctx context.Context,
-	fantasyLeagueID uint32,
-	playerAccountID uint32,
-	filterStartTime uint32,
-	filterEndTime uint32,
-	filterMatchID uint64,
-	filterLastMatch bool,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreRequest{
-		FantasyLeagueId: &fantasyLeagueID,
-		PlayerAccountId: &playerAccountID,
-		FilterStartTime: &filterStartTime,
-		FilterEndTime:   &filterEndTime,
-		FilterMatchId:   &filterMatchID,
-		FilterLastMatch: &filterLastMatch,
-	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreResponse{}
+	req *protocol.CMsgDOTAFantasyPlayerScoreRequest,
+) (*protocol.CMsgDOTAFantasyPlayerScoreResponse, error) {
+	resp := &protocol.CMsgDOTAFantasyPlayerScoreResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreResponse),
 		resp,
 	)
 }
@@ -2300,20 +2451,20 @@ func (d *Dota2) RequestFantasyPlayerScoreDetails(
 	playerAccountID uint32,
 	startTime uint32,
 	endTime uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreDetailsResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreDetailsRequest{
+) (*protocol.CMsgDOTAFantasyPlayerScoreDetailsResponse, error) {
+	req := &protocol.CMsgDOTAFantasyPlayerScoreDetailsRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		PlayerAccountId: &playerAccountID,
 		StartTime:       &startTime,
 		EndTime:         &endTime,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerScoreDetailsResponse{}
+	resp := &protocol.CMsgDOTAFantasyPlayerScoreDetailsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreDetailsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreDetailsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreDetailsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerScoreDetailsResponse),
 		resp,
 	)
 }
@@ -2325,30 +2476,15 @@ func (d *Dota2) RequestFantasyPlayerScoreDetails(
 // Response type: CMsgDOTAFantasyPlayerStandingsResponse
 func (d *Dota2) RequestFantasyPlayerStandings(
 	ctx context.Context,
-	fantasyLeagueID uint32,
-	count uint32,
-	role uint32,
-	filterStartTime uint32,
-	filterEndTime uint32,
-	filterMatchID uint64,
-	filterLastMatch bool,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerStandingsResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerStandingsRequest{
-		FantasyLeagueId: &fantasyLeagueID,
-		Count:           &count,
-		Role:            &role,
-		FilterStartTime: &filterStartTime,
-		FilterEndTime:   &filterEndTime,
-		FilterMatchId:   &filterMatchID,
-		FilterLastMatch: &filterLastMatch,
-	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerStandingsResponse{}
+	req *protocol.CMsgDOTAFantasyPlayerStandingsRequest,
+) (*protocol.CMsgDOTAFantasyPlayerStandingsResponse, error) {
+	resp := &protocol.CMsgDOTAFantasyPlayerStandingsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerStandingsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerStandingsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyPlayerStandingsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyPlayerStandingsResponse),
 		resp,
 	)
 }
@@ -2361,17 +2497,17 @@ func (d *Dota2) RequestFantasyPlayerStandings(
 func (d *Dota2) RequestFantasyScheduledMatches(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyScheduledMatchesResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyScheduledMatchesRequest{
+) (*protocol.CMsgDOTAFantasyScheduledMatchesResponse, error) {
+	req := &protocol.CMsgDOTAFantasyScheduledMatchesRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyScheduledMatchesResponse{}
+	resp := &protocol.CMsgDOTAFantasyScheduledMatchesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyScheduledMatchesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyScheduledMatchesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyScheduledMatchesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyScheduledMatchesResponse),
 		resp,
 	)
 }
@@ -2387,20 +2523,20 @@ func (d *Dota2) RequestFantasyTeamRoster(
 	teamIndex uint32,
 	ownerAccountID uint32,
 	timestamp uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterRequest{
+) (*protocol.CMsgDOTAFantasyTeamRosterResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamRosterRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		TeamIndex:       &teamIndex,
 		OwnerAccountId:  &ownerAccountID,
 		Timestamp:       &timestamp,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamRosterResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterResponse),
 		resp,
 	)
 }
@@ -2416,20 +2552,20 @@ func (d *Dota2) RequestFantasyTeamRosterAddDrop(
 	teamIndex uint32,
 	addAccountID uint32,
 	dropAccountID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterAddDropResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterAddDropRequest{
+) (*protocol.CMsgDOTAFantasyTeamRosterAddDropResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamRosterAddDropRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		TeamIndex:       &teamIndex,
 		AddAccountId:    &addAccountID,
 		DropAccountId:   &dropAccountID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterAddDropResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamRosterAddDropResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterAddDropRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterAddDropRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterAddDropResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterAddDropResponse),
 		resp,
 	)
 }
@@ -2441,30 +2577,15 @@ func (d *Dota2) RequestFantasyTeamRosterAddDrop(
 // Response type: CMsgDOTAFantasyTeamScoreResponse
 func (d *Dota2) RequestFantasyTeamScore(
 	ctx context.Context,
-	fantasyLeagueID uint32,
-	ownerAccountID uint32,
-	fantasyTeamIndex uint32,
-	filterMatchID uint64,
-	filterStartTime uint32,
-	filterEndTime uint32,
-	includeBench bool,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamScoreResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamScoreRequest{
-		FantasyLeagueId:  &fantasyLeagueID,
-		OwnerAccountId:   &ownerAccountID,
-		FantasyTeamIndex: &fantasyTeamIndex,
-		FilterMatchId:    &filterMatchID,
-		FilterStartTime:  &filterStartTime,
-		FilterEndTime:    &filterEndTime,
-		IncludeBench:     &includeBench,
-	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamScoreResponse{}
+	req *protocol.CMsgDOTAFantasyTeamScoreRequest,
+) (*protocol.CMsgDOTAFantasyTeamScoreResponse, error) {
+	resp := &protocol.CMsgDOTAFantasyTeamScoreResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamScoreRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamScoreRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamScoreResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamScoreResponse),
 		resp,
 	)
 }
@@ -2476,30 +2597,15 @@ func (d *Dota2) RequestFantasyTeamScore(
 // Response type: CMsgDOTAFantasyTeamStandingsResponse
 func (d *Dota2) RequestFantasyTeamStandings(
 	ctx context.Context,
-	fantasyLeagueID uint32,
-	count uint32,
-	filterStartTime uint32,
-	filterEndTime uint32,
-	filterMatchID uint64,
-	filterLastMatch bool,
-	filterInHall bool,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamStandingsResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamStandingsRequest{
-		FantasyLeagueId: &fantasyLeagueID,
-		Count:           &count,
-		FilterStartTime: &filterStartTime,
-		FilterEndTime:   &filterEndTime,
-		FilterMatchId:   &filterMatchID,
-		FilterLastMatch: &filterLastMatch,
-		FilterInHall:    &filterInHall,
-	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamStandingsResponse{}
+	req *protocol.CMsgDOTAFantasyTeamStandingsRequest,
+) (*protocol.CMsgDOTAFantasyTeamStandingsResponse, error) {
+	resp := &protocol.CMsgDOTAFantasyTeamStandingsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamStandingsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamStandingsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamStandingsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamStandingsResponse),
 		resp,
 	)
 }
@@ -2512,37 +2618,17 @@ func (d *Dota2) RequestFantasyTeamStandings(
 func (d *Dota2) RequestFantasyTeamTrades(
 	ctx context.Context,
 	fantasyLeagueID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradesResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradesRequest{
+) (*protocol.CMsgDOTAFantasyTeamTradesResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamTradesRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamTradesResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamTradesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamTradesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamTradesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamTradesResponse),
-		resp,
-	)
-}
-
-// RequestFeaturedHeroes requests featured heroes.
-// Request ID: k_EMsgClientToGCFeaturedHeroesRequest
-// Response ID: k_EMsgGCToClientFeaturedHeroesResponse
-// Request type: CMsgClientToGCFeaturedHeroesRequest
-// Response type: CMsgGCToClientFeaturedHeroesResponse
-func (d *Dota2) RequestFeaturedHeroes(
-	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCToClientFeaturedHeroesResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCFeaturedHeroesRequest{}
-	resp := &dota_gcmessages_client.CMsgGCToClientFeaturedHeroesResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCFeaturedHeroesRequest),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientFeaturedHeroesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamTradesResponse),
 		resp,
 	)
 }
@@ -2555,17 +2641,17 @@ func (d *Dota2) RequestFeaturedHeroes(
 func (d *Dota2) RequestFriendRecruits(
 	ctx context.Context,
 	accountIDs []uint32,
-) (*dota_gcmessages_client.CMsgDOTAFriendRecruitsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAFriendRecruitsRequest{
+) (*protocol.CMsgDOTAFriendRecruitsResponse, error) {
+	req := &protocol.CMsgDOTAFriendRecruitsRequest{
 		AccountIds: accountIDs,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAFriendRecruitsResponse{}
+	resp := &protocol.CMsgDOTAFriendRecruitsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAFriendRecruitsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAFriendRecruitsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAFriendRecruitsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAFriendRecruitsResponse),
 		resp,
 	)
 }
@@ -2578,17 +2664,37 @@ func (d *Dota2) RequestFriendRecruits(
 func (d *Dota2) RequestFriendsPlayedCustomGame(
 	ctx context.Context,
 	customGameID uint64,
-) (*dota_gcmessages_client.CMsgGCToClientFriendsPlayedCustomGameResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCFriendsPlayedCustomGameRequest{
+) (*protocol.CMsgGCToClientFriendsPlayedCustomGameResponse, error) {
+	req := &protocol.CMsgClientToGCFriendsPlayedCustomGameRequest{
 		CustomGameId: &customGameID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientFriendsPlayedCustomGameResponse{}
+	resp := &protocol.CMsgGCToClientFriendsPlayedCustomGameResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCFriendsPlayedCustomGameRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFriendsPlayedCustomGameRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientFriendsPlayedCustomGameResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientFriendsPlayedCustomGameResponse),
+		resp,
+	)
+}
+
+// RequestGetFavoriteAllStarPlayer requests to check if the target get favorite all star player.
+// Request ID: k_EMsgClientToGCGetFavoriteAllStarPlayerRequest
+// Response ID: k_EMsgClientToGCGetFavoriteAllStarPlayerResponse
+// Request type: CMsgClientToGCGetFavoriteAllStarPlayerRequest
+// Response type: CMsgClientToGCGetFavoriteAllStarPlayerResponse
+func (d *Dota2) RequestGetFavoriteAllStarPlayer(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetFavoriteAllStarPlayerResponse, error) {
+	req := &protocol.CMsgClientToGCGetFavoriteAllStarPlayerRequest{}
+	resp := &protocol.CMsgClientToGCGetFavoriteAllStarPlayerResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetFavoriteAllStarPlayerRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetFavoriteAllStarPlayerResponse),
 		resp,
 	)
 }
@@ -2602,18 +2708,18 @@ func (d *Dota2) RequestGetPlayerCardRoster(
 	ctx context.Context,
 	leagueID uint32,
 	timestamp uint32,
-) (*dota_gcmessages_client_fantasy.CMsgClientToGCGetPlayerCardRosterResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgClientToGCGetPlayerCardRosterRequest{
+) (*protocol.CMsgClientToGCGetPlayerCardRosterResponse, error) {
+	req := &protocol.CMsgClientToGCGetPlayerCardRosterRequest{
 		LeagueId:  &leagueID,
 		Timestamp: &timestamp,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgClientToGCGetPlayerCardRosterResponse{}
+	resp := &protocol.CMsgClientToGCGetPlayerCardRosterResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterResponse),
 		resp,
 	)
 }
@@ -2625,15 +2731,58 @@ func (d *Dota2) RequestGetPlayerCardRoster(
 // Response type: CMsgDOTAGetRecentPlayTimeFriendsResponse
 func (d *Dota2) RequestGetRecentPlayTimeFriends(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTAGetRecentPlayTimeFriendsResponse{}
+) (*protocol.CMsgDOTAGetRecentPlayTimeFriendsResponse, error) {
+	req := &protocol.CMsgDOTAGetRecentPlayTimeFriendsRequest{}
+	resp := &protocol.CMsgDOTAGetRecentPlayTimeFriendsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsResponse),
+		resp,
+	)
+}
+
+// RequestGetTicketCodes requests to check if the target get ticket codes.
+// Request ID: k_EMsgClientToGCGetTicketCodesRequest
+// Response ID: k_EMsgClientToGCGetTicketCodesResponse
+// Request type: CMsgClientToGCGetTicketCodesRequest
+// Response type: CMsgClientToGCGetTicketCodesResponse
+func (d *Dota2) RequestGetTicketCodes(
+	ctx context.Context,
+	ticketPoolIDs []uint32,
+) (*protocol.CMsgClientToGCGetTicketCodesResponse, error) {
+	req := &protocol.CMsgClientToGCGetTicketCodesRequest{
+		TicketPoolIds: ticketPoolIDs,
+	}
+	resp := &protocol.CMsgClientToGCGetTicketCodesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetTicketCodesRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetTicketCodesResponse),
+		resp,
+	)
+}
+
+// RequestGetUnderlordsCDKey requests to check if the target get underlords cd key.
+// Request ID: k_EMsgClientToGCGetUnderlordsCDKeyRequest
+// Response ID: k_EMsgClientToGCGetUnderlordsCDKeyResponse
+// Request type: CMsgClientToGCGetUnderlordsCDKeyRequest
+// Response type: CMsgClientToGCGetUnderlordsCDKeyResponse
+func (d *Dota2) RequestGetUnderlordsCDKey(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetUnderlordsCDKeyResponse, error) {
+	req := &protocol.CMsgClientToGCGetUnderlordsCDKeyRequest{}
+	resp := &protocol.CMsgClientToGCGetUnderlordsCDKeyResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyResponse),
 		resp,
 	)
 }
@@ -2647,18 +2796,18 @@ func (d *Dota2) RequestGuildCancelInvite(
 	ctx context.Context,
 	guildID uint32,
 	targetAccountID uint32,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildCancelInviteResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildCancelInviteRequest{
+) (*protocol.CMsgDOTAGuildCancelInviteResponse, error) {
+	req := &protocol.CMsgDOTAGuildCancelInviteRequest{
 		GuildId:         &guildID,
 		TargetAccountId: &targetAccountID,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildCancelInviteResponse{}
+	resp := &protocol.CMsgDOTAGuildCancelInviteResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildCancelInviteRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCancelInviteRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildCancelInviteResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCancelInviteResponse),
 		resp,
 	)
 }
@@ -2672,18 +2821,18 @@ func (d *Dota2) RequestGuildEditLogo(
 	ctx context.Context,
 	guildID uint32,
 	logo uint64,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildEditLogoResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildEditLogoRequest{
+) (*protocol.CMsgDOTAGuildEditLogoResponse, error) {
+	req := &protocol.CMsgDOTAGuildEditLogoRequest{
 		GuildId: &guildID,
 		Logo:    &logo,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildEditLogoResponse{}
+	resp := &protocol.CMsgDOTAGuildEditLogoResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildEditLogoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildEditLogoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildEditLogoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildEditLogoResponse),
 		resp,
 	)
 }
@@ -2697,18 +2846,18 @@ func (d *Dota2) RequestGuildInviteAccount(
 	ctx context.Context,
 	guildID uint32,
 	targetAccountID uint32,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildInviteAccountResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildInviteAccountRequest{
+) (*protocol.CMsgDOTAGuildInviteAccountResponse, error) {
+	req := &protocol.CMsgDOTAGuildInviteAccountRequest{
 		GuildId:         &guildID,
 		TargetAccountId: &targetAccountID,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildInviteAccountResponse{}
+	resp := &protocol.CMsgDOTAGuildInviteAccountResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildInviteAccountRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteAccountRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildInviteAccountResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteAccountResponse),
 		resp,
 	)
 }
@@ -2723,19 +2872,19 @@ func (d *Dota2) RequestGuildSetAccountRole(
 	guildID uint32,
 	targetAccountID uint32,
 	targetRole uint32,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildSetAccountRoleResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildSetAccountRoleRequest{
+) (*protocol.CMsgDOTAGuildSetAccountRoleResponse, error) {
+	req := &protocol.CMsgDOTAGuildSetAccountRoleRequest{
 		GuildId:         &guildID,
 		TargetAccountId: &targetAccountID,
 		TargetRole:      &targetRole,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildSetAccountRoleResponse{}
+	resp := &protocol.CMsgDOTAGuildSetAccountRoleResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleResponse),
 		resp,
 	)
 }
@@ -2751,20 +2900,20 @@ func (d *Dota2) RequestGuildUpdateDetails(
 	logo uint64,
 	baseLogo uint64,
 	bannerLogo uint64,
-) (*dota_gcmessages_client_guild.CMsgDOTAGuildUpdateDetailsResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAGuildUpdateDetailsRequest{
+) (*protocol.CMsgDOTAGuildUpdateDetailsResponse, error) {
+	req := &protocol.CMsgDOTAGuildUpdateDetailsRequest{
 		GuildId:    &guildID,
 		Logo:       &logo,
 		BaseLogo:   &baseLogo,
 		BannerLogo: &bannerLogo,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAGuildUpdateDetailsResponse{}
+	resp := &protocol.CMsgDOTAGuildUpdateDetailsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsResponse),
 		resp,
 	)
 }
@@ -2773,8 +2922,8 @@ func (d *Dota2) RequestGuildUpdateDetails(
 // Request ID: k_EMsgClientToGCRequestH264Support
 // Request type: CMsgClientToGCRequestH264Support
 func (d *Dota2) RequestH264Support() {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestH264Support{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestH264Support), req)
+	req := &protocol.CMsgClientToGCRequestH264Support{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestH264Support), req)
 }
 
 // RequestHallOfFame requests a hall of fame.
@@ -2785,17 +2934,17 @@ func (d *Dota2) RequestH264Support() {
 func (d *Dota2) RequestHallOfFame(
 	ctx context.Context,
 	week uint32,
-) (*dota_gcmessages_client.CMsgDOTAHallOfFameResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAHallOfFameRequest{
+) (*protocol.CMsgDOTAHallOfFameResponse, error) {
+	req := &protocol.CMsgDOTAHallOfFameRequest{
 		Week: &week,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAHallOfFameResponse{}
+	resp := &protocol.CMsgDOTAHallOfFameResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHallOfFameRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCHallOfFameRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHallOfFameResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCHallOfFameResponse),
 		resp,
 	)
 }
@@ -2808,17 +2957,17 @@ func (d *Dota2) RequestHallOfFame(
 func (d *Dota2) RequestHalloweenHighScore(
 	ctx context.Context,
 	round int32,
-) (*dota_gcmessages_client.CMsgDOTAHalloweenHighScoreResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAHalloweenHighScoreRequest{
+) (*protocol.CMsgDOTAHalloweenHighScoreResponse, error) {
+	req := &protocol.CMsgDOTAHalloweenHighScoreRequest{
 		Round: &round,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAHalloweenHighScoreResponse{}
+	resp := &protocol.CMsgDOTAHalloweenHighScoreResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHalloweenHighScoreRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCHalloweenHighScoreRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHalloweenHighScoreResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCHalloweenHighScoreResponse),
 		resp,
 	)
 }
@@ -2831,17 +2980,17 @@ func (d *Dota2) RequestHalloweenHighScore(
 func (d *Dota2) RequestHeroGlobalData(
 	ctx context.Context,
 	heroID uint32,
-) (*dota_gcmessages_client.CMsgHeroGlobalDataResponse, error) {
-	req := &dota_gcmessages_client.CMsgHeroGlobalDataRequest{
+) (*protocol.CMsgHeroGlobalDataResponse, error) {
+	req := &protocol.CMsgHeroGlobalDataRequest{
 		HeroId: &heroID,
 	}
-	resp := &dota_gcmessages_client.CMsgHeroGlobalDataResponse{}
+	resp := &protocol.CMsgHeroGlobalDataResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgHeroGlobalDataRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgHeroGlobalDataRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgHeroGlobalDataResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgHeroGlobalDataResponse),
 		resp,
 	)
 }
@@ -2853,15 +3002,15 @@ func (d *Dota2) RequestHeroGlobalData(
 // Response type: CMsgGCItemEditorReservationsResponse
 func (d *Dota2) RequestItemEditorReservations(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCItemEditorReservationsResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCItemEditorReservationsRequest{}
-	resp := &dota_gcmessages_client.CMsgGCItemEditorReservationsResponse{}
+) (*protocol.CMsgGCItemEditorReservationsResponse, error) {
+	req := &protocol.CMsgGCItemEditorReservationsRequest{}
+	resp := &protocol.CMsgGCItemEditorReservationsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReservationsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReservationsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReservationsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReservationsResponse),
 		resp,
 	)
 }
@@ -2874,17 +3023,17 @@ func (d *Dota2) RequestItemEditorReservations(
 func (d *Dota2) RequestJoinOpenGuildParty(
 	ctx context.Context,
 	partyID uint64,
-) (*dota_gcmessages_client_guild.CMsgDOTAJoinOpenGuildPartyResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAJoinOpenGuildPartyRequest{
+) (*protocol.CMsgDOTAJoinOpenGuildPartyResponse, error) {
+	req := &protocol.CMsgDOTAJoinOpenGuildPartyRequest{
 		PartyId: &partyID,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAJoinOpenGuildPartyResponse{}
+	resp := &protocol.CMsgDOTAJoinOpenGuildPartyResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyResponse),
 		resp,
 	)
 }
@@ -2897,17 +3046,17 @@ func (d *Dota2) RequestJoinOpenGuildParty(
 func (d *Dota2) RequestJoinableCustomGameModes(
 	ctx context.Context,
 	serverRegion uint32,
-) (*dota_gcmessages_client_match_management.CMsgJoinableCustomGameModesResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgJoinableCustomGameModesRequest{
+) (*protocol.CMsgJoinableCustomGameModesResponse, error) {
+	req := &protocol.CMsgJoinableCustomGameModesRequest{
 		ServerRegion: &serverRegion,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgJoinableCustomGameModesResponse{}
+	resp := &protocol.CMsgJoinableCustomGameModesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesResponse),
 		resp,
 	)
 }
@@ -2921,43 +3070,18 @@ func (d *Dota2) RequestJoinableCustomLobbies(
 	ctx context.Context,
 	serverRegion uint32,
 	customGameID uint64,
-) (*dota_gcmessages_client_match_management.CMsgJoinableCustomLobbiesResponse, error) {
-	req := &dota_gcmessages_client_match_management.CMsgJoinableCustomLobbiesRequest{
+) (*protocol.CMsgJoinableCustomLobbiesResponse, error) {
+	req := &protocol.CMsgJoinableCustomLobbiesRequest{
 		ServerRegion: &serverRegion,
 		CustomGameId: &customGameID,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgJoinableCustomLobbiesResponse{}
+	resp := &protocol.CMsgJoinableCustomLobbiesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesResponse),
-		resp,
-	)
-}
-
-// RequestLaneSuggest requests a lane suggest.
-// Request ID: k_EMsgLaneSuggestRequest
-// Response ID: k_EMsgLaneSuggestResponse
-// Request type: CMsgLaneSuggestRequest
-// Response type: CMsgLaneSuggestResponse
-func (d *Dota2) RequestLaneSuggest(
-	ctx context.Context,
-	radiantHeroIDs []uint32,
-	direHeroIDs []uint32,
-) (*dota_gcmessages_client.CMsgLaneSuggestResponse, error) {
-	req := &dota_gcmessages_client.CMsgLaneSuggestRequest{
-		RadiantHeroIds: radiantHeroIDs,
-		DireHeroIds:    direHeroIDs,
-	}
-	resp := &dota_gcmessages_client.CMsgLaneSuggestResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLaneSuggestRequest),
-		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLaneSuggestResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesResponse),
 		resp,
 	)
 }
@@ -2970,17 +3094,17 @@ func (d *Dota2) RequestLaneSuggest(
 func (d *Dota2) RequestLastHitChallengeHighScore(
 	ctx context.Context,
 	heroID uint32,
-) (*dota_gcmessages_client.CMsgDOTALastHitChallengeHighScoreResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTALastHitChallengeHighScoreRequest{
+) (*protocol.CMsgDOTALastHitChallengeHighScoreResponse, error) {
+	req := &protocol.CMsgDOTALastHitChallengeHighScoreRequest{
 		HeroId: &heroID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTALastHitChallengeHighScoreResponse{}
+	resp := &protocol.CMsgDOTALastHitChallengeHighScoreResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScoreRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScoreRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScoreResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScoreResponse),
 		resp,
 	)
 }
@@ -2992,25 +3116,65 @@ func (d *Dota2) RequestLastHitChallengeHighScore(
 // Response type: CMsgPlayerConductScorecard
 func (d *Dota2) RequestLatestConductScorecard(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgPlayerConductScorecard, error) {
-	req := &dota_gcmessages_client.CMsgPlayerConductScorecardRequest{}
-	resp := &dota_gcmessages_client.CMsgPlayerConductScorecard{}
+) (*protocol.CMsgPlayerConductScorecard, error) {
+	req := &protocol.CMsgPlayerConductScorecardRequest{}
+	resp := &protocol.CMsgPlayerConductScorecard{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard),
 		resp,
 	)
 }
 
-// RequestLeagueInfo requests a league info.
-// Request ID: k_EMsgRequestLeagueInfo
-// Request type: CMsgRequestLeagueInfo
-func (d *Dota2) RequestLeagueInfo() {
-	req := &dota_gcmessages_client.CMsgRequestLeagueInfo{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgRequestLeagueInfo), req)
+// RequestLeagueAvailableLobbyNodes requests league available lobby nodes.
+// Request ID: k_EMsgDOTALeagueAvailableLobbyNodesRequest
+// Response ID: k_EMsgDOTALeagueAvailableLobbyNodes
+// Request type: CMsgDOTALeagueAvailableLobbyNodesRequest
+// Response type: CMsgDOTALeagueAvailableLobbyNodes
+func (d *Dota2) RequestLeagueAvailableLobbyNodes(
+	ctx context.Context,
+	leagueID uint32,
+) (*protocol.CMsgDOTALeagueAvailableLobbyNodes, error) {
+	req := &protocol.CMsgDOTALeagueAvailableLobbyNodesRequest{
+		LeagueId: &leagueID,
+	}
+	resp := &protocol.CMsgDOTALeagueAvailableLobbyNodes{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodesRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodes),
+		resp,
+	)
+}
+
+// RequestLeagueNode requests a league node.
+// Request ID: k_EMsgDOTALeagueNodeRequest
+// Response ID: k_EMsgDOTALeagueNodeResponse
+// Request type: CMsgDOTALeagueNodeRequest
+// Response type: CMsgDOTALeagueNodeResponse
+func (d *Dota2) RequestLeagueNode(
+	ctx context.Context,
+	leagueID uint32,
+	nodeID uint32,
+) (*protocol.CMsgDOTALeagueNodeResponse, error) {
+	req := &protocol.CMsgDOTALeagueNodeRequest{
+		LeagueId: &leagueID,
+		NodeId:   &nodeID,
+	}
+	resp := &protocol.CMsgDOTALeagueNodeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTALeagueNodeRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTALeagueNodeResponse),
+		resp,
+	)
 }
 
 // RequestLeaguePrizePool requests a league prize pool.
@@ -3021,17 +3185,17 @@ func (d *Dota2) RequestLeagueInfo() {
 func (d *Dota2) RequestLeaguePrizePool(
 	ctx context.Context,
 	leagueID uint32,
-) (*dota_gcmessages_client.CMsgRequestLeaguePrizePoolResponse, error) {
-	req := &dota_gcmessages_client.CMsgRequestLeaguePrizePool{
+) (*protocol.CMsgRequestLeaguePrizePoolResponse, error) {
+	req := &protocol.CMsgRequestLeaguePrizePool{
 		LeagueId: &leagueID,
 	}
-	resp := &dota_gcmessages_client.CMsgRequestLeaguePrizePoolResponse{}
+	resp := &protocol.CMsgRequestLeaguePrizePoolResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestLeaguePrizePool),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestLeaguePrizePool),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestLeaguePrizePoolResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestLeaguePrizePoolResponse),
 		resp,
 	)
 }
@@ -3043,20 +3207,20 @@ func (d *Dota2) RequestLeaguePrizePool(
 // Response type: CMsgClientToGCRequestLinaGameResultResponse
 func (d *Dota2) RequestLinaGameResult(
 	ctx context.Context,
-	eventID dota_shared_enums.EEvent,
+	eventID protocol.EEvent,
 	slotChosen uint32,
-) (*dota_gcmessages_client.CMsgClientToGCRequestLinaGameResultResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestLinaGameResult{
+) (*protocol.CMsgClientToGCRequestLinaGameResultResponse, error) {
+	req := &protocol.CMsgClientToGCRequestLinaGameResult{
 		EventId:    &eventID,
 		SlotChosen: &slotChosen,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestLinaGameResultResponse{}
+	resp := &protocol.CMsgClientToGCRequestLinaGameResultResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestLinaGameResult),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestLinaGameResult),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestLinaGameResultResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestLinaGameResultResponse),
 		resp,
 	)
 }
@@ -3068,18 +3232,18 @@ func (d *Dota2) RequestLinaGameResult(
 // Response type: CMsgClientToGCRequestLinaPlaysRemainingResponse
 func (d *Dota2) RequestLinaPlaysRemaining(
 	ctx context.Context,
-	eventID dota_shared_enums.EEvent,
-) (*dota_gcmessages_client.CMsgClientToGCRequestLinaPlaysRemainingResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestLinaPlaysRemaining{
+	eventID protocol.EEvent,
+) (*protocol.CMsgClientToGCRequestLinaPlaysRemainingResponse, error) {
+	req := &protocol.CMsgClientToGCRequestLinaPlaysRemaining{
 		EventId: &eventID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestLinaPlaysRemainingResponse{}
+	resp := &protocol.CMsgClientToGCRequestLinaPlaysRemainingResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestLinaPlaysRemaining),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestLinaPlaysRemaining),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestLinaPlaysRemainingResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestLinaPlaysRemainingResponse),
 		resp,
 	)
 }
@@ -3092,17 +3256,17 @@ func (d *Dota2) RequestLinaPlaysRemaining(
 func (d *Dota2) RequestMatchDetails(
 	ctx context.Context,
 	matchID uint64,
-) (*dota_gcmessages_client.CMsgGCMatchDetailsResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCMatchDetailsRequest{
+) (*protocol.CMsgGCMatchDetailsResponse, error) {
+	req := &protocol.CMsgGCMatchDetailsRequest{
 		MatchId: &matchID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCMatchDetailsResponse{}
+	resp := &protocol.CMsgGCMatchDetailsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCMatchDetailsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCMatchDetailsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCMatchDetailsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCMatchDetailsResponse),
 		resp,
 	)
 }
@@ -3114,15 +3278,15 @@ func (d *Dota2) RequestMatchDetails(
 // Response type: CMsgDOTARequestMatchesResponse
 func (d *Dota2) RequestMatches(
 	ctx context.Context,
-	req *dota_gcmessages_client.CMsgDOTARequestMatches,
-) (*dota_gcmessages_client.CMsgDOTARequestMatchesResponse, error) {
-	resp := &dota_gcmessages_client.CMsgDOTARequestMatchesResponse{}
+	req *protocol.CMsgDOTARequestMatches,
+) (*protocol.CMsgDOTARequestMatchesResponse, error) {
+	resp := &protocol.CMsgDOTARequestMatchesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestMatches),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestMatches),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestMatchesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestMatchesResponse),
 		resp,
 	)
 }
@@ -3135,17 +3299,17 @@ func (d *Dota2) RequestMatches(
 func (d *Dota2) RequestMatchesMinimal(
 	ctx context.Context,
 	matchIDs []uint64,
-) (*dota_gcmessages_client_watch.CMsgClientToGCMatchesMinimalResponse, error) {
-	req := &dota_gcmessages_client_watch.CMsgClientToGCMatchesMinimalRequest{
+) (*protocol.CMsgClientToGCMatchesMinimalResponse, error) {
+	req := &protocol.CMsgClientToGCMatchesMinimalRequest{
 		MatchIds: matchIDs,
 	}
-	resp := &dota_gcmessages_client_watch.CMsgClientToGCMatchesMinimalResponse{}
+	resp := &protocol.CMsgClientToGCMatchesMinimalResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalResponse),
 		resp,
 	)
 }
@@ -3157,15 +3321,15 @@ func (d *Dota2) RequestMatchesMinimal(
 // Response type: CMsgDOTAMatchmakingStatsResponse
 func (d *Dota2) RequestMatchmakingStats(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAMatchmakingStatsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAMatchmakingStatsRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTAMatchmakingStatsResponse{}
+) (*protocol.CMsgDOTAMatchmakingStatsResponse, error) {
+	req := &protocol.CMsgDOTAMatchmakingStatsRequest{}
+	resp := &protocol.CMsgDOTAMatchmakingStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCMatchmakingStatsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCMatchmakingStatsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCMatchmakingStatsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCMatchmakingStatsResponse),
 		resp,
 	)
 }
@@ -3177,15 +3341,15 @@ func (d *Dota2) RequestMatchmakingStats(
 // Response type: CMsgDOTATeamInfo
 func (d *Dota2) RequestMyTeamInfo(
 	ctx context.Context,
-) (*dota_gcmessages_client_team.CMsgDOTATeamInfo, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTAMyTeamInfoRequest{}
-	resp := &dota_gcmessages_client_team.CMsgDOTATeamInfo{}
+) (*protocol.CMsgDOTATeamInfo, error) {
+	req := &protocol.CMsgDOTAMyTeamInfoRequest{}
+	resp := &protocol.CMsgDOTATeamInfo{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTeamInfo),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTeamInfo),
 		resp,
 	)
 }
@@ -3197,15 +3361,15 @@ func (d *Dota2) RequestMyTeamInfo(
 // Response type: CMsgGCNotificationsResponse
 func (d *Dota2) RequestNotifications(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgGCNotificationsResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCNotificationsRequest{}
-	resp := &dota_gcmessages_client.CMsgGCNotificationsResponse{}
+) (*protocol.CMsgGCNotificationsResponse, error) {
+	req := &protocol.CMsgGCNotificationsRequest{}
+	resp := &protocol.CMsgGCNotificationsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNotificationsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCNotificationsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNotificationsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCNotificationsResponse),
 		resp,
 	)
 }
@@ -3214,8 +3378,8 @@ func (d *Dota2) RequestNotifications(
 // Request ID: k_EMsgGCNotificationsMarkReadRequest
 // Request type: CMsgGCNotificationsMarkReadRequest
 func (d *Dota2) RequestNotificationsMarkRead() {
-	req := &dota_gcmessages_client.CMsgGCNotificationsMarkReadRequest{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest), req)
+	req := &protocol.CMsgGCNotificationsMarkReadRequest{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest), req)
 }
 
 // RequestOfferings requests offerings.
@@ -3225,15 +3389,15 @@ func (d *Dota2) RequestNotificationsMarkRead() {
 // Response type: CMsgRequestOfferingsResponse
 func (d *Dota2) RequestOfferings(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgRequestOfferingsResponse, error) {
-	req := &dota_gcmessages_client.CMsgRequestOfferings{}
-	resp := &dota_gcmessages_client.CMsgRequestOfferingsResponse{}
+) (*protocol.CMsgRequestOfferingsResponse, error) {
+	req := &protocol.CMsgRequestOfferings{}
+	resp := &protocol.CMsgRequestOfferingsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestOfferings),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestOfferings),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestOfferingsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestOfferingsResponse),
 		resp,
 	)
 }
@@ -3245,15 +3409,15 @@ func (d *Dota2) RequestOfferings(
 // Response type: CMsgPartyReadyCheckResponse
 func (d *Dota2) RequestPartyReadyCheck(
 	ctx context.Context,
-) (*dota_gcmessages_common_match_management.CMsgPartyReadyCheckResponse, error) {
-	req := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckRequest{}
-	resp := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckResponse{}
+) (*protocol.CMsgPartyReadyCheckResponse, error) {
+	req := &protocol.CMsgPartyReadyCheckRequest{}
+	resp := &protocol.CMsgPartyReadyCheckResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckResponse),
 		resp,
 	)
 }
@@ -3267,18 +3431,18 @@ func (d *Dota2) RequestPartySetOpenGuild(
 	ctx context.Context,
 	guildID uint32,
 	description string,
-) (*dota_gcmessages_client_guild.CMsgDOTAPartySetOpenGuildResponse, error) {
-	req := &dota_gcmessages_client_guild.CMsgDOTAPartySetOpenGuildRequest{
+) (*protocol.CMsgDOTAPartySetOpenGuildResponse, error) {
+	req := &protocol.CMsgDOTAPartySetOpenGuildRequest{
 		GuildId:     &guildID,
 		Description: &description,
 	}
-	resp := &dota_gcmessages_client_guild.CMsgDOTAPartySetOpenGuildResponse{}
+	resp := &protocol.CMsgDOTAPartySetOpenGuildResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildResponse),
 		resp,
 	)
 }
@@ -3291,17 +3455,85 @@ func (d *Dota2) RequestPartySetOpenGuild(
 func (d *Dota2) RequestPerfectWorldUserLookup(
 	ctx context.Context,
 	userName string,
-) (*dota_gcmessages_client.CMsgPerfectWorldUserLookupResponse, error) {
-	req := &dota_gcmessages_client.CMsgPerfectWorldUserLookupRequest{
+) (*protocol.CMsgPerfectWorldUserLookupResponse, error) {
+	req := &protocol.CMsgPerfectWorldUserLookupRequest{
 		UserName: &userName,
 	}
-	resp := &dota_gcmessages_client.CMsgPerfectWorldUserLookupResponse{}
+	resp := &protocol.CMsgPerfectWorldUserLookupResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPerfectWorldUserLookupRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPerfectWorldUserLookupRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPerfectWorldUserLookupResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPerfectWorldUserLookupResponse),
+		resp,
+	)
+}
+
+// RequestPlayerCoachMatch requests a player coach match.
+// Request ID: k_EMsgClientToGCRequestPlayerCoachMatch
+// Response ID: k_EMsgClientToGCRequestPlayerCoachMatchResponse
+// Request type: CMsgClientToGCRequestPlayerCoachMatch
+// Response type: CMsgClientToGCRequestPlayerCoachMatchResponse
+func (d *Dota2) RequestPlayerCoachMatch(
+	ctx context.Context,
+	matchID uint64,
+) (*protocol.CMsgClientToGCRequestPlayerCoachMatchResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPlayerCoachMatch{
+		MatchId: &matchID,
+	}
+	resp := &protocol.CMsgClientToGCRequestPlayerCoachMatchResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatch),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchResponse),
+		resp,
+	)
+}
+
+// RequestPlayerCoachMatches requests player coach matches.
+// Request ID: k_EMsgClientToGCRequestPlayerCoachMatches
+// Response ID: k_EMsgClientToGCRequestPlayerCoachMatchesResponse
+// Request type: CMsgClientToGCRequestPlayerCoachMatches
+// Response type: CMsgClientToGCRequestPlayerCoachMatchesResponse
+func (d *Dota2) RequestPlayerCoachMatches(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCRequestPlayerCoachMatchesResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPlayerCoachMatches{}
+	resp := &protocol.CMsgClientToGCRequestPlayerCoachMatchesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatches),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchesResponse),
+		resp,
+	)
+}
+
+// RequestPlayerHeroRecentAccomplishments requests player hero recent accomplishments.
+// Request ID: k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments
+// Response ID: k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
+// Request type: CMsgClientToGCRequestPlayerHeroRecentAccomplishments
+// Response type: CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
+func (d *Dota2) RequestPlayerHeroRecentAccomplishments(
+	ctx context.Context,
+	accountID uint32,
+	heroID uint32,
+) (*protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishments{
+		AccountId: &accountID,
+		HeroId:    &heroID,
+	}
+	resp := &protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse),
 		resp,
 	)
 }
@@ -3310,21 +3542,44 @@ func (d *Dota2) RequestPerfectWorldUserLookup(
 // Request ID: k_EMsgGCPlayerInfoRequest
 // Response ID: k_EMsgGCPlayerInfo
 // Request type: CMsgGCPlayerInfoRequest
-// Response type: CMsgGCPlayerInfo
+// Response type: CMsgDOTAPlayerInfo
 func (d *Dota2) RequestPlayerInfo(
 	ctx context.Context,
-	playerInfos []*dota_gcmessages_client.CMsgGCPlayerInfoRequest_PlayerInfo,
-) (*dota_gcmessages_client_fantasy.CMsgGCPlayerInfo, error) {
-	req := &dota_gcmessages_client.CMsgGCPlayerInfoRequest{
+	playerInfos []*protocol.CMsgGCPlayerInfoRequest_PlayerInfo,
+) (*protocol.CMsgDOTAPlayerInfo, error) {
+	req := &protocol.CMsgGCPlayerInfoRequest{
 		PlayerInfos: playerInfos,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgGCPlayerInfo{}
+	resp := &protocol.CMsgDOTAPlayerInfo{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPlayerInfoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfo),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPlayerInfo),
+		resp,
+	)
+}
+
+// RequestPlayerRecentAccomplishments requests player recent accomplishments.
+// Request ID: k_EMsgClientToGCRequestPlayerRecentAccomplishments
+// Response ID: k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
+// Request type: CMsgClientToGCRequestPlayerRecentAccomplishments
+// Response type: CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
+func (d *Dota2) RequestPlayerRecentAccomplishments(
+	ctx context.Context,
+	accountID uint32,
+) (*protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPlayerRecentAccomplishments{
+		AccountId: &accountID,
+	}
+	resp := &protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishments),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse),
 		resp,
 	)
 }
@@ -3337,17 +3592,17 @@ func (d *Dota2) RequestPlayerInfo(
 func (d *Dota2) RequestPlayerStats(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgGCToClientPlayerStatsResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCPlayerStatsRequest{
+) (*protocol.CMsgGCToClientPlayerStatsResponse, error) {
+	req := &protocol.CMsgClientToGCPlayerStatsRequest{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientPlayerStatsResponse{}
+	resp := &protocol.CMsgGCToClientPlayerStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPlayerStatsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPlayerStatsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientPlayerStatsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPlayerStatsResponse),
 		resp,
 	)
 }
@@ -3359,20 +3614,20 @@ func (d *Dota2) RequestPlayerStats(
 // Response type: CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
 func (d *Dota2) RequestPlusWeeklyChallengeResult(
 	ctx context.Context,
-	eventID dota_shared_enums.EEvent,
+	eventID protocol.EEvent,
 	week uint32,
-) (*dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResult{
+) (*protocol.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPlusWeeklyChallengeResult{
 		EventId: &eventID,
 		Week:    &week,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse{}
+	resp := &protocol.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResult),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResult),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse),
 		resp,
 	)
 }
@@ -3385,17 +3640,17 @@ func (d *Dota2) RequestPlusWeeklyChallengeResult(
 func (d *Dota2) RequestPrivateChatInfo(
 	ctx context.Context,
 	privateChatChannelName string,
-) (*dota_gcmessages_client_chat.CMsgGCToClientPrivateChatInfoResponse, error) {
-	req := &dota_gcmessages_client_chat.CMsgClientToGCPrivateChatInfoRequest{
+) (*protocol.CMsgGCToClientPrivateChatInfoResponse, error) {
+	req := &protocol.CMsgClientToGCPrivateChatInfoRequest{
 		PrivateChatChannelName: &privateChatChannelName,
 	}
-	resp := &dota_gcmessages_client_chat.CMsgGCToClientPrivateChatInfoResponse{}
+	resp := &protocol.CMsgGCToClientPrivateChatInfoResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInfoRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInfoRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientPrivateChatInfoResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPrivateChatInfoResponse),
 		resp,
 	)
 }
@@ -3408,17 +3663,17 @@ func (d *Dota2) RequestPrivateChatInfo(
 func (d *Dota2) RequestPrivateMetadataKey(
 	ctx context.Context,
 	matchID uint64,
-) (*dota_gcmessages_client.CMsgPrivateMetadataKeyResponse, error) {
-	req := &dota_gcmessages_client.CMsgPrivateMetadataKeyRequest{
+) (*protocol.CMsgPrivateMetadataKeyResponse, error) {
+	req := &protocol.CMsgPrivateMetadataKeyRequest{
 		MatchId: &matchID,
 	}
-	resp := &dota_gcmessages_client.CMsgPrivateMetadataKeyResponse{}
+	resp := &protocol.CMsgPrivateMetadataKeyResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPrivateMetadataKeyRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPrivateMetadataKeyRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPrivateMetadataKeyResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgPrivateMetadataKeyResponse),
 		resp,
 	)
 }
@@ -3431,17 +3686,17 @@ func (d *Dota2) RequestPrivateMetadataKey(
 func (d *Dota2) RequestProfile(
 	ctx context.Context,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgProfileResponse, error) {
-	req := &dota_gcmessages_client.CMsgProfileRequest{
+) (*protocol.CMsgProfileResponse, error) {
+	req := &protocol.CMsgProfileRequest{
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgProfileResponse{}
+	resp := &protocol.CMsgProfileResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgProfileRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgProfileResponse),
 		resp,
 	)
 }
@@ -3457,20 +3712,20 @@ func (d *Dota2) RequestQuickStats(
 	heroID uint32,
 	itemID uint32,
 	leagueID uint32,
-) (*dota_gcmessages_client.CMsgDOTAClientToGCQuickStatsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAClientToGCQuickStatsRequest{
+) (*protocol.CMsgDOTAClientToGCQuickStatsResponse, error) {
+	req := &protocol.CMsgDOTAClientToGCQuickStatsRequest{
 		PlayerAccountId: &playerAccountID,
 		HeroId:          &heroID,
 		ItemId:          &itemID,
 		LeagueId:        &leagueID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAClientToGCQuickStatsResponse{}
+	resp := &protocol.CMsgDOTAClientToGCQuickStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCQuickStatsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCQuickStatsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCQuickStatsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCQuickStatsResponse),
 		resp,
 	)
 }
@@ -3483,17 +3738,17 @@ func (d *Dota2) RequestQuickStats(
 func (d *Dota2) RequestReportCounts(
 	ctx context.Context,
 	targetAccountID uint32,
-) (*dota_gcmessages_client.CMsgDOTAReportCountsResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAReportCountsRequest{
+) (*protocol.CMsgDOTAReportCountsResponse, error) {
+	req := &protocol.CMsgDOTAReportCountsRequest{
 		TargetAccountId: &targetAccountID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAReportCountsResponse{}
+	resp := &protocol.CMsgDOTAReportCountsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReportCountsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportCountsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReportCountsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportCountsResponse),
 		resp,
 	)
 }
@@ -3505,15 +3760,15 @@ func (d *Dota2) RequestReportCounts(
 // Response type: CMsgDOTAReportsRemainingResponse
 func (d *Dota2) RequestReportsRemaining(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAReportsRemainingResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAReportsRemainingRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTAReportsRemainingResponse{}
+) (*protocol.CMsgDOTAReportsRemainingResponse, error) {
+	req := &protocol.CMsgDOTAReportsRemainingRequest{}
+	resp := &protocol.CMsgDOTAReportsRemainingResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReportsRemainingRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportsRemainingRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReportsRemainingResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportsRemainingResponse),
 		resp,
 	)
 }
@@ -3526,17 +3781,17 @@ func (d *Dota2) RequestReportsRemaining(
 func (d *Dota2) RequestSaveGames(
 	ctx context.Context,
 	serverRegion uint32,
-) (*dota_gcmessages_client.CMsgDOTARequestSaveGamesResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTARequestSaveGames{
+) (*protocol.CMsgDOTARequestSaveGamesResponse, error) {
+	req := &protocol.CMsgDOTARequestSaveGames{
 		ServerRegion: &serverRegion,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTARequestSaveGamesResponse{}
+	resp := &protocol.CMsgDOTARequestSaveGamesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestSaveGames),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestSaveGames),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCRequestSaveGamesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCRequestSaveGamesResponse),
 		resp,
 	)
 }
@@ -3548,18 +3803,18 @@ func (d *Dota2) RequestSaveGames(
 // Response type: CMsgDOTASelectionPriorityChoiceResponse
 func (d *Dota2) RequestSelectionPriorityChoice(
 	ctx context.Context,
-	choice dota_shared_enums.DOTASelectionPriorityChoice,
-) (*dota_gcmessages_client.CMsgDOTASelectionPriorityChoiceResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASelectionPriorityChoiceRequest{
+	choice protocol.DOTASelectionPriorityChoice,
+) (*protocol.CMsgDOTASelectionPriorityChoiceResponse, error) {
+	req := &protocol.CMsgDOTASelectionPriorityChoiceRequest{
 		Choice: &choice,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASelectionPriorityChoiceResponse{}
+	resp := &protocol.CMsgDOTASelectionPriorityChoiceResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSelectionPriorityChoiceRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgSelectionPriorityChoiceRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSelectionPriorityChoiceResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgSelectionPriorityChoiceResponse),
 		resp,
 	)
 }
@@ -3576,21 +3831,21 @@ func (d *Dota2) RequestSetPlayerCardRoster(
 	slot uint32,
 	playerCardItemID uint64,
 	eventID uint32,
-) (*dota_gcmessages_client_fantasy.CMsgClientToGCSetPlayerCardRosterResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgClientToGCSetPlayerCardRosterRequest{
+) (*protocol.CMsgClientToGCSetPlayerCardRosterResponse, error) {
+	req := &protocol.CMsgClientToGCSetPlayerCardRosterRequest{
 		LeagueId:         &leagueID,
 		Timestamp:        &timestamp,
 		Slot:             &slot,
 		PlayerCardItemId: &playerCardItemID,
 		EventId:          &eventID,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgClientToGCSetPlayerCardRosterResponse{}
+	resp := &protocol.CMsgClientToGCSetPlayerCardRosterResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterResponse),
 		resp,
 	)
 }
@@ -3602,22 +3857,70 @@ func (d *Dota2) RequestSetPlayerCardRoster(
 // Response type: CMsgClientToGCRequestSlarkGameResultResponse
 func (d *Dota2) RequestSlarkGameResult(
 	ctx context.Context,
-	eventID dota_shared_enums.EEvent,
+	eventID protocol.EEvent,
 	slotChosen uint32,
 	week uint32,
-) (*dota_gcmessages_client.CMsgClientToGCRequestSlarkGameResultResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCRequestSlarkGameResult{
+) (*protocol.CMsgClientToGCRequestSlarkGameResultResponse, error) {
+	req := &protocol.CMsgClientToGCRequestSlarkGameResult{
 		EventId:    &eventID,
 		SlotChosen: &slotChosen,
 		Week:       &week,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCRequestSlarkGameResultResponse{}
+	resp := &protocol.CMsgClientToGCRequestSlarkGameResultResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestSlarkGameResult),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSlarkGameResult),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestSlarkGameResultResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSlarkGameResultResponse),
+		resp,
+	)
+}
+
+// RequestSocialFeed requests a social feed.
+// Request ID: k_EMsgClientToGCRequestSocialFeed
+// Response ID: k_EMsgClientToGCRequestSocialFeedResponse
+// Request type: CMsgSocialFeedRequest
+// Response type: CMsgSocialFeedResponse
+func (d *Dota2) RequestSocialFeed(
+	ctx context.Context,
+	accountID uint32,
+	selfOnly bool,
+) (*protocol.CMsgSocialFeedResponse, error) {
+	req := &protocol.CMsgSocialFeedRequest{
+		AccountId: &accountID,
+		SelfOnly:  &selfOnly,
+	}
+	resp := &protocol.CMsgSocialFeedResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeed),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedResponse),
+		resp,
+	)
+}
+
+// RequestSocialFeedComments requests social feed comments.
+// Request ID: k_EMsgClientToGCRequestSocialFeedComments
+// Response ID: k_EMsgClientToGCRequestSocialFeedCommentsResponse
+// Request type: CMsgSocialFeedCommentsRequest
+// Response type: CMsgSocialFeedCommentsResponse
+func (d *Dota2) RequestSocialFeedComments(
+	ctx context.Context,
+	feedEventID uint64,
+) (*protocol.CMsgSocialFeedCommentsResponse, error) {
+	req := &protocol.CMsgSocialFeedCommentsRequest{
+		FeedEventId: &feedEventID,
+	}
+	resp := &protocol.CMsgSocialFeedCommentsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedComments),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedCommentsResponse),
 		resp,
 	)
 }
@@ -3631,18 +3934,18 @@ func (d *Dota2) RequestSocialFeedPostComment(
 	ctx context.Context,
 	eventID uint64,
 	comment string,
-) (*dota_gcmessages_client.CMsgGCToClientSocialFeedPostCommentResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSocialFeedPostCommentRequest{
+) (*protocol.CMsgGCToClientSocialFeedPostCommentResponse, error) {
+	req := &protocol.CMsgClientToGCSocialFeedPostCommentRequest{
 		EventId: &eventID,
 		Comment: &comment,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientSocialFeedPostCommentResponse{}
+	resp := &protocol.CMsgGCToClientSocialFeedPostCommentResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostCommentRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostCommentRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostCommentResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostCommentResponse),
 		resp,
 	)
 }
@@ -3657,19 +3960,19 @@ func (d *Dota2) RequestSocialFeedPostMessage(
 	message string,
 	matchID uint64,
 	matchTimestamp uint32,
-) (*dota_gcmessages_client.CMsgGCToClientSocialFeedPostMessageResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSocialFeedPostMessageRequest{
+) (*protocol.CMsgGCToClientSocialFeedPostMessageResponse, error) {
+	req := &protocol.CMsgClientToGCSocialFeedPostMessageRequest{
 		Message:        &message,
 		MatchId:        &matchID,
 		MatchTimestamp: &matchTimestamp,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientSocialFeedPostMessageResponse{}
+	resp := &protocol.CMsgGCToClientSocialFeedPostMessageResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostMessageRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostMessageRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostMessageResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostMessageResponse),
 		resp,
 	)
 }
@@ -3683,18 +3986,18 @@ func (d *Dota2) RequestSocialMatchDetails(
 	ctx context.Context,
 	matchID uint64,
 	paginationTimestamp uint32,
-) (*dota_gcmessages_client.CMsgGCToClientSocialMatchDetailsResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSocialMatchDetailsRequest{
+) (*protocol.CMsgGCToClientSocialMatchDetailsResponse, error) {
+	req := &protocol.CMsgClientToGCSocialMatchDetailsRequest{
 		MatchId:             &matchID,
 		PaginationTimestamp: &paginationTimestamp,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientSocialMatchDetailsResponse{}
+	resp := &protocol.CMsgGCToClientSocialMatchDetailsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSocialMatchDetailsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSocialMatchDetailsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientSocialMatchDetailsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSocialMatchDetailsResponse),
 		resp,
 	)
 }
@@ -3708,18 +4011,18 @@ func (d *Dota2) RequestSocialMatchPostComment(
 	ctx context.Context,
 	matchID uint64,
 	comment string,
-) (*dota_gcmessages_client.CMsgGCToClientSocialMatchPostCommentResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSocialMatchPostCommentRequest{
+) (*protocol.CMsgGCToClientSocialMatchPostCommentResponse, error) {
+	req := &protocol.CMsgClientToGCSocialMatchPostCommentRequest{
 		MatchId: &matchID,
 		Comment: &comment,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientSocialMatchPostCommentResponse{}
+	resp := &protocol.CMsgGCToClientSocialMatchPostCommentResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSocialMatchPostCommentRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSocialMatchPostCommentRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientSocialMatchPostCommentResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSocialMatchPostCommentResponse),
 		resp,
 	)
 }
@@ -3732,19 +4035,19 @@ func (d *Dota2) RequestSocialMatchPostComment(
 func (d *Dota2) RequestSteamDatagramTicket(
 	ctx context.Context,
 	serverSteamID steamid.SteamId,
-) (*dota_gcmessages_client_match_management.CMsgClientToGCRequestSteamDatagramTicketResponse, error) {
+) (*protocol.CMsgClientToGCRequestSteamDatagramTicketResponse, error) {
 	serverSteamIDU64Val := uint64(serverSteamID)
 	serverSteamIDU64 := &serverSteamIDU64Val
-	req := &dota_gcmessages_client_match_management.CMsgClientToGCRequestSteamDatagramTicket{
+	req := &protocol.CMsgClientToGCRequestSteamDatagramTicket{
 		ServerSteamId: serverSteamIDU64,
 	}
-	resp := &dota_gcmessages_client_match_management.CMsgClientToGCRequestSteamDatagramTicketResponse{}
+	resp := &protocol.CMsgClientToGCRequestSteamDatagramTicketResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicket),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicket),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicketResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicketResponse),
 		resp,
 	)
 }
@@ -3757,17 +4060,17 @@ func (d *Dota2) RequestSteamDatagramTicket(
 func (d *Dota2) RequestStorePromoPages(
 	ctx context.Context,
 	versionSeen uint32,
-) (*dota_gcmessages_client.CMsgDOTAStorePromoPagesResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAStorePromoPagesRequest{
+) (*protocol.CMsgDOTAStorePromoPagesResponse, error) {
+	req := &protocol.CMsgDOTAStorePromoPagesRequest{
 		VersionSeen: &versionSeen,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAStorePromoPagesResponse{}
+	resp := &protocol.CMsgDOTAStorePromoPagesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStorePromoPagesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCStorePromoPagesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStorePromoPagesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCStorePromoPagesResponse),
 		resp,
 	)
 }
@@ -3778,10 +4081,10 @@ func (d *Dota2) RequestStorePromoPages(
 func (d *Dota2) RequestTeamInfoFantasyByFantasyLeagueID(
 	fantasyLeagueID uint32,
 ) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamInfoRequestByFantasyLeagueID{
+	req := &protocol.CMsgDOTAFantasyTeamInfoRequestByFantasyLeagueID{
 		FantasyLeagueId: &fantasyLeagueID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamInfoRequestByFantasyLeagueID), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamInfoRequestByFantasyLeagueID), req)
 }
 
 // RequestTeamInfoFantasyByOwnerAccountID requests a team info fantasy by owner account id.
@@ -3790,10 +4093,10 @@ func (d *Dota2) RequestTeamInfoFantasyByFantasyLeagueID(
 func (d *Dota2) RequestTeamInfoFantasyByOwnerAccountID(
 	ownerAccountID uint32,
 ) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamInfoRequestByOwnerAccountID{
+	req := &protocol.CMsgDOTAFantasyTeamInfoRequestByOwnerAccountID{
 		OwnerAccountId: &ownerAccountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamInfoRequestByOwnerAccountID), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamInfoRequestByOwnerAccountID), req)
 }
 
 // RequestTeammateStats requests teammate stats.
@@ -3803,15 +4106,15 @@ func (d *Dota2) RequestTeamInfoFantasyByOwnerAccountID(
 // Response type: CMsgClientToGCTeammateStatsResponse
 func (d *Dota2) RequestTeammateStats(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgClientToGCTeammateStatsResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCTeammateStatsRequest{}
-	resp := &dota_gcmessages_client.CMsgClientToGCTeammateStatsResponse{}
+) (*protocol.CMsgClientToGCTeammateStatsResponse, error) {
+	req := &protocol.CMsgClientToGCTeammateStatsRequest{}
+	resp := &protocol.CMsgClientToGCTeammateStatsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTeammateStatsRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTeammateStatsRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTeammateStatsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTeammateStatsResponse),
 		resp,
 	)
 }
@@ -3823,15 +4126,15 @@ func (d *Dota2) RequestTeammateStats(
 // Response type: CMsgGCToClientTopFriendMatchesResponse
 func (d *Dota2) RequestTopFriendMatches(
 	ctx context.Context,
-) (*dota_gcmessages_client_watch.CMsgGCToClientTopFriendMatchesResponse, error) {
-	req := &dota_gcmessages_client_watch.CMsgClientToGCTopFriendMatchesRequest{}
-	resp := &dota_gcmessages_client_watch.CMsgGCToClientTopFriendMatchesResponse{}
+) (*protocol.CMsgGCToClientTopFriendMatchesResponse, error) {
+	req := &protocol.CMsgClientToGCTopFriendMatchesRequest{}
+	resp := &protocol.CMsgGCToClientTopFriendMatchesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTopFriendMatchesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTopFriendMatchesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTopFriendMatchesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTopFriendMatchesResponse),
 		resp,
 	)
 }
@@ -3843,15 +4146,15 @@ func (d *Dota2) RequestTopFriendMatches(
 // Response type: CMsgGCToClientTopLeagueMatchesResponse
 func (d *Dota2) RequestTopLeagueMatches(
 	ctx context.Context,
-) (*dota_gcmessages_client_watch.CMsgGCToClientTopLeagueMatchesResponse, error) {
-	req := &dota_gcmessages_client_watch.CMsgClientToGCTopLeagueMatchesRequest{}
-	resp := &dota_gcmessages_client_watch.CMsgGCToClientTopLeagueMatchesResponse{}
+) (*protocol.CMsgGCToClientTopLeagueMatchesResponse, error) {
+	req := &protocol.CMsgClientToGCTopLeagueMatchesRequest{}
+	resp := &protocol.CMsgGCToClientTopLeagueMatchesResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTopLeagueMatchesRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTopLeagueMatchesRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTopLeagueMatchesResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTopLeagueMatchesResponse),
 		resp,
 	)
 }
@@ -3864,17 +4167,17 @@ func (d *Dota2) RequestTopLeagueMatches(
 func (d *Dota2) RequestTransferSeasonalMMR(
 	ctx context.Context,
 	isParty bool,
-) (*dota_gcmessages_client.CMsgClientToGCTransferSeasonalMMRResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCTransferSeasonalMMRRequest{
+) (*protocol.CMsgClientToGCTransferSeasonalMMRResponse, error) {
+	req := &protocol.CMsgClientToGCTransferSeasonalMMRRequest{
 		IsParty: &isParty,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCTransferSeasonalMMRResponse{}
+	resp := &protocol.CMsgClientToGCTransferSeasonalMMRResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRResponse),
 		resp,
 	)
 }
@@ -3886,15 +4189,15 @@ func (d *Dota2) RequestTransferSeasonalMMR(
 // Response type: CMsgDOTAUnanchorPhoneNumberResponse
 func (d *Dota2) RequestUnanchorPhoneNumber(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAUnanchorPhoneNumberResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAUnanchorPhoneNumberRequest{}
-	resp := &dota_gcmessages_client.CMsgDOTAUnanchorPhoneNumberResponse{}
+) (*protocol.CMsgDOTAUnanchorPhoneNumberResponse, error) {
+	req := &protocol.CMsgDOTAUnanchorPhoneNumberRequest{}
+	resp := &protocol.CMsgDOTAUnanchorPhoneNumberResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgUnanchorPhoneNumberRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgUnanchorPhoneNumberRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgUnanchorPhoneNumberResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgUnanchorPhoneNumberResponse),
 		resp,
 	)
 }
@@ -3907,17 +4210,17 @@ func (d *Dota2) RequestUnanchorPhoneNumber(
 func (d *Dota2) RequestWagering(
 	ctx context.Context,
 	eventID uint32,
-) (*dota_gcmessages_client.CMsgGCToClientWageringResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCWageringRequest{
+) (*protocol.CMsgGCToClientWageringResponse, error) {
+	req := &protocol.CMsgClientToGCWageringRequest{
 		EventId: &eventID,
 	}
-	resp := &dota_gcmessages_client.CMsgGCToClientWageringResponse{}
+	resp := &protocol.CMsgGCToClientWageringResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCWageringRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWageringRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientWageringResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientWageringResponse),
 		resp,
 	)
 }
@@ -3926,16 +4229,16 @@ func (d *Dota2) RequestWagering(
 // Request ID: k_EMsgClientToGCRerollPlayerChallenge
 // Request type: CMsgClientToGCRerollPlayerChallenge
 func (d *Dota2) RerollPlayerChallenge(
-	eventID uint32,
+	eventID protocol.EEvent,
 	sequenceID uint32,
 	heroID uint32,
 ) {
-	req := &dota_gcmessages_common.CMsgClientToGCRerollPlayerChallenge{
+	req := &protocol.CMsgClientToGCRerollPlayerChallenge{
 		EventId:    &eventID,
 		SequenceId: &sequenceID,
 		HeroId:     &heroID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge), req)
 }
 
 // ReserveEditorItemItemDef reserves a editor item item def.
@@ -3947,18 +4250,18 @@ func (d *Dota2) ReserveEditorItemItemDef(
 	ctx context.Context,
 	defIndex uint32,
 	username string,
-) (*dota_gcmessages_client.CMsgGCItemEditorReserveItemDefResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCItemEditorReserveItemDef{
+) (*protocol.CMsgGCItemEditorReserveItemDefResponse, error) {
+	req := &protocol.CMsgGCItemEditorReserveItemDef{
 		DefIndex: &defIndex,
 		Username: &username,
 	}
-	resp := &dota_gcmessages_client.CMsgGCItemEditorReserveItemDefResponse{}
+	resp := &protocol.CMsgGCItemEditorReserveItemDefResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDef),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDef),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDefResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDefResponse),
 		resp,
 	)
 }
@@ -3967,12 +4270,12 @@ func (d *Dota2) ReserveEditorItemItemDef(
 // Request ID: k_EMsgGCTeamInvite_InviteeResponseToGC
 // Request type: CMsgDOTATeamInvite_InviteeResponseToGC
 func (d *Dota2) RespondToTeamInvite(
-	result dota_gcmessages_client_team.ETeamInviteResult,
+	result protocol.ETeamInviteResult,
 ) {
-	req := &dota_gcmessages_client_team.CMsgDOTATeamInvite_InviteeResponseToGC{
+	req := &protocol.CMsgDOTATeamInvite_InviteeResponseToGC{
 		Result: &result,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC), req)
 }
 
 // RetrieveMatchVote retrieves a match vote.
@@ -3984,18 +4287,18 @@ func (d *Dota2) RetrieveMatchVote(
 	ctx context.Context,
 	matchID uint64,
 	incremental uint32,
-) (*dota_gcmessages_client.CMsgMatchVoteResponse, error) {
-	req := &dota_gcmessages_client.CMsgRetrieveMatchVote{
+) (*protocol.CMsgMatchVoteResponse, error) {
+	req := &protocol.CMsgRetrieveMatchVote{
 		MatchId:     &matchID,
 		Incremental: &incremental,
 	}
-	resp := &dota_gcmessages_client.CMsgMatchVoteResponse{}
+	resp := &protocol.CMsgMatchVoteResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgRetrieveMatchVote),
+		uint32(protocol.EDOTAGCMsg_k_EMsgRetrieveMatchVote),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse),
 		resp,
 	)
 }
@@ -4008,21 +4311,21 @@ func (d *Dota2) RetrieveMatchVote(
 func (d *Dota2) SelectCompendiumInGamePrediction(
 	ctx context.Context,
 	matchID uint64,
-	predictions []*dota_gcmessages_client.CMsgClientToGCSelectCompendiumInGamePrediction_Prediction,
+	predictions []*protocol.CMsgClientToGCSelectCompendiumInGamePrediction_Prediction,
 	leagueID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCSelectCompendiumInGamePredictionResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSelectCompendiumInGamePrediction{
+) (*protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse, error) {
+	req := &protocol.CMsgClientToGCSelectCompendiumInGamePrediction{
 		MatchId:     &matchID,
 		Predictions: predictions,
 		LeagueId:    &leagueID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCSelectCompendiumInGamePredictionResponse{}
+	resp := &protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePrediction),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePrediction),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePredictionResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePredictionResponse),
 		resp,
 	)
 }
@@ -4033,10 +4336,109 @@ func (d *Dota2) SelectCompendiumInGamePrediction(
 func (d *Dota2) SendAddTI6TreeProgress(
 	trees uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCAddTI6TreeProgress{
+	req := &protocol.CMsgClientToGCAddTI6TreeProgress{
 		Trees: &trees,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCAddTI6TreeProgress), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCAddTI6TreeProgress), req)
+}
+
+// SendAllStarStats sends all star stats.
+// Request ID: k_EMsgAllStarStats
+// Request type: CMsgAllStarStats
+func (d *Dota2) SendAllStarStats(
+	playerStats []*protocol.CMsgAllStarStats_PlayerStats,
+) {
+	req := &protocol.CMsgAllStarStats{
+		PlayerStats: playerStats,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgAllStarStats), req)
+}
+
+// SendBalancedShuffleLobby sends a balanced shuffle lobby.
+// Request ID: k_EMsgGCBalancedShuffleLobby
+// Request type: CMsgBalancedShuffleLobby
+func (d *Dota2) SendBalancedShuffleLobby() {
+	req := &protocol.CMsgBalancedShuffleLobby{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby), req)
+}
+
+// SendCavernCrawlClaimRoom sends a cavern crawl claim room.
+// Request ID: k_EMsgClientToGCCavernCrawlClaimRoom
+// Response ID: k_EMsgClientToGCCavernCrawlClaimRoomResponse
+// Request type: CMsgClientToGCCavernCrawlClaimRoom
+// Response type: CMsgClientToGCCavernCrawlClaimRoomResponse
+func (d *Dota2) SendCavernCrawlClaimRoom(
+	ctx context.Context,
+	eventID uint32,
+	roomID uint32,
+) (*protocol.CMsgClientToGCCavernCrawlClaimRoomResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlClaimRoom{
+		EventId: &eventID,
+		RoomId:  &roomID,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlClaimRoomResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoom),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoomResponse),
+		resp,
+	)
+}
+
+// SendCavernCrawlUseItemOnPath sends a cavern crawl use item on path.
+// Request ID: k_EMsgClientToGCCavernCrawlUseItemOnPath
+// Response ID: k_EMsgClientToGCCavernCrawlUseItemOnPathResponse
+// Request type: CMsgClientToGCCavernCrawlUseItemOnPath
+// Response type: CMsgClientToGCCavernCrawlUseItemOnPathResponse
+func (d *Dota2) SendCavernCrawlUseItemOnPath(
+	ctx context.Context,
+	eventID uint32,
+	pathID uint32,
+	itemType uint32,
+) (*protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlUseItemOnPath{
+		EventId:  &eventID,
+		PathId:   &pathID,
+		ItemType: &itemType,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPath),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPathResponse),
+		resp,
+	)
+}
+
+// SendCavernCrawlUseItemOnRoom sends a cavern crawl use item on room.
+// Request ID: k_EMsgClientToGCCavernCrawlUseItemOnRoom
+// Response ID: k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse
+// Request type: CMsgClientToGCCavernCrawlUseItemOnRoom
+// Response type: CMsgClientToGCCavernCrawlUseItemOnRoomResponse
+func (d *Dota2) SendCavernCrawlUseItemOnRoom(
+	ctx context.Context,
+	eventID uint32,
+	roomID uint32,
+	itemType uint32,
+) (*protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlUseItemOnRoom{
+		EventId:  &eventID,
+		RoomId:   &roomID,
+		ItemType: &itemType,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoom),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse),
+		resp,
+	)
 }
 
 // SendChatChannelMemberUpdate sends a chat channel member update.
@@ -4045,23 +4447,23 @@ func (d *Dota2) SendAddTI6TreeProgress(
 func (d *Dota2) SendChatChannelMemberUpdate(
 	channelID uint64,
 	leftSteamIDs []uint64,
-	joinedMembers []*dota_gcmessages_client_chat.CMsgDOTAChatChannelMemberUpdate_JoinedMember,
+	joinedMembers []*protocol.CMsgDOTAChatChannelMemberUpdate_JoinedMember,
 ) {
-	req := &dota_gcmessages_client_chat.CMsgDOTAChatChannelMemberUpdate{
+	req := &protocol.CMsgDOTAChatChannelMemberUpdate{
 		ChannelId:     &channelID,
 		LeftSteamIds:  leftSteamIDs,
 		JoinedMembers: joinedMembers,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAChatChannelMemberUpdate), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatChannelMemberUpdate), req)
 }
 
 // SendChatMessage sends a chat message.
 // Request ID: k_EMsgGCChatMessage
 // Request type: CMsgDOTAChatMessage
 func (d *Dota2) SendChatMessage(
-	req *dota_gcmessages_client_chat.CMsgDOTAChatMessage,
+	req *protocol.CMsgDOTAChatMessage,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChatMessage), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCChatMessage), req)
 }
 
 // SendClaimEventAction sends a claim event action.
@@ -4074,19 +4476,50 @@ func (d *Dota2) SendClaimEventAction(
 	eventID uint32,
 	actionID uint32,
 	quantity uint32,
-) (*dota_gcmessages_client.CMsgDOTAClaimEventActionResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAClaimEventAction{
+	data protocol.CMsgDOTAClaimEventActionData,
+) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
+	req := &protocol.CMsgDOTAClaimEventAction{
 		EventId:  &eventID,
 		ActionId: &actionID,
 		Quantity: &quantity,
+		Data:     &data,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTAClaimEventActionResponse{}
+	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAClaimEventAction),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventAction),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse),
+		resp,
+	)
+}
+
+// SendClaimEventActionUsingItem sends a claim event action using item.
+// Request ID: k_EMsgClientToGCClaimEventActionUsingItem
+// Response ID: k_EMsgClientToGCClaimEventActionUsingItemResponse
+// Request type: CMsgClientToGCClaimEventActionUsingItem
+// Response type: CMsgClientToGCClaimEventActionUsingItemResponse
+func (d *Dota2) SendClaimEventActionUsingItem(
+	ctx context.Context,
+	eventID uint32,
+	actionID uint32,
+	itemID uint64,
+	quantity uint32,
+) (*protocol.CMsgClientToGCClaimEventActionUsingItemResponse, error) {
+	req := &protocol.CMsgClientToGCClaimEventActionUsingItem{
+		EventId:  &eventID,
+		ActionId: &actionID,
+		ItemId:   &itemID,
+		Quantity: &quantity,
+	}
+	resp := &protocol.CMsgClientToGCClaimEventActionUsingItemResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse),
 		resp,
 	)
 }
@@ -4095,36 +4528,23 @@ func (d *Dota2) SendClaimEventAction(
 // Request ID: k_EMsgClientProvideSurveyResult
 // Request type: CMsgClientProvideSurveyResult
 func (d *Dota2) SendClientProvideSurveyResult(
-	responses []*dota_gcmessages_client.CMsgClientProvideSurveyResult_Response,
+	responses []*protocol.CMsgClientProvideSurveyResult_Response,
 	surveyKey uint64,
 ) {
-	req := &dota_gcmessages_client.CMsgClientProvideSurveyResult{
+	req := &protocol.CMsgClientProvideSurveyResult{
 		Responses: responses,
 		SurveyKey: &surveyKey,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientProvideSurveyResult), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientProvideSurveyResult), req)
 }
 
 // SendCustomGameClientFinishedLoading sends a custom game client finished loading.
 // Request ID: k_EMsgCustomGameClientFinishedLoading
 // Request type: CMsgDOTACustomGameClientFinishedLoading
 func (d *Dota2) SendCustomGameClientFinishedLoading(
-	lobbyID uint64,
-	loadingDuration uint32,
-	resultCode int32,
-	resultString string,
-	signonStates uint32,
-	comment string,
+	req *protocol.CMsgDOTACustomGameClientFinishedLoading,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTACustomGameClientFinishedLoading{
-		LobbyId:         &lobbyID,
-		LoadingDuration: &loadingDuration,
-		ResultCode:      &resultCode,
-		ResultString:    &resultString,
-		SignonStates:    &signonStates,
-		Comment:         &comment,
-	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgCustomGameClientFinishedLoading), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgCustomGameClientFinishedLoading), req)
 }
 
 // SendCustomGameListenServerStartedLoading sends a custom game listen server started loading.
@@ -4136,13 +4556,54 @@ func (d *Dota2) SendCustomGameListenServerStartedLoading(
 	lobbyMembers []uint32,
 	startTime uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTACustomGameListenServerStartedLoading{
+	req := &protocol.CMsgDOTACustomGameListenServerStartedLoading{
 		LobbyId:      &lobbyID,
 		CustomGameId: &customGameID,
 		LobbyMembers: lobbyMembers,
 		StartTime:    &startTime,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgCustomGameListenServerStartedLoading), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgCustomGameListenServerStartedLoading), req)
+}
+
+// SendDetailedGameStats sends detailed game stats.
+// Request ID: k_EMsgDetailedGameStats
+// Request type: CMsgDetailedGameStats
+func (d *Dota2) SendDetailedGameStats(
+	minutes []*protocol.CMsgDetailedGameStats_MinuteEntry,
+	playerInfo []*protocol.CMsgDetailedGameStats_PlayerInfo,
+	gameStats protocol.CMsgDetailedGameStats_GameStats,
+) {
+	req := &protocol.CMsgDetailedGameStats{
+		Minutes:    minutes,
+		PlayerInfo: playerInfo,
+		GameStats:  &gameStats,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDetailedGameStats), req)
+}
+
+// SendDevResetEventState sends a dev reset event state.
+// Request ID: k_EMsgDevResetEventState
+// Response ID: k_EMsgDevResetEventStateResponse
+// Request type: CMsgDevResetEventState
+// Response type: CMsgDevResetEventStateResponse
+func (d *Dota2) SendDevResetEventState(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	removeAudit bool,
+) (*protocol.CMsgDevResetEventStateResponse, error) {
+	req := &protocol.CMsgDevResetEventState{
+		EventId:     &eventID,
+		RemoveAudit: &removeAudit,
+	}
+	resp := &protocol.CMsgDevResetEventStateResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevResetEventState),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevResetEventStateResponse),
+		resp,
+	)
 }
 
 // SendFriendRecruitInviteAcceptDecline sends a friend recruit invite accept decline.
@@ -4152,11 +4613,11 @@ func (d *Dota2) SendFriendRecruitInviteAcceptDecline(
 	accepted bool,
 	accountID uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTAFriendRecruitInviteAcceptDecline{
+	req := &protocol.CMsgDOTAFriendRecruitInviteAcceptDecline{
 		Accepted:  &accepted,
 		AccountId: &accountID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAFriendRecruitInviteAcceptDecline), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAFriendRecruitInviteAcceptDecline), req)
 }
 
 // SendFriendRecruits sends friend recruits.
@@ -4165,18 +4626,18 @@ func (d *Dota2) SendFriendRecruitInviteAcceptDecline(
 func (d *Dota2) SendFriendRecruits(
 	recruits []uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTASendFriendRecruits{
+	req := &protocol.CMsgDOTASendFriendRecruits{
 		Recruits: recruits,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTASendFriendRecruits), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTASendFriendRecruits), req)
 }
 
 // SendH264Unsupported sends a h 264 unsupported.
 // Request ID: k_EMsgClientToGCH264Unsupported
 // Request type: CMsgClientToGCH264Unsupported
 func (d *Dota2) SendH264Unsupported() {
-	req := &dota_gcmessages_client.CMsgClientToGCH264Unsupported{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCH264Unsupported), req)
+	req := &protocol.CMsgClientToGCH264Unsupported{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCH264Unsupported), req)
 }
 
 // SendHasPlayerVotedForMVP sends a has player voted for mvp.
@@ -4187,19 +4648,31 @@ func (d *Dota2) SendH264Unsupported() {
 func (d *Dota2) SendHasPlayerVotedForMVP(
 	ctx context.Context,
 	matchID uint64,
-) (*dota_gcmessages_client.CMsgClientToGCHasPlayerVotedForMVPResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCHasPlayerVotedForMVP{
+) (*protocol.CMsgClientToGCHasPlayerVotedForMVPResponse, error) {
+	req := &protocol.CMsgClientToGCHasPlayerVotedForMVP{
 		MatchId: &matchID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCHasPlayerVotedForMVPResponse{}
+	resp := &protocol.CMsgClientToGCHasPlayerVotedForMVPResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVP),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVP),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVPResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVPResponse),
 		resp,
 	)
+}
+
+// SendHeroGlobalDataAllHeroes sends hero global data all heroes.
+// Request ID: k_EMsgHeroGlobalDataAllHeroes
+// Request type: CMsgHeroGlobalDataAllHeroes
+func (d *Dota2) SendHeroGlobalDataAllHeroes(
+	heroes []*protocol.CMsgHeroGlobalDataResponse,
+) {
+	req := &protocol.CMsgHeroGlobalDataAllHeroes{
+		Heroes: heroes,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgHeroGlobalDataAllHeroes), req)
 }
 
 // SendInitialQuestionnaireResponse sends a initial questionnaire response.
@@ -4208,28 +4681,52 @@ func (d *Dota2) SendHasPlayerVotedForMVP(
 func (d *Dota2) SendInitialQuestionnaireResponse(
 	initialSkill uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgInitialQuestionnaireResponse{
+	req := &protocol.CMsgInitialQuestionnaireResponse{
 		InitialSkill: &initialSkill,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCInitialQuestionnaireResponse), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCInitialQuestionnaireResponse), req)
 }
 
 // SendLatestConductScorecard sends a latest conduct scorecard.
 // Request ID: k_EMsgClientToGCLatestConductScorecard
 // Request type: CMsgPlayerConductScorecard
 func (d *Dota2) SendLatestConductScorecard(
-	req *dota_gcmessages_client.CMsgPlayerConductScorecard,
+	req *protocol.CMsgPlayerConductScorecard,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard), req)
+}
+
+// SendLeagueAvailableLobbyNodes sends league available lobby nodes.
+// Request ID: k_EMsgDOTALeagueAvailableLobbyNodes
+// Request type: CMsgDOTALeagueAvailableLobbyNodes
+func (d *Dota2) SendLeagueAvailableLobbyNodes(
+	nodeInfos []*protocol.CMsgDOTALeagueAvailableLobbyNodes_NodeInfo,
+) {
+	req := &protocol.CMsgDOTALeagueAvailableLobbyNodes{
+		NodeInfos: nodeInfos,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodes), req)
 }
 
 // SendLobbyBattleCupVictory sends a lobby battle cup victory.
 // Request ID: k_EMsgLobbyBattleCupVictory
 // Request type: CMsgBattleCupVictory
 func (d *Dota2) SendLobbyBattleCupVictory(
-	req *dota_gcmessages_common.CMsgBattleCupVictory,
+	req *protocol.CMsgBattleCupVictory,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyBattleCupVictory), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyBattleCupVictory), req)
+}
+
+// SendLobbyEventGameDetails sends lobby event game details.
+// Request ID: k_EMsgLobbyEventGameDetails
+// Request type: CMsgLobbyEventGameDetails
+func (d *Dota2) SendLobbyEventGameDetails(
+	kvData []byte,
+) {
+	req := &protocol.CMsgLobbyEventGameDetails{
+		KvData: kvData,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyEventGameDetails), req)
 }
 
 // SendLobbyEventPoints sends lobby event points.
@@ -4237,25 +4734,25 @@ func (d *Dota2) SendLobbyBattleCupVictory(
 // Request type: CMsgLobbyEventPoints
 func (d *Dota2) SendLobbyEventPoints(
 	eventID uint32,
-	accountPoints []*dota_gcmessages_common.CMsgLobbyEventPoints_AccountPoints,
+	accountPoints []*protocol.CMsgLobbyEventPoints_AccountPoints,
 ) {
-	req := &dota_gcmessages_common.CMsgLobbyEventPoints{
+	req := &protocol.CMsgLobbyEventPoints{
 		EventId:       &eventID,
 		AccountPoints: accountPoints,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyEventPoints), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyEventPoints), req)
 }
 
 // SendLobbyPlayerPlusSubscriptionData sends a lobby player plus subscription data.
 // Request ID: k_EMsgLobbyPlayerPlusSubscriptionData
 // Request type: CMsgLobbyPlayerPlusSubscriptionData
 func (d *Dota2) SendLobbyPlayerPlusSubscriptionData(
-	heroBadges []*dota_gcmessages_common.CMsgLobbyPlayerPlusSubscriptionData_HeroBadge,
+	heroBadges []*protocol.CMsgLobbyPlayerPlusSubscriptionData_HeroBadge,
 ) {
-	req := &dota_gcmessages_common.CMsgLobbyPlayerPlusSubscriptionData{
+	req := &protocol.CMsgLobbyPlayerPlusSubscriptionData{
 		HeroBadges: heroBadges,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyPlayerPlusSubscriptionData), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyPlayerPlusSubscriptionData), req)
 }
 
 // SendLobbyPlaytestDetails sends lobby playtest details.
@@ -4264,10 +4761,30 @@ func (d *Dota2) SendLobbyPlayerPlusSubscriptionData(
 func (d *Dota2) SendLobbyPlaytestDetails(
 	jSON string,
 ) {
-	req := &dota_gcmessages_common_match_management.CMsgLobbyPlaytestDetails{
+	req := &protocol.CMsgLobbyPlaytestDetails{
 		Json: &jSON,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgLobbyPlaytestDetails), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyPlaytestDetails), req)
+}
+
+// SendManageFavorites sends manage favorites.
+// Request ID: k_EMsgClientToGCManageFavorites
+// Response ID: k_EMsgGCToClientManageFavoritesResponse
+// Request type: CMsgClientToGCManageFavorites
+// Response type: CMsgGCToClientManageFavoritesResponse
+func (d *Dota2) SendManageFavorites(
+	ctx context.Context,
+	req *protocol.CMsgClientToGCManageFavorites,
+) (*protocol.CMsgGCToClientManageFavoritesResponse, error) {
+	resp := &protocol.CMsgGCToClientManageFavoritesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCManageFavorites),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientManageFavoritesResponse),
+		resp,
+	)
 }
 
 // SendMergePartyInvite sends a merge party invite.
@@ -4276,36 +4793,36 @@ func (d *Dota2) SendLobbyPlaytestDetails(
 func (d *Dota2) SendMergePartyInvite(
 	otherGroupID uint64,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgDOTAGroupMergeInvite{
+	req := &protocol.CMsgDOTAGroupMergeInvite{
 		OtherGroupId: &otherGroupID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite), req)
 }
 
 // SendPartyReadyCheckAcknowledge sends a party ready check acknowledge.
 // Request ID: k_EMsgPartyReadyCheckAcknowledge
 // Request type: CMsgPartyReadyCheckAcknowledge
 func (d *Dota2) SendPartyReadyCheckAcknowledge(
-	readyStatus dota_gcmessages_common_match_management.EReadyCheckStatus,
+	readyStatus protocol.EReadyCheckStatus,
 ) {
-	req := &dota_gcmessages_common_match_management.CMsgPartyReadyCheckAcknowledge{
+	req := &protocol.CMsgPartyReadyCheckAcknowledge{
 		ReadyStatus: &readyStatus,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
 }
 
 // SendPeriodicResourceUpdated sends a periodic resource updated.
 // Request ID: k_EMsgDOTAPeriodicResourceUpdated
 // Request type: CMsgDOTAPeriodicResourceUpdated
 func (d *Dota2) SendPeriodicResourceUpdated(
-	periodicResourceKey dota_gcmessages_client.CMsgDOTAGetPeriodicResource,
-	periodicResourceValue dota_gcmessages_client.CMsgDOTAGetPeriodicResourceResponse,
+	periodicResourceKey protocol.CMsgDOTAGetPeriodicResource,
+	periodicResourceValue protocol.CMsgDOTAGetPeriodicResourceResponse,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTAPeriodicResourceUpdated{
+	req := &protocol.CMsgDOTAPeriodicResourceUpdated{
 		PeriodicResourceKey:   &periodicResourceKey,
 		PeriodicResourceValue: &periodicResourceValue,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated), req)
 }
 
 // SendPingData sends a ping data.
@@ -4318,22 +4835,22 @@ func (d *Dota2) SendPingData(
 	regionPings []uint32,
 	regionPingFailedBitmask uint32,
 ) {
-	req := &base_gcmessages.CMsgClientPingData{
+	req := &protocol.CMsgClientPingData{
 		RelayCodes:              relayCodes,
 		RelayPings:              relayPings,
 		RegionCodes:             regionCodes,
 		RegionPings:             regionPings,
 		RegionPingFailedBitmask: &regionPingFailedBitmask,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCPingData), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPingData), req)
 }
 
 // SendPresentedClientTerminateDlg sends a presented client terminate dlg.
 // Request ID: k_EMsgPresentedClientTerminateDlg
 // Request type: CMsgPresentedClientTerminateDlg
 func (d *Dota2) SendPresentedClientTerminateDlg() {
-	req := &dota_gcmessages_client.CMsgPresentedClientTerminateDlg{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgPresentedClientTerminateDlg), req)
+	req := &protocol.CMsgPresentedClientTerminateDlg{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgPresentedClientTerminateDlg), req)
 }
 
 // SendProfileUpdate sends a profile update.
@@ -4345,18 +4862,18 @@ func (d *Dota2) SendProfileUpdate(
 	ctx context.Context,
 	backgroundItemID uint64,
 	featuredHeroIDs []uint32,
-) (*dota_gcmessages_client.CMsgProfileUpdateResponse, error) {
-	req := &dota_gcmessages_client.CMsgProfileUpdate{
+) (*protocol.CMsgProfileUpdateResponse, error) {
+	req := &protocol.CMsgProfileUpdate{
 		BackgroundItemId: &backgroundItemID,
 		FeaturedHeroIds:  featuredHeroIDs,
 	}
-	resp := &dota_gcmessages_client.CMsgProfileUpdateResponse{}
+	resp := &protocol.CMsgProfileUpdateResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileUpdate),
+		uint32(protocol.EDOTAGCMsg_k_EMsgProfileUpdate),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgProfileUpdateResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgProfileUpdateResponse),
 		resp,
 	)
 }
@@ -4365,45 +4882,56 @@ func (d *Dota2) SendProfileUpdate(
 // Request ID: k_EMsgGCReadyUp
 // Request type: CMsgReadyUp
 func (d *Dota2) SendReadyUp(
-	state dota_shared_enums.DOTALobbyReadyState,
+	state protocol.DOTALobbyReadyState,
 	readyUpKey uint64,
-	hardwareSpecs dota_shared_enums.CDOTAClientHardwareSpecs,
+	hardwareSpecs protocol.CDOTAClientHardwareSpecs,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgReadyUp{
+	req := &protocol.CMsgReadyUp{
 		State:         &state,
 		ReadyUpKey:    &readyUpKey,
 		HardwareSpecs: &hardwareSpecs,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReadyUp), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCReadyUp), req)
 }
 
-// SendResponseLeagueInfo sends a response league info.
-// Request ID: k_EMsgResponseLeagueInfo
-// Request type: CMsgResponseLeagueInfo
-func (d *Dota2) SendResponseLeagueInfo(
-	leagues []*dota_gcmessages_client.CDynamicLeagueData,
-) {
-	req := &dota_gcmessages_client.CMsgResponseLeagueInfo{
-		Leagues: leagues,
+// SendRemoveFilteredPlayer sends a remove filtered player.
+// Request ID: k_EMsgClientToGCRemoveFilteredPlayer
+// Response ID: k_EMsgGCToClientRemoveFilteredPlayerResponse
+// Request type: CMsgClientToGCRemoveFilteredPlayer
+// Response type: CMsgGCToClientRemoveFilteredPlayerResponse
+func (d *Dota2) SendRemoveFilteredPlayer(
+	ctx context.Context,
+	accountIDToRemove uint32,
+) (*protocol.CMsgGCToClientRemoveFilteredPlayerResponse, error) {
+	req := &protocol.CMsgClientToGCRemoveFilteredPlayer{
+		AccountIdToRemove: &accountIDToRemove,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgResponseLeagueInfo), req)
+	resp := &protocol.CMsgGCToClientRemoveFilteredPlayerResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRemoveFilteredPlayer),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRemoveFilteredPlayerResponse),
+		resp,
+	)
 }
 
 // SendSpectatorLobbyGameDetails sends spectator lobby game details.
 // Request ID: k_EMsgSpectatorLobbyGameDetails
 // Request type: CMsgSpectatorLobbyGameDetails
 func (d *Dota2) SendSpectatorLobbyGameDetails(
-	req *dota_gcmessages_client_match_management.CMsgSpectatorLobbyGameDetails,
+	req *protocol.CMsgSpectatorLobbyGameDetails,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSpectatorLobbyGameDetails), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgSpectatorLobbyGameDetails), req)
 }
 
 // SendStopFindingMatch sends a stop finding match.
 // Request ID: k_EMsgGCStopFindingMatch
 // Request type: CMsgStopFindingMatch
 func (d *Dota2) SendStopFindingMatch() {
-	req := &dota_gcmessages_client_match_management.CMsgStopFindingMatch{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
+	req := &protocol.CMsgStopFindingMatch{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
 }
 
 // SendSuccessfulHero sends a successful hero.
@@ -4414,12 +4942,12 @@ func (d *Dota2) SendSuccessfulHero(
 	winPercent float32,
 	longestStreak uint32,
 ) {
-	req := &dota_gcmessages_common.CMsgSuccessfulHero{
+	req := &protocol.CMsgSuccessfulHero{
 		HeroId:        &heroID,
 		WinPercent:    &winPercent,
 		LongestStreak: &longestStreak,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSuccessfulHero), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgSuccessfulHero), req)
 }
 
 // SendSuspiciousActivity sends a suspicious activity.
@@ -4428,24 +4956,92 @@ func (d *Dota2) SendSuccessfulHero(
 func (d *Dota2) SendSuspiciousActivity(
 	appData uint64,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCSuspiciousActivity{
+	req := &protocol.CMsgClientToGCSuspiciousActivity{
 		AppData: &appData,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSuspiciousActivity), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSuspiciousActivity), req)
 }
 
 // SendTeamInvite_GCResponseToInvitee sends a team invite _ gc response to invitee.
 // Request ID: k_EMsgGCTeamInvite_GCResponseToInvitee
 // Request type: CMsgDOTATeamInvite_GCResponseToInvitee
 func (d *Dota2) SendTeamInvite_GCResponseToInvitee(
-	result dota_gcmessages_client_team.ETeamInviteResult,
+	result protocol.ETeamInviteResult,
 	teamName string,
 ) {
-	req := &dota_gcmessages_client_team.CMsgDOTATeamInvite_GCResponseToInvitee{
+	req := &protocol.CMsgDOTATeamInvite_GCResponseToInvitee{
 		Result:   &result,
 		TeamName: &teamName,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee), req)
+}
+
+// SendUpdatePartyBeacon sends a update party beacon.
+// Request ID: k_EMsgClientToGCUpdatePartyBeacon
+// Request type: CMsgClientToGCUpdatePartyBeacon
+func (d *Dota2) SendUpdatePartyBeacon(
+	action protocol.CMsgClientToGCUpdatePartyBeacon_Action,
+) {
+	req := &protocol.CMsgClientToGCUpdatePartyBeacon{
+		Action: &action,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCUpdatePartyBeacon), req)
+}
+
+// SendVerifyFavoritePlayers sends verify favorite players.
+// Request ID: k_EMsgClientToGCVerifyFavoritePlayers
+// Response ID: k_EMsgGCToClientVerifyFavoritePlayersResponse
+// Request type: CMsgClientToGCVerifyFavoritePlayers
+// Response type: CMsgGCToClientVerifyFavoritePlayersResponse
+func (d *Dota2) SendVerifyFavoritePlayers(
+	ctx context.Context,
+	accountIDs []uint32,
+) (*protocol.CMsgGCToClientVerifyFavoritePlayersResponse, error) {
+	req := &protocol.CMsgClientToGCVerifyFavoritePlayers{
+		AccountIds: accountIDs,
+	}
+	resp := &protocol.CMsgGCToClientVerifyFavoritePlayersResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVerifyFavoritePlayers),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientVerifyFavoritePlayersResponse),
+		resp,
+	)
+}
+
+// SendWatchGame sends a watch game.
+// Request ID: k_EMsgGCWatchGame
+// Response ID: k_EMsgGCWatchGameResponse
+// Request type: CMsgWatchGame
+// Response type: CMsgWatchGameResponse
+func (d *Dota2) SendWatchGame(
+	ctx context.Context,
+	serverSteamid steamid.SteamId,
+	watchServerSteamid steamid.SteamId,
+	lobbyID uint64,
+	regions []uint32,
+) (*protocol.CMsgWatchGameResponse, error) {
+	serverSteamidU64Val := uint64(serverSteamid)
+	serverSteamidU64 := &serverSteamidU64Val
+	watchServerSteamidU64Val := uint64(watchServerSteamid)
+	watchServerSteamidU64 := &watchServerSteamidU64Val
+	req := &protocol.CMsgWatchGame{
+		ServerSteamid:      serverSteamidU64,
+		WatchServerSteamid: watchServerSteamidU64,
+		LobbyId:            &lobbyID,
+		Regions:            regions,
+	}
+	resp := &protocol.CMsgWatchGameResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCWatchGame),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCWatchGameResponse),
+		resp,
+	)
 }
 
 // SetAdditionalEquips sets additional equips.
@@ -4455,18 +5051,18 @@ func (d *Dota2) SendTeamInvite_GCResponseToInvitee(
 // Response type: CMsgClientToGCSetAdditionalEquipsResponse
 func (d *Dota2) SetAdditionalEquips(
 	ctx context.Context,
-	equips []*dota_gcmessages_common.CAdditionalEquipSlot,
-) (*dota_gcmessages_client.CMsgClientToGCSetAdditionalEquipsResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCSetAdditionalEquips{
+	equips []*protocol.CAdditionalEquipSlot,
+) (*protocol.CMsgClientToGCSetAdditionalEquipsResponse, error) {
+	req := &protocol.CMsgClientToGCSetAdditionalEquips{
 		Equips: equips,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCSetAdditionalEquipsResponse{}
+	resp := &protocol.CMsgClientToGCSetAdditionalEquipsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquips),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquips),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquipsResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquipsResponse),
 		resp,
 	)
 }
@@ -4481,19 +5077,44 @@ func (d *Dota2) SetCompendiumSelection(
 	selectionIndex uint32,
 	selection uint32,
 	leagueid uint32,
-) (*dota_gcmessages_client.CMsgDOTACompendiumSelectionResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTACompendiumSelection{
+) (*protocol.CMsgDOTACompendiumSelectionResponse, error) {
+	req := &protocol.CMsgDOTACompendiumSelection{
 		SelectionIndex: &selectionIndex,
 		Selection:      &selection,
 		Leagueid:       &leagueid,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTACompendiumSelectionResponse{}
+	resp := &protocol.CMsgDOTACompendiumSelectionResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumSetSelection),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumSetSelection),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse),
+		resp,
+	)
+}
+
+// SetFavoriteAllStarPlayer sets a favorite all star player.
+// Request ID: k_EMsgClientToGCSetFavoriteAllStarPlayer
+// Response ID: k_EMsgClientToGCSetFavoriteAllStarPlayerResponse
+// Request type: CMsgClientToGCSetFavoriteAllStarPlayer
+// Response type: CMsgClientToGCSetFavoriteAllStarPlayerResponse
+func (d *Dota2) SetFavoriteAllStarPlayer(
+	ctx context.Context,
+	playerID uint32,
+	eventID uint32,
+) (*protocol.CMsgClientToGCSetFavoriteAllStarPlayerResponse, error) {
+	req := &protocol.CMsgClientToGCSetFavoriteAllStarPlayer{
+		PlayerId: &playerID,
+		EventId:  &eventID,
+	}
+	resp := &protocol.CMsgClientToGCSetFavoriteAllStarPlayerResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetFavoriteAllStarPlayer),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetFavoriteAllStarPlayerResponse),
 		resp,
 	)
 }
@@ -4505,32 +5126,32 @@ func (d *Dota2) SetFavoriteTeam(
 	teamID uint32,
 	eventID uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgDOTASetFavoriteTeam{
+	req := &protocol.CMsgDOTASetFavoriteTeam{
 		TeamId:  &teamID,
 		EventId: &eventID,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTASetFavoriteTeam), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTASetFavoriteTeam), req)
 }
 
 // SetLobbyCoach sets a lobby coach.
 // Request ID: k_EMsgGCPracticeLobbySetCoach
 // Request type: CMsgPracticeLobbySetCoach
 func (d *Dota2) SetLobbyCoach(
-	team dota_shared_enums.DOTA_GC_TEAM,
+	team protocol.DOTA_GC_TEAM,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbySetCoach{
+	req := &protocol.CMsgPracticeLobbySetCoach{
 		Team: &team,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach), req)
 }
 
 // SetLobbyDetails sets lobby details.
 // Request ID: k_EMsgGCPracticeLobbySetDetails
 // Request type: CMsgPracticeLobbySetDetails
 func (d *Dota2) SetLobbyDetails(
-	req *dota_gcmessages_client_match_management.CMsgPracticeLobbySetDetails,
+	req *protocol.CMsgPracticeLobbySetDetails,
 ) {
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails), req)
 }
 
 // SetMapLocationState sets a map location state.
@@ -4542,18 +5163,18 @@ func (d *Dota2) SetMapLocationState(
 	ctx context.Context,
 	locationID int32,
 	completed bool,
-) (*dota_gcmessages_client.CMsgSetMapLocationStateResponse, error) {
-	req := &dota_gcmessages_client.CMsgSetMapLocationState{
+) (*protocol.CMsgSetMapLocationStateResponse, error) {
+	req := &protocol.CMsgSetMapLocationState{
 		LocationId: &locationID,
 		Completed:  &completed,
 	}
-	resp := &dota_gcmessages_client.CMsgSetMapLocationStateResponse{}
+	resp := &protocol.CMsgSetMapLocationStateResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetMapLocationState),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetMapLocationState),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetMapLocationStateResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetMapLocationStateResponse),
 		resp,
 	)
 }
@@ -4566,17 +5187,17 @@ func (d *Dota2) SetMapLocationState(
 func (d *Dota2) SetMatchHistoryAccess(
 	ctx context.Context,
 	allow3RdPartyMatchHistory bool,
-) (*dota_gcmessages_client.CMsgDOTASetMatchHistoryAccessResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASetMatchHistoryAccess{
+) (*protocol.CMsgDOTASetMatchHistoryAccessResponse, error) {
+	req := &protocol.CMsgDOTASetMatchHistoryAccess{
 		Allow_3RdPartyMatchHistory: &allow3RdPartyMatchHistory,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASetMatchHistoryAccessResponse{}
+	resp := &protocol.CMsgDOTASetMatchHistoryAccessResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccess),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccess),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccessResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccessResponse),
 		resp,
 	)
 }
@@ -4587,10 +5208,10 @@ func (d *Dota2) SetMatchHistoryAccess(
 func (d *Dota2) SetMemberPartyCoach(
 	wantsCoach bool,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgDOTAPartyMemberSetCoach{
+	req := &protocol.CMsgDOTAPartyMemberSetCoach{
 		WantsCoach: &wantsCoach,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPartyMemberSetCoach), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPartyMemberSetCoach), req)
 }
 
 // SetPartyBuilderOptions sets party builder options.
@@ -4598,17 +5219,17 @@ func (d *Dota2) SetMemberPartyCoach(
 // Request type: CMsgPartyBuilderOptions
 func (d *Dota2) SetPartyBuilderOptions(
 	additionalSlots uint32,
-	matchType dota_shared_enums.MatchType,
+	matchType protocol.MatchType,
 	matchgroups uint32,
-	language dota_shared_enums.MatchLanguages,
+	language protocol.MatchLanguages,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgPartyBuilderOptions{
+	req := &protocol.CMsgPartyBuilderOptions{
 		AdditionalSlots: &additionalSlots,
 		MatchType:       &matchType,
 		Matchgroups:     &matchgroups,
 		Language:        &language,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions), req)
 }
 
 // SetPartyLeader sets a party leader.
@@ -4619,10 +5240,10 @@ func (d *Dota2) SetPartyLeader(
 ) {
 	newLeaderSteamidU64Val := uint64(newLeaderSteamid)
 	newLeaderSteamidU64 := &newLeaderSteamidU64Val
-	req := &dota_gcmessages_client_match_management.CMsgDOTASetGroupLeader{
+	req := &protocol.CMsgDOTASetGroupLeader{
 		NewLeaderSteamid: newLeaderSteamidU64,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader), req)
 }
 
 // SetPartyOpen sets a party open.
@@ -4631,22 +5252,22 @@ func (d *Dota2) SetPartyLeader(
 func (d *Dota2) SetPartyOpen(
 	open bool,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgDOTASetGroupOpenStatus{
+	req := &protocol.CMsgDOTASetGroupOpenStatus{
 		Open: &open,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen), req)
 }
 
 // SetProfileCardSlots sets profile card slots.
 // Request ID: k_EMsgClientToGCSetProfileCardSlots
 // Request type: CMsgClientToGCSetProfileCardSlots
 func (d *Dota2) SetProfileCardSlots(
-	slots []*dota_gcmessages_client.CMsgClientToGCSetProfileCardSlots_CardSlot,
+	slots []*protocol.CMsgClientToGCSetProfileCardSlots_CardSlot,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCSetProfileCardSlots{
+	req := &protocol.CMsgClientToGCSetProfileCardSlots{
 		Slots: slots,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetProfileCardSlots), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetProfileCardSlots), req)
 }
 
 // SetProfilePrivacy sets a profile privacy.
@@ -4657,17 +5278,17 @@ func (d *Dota2) SetProfileCardSlots(
 func (d *Dota2) SetProfilePrivacy(
 	ctx context.Context,
 	profilePrivate bool,
-) (*dota_gcmessages_client.CMsgDOTASetProfilePrivacyResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASetProfilePrivacy{
+) (*protocol.CMsgDOTASetProfilePrivacyResponse, error) {
+	req := &protocol.CMsgDOTASetProfilePrivacy{
 		ProfilePrivate: &profilePrivate,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASetProfilePrivacyResponse{}
+	resp := &protocol.CMsgDOTASetProfilePrivacyResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetProfilePrivacy),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetProfilePrivacy),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSetProfilePrivacyResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSetProfilePrivacyResponse),
 		resp,
 	)
 }
@@ -4679,15 +5300,15 @@ func (d *Dota2) SetSpectatorLobbyDetails(
 	lobbyID uint64,
 	lobbyName string,
 	passKey string,
-	gameDetails dota_gcmessages_client_match_management.CMsgSpectatorLobbyGameDetails,
+	gameDetails protocol.CMsgSpectatorLobbyGameDetails,
 ) {
-	req := &dota_gcmessages_client_match_management.CMsgSetSpectatorLobbyDetails{
+	req := &protocol.CMsgSetSpectatorLobbyDetails{
 		LobbyId:     &lobbyID,
 		LobbyName:   &lobbyName,
 		PassKey:     &passKey,
 		GameDetails: &gameDetails,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails), req)
 }
 
 // SpectateFriendGame spectates a friend game.
@@ -4698,19 +5319,21 @@ func (d *Dota2) SetSpectatorLobbyDetails(
 func (d *Dota2) SpectateFriendGame(
 	ctx context.Context,
 	steamID steamid.SteamId,
-) (*dota_gcmessages_client_watch.CMsgSpectateFriendGameResponse, error) {
+	live bool,
+) (*protocol.CMsgSpectateFriendGameResponse, error) {
 	steamIDU64Val := uint64(steamID)
 	steamIDU64 := &steamIDU64Val
-	req := &dota_gcmessages_client_watch.CMsgSpectateFriendGame{
+	req := &protocol.CMsgSpectateFriendGame{
 		SteamId: steamIDU64,
+		Live:    &live,
 	}
-	resp := &dota_gcmessages_client_watch.CMsgSpectateFriendGameResponse{}
+	resp := &protocol.CMsgSpectateFriendGameResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSpectateFriendGame),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSpectateFriendGame),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSpectateFriendGameResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSpectateFriendGameResponse),
 		resp,
 	)
 }
@@ -4722,15 +5345,15 @@ func (d *Dota2) SpectateFriendGame(
 // Response type: CMsgStartFindingMatchResult
 func (d *Dota2) StartFindingMatch(
 	ctx context.Context,
-	req *dota_gcmessages_client_match_management.CMsgStartFindingMatch,
-) (*dota_gcmessages_client_match_management.CMsgStartFindingMatchResult, error) {
-	resp := &dota_gcmessages_client_match_management.CMsgStartFindingMatchResult{}
+	req *protocol.CMsgStartFindingMatch,
+) (*protocol.CMsgStartFindingMatchResult, error) {
+	resp := &protocol.CMsgStartFindingMatchResult{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStartFindingMatch),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCStartFindingMatch),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCStartFindingMatchResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCStartFindingMatchResponse),
 		resp,
 	)
 }
@@ -4742,15 +5365,44 @@ func (d *Dota2) StartFindingMatch(
 // Response type: CMsgDOTAStartTriviaSessionResponse
 func (d *Dota2) StartTriviaSession(
 	ctx context.Context,
-) (*dota_gcmessages_client.CMsgDOTAStartTriviaSessionResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTAStartTriviaSession{}
-	resp := &dota_gcmessages_client.CMsgDOTAStartTriviaSessionResponse{}
+) (*protocol.CMsgDOTAStartTriviaSessionResponse, error) {
+	req := &protocol.CMsgDOTAStartTriviaSession{}
+	resp := &protocol.CMsgDOTAStartTriviaSessionResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgStartTriviaSession),
+		uint32(protocol.EDOTAGCMsg_k_EMsgStartTriviaSession),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgStartTriviaSessionResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgStartTriviaSessionResponse),
+		resp,
+	)
+}
+
+// SubmitCoachTeammateRating submits a coach teammate rating.
+// Request ID: k_EMsgClientToGCSubmitCoachTeammateRating
+// Response ID: k_EMsgClientToGCSubmitCoachTeammateRatingResponse
+// Request type: CMsgClientToGCSubmitCoachTeammateRating
+// Response type: CMsgClientToGCSubmitCoachTeammateRatingResponse
+func (d *Dota2) SubmitCoachTeammateRating(
+	ctx context.Context,
+	matchID uint64,
+	coachAccountID uint32,
+	rating protocol.ECoachTeammateRating,
+	reason string,
+) (*protocol.CMsgClientToGCSubmitCoachTeammateRatingResponse, error) {
+	req := &protocol.CMsgClientToGCSubmitCoachTeammateRating{
+		MatchId:        &matchID,
+		CoachAccountId: &coachAccountID,
+		Rating:         &rating,
+		Reason:         &reason,
+	}
+	resp := &protocol.CMsgClientToGCSubmitCoachTeammateRatingResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRating),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRatingResponse),
 		resp,
 	)
 }
@@ -4767,21 +5419,21 @@ func (d *Dota2) SubmitInfoPlayer(
 	fantasyRole uint32,
 	teamID uint32,
 	sponsor string,
-) (*dota_gcmessages_client.CMsgGCPlayerInfoSubmitResponse, error) {
-	req := &dota_gcmessages_client.CMsgGCPlayerInfoSubmit{
+) (*protocol.CMsgGCPlayerInfoSubmitResponse, error) {
+	req := &protocol.CMsgGCPlayerInfoSubmit{
 		Name:        &name,
 		CountryCode: &countryCode,
 		FantasyRole: &fantasyRole,
 		TeamId:      &teamID,
 		Sponsor:     &sponsor,
 	}
-	resp := &dota_gcmessages_client.CMsgGCPlayerInfoSubmitResponse{}
+	resp := &protocol.CMsgGCPlayerInfoSubmitResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfoSubmit),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPlayerInfoSubmit),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfoSubmitResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCPlayerInfoSubmitResponse),
 		resp,
 	)
 }
@@ -4794,17 +5446,17 @@ func (d *Dota2) SubmitInfoPlayer(
 func (d *Dota2) SubmitLobbyMVPVote(
 	ctx context.Context,
 	targetAccountID uint32,
-) (*dota_gcmessages_client.CMsgDOTASubmitLobbyMVPVoteResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASubmitLobbyMVPVote{
+) (*protocol.CMsgDOTASubmitLobbyMVPVoteResponse, error) {
+	req := &protocol.CMsgDOTASubmitLobbyMVPVote{
 		TargetAccountId: &targetAccountID,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASubmitLobbyMVPVoteResponse{}
+	resp := &protocol.CMsgDOTASubmitLobbyMVPVoteResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVote),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVote),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVoteResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVoteResponse),
 		resp,
 	)
 }
@@ -4820,20 +5472,20 @@ func (d *Dota2) SubmitPlayerReport(
 	reportFlags uint32,
 	lobbyID uint64,
 	comment string,
-) (*dota_gcmessages_client.CMsgDOTASubmitPlayerReportResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASubmitPlayerReport{
+) (*protocol.CMsgDOTASubmitPlayerReportResponse, error) {
+	req := &protocol.CMsgDOTASubmitPlayerReport{
 		TargetAccountId: &targetAccountID,
 		ReportFlags:     &reportFlags,
 		LobbyId:         &lobbyID,
 		Comment:         &comment,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASubmitPlayerReportResponse{}
+	resp := &protocol.CMsgDOTASubmitPlayerReportResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSubmitPlayerReport),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReport),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponse),
 		resp,
 	)
 }
@@ -4847,18 +5499,18 @@ func (d *Dota2) SubmitTriviaQuestionAnswer(
 	ctx context.Context,
 	questionID uint32,
 	answerIndex uint32,
-) (*dota_gcmessages_client.CMsgDOTASubmitTriviaQuestionAnswerResponse, error) {
-	req := &dota_gcmessages_client.CMsgDOTASubmitTriviaQuestionAnswer{
+) (*protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse, error) {
+	req := &protocol.CMsgDOTASubmitTriviaQuestionAnswer{
 		QuestionId:  &questionID,
 		AnswerIndex: &answerIndex,
 	}
-	resp := &dota_gcmessages_client.CMsgDOTASubmitTriviaQuestionAnswerResponse{}
+	resp := &protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswer),
+		uint32(protocol.EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswer),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswerResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswerResponse),
 		resp,
 	)
 }
@@ -4875,21 +5527,21 @@ func (d *Dota2) SwapFantasyTeamRoster(
 	timestamp uint32,
 	slot1 uint32,
 	slot2 uint32,
-) (*dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterSwapResponse, error) {
-	req := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterSwapRequest{
+) (*protocol.CMsgDOTAFantasyTeamRosterSwapResponse, error) {
+	req := &protocol.CMsgDOTAFantasyTeamRosterSwapRequest{
 		FantasyLeagueId: &fantasyLeagueID,
 		TeamIndex:       &teamIndex,
 		Timestamp:       &timestamp,
 		Slot_1:          &slot1,
 		Slot_2:          &slot2,
 	}
-	resp := &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamRosterSwapResponse{}
+	resp := &protocol.CMsgDOTAFantasyTeamRosterSwapResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterSwapRequest),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterSwapRequest),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterSwapResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamRosterSwapResponse),
 		resp,
 	)
 }
@@ -4898,8 +5550,8 @@ func (d *Dota2) SwapFantasyTeamRoster(
 // Request ID: k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus
 // Request type: CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus
 func (d *Dota2) ToggleLobbyBroadcastChannelCameramanStatus() {
-	req := &dota_gcmessages_client_match_management.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus{}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus), req)
+	req := &protocol.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus), req)
 }
 
 // TrackDialogResult tracks a dialog result.
@@ -4909,11 +5561,11 @@ func (d *Dota2) TrackDialogResult(
 	dialogID uint32,
 	value uint32,
 ) {
-	req := &dota_gcmessages_client.CMsgClientToGCTrackDialogResult{
+	req := &protocol.CMsgClientToGCTrackDialogResult{
 		DialogId: &dialogID,
 		Value:    &value,
 	}
-	d.write(uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCTrackDialogResult), req)
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCTrackDialogResult), req)
 }
 
 // TransferTeamAdmin transfers a team admin.
@@ -4925,18 +5577,18 @@ func (d *Dota2) TransferTeamAdmin(
 	ctx context.Context,
 	newAdminAccountID uint32,
 	teamID uint32,
-) (*dota_gcmessages_client_team.CMsgDOTATransferTeamAdminResponse, error) {
-	req := &dota_gcmessages_client_team.CMsgDOTATransferTeamAdmin{
+) (*protocol.CMsgDOTATransferTeamAdminResponse, error) {
+	req := &protocol.CMsgDOTATransferTeamAdmin{
 		NewAdminAccountId: &newAdminAccountID,
 		TeamId:            &teamID,
 	}
-	resp := &dota_gcmessages_client_team.CMsgDOTATransferTeamAdminResponse{}
+	resp := &protocol.CMsgDOTATransferTeamAdminResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTransferTeamAdmin),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCTransferTeamAdmin),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTransferTeamAdminResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCTransferTeamAdminResponse),
 		resp,
 	)
 }
@@ -4950,18 +5602,18 @@ func (d *Dota2) UpgradeLeagueItem(
 	ctx context.Context,
 	matchID uint64,
 	leagueID uint32,
-) (*dota_gcmessages_client.CMsgUpgradeLeagueItemResponse, error) {
-	req := &dota_gcmessages_client.CMsgUpgradeLeagueItem{
+) (*protocol.CMsgUpgradeLeagueItemResponse, error) {
+	req := &protocol.CMsgUpgradeLeagueItem{
 		MatchId:  &matchID,
 		LeagueId: &leagueID,
 	}
-	resp := &dota_gcmessages_client.CMsgUpgradeLeagueItemResponse{}
+	resp := &protocol.CMsgUpgradeLeagueItemResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgUpgradeLeagueItem),
+		uint32(protocol.EDOTAGCMsg_k_EMsgUpgradeLeagueItem),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgUpgradeLeagueItemResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgUpgradeLeagueItemResponse),
 		resp,
 	)
 }
@@ -4973,20 +5625,34 @@ func (d *Dota2) UpgradeLeagueItem(
 // Response type: CMsgClientToGCVoteForArcanaResponse
 func (d *Dota2) VoteForArcana(
 	ctx context.Context,
-	matches []*dota_gcmessages_client.CMsgClientToGCVoteForArcana_MatchVote,
-) (*dota_gcmessages_client.CMsgClientToGCVoteForArcanaResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCVoteForArcana{
+	matches []*protocol.CMsgClientToGCVoteForArcana_MatchVote,
+) (*protocol.CMsgClientToGCVoteForArcanaResponse, error) {
+	req := &protocol.CMsgClientToGCVoteForArcana{
 		Matches: matches,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCVoteForArcanaResponse{}
+	resp := &protocol.CMsgClientToGCVoteForArcanaResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCVoteForArcana),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVoteForArcana),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCVoteForArcanaResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVoteForArcanaResponse),
 		resp,
 	)
+}
+
+// VoteForLeagueGameMVP votes a for league game mvp.
+// Request ID: k_EMsgClientToGCVoteForLeagueGameMVP
+// Request type: CMsgClientToGCVoteForLeagueGameMVP
+func (d *Dota2) VoteForLeagueGameMVP(
+	matchID uint64,
+	accountID uint32,
+) {
+	req := &protocol.CMsgClientToGCVoteForLeagueGameMVP{
+		MatchId:   &matchID,
+		AccountId: &accountID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVoteForLeagueGameMVP), req)
 }
 
 // VoteForMVP votes a for mvp.
@@ -4998,214 +5664,249 @@ func (d *Dota2) VoteForMVP(
 	ctx context.Context,
 	matchID uint64,
 	accountID uint32,
-) (*dota_gcmessages_client.CMsgClientToGCVoteForMVPResponse, error) {
-	req := &dota_gcmessages_client.CMsgClientToGCVoteForMVP{
+) (*protocol.CMsgClientToGCVoteForMVPResponse, error) {
+	req := &protocol.CMsgClientToGCVoteForMVP{
 		MatchId:   &matchID,
 		AccountId: &accountID,
 	}
-	resp := &dota_gcmessages_client.CMsgClientToGCVoteForMVPResponse{}
+	resp := &protocol.CMsgClientToGCVoteForMVPResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCVoteForMVP),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVoteForMVP),
 		req,
-		uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgClientToGCVoteForMVPResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCVoteForMVPResponse),
+		resp,
+	)
+}
+
+// VoteMVPTimeout votes a mvp timeout.
+// Request ID: k_EMsgClientToGCMVPVoteTimeout
+// Response ID: k_EMsgClientToGCMVPVoteTimeoutResponse
+// Request type: CMsgClientToGCMVPVoteTimeout
+// Response type: CMsgClientToGCMVPVoteTimeoutResponse
+func (d *Dota2) VoteMVPTimeout(
+	ctx context.Context,
+	matchID uint64,
+) (*protocol.CMsgClientToGCMVPVoteTimeoutResponse, error) {
+	req := &protocol.CMsgClientToGCMVPVoteTimeout{
+		MatchId: &matchID,
+	}
+	resp := &protocol.CMsgClientToGCMVPVoteTimeoutResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeout),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeoutResponse),
 		resp,
 	)
 }
 
 // registerGeneratedHandlers registers the auto-generated event handlers.
 func (d *Dota2) registerGeneratedHandlers() {
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientArcanaVotesUpdate)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientArcanaVotesUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.ArcanaVotesUpdate{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby)] = d.getEventEmitter(func() events.Event {
-		return &events.BalancedShuffleLobby{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListRequest)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListRequest)] = d.getEventEmitter(func() events.Event {
 		return &events.BattlePassRollupListRequest{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupRequest)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupRequest)] = d.getEventEmitter(func() events.Event {
 		return &events.BattlePassRollupRequest{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCBroadcastNotification)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCBroadcastNotification)] = d.getEventEmitter(func() events.Event {
 		return &events.BroadcastNotification{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCChangeTeamSub)] = d.getEventEmitter(func() events.Event {
-		return &events.ChangeTeamSub{}
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapPathCompleted)] = d.getEventEmitter(func() events.Event {
+		return &events.CavernCrawlMapPathCompleted{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.CavernCrawlMapUpdated{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled)] = d.getEventEmitter(func() events.Event {
 		return &events.ChatRegionsEnabled{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCClearPracticeLobbyTeam)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientClaimEventActionUsingItemCompleted)] = d.getEventEmitter(func() events.Event {
+		return &events.ClaimEventActionUsingItemCompleted{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCClearPracticeLobbyTeam)] = d.getEventEmitter(func() events.Event {
 		return &events.ClearPracticeLobbyTeam{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCClientIgnoredUser)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCClientIgnoredUser)] = d.getEventEmitter(func() events.Event {
 		return &events.ClientIgnoredUser{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCClientSuspended)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCClientSuspended)] = d.getEventEmitter(func() events.Event {
 		return &events.ClientSuspended{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientCommendNotification)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCoachTeammateRatingsChanged)] = d.getEventEmitter(func() events.Event {
+		return &events.CoachTeammateRatingsChanged{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCommendNotification)] = d.getEventEmitter(func() events.Event {
 		return &events.CommendNotification{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged)] = d.getEventEmitter(func() events.Event {
 		return &events.CompendiumDataChanged{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTALiveLeagueGameUpdate)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgDOTALiveLeagueGameUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.DOTALiveLeagueGameUpdate{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule)] = d.getEventEmitter(func() events.Event {
 		return &events.DOTAWeekendTourneySchedule{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientEmoticonData)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientEmoticonData)] = d.getEventEmitter(func() events.Event {
 		return &events.EmoticonData{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientEventStatusChanged)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientEventStatusChanged)] = d.getEventEmitter(func() events.Event {
 		return &events.EventStatusChanged{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyFinalPlayerStats{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatus)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueDraftStatus)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyLeagueDraftStatus{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyLeagueInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyLeagueInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyMessageAdd)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyMessageAdd)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyMessageAdd{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyRemoveOwner)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyRemoveOwner)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyRemoveOwner{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCFantasyTeamInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyTeamInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildInviteData)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteData)] = d.getEventEmitter(func() events.Event {
 		return &events.GuildInviteData{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCGuildUpdateMessage)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateMessage)] = d.getEventEmitter(func() events.Event {
 		return &events.GuildUpdateMessage{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCHallOfFame)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCHallOfFame)] = d.getEventEmitter(func() events.Event {
 		return &events.HallOfFame{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientHeroStatueCreateResult)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientHeroStatueCreateResult)] = d.getEventEmitter(func() events.Event {
 		return &events.HeroStatueCreateResult{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue)] = d.getEventEmitter(func() events.Event {
 		return &events.KickedFromMatchmakingQueue{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScorePost)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCLastHitChallengeHighScorePost)] = d.getEventEmitter(func() events.Event {
 		return &events.LastHitChallengeHighScorePost{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLeagueAdminList)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCLeagueAdminList)] = d.getEventEmitter(func() events.Event {
 		return &events.LeagueAdminList{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLeagueAdminState)] = d.getEventEmitter(func() events.Event {
-		return &events.LeagueAdminState{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded)] = d.getEventEmitter(func() events.Event {
 		return &events.LobbyMVPAwarded{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPNotifyRecipient)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPNotifyRecipient)] = d.getEventEmitter(func() events.Event {
 		return &events.LobbyMVPNotifyRecipient{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCLobbyUpdateBroadcastChannelInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCLobbyUpdateBroadcastChannelInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.LobbyUpdateBroadcastChannelInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCMakeOffering)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCMakeOffering)] = d.getEventEmitter(func() events.Event {
 		return &events.MakeOffering{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientMatchGroupsVersion)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMatchGroupsVersion)] = d.getEventEmitter(func() events.Event {
 		return &events.MatchGroupsVersion{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut)] = d.getEventEmitter(func() events.Event {
 		return &events.MatchSignedOut{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply)] = d.getEventEmitter(func() events.Event {
 		return &events.MergeGroupInviteReply{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply)] = d.getEventEmitter(func() events.Event {
 		return &events.MergePartyResponseReply{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded)] = d.getEventEmitter(func() events.Event {
 		return &events.NewNotificationAdded{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNexonPartnerUpdate)] = d.getEventEmitter(func() events.Event {
-		return &events.NexonPartnerUpdate{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange)] = d.getEventEmitter(func() events.Event {
 		return &events.NotifyAccountFlagsChange{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPartyLeaderWatchGamePrompt)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPartyBeaconUpdate)] = d.getEventEmitter(func() events.Event {
+		return &events.PartyBeaconUpdate{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCPartyLeaderWatchGamePrompt)] = d.getEventEmitter(func() events.Event {
 		return &events.PartyLeaderWatchGamePrompt{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPlayerInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPartySearchInvite)] = d.getEventEmitter(func() events.Event {
+		return &events.PartySearchInvite{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPartySearchInvites)] = d.getEventEmitter(func() events.Event {
+		return &events.PartySearchInvites{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPlayerBeaconState)] = d.getEventEmitter(func() events.Event {
+		return &events.PlayerBeaconState{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCPlayerInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.PlayerInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel)] = d.getEventEmitter(func() events.Event {
 		return &events.PlayerJoinedChannel{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCOtherLeftChannel)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCOtherLeftChannel)] = d.getEventEmitter(func() events.Event {
 		return &events.PlayerLeftChannel{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientPlaytestStatus)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPlaytestStatus)] = d.getEventEmitter(func() events.Event {
 		return &events.PlaytestStatus{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCPopup)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCPopup)] = d.getEventEmitter(func() events.Event {
 		return &events.Popup{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCProcessFantasyScheduledEvent)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCProcessFantasyScheduledEvent)] = d.getEventEmitter(func() events.Event {
 		return &events.ProcessFantasyScheduledEvent{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.ProfileCardUpdated{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientQuestProgressUpdated)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientQuestProgressUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.QuestProgressUpdated{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCReadyUpStatus)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCReadyUpStatus)] = d.getEventEmitter(func() events.Event {
 		return &events.ReadyUpStatus{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCResetMapLocations)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRequestLaneSelection)] = d.getEventEmitter(func() events.Event {
+		return &events.RequestLaneSelection{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCResetMapLocations)] = d.getEventEmitter(func() events.Event {
 		return &events.ResetMapLocations{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket)] = d.getEventEmitter(func() events.Event {
 		return &events.SteamDatagramTicket{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTeamInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTeamInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.TeamInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter)] = d.getEventEmitter(func() events.Event {
 		return &events.TeamInviteGCImmediateResponseToInviter{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee)] = d.getEventEmitter(func() events.Event {
 		return &events.TeamInviteReceived{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter)] = d.getEventEmitter(func() events.Event {
 		return &events.TeamInviteResponseReceived{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTeamsInfo)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTeamsInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.TeamsInfo{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTipNotification)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTipNotification)] = d.getEventEmitter(func() events.Event {
 		return &events.TipNotification{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTournamentItemDrop)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTournamentItemDrop)] = d.getEventEmitter(func() events.Event {
 		return &events.TournamentItemDrop{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded)] = d.getEventEmitter(func() events.Event {
 		return &events.TrophyAwarded{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCToClientWageringUpdate)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientWageringUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.WageringUpdate{}
 	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCWatchDownloadedReplay)] = d.getEventEmitter(func() events.Event {
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCWatchDownloadedReplay)] = d.getEventEmitter(func() events.Event {
 		return &events.WatchDownloadedReplay{}
-	})
-	d.handlers[uint32(dota_gcmessages_msgid.EDOTAGCMsg_k_EMsgGCWatchGame)] = d.getEventEmitter(func() events.Event {
-		return &events.WatchGame{}
 	})
 }

@@ -1,8 +1,8 @@
 package state
 
 import (
-	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
-	gcsdkm "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages"
+	gcmm "github.com/paralin/go-dota2/protocol"
+	gcsdkm "github.com/paralin/go-dota2/protocol"
 )
 
 // Dota2State is a snapshot of the client state at a point in time.

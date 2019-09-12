@@ -3,7 +3,7 @@ package main
 import (
 	"sort"
 
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	dota_gcmessages_msgid "github.com/paralin/go-dota2/protocol"
 )
 
 // IsValidMsg checks if the message is valid.

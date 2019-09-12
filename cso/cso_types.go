@@ -2,10 +2,10 @@ package cso
 
 import (
 	"github.com/golang/protobuf/proto"
-	bgcm "github.com/paralin/go-dota2/protocol/base_gcmessages"
-	gcclm "github.com/paralin/go-dota2/protocol/dota_gcmessages_client"
-	gccm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
-	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
+	bgcm "github.com/paralin/go-dota2/protocol"
+	gcclm "github.com/paralin/go-dota2/protocol"
+	gccm "github.com/paralin/go-dota2/protocol"
+	gcmm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 )
 

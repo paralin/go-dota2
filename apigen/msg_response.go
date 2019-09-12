@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	gcm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	gcm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 )
 
@@ -101,8 +101,9 @@ func LookupMessageProtoType(protoMap map[string]*ProtoType, msgID gcm.EDOTAGCMsg
 	}
 
 	for _, att := range toAttempt {
+		att = "CMsg" + att
 		fmt.Println(att)
-		if pt, ok := protoMap["CMsg"+att]; ok {
+		if pt, ok := protoMap[att]; ok {
 			fmt.Printf("Request: %v matched to type: %v\n", msgID.String(), pt.TypeName)
 			return pt, nil
 		}

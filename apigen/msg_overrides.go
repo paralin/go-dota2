@@ -2,15 +2,7 @@ package main
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/paralin/go-dota2/protocol/base_gcmessages"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_chat"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_fantasy"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_match_management"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_team"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_client_tournament"
-	"github.com/paralin/go-dota2/protocol/dota_gcmessages_common"
-	dm "github.com/paralin/go-dota2/protocol/dota_gcmessages_msgid"
+	dm "github.com/paralin/go-dota2/protocol"
 )
 
 // msgSenderOverrides overrides the heuristic-generated sender parties for each message
@@ -130,8 +122,7 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCConnectedPlayers: MsgSenderNone,
 
-	dm.EDOTAGCMsg_k_EMsgGCLeagueAdminList:  MsgSenderGC,
-	dm.EDOTAGCMsg_k_EMsgGCLeagueAdminState: MsgSenderGC,
+	dm.EDOTAGCMsg_k_EMsgGCLeagueAdminList: MsgSenderGC,
 
 	dm.EDOTAGCMsg_k_EMsgGCChatMessage: MsgSenderClient,
 
@@ -172,6 +163,14 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmit:      MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCToClientAllStarVotesSubmitReply: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsRequest: MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsReponse: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgGCtoServerTensorflowInstance: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby: MsgSenderClient,
+	dm.EDOTAGCMsg_k_EMsgGCWatchGame:            MsgSenderClient,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
@@ -203,77 +202,89 @@ var msgMethodNameOverrides = map[dm.EDOTAGCMsg]string{
 var msgResponseOverrides = map[dm.EDOTAGCMsg]dm.EDOTAGCMsg{
 	// Example:
 	// dm.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack: dm.EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse,
-	dm.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest: 0,
-	dm.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest:    dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo,
+	dm.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest: dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo,
 
 	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC:         dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter,
 	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC: dm.EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee,
+	dm.EDOTAGCMsg_k_EMsgGCWatchGame:                      dm.EDOTAGCMsg_k_EMsgGCWatchGameResponse,
+
+	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby:         0,
+	dm.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest: 0,
 }
 
 // msgProtoTypeOverrides overrides the GC message to proto mapping.
 var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
-	dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo: &dota_gcmessages_client_team.CMsgDOTATeamInfo{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo: &dm.CMsgDOTATeamInfo{},
 
-	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyTeamRequest:  &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamCreateRequest{},
-	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyTeamResponse: &dota_gcmessages_client_fantasy.CMsgDOTAFantasyTeamCreateResponse{},
+	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyTeamRequest:  &dm.CMsgDOTAFantasyTeamCreateRequest{},
+	dm.EDOTAGCMsg_k_EMsgGCCreateFantasyTeamResponse: &dm.CMsgDOTAFantasyTeamCreateResponse{},
 
-	dm.EDOTAGCMsg_k_EMsgGCCompendiumSetSelection:         &dota_gcmessages_client.CMsgDOTACompendiumSelection{},
-	dm.EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse: &dota_gcmessages_client.CMsgDOTACompendiumSelectionResponse{},
+	dm.EDOTAGCMsg_k_EMsgGCCompendiumSetSelection:         &dm.CMsgDOTACompendiumSelection{},
+	dm.EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse: &dm.CMsgDOTACompendiumSelectionResponse{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard:        &dota_gcmessages_client.CMsgPlayerConductScorecard{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest: &dota_gcmessages_client.CMsgPlayerConductScorecardRequest{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard:        &dm.CMsgPlayerConductScorecard{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest: &dm.CMsgPlayerConductScorecardRequest{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse: &dota_gcmessages_client.CMsgEventGoals{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse: &dm.CMsgEventGoals{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOptsResponse:           &dota_gcmessages_client_tournament.CMsgWeekendTourneyOpts{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave:                  &dota_gcmessages_client_tournament.CMsgWeekendTourneyLeave{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse: &dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStats{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats:         &dota_gcmessages_client_tournament.CMsgDOTAWeekendTourneyPlayerStatsRequest{},
-	dm.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule:                  &dota_gcmessages_client_tournament.CMsgRequestWeekendTourneySchedule{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOptsResponse:           &dm.CMsgWeekendTourneyOpts{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave:                  &dm.CMsgWeekendTourneyLeave{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse: &dm.CMsgDOTAWeekendTourneyPlayerStats{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats:         &dm.CMsgDOTAWeekendTourneyPlayerStatsRequest{},
+	dm.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule:                  &dm.CMsgRequestWeekendTourneySchedule{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader:     &dota_gcmessages_client_match_management.CMsgDOTASetGroupLeader{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites: &dota_gcmessages_client_match_management.CMsgDOTACancelGroupInvites{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader:     &dm.CMsgDOTASetGroupLeader{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites: &dm.CMsgDOTACancelGroupInvites{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen: &dota_gcmessages_client_match_management.CMsgDOTASetGroupOpenStatus{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen: &dm.CMsgDOTASetGroupOpenStatus{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite:        &dota_gcmessages_client_match_management.CMsgDOTAGroupMergeInvite{},
-	dm.EDOTAGCMsg_k_EMsgClientToGCMergePartyResponse:      &dota_gcmessages_client_match_management.CMsgDOTAGroupMergeResponse{},
-	dm.EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply: &dota_gcmessages_client_match_management.CMsgDOTAGroupMergeReply{},
-	dm.EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply:   &dota_gcmessages_client_match_management.CMsgDOTAGroupMergeReply{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite:        &dm.CMsgDOTAGroupMergeInvite{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCMergePartyResponse:      &dm.CMsgDOTAGroupMergeResponse{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply: &dm.CMsgDOTAGroupMergeReply{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply:   &dm.CMsgDOTAGroupMergeReply{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCPingData: &base_gcmessages.CMsgClientPingData{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCPingData: &dm.CMsgClientPingData{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest: &dota_gcmessages_client.CMsgClientToGCGetEventGoals{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest: &dm.CMsgClientToGCGetEventGoals{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest: &dota_gcmessages_client_team.CMsgDOTAMyTeamInfoRequest{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest: &dm.CMsgDOTAMyTeamInfoRequest{},
 
-	dm.EDOTAGCMsg_k_EMsgLobbyBattleCupVictory: &dota_gcmessages_common.CMsgBattleCupVictory{},
+	dm.EDOTAGCMsg_k_EMsgLobbyBattleCupVictory: &dm.CMsgBattleCupVictory{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions: &dota_gcmessages_client_match_management.CMsgPartyBuilderOptions{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions: &dm.CMsgPartyBuilderOptions{},
 
-	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: &dota_gcmessages_client_chat.CMsgDOTAOtherJoinedChatChannel{},
-	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel:   &dota_gcmessages_client_chat.CMsgDOTAOtherLeftChatChannel{},
+	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: &dm.CMsgDOTAOtherJoinedChatChannel{},
+	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel:   &dm.CMsgDOTAOtherLeftChatChannel{},
 
-	dm.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged: &dota_gcmessages_client.CMsgDOTACompendiumData{},
+	dm.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged: &dm.CMsgDOTACompendiumData{},
 
-	dm.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated:   &dota_gcmessages_common.CMsgDOTAProfileCard{},
-	dm.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded: &dota_gcmessages_client.CMsgGCNotificationsResponse_Notification{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated:   &dm.CMsgDOTAProfileCard{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded: &dm.CMsgGCNotificationsResponse_Notification{},
 
-	dm.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse: &dota_gcmessages_client.CMsgMatchVoteResponse{},
+	dm.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse: &dm.CMsgMatchVoteResponse{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse: &dota_gcmessages_common.CMsgDOTAProfileCard{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse: &dm.CMsgDOTAProfileCard{},
 
-	dm.EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled: &dota_gcmessages_client_chat.CMsgDOTAChatRegionsEnabled{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled: &dm.CMsgDOTAChatRegionsEnabled{},
 
-	dm.EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse: &dota_gcmessages_client.CMsgDOTAProfileTickets{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse: &dm.CMsgDOTAProfileTickets{},
 
 	// Experimental
-	dm.EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats: &dota_gcmessages_client_fantasy.CMsgDOTAFantasyPlayerHisoricalStatsResponse_PlayerStats{},
+	dm.EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats: &dm.CMsgDOTAFantasyPlayerHisoricalStatsResponse_PlayerStats{},
 
-	dm.EDOTAGCMsg_k_EMsgGCToClientTeamsInfo: &dota_gcmessages_client_team.CMsgDOTATeamsInfo{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientTeamsInfo: &dm.CMsgDOTATeamsInfo{},
 
-	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPNotifyRecipient: &dota_gcmessages_client.CMsgDOTALobbyMVPNotifyRecipient{},
-	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded:         &dota_gcmessages_client.CMsgDOTALobbyMVPAwarded{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPNotifyRecipient: &dm.CMsgDOTALobbyMVPNotifyRecipient{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded:         &dm.CMsgDOTALobbyMVPAwarded{},
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummary:         &dm.CMsgEventTipsSummaryRequest{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummaryResponse: &dm.CMsgEventTipsSummaryResponse{},
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeed:         &dm.CMsgSocialFeedRequest{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedResponse: &dm.CMsgSocialFeedResponse{},
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedComments:         &dm.CMsgSocialFeedCommentsRequest{},
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedCommentsResponse: &dm.CMsgSocialFeedCommentsResponse{},
 }
 
 var msgArgAsParameterOverrides = map[dm.EDOTAGCMsg]bool{

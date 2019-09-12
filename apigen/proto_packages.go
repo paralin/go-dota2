@@ -2,10 +2,9 @@ package main
 
 import (
 	"go/importer"
+	"go/token"
 	"go/types"
 	"regexp"
-
-	"github.com/paralin/go-dota2/protocol/all"
 )
 
 // TypeRegex matches struct types in Go
@@ -28,7 +27,9 @@ type ProtoType struct {
 // BuildProtoTypeMap attempts to compile the proto type list.
 func BuildProtoTypeMap() (map[string]*types.Package, map[string]*ProtoType, error) {
 	packages := make(map[string]*types.Package)
-	imp := importer.Default()
+	// imp := importer.Default()
+	fset := token.NewFileSet()
+	imp := importer.ForCompiler(fset, "source", nil)
 
 	importPak := func(pak string) error {
 		ipak, err := imp.Import(pak)
@@ -41,7 +42,10 @@ func BuildProtoTypeMap() (map[string]*types.Package, map[string]*ProtoType, erro
 	}
 
 	// import all packages
-	for _, pak := range all.Packages {
+	allPackages := []string{
+		"github.com/paralin/go-dota2/protocol",
+	}
+	for _, pak := range allPackages {
 		if err := importPak(pak); err != nil {
 			return nil, nil, err
 		}

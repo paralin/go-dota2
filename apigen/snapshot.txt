@@ -4,100 +4,94 @@
 7005	N/A   	k_EMsgGCGameMatchSignOutResponse
 7009	CLIENT	k_EMsgGCJoinChatChannel	JoinChatChannel
 7010	GC    	k_EMsgGCJoinChatChannelResponse
-7013	N/A   	k_EMsgGCOtherJoinedChannel
-7014	N/A   	k_EMsgGCOtherLeftChannel
-7017	GC    	k_EMsgGCMatchHistoryList
+7013	GC    	k_EMsgGCOtherJoinedChannel
+7014	GC    	k_EMsgGCOtherLeftChannel
+7017	N/A   	k_EMsgGCMatchHistoryList
 7026	N/A   	k_EMsgServerToGCRequestStatus
-7027	GC    	k_EMsgGCGetRecentMatches
+7027	N/A   	k_EMsgGCGetRecentMatches
 7028	GC    	k_EMsgGCRecentMatchesResponse
 7033	CLIENT	k_EMsgGCStartFindingMatch	StartFindingMatch
-7034	GC    	k_EMsgGCConnectedPlayers
-7035	CLIENT	k_EMsgGCAbandonCurrentGame	SendAbandonCurrentGame
+7034	N/A   	k_EMsgGCConnectedPlayers
+7035	CLIENT	k_EMsgGCAbandonCurrentGame	AbandonLobby
 7036	CLIENT	k_EMsgGCStopFindingMatch	SendStopFindingMatch
-7038	CLIENT	k_EMsgGCPracticeLobbyCreate	CreateLobby
+7038	N/A   	k_EMsgGCPracticeLobbyCreate
 7040	CLIENT	k_EMsgGCPracticeLobbyLeave	LeaveLobby
 7041	CLIENT	k_EMsgGCPracticeLobbyLaunch	LaunchLobby
 7042	CLIENT	k_EMsgGCPracticeLobbyList	ListLobbies
 7043	GC    	k_EMsgGCPracticeLobbyListResponse
 7044	CLIENT	k_EMsgGCPracticeLobbyJoin	JoinLobby
-7046	CLIENT	k_EMsgGCPracticeLobbySetDetails	LobbySetDetails
-7047	CLIENT	k_EMsgGCPracticeLobbySetTeamSlot	LobbySetTeamSlot
+7046	CLIENT	k_EMsgGCPracticeLobbySetDetails	SetLobbyDetails
+7047	N/A   	k_EMsgGCPracticeLobbySetTeamSlot
 7049	CLIENT	k_EMsgGCInitialQuestionnaireResponse	SendInitialQuestionnaireResponse
 7055	N/A   	k_EMsgGCPracticeLobbyResponse
 7056	GC    	k_EMsgGCBroadcastNotification
-7057	GC    	k_EMsgGCLiveScoreboardUpdate
+7057	N/A   	k_EMsgGCLiveScoreboardUpdate
 7060	CLIENT	k_EMsgGCRequestChatChannelList	ListChatChannel
 7061	GC    	k_EMsgGCRequestChatChannelListResponse
 7064	CLIENT	k_EMsgGCRequestMatches	RequestMatches
 7065	GC    	k_EMsgGCRequestMatchesResponse
-7068	CLIENT	k_EMsgGCRequestPlayerResources	RequestPlayerResources
-7069	GC    	k_EMsgGCRequestPlayerResourcesResponse
+7068	N/A   	k_EMsgGCRequestPlayerResources
+7069	N/A   	k_EMsgGCRequestPlayerResourcesResponse
 7070	CLIENT	k_EMsgGCReadyUp	SendReadyUp
 7071	GC    	k_EMsgGCKickedFromMatchmakingQueue
 7072	N/A   	k_EMsgGCLeaverDetected
 7073	CLIENT	k_EMsgGCSpectateFriendGame	SpectateFriendGame
 7074	GC    	k_EMsgGCSpectateFriendGameResponse
-7075	GC    	k_EMsgGCPlayerReports
+7075	N/A   	k_EMsgGCPlayerReports
 7076	CLIENT	k_EMsgGCReportsRemainingRequest	RequestReportsRemaining
 7077	GC    	k_EMsgGCReportsRemainingResponse
 7078	CLIENT	k_EMsgGCSubmitPlayerReport	SubmitPlayerReport
 7079	GC    	k_EMsgGCSubmitPlayerReportResponse
-7081	GC    	k_EMsgGCPracticeLobbyKick
+7081	CLIENT	k_EMsgGCPracticeLobbyKick	KickLobbyMember
 7082	CLIENT	k_EMsgGCReportCountsRequest	RequestReportCounts
 7083	GC    	k_EMsgGCReportCountsResponse
 7084	CLIENT	k_EMsgGCRequestSaveGames	RequestSaveGames
 7085	N/A   	k_EMsgGCRequestSaveGamesServer
 7086	GC    	k_EMsgGCRequestSaveGamesResponse
 7087	N/A   	k_EMsgGCLeaverDetectedResponse
-7088	GC    	k_EMsgGCPlayerFailedToConnect
-7089	GC    	k_EMsgGCGCToRelayConnect
-7090	GC    	k_EMsgGCGCToRelayConnectresponse
+7088	N/A   	k_EMsgGCPlayerFailedToConnect
+7089	N/A   	k_EMsgGCGCToRelayConnect
+7090	N/A   	k_EMsgGCGCToRelayConnectresponse
 7091	GC    	k_EMsgGCWatchGame
 7092	GC    	k_EMsgGCWatchGameResponse
-7093	CLIENT	k_EMsgGCBanStatusRequest	RequestBanStatus
-7094	GC    	k_EMsgGCBanStatusResponse
+7093	N/A   	k_EMsgGCBanStatusRequest
+7094	N/A   	k_EMsgGCBanStatusResponse
 7095	CLIENT	k_EMsgGCMatchDetailsRequest	RequestMatchDetails
 7096	GC    	k_EMsgGCMatchDetailsResponse
-7097	GC    	k_EMsgGCCancelWatchGame
-7098	CLIENT	k_EMsgGCProfileRequest	RequestProfile
-7099	GC    	k_EMsgGCProfileResponse
+7097	CLIENT	k_EMsgGCCancelWatchGame	CancelWatchGame
 7102	GC    	k_EMsgGCPopup
-7104	CLIENT	k_EMsgGCDOTAClearNotifySuccessfulReport	DOTAClearNotifySuccessfulReport
+7104	CLIENT	k_EMsgGCDOTAClearNotifySuccessfulReport	ClearSuccessfulReportNotification
 7111	CLIENT	k_EMsgGCFriendPracticeLobbyListRequest	ListFriendLobby
 7112	GC    	k_EMsgGCFriendPracticeLobbyListResponse
 7113	GC    	k_EMsgGCPracticeLobbyJoinResponse
-7114	CLIENT	k_EMsgClientEconNotification_Job	SendClientEconNotification_Job
+7114	N/A   	k_EMsgClientEconNotification_Job
 7115	CLIENT	k_EMsgGCCreateTeam	CreateTeam
 7116	GC    	k_EMsgGCCreateTeamResponse
 7121	N/A   	k_EMsgGCTeamData
-7122	GC    	k_EMsgGCTeamInvite_InviterToGC
+7122	CLIENT	k_EMsgGCTeamInvite_InviterToGC	InvitePlayerToTeam
 7123	GC    	k_EMsgGCTeamInvite_GCImmediateResponseToInviter
-7124	N/A   	k_EMsgGCTeamInvite_GCRequestToInvitee
-7125	GC    	k_EMsgGCTeamInvite_InviteeResponseToGC
-7126	N/A   	k_EMsgGCTeamInvite_GCResponseToInviter
-7127	N/A   	k_EMsgGCTeamInvite_GCResponseToInvitee
-7128	GC    	k_EMsgGCKickTeamMember
+7124	GC    	k_EMsgGCTeamInvite_GCRequestToInvitee
+7125	CLIENT	k_EMsgGCTeamInvite_InviteeResponseToGC	RespondToTeamInvite
+7126	GC    	k_EMsgGCTeamInvite_GCResponseToInviter
+7127	CLIENT	k_EMsgGCTeamInvite_GCResponseToInvitee	SendTeamInvite_GCResponseToInvitee
+7128	CLIENT	k_EMsgGCKickTeamMember	KickTeamMember
 7129	GC    	k_EMsgGCKickTeamMemberResponse
 7130	CLIENT	k_EMsgGCLeaveTeam	LeaveTeam
 7131	GC    	k_EMsgGCLeaveTeamResponse
-7132	GC    	k_EMsgGCSuggestTeamMatchmaking
-7133	GC    	k_EMsgGCPlayerHeroesFavoritesAdd
-7134	GC    	k_EMsgGCPlayerHeroesFavoritesRemove
-7141	CLIENT	k_EMsgGCSetShowcaseHero	SetShowcaseHero
-7142	GC    	k_EMsgGCApplyTeamToPracticeLobby
-7143	CLIENT	k_EMsgGCRequestInternatinalTicketEmail	RequestInternationalTicketEmail
+7132	N/A   	k_EMsgGCSuggestTeamMatchmaking
+7133	N/A   	k_EMsgGCPlayerHeroesFavoritesAdd
+7134	N/A   	k_EMsgGCPlayerHeroesFavoritesRemove
+7142	CLIENT	k_EMsgGCApplyTeamToPracticeLobby	ApplyTeamToLobby
 7144	CLIENT	k_EMsgGCTransferTeamAdmin	TransferTeamAdmin
-7147	CLIENT	k_EMsgRequestLeagueInfo	RequestLeagueInfo
-7148	CLIENT	k_EMsgResponseLeagueInfo	SendResponseLeagueInfo
-7149	CLIENT	k_EMsgGCPracticeLobbyJoinBroadcastChannel	LobbyJoinBroadcastChannel
+7149	CLIENT	k_EMsgGCPracticeLobbyJoinBroadcastChannel	JoinLobbyBroadcastChannel
 7150	N/A   	k_EMsgGC_TournamentItemEvent
 7151	N/A   	k_EMsgGC_TournamentItemEventResponse
-7152	CLIENT	k_EMsgCastMatchVote	SendCastMatchVote
-7153	GC    	k_EMsgCastMatchVoteResponse
-7154	CLIENT	k_EMsgRetrieveMatchVote	SendRetrieveMatchVote
+7152	CLIENT	k_EMsgCastMatchVote	CastMatchVote
+7153	N/A   	k_EMsgCastMatchVoteResponse
+7154	CLIENT	k_EMsgRetrieveMatchVote	RetrieveMatchVote
 7155	GC    	k_EMsgRetrieveMatchVoteResponse
-7156	CLIENT	k_EMsgTeamFanfare	SendTeamFanfare
-7157	CLIENT	k_EMsgResponseTeamFanfare	SendResponseTeamFanfare
+7156	N/A   	k_EMsgTeamFanfare
+7157	N/A   	k_EMsgResponseTeamFanfare
 7158	N/A   	k_EMsgGC_GameServerUploadSaveGame
 7159	N/A   	k_EMsgGC_GameServerSaveGameResult
 7160	N/A   	k_EMsgGC_GameServerGetLoadGame
@@ -110,12 +104,12 @@
 7171	GC    	k_EMsgGCHallOfFame
 7172	CLIENT	k_EMsgGCHallOfFameRequest	RequestHallOfFame
 7173	GC    	k_EMsgGCHallOfFameResponse
-7174	CLIENT	k_EMsgGCGenerateDiretidePrizeList	GenerateDiretidePrizeList
-7176	GC    	k_EMsgGCRewardDiretidePrizes
+7174	N/A   	k_EMsgGCGenerateDiretidePrizeList
+7176	N/A   	k_EMsgGCRewardDiretidePrizes
 7177	GC    	k_EMsgGCDiretidePrizesRewardedResponse
 7178	CLIENT	k_EMsgGCHalloweenHighScoreRequest	RequestHalloweenHighScore
 7179	GC    	k_EMsgGCHalloweenHighScoreResponse
-7180	GC    	k_EMsgGCGenerateDiretidePrizeListResponse
+7180	N/A   	k_EMsgGCGenerateDiretidePrizeListResponse
 7182	CLIENT	k_EMsgGCStorePromoPagesRequest	RequestStorePromoPages
 7183	GC    	k_EMsgGCStorePromoPagesResponse
 7186	N/A   	k_EMsgGCToGCMatchCompleted
@@ -124,21 +118,19 @@
 7190	N/A   	k_EMsgGCToGCCheckLeaguePermissionResponse
 7197	CLIENT	k_EMsgGCMatchmakingStatsRequest	RequestMatchmakingStats
 7198	GC    	k_EMsgGCMatchmakingStatsResponse
-7199	CLIENT	k_EMsgGCBotGameCreate	BotGameCreate
+7199	CLIENT	k_EMsgGCBotGameCreate	CreateBotGame
 7200	CLIENT	k_EMsgGCSetMatchHistoryAccess	SetMatchHistoryAccess
 7201	GC    	k_EMsgGCSetMatchHistoryAccessResponse
-7203	CLIENT	k_EMsgUpgradeLeagueItem	SendUpgradeLeagueItem
+7203	CLIENT	k_EMsgUpgradeLeagueItem	UpgradeLeagueItem
 7204	GC    	k_EMsgUpgradeLeagueItemResponse
-7205	CLIENT	k_EMsgGCTeamMemberProfileRequest	RequestTeamMemberProfile
+7205	N/A   	k_EMsgGCTeamMemberProfileRequest
 7206	GC    	k_EMsgGCWatchDownloadedReplay
 7207	CLIENT	k_EMsgGCSetMapLocationState	SetMapLocationState
 7208	GC    	k_EMsgGCSetMapLocationStateResponse
 7209	GC    	k_EMsgGCResetMapLocations
 7210	GC    	k_EMsgGCResetMapLocationsResponse
-7212	CLIENT	k_EMsgGCSetFeaturedItems	SetFeaturedItems
-7215	GC    	k_EMsgGCFeaturedItems
-7216	CLIENT	k_EMsgRefreshPartnerAccountLink	SendRefreshPartnerAccountLink
-7217	CLIENT	k_EMsgClientsRejoinChatChannels	SendClientsRejoinChatChannels
+7216	CLIENT	k_EMsgRefreshPartnerAccountLink	RefreshPartnerAccountLink
+7217	CLIENT	k_EMsgClientsRejoinChatChannels	RejoinAllChatChannels
 7218	N/A   	k_EMsgGCToGCGetUserChatInfo
 7219	N/A   	k_EMsgGCToGCGetUserChatInfoResponse
 7220	N/A   	k_EMsgGCToGCLeaveAllChatChannels
@@ -147,8 +139,8 @@
 7223	GC    	k_EMsgGCGuildCreateResponse
 7224	CLIENT	k_EMsgGCGuildSetAccountRoleRequest	RequestGuildSetAccountRole
 7225	GC    	k_EMsgGCGuildSetAccountRoleResponse
-7226	CLIENT	k_EMsgGCRequestGuildData	RequestGuildData
-7227	GC    	k_EMsgGCGuildData
+7226	N/A   	k_EMsgGCRequestGuildData
+7227	N/A   	k_EMsgGCGuildData
 7228	CLIENT	k_EMsgGCGuildInviteAccountRequest	RequestGuildInviteAccount
 7229	GC    	k_EMsgGCGuildInviteAccountResponse
 7230	CLIENT	k_EMsgGCGuildCancelInviteRequest	RequestGuildCancelInvite
@@ -160,11 +152,11 @@
 7236	N/A   	k_EMsgGCToGCGetUserRank
 7237	N/A   	k_EMsgGCToGCGetUserRankResponse
 7240	N/A   	k_EMsgGCToGCUpdateTeamStats
-7241	N/A   	k_EMsgGCToGCGetTeamRank
-7242	N/A   	k_EMsgGCToGCGetTeamRankResponse
-7248	CLIENT	k_EMsgGCPassportDataRequest	RequestPassportData
-7249	GC    	k_EMsgGCPassportDataResponse
-7251	GC    	k_EMsgGCNotInGuildData
+7241	N/A   	k_EMsgGCToGCValidateTeam
+7242	N/A   	k_EMsgGCToGCValidateTeamResponse
+7248	N/A   	k_EMsgGCPassportDataRequest
+7249	N/A   	k_EMsgGCPassportDataResponse
+7251	N/A   	k_EMsgGCNotInGuildData
 7254	GC    	k_EMsgGCGuildInviteData
 7255	N/A   	k_EMsgGCToGCGetLeagueAdmin
 7256	N/A   	k_EMsgGCToGCGetLeagueAdminResponse
@@ -177,12 +169,12 @@
 7265	GC    	k_EMsgGCGuildUpdateMessage
 7266	CLIENT	k_EMsgGCPartySetOpenGuildRequest	RequestPartySetOpenGuild
 7267	GC    	k_EMsgGCPartySetOpenGuildResponse
-7268	CLIENT	k_EMsgGCGuildOpenPartyRefresh	GuildOpenPartyRefresh
+7268	CLIENT	k_EMsgGCGuildOpenPartyRefresh	OpenGuildPartyRefresh
 7269	CLIENT	k_EMsgGCJoinOpenGuildPartyRequest	RequestJoinOpenGuildParty
 7270	GC    	k_EMsgGCJoinOpenGuildPartyResponse
 7272	CLIENT	k_EMsgGCLeaveChatChannel	LeaveChatChannel
-7273	GC    	k_EMsgGCChatMessage
-7274	GC    	k_EMsgGCGetHeroStandings
+7273	CLIENT	k_EMsgGCChatMessage	SendChatMessage
+7274	CLIENT	k_EMsgGCGetHeroStandings	GetHeroStandings
 7275	GC    	k_EMsgGCGetHeroStandingsResponse
 7279	CLIENT	k_EMsgGCGuildEditLogoRequest	RequestGuildEditLogo
 7280	GC    	k_EMsgGCGuildEditLogoResponse
@@ -190,30 +182,30 @@
 7282	GC    	k_EMsgGCGuildmatePracticeLobbyListResponse
 7283	CLIENT	k_EMsgGCItemEditorReservationsRequest	RequestItemEditorReservations
 7284	GC    	k_EMsgGCItemEditorReservationsResponse
-7285	CLIENT	k_EMsgGCItemEditorReserveItemDef	ItemEditorReserveItemDef
+7285	CLIENT	k_EMsgGCItemEditorReserveItemDef	ReserveEditorItemItemDef
 7286	GC    	k_EMsgGCItemEditorReserveItemDefResponse
-7287	CLIENT	k_EMsgGCItemEditorReleaseReservation	ItemEditorReleaseReservation
+7287	CLIENT	k_EMsgGCItemEditorReleaseReservation	ReleaseEditorItemReservation
 7288	GC    	k_EMsgGCItemEditorReleaseReservationResponse
-7289	GC    	k_EMsgGCRewardTutorialPrizes
+7289	N/A   	k_EMsgGCRewardTutorialPrizes
 7290	GC    	k_EMsgGCLastHitChallengeHighScorePost
 7291	CLIENT	k_EMsgGCLastHitChallengeHighScoreRequest	RequestLastHitChallengeHighScore
 7292	GC    	k_EMsgGCLastHitChallengeHighScoreResponse
-7293	CLIENT	k_EMsgGCCreateFantasyLeagueRequest	RequestCreateFantasyLeague
-7294	GC    	k_EMsgGCCreateFantasyLeagueResponse
+7293	N/A   	k_EMsgGCCreateFantasyLeagueRequest
+7294	N/A   	k_EMsgGCCreateFantasyLeagueResponse
 7297	CLIENT	k_EMsgGCFantasyLeagueInfoRequest	RequestFantasyLeagueInfo
 7298	GC    	k_EMsgGCFantasyLeagueInfoResponse
 7299	GC    	k_EMsgGCFantasyLeagueInfo
-7300	CLIENT	k_EMsgGCCreateFantasyTeamRequest	RequestCreateFantasyTeam
-7301	GC    	k_EMsgGCCreateFantasyTeamResponse
-7302	CLIENT	k_EMsgGCEditFantasyTeamRequest	RequestEditFantasyTeam
+7300	N/A   	k_EMsgGCCreateFantasyTeamRequest
+7301	N/A   	k_EMsgGCCreateFantasyTeamResponse
+7302	CLIENT	k_EMsgGCEditFantasyTeamRequest	EditFantasyTeam
 7303	GC    	k_EMsgGCEditFantasyTeamResponse
-7304	CLIENT	k_EMsgGCFantasyTeamInfoRequestByFantasyLeagueID	FantasyTeamInfoRequestByFantasyLeagueID
-7305	CLIENT	k_EMsgGCFantasyTeamInfoRequestByOwnerAccountID	FantasyTeamInfoRequestByOwnerAccountID
+7304	CLIENT	k_EMsgGCFantasyTeamInfoRequestByFantasyLeagueID	RequestTeamInfoFantasyByFantasyLeagueID
+7305	CLIENT	k_EMsgGCFantasyTeamInfoRequestByOwnerAccountID	RequestTeamInfoFantasyByOwnerAccountID
 7306	GC    	k_EMsgGCFantasyTeamInfoResponse
 7307	GC    	k_EMsgGCFantasyTeamInfo
-7308	GC    	k_EMsgGCFantasyLivePlayerStats
+7308	N/A   	k_EMsgGCFantasyLivePlayerStats
 7309	GC    	k_EMsgGCFantasyFinalPlayerStats
-7310	GC    	k_EMsgGCFantasyMatch
+7310	N/A   	k_EMsgGCFantasyMatch
 7312	CLIENT	k_EMsgGCFantasyTeamScoreRequest	RequestFantasyTeamScore
 7313	GC    	k_EMsgGCFantasyTeamScoreResponse
 7314	CLIENT	k_EMsgGCFantasyTeamStandingsRequest	RequestFantasyTeamStandings
@@ -223,32 +215,28 @@
 7318	CLIENT	k_EMsgGCFantasyPlayerStandingsRequest	RequestFantasyPlayerStandings
 7319	GC    	k_EMsgGCFantasyPlayerStandingsResponse
 7320	CLIENT	k_EMsgGCFlipLobbyTeams	FlipLobbyTeams
-7321	CLIENT	k_EMsgGCCustomGameCreate	CustomGameCreate
-7322	CLIENT	k_EMsgGCFantasyPlayerInfoRequest	RequestFantasyPlayerInfo
-7323	GC    	k_EMsgGCFantasyPlayerInfoResponse
+7321	CLIENT	k_EMsgGCCustomGameCreate	CreateGameCustom
 7324	N/A   	k_EMsgGCToGCProcessPlayerReportForTarget
 7325	N/A   	k_EMsgGCToGCProcessReportSuccess
 7326	GC    	k_EMsgGCNotifyAccountFlagsChange
 7327	CLIENT	k_EMsgGCSetProfilePrivacy	SetProfilePrivacy
 7328	GC    	k_EMsgGCSetProfilePrivacyResponse
-7329	CLIENT	k_EMsgGCSteamProfileRequest	RequestSteamProfile
-7330	GC    	k_EMsgGCSteamProfileRequestResponse
-7331	CLIENT	k_EMsgGCFantasyLeagueCreateInfoRequest	RequestFantasyLeagueCreateInfo
-7332	GC    	k_EMsgGCFantasyLeagueCreateInfoResponse
-7333	CLIENT	k_EMsgGCFantasyLeagueInviteInfoRequest	RequestFantasyLeagueInviteInfo
-7334	GC    	k_EMsgGCFantasyLeagueInviteInfoResponse
+7331	N/A   	k_EMsgGCFantasyLeagueCreateInfoRequest
+7332	N/A   	k_EMsgGCFantasyLeagueCreateInfoResponse
+7333	N/A   	k_EMsgGCFantasyLeagueInviteInfoRequest
+7334	N/A   	k_EMsgGCFantasyLeagueInviteInfoResponse
 7335	GC    	k_EMsgGCClientIgnoredUser
 7336	CLIENT	k_EMsgGCFantasyLeagueCreateRequest	CreateFantasyLeague
 7337	GC    	k_EMsgGCFantasyLeagueCreateResponse
 7338	CLIENT	k_EMsgGCFantasyTeamCreateRequest	CreateFantasyTeam
 7339	GC    	k_EMsgGCFantasyTeamCreateResponse
-7340	CLIENT	k_EMsgGCFantasyLeagueFriendJoinListRequest	ListFantasyLeagueFriendJoin
-7341	GC    	k_EMsgGCFantasyLeagueFriendJoinListResponse
+7340	N/A   	k_EMsgGCFantasyLeagueFriendJoinListRequest
+7341	N/A   	k_EMsgGCFantasyLeagueFriendJoinListResponse
 7342	GC    	k_EMsgGCClientSuspended
-7343	CLIENT	k_EMsgGCPartyMemberSetCoach	PartyMemberSetCoach
+7343	CLIENT	k_EMsgGCPartyMemberSetCoach	SetMemberPartyCoach
 7344	CLIENT	k_EMsgGCFantasyLeagueEditInvitesRequest	RequestFantasyLeagueEditInvites
 7345	GC    	k_EMsgGCFantasyLeagueEditInvitesResponse
-7346	CLIENT	k_EMsgGCPracticeLobbySetCoach	LobbySetCoach
+7346	CLIENT	k_EMsgGCPracticeLobbySetCoach	SetLobbyCoach
 7347	CLIENT	k_EMsgGCFantasyLeagueEditInfoRequest	RequestFantasyLeagueEditInfo
 7348	GC    	k_EMsgGCFantasyLeagueEditInfoResponse
 7349	CLIENT	k_EMsgGCFantasyLeagueDraftStatusRequest	RequestFantasyLeagueDraftStatus
@@ -261,48 +249,45 @@
 7356	GC    	k_EMsgGCFantasyTeamRosterSwapResponse
 7357	CLIENT	k_EMsgGCFantasyTeamRosterRequest	RequestFantasyTeamRoster
 7358	GC    	k_EMsgGCFantasyTeamRosterResponse
-7359	GC    	k_EMsgGCNexonPartnerUpdate
-7360	N/A   	k_EMsgGCToGCProcessPCBangRewardPoints
 7361	CLIENT	k_EMsgGCFantasyTeamRosterAddDropRequest	RequestFantasyTeamRosterAddDrop
 7362	GC    	k_EMsgGCFantasyTeamRosterAddDropResponse
 7363	CLIENT	k_EMsgPresentedClientTerminateDlg	SendPresentedClientTerminateDlg
 7364	CLIENT	k_EMsgGCFantasyPlayerHisoricalStatsRequest	RequestFantasyPlayerHisoricalStats
 7365	GC    	k_EMsgGCFantasyPlayerHisoricalStatsResponse
-7366	GC    	k_EMsgGCPCBangTimedRewardMessage
+7366	N/A   	k_EMsgGCPCBangTimedRewardMessage
 7367	GC    	k_EMsgGCLobbyUpdateBroadcastChannelInfo
 7368	CLIENT	k_EMsgGCFantasyTeamTradesRequest	RequestFantasyTeamTrades
 7369	GC    	k_EMsgGCFantasyTeamTradesResponse
-7370	CLIENT	k_EMsgGCFantasyTeamTradeCancelRequest	RequestFantasyTeamTradeCancel
+7370	CLIENT	k_EMsgGCFantasyTeamTradeCancelRequest	CancelFantasyTeamTrade
 7371	GC    	k_EMsgGCFantasyTeamTradeCancelResponse
 7372	N/A   	k_EMsgGCToGCGrantTournamentItem
 7373	GC    	k_EMsgGCProcessFantasyScheduledEvent
-7374	N/A   	k_EMsgGCToGCGrantPCBangRewardItem
 7375	N/A   	k_EMsgGCToGCUpgradeTwitchViewerItems
 7376	N/A   	k_EMsgGCToGCGetLiveMatchAffiliates
 7377	N/A   	k_EMsgGCToGCGetLiveMatchAffiliatesResponse
 7378	N/A   	k_EMsgGCToGCUpdatePlayerPennantCounts
 7379	N/A   	k_EMsgGCToGCGetPlayerPennantCounts
 7380	N/A   	k_EMsgGCToGCGetPlayerPennantCountsResponse
-7381	CLIENT	k_EMsgGCGameMatchSignOutPermissionRequest	RequestGameMatchSignOutPermission
-7382	GC    	k_EMsgGCGameMatchSignOutPermissionResponse
+7381	N/A   	k_EMsgGCGameMatchSignOutPermissionRequest
+7382	N/A   	k_EMsgGCGameMatchSignOutPermissionResponse
 7383	CLIENT	k_EMsgDOTAChatChannelMemberUpdate	SendChatChannelMemberUpdate
-7384	CLIENT	k_EMsgDOTAAwardEventPoints	AwardEventPoints
-7387	CLIENT	k_EMsgDOTAGetEventPoints	SendGetEventPoints
+7384	N/A   	k_EMsgDOTAAwardEventPoints
+7387	CLIENT	k_EMsgDOTAGetEventPoints	GetEventPoints
 7388	GC    	k_EMsgDOTAGetEventPointsResponse
 7390	N/A   	k_EMsgGCToGCSignoutAwardEventPoints
-7393	CLIENT	k_EMsgDOTASendFriendRecruits	SendSendFriendRecruits
+7393	CLIENT	k_EMsgDOTASendFriendRecruits	SendFriendRecruits
 7394	CLIENT	k_EMsgDOTAFriendRecruitsRequest	RequestFriendRecruits
 7395	GC    	k_EMsgDOTAFriendRecruitsResponse
 7396	CLIENT	k_EMsgDOTAFriendRecruitInviteAcceptDecline	SendFriendRecruitInviteAcceptDecline
 7397	GC    	k_EMsgGCPartyLeaderWatchGamePrompt
-7398	CLIENT	k_EMsgDOTAFrostivusTimeElapsed	SendFrostivusTimeElapsed
+7398	N/A   	k_EMsgDOTAFrostivusTimeElapsed
 7402	GC    	k_EMsgDOTALiveLeagueGameUpdate
-7403	CLIENT	k_EMsgDOTAChatGetUserList	ChatGetUserList
+7403	CLIENT	k_EMsgDOTAChatGetUserList	GetChatUserList
 7404	GC    	k_EMsgDOTAChatGetUserListResponse
-7405	CLIENT	k_EMsgGCCompendiumSetSelection	CompendiumSetSelection
+7405	CLIENT	k_EMsgGCCompendiumSetSelection	SetCompendiumSelection
 7406	CLIENT	k_EMsgGCCompendiumDataRequest	RequestCompendiumData
 7407	GC    	k_EMsgGCCompendiumDataResponse
-7408	CLIENT	k_EMsgDOTAGetPlayerMatchHistory	SendGetPlayerMatchHistory
+7408	CLIENT	k_EMsgDOTAGetPlayerMatchHistory	GetPlayerMatchHistory
 7409	GC    	k_EMsgDOTAGetPlayerMatchHistoryResponse
 7410	N/A   	k_EMsgGCToGCMatchmakingAddParty
 7411	N/A   	k_EMsgGCToGCMatchmakingRemoveParty
@@ -313,7 +298,6 @@
 7416	N/A   	k_EMsgGCToServerPingRequest
 7417	N/A   	k_EMsgGCToServerPingResponse
 7418	N/A   	k_EMsgGCToServerConsoleCommand
-7420	N/A   	k_EMsgGCToGCUpdateLiveLeagueGameInfo
 7423	GC    	k_EMsgGCMakeOffering
 7424	CLIENT	k_EMsgGCRequestOfferings	RequestOfferings
 7425	GC    	k_EMsgGCRequestOfferingsResponse
@@ -322,114 +306,108 @@
 7428	GC    	k_EMsgGCNotificationsResponse
 7429	N/A   	k_EMsgGCToGCModifyNotification
 7430	N/A   	k_EMsgGCToGCSetNewNotifications
-7431	N/A   	k_EMsgGCToGCSetIsLeagueAdmin
-7432	GC    	k_EMsgGCLeagueAdminState
-7433	N/A   	k_EMsgGCToGCSendLeagueAdminState
-7434	CLIENT	k_EMsgGCLeagueAdminList	LeagueAdminList
+7434	GC    	k_EMsgGCLeagueAdminList
 7435	CLIENT	k_EMsgGCNotificationsMarkReadRequest	RequestNotificationsMarkRead
 7436	GC    	k_EMsgGCFantasyMessageAdd
 7437	CLIENT	k_EMsgGCFantasyMessagesRequest	RequestFantasyMessages
 7438	GC    	k_EMsgGCFantasyMessagesResponse
 7439	CLIENT	k_EMsgGCFantasyScheduledMatchesRequest	RequestFantasyScheduledMatches
 7440	GC    	k_EMsgGCFantasyScheduledMatchesResponse
-7441	N/A   	k_EMsgGCToGCGrantLeagueAccess
-7443	CLIENT	k_EMsgGCEventGameCreate	EventGameCreate
+7443	CLIENT	k_EMsgGCEventGameCreate	CreateGameEvent
 7444	CLIENT	k_EMsgGCPerfectWorldUserLookupRequest	RequestPerfectWorldUserLookup
 7445	GC    	k_EMsgGCPerfectWorldUserLookupResponse
 7448	GC    	k_EMsgGCFantasyRemoveOwner
 7449	GC    	k_EMsgGCFantasyRemoveOwnerResponse
-7450	CLIENT	k_EMsgGCRequestBatchPlayerResources	RequestBatchPlayerResources
-7451	GC    	k_EMsgGCRequestBatchPlayerResourcesResponse
+7450	N/A   	k_EMsgGCRequestBatchPlayerResources
+7451	N/A   	k_EMsgGCRequestBatchPlayerResourcesResponse
 7452	N/A   	k_EMsgGCToGCSendUpdateLeagues
 7453	GC    	k_EMsgGCCompendiumSetSelectionResponse
 7454	CLIENT	k_EMsgGCPlayerInfoRequest	RequestPlayerInfo
 7455	GC    	k_EMsgGCPlayerInfo
-7456	CLIENT	k_EMsgGCPlayerInfoSubmit	PlayerInfoSubmit
+7456	CLIENT	k_EMsgGCPlayerInfoSubmit	SubmitInfoPlayer
 7457	GC    	k_EMsgGCPlayerInfoSubmitResponse
 7458	N/A   	k_EMsgGCToGCGetAccountLevel
 7459	N/A   	k_EMsgGCToGCGetAccountLevelResponse
 7460	N/A   	k_EMsgGCToGCGetAccountPartner
 7461	N/A   	k_EMsgGCToGCGetAccountPartnerResponse
-7462	N/A   	k_EMsgGCToGCGetAccountProfile
-7463	N/A   	k_EMsgGCToGCGetAccountProfileResponse
-7464	CLIENT	k_EMsgDOTAGetWeekendTourneySchedule	SendGetWeekendTourneySchedule
+7464	CLIENT	k_EMsgDOTAGetWeekendTourneySchedule	GetWeekendTourneySchedule
 7465	GC    	k_EMsgDOTAWeekendTourneySchedule
 7466	CLIENT	k_EMsgGCJoinableCustomGameModesRequest	RequestJoinableCustomGameModes
 7467	GC    	k_EMsgGCJoinableCustomGameModesResponse
 7468	CLIENT	k_EMsgGCJoinableCustomLobbiesRequest	RequestJoinableCustomLobbies
 7469	GC    	k_EMsgGCJoinableCustomLobbiesResponse
-7470	CLIENT	k_EMsgGCQuickJoinCustomLobby	QuickJoinCustomLobby
+7470	CLIENT	k_EMsgGCQuickJoinCustomLobby	JoinQuickCustomLobby
 7471	GC    	k_EMsgGCQuickJoinCustomLobbyResponse
 7472	N/A   	k_EMsgGCToGCGrantEventPointAction
-7473	CLIENT	k_EMsgServerGetEventPoints	SendServerGetEventPoints
-7474	GC    	k_EMsgServerGetEventPointsResponse
-7475	CLIENT	k_EMsgServerGrantSurveyPermission	ServerGrantSurveyPermission
-7476	GC    	k_EMsgServerGrantSurveyPermissionResponse
+7473	N/A   	k_EMsgServerGetEventPoints
+7474	N/A   	k_EMsgServerGetEventPointsResponse
+7475	N/A   	k_EMsgServerGrantSurveyPermission
+7476	N/A   	k_EMsgServerGrantSurveyPermissionResponse
 7477	CLIENT	k_EMsgClientProvideSurveyResult	SendClientProvideSurveyResult
 7478	N/A   	k_EMsgGCToGCSetCompendiumSelection
 7480	N/A   	k_EMsgGCToGCUpdateTI4HeroQuest
 7481	GC    	k_EMsgGCCompendiumDataChanged
-7482	CLIENT	k_EMsgDOTAFantasyLeagueFindRequest	RequestFantasyLeagueFind
+7482	CLIENT	k_EMsgDOTAFantasyLeagueFindRequest	FindFantasyLeague
 7483	GC    	k_EMsgDOTAFantasyLeagueFindResponse
 7484	CLIENT	k_EMsgGCHasItemQuery	QueryHasItem
 7485	GC    	k_EMsgGCHasItemResponse
-7486	GC    	k_EMsgGCConsumeFantasyTicket
-7487	GC    	k_EMsgGCConsumeFantasyTicketFailure
+7486	N/A   	k_EMsgGCConsumeFantasyTicket
+7487	N/A   	k_EMsgGCConsumeFantasyTicketFailure
 7488	N/A   	k_EMsgGCToGCGrantEventPointActionMsg
-7489	CLIENT	k_EMsgClientToGCTrackDialogResult	SendTrackDialogResult
+7489	CLIENT	k_EMsgClientToGCTrackDialogResult	TrackDialogResult
 7490	CLIENT	k_EMsgGCFantasyLeaveLeagueRequest	RequestFantasyLeaveLeague
 7491	GC    	k_EMsgGCFantasyLeaveLeagueResponse
 7492	N/A   	k_EMsgGCToGCGetCompendiumSelections
 7493	N/A   	k_EMsgGCToGCGetCompendiumSelectionsResponse
 7494	N/A   	k_EMsgServerToGCMatchConnectionStats
 7495	GC    	k_EMsgGCToClientTournamentItemDrop
-7496	CLIENT	k_EMsgSQLDelayedGrantLeagueDrop	SQLDelayedGrantLeagueDrop
-7497	CLIENT	k_EMsgServerGCUpdateSpectatorCount	SendServerGCUpdateSpectatorCount
+7496	N/A   	k_EMsgSQLDelayedGrantLeagueDrop
+7497	N/A   	k_EMsgServerGCUpdateSpectatorCount
 7499	CLIENT	k_EMsgGCFantasyPlayerScoreDetailsRequest	RequestFantasyPlayerScoreDetails
 7500	GC    	k_EMsgGCFantasyPlayerScoreDetailsResponse
 7501	N/A   	k_EMsgGCToGCEmoticonUnlock
-7502	CLIENT	k_EMsgSignOutDraftInfo	SendSignOutDraftInfo
+7502	N/A   	k_EMsgSignOutDraftInfo
 7503	CLIENT	k_EMsgClientToGCEmoticonDataRequest	RequestEmoticonData
 7504	GC    	k_EMsgGCToClientEmoticonData
-7505	CLIENT	k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus	LobbyToggleBroadcastChannelCameramanStatus
+7505	CLIENT	k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus	ToggleLobbyBroadcastChannelCameramanStatus
 7506	N/A   	k_EMsgGCToGCCreateWeekendTourneyRequest
 7507	N/A   	k_EMsgGCToGCCreateWeekendTourneyResponse
 7513	CLIENT	k_EMsgClientToGCSetAdditionalEquips	SetAdditionalEquips
-7514	CLIENT	k_EMsgClientToGCGetAdditionalEquips	SendGetAdditionalEquips
+7514	CLIENT	k_EMsgClientToGCGetAdditionalEquips	GetAdditionalEquips
 7515	GC    	k_EMsgClientToGCGetAdditionalEquipsResponse
 7516	N/A   	k_EMsgServerToGCGetAdditionalEquips
 7517	N/A   	k_EMsgServerToGCGetAdditionalEquipsResponse
-7518	CLIENT	k_EMsgDOTARedeemItem	SendRedeemItem
+7518	CLIENT	k_EMsgDOTARedeemItem	RedeemItem
 7519	GC    	k_EMsgDOTARedeemItemResponse
 7520	N/A   	k_EMsgSQLGCToGCGrantAllHeroProgress
-7521	CLIENT	k_EMsgClientToGCGetAllHeroProgress	SendGetAllHeroProgress
+7521	CLIENT	k_EMsgClientToGCGetAllHeroProgress	GetAllHeroProgress
 7522	GC    	k_EMsgClientToGCGetAllHeroProgressResponse
 7523	N/A   	k_EMsgGCToGCGetServerForClient
 7524	N/A   	k_EMsgGCToGCGetServerForClientResponse
-7525	CLIENT	k_EMsgSQLProcessTournamentGameOutcome	SendSQLProcessTournamentGameOutcome
-7526	CLIENT	k_EMsgSQLGrantTrophyToAccount	SQLGrantTrophyToAccount
-7527	CLIENT	k_EMsgClientToGCGetTrophyList	GetTrophyList
+7525	N/A   	k_EMsgSQLProcessTournamentGameOutcome
+7526	N/A   	k_EMsgSQLGrantTrophyToAccount
+7527	CLIENT	k_EMsgClientToGCGetTrophyList	ListTrophies
 7528	GC    	k_EMsgClientToGCGetTrophyListResponse
 7529	GC    	k_EMsgGCToClientTrophyAwarded
-7530	GC    	k_EMsgGCGameBotMatchSignOut
-7531	CLIENT	k_EMsgGCGameBotMatchSignOutPermissionRequest	RequestGameBotMatchSignOutPermission
-7532	CLIENT	k_EMsgSignOutBotInfo	SendSignOutBotInfo
+7530	N/A   	k_EMsgGCGameBotMatchSignOut
+7531	N/A   	k_EMsgGCGameBotMatchSignOutPermissionRequest
+7532	N/A   	k_EMsgSignOutBotInfo
 7533	N/A   	k_EMsgGCToGCUpdateProfileCards
-7534	CLIENT	k_EMsgClientToGCGetProfileCard	SendGetProfileCard
+7534	CLIENT	k_EMsgClientToGCGetProfileCard	GetProfileCard
 7535	GC    	k_EMsgClientToGCGetProfileCardResponse
 7536	N/A   	k_EMsgServerToGCGetProfileCard
 7537	N/A   	k_EMsgServerToGCGetProfileCardResponse
 7538	CLIENT	k_EMsgClientToGCSetProfileCardSlots	SetProfileCardSlots
 7539	GC    	k_EMsgGCToClientProfileCardUpdated
 7540	N/A   	k_EMsgServerToGCVictoryPredictions
-7542	CLIENT	k_EMsgClientToGCMarkNotificationListRead	MarkNotificationListRead
+7542	CLIENT	k_EMsgClientToGCMarkNotificationListRead	ListNotificationMarkRead
 7543	GC    	k_EMsgGCToClientNewNotificationAdded
 7544	N/A   	k_EMsgServerToGCSuspiciousActivity
-7545	CLIENT	k_EMsgSignOutCommunicationSummary	SendSignOutCommunicationSummary
+7545	N/A   	k_EMsgSignOutCommunicationSummary
 7546	N/A   	k_EMsgServerToGCRequestStatus_Response
 7547	CLIENT	k_EMsgClientToGCCreateHeroStatue	CreateHeroStatue
 7548	GC    	k_EMsgGCToClientHeroStatueCreateResult
-7549	GC    	k_EMsgGCGCToLANServerRelayConnect
+7549	N/A   	k_EMsgGCGCToLANServerRelayConnect
 7551	N/A   	k_EMsgServerToGCGetIngameEventData
 7552	N/A   	k_EMsgGCToGCUpdateIngameEventDataBroadcast
 7553	N/A   	k_EMsgGCToServerIngameEventData_OraclePA
@@ -437,9 +415,6 @@
 7555	N/A   	k_EMsgGCToGCReportKillSummaries
 7556	N/A   	k_EMsgGCToGCUpdateAssassinMinigame
 7557	N/A   	k_EMsgGCToGCFantasySetMatchLeague
-7558	CLIENT	k_EMsgClientToGCRecordCompendiumStats	SendRecordCompendiumStats
-7559	CLIENT	k_EMsgGCItemEditorRequestLeagueInfo	ItemEditorRequestLeagueInfo
-7560	GC    	k_EMsgGCItemEditorLeagueInfoResponse
 7561	N/A   	k_EMsgGCToGCUpdatePlayerPredictions
 7562	N/A   	k_EMsgGCToServerPredictionResult
 7563	N/A   	k_EMsgServerToGCSignoutAwardAdditionalDrops
@@ -454,51 +429,97 @@
 7576	N/A   	k_EMsgGCToGCCustomGamePlayed
 7577	N/A   	k_EMsgGCToGCGrantEventPointsToUser
 7578	N/A   	k_EMsgGCToGCSetEventMMPanicFlushTime
-7579	CLIENT	k_EMsgGameserverCrashReport	GameserverCrashReport
-7580	GC    	k_EMsgGameserverCrashReportResponse
+7579	N/A   	k_EMsgGameserverCrashReport
+7580	N/A   	k_EMsgGameserverCrashReportResponse
 7581	GC    	k_EMsgGCToClientSteamDatagramTicket
 7582	N/A   	k_EMsgGCToGCGrantEventOwnership
 7583	N/A   	k_EMsgGCToGCSendAccountsEventPoints
-7584	CLIENT	k_EMsgClientToGCRerollPlayerChallenge	SendRerollPlayerChallenge
+7584	CLIENT	k_EMsgClientToGCRerollPlayerChallenge	RerollPlayerChallenge
 7585	N/A   	k_EMsgServerToGCRerollPlayerChallenge
 7586	GC    	k_EMsgGCRerollPlayerChallengeResponse
-7587	CLIENT	k_EMsgSignOutUpdatePlayerChallenge	SendSignOutUpdatePlayerChallenge
+7587	N/A   	k_EMsgSignOutUpdatePlayerChallenge
 7588	CLIENT	k_EMsgClientToGCSetPartyLeader	SetPartyLeader
-7589	CLIENT	k_EMsgClientToGCCancelPartyInvites	SendCancelPartyInvites
+7589	CLIENT	k_EMsgClientToGCCancelPartyInvites	CancelPartyInvites
 7590	N/A   	k_EMsgGCToGCMasterReloadAccount
-7592	CLIENT	k_EMsgSQLGrantLeagueMatchToTicketHolders	SQLGrantLeagueMatchToTicketHolders
+7592	N/A   	k_EMsgSQLGrantLeagueMatchToTicketHolders
 7593	GC    	k_EMsgClientToGCSetAdditionalEquipsResponse
 7594	N/A   	k_EMsgGCToGCEmoticonUnlockNoRollback
 7595	N/A   	k_EMsgGCToGCGetCompendiumFanfare
 7596	N/A   	k_EMsgServerToGCHoldEventPoints
-7597	CLIENT	k_EMsgSignOutReleaseEventPointHolds	SignOutReleaseEventPointHolds
+7597	N/A   	k_EMsgSignOutReleaseEventPointHolds
 7598	N/A   	k_EMsgGCToGCChatNewUserSession
-7599	CLIENT	k_EMsgClientToGCGetLeagueSeries	SendGetLeagueSeries
-7600	GC    	k_EMsgClientToGCGetLeagueSeriesResponse
-7601	N/A   	k_EMsgSQLGCToGCSignoutUpdateLeagueSchedule
-7602	N/A   	k_EMsgGCToServerUpdateBroadcastCheers
-7603	CLIENT	k_EMsgClientToGCApplyGemCombiner	SendApplyGemCombiner
-7604	CLIENT	k_EMsgClientToGCDOTACreateStaticRecipe	DOTACreateStaticRecipe
+7603	CLIENT	k_EMsgClientToGCApplyGemCombiner	ApplyGemCombiner
+7604	CLIENT	k_EMsgClientToGCDOTACreateStaticRecipe	CreateDOTAStaticRecipe
 7605	GC    	k_EMsgClientToGCDOTACreateStaticRecipeResponse
-7606	CLIENT	k_EMsgClientToGCGetAllHeroOrder	SendGetAllHeroOrder
+7606	CLIENT	k_EMsgClientToGCGetAllHeroOrder	GetAllHeroOrder
 7607	GC    	k_EMsgClientToGCGetAllHeroOrderResponse
 7608	N/A   	k_EMsgSQLGCToGCGrantBadgePoints
 7609	N/A   	k_EMsgGCToGCGetAccountMatchStatus
 7610	N/A   	k_EMsgGCToGCGetAccountMatchStatusResponse
 7611	N/A   	k_EMsgGCToGCCheckOwnsEntireEmoticonRange
 7612	N/A   	k_EMsgGCToGCCheckOwnsEntireEmoticonRangeResponse
-7613	GC    	k_EMsgGCUpdateClippy
-7614	GC    	k_EMsgGCUpdateClientClippy
-8001	CLIENT	k_EMsgGCDev_GrantWarKill	Dev_GrantWarKill
+7619	CLIENT	k_EMsgClientToGCRecycleHeroRelic	RecycleHeroRelic
+7620	GC    	k_EMsgClientToGCRecycleHeroRelicResponse
+7621	N/A   	k_EMsgGCToGCRevokeEventOwnership
+7622	N/A   	k_EMsgGCToGCUnlockEventPointSpending
+7623	GC    	k_EMsgGCToClientRequestLaneSelection
+7624	GC    	k_EMsgGCToClientRequestLaneSelectionResponse
+7625	N/A   	k_EMsgServerToGCCavernCrawlIsHeroActive
+7626	N/A   	k_EMsgServerToGCCavernCrawlIsHeroActiveResponse
+7627	CLIENT	k_EMsgClientToGCPlayerCardSpecificPurchaseRequest	PurchasePlayerCardSpecific
+7628	GC    	k_EMsgClientToGCPlayerCardSpecificPurchaseResponse
+7629	GC    	k_EMsgGCtoServerTensorflowInstance
+7630	N/A   	k_EMsgSQLSetIsLeagueAdmin
+7631	N/A   	k_EMsgGCToGCGetLiveLeagueMatches
+7632	N/A   	k_EMsgGCToGCGetLiveLeagueMatchesResponse
+7633	CLIENT	k_EMsgDOTALeagueInfoListAdminsRequest	RequestLeagueInfoListAdmins
+7634	CLIENT	k_EMsgDOTALeagueInfoListAdminsReponse	ListInfoLeagueAdminsReponse
+7645	N/A   	k_EMsgGCToGCLeagueMatchStarted
+7646	N/A   	k_EMsgGCToGCLeagueMatchCompleted
+7647	N/A   	k_EMsgGCToGCLeagueMatchStartedResponse
+7648	CLIENT	k_EMsgDOTALeagueNodeRequest	RequestLeagueNode
+7649	GC    	k_EMsgDOTALeagueNodeResponse
+7650	CLIENT	k_EMsgDOTALeagueAvailableLobbyNodesRequest	RequestLeagueAvailableLobbyNodes
+7651	CLIENT	k_EMsgDOTALeagueAvailableLobbyNodes	SendLeagueAvailableLobbyNodes
+7652	N/A   	k_EMsgGCToGCLeagueRequest
+7653	N/A   	k_EMsgGCToGCLeagueResponse
+7654	N/A   	k_EMsgGCToGCLeagueNodeGroupRequest
+7655	N/A   	k_EMsgGCToGCLeagueNodeGroupResponse
+7656	N/A   	k_EMsgGCToGCLeagueNodeRequest
+7657	N/A   	k_EMsgGCToGCLeagueNodeResponse
+7658	N/A   	k_EMsgGCToGCRealtimeStatsTerseRequest
+7659	N/A   	k_EMsgGCToGCRealtimeStatsTerseResponse
+7660	N/A   	k_EMsgGCToGCGetTopMatchesRequest
+7661	N/A   	k_EMsgGCToGCGetTopMatchesResponse
+7662	CLIENT	k_EMsgClientToGCGetFilteredPlayers	GetFilteredPlayers
+7663	GC    	k_EMsgGCToClientGetFilteredPlayersResponse
+7664	CLIENT	k_EMsgClientToGCRemoveFilteredPlayer	SendRemoveFilteredPlayer
+7665	GC    	k_EMsgGCToClientRemoveFilteredPlayerResponse
+7666	GC    	k_EMsgGCToClientPlayerBeaconState
+7667	GC    	k_EMsgGCToClientPartyBeaconUpdate
+7668	GC    	k_EMsgGCToClientPartySearchInvite
+7669	CLIENT	k_EMsgClientToGCUpdatePartyBeacon	SendUpdatePartyBeacon
+7670	CLIENT	k_EMsgClientToGCRequestActiveBeaconParties	RequestActiveBeaconParties
+7671	GC    	k_EMsgGCToClientRequestActiveBeaconPartiesResponse
+7672	CLIENT	k_EMsgClientToGCManageFavorites	SendManageFavorites
+7673	GC    	k_EMsgGCToClientManageFavoritesResponse
+7674	CLIENT	k_EMsgClientToGCJoinPartyFromBeacon	JoinPartyFromBeacon
+7675	GC    	k_EMsgGCToClientJoinPartyFromBeaconResponse
+7676	CLIENT	k_EMsgClientToGCGetFavoritePlayers	GetFavoritePlayers
+7677	GC    	k_EMsgGCToClientGetFavoritePlayersResponse
+7678	CLIENT	k_EMsgClientToGCVerifyFavoritePlayers	SendVerifyFavoritePlayers
+7679	GC    	k_EMsgGCToClientVerifyFavoritePlayersResponse
+7680	GC    	k_EMsgGCToClientPartySearchInvites
+8001	N/A   	k_EMsgGCDev_GrantWarKill
 8004	N/A   	k_EMsgServerToGCLockCharmTrading
 8006	CLIENT	k_EMsgClientToGCPlayerStatsRequest	RequestPlayerStats
 8007	GC    	k_EMsgGCToClientPlayerStatsResponse
 8008	GC    	k_EMsgGCClearPracticeLobbyTeam
-8009	CLIENT	k_EMsgClientToGCFindTopSourceTVGames	SendFindTopSourceTVGames
+8009	CLIENT	k_EMsgClientToGCFindTopSourceTVGames	FindTopSourceTVGames
 8010	GC    	k_EMsgGCToClientFindTopSourceTVGamesResponse
-8011	CLIENT	k_EMsgGCLobbyList	ListLobbies
-8012	GC    	k_EMsgGCLobbyListResponse
-8013	GC    	k_EMsgGCPlayerStatsMatchSignOut
+8011	N/A   	k_EMsgGCLobbyList
+8012	N/A   	k_EMsgGCLobbyListResponse
+8013	N/A   	k_EMsgGCPlayerStatsMatchSignOut
 8014	CLIENT	k_EMsgClientToGCCustomGamePlayerCountRequest	RequestCustomGamePlayerCount
 8015	GC    	k_EMsgGCToClientCustomGamePlayerCountResponse
 8016	CLIENT	k_EMsgClientToGCSocialFeedPostCommentRequest	RequestSocialFeedPostComment
@@ -507,9 +528,7 @@
 8019	GC    	k_EMsgGCToClientCustomGamesFriendsPlayedResponse
 8020	CLIENT	k_EMsgClientToGCFriendsPlayedCustomGameRequest	RequestFriendsPlayedCustomGame
 8021	GC    	k_EMsgGCToClientFriendsPlayedCustomGameResponse
-8022	CLIENT	k_EMsgClientToGCFeaturedHeroesRequest	RequestFeaturedHeroes
-8023	GC    	k_EMsgGCToClientFeaturedHeroesResponse
-8024	CLIENT	k_EMsgGCTopCustomGamesList	TopCustomGamesList
+8024	CLIENT	k_EMsgGCTopCustomGamesList	ListCustomGamesTop
 8025	CLIENT	k_EMsgClientToGCSocialMatchPostCommentRequest	RequestSocialMatchPostComment
 8026	GC    	k_EMsgGCToClientSocialMatchPostCommentResponse
 8027	CLIENT	k_EMsgClientToGCSocialMatchDetailsRequest	RequestSocialMatchDetails
@@ -519,28 +538,28 @@
 8031	GC    	k_EMsgGCToClientMergeGroupInviteReply
 8032	GC    	k_EMsgClientToGCMergePartyResponse
 8033	GC    	k_EMsgGCToClientMergePartyResponseReply
-8034	CLIENT	k_EMsgClientToGCGetProfileCardStats	SendGetProfileCardStats
-8035	GC    	k_EMsgClientToGCGetProfileCardStatsResponse
+8034	N/A   	k_EMsgClientToGCGetProfileCardStats
+8035	N/A   	k_EMsgClientToGCGetProfileCardStatsResponse
 8036	CLIENT	k_EMsgClientToGCTopLeagueMatchesRequest	RequestTopLeagueMatches
 8037	CLIENT	k_EMsgClientToGCTopFriendMatchesRequest	RequestTopFriendMatches
-8040	GC    	k_EMsgGCToClientProfileCardStatsUpdated
+8040	N/A   	k_EMsgGCToClientProfileCardStatsUpdated
 8041	N/A   	k_EMsgServerToGCRealtimeStats
 8042	N/A   	k_EMsgGCToServerRealtimeStatsStartStop
 8045	N/A   	k_EMsgGCToGCGetServersForClients
 8046	N/A   	k_EMsgGCToGCGetServersForClientsResponse
-8047	GC    	k_EMsgGCPracticeLobbyKickFromTeam
-8048	CLIENT	k_EMsgDOTAChatGetMemberCount	SendChatGetMemberCount
+8047	CLIENT	k_EMsgGCPracticeLobbyKickFromTeam	KickLobbyMemberFromTeam
+8048	CLIENT	k_EMsgDOTAChatGetMemberCount	GetChatMemberCount
 8049	GC    	k_EMsgDOTAChatGetMemberCountResponse
 8050	CLIENT	k_EMsgClientToGCSocialFeedPostMessageRequest	RequestSocialFeedPostMessage
 8051	GC    	k_EMsgGCToClientSocialFeedPostMessageResponse
 8052	CLIENT	k_EMsgCustomGameListenServerStartedLoading	SendCustomGameListenServerStartedLoading
 8053	CLIENT	k_EMsgCustomGameClientFinishedLoading	SendCustomGameClientFinishedLoading
-8054	CLIENT	k_EMsgGCPracticeLobbyCloseBroadcastChannel	LobbyCloseBroadcastChannel
+8054	CLIENT	k_EMsgGCPracticeLobbyCloseBroadcastChannel	CloseLobbyBroadcastChannel
 8055	GC    	k_EMsgGCStartFindingMatchResponse
 8057	N/A   	k_EMsgSQLGCToGCGrantAccountFlag
 8058	N/A   	k_EMsgGCToGCGetAccountFlags
 8059	N/A   	k_EMsgGCToGCGetAccountFlagsResponse
-8060	CLIENT	k_EMsgSignOutWagerStats	SendSignOutWagerStats
+8060	N/A   	k_EMsgSignOutWagerStats
 8061	GC    	k_EMsgGCToClientTopLeagueMatchesResponse
 8062	GC    	k_EMsgGCToClientTopFriendMatchesResponse
 8063	CLIENT	k_EMsgClientToGCMatchesMinimalRequest	RequestMatchesMinimal
@@ -553,21 +572,21 @@
 8070	N/A   	k_EMsgGCToServerMatchDetailsResponse
 8071	N/A   	k_EMsgGCToGCEnsureAccountInParty
 8072	N/A   	k_EMsgGCToGCEnsureAccountInPartyResponse
-8073	CLIENT	k_EMsgClientToGCGetProfileTickets	SendGetProfileTickets
+8073	CLIENT	k_EMsgClientToGCGetProfileTickets	GetProfileTickets
 8074	GC    	k_EMsgClientToGCGetProfileTicketsResponse
 8075	GC    	k_EMsgGCToClientMatchGroupsVersion
 8076	CLIENT	k_EMsgClientToGCH264Unsupported	SendH264Unsupported
 8077	CLIENT	k_EMsgClientToGCRequestH264Support	RequestH264Support
-8078	CLIENT	k_EMsgClientToGCGetQuestProgress	SendGetQuestProgress
+8078	CLIENT	k_EMsgClientToGCGetQuestProgress	GetQuestProgress
 8079	GC    	k_EMsgClientToGCGetQuestProgressResponse
-8080	CLIENT	k_EMsgSignOutXPCoins	SendSignOutXPCoins
+8080	N/A   	k_EMsgSignOutXPCoins
 8081	GC    	k_EMsgGCToClientMatchSignedOut
-8082	GC    	k_EMsgGCGetHeroStatsHistory
+8082	CLIENT	k_EMsgGCGetHeroStatsHistory	GetHeroStatsHistory
 8083	GC    	k_EMsgGCGetHeroStatsHistoryResponse
-8084	CLIENT	k_EMsgClientToGCPrivateChatInvite	SendPrivateChatInvite
-8088	CLIENT	k_EMsgClientToGCPrivateChatKick	SendPrivateChatKick
-8089	CLIENT	k_EMsgClientToGCPrivateChatPromote	SendPrivateChatPromote
-8090	CLIENT	k_EMsgClientToGCPrivateChatDemote	SendPrivateChatDemote
+8084	CLIENT	k_EMsgClientToGCPrivateChatInvite	InvitePrivateChatMember
+8088	CLIENT	k_EMsgClientToGCPrivateChatKick	KickPrivateChatMember
+8089	CLIENT	k_EMsgClientToGCPrivateChatPromote	PromotePrivateChatMember
+8090	CLIENT	k_EMsgClientToGCPrivateChatDemote	DemotePrivateChatMember
 8091	GC    	k_EMsgGCToClientPrivateChatResponse
 8092	CLIENT	k_EMsgClientToGCPrivateChatInfoRequest	RequestPrivateChatInfo
 8093	GC    	k_EMsgGCToClientPrivateChatInfoResponse
@@ -579,39 +598,35 @@
 8100	GC    	k_EMsgGCToClientWageringResponse
 8103	CLIENT	k_EMsgClientToGCEventGoalsRequest	RequestEventGoals
 8104	GC    	k_EMsgClientToGCEventGoalsResponse
-8106	CLIENT	k_EMsgClientToGCLeaguePredictions	SendLeaguePredictions
-8107	GC    	k_EMsgGCToClientLeaguePredictionsResponse
+8106	N/A   	k_EMsgClientToGCLeaguePredictions
+8107	N/A   	k_EMsgGCToClientLeaguePredictionsResponse
 8108	N/A   	k_EMsgGCToGCLeaguePredictionsUpdate
 8109	CLIENT	k_EMsgClientToGCSuspiciousActivity	SendSuspiciousActivity
 8110	N/A   	k_EMsgGCToGCAddUserToPostGameChat
 8111	CLIENT	k_EMsgClientToGCHasPlayerVotedForMVP	SendHasPlayerVotedForMVP
 8112	GC    	k_EMsgClientToGCHasPlayerVotedForMVPResponse
-8113	CLIENT	k_EMsgClientToGCVoteForMVP	SendVoteForMVP
+8113	CLIENT	k_EMsgClientToGCVoteForMVP	VoteForMVP
 8114	GC    	k_EMsgClientToGCVoteForMVPResponse
 8115	N/A   	k_EMsgGCToGCGetEventOwnership
 8116	N/A   	k_EMsgGCToGCGetEventOwnershipResponse
-8117	GC    	k_EMsgGCToClientAutomatedTournamentStateChange
-8118	CLIENT	k_EMsgClientToGCWeekendTourneyOpts	SendWeekendTourneyOpts
-8119	GC    	k_EMsgClientToGCWeekendTourneyOptsResponse
-8120	CLIENT	k_EMsgClientToGCWeekendTourneyLeave	WeekendTourneyLeave
-8121	GC    	k_EMsgClientToGCWeekendTourneyLeaveResponse
+8117	N/A   	k_EMsgGCToClientAutomatedTournamentStateChange
+8118	N/A   	k_EMsgClientToGCWeekendTourneyOpts
+8119	N/A   	k_EMsgClientToGCWeekendTourneyOptsResponse
+8120	CLIENT	k_EMsgClientToGCWeekendTourneyLeave	LeaveTourneyWeekend
+8121	N/A   	k_EMsgClientToGCWeekendTourneyLeaveResponse
 8124	CLIENT	k_EMsgClientToGCTeammateStatsRequest	RequestTeammateStats
 8125	GC    	k_EMsgClientToGCTeammateStatsResponse
-8126	CLIENT	k_EMsgClientToGCGetGiftPermissions	SendGetGiftPermissions
+8126	CLIENT	k_EMsgClientToGCGetGiftPermissions	GetGiftPermissions
 8127	GC    	k_EMsgClientToGCGetGiftPermissionsResponse
-8128	CLIENT	k_EMsgClientToGCVoteForArcana	SendVoteForArcana
+8128	CLIENT	k_EMsgClientToGCVoteForArcana	VoteForArcana
 8129	GC    	k_EMsgClientToGCVoteForArcanaResponse
 8130	CLIENT	k_EMsgClientToGCRequestArcanaVotesRemaining	RequestArcanaVotesRemaining
 8131	GC    	k_EMsgClientToGCRequestArcanaVotesRemainingResponse
 8132	GC    	k_EMsgGCTransferTeamAdminResponse
-8133	GC    	k_EMsgGCChangeTeamSub
-8134	GC    	k_EMsgGCChangeTeamSubResponse
 8135	GC    	k_EMsgGCToClientTeamInfo
 8136	GC    	k_EMsgGCToClientTeamsInfo
 8137	CLIENT	k_EMsgClientToGCMyTeamInfoRequest	RequestMyTeamInfo
-8138	CLIENT	k_EMsgClientToGCRequestEventPointLog	RequestEventPointLog
-8139	GC    	k_EMsgClientToGCRequestEventPointLogResponse
-8140	CLIENT	k_EMsgClientToGCPublishUserStat	SendPublishUserStat
+8140	CLIENT	k_EMsgClientToGCPublishUserStat	PublishUserStat
 8141	N/A   	k_EMsgGCToGCSignoutSpendWager
 8144	CLIENT	k_EMsgGCSubmitLobbyMVPVote	SubmitLobbyMVPVote
 8145	GC    	k_EMsgGCSubmitLobbyMVPVoteResponse
@@ -619,7 +634,7 @@
 8147	GC    	k_EMsgClientToGCRequestLinaPlaysRemainingResponse
 8148	CLIENT	k_EMsgClientToGCRequestLinaGameResult	RequestLinaGameResult
 8149	GC    	k_EMsgClientToGCRequestLinaGameResultResponse
-8150	CLIENT	k_EMsgSignOutCommunityGoalProgress	SendSignOutCommunityGoalProgress
+8150	N/A   	k_EMsgSignOutCommunityGoalProgress
 8151	GC    	k_EMsgGCToClientLobbyMVPNotifyRecipient
 8152	GC    	k_EMsgGCToClientLobbyMVPAwarded
 8153	GC    	k_EMsgGCToClientQuestProgressUpdated
@@ -627,10 +642,10 @@
 8155	GC    	k_EMsgGCToClientArcanaVotesUpdate
 8156	CLIENT	k_EMsgClientToGCAddTI6TreeProgress	SendAddTI6TreeProgress
 8157	CLIENT	k_EMsgClientToGCSetSpectatorLobbyDetails	SetSpectatorLobbyDetails
-8158	GC    	k_EMsgClientToGCSetSpectatorLobbyDetailsResponse
+8158	N/A   	k_EMsgClientToGCSetSpectatorLobbyDetailsResponse
 8159	CLIENT	k_EMsgClientToGCCreateSpectatorLobby	CreateSpectatorLobby
-8160	GC    	k_EMsgClientToGCCreateSpectatorLobbyResponse
-8161	CLIENT	k_EMsgClientToGCSpectatorLobbyList	SpectatorLobbyList
+8160	N/A   	k_EMsgClientToGCCreateSpectatorLobbyResponse
+8161	CLIENT	k_EMsgClientToGCSpectatorLobbyList	ListLobbySpectator
 8162	GC    	k_EMsgClientToGCSpectatorLobbyListResponse
 8163	CLIENT	k_EMsgSpectatorLobbyGameDetails	SendSpectatorLobbyGameDetails
 8166	N/A   	k_EMsgServerToGCCompendiumInGamePredictionResults
@@ -639,9 +654,9 @@
 8169	GC    	k_EMsgClientToGCOpenPlayerCardPackResponse
 8170	CLIENT	k_EMsgClientToGCSelectCompendiumInGamePrediction	SelectCompendiumInGamePrediction
 8171	GC    	k_EMsgClientToGCSelectCompendiumInGamePredictionResponse
-8172	CLIENT	k_EMsgClientToGCWeekendTourneyGetPlayerStats	SendWeekendTourneyGetPlayerStats
+8172	CLIENT	k_EMsgClientToGCWeekendTourneyGetPlayerStats	GetTourneyWeekendPlayerStats
 8173	GC    	k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse
-8174	CLIENT	k_EMsgClientToGCRecyclePlayerCard	SendRecyclePlayerCard
+8174	CLIENT	k_EMsgClientToGCRecyclePlayerCard	RecyclePlayerCard
 8175	GC    	k_EMsgClientToGCRecyclePlayerCardResponse
 8176	CLIENT	k_EMsgClientToGCCreatePlayerCardPack	CreatePlayerCardPack
 8177	GC    	k_EMsgClientToGCCreatePlayerCardPackResponse
@@ -652,7 +667,7 @@
 8183	N/A   	k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse
 8185	N/A   	k_EMsgServerToGCCompendiumInGamePredictionResultsResponse
 8186	CLIENT	k_EMsgLobbyBattleCupVictory	SendLobbyBattleCupVictory
-8187	GC    	k_EMsgGCGetPlayerCardItemInfo
+8187	CLIENT	k_EMsgGCGetPlayerCardItemInfo	GetPlayerCardItemInfo
 8188	GC    	k_EMsgGCGetPlayerCardItemInfoResponse
 8189	CLIENT	k_EMsgClientToGCRequestSteamDatagramTicket	RequestSteamDatagramTicket
 8190	GC    	k_EMsgClientToGCRequestSteamDatagramTicketResponse
@@ -662,9 +677,9 @@
 8194	GC    	k_EMsgClientToGCTransferSeasonalMMRResponse
 8195	N/A   	k_EMsgGCToGCPublicChatCommunicationBan
 8196	N/A   	k_EMsgGCToGCUpdateAccountPublicChatBan
-8197	CLIENT	k_EMsgGCChatReportPublicSpam	ChatReportPublicSpam
+8197	CLIENT	k_EMsgGCChatReportPublicSpam	ReportChatPublicSpam
 8198	CLIENT	k_EMsgClientToGCSetPartyBuilderOptions	SetPartyBuilderOptions
-8199	GC    	k_EMsgClientToGCSetPartyBuilderOptionsResponse
+8199	N/A   	k_EMsgClientToGCSetPartyBuilderOptionsResponse
 8200	GC    	k_EMsgGCToClientPlaytestStatus
 8201	CLIENT	k_EMsgClientToGCJoinPlaytest	JoinPlaytest
 8202	GC    	k_EMsgClientToGCJoinPlaytestResponse
@@ -676,7 +691,7 @@
 8208	GC    	k_EMsgGCIsProResponse
 8209	CLIENT	k_EMsgDOTAClaimEventAction	SendClaimEventAction
 8210	GC    	k_EMsgDOTAClaimEventActionResponse
-8211	CLIENT	k_EMsgDOTAGetPeriodicResource	SendGetPeriodicResource
+8211	CLIENT	k_EMsgDOTAGetPeriodicResource	GetPeriodicResource
 8212	GC    	k_EMsgDOTAGetPeriodicResourceResponse
 8213	CLIENT	k_EMsgDOTAPeriodicResourceUpdated	SendPeriodicResourceUpdated
 8214	N/A   	k_EMsgServerToGCSpendWager
@@ -697,11 +712,11 @@
 8229	N/A   	k_EMsgGCToGCSignoutSpendRankWager
 8230	N/A   	k_EMsgGCToGCGetFavoriteTeam
 8231	N/A   	k_EMsgGCToGCGetFavoriteTeamResponse
-8232	CLIENT	k_EMsgSignOutEventGameData	SendSignOutEventGameData
-8233	GC    	k_EMsgGCToClientAllStarVotesRequest
-8234	GC    	k_EMsgGCToClientAllStarVotesReply
-8236	GC    	k_EMsgGCToClientAllStarVotesSubmit
-8237	GC    	k_EMsgGCToClientAllStarVotesSubmitReply
+8232	N/A   	k_EMsgSignOutEventGameData
+8233	N/A   	k_EMsgGCToClientAllStarVotesRequest
+8234	N/A   	k_EMsgGCToClientAllStarVotesReply
+8236	N/A   	k_EMsgGCToClientAllStarVotesSubmit
+8237	N/A   	k_EMsgGCToClientAllStarVotesSubmitReply
 8238	CLIENT	k_EMsgClientToGCQuickStatsRequest	RequestQuickStats
 8239	GC    	k_EMsgClientToGCQuickStatsResponse
 8240	N/A   	k_EMsgGCToGCSubtractEventPointsFromUser
@@ -715,8 +730,111 @@
 8248	CLIENT	k_EMsgPurchaseItemWithEventPoints	PurchaseItemWithEventPoints
 8249	GC    	k_EMsgPurchaseItemWithEventPointsResponse
 8250	N/A   	k_EMsgServerToGCMatchPlayerItemPurchaseHistory
-8252	GC    	k_EMsgGCGetHeroTimedStats
+8251	N/A   	k_EMsgGCToGCGrantPlusHeroMatchResults
+8252	CLIENT	k_EMsgGCGetHeroTimedStats	GetHeroTimedStats
 8253	GC    	k_EMsgGCGetHeroTimedStatsResponse
+8254	CLIENT	k_EMsgLobbyPlayerPlusSubscriptionData	SendLobbyPlayerPlusSubscriptionData
 8255	N/A   	k_EMsgServerToGCMatchStateHistory
+8256	CLIENT	k_EMsgPurchaseHeroRelic	PurchaseHeroRelic
+8257	GC    	k_EMsgPurchaseHeroRelicResponse
+8258	CLIENT	k_EMsgPurchaseHeroRandomRelic	PurchaseHeroRandomRelic
+8259	GC    	k_EMsgPurchaseHeroRandomRelicResponse
+8260	CLIENT	k_EMsgClientToGCClaimEventActionUsingItem	SendClaimEventActionUsingItem
+8261	GC    	k_EMsgClientToGCClaimEventActionUsingItemResponse
+8262	CLIENT	k_EMsgPartyReadyCheckRequest	RequestPartyReadyCheck
+8263	GC    	k_EMsgPartyReadyCheckResponse
+8264	CLIENT	k_EMsgPartyReadyCheckAcknowledge	SendPartyReadyCheckAcknowledge
+8265	CLIENT	k_EMsgGetRecentPlayTimeFriendsRequest	RequestGetRecentPlayTimeFriends
+8266	GC    	k_EMsgGetRecentPlayTimeFriendsResponse
+8267	GC    	k_EMsgGCToClientCommendNotification
+8268	CLIENT	k_EMsgProfileRequest	RequestProfile
+8269	GC    	k_EMsgProfileResponse
+8270	CLIENT	k_EMsgProfileUpdate	SendProfileUpdate
+8271	GC    	k_EMsgProfileUpdateResponse
+8273	CLIENT	k_EMsgSuccessfulHero	SendSuccessfulHero
+8274	CLIENT	k_EMsgHeroGlobalDataRequest	RequestHeroGlobalData
+8275	GC    	k_EMsgHeroGlobalDataResponse
+8276	CLIENT	k_EMsgClientToGCRequestPlusWeeklyChallengeResult	RequestPlusWeeklyChallengeResult
+8277	GC    	k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse
+8278	N/A   	k_EMsgGCToGCGrantPlusPrepaidTime
+8279	CLIENT	k_EMsgPrivateMetadataKeyRequest	RequestPrivateMetadataKey
+8280	GC    	k_EMsgPrivateMetadataKeyResponse
+8281	N/A   	k_EMsgGCToGCReconcilePlusStatus
+8282	N/A   	k_EMsgGCToGCCheckPlusStatus
+8283	N/A   	k_EMsgGCToGCCheckPlusStatusResponse
+8284	N/A   	k_EMsgGCToGCReconcilePlusAutoGrantItems
+8285	N/A   	k_EMsgGCToGCReconcilePlusStatusUnreliable
+8286	CLIENT	k_EMsgActivatePlusFreeTrialRequest	RequestActivatePlusFreeTrial
+8287	GC    	k_EMsgActivatePlusFreeTrialResponse
+8288	GC    	k_EMsgGCToClientCavernCrawlMapPathCompleted
+8289	CLIENT	k_EMsgClientToGCCavernCrawlClaimRoom	SendCavernCrawlClaimRoom
+8290	GC    	k_EMsgClientToGCCavernCrawlClaimRoomResponse
+8291	CLIENT	k_EMsgClientToGCCavernCrawlUseItemOnRoom	SendCavernCrawlUseItemOnRoom
+8292	GC    	k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse
+8293	CLIENT	k_EMsgClientToGCCavernCrawlUseItemOnPath	SendCavernCrawlUseItemOnPath
+8294	GC    	k_EMsgClientToGCCavernCrawlUseItemOnPathResponse
+8295	CLIENT	k_EMsgClientToGCCavernCrawlRequestMapState	RequestCrawlCavernMapState
+8296	GC    	k_EMsgClientToGCCavernCrawlRequestMapStateResponse
+8297	N/A   	k_EMsgSignOutTips
+8298	CLIENT	k_EMsgClientToGCRequestEventPointLogV2	RequestEventPointLogV2
+8299	CLIENT	k_EMsgClientToGCRequestEventPointLogResponseV2	RequestEventPointLogResponseV2
+8300	CLIENT	k_EMsgClientToGCRequestEventTipsSummary	RequestEventTipsSummary
+8301	GC    	k_EMsgClientToGCRequestEventTipsSummaryResponse
+8302	CLIENT	k_EMsgHeroGlobalDataAllHeroes	SendHeroGlobalDataAllHeroes
+8303	CLIENT	k_EMsgClientToGCRequestSocialFeed	RequestSocialFeed
+8304	GC    	k_EMsgClientToGCRequestSocialFeedResponse
+8305	CLIENT	k_EMsgClientToGCRequestSocialFeedComments	RequestSocialFeedComments
+8306	GC    	k_EMsgClientToGCRequestSocialFeedCommentsResponse
+8308	CLIENT	k_EMsgClientToGCCavernCrawlGetClaimedRoomCount	GetCrawlCavernClaimedRoomCount
+8309	GC    	k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
+8310	N/A   	k_EMsgGCToGCReconcilePlusAutoGrantItemsUnreliable
+8311	N/A   	k_EMsgServerToGCAddBroadcastTimelineEvent
+8312	N/A   	k_EMsgGCToServerUpdateSteamBroadcasting
+8313	CLIENT	k_EMsgClientToGCRecordContestVote	RecordContestVote
+8314	GC    	k_EMsgGCToClientRecordContestVoteResponse
+8315	N/A   	k_EMsgGCToGCGrantAutograph
+8316	N/A   	k_EMsgGCToGCGrantAutographResponse
+8317	N/A   	k_EMsgSignOutConsumableUsage
+8318	CLIENT	k_EMsgLobbyEventGameDetails	SendLobbyEventGameDetails
+8319	CLIENT	k_EMsgDevGrantEventPoints	GrantDevEventPoints
+8320	GC    	k_EMsgDevGrantEventPointsResponse
+8321	CLIENT	k_EMsgDevGrantEventAction	GrantDevEventAction
+8322	GC    	k_EMsgDevGrantEventActionResponse
+8323	CLIENT	k_EMsgDevResetEventState	SendDevResetEventState
+8324	GC    	k_EMsgDevResetEventStateResponse
+8325	N/A   	k_EMsgGCToGCReconcileEventOwnership
+8326	CLIENT	k_EMsgConsumeEventSupportGrantItem	GrantEventSupportConsumeItem
+8327	GC    	k_EMsgConsumeEventSupportGrantItemResponse
+8328	GC    	k_EMsgGCToClientClaimEventActionUsingItemCompleted
+8329	GC    	k_EMsgGCToClientCavernCrawlMapUpdated
+8330	N/A   	k_EMsgServerToGCRequestPlayerRecentAccomplishments
+8331	N/A   	k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse
+8332	CLIENT	k_EMsgClientToGCRequestPlayerRecentAccomplishments	RequestPlayerRecentAccomplishments
+8333	GC    	k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
+8334	CLIENT	k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments	RequestPlayerHeroRecentAccomplishments
+8335	GC    	k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
+8336	N/A   	k_EMsgSignOutEventActionGrants
+8337	CLIENT	k_EMsgClientToGCRequestPlayerCoachMatches	RequestPlayerCoachMatches
+8338	GC    	k_EMsgClientToGCRequestPlayerCoachMatchesResponse
+8339	CLIENT	k_EMsgClientToGCGetTicketCodesRequest	RequestGetTicketCodes
+8340	GC    	k_EMsgClientToGCGetTicketCodesResponse
+8341	CLIENT	k_EMsgClientToGCSubmitCoachTeammateRating	SubmitCoachTeammateRating
+8342	GC    	k_EMsgClientToGCSubmitCoachTeammateRatingResponse
+8343	GC    	k_EMsgGCToClientCoachTeammateRatingsChanged
+8344	CLIENT	k_EMsgClientToGCVoteForLeagueGameMVP	VoteForLeagueGameMVP
+8345	CLIENT	k_EMsgClientToGCRequestPlayerCoachMatch	RequestPlayerCoachMatch
+8346	GC    	k_EMsgClientToGCRequestPlayerCoachMatchResponse
+8347	CLIENT	k_EMsgClientToGCRequestContestVotes	RequestContestVotes
+8348	GC    	k_EMsgClientToGCRequestContestVotesResponse
+8349	CLIENT	k_EMsgClientToGCMVPVoteTimeout	VoteMVPTimeout
+8350	GC    	k_EMsgClientToGCMVPVoteTimeoutResponse
+8351	CLIENT	k_EMsgClientToGCGetUnderlordsCDKeyRequest	RequestGetUnderlordsCDKey
+8352	GC    	k_EMsgClientToGCGetUnderlordsCDKeyResponse
+8353	CLIENT	k_EMsgDetailedGameStats	SendDetailedGameStats
+8354	CLIENT	k_EMsgClientToGCSetFavoriteAllStarPlayer	SetFavoriteAllStarPlayer
+8355	GC    	k_EMsgClientToGCSetFavoriteAllStarPlayerResponse
+8356	CLIENT	k_EMsgAllStarStats	SendAllStarStats
+8357	CLIENT	k_EMsgClientToGCGetFavoriteAllStarPlayerRequest	RequestGetFavoriteAllStarPlayer
+8358	GC    	k_EMsgClientToGCGetFavoriteAllStarPlayerResponse
 
-Computed client methods: [JoinChatChannel StartFindingMatch SendAbandonCurrentGame SendStopFindingMatch CreateLobby LeaveLobby LaunchLobby ListLobbies JoinLobby LobbySetDetails LobbySetTeamSlot SendInitialQuestionnaireResponse ListChatChannel RequestMatches RequestPlayerResources SendReadyUp SpectateFriendGame RequestReportsRemaining SubmitPlayerReport RequestReportCounts RequestSaveGames RequestBanStatus RequestMatchDetails RequestProfile DOTAClearNotifySuccessfulReport ListFriendLobby SendClientEconNotification_Job CreateTeam LeaveTeam SetShowcaseHero RequestInternationalTicketEmail TransferTeamAdmin RequestLeagueInfo SendResponseLeagueInfo LobbyJoinBroadcastChannel SendCastMatchVote SendRetrieveMatchVote SendTeamFanfare SendResponseTeamFanfare EditTeamDetails ListProTeam RequestHallOfFame GenerateDiretidePrizeList RequestHalloweenHighScore RequestStorePromoPages RequestMatchmakingStats BotGameCreate SetMatchHistoryAccess SendUpgradeLeagueItem RequestTeamMemberProfile SetMapLocationState SetFeaturedItems SendRefreshPartnerAccountLink SendClientsRejoinChatChannels CreateGuild RequestGuildSetAccountRole RequestGuildData RequestGuildInviteAccount RequestGuildCancelInvite RequestGuildUpdateDetails RequestPassportData RequestLeaguePrizePool RequestPartySetOpenGuild GuildOpenPartyRefresh RequestJoinOpenGuildParty LeaveChatChannel RequestGuildEditLogo ListGuildmateLobby RequestItemEditorReservations ItemEditorReserveItemDef ItemEditorReleaseReservation RequestLastHitChallengeHighScore RequestCreateFantasyLeague RequestFantasyLeagueInfo RequestCreateFantasyTeam RequestEditFantasyTeam FantasyTeamInfoRequestByFantasyLeagueID FantasyTeamInfoRequestByOwnerAccountID RequestFantasyTeamScore RequestFantasyTeamStandings RequestFantasyPlayerScore RequestFantasyPlayerStandings FlipLobbyTeams CustomGameCreate RequestFantasyPlayerInfo SetProfilePrivacy RequestSteamProfile RequestFantasyLeagueCreateInfo RequestFantasyLeagueInviteInfo CreateFantasyLeague CreateFantasyTeam ListFantasyLeagueFriendJoin PartyMemberSetCoach RequestFantasyLeagueEditInvites LobbySetCoach RequestFantasyLeagueEditInfo RequestFantasyLeagueDraftStatus RequestFantasyLeagueDraftPlayer RequestFantasyLeagueMatchups SwapFantasyTeamRoster RequestFantasyTeamRoster RequestFantasyTeamRosterAddDrop SendPresentedClientTerminateDlg RequestFantasyPlayerHisoricalStats RequestFantasyTeamTrades RequestFantasyTeamTradeCancel RequestGameMatchSignOutPermission SendChatChannelMemberUpdate AwardEventPoints SendGetEventPoints SendSendFriendRecruits RequestFriendRecruits SendFriendRecruitInviteAcceptDecline SendFrostivusTimeElapsed ChatGetUserList CompendiumSetSelection RequestCompendiumData SendGetPlayerMatchHistory RequestOfferings RequestNotifications LeagueAdminList RequestNotificationsMarkRead RequestFantasyMessages RequestFantasyScheduledMatches EventGameCreate RequestPerfectWorldUserLookup RequestBatchPlayerResources RequestPlayerInfo PlayerInfoSubmit SendGetWeekendTourneySchedule RequestJoinableCustomGameModes RequestJoinableCustomLobbies QuickJoinCustomLobby SendServerGetEventPoints ServerGrantSurveyPermission SendClientProvideSurveyResult RequestFantasyLeagueFind QueryHasItem SendTrackDialogResult RequestFantasyLeaveLeague SQLDelayedGrantLeagueDrop SendServerGCUpdateSpectatorCount RequestFantasyPlayerScoreDetails SendSignOutDraftInfo RequestEmoticonData LobbyToggleBroadcastChannelCameramanStatus SetAdditionalEquips SendGetAdditionalEquips SendRedeemItem SendGetAllHeroProgress SendSQLProcessTournamentGameOutcome SQLGrantTrophyToAccount GetTrophyList RequestGameBotMatchSignOutPermission SendSignOutBotInfo SendGetProfileCard SetProfileCardSlots MarkNotificationListRead SendSignOutCommunicationSummary CreateHeroStatue SendRecordCompendiumStats ItemEditorRequestLeagueInfo QueryHasItemDefs SendLobbyEventPoints GameserverCrashReport SendRerollPlayerChallenge SendSignOutUpdatePlayerChallenge SetPartyLeader SendCancelPartyInvites SQLGrantLeagueMatchToTicketHolders SignOutReleaseEventPointHolds SendGetLeagueSeries SendApplyGemCombiner DOTACreateStaticRecipe SendGetAllHeroOrder Dev_GrantWarKill RequestPlayerStats SendFindTopSourceTVGames ListLobbies RequestCustomGamePlayerCount RequestSocialFeedPostComment RequestCustomGamesFriendsPlayed RequestFriendsPlayedCustomGame RequestFeaturedHeroes TopCustomGamesList RequestSocialMatchPostComment RequestSocialMatchDetails SetPartyOpen SendMergePartyInvite SendGetProfileCardStats RequestTopLeagueMatches RequestTopFriendMatches SendChatGetMemberCount RequestSocialFeedPostMessage SendCustomGameListenServerStartedLoading SendCustomGameClientFinishedLoading LobbyCloseBroadcastChannel SendSignOutWagerStats RequestMatchesMinimal SendPingData SendGetProfileTickets SendH264Unsupported RequestH264Support SendGetQuestProgress SendSignOutXPCoins SendPrivateChatInvite SendPrivateChatKick SendPrivateChatPromote SendPrivateChatDemote RequestPrivateChatInfo RequestLatestConductScorecard SendLatestConductScorecard RequestWagering RequestEventGoals SendLeaguePredictions SendSuspiciousActivity SendHasPlayerVotedForMVP SendVoteForMVP SendWeekendTourneyOpts WeekendTourneyLeave RequestTeammateStats SendGetGiftPermissions SendVoteForArcana RequestArcanaVotesRemaining RequestMyTeamInfo RequestEventPointLog SendPublishUserStat SubmitLobbyMVPVote RequestLinaPlaysRemaining RequestLinaGameResult SendSignOutCommunityGoalProgress SendAddTI6TreeProgress SetSpectatorLobbyDetails CreateSpectatorLobby SpectatorLobbyList SendSpectatorLobbyGameDetails OpenPlayerCardPack SelectCompendiumInGamePrediction SendWeekendTourneyGetPlayerStats SendRecyclePlayerCard CreatePlayerCardPack RequestGetPlayerCardRoster RequestSetPlayerCardRoster SendLobbyBattleCupVictory RequestSteamDatagramTicket RequestTransferSeasonalMMR ChatReportPublicSpam SetPartyBuilderOptions JoinPlaytest SendLobbyPlaytestDetails SetFavoriteTeam QueryIsPro SendClaimEventAction SendGetPeriodicResource SendPeriodicResourceUpdated SubmitTriviaQuestionAnswer GiveTip StartTriviaSession RequestAnchorPhoneNumber RequestUnanchorPhoneNumber RequestSlarkGameResult SendSignOutEventGameData RequestQuickStats RequestSelectionPriorityChoice AutographReward DestroyLobby PurchaseItemWithEventPoints]
+Computed client methods: [JoinChatChannel StartFindingMatch AbandonLobby SendStopFindingMatch LeaveLobby LaunchLobby ListLobbies JoinLobby SetLobbyDetails SendInitialQuestionnaireResponse ListChatChannel RequestMatches SendReadyUp SpectateFriendGame RequestReportsRemaining SubmitPlayerReport KickLobbyMember RequestReportCounts RequestSaveGames RequestMatchDetails CancelWatchGame ClearSuccessfulReportNotification ListFriendLobby CreateTeam InvitePlayerToTeam RespondToTeamInvite SendTeamInvite_GCResponseToInvitee KickTeamMember LeaveTeam ApplyTeamToLobby TransferTeamAdmin JoinLobbyBroadcastChannel CastMatchVote RetrieveMatchVote EditTeamDetails ListProTeam RequestHallOfFame RequestHalloweenHighScore RequestStorePromoPages RequestMatchmakingStats CreateBotGame SetMatchHistoryAccess UpgradeLeagueItem SetMapLocationState RefreshPartnerAccountLink RejoinAllChatChannels CreateGuild RequestGuildSetAccountRole RequestGuildInviteAccount RequestGuildCancelInvite RequestGuildUpdateDetails RequestLeaguePrizePool RequestPartySetOpenGuild OpenGuildPartyRefresh RequestJoinOpenGuildParty LeaveChatChannel SendChatMessage GetHeroStandings RequestGuildEditLogo ListGuildmateLobby RequestItemEditorReservations ReserveEditorItemItemDef ReleaseEditorItemReservation RequestLastHitChallengeHighScore RequestFantasyLeagueInfo EditFantasyTeam RequestTeamInfoFantasyByFantasyLeagueID RequestTeamInfoFantasyByOwnerAccountID RequestFantasyTeamScore RequestFantasyTeamStandings RequestFantasyPlayerScore RequestFantasyPlayerStandings FlipLobbyTeams CreateGameCustom SetProfilePrivacy CreateFantasyLeague CreateFantasyTeam SetMemberPartyCoach RequestFantasyLeagueEditInvites SetLobbyCoach RequestFantasyLeagueEditInfo RequestFantasyLeagueDraftStatus RequestFantasyLeagueDraftPlayer RequestFantasyLeagueMatchups SwapFantasyTeamRoster RequestFantasyTeamRoster RequestFantasyTeamRosterAddDrop SendPresentedClientTerminateDlg RequestFantasyPlayerHisoricalStats RequestFantasyTeamTrades CancelFantasyTeamTrade SendChatChannelMemberUpdate GetEventPoints SendFriendRecruits RequestFriendRecruits SendFriendRecruitInviteAcceptDecline GetChatUserList SetCompendiumSelection RequestCompendiumData GetPlayerMatchHistory RequestOfferings RequestNotifications RequestNotificationsMarkRead RequestFantasyMessages RequestFantasyScheduledMatches CreateGameEvent RequestPerfectWorldUserLookup RequestPlayerInfo SubmitInfoPlayer GetWeekendTourneySchedule RequestJoinableCustomGameModes RequestJoinableCustomLobbies JoinQuickCustomLobby SendClientProvideSurveyResult FindFantasyLeague QueryHasItem TrackDialogResult RequestFantasyLeaveLeague RequestFantasyPlayerScoreDetails RequestEmoticonData ToggleLobbyBroadcastChannelCameramanStatus SetAdditionalEquips GetAdditionalEquips RedeemItem GetAllHeroProgress ListTrophies GetProfileCard SetProfileCardSlots ListNotificationMarkRead CreateHeroStatue QueryHasItemDefs SendLobbyEventPoints RerollPlayerChallenge SetPartyLeader CancelPartyInvites ApplyGemCombiner CreateDOTAStaticRecipe GetAllHeroOrder RecycleHeroRelic PurchasePlayerCardSpecific RequestLeagueInfoListAdmins ListInfoLeagueAdminsReponse RequestLeagueNode RequestLeagueAvailableLobbyNodes SendLeagueAvailableLobbyNodes GetFilteredPlayers SendRemoveFilteredPlayer SendUpdatePartyBeacon RequestActiveBeaconParties SendManageFavorites JoinPartyFromBeacon GetFavoritePlayers SendVerifyFavoritePlayers RequestPlayerStats FindTopSourceTVGames RequestCustomGamePlayerCount RequestSocialFeedPostComment RequestCustomGamesFriendsPlayed RequestFriendsPlayedCustomGame ListCustomGamesTop RequestSocialMatchPostComment RequestSocialMatchDetails SetPartyOpen SendMergePartyInvite RequestTopLeagueMatches RequestTopFriendMatches KickLobbyMemberFromTeam GetChatMemberCount RequestSocialFeedPostMessage SendCustomGameListenServerStartedLoading SendCustomGameClientFinishedLoading CloseLobbyBroadcastChannel RequestMatchesMinimal SendPingData GetProfileTickets SendH264Unsupported RequestH264Support GetQuestProgress GetHeroStatsHistory InvitePrivateChatMember KickPrivateChatMember PromotePrivateChatMember DemotePrivateChatMember RequestPrivateChatInfo RequestLatestConductScorecard SendLatestConductScorecard RequestWagering RequestEventGoals SendSuspiciousActivity SendHasPlayerVotedForMVP VoteForMVP LeaveTourneyWeekend RequestTeammateStats GetGiftPermissions VoteForArcana RequestArcanaVotesRemaining RequestMyTeamInfo PublishUserStat SubmitLobbyMVPVote RequestLinaPlaysRemaining RequestLinaGameResult SendAddTI6TreeProgress SetSpectatorLobbyDetails CreateSpectatorLobby ListLobbySpectator SendSpectatorLobbyGameDetails OpenPlayerCardPack SelectCompendiumInGamePrediction GetTourneyWeekendPlayerStats RecyclePlayerCard CreatePlayerCardPack RequestGetPlayerCardRoster RequestSetPlayerCardRoster SendLobbyBattleCupVictory GetPlayerCardItemInfo RequestSteamDatagramTicket RequestTransferSeasonalMMR ReportChatPublicSpam SetPartyBuilderOptions JoinPlaytest SendLobbyPlaytestDetails SetFavoriteTeam QueryIsPro SendClaimEventAction GetPeriodicResource SendPeriodicResourceUpdated SubmitTriviaQuestionAnswer GiveTip StartTriviaSession RequestAnchorPhoneNumber RequestUnanchorPhoneNumber RequestSlarkGameResult RequestQuickStats RequestSelectionPriorityChoice AutographReward DestroyLobby PurchaseItemWithEventPoints GetHeroTimedStats SendLobbyPlayerPlusSubscriptionData PurchaseHeroRelic PurchaseHeroRandomRelic SendClaimEventActionUsingItem RequestPartyReadyCheck SendPartyReadyCheckAcknowledge RequestGetRecentPlayTimeFriends RequestProfile SendProfileUpdate SendSuccessfulHero RequestHeroGlobalData RequestPlusWeeklyChallengeResult RequestPrivateMetadataKey RequestActivatePlusFreeTrial SendCavernCrawlClaimRoom SendCavernCrawlUseItemOnRoom SendCavernCrawlUseItemOnPath RequestCrawlCavernMapState RequestEventPointLogV2 RequestEventPointLogResponseV2 RequestEventTipsSummary SendHeroGlobalDataAllHeroes RequestSocialFeed RequestSocialFeedComments GetCrawlCavernClaimedRoomCount RecordContestVote SendLobbyEventGameDetails GrantDevEventPoints GrantDevEventAction SendDevResetEventState GrantEventSupportConsumeItem RequestPlayerRecentAccomplishments RequestPlayerHeroRecentAccomplishments RequestPlayerCoachMatches RequestGetTicketCodes SubmitCoachTeammateRating VoteForLeagueGameMVP RequestPlayerCoachMatch RequestContestVotes VoteMVPTimeout RequestGetUnderlordsCDKey SendDetailedGameStats SetFavoriteAllStarPlayer SendAllStarStats RequestGetFavoriteAllStarPlayer]

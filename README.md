@@ -40,7 +40,7 @@ This mechanism is used everywhere, these objects are not exposed in their own ev
 
 ```go
 import (
-	gcmm "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_match_management"
+	gcmm "github.com/paralin/go-dota2/protocol"
 	"github.com/paralin/go-dota2/cso"
 )
 
