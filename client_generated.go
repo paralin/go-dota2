@@ -15,6 +15,18 @@ func (d *Dota2) AbandonLobby() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame), req)
 }
 
+// AckPartyReadyCheck checks for/from a ack party ready.
+// Request ID: k_EMsgPartyReadyCheckAcknowledge
+// Request type: CMsgPartyReadyCheckAcknowledge
+func (d *Dota2) AckPartyReadyCheck(
+	readyStatus protocol.EReadyCheckStatus,
+) {
+	req := &protocol.CMsgPartyReadyCheckAcknowledge{
+		ReadyStatus: &readyStatus,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
+}
+
 // ApplyGemCombiner applys a gem combiner.
 // Request ID: k_EMsgClientToGCApplyGemCombiner
 // Request type: CMsgClientToGCApplyGemCombiner
@@ -3402,26 +3414,6 @@ func (d *Dota2) RequestOfferings(
 	)
 }
 
-// RequestPartyReadyCheck requests a party ready check.
-// Request ID: k_EMsgPartyReadyCheckRequest
-// Response ID: k_EMsgPartyReadyCheckResponse
-// Request type: CMsgPartyReadyCheckRequest
-// Response type: CMsgPartyReadyCheckResponse
-func (d *Dota2) RequestPartyReadyCheck(
-	ctx context.Context,
-) (*protocol.CMsgPartyReadyCheckResponse, error) {
-	req := &protocol.CMsgPartyReadyCheckRequest{}
-	resp := &protocol.CMsgPartyReadyCheckResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckResponse),
-		resp,
-	)
-}
-
 // RequestPartySetOpenGuild requests a party set open guild.
 // Request ID: k_EMsgGCPartySetOpenGuildRequest
 // Response ID: k_EMsgGCPartySetOpenGuildResponse
@@ -4799,16 +4791,24 @@ func (d *Dota2) SendMergePartyInvite(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite), req)
 }
 
-// SendPartyReadyCheckAcknowledge sends a party ready check acknowledge.
-// Request ID: k_EMsgPartyReadyCheckAcknowledge
-// Request type: CMsgPartyReadyCheckAcknowledge
-func (d *Dota2) SendPartyReadyCheckAcknowledge(
-	readyStatus protocol.EReadyCheckStatus,
-) {
-	req := &protocol.CMsgPartyReadyCheckAcknowledge{
-		ReadyStatus: &readyStatus,
-	}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
+// SendPartyReadyCheck sends a party ready check.
+// Request ID: k_EMsgPartyReadyCheckRequest
+// Response ID: k_EMsgPartyReadyCheckResponse
+// Request type: CMsgPartyReadyCheckRequest
+// Response type: CMsgPartyReadyCheckResponse
+func (d *Dota2) SendPartyReadyCheck(
+	ctx context.Context,
+) (*protocol.CMsgPartyReadyCheckResponse, error) {
+	req := &protocol.CMsgPartyReadyCheckRequest{}
+	resp := &protocol.CMsgPartyReadyCheckResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckResponse),
+		resp,
+	)
 }
 
 // SendPeriodicResourceUpdated sends a periodic resource updated.
@@ -4924,14 +4924,6 @@ func (d *Dota2) SendSpectatorLobbyGameDetails(
 	req *protocol.CMsgSpectatorLobbyGameDetails,
 ) {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgSpectatorLobbyGameDetails), req)
-}
-
-// SendStopFindingMatch sends a stop finding match.
-// Request ID: k_EMsgGCStopFindingMatch
-// Request type: CMsgStopFindingMatch
-func (d *Dota2) SendStopFindingMatch() {
-	req := &protocol.CMsgStopFindingMatch{}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
 }
 
 // SendSuccessfulHero sends a successful hero.
@@ -5376,6 +5368,14 @@ func (d *Dota2) StartTriviaSession(
 		uint32(protocol.EDOTAGCMsg_k_EMsgStartTriviaSessionResponse),
 		resp,
 	)
+}
+
+// StopFindingMatch stops a finding match.
+// Request ID: k_EMsgGCStopFindingMatch
+// Request type: CMsgStopFindingMatch
+func (d *Dota2) StopFindingMatch() {
+	req := &protocol.CMsgStopFindingMatch{}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
 }
 
 // SubmitCoachTeammateRating submits a coach teammate rating.

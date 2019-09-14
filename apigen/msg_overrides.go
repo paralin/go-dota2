@@ -195,6 +195,8 @@ var msgMethodNameOverrides = map[dm.EDOTAGCMsg]string{
 	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC:          "InvitePlayerToTeam",
 	dm.EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC:  "RespondToTeamInvite",
 	dm.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels:         "RejoinAllChatChannels",
+	dm.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest:            "SendPartyReadyCheck",
+	dm.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge:        "AckPartyReadyCheck",
 }
 
 // msgResponseOverrides maps request message IDs to response message IDs.
