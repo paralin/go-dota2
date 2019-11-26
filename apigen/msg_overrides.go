@@ -261,7 +261,7 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 	dm.EDOTAGCMsg_k_EMsgGCCompendiumDataChanged: &dm.CMsgDOTACompendiumData{},
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated:   &dm.CMsgDOTAProfileCard{},
-	dm.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded: &dm.CMsgGCNotificationsResponse_Notification{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientNotificationsUpdated: &dm.CMsgGCNotificationsResponse{},
 
 	dm.EDOTAGCMsg_k_EMsgRetrieveMatchVoteResponse: &dm.CMsgMatchVoteResponse{},
 

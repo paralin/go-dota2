@@ -824,25 +824,25 @@ func (e *MergePartyResponseReply) GetEventName() string {
 	return "MergePartyResponseReply"
 }
 
-// NewNotificationAdded event.
-// MessageID: k_EMsgGCToClientNewNotificationAdded
-type NewNotificationAdded struct {
-	protocol.CMsgGCNotificationsResponse_Notification
+// NotificationsUpdated event.
+// MessageID: k_EMsgGCToClientNotificationsUpdated
+type NotificationsUpdated struct {
+	protocol.CMsgGCNotificationsResponse
 }
 
 // GetDotaEventMsgID returns the dota message ID of the event.
-func (e *NewNotificationAdded) GetDotaEventMsgID() protocol.EDOTAGCMsg {
-	return protocol.EDOTAGCMsg_k_EMsgGCToClientNewNotificationAdded
+func (e *NotificationsUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientNotificationsUpdated
 }
 
 // GetEventBody returns the event body.
-func (e *NewNotificationAdded) GetEventBody() proto.Message {
-	return &e.CMsgGCNotificationsResponse_Notification
+func (e *NotificationsUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCNotificationsResponse
 }
 
 // GetEventName returns the event name.
-func (e *NewNotificationAdded) GetEventName() string {
-	return "NewNotificationAdded"
+func (e *NotificationsUpdated) GetEventName() string {
+	return "NotificationsUpdated"
 }
 
 // NotifyAccountFlagsChange event.
@@ -1179,6 +1179,27 @@ func (e *RequestLaneSelection) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *RequestLaneSelection) GetEventName() string {
 	return "RequestLaneSelection"
+}
+
+// RequestMMInfo event.
+// MessageID: k_EMsgGCToClientRequestMMInfo
+type RequestMMInfo struct {
+	protocol.CMsgGCToClientRequestMMInfo
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *RequestMMInfo) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientRequestMMInfo
+}
+
+// GetEventBody returns the event body.
+func (e *RequestMMInfo) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientRequestMMInfo
+}
+
+// GetEventName returns the event name.
+func (e *RequestMMInfo) GetEventName() string {
+	return "RequestMMInfo"
 }
 
 // ResetMapLocations event.

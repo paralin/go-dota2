@@ -139,6 +139,7 @@ message CSODOTAGameAccountClient {
 	optional uint32 competitive_core_calibration_games_remaining = 111;
 	optional uint32 competitive_support_rank = 112;
 	optional uint32 competitive_support_calibration_games_remaining = 113;
+	optional uint32 queue_points = 114;
 }
 
 message CSODOTAGameAccountPlus {
@@ -179,8 +180,6 @@ message CMsgLobbyEventPoints {
 		optional bool owned = 4;
 		optional uint32 favorite_team = 5;
 		optional uint32 favorite_team_level = 6;
-		optional uint32 points_held = 7;
-		optional uint32 premium_points_held = 8;
 		optional uint32 favorite_team_foil_level = 9;
 		optional uint64 active_effects_mask = 12;
 		repeated CMsgLobbyEventPoints.ChatWheelMessageRange unlocked_chat_wheel_message_ranges = 13;
@@ -257,8 +256,20 @@ message CMatchPlayerTimedStats {
 	optional uint32 deaths = 3;
 	optional uint32 assists = 4;
 	optional uint32 net_worth = 5;
-	optional uint32 last_hits = 6;
-	optional uint32 denies = 7;
+	optional uint32 xp = 6;
+	optional uint32 last_hits = 7;
+	optional uint32 denies = 8;
+	optional uint32 bounty_rune_gold = 9;
+	optional uint32 range_creep_upgrade_gold = 10;
+	optional uint32 observer_wards_dewarded = 11;
+	optional uint32 reliable_gold_earned = 12;
+	optional uint32 gold_loss_prevented = 13;
+}
+
+message CMatchTeamTimedStats {
+	optional uint32 time = 1;
+	optional uint32 enemy_towers_killed = 2;
+	optional uint32 enemy_barracks_killed = 3;
 }
 
 message CMatchAdditionalUnitInventory {
@@ -443,6 +454,8 @@ message CMsgDOTAProfileCard {
 	optional uint32 rank_tier_support = 18;
 	optional uint32 rank_tier_support_score = 19;
 	optional uint32 leaderboard_rank_support = 20;
+	optional uint32 rank_tier_core_peak = 21;
+	optional uint32 rank_tier_support_peak = 22;
 }
 
 message CSODOTAPlayerChallenge {
@@ -999,6 +1012,7 @@ message CMsgDOTAMatch {
 		repeated CMsgDOTAMatch.Player.HeroDamageReceived hero_damage_received = 67;
 		optional uint32 seconds_dead = 70;
 		optional uint32 gold_lost_to_death = 71;
+		optional uint32 lane_selection_flags = 75;
 	}
 
 	message BroadcasterInfo {
@@ -1261,7 +1275,8 @@ message CMsgMatchEventActionGrants {
 
 	message PlayerGrants {
 		optional uint32 account_id = 1;
-		repeated CMsgMatchEventActionGrants.Grant actions_granted = 2;
+		repeated CMsgMatchEventActionGrants.Grant actions_granted_old = 2;
+		repeated CMsgPendingEventAward actions_granted = 3;
 	}
 
 	repeated CMsgMatchEventActionGrants.PlayerGrants player_grants = 1;
@@ -1345,5 +1360,11 @@ message CMsgRequestPlayerRecentAccomplishmentsResponse {
 
 	optional CMsgRequestPlayerRecentAccomplishmentsResponse.EResponse result = 1 [default = k_eInternalError];
 	optional CMsgRecentAccomplishments player_accomplishments = 2;
+}
+
+message CMsgArcanaVoteMatchVotes {
+	optional uint32 match_id = 1;
+	optional uint32 hero_id = 2;
+	optional uint32 vote_count = 3;
 }
 
