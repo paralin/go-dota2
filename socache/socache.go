@@ -3,20 +3,20 @@ package socache
 import (
 	"sync"
 
-	gcsdkm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	// gcsm "github.com/paralin/go-dota2/protocol"
+
+	gcsdkm "github.com/paralin/go-dota2/protocol"
 )
 
 // SOCache implements the shared-object cache from DOTA.
 type SOCache struct {
 	containerMap sync.Map
-	le           *logrus.Entry
+	le           logrus.FieldLogger
 }
 
 // NewSOCache builds a new SOCache.
-func NewSOCache(le *logrus.Entry) *SOCache {
+func NewSOCache(le logrus.FieldLogger) *SOCache {
 	return &SOCache{le: le}
 }
 

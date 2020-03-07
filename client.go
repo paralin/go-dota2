@@ -8,9 +8,9 @@ import (
 	"github.com/faceit/go-steam"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
-	devents "github.com/paralin/go-dota2/events"
 	"github.com/sirupsen/logrus"
-	// gcmm "github.com/paralin/go-dota2/protocol"
+
+	devents "github.com/paralin/go-dota2/events"
 	bgcm "github.com/paralin/go-dota2/protocol"
 	gcm "github.com/paralin/go-dota2/protocol"
 	gcsdkm "github.com/paralin/go-dota2/protocol"
@@ -30,7 +30,7 @@ type handlerMap map[uint32]func(packet *gamecoordinator.GCPacket) error
 
 // Dota2 handles the dota game handler.
 type Dota2 struct {
-	le     *logrus.Entry
+	le     logrus.FieldLogger
 	client *steam.Client
 	cache  *socache.SOCache
 
@@ -49,7 +49,7 @@ type Dota2 struct {
 }
 
 // New builds a new Dota2 handler.
-func New(client *steam.Client, le *logrus.Entry) *Dota2 {
+func New(client *steam.Client, le logrus.FieldLogger) *Dota2 {
 	c := &Dota2{
 		le:      le,
 		cache:   socache.NewSOCache(le),
@@ -167,7 +167,7 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 		}
 	}
 
-	respHandled := d.handleResponsePacket(le, packet)
+	respHandled := d.handleResponsePacket(packet)
 	if !ok && !respHandled {
 		le.Debug("unhandled gc packet")
 		d.emit(&devents.UnhandledGCPacket{
