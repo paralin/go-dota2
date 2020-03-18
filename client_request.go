@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 
 	gcm "github.com/paralin/go-dota2/protocol"
 )

@@ -7,8 +7,9 @@ import (
 
 	"github.com/faceit/go-steam"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
-	"github.com/golang/protobuf/proto"
+	protoV1 "github.com/golang/protobuf/proto"
 	"github.com/sirupsen/logrus"
+	"google.golang.org/protobuf/proto"
 
 	devents "github.com/paralin/go-dota2/events"
 	bgcm "github.com/paralin/go-dota2/protocol"
@@ -114,7 +115,8 @@ func (d *Dota2) buildHandlerMap() {
 
 // write sends a message to the game coordinator.
 func (d *Dota2) write(messageType uint32, msg proto.Message) {
-	d.client.GC.Write(gamecoordinator.NewGCMsgProtobuf(AppID, messageType, msg))
+	msgV1 := protoV1.MessageV1(msg)
+	d.client.GC.Write(gamecoordinator.NewGCMsgProtobuf(AppID, messageType, msgV1))
 }
 
 // emit emits an event.
