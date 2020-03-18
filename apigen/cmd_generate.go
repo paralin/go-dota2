@@ -2,10 +2,10 @@ package main
 
 import (
 	"bytes"
-	"context"
-	"github.com/urfave/cli"
 	gofmt "go/format"
 	"io/ioutil"
+
+	"github.com/urfave/cli"
 )
 
 var clientOutFile string
@@ -33,7 +33,7 @@ func init() {
 			clientFileBuf := &bytes.Buffer{}
 			eventsFileBuf := &bytes.Buffer{}
 
-			if err := GenerateAPI(context.Background(), clientFileBuf, eventsFileBuf); err != nil {
+			if err := GenerateAPI(clientFileBuf, eventsFileBuf); err != nil {
 				return err
 			}
 
@@ -42,24 +42,22 @@ func init() {
 			}
 
 			clientFileDat, err := gofmt.Source(clientFileBuf.Bytes())
+
 			if err != nil {
 				clientFileDat = clientFileBuf.Bytes()
 			}
 
-			if err := ioutil.WriteFile(clientOutFile, clientFileDat, 0655); err != nil {
-				return err
-			}
-
-			if err != nil {
+			if err = ioutil.WriteFile(clientOutFile, clientFileDat, 0655); err != nil {
 				return err
 			}
 
 			eventsFileDat, err := gofmt.Source(eventsFileBuf.Bytes())
+
 			if err != nil {
 				eventsFileDat = eventsFileBuf.Bytes()
 			}
 
-			if err := ioutil.WriteFile(eventsOutFile, eventsFileDat, 0655); err != nil {
+			if err = ioutil.WriteFile(eventsOutFile, eventsFileDat, 0655); err != nil {
 				return err
 			}
 
