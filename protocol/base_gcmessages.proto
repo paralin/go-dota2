@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 import "steammessages.proto";
 
@@ -533,4 +534,3 @@ message CMsgGCToGCPerformManualOpCompleted {
 
 message CMsgGCToGCReloadServerRegionSettings {
 }
-

@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 import "steammessages.proto";
 import "econ_shared_enums.proto";
@@ -1064,4 +1065,3 @@ message CExtraMsgBlock {
 	optional uint64 msg_key = 3;
 	optional bool is_compressed = 4;
 }
-

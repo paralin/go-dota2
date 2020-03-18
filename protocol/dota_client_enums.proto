@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
@@ -95,4 +96,3 @@ enum EPartyBeaconType {
 	k_EPartyBeaconType_Available = 0;
 	k_EPartyBeaconType_Joinable = 1;
 }
-

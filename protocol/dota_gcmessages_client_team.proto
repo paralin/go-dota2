@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 import "dota_shared_enums.proto";
 
@@ -288,4 +289,3 @@ message CMsgDOTALeaveTeamResponse {
 message CMsgDOTABetaParticipation {
 	optional uint32 access_rights = 1;
 }
-

@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
@@ -30,4 +31,3 @@ enum EGCBaseClientMsg {
 	k_EMsgGCClientConnectionStatus = 4009;
 	k_EMsgGCServerConnectionStatus = 4010;
 }
-

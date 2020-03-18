@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 import "google/protobuf/descriptor.proto";
 
@@ -118,4 +119,3 @@ enum ENetworkDisconnectionReason {
 	NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID = 148 [(network_connection_token) = "#GameUI_ServerCDKeyAuthInvalid"];
 	NETWORK_DISCONNECT_REJECT_BANNED = 149 [(network_connection_token) = "#GameUI_ServerRejectBanned"];
 }
-

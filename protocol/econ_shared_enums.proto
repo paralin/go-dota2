@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
@@ -48,4 +49,3 @@ message CMsgGenericResult {
 	optional uint32 eresult = 1 [default = 2];
 	optional string debug_message = 2;
 }
-

@@ -1,5 +1,6 @@
 syntax = "proto2";
 package protocol;
+option go_package = ".;protocol";
 
 import "dota_client_enums.proto";
 
@@ -264,4 +265,3 @@ message CMsgDOTAWeekendTourneyParticipationDetails {
 
 	repeated CMsgDOTAWeekendTourneyParticipationDetails.Division divisions = 1;
 }
-
