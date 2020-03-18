@@ -1,6 +1,6 @@
 module github.com/paralin/go-dota2
 
-go 1.12
+go 1.14
 
 require (
 	github.com/faceit/go-steam v0.0.0-20190206021251-2be7df6980e1
