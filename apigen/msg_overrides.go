@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
 	dm "github.com/paralin/go-dota2/protocol"
+	"google.golang.org/protobuf/proto"
 )
 
 // msgSenderOverrides overrides the heuristic-generated sender parties for each message
@@ -26,10 +26,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCRewardDiretidePrizes: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCRewardTutorialPrizes: MsgSenderNone,
-
-	dm.EDOTAGCMsg_k_EMsgGCRequestGuildData: MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCGuildData:        MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCNotInGuildData:   MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGCGeneralResponse: MsgSenderNone,
 
@@ -171,6 +167,10 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby: MsgSenderClient,
 	dm.EDOTAGCMsg_k_EMsgGCWatchGame:            MsgSenderClient,
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyRequest:  MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCtoGCRequestRecalibrationCheck:      MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
