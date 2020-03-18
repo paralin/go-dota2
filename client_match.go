@@ -6,7 +6,7 @@ import (
 )
 
 // handleMatchSignedOut handles an incoming steam datagram ticket.
-func (d *Dota2) handleMatchSignedOut(packet *gamecoordinator.GCPacket) error {
+func (d *Dota2) handleMatchSignedOut(packet *gamecoordinator.GCPacket) error { //nolint: unused
 	ev := &events.MatchSignedOut{}
 	if err := d.unmarshalBody(packet, &ev.CMsgGCToClientMatchSignedOut); err != nil {
 		return err

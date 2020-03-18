@@ -14,7 +14,7 @@ import (
 )
 
 // SOCacheContainer contains a type of object in the cache.
-type SOCacheContainer struct {
+type SOCacheContainer struct { //nolint: golint
 	le            logrus.FieldLogger
 	typeID        uint32
 	objects       sync.Map // map[uint64]proto.Message
@@ -54,7 +54,7 @@ func (c *SOCacheContainer) parseObject(obj *gcsdkm.CMsgSOCacheSubscribed_Subscri
 }
 
 // stringifyObject converts an object to a json string.
-func (c *SOCacheContainer) stringifyObject(obj proto.Message) string {
+func (c *SOCacheContainer) stringifyObject(obj proto.Message) string { //nolint: unused
 	b, _ := protojson.Marshal(obj)
 	return string(b)
 }
@@ -84,7 +84,10 @@ func (c *SOCacheContainer) emitEvent(event *CacheEvent) {
 }
 
 // addUpdateObject handles an added / updated object.
-func (c *SOCacheContainer) addUpdateObject(soid *gcsdkm.CMsgSOIDOwner, obj *gcsdkm.CMsgSOCacheSubscribed_SubscribedType) error {
+func (c *SOCacheContainer) addUpdateObject(
+	soid *gcsdkm.CMsgSOIDOwner,
+	obj *gcsdkm.CMsgSOCacheSubscribed_SubscribedType,
+) error {
 	soID := soid.GetId()
 	if soID == 0 {
 		return errors.New("object has empty shared object id")
@@ -134,7 +137,10 @@ func (c *SOCacheContainer) removeObject(soid *gcsdkm.CMsgSOIDOwner) error {
 }
 
 // HandleSubscribed handles an incoming object from a Subscribed event.
-func (c *SOCacheContainer) HandleSubscribed(msg *gcsdkm.CMsgSOCacheSubscribed, obj *gcsdkm.CMsgSOCacheSubscribed_SubscribedType) error {
+func (c *SOCacheContainer) HandleSubscribed(
+	msg *gcsdkm.CMsgSOCacheSubscribed,
+	obj *gcsdkm.CMsgSOCacheSubscribed_SubscribedType,
+) error {
 	if len(obj.GetObjectData()) == 0 {
 		return errors.Errorf("expected object data for cache type %d", c.GetTypeID())
 	}
@@ -156,7 +162,7 @@ func (c *SOCacheContainer) HandleDestroy(msg *gcsdkm.CMsgSOSingleObject) error {
 func (c *SOCacheContainer) Subscribe() (<-chan *CacheEvent, CacheUnsubscribeFunc, error) {
 	subID := uint32(rand.Int31())
 	ch := make(chan *CacheEvent, 10)
-	c.subscriptions.Store(subID, (chan *CacheEvent)(ch))
+	c.subscriptions.Store(subID, ch)
 	return ch, func() {
 		c.subscriptions.Delete(subID)
 	}, nil

@@ -18,7 +18,11 @@ func (d *Dota2) CreateLobby(details *gcccm.CMsgPracticeLobbySetDetails) {
 }
 
 // LeaveCreateLobby attempts to leave any current lobby and creates a new one.
-func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPracticeLobbySetDetails, destroyOldLobby bool) error {
+func (d *Dota2) LeaveCreateLobby(
+	ctx context.Context,
+	details *gcccm.CMsgPracticeLobbySetDetails,
+	destroyOldLobby bool,
+) error {
 	cacheCtr, err := d.cache.GetContainerForTypeID(uint32(cso.Lobby))
 	if err != nil {
 		return err

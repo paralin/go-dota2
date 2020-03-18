@@ -15,17 +15,9 @@ func GetMessageFuncName(msg dota_gcmessages_msgid.EDOTAGCMsg) string {
 
 	msgName := msg.String()
 	msgName = strings.TrimPrefix(msgName, "k_EMsg")
-
-	if strings.HasPrefix(msgName, "DOTA") {
-		msgName = msgName[4:]
-	}
-
-	switch {
-	case strings.HasPrefix(msgName, "ClientToGC"):
-		msgName = strings.TrimPrefix(msgName, "ClientToGC")
-	case strings.HasPrefix(msgName, "GC"):
-		msgName = strings.TrimPrefix(msgName, "GC")
-	}
+	msgName = strings.TrimPrefix(msgName, "DOTA")
+	msgName = strings.TrimPrefix(msgName, "ClientToGC")
+	msgName = strings.TrimPrefix(msgName, "GC")
 
 	switch {
 	case strings.HasSuffix(msgName, "Request"):
@@ -36,6 +28,7 @@ func GetMessageFuncName(msg dota_gcmessages_msgid.EDOTAGCMsg) string {
 
 	msgName = strings.Replace(msgName, "PracticeLobby", "Lobby", -1)
 	words := camelcase.Split(msgName)
+
 	switch {
 	case len(words) < 2:
 		return msgName
@@ -43,7 +36,6 @@ func GetMessageFuncName(msg dota_gcmessages_msgid.EDOTAGCMsg) string {
 		if !IsWordVerb(words[0]) && IsWordVerb(words[1]) {
 			words[0], words[1] = words[1], words[0]
 		}
-		break
 	case IsWordVerb(words[0]):
 		break
 	}

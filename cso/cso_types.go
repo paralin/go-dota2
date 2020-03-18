@@ -11,7 +11,7 @@ import (
 
 // CSOType is a shared object type identifier.
 //go:generate stringer -type=CSOType
-type CSOType int32
+type CSOType int32 //nolint: golint
 
 const (
 	// EconItem is an economy item.

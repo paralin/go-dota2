@@ -62,7 +62,10 @@ func GetResponseMessageID(reqID gcm.EDOTAGCMsg) (gcm.EDOTAGCMsg, error) {
 			}
 		}
 
-		return gcm.EDOTAGCMsg(0), errors.Errorf("response was implied by request %v but no response type found", msgID.String())
+		return gcm.EDOTAGCMsg(0), errors.Errorf(
+			"response was implied by request %v but no response type found",
+			msgID.String(),
+		)
 	}
 
 	return gcm.EDOTAGCMsg(0), nil

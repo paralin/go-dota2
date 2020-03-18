@@ -55,7 +55,11 @@ func buildGeneratedRequestFunc(
 			genReqFunc.respType = respProtoType.Obj
 			clientImports[respProtoType.Pak.Path()] = struct{}{}
 			if genReqFunc.respType == genReqFunc.reqType {
-				return nil, errors.Errorf("request type cannot be the same as response type: %s %s", msgID.String(), respProtoType.TypeStr)
+				return nil, errors.Errorf(
+					"request type cannot be the same as response type: %s %s",
+					msgID.String(),
+					respProtoType.TypeStr,
+				)
 			}
 		}
 

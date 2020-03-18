@@ -7,7 +7,7 @@ import (
 
 	"github.com/faceit/go-steam"
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
-	protoV1 "github.com/golang/protobuf/proto"
+	protoV1 "github.com/golang/protobuf/proto" //nolint: staticcheck
 	"github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/proto"
 
@@ -124,7 +124,8 @@ func (d *Dota2) emit(event interface{}) {
 	d.client.Emit(event)
 }
 
-// accessState safely accesses the Dota2 state. return true if the state was changed / otherwise updated during the call.
+// accessState safely accesses the Dota2 state. return true if the state was changed / otherwise
+// updated during the call.
 func (d *Dota2) accessState(cb func(nextState *state.Dota2State) (bool, error)) error {
 	d.stateMtx.Lock()
 	defer d.stateMtx.Unlock()
@@ -179,7 +180,7 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 }
 
 // handlePingRequest handles an incoming ping request from the gc.
-func (d *Dota2) handlePingRequest(packet *gamecoordinator.GCPacket) error {
+func (d *Dota2) handlePingRequest(_ *gamecoordinator.GCPacket) error {
 	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsdkm.CMsgGCClientPing{})
 	return nil
 }
