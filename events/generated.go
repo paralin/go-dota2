@@ -1,8 +1,8 @@
 package events
 
 import (
-	"github.com/golang/protobuf/proto"
 	"github.com/paralin/go-dota2/protocol"
+	"google.golang.org/protobuf/proto"
 )
 
 // ArcanaVotesUpdate event.
@@ -507,48 +507,6 @@ func (e *FantasyTeamInfo) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *FantasyTeamInfo) GetEventName() string {
 	return "FantasyTeamInfo"
-}
-
-// GuildInviteData event.
-// MessageID: k_EMsgGCGuildInviteData
-type GuildInviteData struct {
-	protocol.CMsgDOTAGuildInviteData
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *GuildInviteData) GetDotaEventMsgID() protocol.EDOTAGCMsg {
-	return protocol.EDOTAGCMsg_k_EMsgGCGuildInviteData
-}
-
-// GetEventBody returns the event body.
-func (e *GuildInviteData) GetEventBody() proto.Message {
-	return &e.CMsgDOTAGuildInviteData
-}
-
-// GetEventName returns the event name.
-func (e *GuildInviteData) GetEventName() string {
-	return "GuildInviteData"
-}
-
-// GuildUpdateMessage event.
-// MessageID: k_EMsgGCGuildUpdateMessage
-type GuildUpdateMessage struct {
-	protocol.CMsgDOTAGuildUpdateMessage
-}
-
-// GetDotaEventMsgID returns the dota message ID of the event.
-func (e *GuildUpdateMessage) GetDotaEventMsgID() protocol.EDOTAGCMsg {
-	return protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateMessage
-}
-
-// GetEventBody returns the event body.
-func (e *GuildUpdateMessage) GetEventBody() proto.Message {
-	return &e.CMsgDOTAGuildUpdateMessage
-}
-
-// GetEventName returns the event name.
-func (e *GuildUpdateMessage) GetEventName() string {
-	return "GuildUpdateMessage"
 }
 
 // HallOfFame event.
@@ -1410,6 +1368,27 @@ func (e *TrophyAwarded) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *TrophyAwarded) GetEventName() string {
 	return "TrophyAwarded"
+}
+
+// VACReminder event.
+// MessageID: k_EMsgGCToClientVACReminder
+type VACReminder struct {
+	protocol.CMsgGCToClientVACReminder
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *VACReminder) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientVACReminder
+}
+
+// GetEventBody returns the event body.
+func (e *VACReminder) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientVACReminder
+}
+
+// GetEventName returns the event name.
+func (e *VACReminder) GetEventName() string {
+	return "VACReminder"
 }
 
 // WageringUpdate event.
