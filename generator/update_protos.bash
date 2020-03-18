@@ -1,9 +1,10 @@
 #!/bin/bash
+
 set -eo pipefail
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
-GAME_DIR="GameTracking-Dota2"
-GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}"
+GAME_DIR="Protobufs"
+GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}/dota2"
 
 cd ${REPO_ROOT}/generator
 git submodule update --init ${GAME_DIR}
@@ -18,7 +19,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
-cd ${GAME_PATH}/Protobufs
+cd ${GAME_PATH}
 mkdir -p ${WORK_DIR}/orig ${WORK_DIR}/protos
 cp \
     ./dota_gcmessages_*.proto \
@@ -31,13 +32,14 @@ cp \
     ./gcsdk_gcmessages.proto \
     ./steammessages.proto \
     ./gcsystemmsgs.proto \
+    ./valveextensions.proto \
     ${WORK_DIR}/orig/
 
 cd ${WORK_DIR}
 # Add package lines to each protobuf file.
 for f in ${WORK_DIR}/orig/*.proto ; do
     fname=$(basename $f)
-    printf 'syntax = "proto2";\npackage protocol;\n\n' |\
+    printf 'syntax = "proto2";\npackage protocol;\noption go_package = ".;protocol";\n\n' |\
         cat - $f |\
         sed -e "s/optional \./optional /g" \
             -e "s/required \./required /g" \
