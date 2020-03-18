@@ -4,6 +4,15 @@ package socache
 
 import "strconv"
 
+func _() {
+	// An "invalid array index" compiler error signifies that the constant values have changed.
+	// Re-run the stringer command to generate them again.
+	var x [1]struct{}
+	_ = x[EventTypeCreate-0]
+	_ = x[EventTypeUpdate-1]
+	_ = x[EventTypeDestroy-2]
+}
+
 const _EventType_name = "EventTypeCreateEventTypeUpdateEventTypeDestroy"
 
 var _EventType_index = [...]uint8{0, 15, 30, 46}

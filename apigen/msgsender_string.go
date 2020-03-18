@@ -4,6 +4,15 @@ package main
 
 import "strconv"
 
+func _() {
+	// An "invalid array index" compiler error signifies that the constant values have changed.
+	// Re-run the stringer command to generate them again.
+	var x [1]struct{}
+	_ = x[MsgSenderNone-0]
+	_ = x[MsgSenderGC-1]
+	_ = x[MsgSenderClient-2]
+}
+
 const _MsgSender_name = "MsgSenderNoneMsgSenderGCMsgSenderClient"
 
 var _MsgSender_index = [...]uint8{0, 13, 24, 39}
