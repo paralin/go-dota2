@@ -2,7 +2,7 @@
 set -eo pipefail
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
-GAME_DIR="GameTracking-Dota2"
+GAME_DIR="Protobufs"
 GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}"
 
 cd ${REPO_ROOT}/generator
@@ -18,7 +18,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
-cd ${GAME_PATH}/Protobufs
+cd ${GAME_PATH}/dota2
 mkdir -p ${WORK_DIR}/orig ${WORK_DIR}/protos
 cp \
     ./dota_gcmessages_*.proto \
@@ -30,6 +30,7 @@ cp \
     ./dota_shared_enums.proto \
     ./gcsdk_gcmessages.proto \
     ./steammessages.proto \
+    ./valveextensions.proto \
     ./gcsystemmsgs.proto \
     ${WORK_DIR}/orig/
 

@@ -27,10 +27,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCRewardDiretidePrizes: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCRewardTutorialPrizes: MsgSenderNone,
 
-	dm.EDOTAGCMsg_k_EMsgGCRequestGuildData: MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCGuildData:        MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCNotInGuildData:   MsgSenderNone,
-
 	dm.EDOTAGCMsg_k_EMsgGCGeneralResponse: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: MsgSenderGC,
@@ -171,6 +167,11 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby: MsgSenderClient,
 	dm.EDOTAGCMsg_k_EMsgGCWatchGame:            MsgSenderClient,
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyRequest:  MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyResponse: MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCtoGCRequestRecalibrationCheck:      MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.

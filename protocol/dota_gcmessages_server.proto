@@ -305,6 +305,7 @@ message CMsgGameMatchSignOut {
 			optional uint32 command_count = 53;
 			optional uint32 mouse_click_cast_command_count = 54;
 			optional uint32 teleports_used = 55;
+			optional uint32 cavern_crawl_map_variant = 56;
 		}
 
 		repeated CMsgGameMatchSignOut.CTeam.CPlayer players = 1;
@@ -574,6 +575,7 @@ message CMsgDOTARequestPlayerResourcesResponse {
 	optional bool prevent_voice_chat = 5;
 	optional bool low_priority = 6;
 	optional bool is_new_player = 8;
+	optional bool is_guide_player = 9;
 }
 
 message CMsgDOTARequestBatchPlayerResources {
@@ -590,6 +592,7 @@ message CMsgDOTARequestBatchPlayerResourcesResponse {
 		optional bool rank_calibrated = 5;
 		optional bool low_priority = 6;
 		optional bool is_new_player = 7;
+		optional bool is_guide_player = 8;
 	}
 
 	repeated CMsgDOTARequestBatchPlayerResourcesResponse.Result results = 6;
@@ -1115,8 +1118,9 @@ message CMsgServerToGCMatchStateHistory {
 message CMsgServerToGCCavernCrawlIsHeroActive {
 	optional uint32 event_id = 1;
 	optional uint32 account_id = 2;
-	optional uint32 hero_id = 3;
-	optional bool turbo_mode = 4;
+	optional uint32 map_variant = 3;
+	optional uint32 hero_id = 4;
+	optional bool turbo_mode = 5;
 }
 
 message CMsgServerToGCCavernCrawlIsHeroActiveResponse {
@@ -1219,3 +1223,25 @@ message CMsgAllStarStats {
 	repeated CMsgAllStarStats.PlayerStats player_stats = 1;
 }
 
+message CMsgNeutralItemStats {
+	message NeutralItem {
+		optional uint32 item_id = 1;
+		optional uint32 time_dropped = 2;
+		optional uint32 team = 3;
+		optional uint32 time_last_equipped = 4;
+		optional uint32 time_last_unequipped = 5;
+		optional uint32 duration_equipped = 6;
+	}
+
+	repeated CMsgNeutralItemStats.NeutralItem neutral_items = 1;
+}
+
+message CMsgGCToServerLobbyHeroBanRates {
+	message HeroBanEntry {
+		optional uint32 hero_id = 1;
+		optional uint32 ban_count = 2;
+		optional uint32 pick_count = 3;
+	}
+
+	repeated CMsgGCToServerLobbyHeroBanRates.HeroBanEntry ban_data = 1;
+}

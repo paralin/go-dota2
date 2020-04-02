@@ -264,37 +264,6 @@ func (d *Dota2) CreateGameEvent(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCEventGameCreate), req)
 }
 
-// CreateGuild creates a guild.
-// Request ID: k_EMsgGCGuildCreateRequest
-// Response ID: k_EMsgGCGuildCreateResponse
-// Request type: CMsgDOTAGuildCreateRequest
-// Response type: CMsgDOTAGuildCreateResponse
-func (d *Dota2) CreateGuild(
-	ctx context.Context,
-	name string,
-	tag string,
-	logo uint64,
-	baseLogo uint64,
-	bannerLogo uint64,
-) (*protocol.CMsgDOTAGuildCreateResponse, error) {
-	req := &protocol.CMsgDOTAGuildCreateRequest{
-		Name:       &name,
-		Tag:        &tag,
-		Logo:       &logo,
-		BaseLogo:   &baseLogo,
-		BannerLogo: &bannerLogo,
-	}
-	resp := &protocol.CMsgDOTAGuildCreateResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCreateRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCreateResponse),
-		resp,
-	)
-}
-
 // CreateHeroStatue creates a hero statue.
 // Request ID: k_EMsgClientToGCCreateHeroStatue
 // Request type: CMsgClientToGCCreateHeroStatue
@@ -1426,29 +1395,6 @@ func (d *Dota2) ListFriendLobby(
 	)
 }
 
-// ListGuildmateLobby lists a guildmate lobby.
-// Request ID: k_EMsgGCGuildmatePracticeLobbyListRequest
-// Response ID: k_EMsgGCGuildmatePracticeLobbyListResponse
-// Request type: CMsgGuildmatePracticeLobbyListRequest
-// Response type: CMsgGuildmatePracticeLobbyListResponse
-func (d *Dota2) ListGuildmateLobby(
-	ctx context.Context,
-	guilds []uint32,
-) (*protocol.CMsgGuildmatePracticeLobbyListResponse, error) {
-	req := &protocol.CMsgGuildmatePracticeLobbyListRequest{
-		Guilds: guilds,
-	}
-	resp := &protocol.CMsgGuildmatePracticeLobbyListResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildmatePracticeLobbyListResponse),
-		resp,
-	)
-}
-
 // ListLobbies lists lobbies.
 // Request ID: k_EMsgGCPracticeLobbyList
 // Response ID: k_EMsgGCPracticeLobbyListResponse
@@ -1549,20 +1495,6 @@ func (d *Dota2) ListTrophies(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetTrophyListResponse),
 		resp,
 	)
-}
-
-// OpenGuildPartyRefresh opens a guild party refresh.
-// Request ID: k_EMsgGCGuildOpenPartyRefresh
-// Request type: CMsgDOTAGuildOpenPartyRefresh
-func (d *Dota2) OpenGuildPartyRefresh(
-	guildID uint32,
-	openParties []*protocol.CMsgDOTAGuildOpenPartyRefresh_OpenParty,
-) {
-	req := &protocol.CMsgDOTAGuildOpenPartyRefresh{
-		GuildId:     &guildID,
-		OpenParties: openParties,
-	}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildOpenPartyRefresh), req)
 }
 
 // OpenPlayerCardPack opens a player card pack.
@@ -1856,6 +1788,33 @@ func (d *Dota2) RedeemItem(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTARedeemItem),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTARedeemItemResponse),
+		resp,
+	)
+}
+
+// RedeemTabsPull redeems a tabs pull.
+// Request ID: k_EMsgClientToGCPullTabsRedeem
+// Response ID: k_EMsgGCToClientPullTabsRedeemResponse
+// Request type: CMsgClientToGCPullTabsRedeem
+// Response type: CMsgGCToClientPullTabsRedeemResponse
+func (d *Dota2) RedeemTabsPull(
+	ctx context.Context,
+	eventID uint32,
+	boardID uint32,
+	heroID uint32,
+) (*protocol.CMsgGCToClientPullTabsRedeemResponse, error) {
+	req := &protocol.CMsgClientToGCPullTabsRedeem{
+		EventId: &eventID,
+		BoardId: &boardID,
+		HeroId:  &heroID,
+	}
+	resp := &protocol.CMsgGCToClientPullTabsRedeemResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPullTabsRedeem),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPullTabsRedeemResponse),
 		resp,
 	)
 }
@@ -2779,157 +2738,6 @@ func (d *Dota2) RequestGetTicketCodes(
 	)
 }
 
-// RequestGetUnderlordsCDKey requests to check if the target get underlords cd key.
-// Request ID: k_EMsgClientToGCGetUnderlordsCDKeyRequest
-// Response ID: k_EMsgClientToGCGetUnderlordsCDKeyResponse
-// Request type: CMsgClientToGCGetUnderlordsCDKeyRequest
-// Response type: CMsgClientToGCGetUnderlordsCDKeyResponse
-func (d *Dota2) RequestGetUnderlordsCDKey(
-	ctx context.Context,
-) (*protocol.CMsgClientToGCGetUnderlordsCDKeyResponse, error) {
-	req := &protocol.CMsgClientToGCGetUnderlordsCDKeyRequest{}
-	resp := &protocol.CMsgClientToGCGetUnderlordsCDKeyResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyResponse),
-		resp,
-	)
-}
-
-// RequestGuildCancelInvite requests a guild cancel invite.
-// Request ID: k_EMsgGCGuildCancelInviteRequest
-// Response ID: k_EMsgGCGuildCancelInviteResponse
-// Request type: CMsgDOTAGuildCancelInviteRequest
-// Response type: CMsgDOTAGuildCancelInviteResponse
-func (d *Dota2) RequestGuildCancelInvite(
-	ctx context.Context,
-	guildID uint32,
-	targetAccountID uint32,
-) (*protocol.CMsgDOTAGuildCancelInviteResponse, error) {
-	req := &protocol.CMsgDOTAGuildCancelInviteRequest{
-		GuildId:         &guildID,
-		TargetAccountId: &targetAccountID,
-	}
-	resp := &protocol.CMsgDOTAGuildCancelInviteResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCancelInviteRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildCancelInviteResponse),
-		resp,
-	)
-}
-
-// RequestGuildEditLogo requests a guild edit logo.
-// Request ID: k_EMsgGCGuildEditLogoRequest
-// Response ID: k_EMsgGCGuildEditLogoResponse
-// Request type: CMsgDOTAGuildEditLogoRequest
-// Response type: CMsgDOTAGuildEditLogoResponse
-func (d *Dota2) RequestGuildEditLogo(
-	ctx context.Context,
-	guildID uint32,
-	logo uint64,
-) (*protocol.CMsgDOTAGuildEditLogoResponse, error) {
-	req := &protocol.CMsgDOTAGuildEditLogoRequest{
-		GuildId: &guildID,
-		Logo:    &logo,
-	}
-	resp := &protocol.CMsgDOTAGuildEditLogoResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildEditLogoRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildEditLogoResponse),
-		resp,
-	)
-}
-
-// RequestGuildInviteAccount requests a guild invite account.
-// Request ID: k_EMsgGCGuildInviteAccountRequest
-// Response ID: k_EMsgGCGuildInviteAccountResponse
-// Request type: CMsgDOTAGuildInviteAccountRequest
-// Response type: CMsgDOTAGuildInviteAccountResponse
-func (d *Dota2) RequestGuildInviteAccount(
-	ctx context.Context,
-	guildID uint32,
-	targetAccountID uint32,
-) (*protocol.CMsgDOTAGuildInviteAccountResponse, error) {
-	req := &protocol.CMsgDOTAGuildInviteAccountRequest{
-		GuildId:         &guildID,
-		TargetAccountId: &targetAccountID,
-	}
-	resp := &protocol.CMsgDOTAGuildInviteAccountResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteAccountRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteAccountResponse),
-		resp,
-	)
-}
-
-// RequestGuildSetAccountRole requests a guild set account role.
-// Request ID: k_EMsgGCGuildSetAccountRoleRequest
-// Response ID: k_EMsgGCGuildSetAccountRoleResponse
-// Request type: CMsgDOTAGuildSetAccountRoleRequest
-// Response type: CMsgDOTAGuildSetAccountRoleResponse
-func (d *Dota2) RequestGuildSetAccountRole(
-	ctx context.Context,
-	guildID uint32,
-	targetAccountID uint32,
-	targetRole uint32,
-) (*protocol.CMsgDOTAGuildSetAccountRoleResponse, error) {
-	req := &protocol.CMsgDOTAGuildSetAccountRoleRequest{
-		GuildId:         &guildID,
-		TargetAccountId: &targetAccountID,
-		TargetRole:      &targetRole,
-	}
-	resp := &protocol.CMsgDOTAGuildSetAccountRoleResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildSetAccountRoleResponse),
-		resp,
-	)
-}
-
-// RequestGuildUpdateDetails requests guild update details.
-// Request ID: k_EMsgGCGuildUpdateDetailsRequest
-// Response ID: k_EMsgGCGuildUpdateDetailsResponse
-// Request type: CMsgDOTAGuildUpdateDetailsRequest
-// Response type: CMsgDOTAGuildUpdateDetailsResponse
-func (d *Dota2) RequestGuildUpdateDetails(
-	ctx context.Context,
-	guildID uint32,
-	logo uint64,
-	baseLogo uint64,
-	bannerLogo uint64,
-) (*protocol.CMsgDOTAGuildUpdateDetailsResponse, error) {
-	req := &protocol.CMsgDOTAGuildUpdateDetailsRequest{
-		GuildId:    &guildID,
-		Logo:       &logo,
-		BaseLogo:   &baseLogo,
-		BannerLogo: &bannerLogo,
-	}
-	resp := &protocol.CMsgDOTAGuildUpdateDetailsResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateDetailsResponse),
-		resp,
-	)
-}
-
 // RequestH264Support requests a h 264 support.
 // Request ID: k_EMsgClientToGCRequestH264Support
 // Request type: CMsgClientToGCRequestH264Support
@@ -3023,29 +2831,6 @@ func (d *Dota2) RequestItemEditorReservations(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReservationsRequest),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCItemEditorReservationsResponse),
-		resp,
-	)
-}
-
-// RequestJoinOpenGuildParty requests to check if the target join open guild party.
-// Request ID: k_EMsgGCJoinOpenGuildPartyRequest
-// Response ID: k_EMsgGCJoinOpenGuildPartyResponse
-// Request type: CMsgDOTAJoinOpenGuildPartyRequest
-// Response type: CMsgDOTAJoinOpenGuildPartyResponse
-func (d *Dota2) RequestJoinOpenGuildParty(
-	ctx context.Context,
-	partyID uint64,
-) (*protocol.CMsgDOTAJoinOpenGuildPartyResponse, error) {
-	req := &protocol.CMsgDOTAJoinOpenGuildPartyRequest{
-		PartyId: &partyID,
-	}
-	resp := &protocol.CMsgDOTAJoinOpenGuildPartyResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCJoinOpenGuildPartyResponse),
 		resp,
 	)
 }
@@ -3366,31 +3151,6 @@ func (d *Dota2) RequestOfferings(
 	)
 }
 
-// RequestPartySetOpenGuild requests a party set open guild.
-// Request ID: k_EMsgGCPartySetOpenGuildRequest
-// Response ID: k_EMsgGCPartySetOpenGuildResponse
-// Request type: CMsgDOTAPartySetOpenGuildRequest
-// Response type: CMsgDOTAPartySetOpenGuildResponse
-func (d *Dota2) RequestPartySetOpenGuild(
-	ctx context.Context,
-	guildID uint32,
-	description string,
-) (*protocol.CMsgDOTAPartySetOpenGuildResponse, error) {
-	req := &protocol.CMsgDOTAPartySetOpenGuildRequest{
-		GuildId:     &guildID,
-		Description: &description,
-	}
-	resp := &protocol.CMsgDOTAPartySetOpenGuildResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildRequest),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCPartySetOpenGuildResponse),
-		resp,
-	)
-}
-
 // RequestPerfectWorldUserLookup requests a perfect world user lookup.
 // Request ID: k_EMsgGCPerfectWorldUserLookupRequest
 // Response ID: k_EMsgGCPerfectWorldUserLookupResponse
@@ -3641,6 +3401,29 @@ func (d *Dota2) RequestProfile(
 		uint32(protocol.EDOTAGCMsg_k_EMsgProfileRequest),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgProfileResponse),
+		resp,
+	)
+}
+
+// RequestPullTabs requests pull tabs.
+// Request ID: k_EMsgClientToGCPullTabsRequest
+// Response ID: k_EMsgGCToClientPullTabsResponse
+// Request type: CMsgClientToGCPullTabsRequest
+// Response type: CMsgGCToClientPullTabsResponse
+func (d *Dota2) RequestPullTabs(
+	ctx context.Context,
+	eventID uint32,
+) (*protocol.CMsgGCToClientPullTabsResponse, error) {
+	req := &protocol.CMsgClientToGCPullTabsRequest{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgGCToClientPullTabsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPullTabsRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPullTabsResponse),
 		resp,
 	)
 }
@@ -4340,10 +4123,12 @@ func (d *Dota2) SendCavernCrawlClaimRoom(
 	ctx context.Context,
 	eventID uint32,
 	roomID uint32,
+	mapVariant uint32,
 ) (*protocol.CMsgClientToGCCavernCrawlClaimRoomResponse, error) {
 	req := &protocol.CMsgClientToGCCavernCrawlClaimRoom{
-		EventId: &eventID,
-		RoomId:  &roomID,
+		EventId:    &eventID,
+		RoomId:     &roomID,
+		MapVariant: &mapVariant,
 	}
 	resp := &protocol.CMsgClientToGCCavernCrawlClaimRoomResponse{}
 
@@ -4366,11 +4151,13 @@ func (d *Dota2) SendCavernCrawlUseItemOnPath(
 	eventID uint32,
 	pathID uint32,
 	itemType uint32,
+	mapVariant uint32,
 ) (*protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse, error) {
 	req := &protocol.CMsgClientToGCCavernCrawlUseItemOnPath{
-		EventId:  &eventID,
-		PathId:   &pathID,
-		ItemType: &itemType,
+		EventId:    &eventID,
+		PathId:     &pathID,
+		ItemType:   &itemType,
+		MapVariant: &mapVariant,
 	}
 	resp := &protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse{}
 
@@ -4393,11 +4180,13 @@ func (d *Dota2) SendCavernCrawlUseItemOnRoom(
 	eventID uint32,
 	roomID uint32,
 	itemType uint32,
+	mapVariant uint32,
 ) (*protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse, error) {
 	req := &protocol.CMsgClientToGCCavernCrawlUseItemOnRoom{
-		EventId:  &eventID,
-		RoomId:   &roomID,
-		ItemType: &itemType,
+		EventId:    &eventID,
+		RoomId:     &roomID,
+		ItemType:   &itemType,
+		MapVariant: &mapVariant,
 	}
 	resp := &protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse{}
 
@@ -4796,6 +4585,18 @@ func (d *Dota2) SendMergePartyInvite(
 		OtherGroupId: &otherGroupID,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite), req)
+}
+
+// SendNeutralItemStats sends neutral item stats.
+// Request ID: k_EMsgNeutralItemStats
+// Request type: CMsgNeutralItemStats
+func (d *Dota2) SendNeutralItemStats(
+	neutralItems []*protocol.CMsgNeutralItemStats_NeutralItem,
+) {
+	req := &protocol.CMsgNeutralItemStats{
+		NeutralItems: neutralItems,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgNeutralItemStats), req)
 }
 
 // SendPartyReadyCheck sends a party ready check.
@@ -5827,12 +5628,6 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyTeamInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyTeamInfo{}
 	})
-	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildInviteData)] = d.getEventEmitter(func() events.Event {
-		return &events.GuildInviteData{}
-	})
-	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCGuildUpdateMessage)] = d.getEventEmitter(func() events.Event {
-		return &events.GuildUpdateMessage{}
-	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCHallOfFame)] = d.getEventEmitter(func() events.Event {
 		return &events.HallOfFame{}
 	})
@@ -5955,6 +5750,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded)] = d.getEventEmitter(func() events.Event {
 		return &events.TrophyAwarded{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientVACReminder)] = d.getEventEmitter(func() events.Event {
+		return &events.VACReminder{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientWageringUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.WageringUpdate{}

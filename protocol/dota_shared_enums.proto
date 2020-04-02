@@ -85,7 +85,10 @@ enum EEvent {
 	EVENT_ID_NEW_BLOOM_2019 = 24;
 	EVENT_ID_INTERNATIONAL_2019 = 25;
 	EVENT_ID_NEW_PLAYER_EXPERIENCE = 26;
-	EVENT_ID_COUNT = 27;
+	EVENT_ID_FROSTIVUS_2019 = 27;
+	EVENT_ID_NEW_BLOOM_2020 = 28;
+	EVENT_ID_INTERNATIONAL_2020 = 29;
+	EVENT_ID_COUNT = 30;
 }
 
 enum DOTALeaverStatus_t {
@@ -145,7 +148,6 @@ enum DOTAChatChannelType_t {
 	DOTAChannelType_Party = 2;
 	DOTAChannelType_Lobby = 3;
 	DOTAChannelType_Team = 4;
-	DOTAChannelType_Guild = 5;
 	DOTAChannelType_Fantasy = 6;
 	DOTAChannelType_Whisper = 7;
 	DOTAChannelType_Console = 8;
@@ -219,6 +221,7 @@ enum DOTAJoinLobbyResult {
 	DOTA_JOIN_RESULT_TIMEOUT = 11;
 	DOTA_JOIN_RESULT_CUSTOM_GAME_COOLDOWN = 12;
 	DOTA_JOIN_RESULT_BUSY = 13;
+	DOTA_JOIN_RESULT_NO_PLAYTIME = 14;
 }
 
 enum DOTASelectionPriorityRules {
@@ -258,13 +261,14 @@ enum DOTALobbyVisibility {
 enum EDOTAPlayerMMRType {
 	k_EDOTAPlayerMMRType_Invalid = 0;
 	k_EDOTAPlayerMMRType_GeneralHidden = 1;
-	k_EDOTAPlayerMMRType_GeneralCompetitive2019 = 3;
+	k_EDOTAPlayerMMRType_GeneralCompetitive = 3;
 	k_EDOTAPlayerMMRType_SoloCompetitive2019 = 4;
 	k_EDOTAPlayerMMRType_1v1Competitive_UNUSED = 5;
 	k_EDOTAPlayerMMRType_GeneralSeasonalRanked = 6;
 	k_EDOTAPlayerMMRType_SoloSeasonalRanked = 7;
 	k_EDOTAPlayerMMRType_Competitive_Core = 8;
 	k_EDOTAPlayerMMRType_Competitive_Support = 9;
+	k_EDOTAPlayerMMRType_Competitive_Classic = 10;
 }
 
 enum EDOTAMMRBoostType {
@@ -407,6 +411,7 @@ enum ELeagueTier {
 	LEAGUE_TIER_MINOR = 3;
 	LEAGUE_TIER_MAJOR = 4;
 	LEAGUE_TIER_INTERNATIONAL = 5;
+	LEAGUE_TIER_DPC_QUALIFIER = 6;
 }
 
 enum ELeagueTierCategory {
@@ -436,17 +441,6 @@ enum ELeaguePhase {
 	LEAGUE_PHASE_REGIONAL_QUALIFIER = 1;
 	LEAGUE_PHASE_GROUP_STAGE = 2;
 	LEAGUE_PHASE_MAIN_EVENT = 3;
-}
-
-enum ELeagueFantasyPhase {
-	LEAGUE_FANTASY_PHASE_UNSET = 0;
-	LEAGUE_FANTASY_PHASE_MAIN = 1;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_NA = 2;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_SA = 3;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_EUROPE = 4;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_CIS = 5;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_CHINA = 6;
-	LEAGUE_FANTASY_PHASE_QUALIFIER_SEA = 7;
 }
 
 enum ELeagueAuditAction {
@@ -479,6 +473,8 @@ enum ELeagueAuditAction {
 	LEAGUE_AUDIT_ACTION_NODEGROUP_EDIT = 105;
 	LEAGUE_AUDIT_ACTION_NODEGROUP_POPULATE = 106;
 	LEAGUE_AUDIT_ACTION_NODEGROUP_COMPLETED = 107;
+	LEAGUE_AUDIT_ACTION_NODEGROUP_SET_SECONDARY_ADVANCING = 108;
+	LEAGUE_AUDIT_ACTION_NODEGROUP_SET_TERTIARY_ADVANCING = 109;
 	LEAGUE_AUDIT_ACTION_NODE_CREATE = 200;
 	LEAGUE_AUDIT_ACTION_NODE_DESTROY = 201;
 	LEAGUE_AUDIT_ACTION_NODE_AUTOCREATE = 202;
@@ -683,4 +679,3 @@ message CMsgPendingEventAward {
 	optional EEventActionScoreMode score_mode = 4 [default = k_eEventActionScoreMode_Add];
 	optional uint32 audit_action = 5;
 }
-

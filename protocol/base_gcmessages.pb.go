@@ -4697,7 +4697,9 @@ func init() {
 	proto.RegisterType((*CMsgGCToGCReloadServerRegionSettings)(nil), "protocol.CMsgGCToGCReloadServerRegionSettings")
 }
 
-func init() { proto.RegisterFile("base_gcmessages.proto", fileDescriptor_19c1b3dff26b5496) }
+func init() {
+	proto.RegisterFile("base_gcmessages.proto", fileDescriptor_19c1b3dff26b5496)
+}
 
 var fileDescriptor_19c1b3dff26b5496 = []byte{
 	// 4774 bytes of a gzipped FileDescriptorProto

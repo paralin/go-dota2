@@ -481,7 +481,9 @@ func init() {
 	proto.RegisterEnum("protocol.EPartyBeaconType", EPartyBeaconType_name, EPartyBeaconType_value)
 }
 
-func init() { proto.RegisterFile("dota_client_enums.proto", fileDescriptor_f89df841f51207d9) }
+func init() {
+	proto.RegisterFile("dota_client_enums.proto", fileDescriptor_f89df841f51207d9)
+}
 
 var fileDescriptor_f89df841f51207d9 = []byte{
 	// 950 bytes of a gzipped FileDescriptorProto
