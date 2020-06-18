@@ -6,22 +6,23 @@ import (
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
-	"github.com/paralin/go-dota2/cso"
-	gcsdkm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
+
+	"github.com/paralin/go-dota2/cso"
+	gcsdkm "github.com/paralin/go-dota2/protocol"
 )
 
 // SOCacheContainer contains a type of object in the cache.
 type SOCacheContainer struct {
-	le            *logrus.Entry
+	le            logrus.FieldLogger
 	typeID        uint32
 	objects       sync.Map // map[uint64]proto.Message
 	subscriptions sync.Map // map[uint32]chan *CacheEvent
 }
 
 // NewSOCacheContainer builds a new container for a type id.
-func NewSOCacheContainer(le *logrus.Entry, typeID uint32) (*SOCacheContainer, error) {
+func NewSOCacheContainer(le logrus.FieldLogger, typeID uint32) (*SOCacheContainer, error) {
 	typ := cso.CSOType(typeID)
 	if _, err := cso.NewSharedObject(typ); err != nil {
 		return nil, err

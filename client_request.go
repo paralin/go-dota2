@@ -6,8 +6,8 @@ import (
 
 	"github.com/faceit/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
+
 	gcm "github.com/paralin/go-dota2/protocol"
-	"github.com/sirupsen/logrus"
 )
 
 // responseHandler returns handled, and any error
@@ -90,7 +90,7 @@ func (d *Dota2) MakeRequest(
 }
 
 // handleResponsePacket attempts to handle a response packet.
-func (d *Dota2) handleResponsePacket(le *logrus.Entry, packet *gamecoordinator.GCPacket) (handled bool) {
+func (d *Dota2) handleResponsePacket(packet *gamecoordinator.GCPacket) (handled bool) {
 	d.pendReqMtx.Lock()
 	defer d.pendReqMtx.Unlock()
 
