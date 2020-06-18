@@ -1,7 +1,12 @@
 #!/bin/bash
 set -eo pipefail
 
-echo "This script should be run in GOPATH due to go-mod compatibility issues."
-GO111MODULE=on go build -o apigen ./
-GO111MODULE=on go mod vendor
-GO111MODULE=off ./apigen generate-api
+export GO111MODULE=on
+go build -o apigen ./
+go mod vendor
+echo "=== Type list ==="
+./apigen print-type-list | tee snapshot-type-list.txt
+echo "=== API codegen ==="
+./apigen generate-api | tee snapshot-apigen.txt
+echo "=== Messages list ==="
+./apigen print-messages | tee snapshot-messages.txt

@@ -1,4 +1,3 @@
-This script should be run in GOPATH due to go-mod compatibility issues.
 CMsgJoinChatChannel
 CMsgGCJoinChatChannel
 CMsgJoinChatChannel
