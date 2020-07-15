@@ -172,6 +172,8 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgClientToGCGetUnderlordsCDKeyResponse: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCtoGCRequestRecalibrationCheck:      MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeed: MsgSenderClient,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
@@ -288,6 +290,9 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 
 	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedComments:         &dm.CMsgSocialFeedCommentsRequest{},
 	dm.EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedCommentsResponse: &dm.CMsgSocialFeedCommentsResponse{},
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeed:      &dm.CMsgClientToGCGuildFeedRequest{},
+	dm.EDOTAGCMsg_k_EMsgGCToClientUnderDraftGoldUpdated: &dm.CMsgGCToClientGuildUnderDraftGoldUpdated{},
 }
 
 var msgArgAsParameterOverrides = map[dm.EDOTAGCMsg]bool{

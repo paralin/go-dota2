@@ -5,6 +5,69 @@ import (
 	"github.com/paralin/go-dota2/protocol"
 )
 
+// AccountGuildEventDataUpdated event.
+// MessageID: k_EMsgGCToClientAccountGuildEventDataUpdated
+type AccountGuildEventDataUpdated struct {
+	protocol.CMsgGCToClientAccountGuildEventDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *AccountGuildEventDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientAccountGuildEventDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *AccountGuildEventDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientAccountGuildEventDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *AccountGuildEventDataUpdated) GetEventName() string {
+	return "AccountGuildEventDataUpdated"
+}
+
+// ActiveGuildChallengeUpdated event.
+// MessageID: k_EMsgGCToClientActiveGuildChallengeUpdated
+type ActiveGuildChallengeUpdated struct {
+	protocol.CMsgGCToClientActiveGuildChallengeUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *ActiveGuildChallengeUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientActiveGuildChallengeUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *ActiveGuildChallengeUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientActiveGuildChallengeUpdated
+}
+
+// GetEventName returns the event name.
+func (e *ActiveGuildChallengeUpdated) GetEventName() string {
+	return "ActiveGuildChallengeUpdated"
+}
+
+// ActiveGuildContractsUpdated event.
+// MessageID: k_EMsgGCToClientActiveGuildContractsUpdated
+type ActiveGuildContractsUpdated struct {
+	protocol.CMsgGCToClientActiveGuildContractsUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *ActiveGuildContractsUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientActiveGuildContractsUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *ActiveGuildContractsUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientActiveGuildContractsUpdated
+}
+
+// GetEventName returns the event name.
+func (e *ActiveGuildContractsUpdated) GetEventName() string {
+	return "ActiveGuildContractsUpdated"
+}
+
 // ArcanaVotesUpdate event.
 // MessageID: k_EMsgGCToClientArcanaVotesUpdate
 type ArcanaVotesUpdate struct {
@@ -507,6 +570,90 @@ func (e *FantasyTeamInfo) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *FantasyTeamInfo) GetEventName() string {
 	return "FantasyTeamInfo"
+}
+
+// GuildDataUpdated event.
+// MessageID: k_EMsgGCToClientGuildDataUpdated
+type GuildDataUpdated struct {
+	protocol.CMsgGCToClientGuildDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *GuildDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientGuildDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *GuildDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientGuildDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *GuildDataUpdated) GetEventName() string {
+	return "GuildDataUpdated"
+}
+
+// GuildFeedUpdated event.
+// MessageID: k_EMsgGCToClientGuildFeedUpdated
+type GuildFeedUpdated struct {
+	protocol.CMsgGCToClientGuildFeedUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *GuildFeedUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientGuildFeedUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *GuildFeedUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientGuildFeedUpdated
+}
+
+// GetEventName returns the event name.
+func (e *GuildFeedUpdated) GetEventName() string {
+	return "GuildFeedUpdated"
+}
+
+// GuildMembersDataUpdated event.
+// MessageID: k_EMsgGCToClientGuildMembersDataUpdated
+type GuildMembersDataUpdated struct {
+	protocol.CMsgGCToClientGuildMembersDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *GuildMembersDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientGuildMembersDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *GuildMembersDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientGuildMembersDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *GuildMembersDataUpdated) GetEventName() string {
+	return "GuildMembersDataUpdated"
+}
+
+// GuildMembershipUpdated event.
+// MessageID: k_EMsgGCToClientGuildMembershipUpdated
+type GuildMembershipUpdated struct {
+	protocol.CMsgGCToClientGuildMembershipUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *GuildMembershipUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientGuildMembershipUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *GuildMembershipUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientGuildMembershipUpdated
+}
+
+// GetEventName returns the event name.
+func (e *GuildMembershipUpdated) GetEventName() string {
+	return "GuildMembershipUpdated"
 }
 
 // HallOfFame event.
@@ -1368,6 +1515,27 @@ func (e *TrophyAwarded) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *TrophyAwarded) GetEventName() string {
 	return "TrophyAwarded"
+}
+
+// UnderDraftGoldUpdated event.
+// MessageID: k_EMsgGCToClientUnderDraftGoldUpdated
+type UnderDraftGoldUpdated struct {
+	protocol.CMsgGCToClientGuildUnderDraftGoldUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *UnderDraftGoldUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientUnderDraftGoldUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *UnderDraftGoldUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientGuildUnderDraftGoldUpdated
+}
+
+// GetEventName returns the event name.
+func (e *UnderDraftGoldUpdated) GetEventName() string {
+	return "UnderDraftGoldUpdated"
 }
 
 // VACReminder event.
