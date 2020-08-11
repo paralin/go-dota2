@@ -135,12 +135,14 @@ message CMsgGameServerInfo {
 		TENSORFLOW = 3;
 		DOTA_ONLY = 4;
 		CUSTOM_GAME_ONLY = 5;
+		EVENT_GAME_ONLY = 6;
 	}
 
 	enum CustomGames {
 		BOTH = 0;
 		NONE = 1;
 		ONLY = 2;
+		EVENT = 3;
 	}
 
 	optional fixed32 server_public_ip_addr = 1;
@@ -489,7 +491,7 @@ message CMsgGameMatchSignoutResponse {
 	optional uint64 match_id = 1;
 	optional fixed32 replay_salt = 2;
 	repeated CLobbyTimedRewardDetails timed_reward_details = 3;
-	repeated CDOTALobbyMember xp_reward_details = 4;
+	repeated CSODOTALobbyMember xp_reward_details = 4;
 	optional uint32 leagueid = 5;
 	optional fixed32 metadata_private_key = 7;
 	optional CMsgDOTAMatch match_details = 8;

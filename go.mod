@@ -12,5 +12,5 @@ require (
 	github.com/serenize/snaker v0.0.0-20171204205717-a683aaf2d516
 	github.com/sirupsen/logrus v1.4.2
 	github.com/urfave/cli v1.21.0
-	google.golang.org/protobuf v1.24.0
+	google.golang.org/protobuf v1.24.0 // indirect
 )
