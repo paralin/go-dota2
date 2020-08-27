@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"sort"
+
 	"github.com/urfave/cli"
 )
 
@@ -16,7 +18,12 @@ func init() {
 			}
 			_ = packageMap
 
+			names := make([]string, 0, len(typeMap))
 			for typeName := range typeMap {
+				names = append(names, typeName)
+			}
+			sort.Strings(names)
+			for _, typeName := range names {
 				fmt.Printf("%s\n", typeName)
 			}
 
