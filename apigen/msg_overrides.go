@@ -174,6 +174,11 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeed: MsgSenderClient,
+
+	dm.EDOTAGCMsg_k_EMsgGCToClientPostGameItemAwardNotification: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswer:         MsgSenderClient,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse: MsgSenderGC,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.
