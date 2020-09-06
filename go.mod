@@ -2,6 +2,9 @@ module github.com/paralin/go-dota2
 
 go 1.12
 
+// note: protobuf is intentionally held at 1.3.x
+replace github.com/golang/protobuf => github.com/golang/protobuf v1.3.5
+
 require (
 	github.com/faceit/go-steam v0.0.0-20190206021251-2be7df6980e1
 	github.com/fatih/camelcase v1.0.0
