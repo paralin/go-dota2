@@ -8,9 +8,19 @@
 [Go Report Card]: https://goreportcard.com/report/github.com/paralin/go-dota2
 
 ## Introduction 
-**go-dota2** is a DOTA 2 client plugin for go-steam. The intent is to replicate as much of the client functionality as possible.
 
-Also see: the [C#/SteamKit Implementation](https://github.com/paralin/Dota2).
+**go-dota2** is a DOTA 2 client plugin for go-steam.
+
+Games implemented:
+
+ - [dota2](https://github.com/paralin/go-dota2)
+ - [underlords](https://github.com/paralin/go-underlords)
+
+Also see: the old [C#/SteamKit Implementation](https://github.com/paralin/Dota2).
+
+This project makes use of a dynamic API generator (apigen) designed to
+automatically interpret Valve's various naming conventions into a intermediate
+API scheme representation, which is then converted into Go code.
 
 ## Implementation Progress
 
