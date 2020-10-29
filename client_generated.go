@@ -4771,6 +4771,31 @@ func (d *Dota2) SendClaimEventActionUsingItem(
 	)
 }
 
+// SendClaimLeaderboardRewards sends claim leaderboard rewards.
+// Request ID: k_EMsgClientToGCClaimLeaderboardRewards
+// Response ID: k_EMsgClientToGCClaimLeaderboardRewardsResponse
+// Request type: CMsgClientToGCClaimLeaderboardRewards
+// Response type: CMsgClientToGCClaimLeaderboardRewardsResponse
+func (d *Dota2) SendClaimLeaderboardRewards(
+	ctx context.Context,
+	guildID uint32,
+	eventID protocol.EEvent,
+) (*protocol.CMsgClientToGCClaimLeaderboardRewardsResponse, error) {
+	req := &protocol.CMsgClientToGCClaimLeaderboardRewards{
+		GuildId: &guildID,
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCClaimLeaderboardRewardsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse),
+		resp,
+	)
+}
+
 // SendClientProvideSurveyResult sends a client provide survey result.
 // Request ID: k_EMsgClientProvideSurveyResult
 // Request type: CMsgClientProvideSurveyResult
@@ -5321,6 +5346,26 @@ func (d *Dota2) SendReadyUp(
 		HardwareSpecs: &hardwareSpecs,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCReadyUp), req)
+}
+
+// SendRecalibrateMMR sends a recalibrate mmr.
+// Request ID: k_EMsgClientToGCRecalibrateMMR
+// Response ID: k_EMsgClientToGCRecalibrateMMRResponse
+// Request type: CMsgClientToGCRecalibrateMMR
+// Response type: CMsgClientToGCRecalibrateMMRResponse
+func (d *Dota2) SendRecalibrateMMR(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCRecalibrateMMRResponse, error) {
+	req := &protocol.CMsgClientToGCRecalibrateMMR{}
+	resp := &protocol.CMsgClientToGCRecalibrateMMRResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMR),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMRResponse),
+		resp,
+	)
 }
 
 // SendRemoveFilteredPlayer sends a remove filtered player.
