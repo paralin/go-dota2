@@ -816,6 +816,26 @@ func (d *Dota2) GetHeroTimedStats(
 	)
 }
 
+// GetOWMatchDetails gets ow match details.
+// Request ID: k_EMsgClientToGCGetOWMatchDetails
+// Response ID: k_EMsgClientToGCGetOWMatchDetailsResponse
+// Request type: CMsgClientToGCGetOWMatchDetails
+// Response type: CMsgClientToGCGetOWMatchDetailsResponse
+func (d *Dota2) GetOWMatchDetails(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetOWMatchDetailsResponse, error) {
+	req := &protocol.CMsgClientToGCGetOWMatchDetails{}
+	resp := &protocol.CMsgClientToGCGetOWMatchDetailsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetails),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetailsResponse),
+		resp,
+	)
+}
+
 // GetPeriodicResource gets a periodic resource.
 // Request ID: k_EMsgDOTAGetPeriodicResource
 // Response ID: k_EMsgDOTAGetPeriodicResourceResponse
@@ -2250,6 +2270,46 @@ func (d *Dota2) RequestArcanaVotesRemaining(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemaining),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemainingResponse),
+		resp,
+	)
+}
+
+// RequestChinaSSAAccepted requests a china ssa accepted.
+// Request ID: k_EMsgClientToGCChinaSSAAcceptedRequest
+// Response ID: k_EMsgClientToGCChinaSSAAcceptedResponse
+// Request type: CMsgClientToGCChinaSSAAcceptedRequest
+// Response type: CMsgClientToGCChinaSSAAcceptedResponse
+func (d *Dota2) RequestChinaSSAAccepted(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCChinaSSAAcceptedResponse, error) {
+	req := &protocol.CMsgClientToGCChinaSSAAcceptedRequest{}
+	resp := &protocol.CMsgClientToGCChinaSSAAcceptedResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedResponse),
+		resp,
+	)
+}
+
+// RequestChinaSSAURL requests a china ssaurl.
+// Request ID: k_EMsgClientToGCChinaSSAURLRequest
+// Response ID: k_EMsgClientToGCChinaSSAURLResponse
+// Request type: CMsgClientToGCChinaSSAURLRequest
+// Response type: CMsgClientToGCChinaSSAURLResponse
+func (d *Dota2) RequestChinaSSAURL(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCChinaSSAURLResponse, error) {
+	req := &protocol.CMsgClientToGCChinaSSAURLRequest{}
+	resp := &protocol.CMsgClientToGCChinaSSAURLResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLResponse),
 		resp,
 	)
 }
@@ -6182,6 +6242,31 @@ func (d *Dota2) SubmitLobbyMVPVote(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVote),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVoteResponse),
+		resp,
+	)
+}
+
+// SubmitOWConviction submits a ow conviction.
+// Request ID: k_EMsgClientToGCSubmitOWConviction
+// Response ID: k_EMsgClientToGCSubmitOWConvictionResponse
+// Request type: CMsgClientToGCSubmitOWConviction
+// Response type: CMsgClientToGCSubmitOWConvictionResponse
+func (d *Dota2) SubmitOWConviction(
+	ctx context.Context,
+	overwatchReplayID uint64,
+	conviction protocol.EOverwatchConviction,
+) (*protocol.CMsgClientToGCSubmitOWConvictionResponse, error) {
+	req := &protocol.CMsgClientToGCSubmitOWConviction{
+		OverwatchReplayId: &overwatchReplayID,
+		Conviction:        &conviction,
+	}
+	resp := &protocol.CMsgClientToGCSubmitOWConvictionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitOWConviction),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitOWConvictionResponse),
 		resp,
 	)
 }
