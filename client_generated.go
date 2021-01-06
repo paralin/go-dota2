@@ -6254,10 +6254,12 @@ func (d *Dota2) SubmitLobbyMVPVote(
 func (d *Dota2) SubmitOWConviction(
 	ctx context.Context,
 	overwatchReplayID uint64,
+	targetPlayerSlot uint32,
 	conviction protocol.EOverwatchConviction,
 ) (*protocol.CMsgClientToGCSubmitOWConvictionResponse, error) {
 	req := &protocol.CMsgClientToGCSubmitOWConviction{
 		OverwatchReplayId: &overwatchReplayID,
+		TargetPlayerSlot:  &targetPlayerSlot,
 		Conviction:        &conviction,
 	}
 	resp := &protocol.CMsgClientToGCSubmitOWConvictionResponse{}
@@ -6679,6 +6681,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange)] = d.getEventEmitter(func() events.Event {
 		return &events.NotifyAccountFlagsChange{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientOverwatchCasesAvailable)] = d.getEventEmitter(func() events.Event {
+		return &events.OverwatchCasesAvailable{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPartyBeaconUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.PartyBeaconUpdate{}

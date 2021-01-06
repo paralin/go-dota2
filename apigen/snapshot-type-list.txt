@@ -117,6 +117,7 @@ CMsgAMSendEmailResponse
 CMsgAMSendEmail_PersonaNameReplacementToken
 CMsgAMSendEmail_ReplacementToken
 CMsgAbandonCurrentGame
+CMsgAbilitySelectionSteamMLEntry
 CMsgAccountGuildEventData
 CMsgAccountGuildInvite
 CMsgAccountGuildMemberships
@@ -997,6 +998,7 @@ CMsgFriendPracticeLobbyListRequest
 CMsgFriendPracticeLobbyListResponse
 CMsgFulfillDynamicRecipeComponent
 CMsgGCAddGiftItem
+CMsgGCAssertJobData
 CMsgGCBanStatusRequest
 CMsgGCBanStatusResponse
 CMsgGCChatReportPublicSpam
@@ -1011,6 +1013,7 @@ CMsgGCClientMarketDataRequest
 CMsgGCClientPing
 CMsgGCClientVersionUpdated
 CMsgGCCollectItem
+CMsgGCConCommand
 CMsgGCEconSQLWorkItemEmbeddedRollbackData
 CMsgGCError
 CMsgGCGCToLANServerRelayConnect
@@ -1192,6 +1195,7 @@ CMsgGCToClientJoinPartyFromBeaconResponse
 CMsgGCToClientManageFavoritesResponse
 CMsgGCToClientMatchGroupsVersion
 CMsgGCToClientMatchSignedOut
+CMsgGCToClientOverwatchCasesAvailable
 CMsgGCToClientPartyBeaconUpdate
 CMsgGCToClientPartySearchInvite
 CMsgGCToClientPartySearchInvites
@@ -1315,6 +1319,7 @@ CMsgGCtoGCAssociatedExploiterAccountInfoResponse_Account
 CMsgGCtoServerTensorflowInstance
 CMsgGameMatchSignOut
 CMsgGameMatchSignOutEventGameData
+CMsgGameMatchSignOutPerfData
 CMsgGameMatchSignOutPermissionRequest
 CMsgGameMatchSignOutPermissionResponse
 CMsgGameMatchSignOut_CAdditionalSignoutMsg
@@ -1378,6 +1383,9 @@ CMsgInviteToParty
 CMsgItemAcknowledged
 CMsgItemAges
 CMsgItemAges_MaxItemIDTimestamp
+CMsgItemPurchasePregameSteamMLEntry
+CMsgItemPurchaseSequenceSteamMLEntry
+CMsgItemPurchaseSteamMLEntry
 CMsgJoinableCustomGameModesRequest
 CMsgJoinableCustomGameModesResponse
 CMsgJoinableCustomGameModesResponseEntry
@@ -1386,6 +1394,7 @@ CMsgJoinableCustomLobbiesResponse
 CMsgJoinableCustomLobbiesResponseEntry
 CMsgKickFromParty
 CMsgLANServerAvailable
+CMsgLaneSelectionSteamMLEntry
 CMsgLeagueAdminList
 CMsgLeaveParty
 CMsgLeaverDetected
@@ -1424,6 +1433,7 @@ CMsgMatchDiretideCandy_PlayerCandy
 CMsgMatchEventActionGrants
 CMsgMatchEventActionGrants_PlayerGrants
 CMsgMatchMatchmakingStats
+CMsgMatchStateSteamMLEntry
 CMsgMatchTips
 CMsgMatchTips_SingleTip
 CMsgMatchVoteResponse
@@ -1540,6 +1550,8 @@ CMsgResetStrangeGemCount
 CMsgResetStrangeGemCountResponse
 CMsgResponseTeamFanfare
 CMsgRetrieveMatchVote
+CMsgSDOAssert
+CMsgSDOAssert_Request
 CMsgSDONoMemcached
 CMsgSHA1Digest
 CMsgSOCacheHaveVersion
@@ -1605,8 +1617,6 @@ CMsgServerToGCMatchStateHistory_TeamState
 CMsgServerToGCPostMatchTip
 CMsgServerToGCPostMatchTipResponse
 CMsgServerToGCRealtimeStats
-CMsgServerToGCRefreshGuildContract
-CMsgServerToGCRefreshGuildContractResponse
 CMsgServerToGCRequestStatus
 CMsgServerToGCRequestStatus_Response
 CMsgServerToGCRerollPlayerChallenge

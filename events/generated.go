@@ -971,6 +971,27 @@ func (e *NotifyAccountFlagsChange) GetEventName() string {
 	return "NotifyAccountFlagsChange"
 }
 
+// OverwatchCasesAvailable event.
+// MessageID: k_EMsgGCToClientOverwatchCasesAvailable
+type OverwatchCasesAvailable struct {
+	protocol.CMsgGCToClientOverwatchCasesAvailable
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *OverwatchCasesAvailable) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientOverwatchCasesAvailable
+}
+
+// GetEventBody returns the event body.
+func (e *OverwatchCasesAvailable) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientOverwatchCasesAvailable
+}
+
+// GetEventName returns the event name.
+func (e *OverwatchCasesAvailable) GetEventName() string {
+	return "OverwatchCasesAvailable"
+}
+
 // PartyBeaconUpdate event.
 // MessageID: k_EMsgGCToClientPartyBeaconUpdate
 type PartyBeaconUpdate struct {
