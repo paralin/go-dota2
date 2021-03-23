@@ -6,7 +6,7 @@ package protocol
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	descriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
+	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 	math "math"
 )
 
@@ -377,7 +377,7 @@ func (ENetworkDisconnectionReason) EnumDescriptor() ([]byte, []int) {
 }
 
 var E_NetworkConnectionToken = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.EnumValueOptions)(nil),
+	ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
 	ExtensionType: (*string)(nil),
 	Field:         50500,
 	Name:          "protocol.network_connection_token",

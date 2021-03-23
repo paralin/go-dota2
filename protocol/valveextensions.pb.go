@@ -6,7 +6,7 @@ package protocol
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	descriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
+	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 	math "math"
 )
 
@@ -22,7 +22,7 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 var E_MapField = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*bool)(nil),
 	Field:         61000,
 	Name:          "protocol.map_field",
@@ -31,7 +31,7 @@ var E_MapField = &proto.ExtensionDesc{
 }
 
 var E_MapKey = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*bool)(nil),
 	Field:         61001,
 	Name:          "protocol.map_key",
@@ -40,7 +40,7 @@ var E_MapKey = &proto.ExtensionDesc{
 }
 
 var E_DiffEncodeField = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*int32)(nil),
 	Field:         61002,
 	Name:          "protocol.diff_encode_field",
@@ -49,7 +49,7 @@ var E_DiffEncodeField = &proto.ExtensionDesc{
 }
 
 var E_DeltaIgnore = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*bool)(nil),
 	Field:         61003,
 	Name:          "protocol.delta_ignore",
@@ -58,7 +58,7 @@ var E_DeltaIgnore = &proto.ExtensionDesc{
 }
 
 var E_SteammlMaxEntries = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*uint32)(nil),
 	Field:         61004,
 	Name:          "protocol.steamml_max_entries",
@@ -67,7 +67,7 @@ var E_SteammlMaxEntries = &proto.ExtensionDesc{
 }
 
 var E_SteammlIsTimestamp = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*bool)(nil),
 	Field:         61005,
 	Name:          "protocol.steamml_is_timestamp",

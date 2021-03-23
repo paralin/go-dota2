@@ -6,7 +6,7 @@ package protocol
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	descriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
+	descriptorpb "google.golang.org/protobuf/types/descriptorpb"
 	math "math"
 )
 
@@ -6127,7 +6127,7 @@ func (m *CWorkshop_GetSpecialPayments_Response_SpecialPayment) GetNetPaymentRowU
 }
 
 var E_KeyField = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.FieldOptions)(nil),
+	ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 	ExtensionType: (*bool)(nil),
 	Field:         60000,
 	Name:          "protocol.key_field",
@@ -6136,7 +6136,7 @@ var E_KeyField = &proto.ExtensionDesc{
 }
 
 var E_MsgpoolSoftLimit = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.MessageOptions)(nil),
+	ExtendedType:  (*descriptorpb.MessageOptions)(nil),
 	ExtensionType: (*int32)(nil),
 	Field:         60000,
 	Name:          "protocol.msgpool_soft_limit",
@@ -6145,7 +6145,7 @@ var E_MsgpoolSoftLimit = &proto.ExtensionDesc{
 }
 
 var E_MsgpoolHardLimit = &proto.ExtensionDesc{
-	ExtendedType:  (*descriptor.MessageOptions)(nil),
+	ExtendedType:  (*descriptorpb.MessageOptions)(nil),
 	ExtensionType: (*int32)(nil),
 	Field:         60001,
 	Name:          "protocol.msgpool_hard_limit",
