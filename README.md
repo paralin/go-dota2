@@ -1,6 +1,7 @@
 # Dota2
 
 [![GoDoc Widget]][GoDoc] [![Go Report Card Widget]][Go Report Card]
+[![DOI](https://zenodo.org/badge/103461337.svg)](https://zenodo.org/badge/latestdoi/103461337)
 
 [GoDoc]: https://godoc.org/github.com/paralin/go-dota2
 [GoDoc Widget]: https://godoc.org/github.com/paralin/go-dota2
