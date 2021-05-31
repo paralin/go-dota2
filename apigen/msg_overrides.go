@@ -61,9 +61,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCTeamMemberProfileRequest: MsgSenderNone,
 
-	dm.EDOTAGCMsg_k_EMsgGCRequestPlayerResources:         MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCRequestPlayerResourcesResponse: MsgSenderNone,
-
 	dm.EDOTAGCMsg_k_EMsgGCBanStatusRequest:  MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCBanStatusResponse: MsgSenderNone,
 
@@ -81,9 +78,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgGCFantasyLeagueFriendJoinListRequest:  MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgGCFantasyLeagueFriendJoinListResponse: MsgSenderNone,
-
-	dm.EDOTAGCMsg_k_EMsgGCRequestBatchPlayerResources:         MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCRequestBatchPlayerResourcesResponse: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGCToClientLeaguePredictionsResponse: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgClientToGCLeaguePredictions:         MsgSenderNone,
@@ -179,6 +173,11 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswer:         MsgSenderClient,
 	dm.EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse: MsgSenderGC,
+
+	dm.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelic:         MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelicResponse: MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgWebapiDPCSeasonResults: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.

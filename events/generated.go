@@ -194,6 +194,27 @@ func (e *CavernCrawlMapUpdated) GetEventName() string {
 	return "CavernCrawlMapUpdated"
 }
 
+// ChatModeratorBan event.
+// MessageID: k_EMsgGCChatModeratorBan
+type ChatModeratorBan struct {
+	protocol.CMsgDOTAChatModeratorBan
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *ChatModeratorBan) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCChatModeratorBan
+}
+
+// GetEventBody returns the event body.
+func (e *ChatModeratorBan) GetEventBody() proto.Message {
+	return &e.CMsgDOTAChatModeratorBan
+}
+
+// GetEventName returns the event name.
+func (e *ChatModeratorBan) GetEventName() string {
+	return "ChatModeratorBan"
+}
+
 // ChatRegionsEnabled event.
 // MessageID: k_EMsgGCToClientChatRegionsEnabled
 type ChatRegionsEnabled struct {
@@ -1200,6 +1221,27 @@ func (e *Popup) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *Popup) GetEventName() string {
 	return "Popup"
+}
+
+// PrivateCoachingSessionUpdated event.
+// MessageID: k_EMsgGCToClientPrivateCoachingSessionUpdated
+type PrivateCoachingSessionUpdated struct {
+	protocol.CMsgGCToClientPrivateCoachingSessionUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *PrivateCoachingSessionUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientPrivateCoachingSessionUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *PrivateCoachingSessionUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientPrivateCoachingSessionUpdated
+}
+
+// GetEventName returns the event name.
+func (e *PrivateCoachingSessionUpdated) GetEventName() string {
+	return "PrivateCoachingSessionUpdated"
 }
 
 // ProcessFantasyScheduledEvent event.

@@ -589,6 +589,49 @@ func (d *Dota2) GetAllHeroProgress(
 	)
 }
 
+// GetAvailablePrivateCoachingSessions gets available private coaching sessions.
+// Request ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessions
+// Response ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse
+// Request type: CMsgClientToGCGetAvailablePrivateCoachingSessions
+// Response type: CMsgClientToGCGetAvailablePrivateCoachingSessionsResponse
+func (d *Dota2) GetAvailablePrivateCoachingSessions(
+	ctx context.Context,
+	language uint32,
+) (*protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsResponse, error) {
+	req := &protocol.CMsgClientToGCGetAvailablePrivateCoachingSessions{
+		Language: &language,
+	}
+	resp := &protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessions),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse),
+		resp,
+	)
+}
+
+// GetAvailablePrivateCoachingSessionsSummary gets a available private coaching sessions summary.
+// Request ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary
+// Response ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse
+// Request type: CMsgClientToGCGetAvailablePrivateCoachingSessionsSummary
+// Response type: CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse
+func (d *Dota2) GetAvailablePrivateCoachingSessionsSummary(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse, error) {
+	req := &protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsSummary{}
+	resp := &protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse),
+		resp,
+	)
+}
+
 // GetChatMemberCount gets a chat member count.
 // Request ID: k_EMsgDOTAChatGetMemberCount
 // Response ID: k_EMsgDOTAChatGetMemberCountResponse
@@ -656,6 +699,46 @@ func (d *Dota2) GetCrawlCavernClaimedRoomCount(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCount),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse),
+		resp,
+	)
+}
+
+// GetCurrentPrivateCoachingSession gets a current private coaching session.
+// Request ID: k_EMsgClientToGCGetCurrentPrivateCoachingSession
+// Response ID: k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse
+// Request type: CMsgClientToGCGetCurrentPrivateCoachingSession
+// Response type: CMsgClientToGCGetCurrentPrivateCoachingSessionResponse
+func (d *Dota2) GetCurrentPrivateCoachingSession(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetCurrentPrivateCoachingSessionResponse, error) {
+	req := &protocol.CMsgClientToGCGetCurrentPrivateCoachingSession{}
+	resp := &protocol.CMsgClientToGCGetCurrentPrivateCoachingSessionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSession),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse),
+		resp,
+	)
+}
+
+// GetDPCFavorites gets dpc favorites.
+// Request ID: k_EMsgClientToGCGetDPCFavorites
+// Response ID: k_EMsgClientToGCGetDPCFavoritesResponse
+// Request type: CMsgClientToGCGetDPCFavorites
+// Response type: CMsgClientToGCGetDPCFavoritesResponse
+func (d *Dota2) GetDPCFavorites(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCGetDPCFavoritesResponse, error) {
+	req := &protocol.CMsgClientToGCGetDPCFavorites{}
+	resp := &protocol.CMsgClientToGCGetDPCFavoritesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetDPCFavorites),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetDPCFavoritesResponse),
 		resp,
 	)
 }
@@ -1164,10 +1247,12 @@ func (d *Dota2) JoinChatChannel(
 	ctx context.Context,
 	channelName string,
 	channelType protocol.DOTAChatChannelTypeT,
+	silentRejection bool,
 ) (*protocol.CMsgDOTAJoinChatChannelResponse, error) {
 	req := &protocol.CMsgDOTAJoinChatChannel{
-		ChannelName: &channelName,
-		ChannelType: &channelType,
+		ChannelName:     &channelName,
+		ChannelType:     &channelType,
+		SilentRejection: &silentRejection,
 	}
 	resp := &protocol.CMsgDOTAJoinChatChannelResponse{}
 
@@ -1293,6 +1378,26 @@ func (d *Dota2) JoinPlaytest(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytest),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPlaytestResponse),
+		resp,
+	)
+}
+
+// JoinPrivateCoachingSessionLobby joins a private coaching session lobby.
+// Request ID: k_EMsgClientToGCJoinPrivateCoachingSessionLobby
+// Response ID: k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
+// Request type: CMsgClientToGCJoinPrivateCoachingSessionLobby
+// Response type: CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
+func (d *Dota2) JoinPrivateCoachingSessionLobby(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse, error) {
+	req := &protocol.CMsgClientToGCJoinPrivateCoachingSessionLobby{}
+	resp := &protocol.CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobby),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse),
 		resp,
 	)
 }
@@ -1454,6 +1559,26 @@ func (d *Dota2) LeaveGuild(
 func (d *Dota2) LeaveLobby() {
 	req := &protocol.CMsgPracticeLobbyLeave{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave), req)
+}
+
+// LeavePrivateCoachingSession leaves a private coaching session.
+// Request ID: k_EMsgClientToGCLeavePrivateCoachingSession
+// Response ID: k_EMsgClientToGCLeavePrivateCoachingSessionResponse
+// Request type: CMsgClientToGCLeavePrivateCoachingSession
+// Response type: CMsgClientToGCLeavePrivateCoachingSessionResponse
+func (d *Dota2) LeavePrivateCoachingSession(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCLeavePrivateCoachingSessionResponse, error) {
+	req := &protocol.CMsgClientToGCLeavePrivateCoachingSession{}
+	resp := &protocol.CMsgClientToGCLeavePrivateCoachingSessionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSession),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSessionResponse),
+		resp,
+	)
 }
 
 // LeaveTeam leaves a team.
@@ -1705,9 +1830,11 @@ func (d *Dota2) PublishUserStat(
 func (d *Dota2) PurchaseHeroRandomRelic(
 	ctx context.Context,
 	heroID uint32,
+	relicRarity protocol.EHeroRelicRarity,
 ) (*protocol.CMsgPurchaseHeroRandomRelicResponse, error) {
 	req := &protocol.CMsgPurchaseHeroRandomRelic{
-		HeroId: &heroID,
+		HeroId:      &heroID,
+		RelicRarity: &relicRarity,
 	}
 	resp := &protocol.CMsgPurchaseHeroRandomRelicResponse{}
 
@@ -1864,29 +1991,6 @@ func (d *Dota2) RecordContestVote(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecordContestVote),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRecordContestVoteResponse),
-		resp,
-	)
-}
-
-// RecycleHeroRelic recycles a hero relic.
-// Request ID: k_EMsgClientToGCRecycleHeroRelic
-// Response ID: k_EMsgClientToGCRecycleHeroRelicResponse
-// Request type: CMsgClientToGCRecycleHeroRelic
-// Response type: CMsgClientToGCRecycleHeroRelicResponse
-func (d *Dota2) RecycleHeroRelic(
-	ctx context.Context,
-	itemIDs []uint64,
-) (*protocol.CMsgClientToGCRecycleHeroRelicResponse, error) {
-	req := &protocol.CMsgClientToGCRecycleHeroRelic{
-		ItemIds: itemIDs,
-	}
-	resp := &protocol.CMsgClientToGCRecycleHeroRelicResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelic),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRecycleHeroRelicResponse),
 		resp,
 	)
 }
@@ -3831,6 +3935,29 @@ func (d *Dota2) RequestPrivateChatInfo(
 	)
 }
 
+// RequestPrivateCoachingSession requests a private coaching session.
+// Request ID: k_EMsgClientToGCRequestPrivateCoachingSession
+// Response ID: k_EMsgClientToGCRequestPrivateCoachingSessionResponse
+// Request type: CMsgClientToGCRequestPrivateCoachingSession
+// Response type: CMsgClientToGCRequestPrivateCoachingSessionResponse
+func (d *Dota2) RequestPrivateCoachingSession(
+	ctx context.Context,
+	language uint32,
+) (*protocol.CMsgClientToGCRequestPrivateCoachingSessionResponse, error) {
+	req := &protocol.CMsgClientToGCRequestPrivateCoachingSession{
+		Language: &language,
+	}
+	resp := &protocol.CMsgClientToGCRequestPrivateCoachingSessionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSession),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSessionResponse),
+		resp,
+	)
+}
+
 // RequestPrivateMetadataKey requests a private metadata key.
 // Request ID: k_EMsgPrivateMetadataKeyRequest
 // Response ID: k_EMsgPrivateMetadataKeyResponse
@@ -3945,6 +4072,31 @@ func (d *Dota2) RequestReportsRemaining(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportsRemainingRequest),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCReportsRemainingResponse),
+		resp,
+	)
+}
+
+// RequestRespondToCoachFriend requests a respond to coach friend.
+// Request ID: k_EMsgClientToGCRespondToCoachFriendRequest
+// Response ID: k_EMsgClientToGCRespondToCoachFriendRequestResponse
+// Request type: CMsgClientToGCRespondToCoachFriendRequest
+// Response type: CMsgClientToGCRespondToCoachFriendRequestResponse
+func (d *Dota2) RequestRespondToCoachFriend(
+	ctx context.Context,
+	coachAccountID uint32,
+	response protocol.ELobbyMemberCoachRequestState,
+) (*protocol.CMsgClientToGCRespondToCoachFriendRequestResponse, error) {
+	req := &protocol.CMsgClientToGCRespondToCoachFriendRequest{
+		CoachAccountId: &coachAccountID,
+		Response:       &response,
+	}
+	resp := &protocol.CMsgClientToGCRespondToCoachFriendRequestResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequestResponse),
 		resp,
 	)
 }
@@ -4581,6 +4733,29 @@ func (d *Dota2) SendAcceptInviteToGuild(
 	)
 }
 
+// SendAcceptPrivateCoachingSession sends a accept private coaching session.
+// Request ID: k_EMsgClientToGCAcceptPrivateCoachingSession
+// Response ID: k_EMsgClientToGCAcceptPrivateCoachingSessionResponse
+// Request type: CMsgClientToGCAcceptPrivateCoachingSession
+// Response type: CMsgClientToGCAcceptPrivateCoachingSessionResponse
+func (d *Dota2) SendAcceptPrivateCoachingSession(
+	ctx context.Context,
+	coachingSessionID uint64,
+) (*protocol.CMsgClientToGCAcceptPrivateCoachingSessionResponse, error) {
+	req := &protocol.CMsgClientToGCAcceptPrivateCoachingSession{
+		CoachingSessionId: &coachingSessionID,
+	}
+	resp := &protocol.CMsgClientToGCAcceptPrivateCoachingSessionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSession),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSessionResponse),
+		resp,
+	)
+}
+
 // SendAddGuildRole sends a add guild role.
 // Request ID: k_EMsgClientToGCAddGuildRole
 // Response ID: k_EMsgClientToGCAddGuildRoleResponse
@@ -4868,6 +5043,29 @@ func (d *Dota2) SendClientProvideSurveyResult(
 		SurveyKey: &surveyKey,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientProvideSurveyResult), req)
+}
+
+// SendCoachFriend sends a coach friend.
+// Request ID: k_EMsgClientToGCCoachFriend
+// Response ID: k_EMsgClientToGCCoachFriendResponse
+// Request type: CMsgClientToGCCoachFriend
+// Response type: CMsgClientToGCCoachFriendResponse
+func (d *Dota2) SendCoachFriend(
+	ctx context.Context,
+	targetAccountID uint32,
+) (*protocol.CMsgClientToGCCoachFriendResponse, error) {
+	req := &protocol.CMsgClientToGCCoachFriend{
+		TargetAccountId: &targetAccountID,
+	}
+	resp := &protocol.CMsgClientToGCCoachFriendResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCoachFriend),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCoachFriendResponse),
+		resp,
+	)
 }
 
 // SendCustomGameClientFinishedLoading sends a custom game client finished loading.
@@ -5305,6 +5503,18 @@ func (d *Dota2) SendNeutralItemStats(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgNeutralItemStats), req)
 }
 
+// SendOverwatchReplayError sends a overwatch replay error.
+// Request ID: k_EMsgClientToGCOverwatchReplayError
+// Request type: CMsgClientToGCOverwatchReplayError
+func (d *Dota2) SendOverwatchReplayError(
+	overwatchReplayID uint64,
+) {
+	req := &protocol.CMsgClientToGCOverwatchReplayError{
+		OverwatchReplayId: &overwatchReplayID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverwatchReplayError), req)
+}
+
 // SendPartyReadyCheck sends a party ready check.
 // Request ID: k_EMsgPartyReadyCheckRequest
 // Response ID: k_EMsgPartyReadyCheckResponse
@@ -5734,6 +5944,33 @@ func (d *Dota2) SetCompendiumSelection(
 	)
 }
 
+// SetDPCFavoriteState sets a dpc favorite state.
+// Request ID: k_EMsgClientToGCSetDPCFavoriteState
+// Response ID: k_EMsgClientToGCSetDPCFavoriteStateResponse
+// Request type: CMsgClientToGCSetDPCFavoriteState
+// Response type: CMsgClientToGCSetDPCFavoriteStateResponse
+func (d *Dota2) SetDPCFavoriteState(
+	ctx context.Context,
+	favoriteType protocol.EDPCFavoriteType,
+	favoriteID uint32,
+	enabled bool,
+) (*protocol.CMsgClientToGCSetDPCFavoriteStateResponse, error) {
+	req := &protocol.CMsgClientToGCSetDPCFavoriteState{
+		FavoriteType: &favoriteType,
+		FavoriteId:   &favoriteID,
+		Enabled:      &enabled,
+	}
+	resp := &protocol.CMsgClientToGCSetDPCFavoriteStateResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteState),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteStateResponse),
+		resp,
+	)
+}
+
 // SetFavoriteAllStarPlayer sets a favorite all star player.
 // Request ID: k_EMsgClientToGCSetFavoriteAllStarPlayer
 // Response ID: k_EMsgClientToGCSetFavoriteAllStarPlayerResponse
@@ -6124,6 +6361,20 @@ func (d *Dota2) StartTriviaSession(
 	)
 }
 
+// StartWatchingOverwatch starts a watching overwatch.
+// Request ID: k_EMsgClientToGCStartWatchingOverwatch
+// Request type: CMsgClientToGCStartWatchingOverwatch
+func (d *Dota2) StartWatchingOverwatch(
+	overwatchReplayID uint64,
+	targetPlayerSlot uint32,
+) {
+	req := &protocol.CMsgClientToGCStartWatchingOverwatch{
+		OverwatchReplayId: &overwatchReplayID,
+		TargetPlayerSlot:  &targetPlayerSlot,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCStartWatchingOverwatch), req)
+}
+
 // StopFindingMatch stops a finding match.
 // Request ID: k_EMsgGCStopFindingMatch
 // Request type: CMsgStopFindingMatch
@@ -6134,6 +6385,20 @@ func (d *Dota2) StopFindingMatch(
 		AcceptCooldown: &acceptCooldown,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCStopFindingMatch), req)
+}
+
+// StopWatchingOverwatch stops a watching overwatch.
+// Request ID: k_EMsgClientToGCStopWatchingOverwatch
+// Request type: CMsgClientToGCStopWatchingOverwatch
+func (d *Dota2) StopWatchingOverwatch(
+	overwatchReplayID uint64,
+	targetPlayerSlot uint32,
+) {
+	req := &protocol.CMsgClientToGCStopWatchingOverwatch{
+		OverwatchReplayId: &overwatchReplayID,
+		TargetPlayerSlot:  &targetPlayerSlot,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCStopWatchingOverwatch), req)
 }
 
 // SubmitCoachTeammateRating submits a coach teammate rating.
@@ -6255,12 +6520,14 @@ func (d *Dota2) SubmitOWConviction(
 	ctx context.Context,
 	overwatchReplayID uint64,
 	targetPlayerSlot uint32,
-	conviction protocol.EOverwatchConviction,
+	cheatingConviction protocol.EOverwatchConviction,
+	griefingConviction protocol.EOverwatchConviction,
 ) (*protocol.CMsgClientToGCSubmitOWConvictionResponse, error) {
 	req := &protocol.CMsgClientToGCSubmitOWConviction{
-		OverwatchReplayId: &overwatchReplayID,
-		TargetPlayerSlot:  &targetPlayerSlot,
-		Conviction:        &conviction,
+		OverwatchReplayId:  &overwatchReplayID,
+		TargetPlayerSlot:   &targetPlayerSlot,
+		CheatingConviction: &cheatingConviction,
+		GriefingConviction: &griefingConviction,
 	}
 	resp := &protocol.CMsgClientToGCSubmitOWConvictionResponse{}
 
@@ -6325,6 +6592,31 @@ func (d *Dota2) SubmitPlayerReport(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReport),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponse),
+		resp,
+	)
+}
+
+// SubmitPrivateCoachingSessionRating submits a private coaching session rating.
+// Request ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRating
+// Response ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse
+// Request type: CMsgClientToGCSubmitPrivateCoachingSessionRating
+// Response type: CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse
+func (d *Dota2) SubmitPrivateCoachingSessionRating(
+	ctx context.Context,
+	coachingSessionID uint64,
+	sessionRating protocol.ECoachTeammateRating,
+) (*protocol.CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse, error) {
+	req := &protocol.CMsgClientToGCSubmitPrivateCoachingSessionRating{
+		CoachingSessionId: &coachingSessionID,
+		SessionRating:     &sessionRating,
+	}
+	resp := &protocol.CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRating),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse),
 		resp,
 	)
 }
@@ -6571,6 +6863,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.CavernCrawlMapUpdated{}
 	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCChatModeratorBan)] = d.getEventEmitter(func() events.Event {
+		return &events.ChatModeratorBan{}
+	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled)] = d.getEventEmitter(func() events.Event {
 		return &events.ChatRegionsEnabled{}
 	})
@@ -6714,6 +7009,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCPopup)] = d.getEventEmitter(func() events.Event {
 		return &events.Popup{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPrivateCoachingSessionUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.PrivateCoachingSessionUpdated{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCProcessFantasyScheduledEvent)] = d.getEventEmitter(func() events.Event {
 		return &events.ProcessFantasyScheduledEvent{}
