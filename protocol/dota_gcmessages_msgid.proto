@@ -305,8 +305,6 @@ enum EDOTAGCMsg {
 	k_EMsgGCPlayerInfoSubmitResponse = 7457;
 	k_EMsgGCToGCGetAccountLevel = 7458;
 	k_EMsgGCToGCGetAccountLevelResponse = 7459;
-	k_EMsgGCToGCGetAccountPartner = 7460;
-	k_EMsgGCToGCGetAccountPartnerResponse = 7461;
 	k_EMsgDOTAGetWeekendTourneySchedule = 7464;
 	k_EMsgDOTAWeekendTourneySchedule = 7465;
 	k_EMsgGCJoinableCustomGameModesRequest = 7466;
@@ -347,11 +345,6 @@ enum EDOTAGCMsg {
 	k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus = 7505;
 	k_EMsgGCToGCCreateWeekendTourneyRequest = 7506;
 	k_EMsgGCToGCCreateWeekendTourneyResponse = 7507;
-	k_EMsgClientToGCSetAdditionalEquips = 7513;
-	k_EMsgClientToGCGetAdditionalEquips = 7514;
-	k_EMsgClientToGCGetAdditionalEquipsResponse = 7515;
-	k_EMsgServerToGCGetAdditionalEquips = 7516;
-	k_EMsgServerToGCGetAdditionalEquipsResponse = 7517;
 	k_EMsgDOTARedeemItem = 7518;
 	k_EMsgDOTARedeemItemResponse = 7519;
 	k_EMsgSQLGCToGCGrantAllHeroProgress = 7520;
@@ -416,7 +409,6 @@ enum EDOTAGCMsg {
 	k_EMsgClientToGCCancelPartyInvites = 7589;
 	k_EMsgGCToGCMasterReloadAccount = 7590;
 	k_EMsgSQLGrantLeagueMatchToTicketHolders = 7592;
-	k_EMsgClientToGCSetAdditionalEquipsResponse = 7593;
 	k_EMsgGCToGCEmoticonUnlockNoRollback = 7594;
 	k_EMsgGCToGCGetCompendiumFanfare = 7595;
 	k_EMsgGCToGCChatNewUserSession = 7598;
@@ -971,5 +963,10 @@ enum EDOTAGCMsg {
 	k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse = 8803;
 	k_EMsgClientToGCRespondToCoachFriendRequest = 8804;
 	k_EMsgClientToGCRespondToCoachFriendRequestResponse = 8805;
+	k_EMsgClientToGCSetEventActiveSeasonID = 8806;
+	k_EMsgClientToGCSetEventActiveSeasonIDResponse = 8807;
 	k_EMsgServerToGCMatchPlayerNeutralItemEquipHistory = 8808;
+	k_EMsgServerToGCCompendiumChosenInGamePredictions = 8809;
+	k_EMsgClientToGCCreateTeamPlayerCardPack = 8810;
+	k_EMsgClientToGCCreateTeamPlayerCardPackResponse = 8811;
 }

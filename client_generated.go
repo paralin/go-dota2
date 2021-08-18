@@ -390,6 +390,35 @@ func (d *Dota2) CreateTeam(
 	)
 }
 
+// CreateTeamPlayerCardPack creates a team player card pack.
+// Request ID: k_EMsgClientToGCCreateTeamPlayerCardPack
+// Response ID: k_EMsgClientToGCCreateTeamPlayerCardPackResponse
+// Request type: CMsgClientToGCCreateTeamPlayerCardPack
+// Response type: CMsgClientToGCCreateTeamPlayerCardPackResponse
+func (d *Dota2) CreateTeamPlayerCardPack(
+	ctx context.Context,
+	cardDustItemID uint64,
+	eventID uint32,
+	premiumPack bool,
+	teamID uint32,
+) (*protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse, error) {
+	req := &protocol.CMsgClientToGCCreateTeamPlayerCardPack{
+		CardDustItemId: &cardDustItemID,
+		EventId:        &eventID,
+		PremiumPack:    &premiumPack,
+		TeamId:         &teamID,
+	}
+	resp := &protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPack),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPackResponse),
+		resp,
+	)
+}
+
 // DemotePrivateChatMember demotes a private chat member.
 // Request ID: k_EMsgClientToGCPrivateChatDemote
 // Request type: CMsgClientToGCPrivateChatDemote
@@ -524,26 +553,6 @@ func (d *Dota2) FindTopSourceTVGames(
 func (d *Dota2) FlipLobbyTeams() {
 	req := &protocol.CMsgFlipLobbyTeams{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams), req)
-}
-
-// GetAdditionalEquips gets additional equips.
-// Request ID: k_EMsgClientToGCGetAdditionalEquips
-// Response ID: k_EMsgClientToGCGetAdditionalEquipsResponse
-// Request type: CMsgClientToGCGetAdditionalEquips
-// Response type: CMsgClientToGCGetAdditionalEquipsResponse
-func (d *Dota2) GetAdditionalEquips(
-	ctx context.Context,
-) (*protocol.CMsgClientToGCGetAdditionalEquipsResponse, error) {
-	req := &protocol.CMsgClientToGCGetAdditionalEquips{}
-	resp := &protocol.CMsgClientToGCGetAdditionalEquipsResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquips),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetAdditionalEquipsResponse),
-		resp,
-	)
 }
 
 // GetAllHeroOrder gets all hero order.
@@ -5894,29 +5903,6 @@ func (d *Dota2) SendWatchGame(
 	)
 }
 
-// SetAdditionalEquips sets additional equips.
-// Request ID: k_EMsgClientToGCSetAdditionalEquips
-// Response ID: k_EMsgClientToGCSetAdditionalEquipsResponse
-// Request type: CMsgClientToGCSetAdditionalEquips
-// Response type: CMsgClientToGCSetAdditionalEquipsResponse
-func (d *Dota2) SetAdditionalEquips(
-	ctx context.Context,
-	equips []*protocol.CAdditionalEquipSlot,
-) (*protocol.CMsgClientToGCSetAdditionalEquipsResponse, error) {
-	req := &protocol.CMsgClientToGCSetAdditionalEquips{
-		Equips: equips,
-	}
-	resp := &protocol.CMsgClientToGCSetAdditionalEquipsResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquips),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetAdditionalEquipsResponse),
-		resp,
-	)
-}
-
 // SetCompendiumSelection sets a compendium selection.
 // Request ID: k_EMsgGCCompendiumSetSelection
 // Response ID: k_EMsgGCCompendiumSetSelectionResponse
@@ -5967,6 +5953,31 @@ func (d *Dota2) SetDPCFavoriteState(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteState),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteStateResponse),
+		resp,
+	)
+}
+
+// SetEventActiveSeasonID sets a event active season id.
+// Request ID: k_EMsgClientToGCSetEventActiveSeasonID
+// Response ID: k_EMsgClientToGCSetEventActiveSeasonIDResponse
+// Request type: CMsgClientToGCSetEventActiveSeasonID
+// Response type: CMsgClientToGCSetEventActiveSeasonIDResponse
+func (d *Dota2) SetEventActiveSeasonID(
+	ctx context.Context,
+	eventID uint32,
+	activeSeasonID uint32,
+) (*protocol.CMsgClientToGCSetEventActiveSeasonIDResponse, error) {
+	req := &protocol.CMsgClientToGCSetEventActiveSeasonID{
+		EventId:        &eventID,
+		ActiveSeasonId: &activeSeasonID,
+	}
+	resp := &protocol.CMsgClientToGCSetEventActiveSeasonIDResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonID),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonIDResponse),
 		resp,
 	)
 }

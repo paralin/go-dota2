@@ -258,6 +258,7 @@ message CMsgGameMatchSignOut {
 			optional uint32 lane = 45;
 			optional bool is_using_plus_guide = 47;
 			repeated CMsgGameMatchSignOut.CTeam.CPlayer.HeroDamageReceived hero_damage_received = 48;
+			repeated CMsgGameMatchSignOut.CTeam.CPlayer.HeroDamageReceived hero_damage_dealt = 64;
 			optional uint32 seconds_dead = 51;
 			optional uint32 gold_lost_to_death = 52;
 			optional uint32 command_count = 53;
@@ -829,10 +830,6 @@ message CSerializedCombatLog {
 	repeated CMsgDOTACombatLogEntry entries = 3;
 }
 
-message CMsgServerToGCGetAdditionalEquips {
-	repeated uint32 account_ids = 1;
-}
-
 message CMsgServerToGCGetAdditionalEquipsResponse {
 	message CUserEquips {
 		optional uint32 account_id = 1;
@@ -1050,6 +1047,15 @@ message CMsgServerToGCCompendiumInGamePredictionResults {
 	optional uint32 league_node_id = 4;
 }
 
+message CMsgServerToGCCompendiumChosenInGamePredictions {
+	message Prediction {
+		optional uint32 prediction_id = 1;
+	}
+
+	optional uint64 match_id = 1;
+	repeated CMsgServerToGCCompendiumChosenInGamePredictions.Prediction predictions_chosen = 2;
+}
+
 message CMsgServerToGCCompendiumInGamePredictionResultsResponse {
 	optional bool result = 1;
 }
@@ -1090,6 +1096,7 @@ message CMsgServerToGCMatchPlayerNeutralItemEquipHistory {
 		optional uint32 game_time = 2;
 		repeated uint32 inventory_items = 3;
 		repeated bool talents_skilled = 4;
+		repeated uint32 available_neutral_items = 5;
 	}
 
 	message Player {

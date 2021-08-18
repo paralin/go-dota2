@@ -954,7 +954,6 @@ message CMsgGCToGCStoreProcessCDKeyTransactionResponse {
 
 message CMsgGCToGCStoreProcessSettlement {
 	optional CMsgProcessTransactionOrder order = 1;
-	optional uint32 partner = 2;
 }
 
 message CMsgGCToGCStoreProcessSettlementResponse {
@@ -1027,16 +1026,6 @@ message CMsgGCToClientCurrencyPricePoints {
 message CMsgBannedWordList {
 	optional uint32 version = 1;
 	repeated string banned_words = 2;
-}
-
-message CEcon_FlushInventoryCache_Request {
-	optional uint64 steamid = 1;
-	optional uint32 appid = 2;
-	optional uint64 contextid = 3;
-}
-
-message CEcon_FlushInventoryCache_Response {
-	optional bool success = 1;
 }
 
 message CMsgGCToGCFlushSteamInventoryCache {

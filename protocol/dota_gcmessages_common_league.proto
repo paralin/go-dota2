@@ -72,6 +72,9 @@ message CMsgDOTALeagueNodeGroup {
 		optional uint32 losses = 8;
 		optional int64 score = 9;
 		optional string team_abbreviation = 10;
+		optional int64 score_tiebreak_group = 11;
+		optional int64 score_tiebreak_below = 12;
+		optional int64 score_tiebreak_random = 13;
 	}
 
 	optional string name = 1;
@@ -318,6 +321,7 @@ message CMsgDOTADPCSeasonResults {
 		optional uint32 points = 4;
 		optional uint32 earnings = 5;
 		optional uint32 audit_action = 6;
+		optional uint32 audit_data = 7;
 	}
 
 	message TeamResult {
