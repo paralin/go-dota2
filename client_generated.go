@@ -1788,9 +1788,11 @@ func (d *Dota2) ListTrophies(
 func (d *Dota2) OpenPlayerCardPack(
 	ctx context.Context,
 	playerCardPackItemID uint64,
+	teamID uint32,
 ) (*protocol.CMsgClientToGCOpenPlayerCardPackResponse, error) {
 	req := &protocol.CMsgClientToGCOpenPlayerCardPack{
 		PlayerCardPackItemId: &playerCardPackItemID,
+		TeamId:               &teamID,
 	}
 	resp := &protocol.CMsgClientToGCOpenPlayerCardPackResponse{}
 

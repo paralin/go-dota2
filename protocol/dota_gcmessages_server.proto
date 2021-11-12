@@ -1028,6 +1028,7 @@ message CMsgServerToGCPostMatchTipResponse {
 message CMsgServerToGCCloseCompendiumInGamePredictionVoting {
 	optional uint64 match_id = 1;
 	optional uint32 hltv_delay = 2;
+	optional uint32 league_id = 3;
 }
 
 message CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse {
@@ -1054,6 +1055,7 @@ message CMsgServerToGCCompendiumChosenInGamePredictions {
 
 	optional uint64 match_id = 1;
 	repeated CMsgServerToGCCompendiumChosenInGamePredictions.Prediction predictions_chosen = 2;
+	optional uint32 league_id = 3;
 }
 
 message CMsgServerToGCCompendiumInGamePredictionResultsResponse {
@@ -1460,4 +1462,75 @@ message CMsgMatchDiretideCandy {
 
 	repeated CMsgMatchDiretideCandy.PlayerCandy player_candy_data = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
+}
+
+message CMsgGCToServerCheerData {
+	message CheerTypeCount {
+		optional uint32 cheer_type = 1;
+		optional uint32 cheer_count = 2;
+	}
+
+	repeated CMsgGCToServerCheerData.CheerTypeCount cheer_types = 1;
+	optional uint32 radiant_cheers = 2;
+	optional uint32 dire_cheers = 3;
+	optional uint32 radiant_premium_cheers = 4;
+	optional uint32 dire_premium_cheers = 5;
+}
+
+message CMsgCheerConfig {
+	optional bool cheers_enabled = 1;
+	optional bool is_valid_league_id = 2;
+	optional float window_duration = 3;
+	optional uint32 window_bucket_count = 4;
+	optional float crowd_level_push_time = 6;
+	optional uint32 crowd_level_low = 10;
+	optional uint32 crowd_level_medium = 11;
+	optional uint32 crowd_level_high = 12;
+	optional float cheer_scale_start = 13;
+	optional float cheer_scale_speed = 14;
+	optional uint32 cheer_scale_push_mark = 15;
+	optional uint32 cheer_scale_pull_mark = 16;
+	optional float cheer_scale_pct_of_max_cps_clamp = 17;
+	optional float cheer_scale_dampener_value = 21;
+	optional uint32 cheer_scale_dampener_lerp_time = 22;
+	optional float cheer_factor_bronze = 18;
+	optional float cheer_factor_silver = 19;
+	optional float cheer_factor_gold = 20;
+}
+
+message CMsgGCToServerCheerConfig {
+	optional CMsgCheerConfig cheer_config = 1;
+}
+
+message CMsgServerToGCGetCheerConfig {
+	optional uint32 league_id = 1;
+}
+
+message CMsgServerToGCGetCheerConfigResponse {
+	optional CMsgCheerConfig cheer_config = 2;
+}
+
+message CMsgGCToServerCheerScalesOverride {
+	repeated float scales = 1;
+}
+
+message CMsgGCToServerGetCheerState {
+}
+
+message CMsgCheerTypeState {
+	repeated uint32 cheer_counts = 1;
+	optional float max_per_second = 2;
+	optional float cheer_scale = 3;
+	optional float override_scale = 4;
+}
+
+message CMsgCheerState {
+	repeated CMsgCheerTypeState cheer_types = 1;
+	optional uint32 radiant_crowd_level = 2;
+	optional uint32 dire_crowd_level = 3;
+}
+
+message CMsgServerToGCReportCheerState {
+	optional CMsgCheerConfig cheer_config = 1;
+	optional CMsgCheerState cheer_state = 2;
 }
