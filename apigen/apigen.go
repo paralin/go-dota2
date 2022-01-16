@@ -17,7 +17,7 @@ func main() {
 	app.HideVersion = true
 	app.Commands = commands
 	if err := app.Run(os.Args); err != nil {
-		fmt.Printf("Error: %v", err.Error())
+		fmt.Printf("Error: %v\n", err.Error())
 		os.Exit(1)
 	}
 }

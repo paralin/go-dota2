@@ -2,6 +2,7 @@
 set -eo pipefail
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
+REPO_PROTOS=${REPO_ROOT}/protos
 GAME_DIR="Protobufs"
 GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}"
 
@@ -34,7 +35,12 @@ cp \
     ./gcsystemmsgs.proto \
     ${WORK_DIR}/orig/
 
+mkdir -p ${WORK_DIR}/orig/google/protobuf
+cp -ra ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/orig/google/protobuf/
+
 cd ${WORK_DIR}
+# Add valve_extensions.proto
+cp ${REPO_PROTOS}/valve_extensions.proto ${WORK_DIR}/orig/
 # Add package lines to each protobuf file.
 for f in ${WORK_DIR}/orig/*.proto ; do
     fname=$(basename $f)
@@ -43,6 +49,7 @@ for f in ${WORK_DIR}/orig/*.proto ; do
         sed -e "s/optional \./optional /g" \
             -e "s/required \./required /g" \
             -e "s/repeated \./repeated /g" \
+            -e "s#google/protobuf/valve_extensions.proto#valve_extensions.proto#g" \
             -e "s/\t\./\t/g" >\
             ${WORK_DIR}/protos/${fname}
 done

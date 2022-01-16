@@ -5,8 +5,8 @@ import (
 
 	"github.com/paralin/go-dota2/cso"
 	gcccm "github.com/paralin/go-dota2/protocol"
-	gcmm "github.com/paralin/go-dota2/protocol"
 	gcm "github.com/paralin/go-dota2/protocol"
+	gcmm "github.com/paralin/go-dota2/protocol"
 )
 
 // CreateLobby attempts to create a lobby with details.
@@ -66,4 +66,13 @@ func (d *Dota2) LeaveCreateLobby(ctx context.Context, details *gcccm.CMsgPractic
 			_ = event
 		}
 	}
+}
+
+// ClearTeamFromLobby clears the team from a practice lobby.
+func (d *Dota2) ClearTeamFromLobby() {
+	d.write(
+		uint32(gcm.EDOTAGCMsg_k_EMsgGCClearPracticeLobbyTeam),
+		// unknown proto type: send empty of this one
+		&gcm.CMsgFlipLobbyTeams{},
+	)
 }

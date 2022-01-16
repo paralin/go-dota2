@@ -26,8 +26,6 @@ const (
 	ItemPresetInstance = 36
 	// DropRateBonus is an active drop rate bonus.
 	DropRateBonus = 38
-	// LeagueViewPass is a pass to view a league ticket.
-	LeagueViewPass = 39
 	// EventTicket is a ticket to an event.
 	EventTicket = 40
 	// ItemTournamentPassport is an item representing a tournament passport.
@@ -80,9 +78,6 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 	},
 	LobbyInvite: func() proto.Message {
 		return &gcmm.CSODOTALobbyInvite{}
-	},
-	LeagueViewPass: func() proto.Message {
-		return &bgcm.CSOEconItemLeagueViewPass{}
 	},
 	DropRateBonus: func() proto.Message {
 		return &bgcm.CSOEconItemDropRateBonus{}

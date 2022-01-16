@@ -1,6 +1,7 @@
 syntax = "proto2";
 package protocol;
 
+import "valve_extensions.proto";
 import "dota_shared_enums.proto";
 
 option optimize_for = SPEED;
@@ -62,7 +63,7 @@ message CMsgGuildEventMember {
 }
 
 message CMsgClientToGCRequestAccountGuildEventData {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -85,7 +86,7 @@ message CMsgClientToGCRequestAccountGuildEventDataResponse {
 }
 
 message CMsgGCToClientAccountGuildEventDataUpdated {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 update_flags = 3;
 	optional CMsgAccountGuildEventData guild_event_data = 4;
@@ -93,7 +94,7 @@ message CMsgGCToClientAccountGuildEventDataUpdated {
 }
 
 message CMsgClientToGCRequestActiveGuildContracts {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -116,12 +117,12 @@ message CMsgClientToGCRequestActiveGuildContractsResponse {
 }
 
 message CMsgGCToClientActiveGuildContractsUpdated {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
 message CMsgClientToGCSelectGuildContract {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint64 contract_id = 3;
 	optional uint32 contract_slot = 4;
@@ -151,7 +152,7 @@ message CMsgClientToGCSelectGuildContractResponse {
 }
 
 message CMsgClientToGCRequestActiveGuildChallenge {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -173,13 +174,13 @@ message CMsgClientToGCRequestActiveGuildChallengeResponse {
 }
 
 message CMsgGCToClientActiveGuildChallengeUpdated {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional CMsgGuildChallenge active_challenge = 3;
 }
 
 message CMsgClientToGCRequestGuildEventMembers {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -201,33 +202,18 @@ message CMsgClientToGCRequestGuildEventMembersResponse {
 }
 
 message CMsgGuildLeaderboardCombinedResponse {
-	message Entry {
-		optional uint32 id = 1;
-		optional uint32 r = 2;
-		optional uint32 c = 3;
-		optional uint32 w = 4;
-		optional uint32 p = 5;
-	}
-
 	optional EEvent event_id = 1 [default = EVENT_ID_NONE];
 	optional uint32 region = 2;
 	optional uint32 last_updated = 3;
-	repeated CMsgGuildLeaderboardCombinedResponse.Entry entries = 4;
-}
-
-message CMsgGuildLeaderboardCombinedResponseV2 {
-	optional EEvent event_id = 1 [default = EVENT_ID_NONE];
-	optional uint32 region = 2;
-	optional uint32 last_updated = 3;
-	repeated uint32 id = 4 [packed = true];
-	repeated uint32 r = 5 [packed = true];
-	repeated uint32 c = 6 [packed = true];
-	repeated uint32 w = 7 [packed = true];
-	repeated uint32 p = 8 [packed = true];
+	repeated uint32 guild_id = 4 [packed = true, (boxed_type) = "GuildID_t"];
+	repeated uint32 rank = 5 [packed = true];
+	repeated uint32 current_percentile = 6 [packed = true];
+	repeated uint32 weekly_percentile = 7 [packed = true];
+	repeated uint32 points = 8 [packed = true];
 }
 
 message CMsgClientToGCClaimLeaderboardRewards {
-	optional uint32 guild_id = 1;
+	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 

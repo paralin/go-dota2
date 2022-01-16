@@ -1,6 +1,8 @@
 syntax = "proto2";
 package protocol;
 
+import "dota_shared_enums.proto";
+
 option optimize_for = SPEED;
 option cc_generic_services = false;
 
