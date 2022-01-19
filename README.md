@@ -1,5 +1,6 @@
 # Dota2
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/paralin/go-dota2.svg)](https://pkg.go.dev/github.com/paralin/go-dota2)
 [![Go Report Card Widget]][Go Report Card]
 [![DOI](https://zenodo.org/badge/103461337.svg)](https://zenodo.org/badge/latestdoi/103461337)
 
