@@ -30,12 +30,12 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	eventsImports := make(map[string]struct{})
 	eventsImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
-	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
+	eventsImports["google.golang.org/protobuf/proto"] = struct{}{}
 
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
-	clientImports["github.com/faceit/go-steam/steamid"] = struct{}{}
+	clientImports["github.com/Philipp15b/go-steam/v3/steamid"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/events"] = struct{}{}
 
 	// responseMsgs are messages that are known to be responses.
@@ -162,7 +162,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 					reqFieldType = types.NewNamed(
 						types.NewTypeName(
 							0,
-							packageMap["github.com/faceit/go-steam/steamid"],
+							packageMap["github.com/Philipp15b/go-steam/v3/steamid"],
 							"SteamId",
 							reqFieldType,
 						),
@@ -260,7 +260,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	for _, eventHandler := range eventHandlersOrdered {
 		fmt.Fprintf(eventsOutput, "\n")
-		fmt.Fprintf(eventsOutput, eventHandler.generateComment())
+		fmt.Fprint(eventsOutput, eventHandler.generateComment())
 		fmt.Fprintf(eventsOutput, "type %s struct {\n", eventHandler.eventName)
 		fmt.Fprintf(eventsOutput, "\t")
 		if err := printFieldType(eventsOutput, eventHandler.eventType.Obj.Type()); err != nil {

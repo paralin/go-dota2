@@ -1,8 +1,8 @@
 package events
 
 import (
-	"github.com/golang/protobuf/proto"
 	gcmcc "github.com/paralin/go-dota2/protocol"
+	"google.golang.org/protobuf/proto"
 )
 
 // ChatMessage is emitted when a chat message is observed.

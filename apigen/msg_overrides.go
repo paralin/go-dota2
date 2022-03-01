@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
 	dm "github.com/paralin/go-dota2/protocol"
+	"google.golang.org/protobuf/proto"
 )
 
 // msgSenderOverrides overrides the heuristic-generated sender parties for each message
@@ -224,7 +224,15 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 }
 
 var msgArgAsParameterOverrides = map[dm.EDOTAGCMsg]bool{
-	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails: true,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails:          true,
+	dm.EDOTAGCMsg_k_EMsgClientToGCCreateGuild:              true,
+	dm.EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby:     true,
+	dm.EDOTAGCMsg_k_EMsgDOTAClaimEventAction:               true,
+	dm.EDOTAGCMsg_k_EMsgDetailedGameStats:                  true,
+	dm.EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated:        true,
+	dm.EDOTAGCMsg_k_EMsgGCReadyUp:                          true,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetGuildInfo:             true,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails: true,
 }
 
 var msgEventNameOverrides = map[dm.EDOTAGCMsg]string{

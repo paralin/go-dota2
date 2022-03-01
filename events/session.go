@@ -1,7 +1,7 @@
 package events
 
 import (
-	sprotocol "github.com/faceit/go-steam/protocol/gamecoordinator"
+	sprotocol "github.com/Philipp15b/go-steam/v3/protocol/gamecoordinator"
 	gcsdkm "github.com/paralin/go-dota2/protocol"
 )
 

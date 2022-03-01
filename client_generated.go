@@ -2,7 +2,7 @@ package dota2
 
 import (
 	"context"
-	"github.com/faceit/go-steam/steamid"
+	"github.com/Philipp15b/go-steam/v3/steamid"
 	"github.com/paralin/go-dota2/events"
 	"github.com/paralin/go-dota2/protocol"
 )
@@ -168,13 +168,8 @@ func (d *Dota2) CreateGameCustom(
 // Response type: CMsgClientToGCCreateGuildResponse
 func (d *Dota2) CreateGuild(
 	ctx context.Context,
-	guildInfo protocol.CMsgGuildInfo,
-	guildChatType protocol.EGuildChatType,
+	req *protocol.CMsgClientToGCCreateGuild,
 ) (*protocol.CMsgClientToGCCreateGuildResponse, error) {
-	req := &protocol.CMsgClientToGCCreateGuild{
-		GuildInfo:     &guildInfo,
-		GuildChatType: &guildChatType,
-	}
 	resp := &protocol.CMsgClientToGCCreateGuildResponse{}
 
 	return resp, d.MakeRequest(
@@ -226,11 +221,8 @@ func (d *Dota2) CreatePlayerCardPack(
 // Request ID: k_EMsgClientToGCCreateSpectatorLobby
 // Request type: CMsgCreateSpectatorLobby
 func (d *Dota2) CreateSpectatorLobby(
-	details protocol.CMsgSetSpectatorLobbyDetails,
+	req *protocol.CMsgCreateSpectatorLobby,
 ) {
-	req := &protocol.CMsgCreateSpectatorLobby{
-		Details: &details,
-	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby), req)
 }
 
@@ -3629,17 +3621,8 @@ func (d *Dota2) SendChatMessage(
 // Response type: CMsgDOTAClaimEventActionResponse
 func (d *Dota2) SendClaimEventAction(
 	ctx context.Context,
-	eventID uint32,
-	actionID uint32,
-	quantity uint32,
-	data protocol.CMsgDOTAClaimEventActionData,
+	req *protocol.CMsgDOTAClaimEventAction,
 ) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
-	req := &protocol.CMsgDOTAClaimEventAction{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		Quantity: &quantity,
-		Data:     &data,
-	}
 	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
 
 	return resp, d.MakeRequest(
@@ -3782,15 +3765,8 @@ func (d *Dota2) SendDeclineInviteToGuild(
 // Request ID: k_EMsgDetailedGameStats
 // Request type: CMsgDetailedGameStats
 func (d *Dota2) SendDetailedGameStats(
-	minutes []*protocol.CMsgDetailedGameStats_MinuteEntry,
-	playerInfo []*protocol.CMsgDetailedGameStats_PlayerInfo,
-	gameStats protocol.CMsgDetailedGameStats_GameStats,
+	req *protocol.CMsgDetailedGameStats,
 ) {
-	req := &protocol.CMsgDetailedGameStats{
-		Minutes:    minutes,
-		PlayerInfo: playerInfo,
-		GameStats:  &gameStats,
-	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDetailedGameStats), req)
 }
 
@@ -4149,13 +4125,8 @@ func (d *Dota2) SendPartyReadyCheck(
 // Request ID: k_EMsgDOTAPeriodicResourceUpdated
 // Request type: CMsgDOTAPeriodicResourceUpdated
 func (d *Dota2) SendPeriodicResourceUpdated(
-	periodicResourceKey protocol.CMsgDOTAGetPeriodicResource,
-	periodicResourceValue protocol.CMsgDOTAGetPeriodicResourceResponse,
+	req *protocol.CMsgDOTAPeriodicResourceUpdated,
 ) {
-	req := &protocol.CMsgDOTAPeriodicResourceUpdated{
-		PeriodicResourceKey:   &periodicResourceKey,
-		PeriodicResourceValue: &periodicResourceValue,
-	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated), req)
 }
 
@@ -4208,15 +4179,8 @@ func (d *Dota2) SendProfileUpdate(
 // Request ID: k_EMsgGCReadyUp
 // Request type: CMsgReadyUp
 func (d *Dota2) SendReadyUp(
-	state protocol.DOTALobbyReadyState,
-	readyUpKey uint64,
-	hardwareSpecs protocol.CDOTAClientHardwareSpecs,
+	req *protocol.CMsgReadyUp,
 ) {
-	req := &protocol.CMsgReadyUp{
-		State:         &state,
-		ReadyUpKey:    &readyUpKey,
-		HardwareSpecs: &hardwareSpecs,
-	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCReadyUp), req)
 }
 
@@ -4552,15 +4516,8 @@ func (d *Dota2) SetFavoriteTeam(
 // Response type: CMsgClientToGCSetGuildInfoResponse
 func (d *Dota2) SetGuildInfo(
 	ctx context.Context,
-	guildID uint32,
-	guildInfo protocol.CMsgGuildInfo,
-	guildChatType protocol.EGuildChatType,
+	req *protocol.CMsgClientToGCSetGuildInfo,
 ) (*protocol.CMsgClientToGCSetGuildInfoResponse, error) {
-	req := &protocol.CMsgClientToGCSetGuildInfo{
-		GuildId:       &guildID,
-		GuildInfo:     &guildInfo,
-		GuildChatType: &guildChatType,
-	}
 	resp := &protocol.CMsgClientToGCSetGuildInfoResponse{}
 
 	return resp, d.MakeRequest(
@@ -4765,17 +4722,8 @@ func (d *Dota2) SetProfilePrivacy(
 // Request ID: k_EMsgClientToGCSetSpectatorLobbyDetails
 // Request type: CMsgSetSpectatorLobbyDetails
 func (d *Dota2) SetSpectatorLobbyDetails(
-	lobbyID uint64,
-	lobbyName string,
-	passKey string,
-	gameDetails protocol.CMsgSpectatorLobbyGameDetails,
+	req *protocol.CMsgSetSpectatorLobbyDetails,
 ) {
-	req := &protocol.CMsgSetSpectatorLobbyDetails{
-		LobbyId:     &lobbyID,
-		LobbyName:   &lobbyName,
-		PassKey:     &passKey,
-		GameDetails: &gameDetails,
-	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails), req)
 }
 

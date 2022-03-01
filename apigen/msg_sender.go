@@ -30,9 +30,7 @@ func GetMessageSender(msg protocol.EDOTAGCMsg) MsgSender {
 	msgName := msg.String()
 	msgName = msgName[6:]
 
-	if strings.HasPrefix(msgName, "DOTA") {
-		msgName = msgName[4:]
-	}
+	msgName = strings.TrimPrefix(msgName, "DOTA")
 
 	switch {
 	case strings.HasPrefix(msgName, "SQL"):

@@ -1,7 +1,7 @@
 package dota2
 
 import (
-	"github.com/faceit/go-steam/protocol/gamecoordinator"
+	"github.com/Philipp15b/go-steam/v3/protocol/gamecoordinator"
 	gcsdkm "github.com/paralin/go-dota2/protocol"
 	gcsm "github.com/paralin/go-dota2/protocol"
 )

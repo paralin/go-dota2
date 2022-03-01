@@ -35,8 +35,8 @@ cp \
     ./gcsystemmsgs.proto \
     ${WORK_DIR}/orig/
 
-mkdir -p ${WORK_DIR}/orig/google/protobuf
-cp -ra ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/orig/google/protobuf/
+mkdir -p ${WORK_DIR}/protos/google/protobuf
+cp -ra ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/protos/google/protobuf/
 
 cd ${WORK_DIR}
 # Add valve_extensions.proto
@@ -50,7 +50,8 @@ for f in ${WORK_DIR}/orig/*.proto ; do
             -e "s/required \./required /g" \
             -e "s/repeated \./repeated /g" \
             -e "s#google/protobuf/valve_extensions.proto#valve_extensions.proto#g" \
-            -e "s/\t\./\t/g" >\
+            -e "s/\t\./\t/g" \
+            -e "3 i option go_package = \"./;protocol\";" >\
             ${WORK_DIR}/protos/${fname}
 done
 
