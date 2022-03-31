@@ -1,6 +1,6 @@
-module github.com/aperturerobotics/genproto/tools
+module github.com/paralin/genproto/tools
 
-go 1.13
+go 1.16
 
 // note: protobuf is intentionally held at 1.3.x
 replace github.com/golang/protobuf => github.com/golang/protobuf v1.3.5
