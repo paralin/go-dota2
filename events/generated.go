@@ -152,6 +152,27 @@ func (e *BroadcastNotification) GetEventName() string {
 	return "BroadcastNotification"
 }
 
+// CandyShopUserDataUpdated event.
+// MessageID: k_EMsgGCToClientCandyShopUserDataUpdated
+type CandyShopUserDataUpdated struct {
+	protocol.CMsgGCToClientCandyShopUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *CandyShopUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientCandyShopUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *CandyShopUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientCandyShopUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *CandyShopUserDataUpdated) GetEventName() string {
+	return "CandyShopUserDataUpdated"
+}
+
 // CavernCrawlMapPathCompleted event.
 // MessageID: k_EMsgGCToClientCavernCrawlMapPathCompleted
 type CavernCrawlMapPathCompleted struct {

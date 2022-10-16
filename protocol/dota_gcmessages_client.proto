@@ -1,19 +1,19 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "steammessages.proto";
 import "dota_shared_enums.proto";
 import "dota_gcmessages_common.proto";
+import "dota_gcmessages_webapi.proto";
 import "gcsdk_gcmessages.proto";
 import "dota_gcmessages_common_lobby.proto";
 import "dota_gcmessages_common_match_management.proto";
 import "base_gcmessages.proto";
 import "econ_gcmessages.proto";
+import "valveextensions.proto";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
-option (additional_includes) = "dota_labyrinth_blessings_types.h";
 
 enum CMsgDOTARequestMatches_SkillLevel {
 	CMsgDOTARequestMatches_SkillLevel_Any = 0;
@@ -101,30 +101,6 @@ enum EUnderDraftResponse {
 	k_eNoGCConnection = 9;
 	k_eTooBusy = 10;
 	k_eCantRollBack = 11;
-}
-
-enum ETeamFanContentStatus {
-	TEAM_FAN_CONTENT_STATUS_INVALID = 0;
-	TEAM_FAN_CONTENT_STATUS_PENDING = 1;
-	TEAM_FAN_CONTENT_STATUS_EVALUATED = 2;
-}
-
-enum ETeamFanContentAssetType {
-	k_eFanContentAssetType_LogoPNG = 1;
-	k_eFanContentAssetType_LogoSVG = 2;
-	k_eFanContentAssetType_Logo3D = 3;
-	k_eFanContentAssetType_Players = 4;
-	k_eFanContentAssetType_Sprays = 5;
-	k_eFanContentAssetType_Wallpapers = 6;
-	k_eFanContentAssetType_Emoticons = 7;
-	k_eFanContentAssetType_VoiceLines = 8;
-	k_eFanContentAssetType_Localization = 9;
-}
-
-enum ETeamFanContentAssetStatus {
-	k_eFanContentAssetStatus_None = 0;
-	k_eFanContentAssetStatus_Approved = 1;
-	k_eFanContentAssetStatus_Rejected = 2;
 }
 
 enum EDOTADraftTriviaAnswerResult {
@@ -284,6 +260,7 @@ message CMsgDOTASubmitPlayerReportResponse {
 message CMsgDOTASubmitPlayerAvoidRequest {
 	optional uint32 target_account_id = 1;
 	optional uint64 lobby_id = 4;
+	optional string user_note = 5;
 }
 
 message CMsgDOTASubmitPlayerAvoidRequestResponse {
@@ -302,7 +279,7 @@ message CMsgDOTASubmitLobbyMVPVoteResponse {
 }
 
 message CMsgDOTALobbyMVPAwarded {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	repeated uint32 mvp_account_id = 2;
 }
 
@@ -311,7 +288,7 @@ message CMsgDOTAKickedFromMatchmakingQueue {
 }
 
 message CMsgGCMatchDetailsRequest {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 }
 
 message CMsgGCMatchDetailsResponse {
@@ -323,7 +300,7 @@ message CMsgGCMatchDetailsResponse {
 message CMsgDOTAProfileTickets {
 	message LeaguePass {
 		optional uint32 league_id = 1;
-		optional uint32 item_def = 2 [(boxed_type) = "item_definition_index_t"];
+		optional uint32 item_def = 2;
 	}
 
 	optional uint32 result = 1;
@@ -355,7 +332,7 @@ message CMsgDOTAWelcome {
 	optional uint32 gc_socache_file_version = 22;
 	optional bool is_perfect_world_test_account = 24;
 	repeated CMsgDOTAWelcome.CExtraMsg extra_messages = 26;
-	optional uint64 minimum_recent_item_id = 27 [(boxed_type) = "itemid_t"];
+	optional uint64 minimum_recent_item_id = 27;
 	optional EEvent active_event = 28 [default = EVENT_ID_NONE];
 	optional uint32 additional_user_message = 29;
 	optional uint32 custom_game_whitelist_version = 30;
@@ -376,7 +353,7 @@ message CMsgDOTAMatchVotes {
 		optional uint32 vote = 2;
 	}
 
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	repeated CMsgDOTAMatchVotes.PlayerVote votes = 2;
 }
 
@@ -426,7 +403,7 @@ message CMsgDOTASetProfilePrivacyResponse {
 }
 
 message CMsgUpgradeLeagueItem {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional uint32 league_id = 2;
 }
 
@@ -434,7 +411,7 @@ message CMsgUpgradeLeagueItemResponse {
 }
 
 message CMsgGCWatchDownloadedReplay {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional DOTA_WatchReplayType watch_type = 2 [default = DOTA_WATCH_REPLAY_NORMAL];
 }
 
@@ -555,7 +532,7 @@ message CMsgGCItemEditorReservationsRequest {
 }
 
 message CMsgGCItemEditorReservation {
-	optional uint32 def_index = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 1;
 	optional string name = 2;
 }
 
@@ -564,23 +541,23 @@ message CMsgGCItemEditorReservationsResponse {
 }
 
 message CMsgGCItemEditorReserveItemDef {
-	optional uint32 def_index = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 1;
 	optional string username = 2;
 }
 
 message CMsgGCItemEditorReserveItemDefResponse {
-	optional uint32 def_index = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 1;
 	optional string username = 2;
 	optional uint32 result = 3;
 }
 
 message CMsgGCItemEditorReleaseReservation {
-	optional uint32 def_index = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 1;
 	optional string username = 2;
 }
 
 message CMsgGCItemEditorReleaseReservationResponse {
-	optional uint32 def_index = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 1;
 	optional bool released = 2;
 }
 
@@ -617,12 +594,12 @@ message CMsgDOTAClaimEventAction {
 
 message CMsgDOTAClaimEventActionResponse {
 	message MysteryItemRewardData {
-		optional uint32 item_def = 1 [(boxed_type) = "item_definition_index_t"];
+		optional uint32 item_def = 1;
 		optional uint32 item_category = 2;
 	}
 
 	message LootListRewardData {
-		repeated uint32 item_def = 1 [(boxed_type) = "item_definition_index_t"];
+		repeated uint32 item_def = 1;
 	}
 
 	message ActionListRewardData {
@@ -662,7 +639,7 @@ message CMsgDOTAClaimEventActionResponse {
 message CMsgClientToGCClaimEventActionUsingItem {
 	optional uint32 event_id = 1;
 	optional uint32 action_id = 2;
-	optional uint64 item_id = 3 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 3;
 	optional uint32 quantity = 4;
 }
 
@@ -671,7 +648,7 @@ message CMsgClientToGCClaimEventActionUsingItemResponse {
 }
 
 message CMsgGCToClientClaimEventActionUsingItemCompleted {
-	optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 1;
 	optional CMsgDOTAClaimEventActionResponse action_results = 2;
 }
 
@@ -742,7 +719,7 @@ message CMsgDOTACompendiumDataResponse {
 
 message CMsgDOTAGetPlayerMatchHistory {
 	optional uint32 account_id = 1;
-	optional uint64 start_at_match_id = 2 [(boxed_type) = "MatchID_t"];
+	optional uint64 start_at_match_id = 2;
 	optional uint32 matches_requested = 3;
 	optional uint32 hero_id = 4;
 	optional uint32 request_id = 5;
@@ -753,7 +730,7 @@ message CMsgDOTAGetPlayerMatchHistory {
 
 message CMsgDOTAGetPlayerMatchHistoryResponse {
 	message Match {
-		optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+		optional uint64 match_id = 1;
 		optional uint32 start_time = 2;
 		optional uint32 hero_id = 3;
 		optional bool winner = 4;
@@ -843,7 +820,7 @@ message CMsgGCToClientEmoticonData {
 }
 
 message CMsgGCToClientTournamentItemDrop {
-	optional uint32 item_def = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 item_def = 1;
 	optional uint32 event_type = 2;
 }
 
@@ -920,19 +897,19 @@ message CMsgClientToGCGetProfileCardStats {
 }
 
 message CMsgClientToGCCreateHeroStatue {
-	optional uint64 source_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 source_item_id = 1;
 	optional uint32 hero_id = 3;
 	optional string sequence_name = 4;
 	optional float cycle = 5;
-	repeated uint32 wearables = 6 [(boxed_type) = "item_definition_index_t"];
+	repeated uint32 wearables = 6;
 	optional string inscription = 7;
-	repeated uint32 styles = 8 [(boxed_type) = "style_index_t"];
-	optional uint64 reforger_item_id = 9 [(boxed_type) = "itemid_t"];
+	repeated uint32 styles = 8;
+	optional uint64 reforger_item_id = 9;
 	optional bool tournament_drop = 10;
 }
 
 message CMsgGCToClientHeroStatueCreateResult {
-	optional uint64 resulting_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 resulting_item_id = 1;
 }
 
 message CMsgClientToGCPlayerStatsRequest {
@@ -989,7 +966,7 @@ message CMsgGCToClientSocialFeedPostCommentResponse {
 
 message CMsgClientToGCSocialFeedPostMessageRequest {
 	optional string message = 1;
-	optional uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 2;
 	optional uint32 match_timestamp = 3;
 }
 
@@ -1062,8 +1039,8 @@ message CMsgDOTACustomGameClientFinishedLoading {
 }
 
 message CMsgClientToGCApplyGemCombiner {
-	optional uint64 item_id_1 = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 item_id_2 = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id_1 = 1;
+	optional uint64 item_id_2 = 2;
 }
 
 message CMsgClientToGCH264Unsupported {
@@ -1093,7 +1070,7 @@ message CMsgClientToGCGetQuestProgressResponse {
 }
 
 message CMsgGCToClientMatchSignedOut {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 }
 
 message CMsgGCGetHeroStatsHistory {
@@ -1109,8 +1086,14 @@ message CMsgPlayerConductScorecardRequest {
 }
 
 message CMsgPlayerConductScorecard {
+	enum EBehaviorRating {
+		k_eBehaviorGood = 0;
+		k_eBehaviorWarning = 1;
+		k_eBehaviorBad = 2;
+	}
+
 	optional uint32 account_id = 1;
-	optional uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 2;
 	optional uint32 seq_num = 3;
 	optional uint32 reasons = 4;
 	optional uint32 matches_in_report = 5;
@@ -1121,11 +1104,11 @@ message CMsgPlayerConductScorecard {
 	optional uint32 reports_parties = 10;
 	optional uint32 commend_count = 11;
 	optional uint32 date = 14;
-	optional uint32 behavior_grade = 15;
 	optional uint32 raw_behavior_score = 17;
 	optional uint32 old_raw_behavior_score = 18;
 	optional uint32 comms_reports = 19;
 	optional uint32 comms_parties = 20;
+	optional CMsgPlayerConductScorecard.EBehaviorRating behavior_rating = 21 [default = k_eBehaviorGood];
 }
 
 message CMsgClientToGCWageringRequest {
@@ -1207,7 +1190,7 @@ message CMsgPredictionResults {
 }
 
 message CMsgClientToGCHasPlayerVotedForMVP {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 }
 
 message CMsgClientToGCHasPlayerVotedForMVPResponse {
@@ -1215,7 +1198,7 @@ message CMsgClientToGCHasPlayerVotedForMVPResponse {
 }
 
 message CMsgClientToGCVoteForMVP {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional uint32 account_id = 3;
 }
 
@@ -1224,7 +1207,7 @@ message CMsgClientToGCVoteForMVPResponse {
 }
 
 message CMsgClientToGCMVPVoteTimeout {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 }
 
 message CMsgClientToGCMVPVoteTimeoutResponse {
@@ -1240,7 +1223,7 @@ message CMsgClientToGCTeammateStatsResponse {
 		optional uint32 games = 2;
 		optional uint32 wins = 3;
 		optional uint32 most_recent_game_timestamp = 4;
-		optional uint64 most_recent_game_match_id = 5 [(boxed_type) = "MatchID_t"];
+		optional uint64 most_recent_game_match_id = 5;
 		optional float performance = 100;
 	}
 
@@ -1260,37 +1243,6 @@ message CMsgClientToGCVoteForArcanaResponse {
 	}
 
 	optional CMsgClientToGCVoteForArcanaResponse.Result result = 1 [default = SUCCEEDED];
-}
-
-message CMsgArcanaVotes {
-	message Match {
-		optional uint32 match_id = 1;
-		optional uint32 hero_id_0 = 2;
-		optional uint32 hero_id_1 = 3;
-		optional uint32 hero_seeding_0 = 4;
-		optional uint32 hero_seeding_1 = 5;
-		optional uint32 vote_count_0 = 6;
-		optional uint32 vote_count_1 = 7;
-		optional uint32 voting_state = 8;
-		optional uint32 round_number = 9;
-		optional bool is_votes_hidden = 10;
-		optional uint32 calibration_time_remaining = 11;
-	}
-
-	enum VotingState {
-		FINISHED = 0;
-		IN_PROGRESS = 1;
-		IN_FUTURE = 2;
-	}
-
-	repeated CMsgArcanaVotes.Match matches = 1;
-	optional uint32 round_time_remaining = 2;
-	optional uint32 round_number = 3;
-	optional uint32 voting_state = 4;
-	optional bool is_current_round_calibrating = 5;
-	optional uint32 closest_active_match_id = 6;
-	optional uint32 event_id = 7;
-	optional uint32 voting_start_time = 8;
 }
 
 message CMsgClientToGCRequestArcanaVotesRemaining {
@@ -1352,8 +1304,8 @@ message CMsgGCToClientQuestProgressUpdated {
 }
 
 message CMsgDOTARedeemItem {
-	optional uint64 currency_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint32 purchase_def = 2 [(boxed_type) = "item_definition_index_t"];
+	optional uint64 currency_id = 1;
+	optional uint32 purchase_def = 2;
 }
 
 message CMsgDOTARedeemItemResponse {
@@ -1371,7 +1323,7 @@ message CMsgClientToGCSelectCompendiumInGamePrediction {
 		optional uint32 prediction_value = 2;
 	}
 
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	repeated CMsgClientToGCSelectCompendiumInGamePrediction.Prediction predictions = 2;
 	optional uint32 league_id = 3;
 }
@@ -1388,9 +1340,10 @@ message CMsgClientToGCSelectCompendiumInGamePredictionResponse {
 }
 
 message CMsgClientToGCOpenPlayerCardPack {
-	optional uint64 player_card_pack_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 player_card_pack_item_id = 1;
 	optional uint32 team_id = 2;
-	optional uint32 league_id = 3;
+	optional uint32 deprecated_league_id = 3;
+	optional ELeagueRegion region = 4 [default = LEAGUE_REGION_UNSET];
 }
 
 message CMsgClientToGCOpenPlayerCardPackResponse {
@@ -1405,11 +1358,11 @@ message CMsgClientToGCOpenPlayerCardPackResponse {
 	}
 
 	optional CMsgClientToGCOpenPlayerCardPackResponse.Result result = 1 [default = SUCCESS];
-	repeated uint64 player_card_item_ids = 2 [(boxed_type) = "itemid_t"];
+	repeated uint64 player_card_item_ids = 2;
 }
 
 message CMsgClientToGCRecyclePlayerCard {
-	repeated uint64 player_card_item_ids = 3 [(boxed_type) = "itemid_t"];
+	repeated uint64 player_card_item_ids = 3;
 	optional uint32 event_id = 2;
 }
 
@@ -1421,6 +1374,7 @@ message CMsgClientToGCRecyclePlayerCardResponse {
 		ERROR_ITEM_NOT_PLAYER_CARD = 4;
 		ERROR_FAILED_DUST_CARD_CREATE = 5;
 		ERROR_CARD_LOCKED = 6;
+		ERROR_NO_CARDS_SPECIFIED = 7;
 	}
 
 	optional CMsgClientToGCRecyclePlayerCardResponse.Result result = 1 [default = SUCCESS];
@@ -1428,7 +1382,7 @@ message CMsgClientToGCRecyclePlayerCardResponse {
 }
 
 message CMsgClientToGCCreatePlayerCardPack {
-	optional uint64 card_dust_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 card_dust_item_id = 1;
 	optional uint32 event_id = 2;
 	optional bool premium_pack = 3;
 }
@@ -1448,7 +1402,7 @@ message CMsgClientToGCCreatePlayerCardPackResponse {
 }
 
 message CMsgClientToGCCreateTeamPlayerCardPack {
-	optional uint64 card_dust_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 card_dust_item_id = 1;
 	optional uint32 event_id = 2;
 	optional bool premium_pack = 3;
 	optional uint32 team_id = 4;
@@ -1948,7 +1902,7 @@ message CMsgDOTAGetRecentPlayTimeFriendsResponse {
 }
 
 message CMsgPurchaseItemWithEventPoints {
-	optional uint32 item_def = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 item_def = 1;
 	optional uint32 quantity = 2;
 	optional EEvent event_id = 3 [default = EVENT_ID_NONE];
 	optional bool use_premium_points = 4;
@@ -2007,7 +1961,7 @@ message CMsgProfileResponse {
 	}
 
 	message MatchInfo {
-		optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+		optional uint64 match_id = 1;
 		optional uint32 match_timestamp = 2;
 		optional sint32 performance_rating = 3;
 		optional uint32 hero_id = 4;
@@ -2027,10 +1981,11 @@ message CMsgProfileResponse {
 	repeated CMsgSuccessfulHero successful_heroes = 4;
 	optional CMsgRecentMatchInfo recent_match_details = 5;
 	optional CMsgProfileResponse.EResponse result = 6 [default = k_eInternalError];
+	optional CMsgStickerbookPage stickerbook_page = 7;
 }
 
 message CMsgProfileUpdate {
-	optional uint64 background_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 background_item_id = 1;
 	repeated uint32 featured_hero_ids = 2;
 }
 
@@ -2038,6 +1993,9 @@ message CMsgProfileUpdateResponse {
 	enum Result {
 		SUCCESS = 0;
 		FAILURE = 1;
+		FAILURE_BAD_HERO1 = 2;
+		FAILURE_BAD_HERO2 = 3;
+		FAILURE_BAD_HERO3 = 4;
 	}
 
 	optional CMsgProfileUpdateResponse.Result result = 1 [default = SUCCESS];
@@ -2115,7 +2073,7 @@ message CMsgHeroGlobalDataHeroesAlliesAndEnemies {
 }
 
 message CMsgPrivateMetadataKeyRequest {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 }
 
 message CMsgPrivateMetadataKeyResponse {
@@ -2355,7 +2313,7 @@ message CMsgSocialFeedCommentsResponse {
 message CMsgClientToGCPlayerCardSpecificPurchaseRequest {
 	optional uint32 player_account_id = 1;
 	optional uint32 event_id = 2;
-	optional uint64 card_dust_item_id = 3 [(boxed_type) = "itemid_t"];
+	optional uint64 card_dust_item_id = 3;
 }
 
 message CMsgClientToGCPlayerCardSpecificPurchaseResponse {
@@ -2369,7 +2327,7 @@ message CMsgClientToGCPlayerCardSpecificPurchaseResponse {
 	}
 
 	optional CMsgClientToGCPlayerCardSpecificPurchaseResponse.Result result = 1 [default = SUCCESS];
-	optional uint64 item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 2;
 }
 
 message CMsgClientToGCRequestContestVotes {
@@ -2410,47 +2368,6 @@ message CMsgGCToClientRecordContestVoteResponse {
 	}
 
 	optional CMsgGCToClientRecordContestVoteResponse.EResult eresult = 1 [default = SUCCESS];
-}
-
-message CMsgDOTADPCFeed {
-	message Element {
-		optional CMsgDOTADPCFeed.EFeedElementType type = 1 [default = FEED_SERIES_RESULT];
-		optional uint32 timestamp = 2;
-		optional uint32 series_id = 3;
-		optional uint64 match_id = 4 [(boxed_type) = "MatchID_t"];
-		optional uint32 team_id = 5;
-		optional uint32 account_id = 6;
-		optional uint32 league_id = 7;
-		optional uint32 node_id = 8;
-		optional uint64 server_steam_id = 13;
-		optional uint32 data_1 = 9;
-		optional uint32 data_2 = 10;
-		optional uint32 data_3 = 11;
-		optional uint32 data_4 = 12;
-	}
-
-	enum EFeedElementType {
-		FEED_SERIES_RESULT = 1;
-		FEED_MATCH_POPULAR = 2;
-		FEED_TEAM_UPCOMING_MATCH = 3;
-		FEED_TEAM_LEAGUE_RESULT = 4;
-		FEED_TEAM_ADD_PLAYER = 5;
-		FEED_TEAM_REMOVE_PLAYER = 6;
-		FEED_TEAM_DISBAND = 7;
-		FEED_LEAGUE_UPCOMING = 8;
-		FEED_LEAGUE_CONCLUDED = 9;
-		FEED_DPC_STANDINGS = 10;
-		FEED_ALERT_PREDICTIONS = 11;
-		FEED_ALERT_FANTASY = 12;
-		FEED_LEAGUE_LIVE_MATCH = 13;
-		FEED_LEAGUE_INPROGRESS_SERIES = 14;
-	}
-
-	repeated CMsgDOTADPCFeed.Element elements = 1;
-}
-
-message CMsgDOTADPCUserInfo {
-	optional bool is_plus_subscriber = 1;
 }
 
 message CMsgDevGrantEventPoints {
@@ -2494,7 +2411,7 @@ message CMsgDevResetEventStateResponse {
 }
 
 message CMsgConsumeEventSupportGrantItem {
-	optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 1;
 }
 
 message CMsgConsumeEventSupportGrantItemResponse {
@@ -2509,6 +2426,7 @@ message CMsgGCToClientGetFilteredPlayersResponse {
 		optional fixed32 account_id = 1;
 		optional fixed32 time_added = 2;
 		optional fixed32 time_expires = 3;
+		optional string note = 4;
 	}
 
 	enum Result {
@@ -2518,6 +2436,9 @@ message CMsgGCToClientGetFilteredPlayersResponse {
 
 	optional CMsgGCToClientGetFilteredPlayersResponse.Result result = 1 [default = SUCCESS];
 	repeated CMsgGCToClientGetFilteredPlayersResponse.CFilterEntry filtered_players = 2;
+	optional int32 base_slots = 3;
+	optional int32 additional_slots = 4;
+	optional int32 next_slot_cost = 5;
 }
 
 message CMsgClientToGCRemoveFilteredPlayer {
@@ -2533,9 +2454,41 @@ message CMsgGCToClientRemoveFilteredPlayerResponse {
 	optional CMsgGCToClientRemoveFilteredPlayerResponse.Result result = 1 [default = SUCCESS];
 }
 
+message CMsgClientToGCPurchaseFilteredPlayerSlot {
+	optional int32 additional_slots_current = 1;
+}
+
+message CMsgGCToClientPurchaseFilteredPlayerSlotResponse {
+	enum Result {
+		SUCCESS = 0;
+		FAILURE = 1;
+		CURRENT_SLOTCOUNT_DOESNT_MATCH = 2;
+		CANT_AFFORD = 3;
+	}
+
+	optional CMsgGCToClientPurchaseFilteredPlayerSlotResponse.Result result = 1 [default = SUCCESS];
+	optional int32 additional_slots = 2;
+	optional int32 next_slot_cost = 3;
+}
+
+message CMsgClientToGCUpdateFilteredPlayerNote {
+	optional fixed32 target_account_id = 1;
+	optional string new_note = 2;
+}
+
+message CMsgGCToClientUpdateFilteredPlayerNoteResponse {
+	enum Result {
+		SUCCESS = 0;
+		FAILURE = 1;
+		NOT_FOUND = 2;
+	}
+
+	optional CMsgGCToClientUpdateFilteredPlayerNoteResponse.Result result = 1 [default = SUCCESS];
+}
+
 message CMsgPartySearchPlayer {
 	optional fixed32 account_id = 1;
-	optional fixed64 match_id = 2 [(boxed_type) = "MatchID_t"];
+	optional fixed64 match_id = 2;
 	optional fixed32 creation_time = 3;
 }
 
@@ -2685,7 +2638,7 @@ message CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse {
 }
 
 message CMsgClientToGCSubmitPlayerMatchSurvey {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional sint32 rating = 3;
 	optional uint32 flags = 4;
 }
@@ -2776,73 +2729,6 @@ message CMsgClientToGCUnderDraftRedeemRewardResponse {
 	optional EUnderDraftResponse result = 1 [default = k_eInternalError];
 }
 
-message CMsgTeamFanContentAssetStatus {
-	optional ETeamFanContentAssetType asset_type = 1 [default = k_eFanContentAssetType_LogoPNG];
-	optional uint32 asset_index = 2;
-	optional ETeamFanContentAssetStatus asset_status = 3 [default = k_eFanContentAssetStatus_None];
-}
-
-message CMsgTeamFanContentAssetStatusResponse {
-	enum EResult {
-		k_eSuccess = 0;
-		k_eInternalError = 1;
-	}
-
-	optional CMsgTeamFanContentAssetStatusResponse.EResult result = 1 [default = k_eSuccess];
-}
-
-message CMsgTeamFanContentStatus {
-	message TeamStatus {
-		optional string name = 1;
-		optional uint32 team_id = 2;
-		optional string logo_url = 3;
-		optional ETeamFanContentStatus status = 4 [default = TEAM_FAN_CONTENT_STATUS_INVALID];
-		optional uint32 timestamp = 5;
-		optional uint64 ugc_logo = 7;
-		optional uint32 workshop_account_id = 8;
-		optional string abbreviation = 9;
-		optional uint32 voiceline_count = 10;
-		optional uint32 spray_count = 11;
-		optional uint32 emoticon_count = 12;
-		optional uint32 wallpaper_count = 13;
-		optional string comment = 14;
-		optional uint32 comment_timestamp = 15;
-		repeated CMsgTeamFanContentAssetStatus asset_status = 16;
-	}
-
-	repeated CMsgTeamFanContentStatus.TeamStatus team_status_list = 1;
-}
-
-message CMsgDraftTrivia {
-	message DraftTriviaHeroInfo {
-		optional uint32 hero_id = 1;
-		optional uint32 role = 2;
-	}
-
-	message DraftTriviaMatchInfo {
-		repeated CMsgDraftTrivia.DraftTriviaHeroInfo radiant_heroes = 1;
-		repeated CMsgDraftTrivia.DraftTriviaHeroInfo dire_heroes = 2;
-	}
-
-	message PreviousResult {
-		optional bool voted_correctly = 1;
-		optional bool voted_radiant = 2;
-		optional CMsgDraftTrivia.DraftTriviaMatchInfo match_hero_info = 3;
-		optional uint32 match_rank_tier = 4;
-		optional uint32 end_time = 5;
-		optional uint64 match_id = 6 [(boxed_type) = "MatchID_t"];
-	}
-
-	optional bool has_valid_match = 1;
-	optional CMsgDraftTrivia.DraftTriviaMatchInfo match_hero_info = 2;
-	optional uint32 match_rank_tier = 3;
-	optional uint32 end_time = 4;
-	optional uint32 event_id = 5;
-	optional bool current_match_voted_radiant = 6;
-	optional CMsgDraftTrivia.PreviousResult previous_result = 7;
-	optional uint32 current_streak = 8;
-}
-
 message CMsgClientToGCSubmitDraftTriviaMatchAnswer {
 	optional bool chose_radiant_as_winner = 1;
 	optional uint32 event_id = 2;
@@ -2872,6 +2758,8 @@ message CMsgClientToGCRecalibrateMMRResponse {
 		k_eTimeout = 2;
 		k_eTooBusy = 3;
 		k_eNotPermitted = 4;
+		k_eNotToSoon = 5;
+		k_eNotValid = 6;
 	}
 
 	optional CMsgClientToGCRecalibrateMMRResponse.EResponse result = 1 [default = k_eInternalError];
@@ -2879,7 +2767,7 @@ message CMsgClientToGCRecalibrateMMRResponse {
 
 message CMsgDOTAPostGameItemAwardNotification {
 	optional uint32 receiver_account_id = 1;
-	repeated uint32 item_def_index = 2 [(boxed_type) = "item_definition_index_t"];
+	repeated uint32 item_def_index = 2;
 	optional uint32 action_id = 3;
 }
 
@@ -3033,7 +2921,7 @@ message CMsgClientToGCSetEventActiveSeasonIDResponse {
 
 message CMsgClientToGCPurchaseLabyrinthBlessings {
 	optional EEvent event_id = 1 [default = EVENT_ID_NONE];
-	repeated int32 blessing_ids = 2 [(boxed_type) = "BlessingID_t"];
+	repeated int32 blessing_ids = 2;
 	optional bool debug = 3;
 	optional bool debug_remove = 4;
 }
@@ -3049,4 +2937,184 @@ message CMsgClientToGCPurchaseLabyrinthBlessingsResponse {
 	}
 
 	optional CMsgClientToGCPurchaseLabyrinthBlessingsResponse.EResponse result = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCGetStickerbookRequest {
+	optional uint32 account_id = 1;
+}
+
+message CMsgClientToGCGetStickerbookResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eNotAllowed = 3;
+		k_eTooBusy = 4;
+	}
+
+	optional CMsgClientToGCGetStickerbookResponse.EResponse response = 1 [default = k_eInternalError];
+	optional CMsgStickerbook stickerbook = 2;
+}
+
+message CMsgClientToGCCreateStickerbookPageRequest {
+	optional uint32 team_id = 1;
+	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
+	optional EStickerbookPageType page_type = 3 [default = STICKER_PAGE_GENERIC];
+}
+
+message CMsgClientToGCCreateStickerbookPageResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooManyPages = 3;
+		k_eTooBusy = 4;
+	}
+
+	optional CMsgClientToGCCreateStickerbookPageResponse.EResponse response = 1 [default = k_eInternalError];
+	optional uint32 page_number = 2;
+}
+
+message CMsgClientToGCDeleteStickerbookPageRequest {
+	optional uint32 page_num = 1;
+	optional uint32 sticker_count = 2;
+	optional uint32 sticker_max = 3;
+}
+
+message CMsgClientToGCDeleteStickerbookPageResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eInvalidStickerCount = 3;
+		k_eTooBusy = 4;
+		k_eInvalidStickerMax = 5;
+		k_eInvalidPage = 6;
+	}
+
+	optional CMsgClientToGCDeleteStickerbookPageResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCPlaceStickersRequest {
+	message StickerItem {
+		optional uint32 page_num = 2;
+		optional CMsgStickerbookSticker sticker = 3;
+	}
+
+	repeated CMsgClientToGCPlaceStickersRequest.StickerItem sticker_items = 1;
+}
+
+message CMsgClientToGCPlaceStickersResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eMissingItem = 3;
+		k_eTooBusy = 4;
+		k_eDuplicateItem = 5;
+		k_eInvalidPage = 6;
+		k_ePageTypeMismatch = 7;
+		k_eTooManyStickers = 8;
+	}
+
+	optional CMsgClientToGCPlaceStickersResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCPlaceCollectionStickersRequest {
+	message Slot {
+		optional uint32 page_num = 1;
+		optional uint32 slot = 2;
+		optional uint64 new_item_id = 3;
+		optional uint32 old_item_def_id = 4;
+		optional uint32 old_quality = 5;
+	}
+
+	repeated CMsgClientToGCPlaceCollectionStickersRequest.Slot slots = 1;
+}
+
+message CMsgClientToGCPlaceCollectionStickersResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eMissingItem = 3;
+		k_eTooBusy = 4;
+		k_eDuplicateItem = 5;
+		k_eInvalidPage = 6;
+		k_ePageTypeMismatch = 7;
+		k_eOldItemMismatch = 8;
+		k_eInvalidSlot = 9;
+		k_eSlotTypeMismatch = 10;
+	}
+
+	optional CMsgClientToGCPlaceCollectionStickersResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCOrderStickerbookTeamPageRequest {
+	optional CMsgStickerbookTeamPageOrderSequence page_order_sequence = 1;
+}
+
+message CMsgClientToGCOrderStickerbookTeamPageResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooManyPages = 3;
+		k_eTooBusy = 4;
+		k_eInvalidPage = 5;
+	}
+
+	optional CMsgClientToGCOrderStickerbookTeamPageResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCSetHeroSticker {
+	optional uint32 hero_id = 1;
+	optional uint64 new_item_id = 2;
+	optional uint64 old_item_id = 3;
+}
+
+message CMsgClientToGCSetHeroStickerResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eMissingItem = 3;
+		k_eTooBusy = 4;
+		k_eOldItemMismatch = 5;
+		k_eInvalidHero = 6;
+	}
+
+	optional CMsgClientToGCSetHeroStickerResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCGetHeroStickers {
+}
+
+message CMsgClientToGCGetHeroStickersResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooBusy = 4;
+	}
+
+	optional CMsgClientToGCGetHeroStickersResponse.EResponse response = 1 [default = k_eInternalError];
+	optional CMsgStickerHeroes sticker_heroes = 2;
+}
+
+message CMsgClientToGCSetFavoritePage {
+	optional uint32 page_num = 1;
+	optional bool clear = 2;
+}
+
+message CMsgClientToGCSetFavoritePageResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooBusy = 4;
+		k_eInvalidPage = 5;
+	}
+
+	optional CMsgClientToGCSetFavoritePageResponse.EResponse response = 1 [default = k_eInternalError];
 }

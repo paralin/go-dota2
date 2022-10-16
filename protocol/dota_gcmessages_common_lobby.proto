@@ -1,13 +1,11 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "steammessages.proto";
 import "dota_shared_enums.proto";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
-option (additional_includes) = "game/shared/econ/econ_item_constants.h";
 
 enum ELobbyMemberCoachRequestState {
 	k_eLobbyMemberCoachRequestState_None = 0;
@@ -54,12 +52,13 @@ message CMsgLobbyEventPoints {
 		optional uint32 message_id_end = 2;
 	}
 
-	message PeriodicResourceValues {
-		optional uint32 remaining = 1;
-		optional uint32 max = 2;
+	message PeriodicResourceData {
+		optional uint32 periodic_resource_id = 1;
+		optional uint32 remaining = 2;
+		optional uint32 max = 3;
 	}
 
-	message EventGameCustomActions {
+	message NetworkedEventAction {
 		optional uint32 action_id = 1;
 		optional uint32 times_granted = 2;
 	}
@@ -72,18 +71,14 @@ message CMsgLobbyEventPoints {
 		optional uint64 active_effects_mask = 12;
 		repeated CMsgLobbyEventPoints.ChatWheelMessageRange unlocked_chat_wheel_message_ranges = 13;
 		optional CMsgLobbyPlayerPlusSubscriptionData plus_subscription_data = 16;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues wager_tokens = 17;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues rank_wager_tokens = 18;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues tip_tokens = 19;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues periodic_point_adjustments = 21;
 		repeated CMsgLobbyEventPoints.PingWheelMessageRange unlocked_ping_wheel_message_ranges = 22;
 		optional uint32 wager_streak = 23;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues bounties = 24;
-		repeated CMsgLobbyEventPoints.EventGameCustomActions event_game_custom_actions = 25;
+		repeated CMsgLobbyEventPoints.NetworkedEventAction event_game_custom_actions = 25;
 		optional uint32 tip_amount_index = 26;
 		optional uint32 active_event_season_id = 27;
 		optional uint32 teleport_fx_level = 28;
-		optional CMsgLobbyEventPoints.PeriodicResourceValues arcana_event_periodic_resource = 29;
+		repeated CMsgLobbyEventPoints.NetworkedEventAction networked_event_actions = 30;
+		repeated CMsgLobbyEventPoints.PeriodicResourceData periodic_resources = 31;
 	}
 
 	optional uint32 event_id = 1;
@@ -149,11 +144,20 @@ message CSODOTALobbyMember {
 	optional sint32 queue_point_adjustment = 47;
 	optional int32 rank_tier = 48;
 	optional uint32 title = 50;
-	optional uint32 guild_id = 51 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 51;
 	optional uint32 reports_available = 52;
 	optional bool is_steam_china = 54;
 	optional uint32 live_spectator_account_id = 55;
 	optional uint32 comms_reports_available = 56;
+}
+
+message CSODOTAServerLobbyMember {
+}
+
+message CSODOTAStaticLobbyMember {
+}
+
+message CSODOTAServerStaticLobbyMember {
 }
 
 message CLobbyTeamDetails {
@@ -174,7 +178,7 @@ message CLobbyTeamDetails {
 }
 
 message CLobbyGuildDetails {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional uint32 guild_primary_color = 2;
 	optional uint32 guild_secondary_color = 3;
 	optional uint32 guild_pattern = 4;
@@ -188,7 +192,7 @@ message CLobbyGuildDetails {
 }
 
 message CLobbyTimedRewardDetails {
-	optional uint32 item_def_index = 2 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 item_def_index = 2;
 	optional bool is_supply_crate = 3;
 	optional bool is_timed_drop = 4;
 	optional uint32 account_id = 5;
@@ -203,7 +207,7 @@ message CLobbyBroadcastChannelInfo {
 }
 
 message CLobbyGuildChallenge {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 challenge_instance_id = 3;
 	optional uint32 challenge_parameter = 4;
@@ -244,11 +248,10 @@ message CSODOTALobby {
 		EVENT_MATCH = 12;
 		GAUNTLET = 13;
 		NEW_PLAYER_POOL = 14;
+		FEATURED_GAMEMODE = 15;
 	}
 
 	optional uint64 lobby_id = 1 [(key_field) = true];
-	repeated CSODOTALobbyMember v2_members = 2;
-	repeated CSODOTALobbyMember v2_left_members = 7;
 	repeated CSODOTALobbyMember all_members = 120;
 	repeated uint32 member_indices = 121;
 	repeated uint32 left_member_indices = 122;
@@ -273,7 +276,7 @@ message CSODOTALobby {
 	optional uint32 num_spectators = 23;
 	optional uint32 matchgroup = 25;
 	optional DOTA_CM_PICK cm_pick = 28 [default = DOTA_CM_RANDOM];
-	optional uint64 match_id = 30 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 30;
 	optional bool allow_spectating = 31 [default = true];
 	optional DOTABotDifficulty bot_difficulty_radiant = 36 [default = BOT_DIFFICULTY_HARD];
 	optional DOTAGameVersion game_version = 37 [default = GAME_VERSION_CURRENT];
@@ -310,8 +313,8 @@ message CSODOTALobby {
 	optional fixed64 custom_game_crc = 76;
 	optional bool custom_game_auto_created_lobby = 77;
 	optional fixed32 custom_game_timestamp = 80;
-	repeated uint64 previous_series_matches = 81 [(boxed_type) = "MatchID_t"];
-	optional uint64 previous_match_override = 82 [(boxed_type) = "MatchID_t"];
+	repeated uint64 previous_series_matches = 81;
+	optional uint64 previous_match_override = 82;
 	optional bool custom_game_uses_account_records = 83;
 	optional uint32 game_start_time = 87;
 	optional LobbyDotaPauseSetting pause_setting = 88 [default = LobbyDotaPauseSetting_Unlimited];
@@ -336,7 +339,6 @@ message CSODOTALobby {
 	optional string lan_host_ping_location = 109;
 	optional uint32 league_node_id = 110;
 	optional uint32 match_duration = 111;
-	optional bool custom_game_browseable = 112;
 	optional uint32 league_phase = 113;
 	optional bool record_detailed_stats = 114;
 	optional bool experimental_gameplay_enabled = 116;
@@ -347,6 +349,20 @@ message CSODOTALobby {
 	repeated CMsgLobbyCoachFriendRequest coach_friend_requests = 125;
 	optional bool is_in_steam_china = 126;
 	optional bool with_scenario_save = 127;
+	optional uint32 lobby_creation_time = 128;
+	optional string event_game_definition = 129;
+}
+
+message CSODOTAServerLobby {
+	repeated CSODOTAServerLobbyMember all_members = 1;
+}
+
+message CSODOTAStaticLobby {
+	repeated CSODOTAStaticLobbyMember all_members = 1;
+}
+
+message CSODOTAServerStaticLobby {
+	repeated CSODOTAServerStaticLobbyMember all_members = 1;
 }
 
 message CMsgLobbyPlaytestDetails {
@@ -354,7 +370,7 @@ message CMsgLobbyPlaytestDetails {
 }
 
 message CMsgLocalServerGuildData {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 guild_points = 3;
 	optional uint64 guild_logo = 4;

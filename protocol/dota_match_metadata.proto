@@ -1,7 +1,6 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "base_gcmessages.proto";
 import "dota_gcmessages_common_match_management.proto";
 import "dota_gcmessages_common_lobby.proto";
@@ -12,7 +11,7 @@ option cc_generic_services = false;
 
 message CDOTAMatchMetadataFile {
 	required int32 version = 1;
-	required uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+	required uint64 match_id = 2;
 	optional CDOTAMatchMetadata metadata = 3;
 	optional bytes private_metadata = 5;
 }
@@ -36,6 +35,8 @@ message CDOTAMatchMetadata {
 			optional uint32 deaths = 4;
 			optional uint32 assists = 5;
 			optional uint32 level = 6;
+			repeated uint32 backpack_item_id = 7;
+			optional uint32 neutral_item_id = 8;
 		}
 
 		message AutoStyleCriteria {
@@ -45,17 +46,17 @@ message CDOTAMatchMetadata {
 
 		message StrangeGemProgress {
 			optional uint32 kill_eater_type = 1;
-			optional uint32 gem_item_def_index = 2 [(boxed_type) = "item_definition_index_t"];
+			optional uint32 gem_item_def_index = 2;
 			optional uint32 required_hero_id = 3;
 			optional uint32 starting_value = 4;
 			optional uint32 ending_value = 5;
-			optional uint32 owner_item_def_index = 6 [(boxed_type) = "item_definition_index_t"];
-			optional uint64 owner_item_id = 7 [(boxed_type) = "itemid_t"];
+			optional uint32 owner_item_def_index = 6;
+			optional uint64 owner_item_id = 7;
 		}
 
 		message VictoryPrediction {
-			optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
-			optional uint32 item_def_index = 2 [(boxed_type) = "item_definition_index_t"];
+			optional uint64 item_id = 1;
+			optional uint32 item_def_index = 2;
 			optional uint32 starting_value = 3;
 			optional bool is_victory = 4;
 		}
@@ -85,6 +86,12 @@ message CDOTAMatchMetadata {
 			optional uint32 reason = 2;
 		}
 
+		message PeriodicResourceData {
+			optional uint32 periodic_resource_id = 1;
+			optional uint32 remaining = 2;
+			optional uint32 max = 3;
+		}
+
 		message EventData {
 			optional uint32 event_id = 1;
 			optional uint32 event_points = 2;
@@ -110,6 +117,7 @@ message CDOTAMatchMetadata {
 			repeated CDOTAMatchMetadata.Team.CandyGrant candy_points_granted = 23;
 			optional uint32 active_season_id = 24;
 			optional bool cavern_crawl_half_credit = 25;
+			repeated CDOTAMatchMetadata.Team.PeriodicResourceData periodic_resources = 26;
 		}
 
 		message GauntletProgress {
@@ -118,9 +126,15 @@ message CDOTAMatchMetadata {
 			optional uint32 gauntlet_losses = 4;
 		}
 
+		message FeaturedGamemodeProgress {
+			optional uint32 start_value = 1;
+			optional uint32 end_value = 2;
+			optional uint32 max_value = 3;
+		}
+
 		message Player {
 			message ContractProgress {
-				optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+				optional uint32 guild_id = 1;
 				optional uint32 event_id = 2;
 				optional uint32 challenge_instance_id = 3;
 				optional uint32 challenge_parameter = 4;
@@ -175,7 +189,13 @@ message CDOTAMatchMetadata {
 			optional EDOTAMMRBoostType rank_mmr_boost_type = 46 [default = k_EDOTAMMRBoostType_None];
 			optional CDOTAMatchMetadata.Team.GauntletProgress gauntlet_progress = 47;
 			repeated CDOTAMatchMetadata.Team.Player.ContractProgress contract_progress = 48;
-			repeated uint32 guild_ids = 49 [(boxed_type) = "GuildID_t"];
+			repeated uint32 guild_ids = 49;
+			repeated float graph_hero_damage = 50;
+			optional DOTA_GC_TEAM team_number = 51 [default = DOTA_GC_TEAM_GOOD_GUYS];
+			optional uint32 team_slot = 52;
+			optional CDOTAMatchMetadata.Team.FeaturedGamemodeProgress featured_gamemode_progress = 53;
+			optional uint32 featured_hero_sticker_index = 54;
+			optional uint32 featured_hero_sticker_quality = 55;
 		}
 
 		optional uint32 dota_team = 1;
@@ -184,7 +204,7 @@ message CDOTAMatchMetadata {
 		repeated float graph_gold_earned = 4;
 		repeated float graph_net_worth = 5;
 		optional bool cm_first_pick = 6;
-		optional uint32 cm_captain_player_id = 7;
+		optional int32 cm_captain_player_id = 7;
 		repeated uint32 cm_bans = 8;
 		repeated uint32 cm_picks = 9;
 		optional uint32 cm_penalty = 10;
@@ -196,7 +216,7 @@ message CDOTAMatchMetadata {
 			optional uint32 progress = 2;
 		}
 
-		optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+		optional uint32 guild_id = 1;
 		optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 		optional uint32 challenge_instance_id = 3;
 		optional uint32 challenge_parameter = 4;
@@ -216,6 +236,7 @@ message CDOTAMatchMetadata {
 	optional CMsgMatchMatchmakingStats matchmaking_stats = 8;
 	optional CMvpData mvp_data = 9;
 	repeated CDOTAMatchMetadata.GuildChallengeProgress guild_challenge_progress = 10;
+	optional bytes custom_post_game_table = 11;
 }
 
 message CDOTAMatchPrivateMetadata {
@@ -299,6 +320,8 @@ message CDOTAMatchPrivateMetadata {
 			repeated float graph_denies = 11;
 			optional CDOTAMatchPrivateMetadata.Team.Player.GoldReceived gold_received = 12;
 			optional CDOTAMatchPrivateMetadata.Team.Player.XPReceived xp_received = 13;
+			optional DOTA_GC_TEAM team_number = 14 [default = DOTA_GC_TEAM_GOOD_GUYS];
+			optional uint32 team_slot = 15;
 		}
 
 		message Building {

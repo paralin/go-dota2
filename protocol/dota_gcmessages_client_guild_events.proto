@@ -1,7 +1,6 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "dota_shared_enums.proto";
 
 option optimize_for = SPEED;
@@ -63,7 +62,7 @@ message CMsgGuildEventMember {
 }
 
 message CMsgClientToGCRequestAccountGuildEventData {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -86,7 +85,7 @@ message CMsgClientToGCRequestAccountGuildEventDataResponse {
 }
 
 message CMsgGCToClientAccountGuildEventDataUpdated {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint32 update_flags = 3;
 	optional CMsgAccountGuildEventData guild_event_data = 4;
@@ -94,7 +93,7 @@ message CMsgGCToClientAccountGuildEventDataUpdated {
 }
 
 message CMsgClientToGCRequestActiveGuildContracts {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -117,12 +116,12 @@ message CMsgClientToGCRequestActiveGuildContractsResponse {
 }
 
 message CMsgGCToClientActiveGuildContractsUpdated {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
 message CMsgClientToGCSelectGuildContract {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional uint64 contract_id = 3;
 	optional uint32 contract_slot = 4;
@@ -142,17 +141,18 @@ message CMsgClientToGCSelectGuildContractResponse {
 		k_eInvalidContractID = 9;
 		k_eAlreadyAssigned = 10;
 		k_eInvalidContractSlot = 11;
-		k_eContractSlotLocked = 12;
+		k_eContractSlotLockedGuild = 12;
 		k_eContractSlotCooldown = 13;
 		k_eContractDuplicate = 14;
 		k_eContractSlotTimeError = 15;
+		k_eContractSlotLockedDotaPlus = 16;
 	}
 
 	optional CMsgClientToGCSelectGuildContractResponse.EResponse result = 1 [default = k_eInternalError];
 }
 
 message CMsgClientToGCRequestActiveGuildChallenge {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -174,13 +174,13 @@ message CMsgClientToGCRequestActiveGuildChallengeResponse {
 }
 
 message CMsgGCToClientActiveGuildChallengeUpdated {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 	optional CMsgGuildChallenge active_challenge = 3;
 }
 
 message CMsgClientToGCRequestGuildEventMembers {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 
@@ -205,7 +205,7 @@ message CMsgGuildLeaderboardCombinedResponse {
 	optional EEvent event_id = 1 [default = EVENT_ID_NONE];
 	optional uint32 region = 2;
 	optional uint32 last_updated = 3;
-	repeated uint32 guild_id = 4 [packed = true, (boxed_type) = "GuildID_t"];
+	repeated uint32 guild_id = 4 [packed = true];
 	repeated uint32 rank = 5 [packed = true];
 	repeated uint32 current_percentile = 6 [packed = true];
 	repeated uint32 weekly_percentile = 7 [packed = true];
@@ -213,7 +213,7 @@ message CMsgGuildLeaderboardCombinedResponse {
 }
 
 message CMsgClientToGCClaimLeaderboardRewards {
-	optional uint32 guild_id = 1 [(boxed_type) = "GuildID_t"];
+	optional uint32 guild_id = 1;
 	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
 }
 

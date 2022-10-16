@@ -1,14 +1,12 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "steammessages.proto";
 import "gcsdk_gcmessages.proto";
 import "dota_shared_enums.proto";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
-option (additional_includes) = "game/shared/econ/econ_item_constants.h";
 
 enum ESpecialPingValue {
 	k_ESpecialPingValue_NoData = 16382;
@@ -97,6 +95,20 @@ enum EHeroRelicRarity {
 	HERO_RELIC_RARITY_INVALID = -1;
 	HERO_RELIC_RARITY_COMMON = 0;
 	HERO_RELIC_RARITY_RARE = 1;
+}
+
+enum EStickerbookAuditAction {
+	STICKERBOOK_AUDIT_CREATE_PAGE = 0;
+	STICKERBOOK_AUDIT_DELETE_PAGE = 1;
+	STICKERBOOK_AUDIT_STICK_STICKERS = 2;
+	STICKERBOOK_AUDIT_REPLACE_STICKERS = 3;
+	STICKERBOOK_AUDIT_HERO_STICKER = 4;
+}
+
+enum EStickerbookPageType {
+	STICKER_PAGE_GENERIC = 0;
+	STICKER_PAGE_TEAM = 1;
+	STICKER_PAGE_TALENT = 2;
 }
 
 message CSODOTAGameAccountClient {
@@ -192,6 +204,16 @@ message CMsgLobbyGauntletProgress {
 	repeated CMsgLobbyGauntletProgress.AccountProgress accounts = 1;
 }
 
+message CMsgLobbyFeaturedGamemodeProgress {
+	message AccountProgress {
+		optional uint32 account_id = 1;
+		optional uint32 current_value = 2;
+		optional uint32 max_value = 3;
+	}
+
+	repeated CMsgLobbyFeaturedGamemodeProgress.AccountProgress accounts = 1;
+}
+
 message CMsgBattleCupVictory {
 	optional uint32 account_id = 1;
 	optional uint32 win_date = 2;
@@ -217,9 +239,9 @@ message CProtoItemHeroStatue {
 	optional uint32 status_effect_index = 2;
 	optional string sequence_name = 3;
 	optional float cycle = 4;
-	repeated uint32 wearable = 5 [(boxed_type) = "item_definition_index_t"];
+	repeated uint32 wearable = 5;
 	optional string inscription = 6;
-	repeated uint32 style = 7 [(boxed_type) = "style_index_t"];
+	repeated uint32 style = 7;
 	optional bool tournament_drop = 8;
 }
 
@@ -297,6 +319,33 @@ message CMatchHeroSelectEvent {
 	optional uint32 hero_id = 3;
 }
 
+message CMatchClip {
+	message ClipDetails {
+		optional CMatchClip.CameraType camera_type = 1 [default = INVALID];
+		optional bytes camera_data = 2;
+		repeated string video_host_links = 3;
+		repeated string social_media_links = 4;
+	}
+
+	enum CameraType {
+		INVALID = 0;
+		PLAYER_PERSPECTIVE = 1;
+		HERO_CHASE = 2;
+		BROADCASTER = 3;
+		USER_CAMERA = 4;
+	}
+
+	optional uint64 match_id = 1;
+	optional uint32 account_id = 2;
+	optional uint32 game_time_seconds = 3;
+	optional uint32 duration_seconds = 4;
+	optional uint32 player_id = 5;
+	optional uint32 hero_id = 6;
+	optional uint32 ability_id = 7;
+	optional string comment = 8;
+	optional CMatchClip.ClipDetails clip_details = 9;
+}
+
 message CPartySearchClientParty {
 	optional fixed64 party_id = 1;
 	optional int32 beacon_type = 2;
@@ -305,7 +354,7 @@ message CPartySearchClientParty {
 
 message CMsgDOTAHasItemQuery {
 	optional uint32 account_id = 1;
-	optional uint64 item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 2;
 }
 
 message CMsgDOTAHasItemResponse {
@@ -314,13 +363,13 @@ message CMsgDOTAHasItemResponse {
 
 message CMsgGCGetPlayerCardItemInfo {
 	optional uint32 account_id = 1;
-	repeated uint64 player_card_item_ids = 2 [(boxed_type) = "itemid_t"];
+	repeated uint64 player_card_item_ids = 2;
 	optional uint32 all_for_event = 3;
 }
 
 message CMsgGCGetPlayerCardItemInfoResponse {
 	message PlayerCardInfo {
-		optional uint64 player_card_item_id = 1 [(boxed_type) = "itemid_t"];
+		optional uint64 player_card_item_id = 1;
 		optional uint32 account_id = 2;
 		optional uint64 packed_bonuses = 3;
 	}
@@ -352,7 +401,7 @@ message CMsgDOTAProfileCard {
 
 		message Item {
 			optional bytes serialized_item = 1;
-			optional uint64 item_id = 2 [(boxed_type) = "itemid_t"];
+			optional uint64 item_id = 2;
 		}
 
 		message Hero {
@@ -404,6 +453,7 @@ message CMsgDOTAProfileCard {
 	optional uint32 rank_tier_peak = 21;
 	optional uint32 title = 23;
 	optional uint64 favorite_team_packed = 24;
+	optional uint32 lifetime_games = 25;
 }
 
 message CSODOTAPlayerChallenge {
@@ -481,7 +531,7 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message HeroToHeroStats {
-		optional uint32 victimid = 1;
+		optional int32 victimid = 1;
 		optional uint32 kills = 2;
 		optional uint32 assists = 3;
 	}
@@ -492,7 +542,7 @@ message CMsgDOTARealtimeGameStats {
 
 	message PlayerDetails {
 		optional uint32 accountid = 1;
-		optional uint32 playerid = 2;
+		optional int32 playerid = 2;
 		optional string name = 3;
 		optional uint32 team = 4;
 		optional uint32 heroid = 5;
@@ -554,15 +604,13 @@ message CMsgDOTARealtimeGameStats {
 	}
 
 	message KillDetails {
-		optional uint32 player_id = 1;
+		optional int32 player_id = 1;
 		optional int32 death_time = 2;
-		optional uint32 killer_player_id = 3;
+		optional int32 killer_player_id = 3;
 	}
 
 	message BroadcasterDetails {
-		optional uint32 player_id = 1;
-		optional uint32 selected_hero = 2;
-		optional uint32 selected_graph = 3;
+		optional int32 player_id = 1;
 	}
 
 	message PickBanDetails {
@@ -572,7 +620,7 @@ message CMsgDOTARealtimeGameStats {
 
 	message MatchDetails {
 		optional fixed64 server_steam_id = 1;
-		optional uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+		optional uint64 match_id = 2;
 		optional uint32 timestamp = 3;
 		optional float time_of_day = 4;
 		optional bool is_nightstalker_night = 5;
@@ -589,6 +637,8 @@ message CMsgDOTARealtimeGameStats {
 		optional uint32 league_node_id = 18;
 		optional bool single_team = 16;
 		optional uint32 cheers_peak = 17;
+		optional uint32 lobby_type = 20;
+		optional uint32 start_timestamp = 21;
 	}
 
 	message GraphData {
@@ -646,7 +696,7 @@ message CMsgDOTARealtimeGameStatsTerse {
 
 	message PlayerDetails {
 		optional uint32 accountid = 1;
-		optional uint32 playerid = 2;
+		optional int32 playerid = 2;
 		optional string name = 3;
 		optional uint32 team = 4;
 		optional uint32 heroid = 5;
@@ -682,7 +732,7 @@ message CMsgDOTARealtimeGameStatsTerse {
 
 	message MatchDetails {
 		optional fixed64 server_steam_id = 1;
-		optional uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+		optional uint64 match_id = 2;
 		optional uint32 timestamp = 3;
 		optional int32 game_time = 4;
 		repeated uint32 steam_broadcaster_account_ids = 6;
@@ -692,6 +742,8 @@ message CMsgDOTARealtimeGameStatsTerse {
 		optional uint32 game_state = 10;
 		repeated CMsgDOTARealtimeGameStatsTerse.PickBanDetails picks = 11;
 		repeated CMsgDOTARealtimeGameStatsTerse.PickBanDetails bans = 12;
+		optional uint32 lobby_type = 13;
+		optional uint32 start_timestamp = 14;
 	}
 
 	message GraphData {
@@ -717,7 +769,7 @@ message CMsgGCToClientMatchGroupsVersion {
 }
 
 message CMsgDOTASDOHeroStatsHistory {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional uint32 game_mode = 2;
 	optional uint32 lobby_type = 3;
 	optional uint32 start_time = 4;
@@ -806,6 +858,7 @@ message CMsgDOTASeasonPredictions {
 			Special = 4;
 			YesNo = 5;
 			QualifiersTeam = 6;
+			LastChanceTeam = 7;
 		}
 
 		enum EAnswerType {
@@ -847,7 +900,7 @@ message CMsgDOTASeasonPredictions {
 
 message CMsgAvailablePredictions {
 	message MatchPrediction {
-		optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+		optional uint64 match_id = 1;
 		repeated CMsgInGamePrediction predictions = 2;
 	}
 
@@ -914,7 +967,7 @@ message CMsgDOTAMatch {
 		optional uint32 last_hits = 19;
 		optional uint32 denies = 20;
 		optional uint32 gold_per_min = 21;
-		optional uint32 XP_per_min = 22;
+		optional uint32 xp_per_min = 22;
 		optional uint32 gold_spent = 23;
 		optional uint32 hero_damage = 24;
 		optional uint32 tower_damage = 25;
@@ -959,6 +1012,8 @@ message CMsgDOTAMatch {
 		optional uint32 lane_selection_flags = 75;
 		optional uint32 bounty_runes = 77;
 		optional uint32 outposts_captured = 78;
+		optional DOTA_GC_TEAM team_number = 80 [default = DOTA_GC_TEAM_GOOD_GUYS];
+		optional uint32 team_slot = 81;
 	}
 
 	message BroadcasterInfo {
@@ -994,9 +1049,9 @@ message CMsgDOTAMatch {
 	}
 
 	optional uint32 duration = 3;
-	optional fixed32 startTime = 4;
+	optional fixed32 starttime = 4;
 	repeated CMsgDOTAMatch.Player players = 5;
-	optional uint64 match_id = 6 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 6;
 	repeated uint32 tower_status = 8;
 	repeated uint32 barracks_status = 9;
 	optional uint32 cluster = 10;
@@ -1058,7 +1113,7 @@ message CMsgPlayerCard {
 
 message CMsgDOTAFantasyPlayerStats {
 	optional uint32 player_account_id = 1;
-	optional uint64 match_id = 2 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 2;
 	optional bool match_completed = 3;
 	optional uint32 team_id = 4;
 	optional uint32 league_id = 5;
@@ -1088,7 +1143,7 @@ message CMsgDOTABotDebugInfo {
 		message Mode {
 			optional uint32 mode_id = 1;
 			optional float desire = 2;
-			optional uint32 target_entity = 3;
+			optional int32 target_entity = 3;
 			optional uint32 target_x = 4;
 			optional uint32 target_y = 5;
 			optional uint32 target_z = 6;
@@ -1099,7 +1154,7 @@ message CMsgDOTABotDebugInfo {
 			optional string action_target = 2;
 		}
 
-		optional uint32 player_owner_id = 1;
+		optional int32 player_owner_id = 1;
 		optional uint32 hero_id = 2;
 		optional uint32 difficulty = 3;
 		optional uint32 power_current = 4;
@@ -1135,7 +1190,7 @@ message CMsgSuccessfulHero {
 }
 
 message CMsgRecentMatchInfo {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional DOTA_GameMode game_mode = 2 [default = DOTA_GAMEMODE_NONE];
 	optional uint32 kills = 3;
 	optional uint32 deaths = 4;
@@ -1144,6 +1199,8 @@ message CMsgRecentMatchInfo {
 	optional uint32 player_slot = 7;
 	optional EMatchOutcome match_outcome = 8 [default = k_EMatchOutcome_Unknown];
 	optional uint32 timestamp = 9;
+	optional uint32 lobby_type = 10;
+	optional uint32 team_number = 11;
 }
 
 message CMsgMatchTips {
@@ -1168,6 +1225,7 @@ message CMsgDOTAMatchMinimal {
 		optional uint32 player_slot = 7;
 		optional string pro_name = 8;
 		optional uint32 level = 9;
+		optional DOTA_GC_TEAM team_number = 10 [default = DOTA_GC_TEAM_GOOD_GUYS];
 	}
 
 	message Tourney {
@@ -1188,7 +1246,7 @@ message CMsgDOTAMatchMinimal {
 		optional string dire_team_logo_url = 15;
 	}
 
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional fixed32 start_time = 2;
 	optional uint32 duration = 3;
 	optional DOTA_GameMode game_mode = 4 [default = DOTA_GAMEMODE_NONE];
@@ -1197,10 +1255,11 @@ message CMsgDOTAMatchMinimal {
 	optional EMatchOutcome match_outcome = 8 [default = k_EMatchOutcome_Unknown];
 	optional uint32 radiant_score = 9;
 	optional uint32 dire_score = 10;
+	optional uint32 lobby_type = 11;
 }
 
 message CMsgConsumableUsage {
-	optional uint32 item_def = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 item_def = 1;
 	optional int32 quantity_change = 2;
 }
 
@@ -1238,7 +1297,7 @@ message CMsgCustomGameWhitelistForEdit {
 }
 
 message CMsgPlayerRecentMatchInfo {
-	optional uint64 match_id = 1 [(boxed_type) = "MatchID_t"];
+	optional uint64 match_id = 1;
 	optional uint32 timestamp = 2;
 	optional uint32 duration = 3;
 	optional bool win = 4;
@@ -1389,12 +1448,18 @@ message CMsgDOTATriviaQuestionAnswersSummary {
 	repeated uint32 picked_count = 2;
 }
 
+message CMsgGameDataSpecialValueBonus {
+	optional string name = 1;
+	optional float value = 2;
+	optional uint32 operation = 3;
+}
+
 message CMsgGameDataSpecialValues {
 	optional string name = 1;
 	repeated float values_float = 2;
-	repeated int32 values_int = 3;
 	optional bool is_percentage = 4;
 	optional string heading_loc = 5;
+	repeated CMsgGameDataSpecialValueBonus bonuses = 6;
 }
 
 message CMsgGameDataAbilityOrItem {
@@ -1513,4 +1578,68 @@ message CMsgGameDataItemAbilityList {
 
 message CMsgLobbyAbilityDraftData {
 	optional bool shuffle_draft_order = 1;
+}
+
+message CSOEconItemDropRateBonus {
+	optional uint32 account_id = 1 [(key_field) = true];
+	optional fixed32 expiration_date = 2;
+	optional float bonus = 3 [(key_field) = true];
+	optional uint32 bonus_count = 4;
+	optional uint64 item_id = 5;
+	optional uint32 def_index = 6;
+	optional uint32 seconds_left = 7;
+	optional uint32 booster_type = 8 [(key_field) = true];
+}
+
+message CSOEconItemTournamentPassport {
+	optional uint32 account_id = 1;
+	optional uint32 league_id = 2;
+	optional uint64 item_id = 3;
+	optional uint32 original_purchaser_id = 4;
+	optional uint32 passports_bought = 5;
+	optional uint32 version = 6;
+	optional uint32 def_index = 7;
+	optional uint32 reward_flags = 8;
+}
+
+message CMsgStickerbookSticker {
+	optional uint32 item_def_id = 1;
+	optional uint32 sticker_num = 2;
+	optional uint32 quality = 3;
+	optional float position_x = 4;
+	optional float position_y = 5;
+	optional float position_z = 8;
+	optional float rotation = 6;
+	optional float scale = 7;
+	optional uint64 source_item_id = 9;
+	optional uint32 depth_bias = 10;
+}
+
+message CMsgStickerbookPage {
+	optional uint32 page_num = 1;
+	optional EEvent event_id = 2 [default = EVENT_ID_NONE];
+	optional uint32 team_id = 3;
+	repeated CMsgStickerbookSticker stickers = 4;
+	optional EStickerbookPageType page_type = 5 [default = STICKER_PAGE_GENERIC];
+}
+
+message CMsgStickerbookTeamPageOrderSequence {
+	repeated uint32 page_numbers = 1;
+}
+
+message CMsgStickerbook {
+	repeated CMsgStickerbookPage pages = 1;
+	optional CMsgStickerbookTeamPageOrderSequence team_page_order_sequence = 2;
+	optional uint32 favorite_page_num = 3;
+}
+
+message CMsgStickerHero {
+	optional uint32 hero_id = 1;
+	optional uint32 item_def_id = 2;
+	optional uint32 quality = 3;
+	optional uint64 source_item_id = 4;
+}
+
+message CMsgStickerHeroes {
+	repeated CMsgStickerHero heroes = 1;
 }

@@ -1,13 +1,11 @@
 syntax = "proto2";
 package protocol;
 
-import "valve_extensions.proto";
 import "steammessages.proto";
 import "gcsdk_gcmessages.proto";
 
 option optimize_for = SPEED;
 option cc_generic_services = false;
-option (additional_includes) = "game/shared/econ/econ_item_constants.h";
 
 enum EGCBaseMsg {
 	k_EMsgGCReplicateConVars = 4002;
@@ -31,6 +29,7 @@ enum EGCBaseMsg {
 	k_EMsgGCAdditionalWelcomeMsgList = 4519;
 	k_EMsgGCToClientApplyRemoteConVars = 4520;
 	k_EMsgGCToServerApplyRemoteConVars = 4521;
+	k_EMsgClientToGCIntegrityStatus = 4522;
 }
 
 enum ECustomGameInstallStatus {
@@ -47,7 +46,7 @@ enum ECustomGameInstallStatus {
 }
 
 message CGCStorePurchaseInit_LineItem {
-	optional uint32 item_def_id = 1 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 item_def_id = 1;
 	optional uint32 quantity = 2;
 	optional uint32 cost_in_local_currency = 3;
 	optional uint32 purchase_type = 4;
@@ -141,22 +140,22 @@ message CSOEconGameAccountClient {
 }
 
 message CMsgApplyStrangePart {
-	optional uint64 strange_part_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 item_item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 strange_part_item_id = 1;
+	optional uint64 item_item_id = 2;
 }
 
 message CMsgApplyPennantUpgrade {
-	optional uint64 upgrade_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 pennant_item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 upgrade_item_id = 1;
+	optional uint64 pennant_item_id = 2;
 }
 
 message CMsgApplyEggEssence {
-	optional uint64 essence_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 egg_item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 essence_item_id = 1;
+	optional uint64 egg_item_id = 2;
 }
 
 message CSOEconItemAttribute {
-	optional uint32 def_index = 1;
+	optional uint32 def_index = 1 [default = 65535];
 	optional uint32 value = 2;
 	optional bytes value_bytes = 3;
 }
@@ -167,10 +166,10 @@ message CSOEconItemEquipped {
 }
 
 message CSOEconItem {
-	optional uint64 id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 id = 1;
 	optional uint32 account_id = 2;
 	optional uint32 inventory = 3;
-	optional uint32 def_index = 4 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 4;
 	optional uint32 quantity = 5 [default = 1];
 	optional uint32 level = 6 [default = 1];
 	optional uint32 quality = 7 [default = 4];
@@ -178,8 +177,8 @@ message CSOEconItem {
 	optional uint32 origin = 9 [default = 0];
 	repeated CSOEconItemAttribute attribute = 12;
 	optional CSOEconItem interior_item = 13;
-	optional uint32 style = 15 [default = 0, (boxed_type) = "style_index_t"];
-	optional uint64 original_id = 16 [default = 0, (boxed_type) = "itemid_t"];
+	optional uint32 style = 15 [default = 0];
+	optional uint64 original_id = 16 [default = 0];
 	repeated CSOEconItemEquipped equipped_state = 18;
 }
 
@@ -199,7 +198,7 @@ message CMsgReplicateConVars {
 message CMsgItemAcknowledged {
 	optional uint32 account_id = 1;
 	optional uint32 inventory = 2;
-	optional uint32 def_index = 3 [(boxed_type) = "item_definition_index_t"];
+	optional uint32 def_index = 3;
 	optional uint32 quality = 4;
 	optional uint32 rarity = 5;
 	optional uint32 origin = 6;
@@ -207,33 +206,11 @@ message CMsgItemAcknowledged {
 
 message CMsgSetItemPositions {
 	message ItemPosition {
-		optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
+		optional uint64 item_id = 1;
 		optional uint32 position = 2;
 	}
 
 	repeated CMsgSetItemPositions.ItemPosition item_positions = 1;
-}
-
-message CSOEconItemDropRateBonus {
-	optional uint32 account_id = 1 [(key_field) = true];
-	optional fixed32 expiration_date = 2;
-	optional float bonus = 3 [(key_field) = true];
-	optional uint32 bonus_count = 4;
-	optional uint64 item_id = 5 [(boxed_type) = "itemid_t"];
-	optional uint32 def_index = 6 [(boxed_type) = "item_definition_index_t"];
-	optional uint32 seconds_left = 7;
-	optional uint32 booster_type = 8 [(key_field) = true];
-}
-
-message CSOEconItemTournamentPassport {
-	optional uint32 account_id = 1;
-	optional uint32 league_id = 2;
-	optional uint64 item_id = 3 [(boxed_type) = "itemid_t"];
-	optional uint32 original_purchaser_id = 4;
-	optional uint32 passports_bought = 5;
-	optional uint32 version = 6;
-	optional uint32 def_index = 7 [(boxed_type) = "item_definition_index_t"];
-	optional uint32 reward_flags = 8;
 }
 
 message CMsgGCStorePurchaseCancel {
@@ -250,7 +227,7 @@ message CMsgGCStorePurchaseFinalize {
 
 message CMsgGCStorePurchaseFinalizeResponse {
 	optional uint32 result = 1;
-	repeated uint64 item_ids = 2 [(boxed_type) = "itemid_t"];
+	repeated uint64 item_ids = 2;
 }
 
 message CMsgGCToGCBannedWordListUpdated {
@@ -260,15 +237,6 @@ message CMsgGCToGCBannedWordListUpdated {
 message CMsgGCToGCDirtySDOCache {
 	optional uint32 sdo_type = 1;
 	optional uint64 key_uint64 = 2;
-}
-
-message CMsgGCToGCApplyLocalizationDiff {
-	optional uint32 language = 1;
-	optional string packed_diff = 2;
-}
-
-message CMsgGCToGCApplyLocalizationDiffResponse {
-	optional bool success = 1;
 }
 
 message CMsgSDONoMemcached {
@@ -290,8 +258,8 @@ message CMsgGCToGCWebAPIAccountChanged {
 }
 
 message CMsgExtractGems {
-	optional uint64 tool_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 item_item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 tool_item_id = 1;
+	optional uint64 item_item_id = 2;
 	optional uint32 item_socket_id = 3 [default = 65535];
 }
 
@@ -304,13 +272,13 @@ message CMsgExtractGemsResponse {
 		k_ExtractGems_Failed_FailedToRemoveGem = 4;
 	}
 
-	optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 1;
 	optional CMsgExtractGemsResponse.EExtractGems response = 2 [default = k_ExtractGems_Succeeded];
 }
 
 message CMsgAddSocket {
-	optional uint64 tool_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint64 item_item_id = 2 [(boxed_type) = "itemid_t"];
+	optional uint64 tool_item_id = 1;
+	optional uint64 item_item_id = 2;
 	optional bool unusual = 3;
 }
 
@@ -322,18 +290,18 @@ message CMsgAddSocketResponse {
 		k_AddSocket_Failed_FailedToAddSocket = 3;
 	}
 
-	optional uint64 item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_id = 1;
 	repeated uint32 updated_socket_index = 2;
 	optional CMsgAddSocketResponse.EAddSocket response = 3 [default = k_AddSocket_Succeeded];
 }
 
 message CMsgAddItemToSocketData {
-	optional uint64 gem_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint32 socket_index = 2;
+	optional uint64 gem_item_id = 1;
+	optional uint32 socket_index = 2 [default = 65535];
 }
 
 message CMsgAddItemToSocket {
-	optional uint64 item_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_item_id = 1;
 	repeated CMsgAddItemToSocketData gems_to_socket = 2;
 }
 
@@ -349,14 +317,14 @@ message CMsgAddItemToSocketResponse {
 		k_AddGem_Failed_SocketContainsUnremovableGem = 7;
 	}
 
-	optional uint64 item_item_id = 1 [(boxed_type) = "itemid_t"];
+	optional uint64 item_item_id = 1;
 	repeated uint32 updated_socket_index = 2;
 	optional CMsgAddItemToSocketResponse.EAddGem response = 3 [default = k_AddGem_Succeeded];
 }
 
 message CMsgResetStrangeGemCount {
-	optional uint64 item_item_id = 1 [(boxed_type) = "itemid_t"];
-	optional uint32 socket_index = 2;
+	optional uint64 item_item_id = 1;
+	optional uint32 socket_index = 2 [default = 65535];
 }
 
 message CMsgResetStrangeGemCountResponse {
@@ -390,7 +358,7 @@ message CMsgGCToGCPerformManualOp {
 
 message CMsgGCToGCPerformManualOpCompleted {
 	optional bool success = 1;
-	optional uint32 source_gc = 2;
+	optional int32 source_gc = 2;
 }
 
 message CMsgGCToGCReloadServerRegionSettings {
@@ -418,4 +386,17 @@ message CMsgGCToClientApplyRemoteConVars {
 
 message CMsgGCToServerApplyRemoteConVars {
 	optional CMsgApplyRemoteConVars msg = 1;
+}
+
+message CMsgClientToGCIntegrityStatus {
+	message keyvalue {
+		optional uint32 id = 1;
+		optional uint32 extended = 2;
+		optional uint64 value = 3;
+		optional string string_value = 4;
+	}
+
+	optional string report = 1;
+	optional bool secure_allowed = 2;
+	repeated CMsgClientToGCIntegrityStatus.keyvalue diagnostics = 3;
 }
