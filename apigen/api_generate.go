@@ -35,7 +35,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
-	clientImports["github.com/faceit/go-steam/steamid"] = struct{}{}
+	clientImports["github.com/paralin/go-steam/steamid"] = struct{}{}
 	clientImports["github.com/paralin/go-dota2/events"] = struct{}{}
 
 	// responseMsgs are messages that are known to be responses.
@@ -162,7 +162,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 					reqFieldType = types.NewNamed(
 						types.NewTypeName(
 							0,
-							packageMap["github.com/faceit/go-steam/steamid"],
+							packageMap["github.com/paralin/go-steam/steamid"],
 							"SteamId",
 							reqFieldType,
 						),

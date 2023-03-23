@@ -10,6 +10,7 @@ cd ${REPO_ROOT}/generator
 git submodule update --init ${GAME_DIR}
 
 WORK_DIR=`mktemp -d`
+echo "Using working directory: ${WORK_DIR}"
 # deletes the temp directory
 function cleanup {
     sync || true
@@ -26,11 +27,13 @@ cp \
     ./dota_client_enums.proto \
     ./network_connection.proto \
     ./base_gcmessages.proto \
+    ./gcsdk_gcmessages.proto \
     ./econ_*.proto \
     ./dota_match_metadata.proto \
     ./dota_shared_enums.proto \
-    ./gcsdk_gcmessages.proto \
     ./steammessages.proto \
+    ./steammessages_unified_base.steamworkssdk.proto \
+    ./steammessages_steamlearn.steamworkssdk.proto \
     ./valveextensions.proto \
     ./gcsystemmsgs.proto \
     ${WORK_DIR}/orig/
@@ -53,6 +56,9 @@ for f in ${WORK_DIR}/orig/*.proto ; do
             -e "s/\t\./\t/g" >\
             ${WORK_DIR}/protos/${fname}
 done
+
+# Fixup some issues in the protos
+sed -i -e "s/(.CMsgSteamLearn/(CMsgSteamLearn/g" ${WORK_DIR}/protos/steammessages_steamlearn.steamworkssdk.proto
 
 # Generate protobufs
 cd ${WORK_DIR}/protos

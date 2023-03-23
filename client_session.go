@@ -3,7 +3,7 @@ package dota2
 import (
 	"context"
 
-	"github.com/faceit/go-steam/protocol/gamecoordinator"
+	"github.com/paralin/go-steam/protocol/gamecoordinator"
 	devents "github.com/paralin/go-dota2/events"
 	gcsdkm "github.com/paralin/go-dota2/protocol"
 	gcsm "github.com/paralin/go-dota2/protocol"

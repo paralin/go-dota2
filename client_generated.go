@@ -2,7 +2,7 @@ package dota2
 
 import (
 	"context"
-	"github.com/faceit/go-steam/steamid"
+	"github.com/paralin/go-steam/steamid"
 	"github.com/paralin/go-dota2/events"
 	"github.com/paralin/go-dota2/protocol"
 )
@@ -25,14 +25,6 @@ func (d *Dota2) AckPartyReadyCheck(
 		ReadyStatus: &readyStatus,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge), req)
-}
-
-// ApplyGauntletTicket applys a gauntlet ticket.
-// Request ID: k_EMsgClientToGCApplyGauntletTicket
-// Request type: CMsgClientToGCApplyGauntletTicket
-func (d *Dota2) ApplyGauntletTicket() {
-	req := &protocol.CMsgClientToGCApplyGauntletTicket{}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCApplyGauntletTicket), req)
 }
 
 // ApplyGemCombiner applys a gem combiner.
@@ -1085,6 +1077,81 @@ func (d *Dota2) GrantEventSupportConsumeItem(
 	)
 }
 
+// GrantShopDevCandyCandy grants a shop dev candy candy.
+// Request ID: k_EMsgClientToGCCandyShopDevGrantCandy
+// Response ID: k_EMsgClientToGCCandyShopDevGrantCandyResponse
+// Request type: CMsgClientToGCCandyShopDevGrantCandy
+// Response type: CMsgClientToGCCandyShopDevGrantCandyResponse
+func (d *Dota2) GrantShopDevCandyCandy(
+	ctx context.Context,
+	candyShopID uint32,
+	candyQuantity protocol.CMsgCandyShopCandyQuantity,
+) (*protocol.CMsgClientToGCCandyShopDevGrantCandyResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevGrantCandy{
+		CandyShopId:   &candyShopID,
+		CandyQuantity: &candyQuantity,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevGrantCandyResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandy),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyResponse),
+		resp,
+	)
+}
+
+// GrantShopDevCandyCandyBags grants shop dev candy candy bags.
+// Request ID: k_EMsgClientToGCCandyShopDevGrantCandyBags
+// Response ID: k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse
+// Request type: CMsgClientToGCCandyShopDevGrantCandyBags
+// Response type: CMsgClientToGCCandyShopDevGrantCandyBagsResponse
+func (d *Dota2) GrantShopDevCandyCandyBags(
+	ctx context.Context,
+	candyShopID uint32,
+	quantity uint32,
+) (*protocol.CMsgClientToGCCandyShopDevGrantCandyBagsResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevGrantCandyBags{
+		CandyShopId: &candyShopID,
+		Quantity:    &quantity,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevGrantCandyBagsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBags),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse),
+		resp,
+	)
+}
+
+// GrantShopDevCandyRerollCharges grants shop dev candy reroll charges.
+// Request ID: k_EMsgClientToGCCandyShopDevGrantRerollCharges
+// Response ID: k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse
+// Request type: CMsgClientToGCCandyShopDevGrantRerollCharges
+// Response type: CMsgClientToGCCandyShopDevGrantRerollChargesResponse
+func (d *Dota2) GrantShopDevCandyRerollCharges(
+	ctx context.Context,
+	candyShopID uint32,
+	rerollCharges uint32,
+) (*protocol.CMsgClientToGCCandyShopDevGrantRerollChargesResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevGrantRerollCharges{
+		CandyShopId:   &candyShopID,
+		RerollCharges: &rerollCharges,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevGrantRerollChargesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollCharges),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse),
+		resp,
+	)
+}
+
 // InvitePlayerToTeam is undocumented.
 // Request ID: k_EMsgGCTeamInvite_InviterToGC
 // Response ID: k_EMsgGCTeamInvite_GCImmediateResponseToInviter
@@ -1650,6 +1717,31 @@ func (d *Dota2) OpenPlayerCardPack(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPack),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPackResponse),
+		resp,
+	)
+}
+
+// OpenShopCandyBags opens shop candy bags.
+// Request ID: k_EMsgClientToGCCandyShopOpenBags
+// Response ID: k_EMsgClientToGCCandyShopOpenBagsResponse
+// Request type: CMsgClientToGCCandyShopOpenBags
+// Response type: CMsgClientToGCCandyShopOpenBagsResponse
+func (d *Dota2) OpenShopCandyBags(
+	ctx context.Context,
+	candyShopID uint32,
+	bagCount uint32,
+) (*protocol.CMsgClientToGCCandyShopOpenBagsResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopOpenBags{
+		CandyShopId: &candyShopID,
+		BagCount:    &bagCount,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopOpenBagsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBags),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBagsResponse),
 		resp,
 	)
 }
@@ -2295,6 +2387,29 @@ func (d *Dota2) RequestChinaSSAURL(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLRequest),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLResponse),
+		resp,
+	)
+}
+
+// RequestCollectorsCacheAvailableData requests a collectors cache available data.
+// Request ID: k_EMsgClientToGCCollectorsCacheAvailableDataRequest
+// Response ID: k_EMsgGCToClientCollectorsCacheAvailableDataResponse
+// Request type: CMsgClientToGCCollectorsCacheAvailableDataRequest
+// Response type: CMsgGCToClientCollectorsCacheAvailableDataResponse
+func (d *Dota2) RequestCollectorsCacheAvailableData(
+	ctx context.Context,
+	contestID uint32,
+) (*protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse, error) {
+	req := &protocol.CMsgClientToGCCollectorsCacheAvailableDataRequest{
+		ContestId: &contestID,
+	}
+	resp := &protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCollectorsCacheAvailableDataRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCollectorsCacheAvailableDataResponse),
 		resp,
 	)
 }
@@ -3258,7 +3373,7 @@ func (d *Dota2) RequestQuickStats(
 	ctx context.Context,
 	playerAccountID uint32,
 	heroID uint32,
-	itemID uint32,
+	itemID int32,
 	leagueID uint32,
 ) (*protocol.CMsgDOTAClientToGCQuickStatsResponse, error) {
 	req := &protocol.CMsgDOTAClientToGCQuickStatsRequest{
@@ -3708,29 +3823,25 @@ func (d *Dota2) RerollPlayerChallenge(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge), req)
 }
 
-// RerollShopCandyReward rerolls a shop candy reward.
-// Request ID: k_EMsgClientToGCCandyShopRerollReward
-// Response ID: k_EMsgClientToGCCandyShopRerollRewardResponse
-// Request type: CMsgClientToGCCandyShopRerollReward
-// Response type: CMsgClientToGCCandyShopRerollRewardResponse
-func (d *Dota2) RerollShopCandyReward(
+// RerollShopCandyRewards rerolls shop candy rewards.
+// Request ID: k_EMsgClientToGCCandyShopRerollRewards
+// Response ID: k_EMsgClientToGCCandyShopRerollRewardsResponse
+// Request type: CMsgClientToGCCandyShopRerollRewards
+// Response type: CMsgClientToGCCandyShopRerollRewardsResponse
+func (d *Dota2) RerollShopCandyRewards(
 	ctx context.Context,
 	candyShopID uint32,
-	rewardID uint64,
-	price protocol.CMsgCandyShopCandyQuantity,
-) (*protocol.CMsgClientToGCCandyShopRerollRewardResponse, error) {
-	req := &protocol.CMsgClientToGCCandyShopRerollReward{
+) (*protocol.CMsgClientToGCCandyShopRerollRewardsResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopRerollRewards{
 		CandyShopId: &candyShopID,
-		RewardId:    &rewardID,
-		Price:       &price,
 	}
-	resp := &protocol.CMsgClientToGCCandyShopRerollRewardResponse{}
+	resp := &protocol.CMsgClientToGCCandyShopRerollRewardsResponse{}
 
 	return resp, d.MakeRequest(
 		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollReward),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewards),
 		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewardResponse),
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewardsResponse),
 		resp,
 	)
 }
@@ -3932,6 +4043,52 @@ func (d *Dota2) SendBalancedShuffleLobby() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby), req)
 }
 
+// SendCandyShopDevClearInventory sends a candy shop dev clear inventory.
+// Request ID: k_EMsgClientToGCCandyShopDevClearInventory
+// Response ID: k_EMsgClientToGCCandyShopDevClearInventoryResponse
+// Request type: CMsgClientToGCCandyShopDevClearInventory
+// Response type: CMsgClientToGCCandyShopDevClearInventoryResponse
+func (d *Dota2) SendCandyShopDevClearInventory(
+	ctx context.Context,
+	candyShopID uint32,
+) (*protocol.CMsgClientToGCCandyShopDevClearInventoryResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevClearInventory{
+		CandyShopId: &candyShopID,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevClearInventoryResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventory),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventoryResponse),
+		resp,
+	)
+}
+
+// SendCandyShopDevShuffleExchange sends a candy shop dev shuffle exchange.
+// Request ID: k_EMsgClientToGCCandyShopDevShuffleExchange
+// Response ID: k_EMsgClientToGCCandyShopDevShuffleExchangeResponse
+// Request type: CMsgClientToGCCandyShopDevShuffleExchange
+// Response type: CMsgClientToGCCandyShopDevShuffleExchangeResponse
+func (d *Dota2) SendCandyShopDevShuffleExchange(
+	ctx context.Context,
+	candyShopID uint32,
+) (*protocol.CMsgClientToGCCandyShopDevShuffleExchangeResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevShuffleExchange{
+		CandyShopId: &candyShopID,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevShuffleExchangeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchange),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchangeResponse),
+		resp,
+	)
+}
+
 // SendCandyShopDoExchange sends a candy shop do exchange.
 // Request ID: k_EMsgClientToGCCandyShopDoExchange
 // Response ID: k_EMsgClientToGCCandyShopDoExchangeResponse
@@ -3940,7 +4097,7 @@ func (d *Dota2) SendBalancedShuffleLobby() {
 func (d *Dota2) SendCandyShopDoExchange(
 	ctx context.Context,
 	candyShopID uint32,
-	recipeID uint64,
+	recipeID uint32,
 ) (*protocol.CMsgClientToGCCandyShopDoExchangeResponse, error) {
 	req := &protocol.CMsgClientToGCCandyShopDoExchange{
 		CandyShopId: &candyShopID,
@@ -4157,6 +4314,33 @@ func (d *Dota2) SendClaimLeaderboardRewards(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse),
+		resp,
+	)
+}
+
+// SendClaimSwag sends a claim swag.
+// Request ID: k_EMsgClientToGCClaimSwag
+// Response ID: k_EMsgGCToClientClaimSwagResponse
+// Request type: CMsgClientToGCClaimSwag
+// Response type: CMsgClientToGCClaimSwagResponse
+func (d *Dota2) SendClaimSwag(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	actionID uint32,
+	data uint32,
+) (*protocol.CMsgClientToGCClaimSwagResponse, error) {
+	req := &protocol.CMsgClientToGCClaimSwag{
+		EventId:  &eventID,
+		ActionId: &actionID,
+		Data:     &data,
+	}
+	resp := &protocol.CMsgClientToGCClaimSwagResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimSwag),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientClaimSwagResponse),
 		resp,
 	)
 }
@@ -4452,18 +4636,6 @@ func (d *Dota2) SendLobbyFeaturedGamemodeProgress(
 		Accounts: accounts,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyFeaturedGamemodeProgress), req)
-}
-
-// SendLobbyGauntletProgress sends lobby gauntlet progress.
-// Request ID: k_EMsgLobbyGauntletProgress
-// Request type: CMsgLobbyGauntletProgress
-func (d *Dota2) SendLobbyGauntletProgress(
-	accounts []*protocol.CMsgLobbyGauntletProgress_AccountProgress,
-) {
-	req := &protocol.CMsgLobbyGauntletProgress{
-		Accounts: accounts,
-	}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyGauntletProgress), req)
 }
 
 // SendLobbyPlaytestDetails sends lobby playtest details.
@@ -4887,6 +5059,29 @@ func (d *Dota2) SendUpdatePartyBeacon(
 		Action: &action,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCUpdatePartyBeacon), req)
+}
+
+// SendUploadMatchClip sends a upload match clip.
+// Request ID: k_EMsgClientToGCUploadMatchClip
+// Response ID: k_EMsgGCToClientUploadMatchClipResponse
+// Request type: CMsgClientToGCUploadMatchClip
+// Response type: CMsgGCToClientUploadMatchClipResponse
+func (d *Dota2) SendUploadMatchClip(
+	ctx context.Context,
+	matchClip protocol.CMatchClip,
+) (*protocol.CMsgGCToClientUploadMatchClipResponse, error) {
+	req := &protocol.CMsgClientToGCUploadMatchClip{
+		MatchClip: &matchClip,
+	}
+	resp := &protocol.CMsgGCToClientUploadMatchClipResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCUploadMatchClip),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientUploadMatchClipResponse),
+		resp,
+	)
 }
 
 // SendVerifyFavoritePlayers sends verify favorite players.

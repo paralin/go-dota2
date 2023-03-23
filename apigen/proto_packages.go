@@ -51,7 +51,7 @@ func BuildProtoTypeMap() (map[string]*types.Package, map[string]*ProtoType, erro
 		}
 	}
 
-	if err := importPak("github.com/faceit/go-steam/steamid"); err != nil {
+	if err := importPak("github.com/paralin/go-steam/steamid"); err != nil {
 		return nil, nil, err
 	}
 

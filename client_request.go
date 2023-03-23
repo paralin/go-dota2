@@ -4,7 +4,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/faceit/go-steam/protocol/gamecoordinator"
+	"github.com/paralin/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
 
 	gcm "github.com/paralin/go-dota2/protocol"

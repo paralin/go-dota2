@@ -5,8 +5,8 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/faceit/go-steam"
-	"github.com/faceit/go-steam/protocol/gamecoordinator"
+	"github.com/paralin/go-steam"
+	"github.com/paralin/go-steam/protocol/gamecoordinator"
 	"github.com/golang/protobuf/proto"
 	"github.com/sirupsen/logrus"
 

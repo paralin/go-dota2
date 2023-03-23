@@ -20,24 +20,88 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type ECandyShopAuditAction int32
+
+const (
+	ECandyShopAuditAction_k_ECandyShopAuditAction_Invalid                               ECandyShopAuditAction = 0
+	ECandyShopAuditAction_k_ECandyShopAuditAction_SupportModify                         ECandyShopAuditAction = 1
+	ECandyShopAuditAction_k_ECandyShopAuditAction_PurchaseReward                        ECandyShopAuditAction = 2
+	ECandyShopAuditAction_k_ECandyShopAuditAction_OpenBags                              ECandyShopAuditAction = 3
+	ECandyShopAuditAction_k_ECandyShopAuditAction_RerollRewards                         ECandyShopAuditAction = 4
+	ECandyShopAuditAction_k_ECandyShopAuditAction_DoVariableExchange                    ECandyShopAuditAction = 5
+	ECandyShopAuditAction_k_ECandyShopAuditAction_DoExchange                            ECandyShopAuditAction = 6
+	ECandyShopAuditAction_k_ECandyShopAuditAction_EventActionGrantInventorySizeIncrease ECandyShopAuditAction = 7
+	ECandyShopAuditAction_k_ECandyShopAuditAction_EventActionGrantRerollChargesIncrease ECandyShopAuditAction = 8
+)
+
+var ECandyShopAuditAction_name = map[int32]string{
+	0: "k_ECandyShopAuditAction_Invalid",
+	1: "k_ECandyShopAuditAction_SupportModify",
+	2: "k_ECandyShopAuditAction_PurchaseReward",
+	3: "k_ECandyShopAuditAction_OpenBags",
+	4: "k_ECandyShopAuditAction_RerollRewards",
+	5: "k_ECandyShopAuditAction_DoVariableExchange",
+	6: "k_ECandyShopAuditAction_DoExchange",
+	7: "k_ECandyShopAuditAction_EventActionGrantInventorySizeIncrease",
+	8: "k_ECandyShopAuditAction_EventActionGrantRerollChargesIncrease",
+}
+
+var ECandyShopAuditAction_value = map[string]int32{
+	"k_ECandyShopAuditAction_Invalid":                               0,
+	"k_ECandyShopAuditAction_SupportModify":                         1,
+	"k_ECandyShopAuditAction_PurchaseReward":                        2,
+	"k_ECandyShopAuditAction_OpenBags":                              3,
+	"k_ECandyShopAuditAction_RerollRewards":                         4,
+	"k_ECandyShopAuditAction_DoVariableExchange":                    5,
+	"k_ECandyShopAuditAction_DoExchange":                            6,
+	"k_ECandyShopAuditAction_EventActionGrantInventorySizeIncrease": 7,
+	"k_ECandyShopAuditAction_EventActionGrantRerollChargesIncrease": 8,
+}
+
+func (x ECandyShopAuditAction) Enum() *ECandyShopAuditAction {
+	p := new(ECandyShopAuditAction)
+	*p = x
+	return p
+}
+
+func (x ECandyShopAuditAction) String() string {
+	return proto.EnumName(ECandyShopAuditAction_name, int32(x))
+}
+
+func (x *ECandyShopAuditAction) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(ECandyShopAuditAction_value, data, "ECandyShopAuditAction")
+	if err != nil {
+		return err
+	}
+	*x = ECandyShopAuditAction(value)
+	return nil
+}
+
+func (ECandyShopAuditAction) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{0}
+}
+
 type ECandyShopRewardType int32
 
 const (
 	ECandyShopRewardType_k_eCandyShopRewardType_None        ECandyShopRewardType = 0
 	ECandyShopRewardType_k_eCandyShopRewardType_Item        ECandyShopRewardType = 1
 	ECandyShopRewardType_k_eCandyShopRewardType_EventAction ECandyShopRewardType = 2
+	ECandyShopRewardType_k_eCandyShopRewardType_EventPoints ECandyShopRewardType = 3
 )
 
 var ECandyShopRewardType_name = map[int32]string{
 	0: "k_eCandyShopRewardType_None",
 	1: "k_eCandyShopRewardType_Item",
 	2: "k_eCandyShopRewardType_EventAction",
+	3: "k_eCandyShopRewardType_EventPoints",
 }
 
 var ECandyShopRewardType_value = map[string]int32{
 	"k_eCandyShopRewardType_None":        0,
 	"k_eCandyShopRewardType_Item":        1,
 	"k_eCandyShopRewardType_EventAction": 2,
+	"k_eCandyShopRewardType_EventPoints": 3,
 }
 
 func (x ECandyShopRewardType) Enum() *ECandyShopRewardType {
@@ -60,7 +124,7 @@ func (x *ECandyShopRewardType) UnmarshalJSON(data []byte) error {
 }
 
 func (ECandyShopRewardType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{0}
+	return fileDescriptor_132364ac0874755d, []int{1}
 }
 
 type CMsgClientToGCCandyShopGetUserDataResponse_EResponse int32
@@ -71,6 +135,8 @@ const (
 	CMsgClientToGCCandyShopGetUserDataResponse_k_eTooBusy       CMsgClientToGCCandyShopGetUserDataResponse_EResponse = 2
 	CMsgClientToGCCandyShopGetUserDataResponse_k_eDisabled      CMsgClientToGCCandyShopGetUserDataResponse_EResponse = 3
 	CMsgClientToGCCandyShopGetUserDataResponse_k_eTimeout       CMsgClientToGCCandyShopGetUserDataResponse_EResponse = 4
+	CMsgClientToGCCandyShopGetUserDataResponse_k_eInvalidShop   CMsgClientToGCCandyShopGetUserDataResponse_EResponse = 5
+	CMsgClientToGCCandyShopGetUserDataResponse_k_eExpiredShop   CMsgClientToGCCandyShopGetUserDataResponse_EResponse = 6
 )
 
 var CMsgClientToGCCandyShopGetUserDataResponse_EResponse_name = map[int32]string{
@@ -79,6 +145,8 @@ var CMsgClientToGCCandyShopGetUserDataResponse_EResponse_name = map[int32]string
 	2: "k_eTooBusy",
 	3: "k_eDisabled",
 	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eExpiredShop",
 }
 
 var CMsgClientToGCCandyShopGetUserDataResponse_EResponse_value = map[string]int32{
@@ -87,6 +155,8 @@ var CMsgClientToGCCandyShopGetUserDataResponse_EResponse_value = map[string]int3
 	"k_eTooBusy":       2,
 	"k_eDisabled":      3,
 	"k_eTimeout":       4,
+	"k_eInvalidShop":   5,
+	"k_eExpiredShop":   6,
 }
 
 func (x CMsgClientToGCCandyShopGetUserDataResponse_EResponse) Enum() *CMsgClientToGCCandyShopGetUserDataResponse_EResponse {
@@ -115,11 +185,15 @@ func (CMsgClientToGCCandyShopGetUserDataResponse_EResponse) EnumDescriptor() ([]
 type CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse int32
 
 const (
-	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eInternalError CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 0
-	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eSuccess       CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 1
-	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eTooBusy       CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 2
-	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eDisabled      CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 3
-	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eTimeout       CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 4
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eInternalError  CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 0
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eSuccess        CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 1
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eTooBusy        CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 2
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eDisabled       CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 3
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eTimeout        CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 4
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eInvalidShop    CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 5
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eInvalidReward  CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 6
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eNotEnoughCandy CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 7
+	CMsgClientToGCCandyShopPurchaseRewardResponse_k_eExpiredShop    CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse = 8
 )
 
 var CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse_name = map[int32]string{
@@ -128,14 +202,22 @@ var CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse_name = map[int32]str
 	2: "k_eTooBusy",
 	3: "k_eDisabled",
 	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eInvalidReward",
+	7: "k_eNotEnoughCandy",
+	8: "k_eExpiredShop",
 }
 
 var CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse_value = map[string]int32{
-	"k_eInternalError": 0,
-	"k_eSuccess":       1,
-	"k_eTooBusy":       2,
-	"k_eDisabled":      3,
-	"k_eTimeout":       4,
+	"k_eInternalError":  0,
+	"k_eSuccess":        1,
+	"k_eTooBusy":        2,
+	"k_eDisabled":       3,
+	"k_eTimeout":        4,
+	"k_eInvalidShop":    5,
+	"k_eInvalidReward":  6,
+	"k_eNotEnoughCandy": 7,
+	"k_eExpiredShop":    8,
 }
 
 func (x CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse) Enum() *CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse {
@@ -161,14 +243,83 @@ func (CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse) EnumDescriptor() 
 	return fileDescriptor_132364ac0874755d, []int{12, 0}
 }
 
+type CMsgClientToGCCandyShopOpenBagsResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eInternalError  CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 0
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eSuccess        CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 1
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eTooBusy        CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 2
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eDisabled       CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 3
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eTimeout        CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 4
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eInvalidShop    CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 5
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eInvalidItem    CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 6
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eNotEnoughBags  CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 7
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eNotEnoughSpace CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 8
+	CMsgClientToGCCandyShopOpenBagsResponse_k_eExpiredShop    CMsgClientToGCCandyShopOpenBagsResponse_EResponse = 9
+)
+
+var CMsgClientToGCCandyShopOpenBagsResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eInvalidItem",
+	7: "k_eNotEnoughBags",
+	8: "k_eNotEnoughSpace",
+	9: "k_eExpiredShop",
+}
+
+var CMsgClientToGCCandyShopOpenBagsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError":  0,
+	"k_eSuccess":        1,
+	"k_eTooBusy":        2,
+	"k_eDisabled":       3,
+	"k_eTimeout":        4,
+	"k_eInvalidShop":    5,
+	"k_eInvalidItem":    6,
+	"k_eNotEnoughBags":  7,
+	"k_eNotEnoughSpace": 8,
+	"k_eExpiredShop":    9,
+}
+
+func (x CMsgClientToGCCandyShopOpenBagsResponse_EResponse) Enum() *CMsgClientToGCCandyShopOpenBagsResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopOpenBagsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopOpenBagsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopOpenBagsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopOpenBagsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopOpenBagsResponse_EResponse_value, data, "CMsgClientToGCCandyShopOpenBagsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopOpenBagsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopOpenBagsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{14, 0}
+}
+
 type CMsgClientToGCCandyShopDoExchangeResponse_EResponse int32
 
 const (
-	CMsgClientToGCCandyShopDoExchangeResponse_k_eInternalError CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 0
-	CMsgClientToGCCandyShopDoExchangeResponse_k_eSuccess       CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 1
-	CMsgClientToGCCandyShopDoExchangeResponse_k_eTooBusy       CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 2
-	CMsgClientToGCCandyShopDoExchangeResponse_k_eDisabled      CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 3
-	CMsgClientToGCCandyShopDoExchangeResponse_k_eTimeout       CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 4
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eInternalError  CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 0
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eSuccess        CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 1
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eTooBusy        CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 2
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eDisabled       CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 3
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eTimeout        CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 4
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eInvalidShop    CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 5
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eNotEnoughCandy CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 6
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eInvalidRecipe  CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 7
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eNotEnoughSpace CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 8
+	CMsgClientToGCCandyShopDoExchangeResponse_k_eExpiredShop    CMsgClientToGCCandyShopDoExchangeResponse_EResponse = 9
 )
 
 var CMsgClientToGCCandyShopDoExchangeResponse_EResponse_name = map[int32]string{
@@ -177,14 +328,24 @@ var CMsgClientToGCCandyShopDoExchangeResponse_EResponse_name = map[int32]string{
 	2: "k_eTooBusy",
 	3: "k_eDisabled",
 	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eNotEnoughCandy",
+	7: "k_eInvalidRecipe",
+	8: "k_eNotEnoughSpace",
+	9: "k_eExpiredShop",
 }
 
 var CMsgClientToGCCandyShopDoExchangeResponse_EResponse_value = map[string]int32{
-	"k_eInternalError": 0,
-	"k_eSuccess":       1,
-	"k_eTooBusy":       2,
-	"k_eDisabled":      3,
-	"k_eTimeout":       4,
+	"k_eInternalError":  0,
+	"k_eSuccess":        1,
+	"k_eTooBusy":        2,
+	"k_eDisabled":       3,
+	"k_eTimeout":        4,
+	"k_eInvalidShop":    5,
+	"k_eNotEnoughCandy": 6,
+	"k_eInvalidRecipe":  7,
+	"k_eNotEnoughSpace": 8,
+	"k_eExpiredShop":    9,
 }
 
 func (x CMsgClientToGCCandyShopDoExchangeResponse_EResponse) Enum() *CMsgClientToGCCandyShopDoExchangeResponse_EResponse {
@@ -207,17 +368,22 @@ func (x *CMsgClientToGCCandyShopDoExchangeResponse_EResponse) UnmarshalJSON(data
 }
 
 func (CMsgClientToGCCandyShopDoExchangeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{14, 0}
+	return fileDescriptor_132364ac0874755d, []int{16, 0}
 }
 
 type CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse int32
 
 const (
-	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eInternalError CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 0
-	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eSuccess       CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 1
-	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eTooBusy       CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 2
-	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eDisabled      CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 3
-	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eTimeout       CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 4
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eInternalError  CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 0
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eSuccess        CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 1
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eTooBusy        CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 2
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eDisabled       CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 3
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eTimeout        CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 4
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eInvalidShop    CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 5
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eNotEnoughCandy CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 6
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eInvalidRecipe  CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 7
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eNotEnoughSpace CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 8
+	CMsgClientToGCCandyShopDoVariableExchangeResponse_k_eExpiredShop    CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse = 9
 )
 
 var CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse_name = map[int32]string{
@@ -226,14 +392,24 @@ var CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse_name = map[int32
 	2: "k_eTooBusy",
 	3: "k_eDisabled",
 	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eNotEnoughCandy",
+	7: "k_eInvalidRecipe",
+	8: "k_eNotEnoughSpace",
+	9: "k_eExpiredShop",
 }
 
 var CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse_value = map[string]int32{
-	"k_eInternalError": 0,
-	"k_eSuccess":       1,
-	"k_eTooBusy":       2,
-	"k_eDisabled":      3,
-	"k_eTimeout":       4,
+	"k_eInternalError":  0,
+	"k_eSuccess":        1,
+	"k_eTooBusy":        2,
+	"k_eDisabled":       3,
+	"k_eTimeout":        4,
+	"k_eInvalidShop":    5,
+	"k_eNotEnoughCandy": 6,
+	"k_eInvalidRecipe":  7,
+	"k_eNotEnoughSpace": 8,
+	"k_eExpiredShop":    9,
 }
 
 func (x CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse) Enum() *CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse {
@@ -256,56 +432,343 @@ func (x *CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse) UnmarshalJ
 }
 
 func (CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{16, 0}
+	return fileDescriptor_132364ac0874755d, []int{18, 0}
 }
 
-type CMsgClientToGCCandyShopRerollRewardResponse_EResponse int32
+type CMsgClientToGCCandyShopRerollRewardsResponse_EResponse int32
 
 const (
-	CMsgClientToGCCandyShopRerollRewardResponse_k_eInternalError CMsgClientToGCCandyShopRerollRewardResponse_EResponse = 0
-	CMsgClientToGCCandyShopRerollRewardResponse_k_eSuccess       CMsgClientToGCCandyShopRerollRewardResponse_EResponse = 1
-	CMsgClientToGCCandyShopRerollRewardResponse_k_eTooBusy       CMsgClientToGCCandyShopRerollRewardResponse_EResponse = 2
-	CMsgClientToGCCandyShopRerollRewardResponse_k_eDisabled      CMsgClientToGCCandyShopRerollRewardResponse_EResponse = 3
-	CMsgClientToGCCandyShopRerollRewardResponse_k_eTimeout       CMsgClientToGCCandyShopRerollRewardResponse_EResponse = 4
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eInternalError   CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 0
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eSuccess         CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 1
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eTooBusy         CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 2
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eDisabled        CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 3
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eTimeout         CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 4
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eInvalidShop     CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 5
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eNoRerollCharges CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 6
+	CMsgClientToGCCandyShopRerollRewardsResponse_k_eExpiredShop     CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = 7
 )
 
-var CMsgClientToGCCandyShopRerollRewardResponse_EResponse_name = map[int32]string{
+var CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_name = map[int32]string{
 	0: "k_eInternalError",
 	1: "k_eSuccess",
 	2: "k_eTooBusy",
 	3: "k_eDisabled",
 	4: "k_eTimeout",
+	5: "k_eInvalidShop",
+	6: "k_eNoRerollCharges",
+	7: "k_eExpiredShop",
 }
 
-var CMsgClientToGCCandyShopRerollRewardResponse_EResponse_value = map[string]int32{
+var CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError":   0,
+	"k_eSuccess":         1,
+	"k_eTooBusy":         2,
+	"k_eDisabled":        3,
+	"k_eTimeout":         4,
+	"k_eInvalidShop":     5,
+	"k_eNoRerollCharges": 6,
+	"k_eExpiredShop":     7,
+}
+
+func (x CMsgClientToGCCandyShopRerollRewardsResponse_EResponse) Enum() *CMsgClientToGCCandyShopRerollRewardsResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopRerollRewardsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopRerollRewardsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopRerollRewardsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_value, data, "CMsgClientToGCCandyShopRerollRewardsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopRerollRewardsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopRerollRewardsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{20, 0}
+}
+
+type CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eInternalError  CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 0
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eSuccess        CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 1
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eTooBusy        CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 2
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eDisabled       CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 3
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eTimeout        CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 4
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eNotAllowed     CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 5
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eInvalidShop    CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 6
+	CMsgClientToGCCandyShopDevGrantCandyResponse_k_eNotEnoughSpace CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = 7
+)
+
+var CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eNotAllowed",
+	6: "k_eInvalidShop",
+	7: "k_eNotEnoughSpace",
+}
+
+var CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_value = map[string]int32{
+	"k_eInternalError":  0,
+	"k_eSuccess":        1,
+	"k_eTooBusy":        2,
+	"k_eDisabled":       3,
+	"k_eTimeout":        4,
+	"k_eNotAllowed":     5,
+	"k_eInvalidShop":    6,
+	"k_eNotEnoughSpace": 7,
+}
+
+func (x CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse) Enum() *CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_value, data, "CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{22, 0}
+}
+
+type CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eInternalError CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 0
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eSuccess       CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 1
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eTooBusy       CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 2
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eDisabled      CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 3
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eTimeout       CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 4
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eNotAllowed    CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 5
+	CMsgClientToGCCandyShopDevClearInventoryResponse_k_eInvalidShop   CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = 6
+)
+
+var CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eNotAllowed",
+	6: "k_eInvalidShop",
+}
+
+var CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_value = map[string]int32{
 	"k_eInternalError": 0,
 	"k_eSuccess":       1,
 	"k_eTooBusy":       2,
 	"k_eDisabled":      3,
 	"k_eTimeout":       4,
+	"k_eNotAllowed":    5,
+	"k_eInvalidShop":   6,
 }
 
-func (x CMsgClientToGCCandyShopRerollRewardResponse_EResponse) Enum() *CMsgClientToGCCandyShopRerollRewardResponse_EResponse {
-	p := new(CMsgClientToGCCandyShopRerollRewardResponse_EResponse)
+func (x CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse) Enum() *CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse)
 	*p = x
 	return p
 }
 
-func (x CMsgClientToGCCandyShopRerollRewardResponse_EResponse) String() string {
-	return proto.EnumName(CMsgClientToGCCandyShopRerollRewardResponse_EResponse_name, int32(x))
+func (x CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_name, int32(x))
 }
 
-func (x *CMsgClientToGCCandyShopRerollRewardResponse_EResponse) UnmarshalJSON(data []byte) error {
-	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopRerollRewardResponse_EResponse_value, data, "CMsgClientToGCCandyShopRerollRewardResponse_EResponse")
+func (x *CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_value, data, "CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse")
 	if err != nil {
 		return err
 	}
-	*x = CMsgClientToGCCandyShopRerollRewardResponse_EResponse(value)
+	*x = CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse(value)
 	return nil
 }
 
-func (CMsgClientToGCCandyShopRerollRewardResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{18, 0}
+func (CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{24, 0}
+}
+
+type CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eInternalError CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 0
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eSuccess       CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 1
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eTooBusy       CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 2
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eDisabled      CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 3
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eTimeout       CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 4
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eNotAllowed    CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 5
+	CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eInvalidShop   CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = 6
+)
+
+var CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eNotAllowed",
+	6: "k_eInvalidShop",
+}
+
+var CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eNotAllowed":    5,
+	"k_eInvalidShop":   6,
+}
+
+func (x CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse) Enum() *CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_value, data, "CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{26, 0}
+}
+
+type CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eInternalError CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 0
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eSuccess       CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 1
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eTooBusy       CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 2
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eDisabled      CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 3
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eTimeout       CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 4
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eNotAllowed    CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 5
+	CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eInvalidShop   CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = 6
+)
+
+var CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eNotAllowed",
+	6: "k_eInvalidShop",
+}
+
+var CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eNotAllowed":    5,
+	"k_eInvalidShop":   6,
+}
+
+func (x CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse) Enum() *CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_value, data, "CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{28, 0}
+}
+
+type CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse int32
+
+const (
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eInternalError CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 0
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eSuccess       CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 1
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eTooBusy       CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 2
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eDisabled      CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 3
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eTimeout       CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 4
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eNotAllowed    CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 5
+	CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eInvalidShop   CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = 6
+)
+
+var CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eNotAllowed",
+	6: "k_eInvalidShop",
+}
+
+var CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eNotAllowed":    5,
+	"k_eInvalidShop":   6,
+}
+
+func (x CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse) Enum() *CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse {
+	p := new(CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_value, data, "CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{30, 0}
 }
 
 type CMsgCandyShopCandyCount struct {
@@ -395,7 +858,7 @@ func (m *CMsgCandyShopCandyQuantity) GetCandyCounts() []*CMsgCandyShopCandyCount
 }
 
 type CMsgCandyShopExchangeRecipe struct {
-	RecipeId             *uint64                     `protobuf:"varint,1,opt,name=recipe_id,json=recipeId" json:"recipe_id,omitempty"`
+	RecipeId             *uint32                     `protobuf:"varint,1,opt,name=recipe_id,json=recipeId" json:"recipe_id,omitempty"`
 	Input                *CMsgCandyShopCandyQuantity `protobuf:"bytes,2,opt,name=input" json:"input,omitempty"`
 	Output               *CMsgCandyShopCandyQuantity `protobuf:"bytes,3,opt,name=output" json:"output,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
@@ -428,7 +891,7 @@ func (m *CMsgCandyShopExchangeRecipe) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CMsgCandyShopExchangeRecipe proto.InternalMessageInfo
 
-func (m *CMsgCandyShopExchangeRecipe) GetRecipeId() uint64 {
+func (m *CMsgCandyShopExchangeRecipe) GetRecipeId() uint32 {
 	if m != nil && m.RecipeId != nil {
 		return *m.RecipeId
 	}
@@ -545,70 +1008,66 @@ func (m *CMsgCandyShopRewardData_EventAction) GetQuantity() uint32 {
 	return 0
 }
 
-type CMsgCandyShopRewardItem struct {
-	RewardType           *ECandyShopRewardType                `protobuf:"varint,1,opt,name=reward_type,json=rewardType,enum=protocol.ECandyShopRewardType,def=0" json:"reward_type,omitempty"`
-	ItemData             *CMsgCandyShopRewardData_Item        `protobuf:"bytes,2,opt,name=item_data,json=itemData" json:"item_data,omitempty"`
-	EventActionData      *CMsgCandyShopRewardData_EventAction `protobuf:"bytes,3,opt,name=event_action_data,json=eventActionData" json:"event_action_data,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                             `json:"-"`
-	XXX_unrecognized     []byte                               `json:"-"`
-	XXX_sizecache        int32                                `json:"-"`
+type CMsgCandyShopRewardData_EventPoints struct {
+	EventId              *EEvent  `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	Points               *uint32  `protobuf:"varint,2,opt,name=points" json:"points,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CMsgCandyShopRewardItem) Reset()         { *m = CMsgCandyShopRewardItem{} }
-func (m *CMsgCandyShopRewardItem) String() string { return proto.CompactTextString(m) }
-func (*CMsgCandyShopRewardItem) ProtoMessage()    {}
-func (*CMsgCandyShopRewardItem) Descriptor() ([]byte, []int) {
+func (m *CMsgCandyShopRewardData_EventPoints) Reset()         { *m = CMsgCandyShopRewardData_EventPoints{} }
+func (m *CMsgCandyShopRewardData_EventPoints) String() string { return proto.CompactTextString(m) }
+func (*CMsgCandyShopRewardData_EventPoints) ProtoMessage()    {}
+func (*CMsgCandyShopRewardData_EventPoints) Descriptor() ([]byte, []int) {
 	return fileDescriptor_132364ac0874755d, []int{5}
 }
 
-func (m *CMsgCandyShopRewardItem) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CMsgCandyShopRewardItem.Unmarshal(m, b)
+func (m *CMsgCandyShopRewardData_EventPoints) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgCandyShopRewardData_EventPoints.Unmarshal(m, b)
 }
-func (m *CMsgCandyShopRewardItem) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CMsgCandyShopRewardItem.Marshal(b, m, deterministic)
+func (m *CMsgCandyShopRewardData_EventPoints) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgCandyShopRewardData_EventPoints.Marshal(b, m, deterministic)
 }
-func (m *CMsgCandyShopRewardItem) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CMsgCandyShopRewardItem.Merge(m, src)
+func (m *CMsgCandyShopRewardData_EventPoints) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgCandyShopRewardData_EventPoints.Merge(m, src)
 }
-func (m *CMsgCandyShopRewardItem) XXX_Size() int {
-	return xxx_messageInfo_CMsgCandyShopRewardItem.Size(m)
+func (m *CMsgCandyShopRewardData_EventPoints) XXX_Size() int {
+	return xxx_messageInfo_CMsgCandyShopRewardData_EventPoints.Size(m)
 }
-func (m *CMsgCandyShopRewardItem) XXX_DiscardUnknown() {
-	xxx_messageInfo_CMsgCandyShopRewardItem.DiscardUnknown(m)
+func (m *CMsgCandyShopRewardData_EventPoints) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgCandyShopRewardData_EventPoints.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CMsgCandyShopRewardItem proto.InternalMessageInfo
+var xxx_messageInfo_CMsgCandyShopRewardData_EventPoints proto.InternalMessageInfo
 
-const Default_CMsgCandyShopRewardItem_RewardType ECandyShopRewardType = ECandyShopRewardType_k_eCandyShopRewardType_None
+const Default_CMsgCandyShopRewardData_EventPoints_EventId EEvent = EEvent_EVENT_ID_NONE
 
-func (m *CMsgCandyShopRewardItem) GetRewardType() ECandyShopRewardType {
-	if m != nil && m.RewardType != nil {
-		return *m.RewardType
+func (m *CMsgCandyShopRewardData_EventPoints) GetEventId() EEvent {
+	if m != nil && m.EventId != nil {
+		return *m.EventId
 	}
-	return Default_CMsgCandyShopRewardItem_RewardType
+	return Default_CMsgCandyShopRewardData_EventPoints_EventId
 }
 
-func (m *CMsgCandyShopRewardItem) GetItemData() *CMsgCandyShopRewardData_Item {
-	if m != nil {
-		return m.ItemData
+func (m *CMsgCandyShopRewardData_EventPoints) GetPoints() uint32 {
+	if m != nil && m.Points != nil {
+		return *m.Points
 	}
-	return nil
-}
-
-func (m *CMsgCandyShopRewardItem) GetEventActionData() *CMsgCandyShopRewardData_EventAction {
-	if m != nil {
-		return m.EventActionData
-	}
-	return nil
+	return 0
 }
 
 type CMsgCandyShopReward struct {
-	RewardId             *uint64                     `protobuf:"varint,1,opt,name=reward_id,json=rewardId" json:"reward_id,omitempty"`
-	Price                *CMsgCandyShopCandyQuantity `protobuf:"bytes,2,opt,name=price" json:"price,omitempty"`
-	Reward               *CMsgCandyShopRewardItem    `protobuf:"bytes,3,opt,name=reward" json:"reward,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
-	XXX_unrecognized     []byte                      `json:"-"`
-	XXX_sizecache        int32                       `json:"-"`
+	RewardId             *uint32                              `protobuf:"varint,1,opt,name=reward_id,json=rewardId" json:"reward_id,omitempty"`
+	RewardOptionId       *uint32                              `protobuf:"varint,2,opt,name=reward_option_id,json=rewardOptionId" json:"reward_option_id,omitempty"`
+	Price                *CMsgCandyShopCandyQuantity          `protobuf:"bytes,3,opt,name=price" json:"price,omitempty"`
+	RewardType           *ECandyShopRewardType                `protobuf:"varint,4,opt,name=reward_type,json=rewardType,enum=protocol.ECandyShopRewardType,def=0" json:"reward_type,omitempty"`
+	ItemData             *CMsgCandyShopRewardData_Item        `protobuf:"bytes,5,opt,name=item_data,json=itemData" json:"item_data,omitempty"`
+	EventActionData      *CMsgCandyShopRewardData_EventAction `protobuf:"bytes,6,opt,name=event_action_data,json=eventActionData" json:"event_action_data,omitempty"`
+	EventPointsData      *CMsgCandyShopRewardData_EventPoints `protobuf:"bytes,7,opt,name=event_points_data,json=eventPointsData" json:"event_points_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                             `json:"-"`
+	XXX_unrecognized     []byte                               `json:"-"`
+	XXX_sizecache        int32                                `json:"-"`
 }
 
 func (m *CMsgCandyShopReward) Reset()         { *m = CMsgCandyShopReward{} }
@@ -636,9 +1095,18 @@ func (m *CMsgCandyShopReward) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CMsgCandyShopReward proto.InternalMessageInfo
 
-func (m *CMsgCandyShopReward) GetRewardId() uint64 {
+const Default_CMsgCandyShopReward_RewardType ECandyShopRewardType = ECandyShopRewardType_k_eCandyShopRewardType_None
+
+func (m *CMsgCandyShopReward) GetRewardId() uint32 {
 	if m != nil && m.RewardId != nil {
 		return *m.RewardId
+	}
+	return 0
+}
+
+func (m *CMsgCandyShopReward) GetRewardOptionId() uint32 {
+	if m != nil && m.RewardOptionId != nil {
+		return *m.RewardOptionId
 	}
 	return 0
 }
@@ -650,9 +1118,30 @@ func (m *CMsgCandyShopReward) GetPrice() *CMsgCandyShopCandyQuantity {
 	return nil
 }
 
-func (m *CMsgCandyShopReward) GetReward() *CMsgCandyShopRewardItem {
+func (m *CMsgCandyShopReward) GetRewardType() ECandyShopRewardType {
+	if m != nil && m.RewardType != nil {
+		return *m.RewardType
+	}
+	return Default_CMsgCandyShopReward_RewardType
+}
+
+func (m *CMsgCandyShopReward) GetItemData() *CMsgCandyShopRewardData_Item {
 	if m != nil {
-		return m.Reward
+		return m.ItemData
+	}
+	return nil
+}
+
+func (m *CMsgCandyShopReward) GetEventActionData() *CMsgCandyShopRewardData_EventAction {
+	if m != nil {
+		return m.EventActionData
+	}
+	return nil
+}
+
+func (m *CMsgCandyShopReward) GetEventPointsData() *CMsgCandyShopRewardData_EventPoints {
+	if m != nil {
+		return m.EventPointsData
 	}
 	return nil
 }
@@ -663,6 +1152,7 @@ type CMsgCandyShopUserData struct {
 	ExchangeResetTimestamp *uint32                        `protobuf:"fixed32,3,opt,name=exchange_reset_timestamp,json=exchangeResetTimestamp" json:"exchange_reset_timestamp,omitempty"`
 	ExchangeRecipes        []*CMsgCandyShopExchangeRecipe `protobuf:"bytes,4,rep,name=exchange_recipes,json=exchangeRecipes" json:"exchange_recipes,omitempty"`
 	ActiveRewards          []*CMsgCandyShopReward         `protobuf:"bytes,5,rep,name=active_rewards,json=activeRewards" json:"active_rewards,omitempty"`
+	RerollCharges          *uint32                        `protobuf:"varint,6,opt,name=reroll_charges,json=rerollCharges" json:"reroll_charges,omitempty"`
 	XXX_NoUnkeyedLiteral   struct{}                       `json:"-"`
 	XXX_unrecognized       []byte                         `json:"-"`
 	XXX_sizecache          int32                          `json:"-"`
@@ -726,6 +1216,13 @@ func (m *CMsgCandyShopUserData) GetActiveRewards() []*CMsgCandyShopReward {
 		return m.ActiveRewards
 	}
 	return nil
+}
+
+func (m *CMsgCandyShopUserData) GetRerollCharges() uint32 {
+	if m != nil && m.RerollCharges != nil {
+		return *m.RerollCharges
+	}
+	return 0
 }
 
 type CMsgClientToGCCandyShopGetUserData struct {
@@ -961,9 +1458,99 @@ func (m *CMsgClientToGCCandyShopPurchaseRewardResponse) GetResponse() CMsgClient
 	return Default_CMsgClientToGCCandyShopPurchaseRewardResponse_Response
 }
 
+type CMsgClientToGCCandyShopOpenBags struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	BagCount             *uint32  `protobuf:"varint,2,opt,name=bag_count,json=bagCount" json:"bag_count,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopOpenBags) Reset()         { *m = CMsgClientToGCCandyShopOpenBags{} }
+func (m *CMsgClientToGCCandyShopOpenBags) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopOpenBags) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopOpenBags) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{13}
+}
+
+func (m *CMsgClientToGCCandyShopOpenBags) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBags.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopOpenBags) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBags.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopOpenBags) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopOpenBags.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopOpenBags) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBags.Size(m)
+}
+func (m *CMsgClientToGCCandyShopOpenBags) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopOpenBags.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopOpenBags proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopOpenBags) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCCandyShopOpenBags) GetBagCount() uint32 {
+	if m != nil && m.BagCount != nil {
+		return *m.BagCount
+	}
+	return 0
+}
+
+type CMsgClientToGCCandyShopOpenBagsResponse struct {
+	Response             *CMsgClientToGCCandyShopOpenBagsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopOpenBagsResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
+	XXX_unrecognized     []byte                                             `json:"-"`
+	XXX_sizecache        int32                                              `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) Reset() {
+	*m = CMsgClientToGCCandyShopOpenBagsResponse{}
+}
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopOpenBagsResponse) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopOpenBagsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{14}
+}
+
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopOpenBagsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopOpenBagsResponse_Response CMsgClientToGCCandyShopOpenBagsResponse_EResponse = CMsgClientToGCCandyShopOpenBagsResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopOpenBagsResponse) GetResponse() CMsgClientToGCCandyShopOpenBagsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopOpenBagsResponse_Response
+}
+
 type CMsgClientToGCCandyShopDoExchange struct {
 	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
-	RecipeId             *uint64  `protobuf:"varint,2,opt,name=recipe_id,json=recipeId" json:"recipe_id,omitempty"`
+	RecipeId             *uint32  `protobuf:"varint,2,opt,name=recipe_id,json=recipeId" json:"recipe_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -973,7 +1560,7 @@ func (m *CMsgClientToGCCandyShopDoExchange) Reset()         { *m = CMsgClientToG
 func (m *CMsgClientToGCCandyShopDoExchange) String() string { return proto.CompactTextString(m) }
 func (*CMsgClientToGCCandyShopDoExchange) ProtoMessage()    {}
 func (*CMsgClientToGCCandyShopDoExchange) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{13}
+	return fileDescriptor_132364ac0874755d, []int{15}
 }
 
 func (m *CMsgClientToGCCandyShopDoExchange) XXX_Unmarshal(b []byte) error {
@@ -1001,7 +1588,7 @@ func (m *CMsgClientToGCCandyShopDoExchange) GetCandyShopId() uint32 {
 	return 0
 }
 
-func (m *CMsgClientToGCCandyShopDoExchange) GetRecipeId() uint64 {
+func (m *CMsgClientToGCCandyShopDoExchange) GetRecipeId() uint32 {
 	if m != nil && m.RecipeId != nil {
 		return *m.RecipeId
 	}
@@ -1023,7 +1610,7 @@ func (m *CMsgClientToGCCandyShopDoExchangeResponse) String() string {
 }
 func (*CMsgClientToGCCandyShopDoExchangeResponse) ProtoMessage() {}
 func (*CMsgClientToGCCandyShopDoExchangeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{14}
+	return fileDescriptor_132364ac0874755d, []int{16}
 }
 
 func (m *CMsgClientToGCCandyShopDoExchangeResponse) XXX_Unmarshal(b []byte) error {
@@ -1070,7 +1657,7 @@ func (m *CMsgClientToGCCandyShopDoVariableExchange) String() string {
 }
 func (*CMsgClientToGCCandyShopDoVariableExchange) ProtoMessage() {}
 func (*CMsgClientToGCCandyShopDoVariableExchange) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{15}
+	return fileDescriptor_132364ac0874755d, []int{17}
 }
 
 func (m *CMsgClientToGCCandyShopDoVariableExchange) XXX_Unmarshal(b []byte) error {
@@ -1127,7 +1714,7 @@ func (m *CMsgClientToGCCandyShopDoVariableExchangeResponse) String() string {
 }
 func (*CMsgClientToGCCandyShopDoVariableExchangeResponse) ProtoMessage() {}
 func (*CMsgClientToGCCandyShopDoVariableExchangeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{16}
+	return fileDescriptor_132364ac0874755d, []int{18}
 }
 
 func (m *CMsgClientToGCCandyShopDoVariableExchangeResponse) XXX_Unmarshal(b []byte) error {
@@ -1157,119 +1744,566 @@ func (m *CMsgClientToGCCandyShopDoVariableExchangeResponse) GetResponse() CMsgCl
 	return Default_CMsgClientToGCCandyShopDoVariableExchangeResponse_Response
 }
 
-type CMsgClientToGCCandyShopRerollReward struct {
-	CandyShopId          *uint32                     `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
-	RewardId             *uint64                     `protobuf:"varint,2,opt,name=reward_id,json=rewardId" json:"reward_id,omitempty"`
-	Price                *CMsgCandyShopCandyQuantity `protobuf:"bytes,3,opt,name=price" json:"price,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
-	XXX_unrecognized     []byte                      `json:"-"`
-	XXX_sizecache        int32                       `json:"-"`
+type CMsgClientToGCCandyShopRerollRewards struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CMsgClientToGCCandyShopRerollReward) Reset()         { *m = CMsgClientToGCCandyShopRerollReward{} }
-func (m *CMsgClientToGCCandyShopRerollReward) String() string { return proto.CompactTextString(m) }
-func (*CMsgClientToGCCandyShopRerollReward) ProtoMessage()    {}
-func (*CMsgClientToGCCandyShopRerollReward) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{17}
+func (m *CMsgClientToGCCandyShopRerollRewards) Reset()         { *m = CMsgClientToGCCandyShopRerollRewards{} }
+func (m *CMsgClientToGCCandyShopRerollRewards) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopRerollRewards) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopRerollRewards) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{19}
 }
 
-func (m *CMsgClientToGCCandyShopRerollReward) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollReward.Unmarshal(m, b)
+func (m *CMsgClientToGCCandyShopRerollRewards) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards.Unmarshal(m, b)
 }
-func (m *CMsgClientToGCCandyShopRerollReward) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollReward.Marshal(b, m, deterministic)
+func (m *CMsgClientToGCCandyShopRerollRewards) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards.Marshal(b, m, deterministic)
 }
-func (m *CMsgClientToGCCandyShopRerollReward) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CMsgClientToGCCandyShopRerollReward.Merge(m, src)
+func (m *CMsgClientToGCCandyShopRerollRewards) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards.Merge(m, src)
 }
-func (m *CMsgClientToGCCandyShopRerollReward) XXX_Size() int {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollReward.Size(m)
+func (m *CMsgClientToGCCandyShopRerollRewards) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards.Size(m)
 }
-func (m *CMsgClientToGCCandyShopRerollReward) XXX_DiscardUnknown() {
-	xxx_messageInfo_CMsgClientToGCCandyShopRerollReward.DiscardUnknown(m)
+func (m *CMsgClientToGCCandyShopRerollRewards) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CMsgClientToGCCandyShopRerollReward proto.InternalMessageInfo
+var xxx_messageInfo_CMsgClientToGCCandyShopRerollRewards proto.InternalMessageInfo
 
-func (m *CMsgClientToGCCandyShopRerollReward) GetCandyShopId() uint32 {
+func (m *CMsgClientToGCCandyShopRerollRewards) GetCandyShopId() uint32 {
 	if m != nil && m.CandyShopId != nil {
 		return *m.CandyShopId
 	}
 	return 0
 }
 
-func (m *CMsgClientToGCCandyShopRerollReward) GetRewardId() uint64 {
-	if m != nil && m.RewardId != nil {
-		return *m.RewardId
+type CMsgClientToGCCandyShopRerollRewardsResponse struct {
+	Response             *CMsgClientToGCCandyShopRerollRewardsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopRerollRewardsResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                `json:"-"`
+	XXX_unrecognized     []byte                                                  `json:"-"`
+	XXX_sizecache        int32                                                   `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) Reset() {
+	*m = CMsgClientToGCCandyShopRerollRewardsResponse{}
+}
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopRerollRewardsResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopRerollRewardsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{20}
+}
+
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopRerollRewardsResponse_Response CMsgClientToGCCandyShopRerollRewardsResponse_EResponse = CMsgClientToGCCandyShopRerollRewardsResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopRerollRewardsResponse) GetResponse() CMsgClientToGCCandyShopRerollRewardsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopRerollRewardsResponse_Response
+}
+
+type CMsgClientToGCCandyShopDevGrantCandy struct {
+	CandyShopId          *uint32                     `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	CandyQuantity        *CMsgCandyShopCandyQuantity `protobuf:"bytes,2,opt,name=candy_quantity,json=candyQuantity" json:"candy_quantity,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
+	XXX_unrecognized     []byte                      `json:"-"`
+	XXX_sizecache        int32                       `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandy) Reset()         { *m = CMsgClientToGCCandyShopDevGrantCandy{} }
+func (m *CMsgClientToGCCandyShopDevGrantCandy) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopDevGrantCandy) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopDevGrantCandy) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{21}
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandy) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandy) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandy) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandy) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandy proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopDevGrantCandy) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
 	}
 	return 0
 }
 
-func (m *CMsgClientToGCCandyShopRerollReward) GetPrice() *CMsgCandyShopCandyQuantity {
+func (m *CMsgClientToGCCandyShopDevGrantCandy) GetCandyQuantity() *CMsgCandyShopCandyQuantity {
 	if m != nil {
-		return m.Price
+		return m.CandyQuantity
 	}
 	return nil
 }
 
-type CMsgClientToGCCandyShopRerollRewardResponse struct {
-	Response             *CMsgClientToGCCandyShopRerollRewardResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopRerollRewardResponse_EResponse,def=0" json:"response,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                               `json:"-"`
-	XXX_unrecognized     []byte                                                 `json:"-"`
-	XXX_sizecache        int32                                                  `json:"-"`
+type CMsgClientToGCCandyShopDevGrantCandyResponse struct {
+	Response             *CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                `json:"-"`
+	XXX_unrecognized     []byte                                                  `json:"-"`
+	XXX_sizecache        int32                                                   `json:"-"`
 }
 
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) Reset() {
-	*m = CMsgClientToGCCandyShopRerollRewardResponse{}
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) Reset() {
+	*m = CMsgClientToGCCandyShopDevGrantCandyResponse{}
 }
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) String() string {
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) String() string {
 	return proto.CompactTextString(m)
 }
-func (*CMsgClientToGCCandyShopRerollRewardResponse) ProtoMessage() {}
-func (*CMsgClientToGCCandyShopRerollRewardResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_132364ac0874755d, []int{18}
+func (*CMsgClientToGCCandyShopDevGrantCandyResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevGrantCandyResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{22}
 }
 
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse.Unmarshal(m, b)
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse.Unmarshal(m, b)
 }
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse.Marshal(b, m, deterministic)
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse.Marshal(b, m, deterministic)
 }
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse.Merge(m, src)
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse.Merge(m, src)
 }
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) XXX_Size() int {
-	return xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse.Size(m)
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse.Size(m)
 }
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse.DiscardUnknown(m)
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CMsgClientToGCCandyShopRerollRewardResponse proto.InternalMessageInfo
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyResponse proto.InternalMessageInfo
 
-const Default_CMsgClientToGCCandyShopRerollRewardResponse_Response CMsgClientToGCCandyShopRerollRewardResponse_EResponse = CMsgClientToGCCandyShopRerollRewardResponse_k_eInternalError
+const Default_CMsgClientToGCCandyShopDevGrantCandyResponse_Response CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse = CMsgClientToGCCandyShopDevGrantCandyResponse_k_eInternalError
 
-func (m *CMsgClientToGCCandyShopRerollRewardResponse) GetResponse() CMsgClientToGCCandyShopRerollRewardResponse_EResponse {
+func (m *CMsgClientToGCCandyShopDevGrantCandyResponse) GetResponse() CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse {
 	if m != nil && m.Response != nil {
 		return *m.Response
 	}
-	return Default_CMsgClientToGCCandyShopRerollRewardResponse_Response
+	return Default_CMsgClientToGCCandyShopDevGrantCandyResponse_Response
+}
+
+type CMsgClientToGCCandyShopDevClearInventory struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevClearInventory) Reset() {
+	*m = CMsgClientToGCCandyShopDevClearInventory{}
+}
+func (m *CMsgClientToGCCandyShopDevClearInventory) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopDevClearInventory) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopDevClearInventory) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{23}
+}
+
+func (m *CMsgClientToGCCandyShopDevClearInventory) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventory) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventory) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventory) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventory) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventory proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopDevClearInventory) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
+	}
+	return 0
+}
+
+type CMsgClientToGCCandyShopDevClearInventoryResponse struct {
+	Response             *CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                    `json:"-"`
+	XXX_unrecognized     []byte                                                      `json:"-"`
+	XXX_sizecache        int32                                                       `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) Reset() {
+	*m = CMsgClientToGCCandyShopDevClearInventoryResponse{}
+}
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevClearInventoryResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevClearInventoryResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{24}
+}
+
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevClearInventoryResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopDevClearInventoryResponse_Response CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse = CMsgClientToGCCandyShopDevClearInventoryResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopDevClearInventoryResponse) GetResponse() CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopDevClearInventoryResponse_Response
+}
+
+type CMsgClientToGCCandyShopDevGrantCandyBags struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	Quantity             *uint32  `protobuf:"varint,2,opt,name=quantity" json:"quantity,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) Reset() {
+	*m = CMsgClientToGCCandyShopDevGrantCandyBags{}
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCCandyShopDevGrantCandyBags) ProtoMessage()    {}
+func (*CMsgClientToGCCandyShopDevGrantCandyBags) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{25}
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBags proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBags) GetQuantity() uint32 {
+	if m != nil && m.Quantity != nil {
+		return *m.Quantity
+	}
+	return 0
+}
+
+type CMsgClientToGCCandyShopDevGrantCandyBagsResponse struct {
+	Response             *CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                    `json:"-"`
+	XXX_unrecognized     []byte                                                      `json:"-"`
+	XXX_sizecache        int32                                                       `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) Reset() {
+	*m = CMsgClientToGCCandyShopDevGrantCandyBagsResponse{}
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevGrantCandyBagsResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevGrantCandyBagsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{26}
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantCandyBagsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopDevGrantCandyBagsResponse_Response CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse = CMsgClientToGCCandyShopDevGrantCandyBagsResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopDevGrantCandyBagsResponse) GetResponse() CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopDevGrantCandyBagsResponse_Response
+}
+
+type CMsgClientToGCCandyShopDevShuffleExchange struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) Reset() {
+	*m = CMsgClientToGCCandyShopDevShuffleExchange{}
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevShuffleExchange) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevShuffleExchange) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{27}
+}
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchange proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchange) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
+	}
+	return 0
+}
+
+type CMsgClientToGCCandyShopDevShuffleExchangeResponse struct {
+	Response             *CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                     `json:"-"`
+	XXX_unrecognized     []byte                                                       `json:"-"`
+	XXX_sizecache        int32                                                        `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) Reset() {
+	*m = CMsgClientToGCCandyShopDevShuffleExchangeResponse{}
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevShuffleExchangeResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevShuffleExchangeResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{28}
+}
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevShuffleExchangeResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopDevShuffleExchangeResponse_Response CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse = CMsgClientToGCCandyShopDevShuffleExchangeResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopDevShuffleExchangeResponse) GetResponse() CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopDevShuffleExchangeResponse_Response
+}
+
+type CMsgClientToGCCandyShopDevGrantRerollCharges struct {
+	CandyShopId          *uint32  `protobuf:"varint,1,opt,name=candy_shop_id,json=candyShopId" json:"candy_shop_id,omitempty"`
+	RerollCharges        *uint32  `protobuf:"varint,2,opt,name=reroll_charges,json=rerollCharges" json:"reroll_charges,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) Reset() {
+	*m = CMsgClientToGCCandyShopDevGrantRerollCharges{}
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevGrantRerollCharges) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevGrantRerollCharges) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{29}
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollCharges proto.InternalMessageInfo
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) GetCandyShopId() uint32 {
+	if m != nil && m.CandyShopId != nil {
+		return *m.CandyShopId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollCharges) GetRerollCharges() uint32 {
+	if m != nil && m.RerollCharges != nil {
+		return *m.RerollCharges
+	}
+	return 0
+}
+
+type CMsgClientToGCCandyShopDevGrantRerollChargesResponse struct {
+	Response             *CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse,def=0" json:"response,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                        `json:"-"`
+	XXX_unrecognized     []byte                                                          `json:"-"`
+	XXX_sizecache        int32                                                           `json:"-"`
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) Reset() {
+	*m = CMsgClientToGCCandyShopDevGrantRerollChargesResponse{}
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCCandyShopDevGrantRerollChargesResponse) ProtoMessage() {}
+func (*CMsgClientToGCCandyShopDevGrantRerollChargesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_132364ac0874755d, []int{30}
+}
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse.Size(m)
+}
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCCandyShopDevGrantRerollChargesResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCCandyShopDevGrantRerollChargesResponse_Response CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse = CMsgClientToGCCandyShopDevGrantRerollChargesResponse_k_eInternalError
+
+func (m *CMsgClientToGCCandyShopDevGrantRerollChargesResponse) GetResponse() CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCCandyShopDevGrantRerollChargesResponse_Response
 }
 
 func init() {
+	proto.RegisterEnum("protocol.ECandyShopAuditAction", ECandyShopAuditAction_name, ECandyShopAuditAction_value)
 	proto.RegisterEnum("protocol.ECandyShopRewardType", ECandyShopRewardType_name, ECandyShopRewardType_value)
 	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopGetUserDataResponse_EResponse", CMsgClientToGCCandyShopGetUserDataResponse_EResponse_name, CMsgClientToGCCandyShopGetUserDataResponse_EResponse_value)
 	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse", CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse_name, CMsgClientToGCCandyShopPurchaseRewardResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopOpenBagsResponse_EResponse", CMsgClientToGCCandyShopOpenBagsResponse_EResponse_name, CMsgClientToGCCandyShopOpenBagsResponse_EResponse_value)
 	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDoExchangeResponse_EResponse", CMsgClientToGCCandyShopDoExchangeResponse_EResponse_name, CMsgClientToGCCandyShopDoExchangeResponse_EResponse_value)
 	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse", CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse_name, CMsgClientToGCCandyShopDoVariableExchangeResponse_EResponse_value)
-	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopRerollRewardResponse_EResponse", CMsgClientToGCCandyShopRerollRewardResponse_EResponse_name, CMsgClientToGCCandyShopRerollRewardResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopRerollRewardsResponse_EResponse", CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_name, CMsgClientToGCCandyShopRerollRewardsResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse", CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_name, CMsgClientToGCCandyShopDevGrantCandyResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse", CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_name, CMsgClientToGCCandyShopDevClearInventoryResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse", CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_name, CMsgClientToGCCandyShopDevGrantCandyBagsResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse", CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_name, CMsgClientToGCCandyShopDevShuffleExchangeResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse", CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_name, CMsgClientToGCCandyShopDevGrantRerollChargesResponse_EResponse_value)
 	proto.RegisterType((*CMsgCandyShopCandyCount)(nil), "protocol.CMsgCandyShopCandyCount")
 	proto.RegisterType((*CMsgCandyShopCandyQuantity)(nil), "protocol.CMsgCandyShopCandyQuantity")
 	proto.RegisterType((*CMsgCandyShopExchangeRecipe)(nil), "protocol.CMsgCandyShopExchangeRecipe")
 	proto.RegisterType((*CMsgCandyShopRewardData_Item)(nil), "protocol.CMsgCandyShopRewardData_Item")
 	proto.RegisterType((*CMsgCandyShopRewardData_EventAction)(nil), "protocol.CMsgCandyShopRewardData_EventAction")
-	proto.RegisterType((*CMsgCandyShopRewardItem)(nil), "protocol.CMsgCandyShopRewardItem")
+	proto.RegisterType((*CMsgCandyShopRewardData_EventPoints)(nil), "protocol.CMsgCandyShopRewardData_EventPoints")
 	proto.RegisterType((*CMsgCandyShopReward)(nil), "protocol.CMsgCandyShopReward")
 	proto.RegisterType((*CMsgCandyShopUserData)(nil), "protocol.CMsgCandyShopUserData")
 	proto.RegisterType((*CMsgClientToGCCandyShopGetUserData)(nil), "protocol.CMsgClientToGCCandyShopGetUserData")
@@ -1277,12 +2311,24 @@ func init() {
 	proto.RegisterType((*CMsgGCToClientCandyShopUserDataUpdated)(nil), "protocol.CMsgGCToClientCandyShopUserDataUpdated")
 	proto.RegisterType((*CMsgClientToGCCandyShopPurchaseReward)(nil), "protocol.CMsgClientToGCCandyShopPurchaseReward")
 	proto.RegisterType((*CMsgClientToGCCandyShopPurchaseRewardResponse)(nil), "protocol.CMsgClientToGCCandyShopPurchaseRewardResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopOpenBags)(nil), "protocol.CMsgClientToGCCandyShopOpenBags")
+	proto.RegisterType((*CMsgClientToGCCandyShopOpenBagsResponse)(nil), "protocol.CMsgClientToGCCandyShopOpenBagsResponse")
 	proto.RegisterType((*CMsgClientToGCCandyShopDoExchange)(nil), "protocol.CMsgClientToGCCandyShopDoExchange")
 	proto.RegisterType((*CMsgClientToGCCandyShopDoExchangeResponse)(nil), "protocol.CMsgClientToGCCandyShopDoExchangeResponse")
 	proto.RegisterType((*CMsgClientToGCCandyShopDoVariableExchange)(nil), "protocol.CMsgClientToGCCandyShopDoVariableExchange")
 	proto.RegisterType((*CMsgClientToGCCandyShopDoVariableExchangeResponse)(nil), "protocol.CMsgClientToGCCandyShopDoVariableExchangeResponse")
-	proto.RegisterType((*CMsgClientToGCCandyShopRerollReward)(nil), "protocol.CMsgClientToGCCandyShopRerollReward")
-	proto.RegisterType((*CMsgClientToGCCandyShopRerollRewardResponse)(nil), "protocol.CMsgClientToGCCandyShopRerollRewardResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopRerollRewards)(nil), "protocol.CMsgClientToGCCandyShopRerollRewards")
+	proto.RegisterType((*CMsgClientToGCCandyShopRerollRewardsResponse)(nil), "protocol.CMsgClientToGCCandyShopRerollRewardsResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantCandy)(nil), "protocol.CMsgClientToGCCandyShopDevGrantCandy")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantCandyResponse)(nil), "protocol.CMsgClientToGCCandyShopDevGrantCandyResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevClearInventory)(nil), "protocol.CMsgClientToGCCandyShopDevClearInventory")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevClearInventoryResponse)(nil), "protocol.CMsgClientToGCCandyShopDevClearInventoryResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantCandyBags)(nil), "protocol.CMsgClientToGCCandyShopDevGrantCandyBags")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantCandyBagsResponse)(nil), "protocol.CMsgClientToGCCandyShopDevGrantCandyBagsResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevShuffleExchange)(nil), "protocol.CMsgClientToGCCandyShopDevShuffleExchange")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevShuffleExchangeResponse)(nil), "protocol.CMsgClientToGCCandyShopDevShuffleExchangeResponse")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantRerollCharges)(nil), "protocol.CMsgClientToGCCandyShopDevGrantRerollCharges")
+	proto.RegisterType((*CMsgClientToGCCandyShopDevGrantRerollChargesResponse)(nil), "protocol.CMsgClientToGCCandyShopDevGrantRerollChargesResponse")
 }
 
 func init() {
@@ -1290,72 +2336,106 @@ func init() {
 }
 
 var fileDescriptor_132364ac0874755d = []byte{
-	// 1069 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x56, 0xcd, 0x6f, 0x1b, 0x45,
-	0x14, 0xef, 0x6e, 0x92, 0xc6, 0x7e, 0xc6, 0xc9, 0x32, 0xfd, 0x32, 0x49, 0x4a, 0x9a, 0x85, 0x84,
-	0x52, 0xd4, 0x48, 0xe4, 0x44, 0xa3, 0x02, 0x6a, 0x6c, 0x2b, 0xf5, 0x81, 0x50, 0x36, 0x6e, 0xa5,
-	0x4a, 0x48, 0xab, 0xc9, 0xee, 0xab, 0xbd, 0xb2, 0x77, 0x67, 0xd9, 0x99, 0x4d, 0xeb, 0x9e, 0x72,
-	0xe0, 0x84, 0xb8, 0x23, 0x71, 0xe4, 0xc6, 0x9d, 0x23, 0xff, 0x00, 0x77, 0xfe, 0x1c, 0x0e, 0x68,
-	0x67, 0x3f, 0x6c, 0x67, 0xbd, 0xfe, 0x10, 0x08, 0x72, 0xf2, 0xce, 0x9b, 0xf7, 0x7b, 0x1f, 0xbf,
-	0xf7, 0xe6, 0xf9, 0xc1, 0x47, 0x36, 0x13, 0xd4, 0xec, 0x58, 0x2e, 0x72, 0x4e, 0x3b, 0xc8, 0x4d,
-	0xab, 0xef, 0xa0, 0x27, 0x4c, 0x8b, 0x7a, 0xf6, 0xc0, 0xe4, 0x5d, 0xe6, 0xef, 0xfb, 0x01, 0x13,
-	0x8c, 0x94, 0xe4, 0x8f, 0xc5, 0xfa, 0x1b, 0x37, 0xb8, 0x40, 0xea, 0xa6, 0x80, 0xf8, 0x7a, 0xe3,
-	0x8e, 0xb4, 0xc3, 0xbb, 0x34, 0x40, 0xdb, 0x44, 0x2f, 0x74, 0xd3, 0x8b, 0xad, 0x9c, 0x03, 0xe6,
-	0xba, 0xcc, 0x2b, 0xba, 0x7d, 0x8d, 0x67, 0xd4, 0x77, 0x92, 0xdb, 0xdb, 0x1d, 0x8b, 0xdb, 0xbd,
-	0x91, 0xeb, 0x44, 0x7e, 0xeb, 0x8c, 0x72, 0x9c, 0x20, 0x46, 0x8b, 0x79, 0x79, 0xf1, 0xd6, 0xe4,
-	0x14, 0x53, 0xd0, 0x39, 0xed, 0x9f, 0x23, 0xbe, 0x11, 0xe8, 0x71, 0x87, 0x79, 0x09, 0x48, 0x7f,
-	0x09, 0x77, 0xea, 0x5f, 0xf1, 0x4e, 0x3d, 0xa2, 0xe1, 0xb4, 0xcb, 0x7c, 0xf9, 0x51, 0x67, 0xa1,
-	0x27, 0xc8, 0x5d, 0x80, 0x98, 0x1d, 0x31, 0xf0, 0xb1, 0xa6, 0xdc, 0x53, 0xee, 0x57, 0x8d, 0xb2,
-	0x94, 0xb4, 0x07, 0x3e, 0x92, 0x6d, 0xa8, 0xc4, 0xd7, 0x56, 0xa4, 0x5d, 0x53, 0xe5, 0x7d, 0x8c,
-	0x90, 0x78, 0xfd, 0x0c, 0x36, 0xf2, 0xa6, 0xbf, 0x09, 0xa9, 0x27, 0x1c, 0x31, 0x20, 0x0d, 0x78,
-	0x67, 0x04, 0xce, 0x6b, 0xca, 0xbd, 0xa5, 0xfb, 0x95, 0x83, 0x9d, 0xfd, 0x94, 0xfe, 0xfd, 0x82,
-	0xb0, 0x8c, 0xca, 0xd0, 0x05, 0xd7, 0x7f, 0x53, 0x60, 0x73, 0x4c, 0xb1, 0xf9, 0xc6, 0xea, 0x52,
-	0xaf, 0x83, 0x06, 0x5a, 0x8e, 0x8f, 0x64, 0x13, 0xca, 0x81, 0xfc, 0x32, 0x1d, 0x5b, 0xa6, 0xb0,
-	0x6c, 0x94, 0x62, 0x41, 0xcb, 0x26, 0x87, 0xb0, 0xe2, 0x78, 0x7e, 0x18, 0xc7, 0x5e, 0x39, 0xf8,
-	0x70, 0x9a, 0xef, 0x34, 0x6e, 0x23, 0x86, 0x90, 0xc7, 0x70, 0x9d, 0x85, 0x22, 0x02, 0x2f, 0x2d,
-	0x00, 0x4e, 0x30, 0xfa, 0x23, 0xd8, 0x1a, 0xd3, 0x32, 0xf0, 0x35, 0x0d, 0xec, 0x06, 0x15, 0xd4,
-	0x6c, 0x09, 0x74, 0xc9, 0x7b, 0x50, 0x72, 0x04, 0xba, 0xa6, 0x8d, 0xaf, 0x12, 0xe2, 0x57, 0xa3,
-	0x73, 0x03, 0x5f, 0xe9, 0x3f, 0x2b, 0xf0, 0x41, 0x11, 0xb6, 0x79, 0x8e, 0x9e, 0x78, 0x62, 0x09,
-	0x87, 0x79, 0xe4, 0x10, 0x4a, 0x18, 0x1d, 0xd3, 0xc4, 0xd7, 0x0e, 0xb4, 0x61, 0x88, 0x4d, 0xa9,
-	0x79, 0x58, 0x6d, 0xbe, 0x68, 0x9e, 0xb4, 0xcd, 0x56, 0xc3, 0x3c, 0xf9, 0xfa, 0xa4, 0x69, 0xac,
-	0x4a, 0x40, 0xcb, 0x8e, 0x58, 0xa3, 0xd2, 0x4a, 0x04, 0x8e, 0x0b, 0x5b, 0x8a, 0x05, 0x2d, 0x9b,
-	0x6c, 0x40, 0xe9, 0xbb, 0x24, 0x1f, 0x99, 0x7b, 0xd5, 0xc8, 0xce, 0xfa, 0x4f, 0xea, 0xa5, 0x76,
-	0x8a, 0x83, 0x93, 0x39, 0x7d, 0x0b, 0x95, 0x40, 0x9e, 0x86, 0xfd, 0xb4, 0x76, 0xf0, 0xfe, 0x48,
-	0x4c, 0x97, 0x40, 0x51, 0x93, 0x1d, 0x6e, 0xf6, 0x4c, 0x9c, 0x20, 0x37, 0x4f, 0x98, 0x87, 0x06,
-	0x04, 0x99, 0x80, 0xd4, 0xa1, 0x1c, 0x33, 0x46, 0x05, 0x4d, 0xea, 0xb9, 0x57, 0x50, 0x92, 0x4b,
-	0x64, 0x1b, 0x92, 0xea, 0xe8, 0x48, 0x5e, 0xc2, 0xbb, 0x31, 0x67, 0x49, 0xf6, 0xd2, 0x58, 0x5c,
-	0xdf, 0x87, 0xb3, 0x8d, 0x8d, 0xb0, 0x6f, 0xac, 0xe3, 0xf0, 0x10, 0x5d, 0xea, 0xbf, 0x2a, 0x70,
-	0x63, 0x02, 0x30, 0x6e, 0x50, 0xc9, 0xca, 0x68, 0x83, 0x4a, 0xd2, 0x64, 0x83, 0xfa, 0x81, 0x63,
-	0xe1, 0x62, 0x0d, 0x2a, 0x21, 0xe4, 0x11, 0x5c, 0x8f, 0xed, 0x24, 0x09, 0xec, 0x4c, 0x4d, 0x40,
-	0x12, 0x91, 0x00, 0xf4, 0x3f, 0x55, 0xb8, 0x35, 0xa6, 0xf3, 0x9c, 0x63, 0x20, 0x09, 0xda, 0x85,
-	0x35, 0xc7, 0x8b, 0x32, 0x63, 0xc1, 0xc0, 0xe4, 0xce, 0xdb, 0x74, 0x2c, 0x54, 0x33, 0xe9, 0xa9,
-	0xf3, 0x16, 0xc9, 0x11, 0x94, 0x33, 0xc1, 0x42, 0xb1, 0x0f, 0x61, 0xe4, 0x33, 0xa8, 0x61, 0xf2,
-	0x96, 0xcd, 0x00, 0x39, 0x0a, 0x53, 0x38, 0x2e, 0x72, 0x41, 0x5d, 0x5f, 0x66, 0xb4, 0x6a, 0xdc,
-	0xc6, 0xec, 0xad, 0x73, 0x14, 0xed, 0xf4, 0x96, 0x3c, 0x03, 0x6d, 0x04, 0x19, 0xbd, 0x75, 0x5e,
-	0x5b, 0x96, 0xd3, 0x65, 0xb7, 0x20, 0x88, 0xf1, 0xa1, 0x61, 0xac, 0xe3, 0xd8, 0x99, 0x93, 0x06,
-	0xac, 0x45, 0x1d, 0x71, 0x1e, 0xd9, 0x8b, 0x18, 0xe2, 0xb5, 0x15, 0x69, 0xef, 0xee, 0x54, 0x4e,
-	0x8d, 0x6a, 0x0c, 0x8a, 0x4f, 0x5c, 0x7f, 0x0a, 0xba, 0xd4, 0x92, 0x53, 0xb9, 0xcd, 0x8e, 0xeb,
-	0x99, 0xfe, 0x31, 0x8a, 0x8c, 0x62, 0x1d, 0xaa, 0xc3, 0xff, 0xa4, 0xb4, 0x29, 0xaa, 0xc9, 0xd4,
-	0x8b, 0x94, 0x5b, 0xb6, 0xfe, 0xbb, 0x0a, 0x0f, 0x66, 0x9b, 0x32, 0x90, 0xfb, 0xcc, 0xe3, 0x48,
-	0xfa, 0x50, 0x0a, 0x92, 0xef, 0xe4, 0xd9, 0x7d, 0x71, 0x29, 0xf0, 0xb9, 0xec, 0xec, 0x37, 0xd3,
-	0xaf, 0x43, 0xad, 0x67, 0x62, 0xcb, 0x13, 0x18, 0x78, 0xb4, 0xdf, 0x0c, 0x02, 0x16, 0x18, 0x99,
-	0x07, 0xf2, 0x18, 0xca, 0x21, 0xc7, 0x60, 0xf4, 0x25, 0x6e, 0x17, 0xf0, 0x94, 0x79, 0x28, 0x85,
-	0xc9, 0x97, 0x7e, 0x06, 0xe5, 0xcc, 0x0d, 0xb9, 0x09, 0x39, 0x47, 0xda, 0x35, 0xb2, 0x06, 0xd0,
-	0x33, 0xf1, 0x34, 0xb4, 0x2c, 0xe4, 0x5c, 0x53, 0x92, 0x73, 0x9b, 0xb1, 0xa3, 0x90, 0x0f, 0x34,
-	0x95, 0xac, 0x43, 0xa5, 0x67, 0x62, 0xc3, 0xe1, 0xf4, 0xac, 0x8f, 0xb6, 0xb6, 0x94, 0x2a, 0x38,
-	0x2e, 0xb2, 0x50, 0x68, 0xcb, 0xfa, 0x0f, 0x0a, 0xec, 0x45, 0x71, 0x1c, 0xd7, 0xdb, 0x2c, 0x4e,
-	0x3d, 0x17, 0xd1, 0x73, 0xdf, 0xa6, 0x02, 0xed, 0x79, 0xaa, 0xf1, 0x0f, 0x13, 0xee, 0xc2, 0x6e,
-	0x41, 0x09, 0x9e, 0x85, 0x81, 0xd5, 0xa5, 0x3c, 0xe9, 0x9f, 0xb9, 0x42, 0x19, 0x9b, 0x26, 0xea,
-	0xf8, 0x34, 0xd1, 0xbf, 0x57, 0xe1, 0xe1, 0x5c, 0xae, 0x32, 0xfe, 0x59, 0xae, 0x71, 0x9e, 0xcc,
-	0x6c, 0x9c, 0xc9, 0xa6, 0xe6, 0xeb, 0x9d, 0xff, 0xa4, 0xfa, 0x36, 0xec, 0x14, 0x84, 0xde, 0x60,
-	0xe9, 0x20, 0x98, 0x9f, 0xec, 0x74, 0xb7, 0x50, 0xc7, 0x77, 0x0b, 0xfd, 0x2f, 0x05, 0x3e, 0x9e,
-	0xe9, 0x26, 0x4b, 0xb5, 0x97, 0x23, 0xfa, 0xf3, 0x99, 0x44, 0xe7, 0xcd, 0x5c, 0x21, 0x92, 0xff,
-	0x98, 0x96, 0xfe, 0x0b, 0x1a, 0x38, 0x11, 0x70, 0x21, 0xb6, 0xff, 0xbf, 0x65, 0xed, 0x47, 0x15,
-	0x3e, 0x9d, 0x3b, 0x97, 0x8c, 0x58, 0x9e, 0x2b, 0x69, 0x73, 0x8e, 0x92, 0x16, 0x99, 0xbb, 0x42,
-	0xa5, 0xfd, 0x25, 0x5d, 0x40, 0xf3, 0xf1, 0x1b, 0x18, 0xb0, 0x7e, 0xff, 0x5f, 0x9a, 0x57, 0xc3,
-	0xed, 0x67, 0x69, 0xe1, 0xed, 0x47, 0xbf, 0x50, 0xe1, 0x93, 0x39, 0x82, 0xcc, 0xb8, 0x72, 0x73,
-	0xd5, 0xfa, 0x72, 0x66, 0xb5, 0x26, 0x19, 0xba, 0x3a, 0x75, 0x7a, 0x70, 0xa1, 0xc0, 0xcd, 0x49,
-	0x3b, 0x35, 0xd9, 0x86, 0x69, 0x5b, 0xb5, 0x76, 0x6d, 0x8a, 0x42, 0xb4, 0x26, 0x6a, 0x0a, 0xd9,
-	0x03, 0xbd, 0x40, 0x61, 0x64, 0x07, 0xd6, 0xd4, 0xa3, 0x95, 0xa7, 0xca, 0x85, 0x72, 0xed, 0xef,
-	0x00, 0x00, 0x00, 0xff, 0xff, 0x22, 0xad, 0x25, 0x38, 0x7c, 0x0f, 0x00, 0x00,
+	// 1610 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x59, 0x41, 0x6f, 0xdb, 0x46,
+	0x16, 0x8e, 0x68, 0x5b, 0x92, 0x9f, 0x57, 0x0e, 0x33, 0x89, 0x1d, 0xaf, 0x93, 0xac, 0x13, 0x26,
+	0x76, 0x1c, 0x63, 0x63, 0xec, 0x06, 0x7b, 0xd8, 0xf5, 0x26, 0x8b, 0x75, 0x24, 0xc1, 0xd1, 0x2e,
+	0x62, 0xa7, 0xb4, 0x13, 0x20, 0x40, 0x01, 0x62, 0x4c, 0x8e, 0x25, 0x56, 0x12, 0x87, 0xe5, 0x90,
+	0x4a, 0x94, 0x7f, 0xd0, 0xfe, 0x81, 0x02, 0x3d, 0x15, 0x3d, 0xf5, 0x5c, 0x04, 0x28, 0xd0, 0x5b,
+	0xdb, 0x53, 0x51, 0xa0, 0x3f, 0xa0, 0xc7, 0x02, 0x3d, 0xf4, 0xd8, 0x63, 0xd1, 0x4b, 0xc1, 0x19,
+	0x92, 0x12, 0x45, 0x52, 0xa2, 0x60, 0xa0, 0x6e, 0xd0, 0x93, 0x38, 0x6f, 0xde, 0xfb, 0xde, 0x9b,
+	0xf7, 0xbd, 0x19, 0x3e, 0x8e, 0xe0, 0xb6, 0x41, 0x5d, 0xac, 0x35, 0xf5, 0x2e, 0x61, 0x0c, 0x37,
+	0x09, 0xd3, 0xf4, 0x8e, 0x49, 0x2c, 0x57, 0xd3, 0xb1, 0x65, 0xf4, 0x35, 0xd6, 0xa2, 0xf6, 0xb6,
+	0xed, 0x50, 0x97, 0xa2, 0x32, 0xff, 0xd1, 0x69, 0x67, 0xf5, 0x22, 0x73, 0x09, 0xee, 0x86, 0x06,
+	0x62, 0x7a, 0xf5, 0x32, 0xc7, 0x61, 0x2d, 0xec, 0x10, 0x43, 0x23, 0x96, 0xd7, 0x0d, 0x27, 0xae,
+	0x26, 0x1c, 0xd0, 0x6e, 0x97, 0x5a, 0x59, 0xb3, 0x2f, 0xc8, 0x31, 0xb6, 0xcd, 0x60, 0x76, 0xb9,
+	0xa9, 0x33, 0xa3, 0x3d, 0x34, 0x1d, 0xc8, 0x97, 0x8e, 0x31, 0x23, 0x29, 0x62, 0xa2, 0x53, 0x2b,
+	0x29, 0xbe, 0x9a, 0xbe, 0xc4, 0xd0, 0xa8, 0x87, 0x3b, 0x3d, 0x42, 0x5e, 0xba, 0xc4, 0x62, 0x26,
+	0xb5, 0x02, 0x23, 0xe5, 0x39, 0x5c, 0xae, 0x3e, 0x66, 0xcd, 0xaa, 0x9f, 0x86, 0xc3, 0x16, 0xb5,
+	0xf9, 0x43, 0x95, 0x7a, 0x96, 0x8b, 0xae, 0x01, 0x88, 0xec, 0xb8, 0x7d, 0x9b, 0xac, 0x14, 0xae,
+	0x17, 0x36, 0x2b, 0xea, 0x3c, 0x97, 0x1c, 0xf5, 0x6d, 0x82, 0xd6, 0x60, 0x41, 0x4c, 0xeb, 0xbe,
+	0xf6, 0x8a, 0xc4, 0xe7, 0x85, 0x05, 0xb7, 0x57, 0x8e, 0x61, 0x35, 0x09, 0xfd, 0x96, 0x87, 0x2d,
+	0xd7, 0x74, 0xfb, 0xa8, 0x06, 0x7f, 0x1a, 0x32, 0x67, 0x2b, 0x85, 0xeb, 0x33, 0x9b, 0x0b, 0xf7,
+	0x6e, 0x6c, 0x87, 0xe9, 0xdf, 0xce, 0x08, 0x4b, 0x5d, 0x18, 0xb8, 0x60, 0xca, 0xeb, 0x02, 0x5c,
+	0x89, 0x29, 0xd6, 0x5f, 0xea, 0x2d, 0x6c, 0x35, 0x89, 0x4a, 0x74, 0xd3, 0x26, 0xe8, 0x0a, 0xcc,
+	0x3b, 0xfc, 0x49, 0x33, 0x8d, 0x60, 0x09, 0x65, 0x21, 0x68, 0x18, 0x68, 0x07, 0xe6, 0x4c, 0xcb,
+	0xf6, 0x44, 0xec, 0x0b, 0xf7, 0x6e, 0x8d, 0xf3, 0x1d, 0xc6, 0xad, 0x0a, 0x13, 0x74, 0x1f, 0x8a,
+	0xd4, 0x73, 0x7d, 0xe3, 0x99, 0x29, 0x8c, 0x03, 0x1b, 0xe5, 0x5f, 0x70, 0x35, 0xa6, 0xa5, 0x92,
+	0x17, 0xd8, 0x31, 0x6a, 0xd8, 0xc5, 0x5a, 0xc3, 0x25, 0x5d, 0xf4, 0x67, 0x28, 0x9b, 0x2e, 0xe9,
+	0x6a, 0x06, 0x39, 0x09, 0xa2, 0x2e, 0xf9, 0xe3, 0x1a, 0x39, 0x51, 0x3e, 0x2c, 0xc0, 0xcd, 0x2c,
+	0xdb, 0x7a, 0x8f, 0x58, 0xee, 0xae, 0xee, 0x9a, 0xd4, 0x42, 0x3b, 0x50, 0x26, 0xfe, 0x30, 0x5c,
+	0xf8, 0xe2, 0x3d, 0x79, 0x10, 0x62, 0x9d, 0x6b, 0xee, 0x54, 0xea, 0xcf, 0xea, 0xfb, 0x47, 0x5a,
+	0xa3, 0xa6, 0xed, 0x1f, 0xec, 0xd7, 0xd5, 0x12, 0x37, 0x68, 0x18, 0x7e, 0xd6, 0x30, 0x47, 0xf1,
+	0x8d, 0x05, 0xb1, 0x65, 0x21, 0x68, 0x18, 0x68, 0x15, 0xca, 0xef, 0x06, 0xeb, 0xe1, 0x6b, 0xaf,
+	0xa8, 0xd1, 0x58, 0xe9, 0x4f, 0x88, 0xed, 0x09, 0x35, 0x2d, 0x97, 0x9d, 0x2a, 0xb6, 0x65, 0x28,
+	0xda, 0x1c, 0x25, 0x08, 0x2c, 0x18, 0x29, 0x3f, 0xcd, 0xc0, 0xc5, 0x14, 0xdf, 0xa2, 0x02, 0xfc,
+	0xa7, 0x58, 0x05, 0xf8, 0x82, 0x86, 0x81, 0x36, 0x41, 0x0e, 0x26, 0xa9, 0x1d, 0x5f, 0xef, 0xa2,
+	0x90, 0x1f, 0xd8, 0xc1, 0xaa, 0x77, 0x60, 0xce, 0x76, 0x4c, 0x9d, 0x4c, 0x45, 0xb7, 0x30, 0x41,
+	0x6f, 0xc3, 0x42, 0xe0, 0x85, 0xef, 0xa4, 0x59, 0xbe, 0xe2, 0xbf, 0x0c, 0xad, 0x78, 0x24, 0x66,
+	0x7f, 0x7b, 0xed, 0x5c, 0x69, 0x6b, 0x24, 0x45, 0xae, 0xed, 0x53, 0x8b, 0xa8, 0xe0, 0x44, 0x02,
+	0x54, 0x85, 0x79, 0x51, 0x2b, 0xd8, 0xc5, 0x2b, 0x73, 0x3c, 0xba, 0x8d, 0x8c, 0xe8, 0x46, 0xca,
+	0x4c, 0xe5, 0x45, 0xe6, 0x0f, 0xd1, 0x73, 0xb8, 0x20, 0x18, 0x09, 0x78, 0xe7, 0x60, 0x45, 0x0e,
+	0x76, 0x77, 0x32, 0xd8, 0x50, 0xdd, 0xa9, 0xe7, 0xc9, 0x60, 0x10, 0x87, 0x16, 0x44, 0x09, 0xe8,
+	0xd2, 0x54, 0xd0, 0xa2, 0x6c, 0x02, 0x68, 0x31, 0xf0, 0x27, 0x95, 0x5f, 0x24, 0x58, 0x8a, 0x19,
+	0x3e, 0x65, 0xc4, 0xe1, 0x4e, 0xd7, 0x61, 0xd1, 0xb4, 0x7c, 0x6d, 0xea, 0xf4, 0x35, 0x66, 0xbe,
+	0x0a, 0xcf, 0xaf, 0x4a, 0x24, 0x3d, 0x34, 0x5f, 0x11, 0xf4, 0x10, 0xe6, 0x23, 0xc1, 0x54, 0xa7,
+	0xc0, 0xc0, 0x0c, 0xfd, 0x13, 0x56, 0x48, 0x70, 0xe8, 0x68, 0x0e, 0x61, 0xc4, 0xd5, 0x5c, 0xb3,
+	0x4b, 0x98, 0x8b, 0xbb, 0x36, 0x2f, 0x96, 0x92, 0xba, 0x4c, 0xa2, 0x43, 0x89, 0x11, 0xf7, 0x28,
+	0x9c, 0x45, 0x4f, 0x40, 0x1e, 0xb2, 0xf4, 0x0f, 0x25, 0xb6, 0x32, 0xcb, 0x8f, 0xc1, 0xf5, 0x8c,
+	0x20, 0xe2, 0xa7, 0x9b, 0x7a, 0x9e, 0xc4, 0xc6, 0x0c, 0xd5, 0x60, 0xd1, 0x27, 0xb0, 0xe7, 0xe3,
+	0xf9, 0x29, 0x64, 0x2b, 0x73, 0x1c, 0xef, 0xda, 0xd8, 0x44, 0xab, 0x15, 0x61, 0x24, 0x46, 0xcc,
+	0x4f, 0x9e, 0x43, 0x1c, 0xda, 0xe9, 0x68, 0x7a, 0x0b, 0x3b, 0x4d, 0xc2, 0x78, 0x25, 0x54, 0xd4,
+	0x8a, 0x90, 0x56, 0x85, 0x50, 0x79, 0x04, 0x0a, 0x07, 0xe3, 0x6f, 0x99, 0x23, 0xba, 0x57, 0x8d,
+	0x60, 0xf7, 0x88, 0x1b, 0x31, 0xa1, 0x40, 0x65, 0xf0, 0x8e, 0x1d, 0xec, 0x41, 0x71, 0x8a, 0xfb,
+	0xca, 0x0d, 0x43, 0xf9, 0x41, 0x82, 0xad, 0xc9, 0x50, 0x2a, 0x61, 0x36, 0xb5, 0x18, 0x41, 0x1d,
+	0x28, 0x3b, 0xc1, 0x73, 0x70, 0x7c, 0xfc, 0x67, 0x64, 0x7d, 0xb9, 0x70, 0xb6, 0xeb, 0xe1, 0xd3,
+	0x8e, 0xdc, 0xd6, 0x48, 0xc3, 0x72, 0x89, 0x63, 0xe1, 0x4e, 0xdd, 0x71, 0xa8, 0xa3, 0x46, 0x1e,
+	0xd0, 0x7d, 0x98, 0xf7, 0x18, 0x71, 0x44, 0xdd, 0x8a, 0x1a, 0x59, 0xcb, 0x48, 0x67, 0xe4, 0xa1,
+	0xec, 0x05, 0x4f, 0xca, 0xfb, 0x05, 0x98, 0x8f, 0xfc, 0xa0, 0x4b, 0x90, 0xf0, 0x24, 0x9f, 0x43,
+	0x8b, 0x00, 0x6d, 0x8d, 0x1c, 0x7a, 0xba, 0x4e, 0x18, 0x93, 0x0b, 0xc1, 0xf8, 0x88, 0xd2, 0x87,
+	0x1e, 0xeb, 0xcb, 0x12, 0x3a, 0x0f, 0x0b, 0x6d, 0x8d, 0xd4, 0x4c, 0x86, 0x8f, 0x3b, 0xc4, 0x90,
+	0x67, 0x42, 0x05, 0xb3, 0x4b, 0xa8, 0xe7, 0xca, 0xb3, 0x08, 0xc1, 0x22, 0x87, 0xed, 0xe1, 0x8e,
+	0x69, 0xf8, 0x81, 0xc8, 0x73, 0x81, 0xac, 0xfe, 0xd2, 0x36, 0x1d, 0x22, 0x64, 0x45, 0x3f, 0x98,
+	0x0d, 0x3f, 0xe0, 0xbd, 0xea, 0x11, 0x15, 0x39, 0x4a, 0x84, 0xfe, 0xd4, 0x36, 0xb0, 0x4b, 0x8c,
+	0x3c, 0xb4, 0x9d, 0x32, 0x33, 0x2d, 0x58, 0xcf, 0xe0, 0xea, 0x89, 0xe7, 0xe8, 0x2d, 0xcc, 0x82,
+	0x7a, 0xcc, 0x15, 0x4a, 0xec, 0x94, 0xf7, 0x43, 0x99, 0x1d, 0x9c, 0xf2, 0xca, 0x77, 0x12, 0xdc,
+	0xcd, 0xe5, 0x2a, 0xe2, 0x89, 0x26, 0x2a, 0x6c, 0x77, 0x62, 0x85, 0xa5, 0x43, 0xe5, 0x2b, 0x32,
+	0xe5, 0xb3, 0xb3, 0x2a, 0x93, 0xd0, 0x15, 0x97, 0x89, 0xd0, 0xe5, 0x22, 0x5a, 0x82, 0x0b, 0x6d,
+	0x8d, 0xec, 0x53, 0xb7, 0x6e, 0x51, 0xaf, 0xd9, 0xe2, 0x6b, 0x94, 0x4b, 0x29, 0x35, 0x55, 0x56,
+	0x8e, 0x61, 0x2d, 0x23, 0x21, 0x07, 0x36, 0xb1, 0x1e, 0xe2, 0x26, 0xcb, 0x4b, 0xe0, 0x31, 0x6e,
+	0xc6, 0x7a, 0xc9, 0xf2, 0x31, 0x6e, 0x8a, 0x4e, 0xf2, 0x7b, 0x09, 0x6e, 0x4f, 0x70, 0x12, 0xe5,
+	0xce, 0x4c, 0x50, 0xf7, 0xef, 0x89, 0xd4, 0x8d, 0x82, 0xe4, 0x24, 0xed, 0x9b, 0xb3, 0xdd, 0xdb,
+	0x81, 0xcc, 0x7f, 0x93, 0xcb, 0xc5, 0xc0, 0x7d, 0x44, 0x99, 0xbf, 0x1c, 0xb9, 0x34, 0x4a, 0xe4,
+	0xa1, 0x8d, 0x75, 0x22, 0x97, 0x53, 0x88, 0x9c, 0x57, 0x0c, 0xb8, 0x91, 0x91, 0x9e, 0x1a, 0x0d,
+	0xdf, 0x3b, 0xf9, 0xf7, 0x62, 0xd8, 0x73, 0x4b, 0xf1, 0x9e, 0x5b, 0xf9, 0x51, 0x82, 0x3b, 0x13,
+	0xdd, 0x44, 0x39, 0x6d, 0x27, 0xc8, 0x7c, 0x30, 0x91, 0xcc, 0x24, 0x4c, 0x4e, 0x3a, 0xbf, 0x3d,
+	0x2b, 0x3a, 0x53, 0x77, 0x5b, 0x71, 0x74, 0x6b, 0xfa, 0x09, 0x9c, 0x8e, 0xd1, 0xaf, 0x0b, 0x63,
+	0x72, 0xfd, 0x0c, 0x3b, 0xa6, 0x1f, 0xe4, 0x54, 0xd4, 0x9e, 0xdd, 0x17, 0xd3, 0xcf, 0x12, 0xfc,
+	0x3d, 0xf7, 0x5a, 0x22, 0x12, 0x59, 0xa2, 0x7e, 0xea, 0x39, 0xea, 0x27, 0x0b, 0xee, 0x8f, 0x5a,
+	0x47, 0xff, 0x83, 0x5b, 0x19, 0xb9, 0x52, 0x79, 0x43, 0x18, 0xf6, 0x8d, 0x79, 0x5a, 0xbd, 0xaf,
+	0x24, 0xf8, 0x6b, 0x1e, 0xb0, 0x28, 0x7f, 0x56, 0x82, 0xc2, 0xff, 0x4e, 0xa4, 0x30, 0x15, 0x29,
+	0x27, 0x7b, 0x1f, 0x9f, 0x15, 0x7b, 0xcb, 0x80, 0x38, 0x21, 0xea, 0x70, 0x93, 0x2d, 0x17, 0x53,
+	0x18, 0x29, 0x29, 0x1f, 0x14, 0x32, 0x29, 0xa9, 0x91, 0xde, 0x9e, 0x83, 0x83, 0xce, 0x2e, 0xd7,
+	0xa6, 0xfe, 0x3f, 0x2c, 0x0a, 0x9d, 0xe8, 0xb3, 0x7e, 0x9a, 0xdd, 0x2d, 0xf0, 0xc3, 0xa1, 0xf2,
+	0x45, 0x36, 0xbf, 0xb1, 0xc8, 0x4e, 0xc5, 0x6f, 0x2a, 0x52, 0x4e, 0x7e, 0x3f, 0xfa, 0x2d, 0xf8,
+	0xbd, 0x00, 0x15, 0xb1, 0xb9, 0x76, 0x3b, 0x1d, 0xfa, 0x82, 0x18, 0xa3, 0xef, 0x6c, 0xd1, 0x8f,
+	0xa7, 0xef, 0xc1, 0x92, 0xb2, 0x0f, 0x9b, 0xd9, 0x0b, 0xaf, 0x76, 0x08, 0x76, 0x1a, 0xd1, 0xd7,
+	0x67, 0x9e, 0x3d, 0xf7, 0xa9, 0x04, 0x7f, 0xcb, 0x0b, 0x18, 0x65, 0xc6, 0x49, 0xf0, 0x52, 0xcb,
+	0xc3, 0x4b, 0x3a, 0x5a, 0x4e, 0x6e, 0xde, 0xfb, 0xfd, 0x70, 0xa3, 0xbc, 0x33, 0x8e, 0x84, 0x41,
+	0xf5, 0xe5, 0x6e, 0x70, 0x87, 0xaf, 0xcd, 0xa4, 0x91, 0x6b, 0xb3, 0xf1, 0x04, 0xc5, 0x9d, 0x9d,
+	0x96, 0xa0, 0x74, 0xb4, 0x37, 0x90, 0xa0, 0x83, 0xec, 0xe6, 0x86, 0xf4, 0x0e, 0x5b, 0xde, 0xc9,
+	0xc9, 0x74, 0xcd, 0x8d, 0xf2, 0x7a, 0x4c, 0x8b, 0x91, 0x40, 0x3c, 0x5d, 0x8b, 0x91, 0x09, 0xf7,
+	0x06, 0xf2, 0xd0, 0x9f, 0x78, 0xe0, 0xc7, 0xde, 0x68, 0xb9, 0x36, 0x4b, 0xf2, 0x06, 0x4a, 0x4a,
+	0xbb, 0x81, 0xfa, 0x5c, 0x82, 0x7f, 0x4c, 0xe3, 0x3b, 0xca, 0x58, 0x2f, 0x41, 0xda, 0xa3, 0xdc,
+	0x7b, 0x27, 0x15, 0xf1, 0xcd, 0xe3, 0x6d, 0xeb, 0xcb, 0x19, 0x58, 0x1a, 0xdc, 0x3c, 0xef, 0x7a,
+	0x86, 0x19, 0xfe, 0x75, 0x70, 0x13, 0xd6, 0xda, 0x5a, 0xea, 0x94, 0x16, 0x40, 0xc8, 0xe7, 0xd0,
+	0x1d, 0x58, 0xcf, 0x52, 0x3a, 0xf4, 0x6c, 0x9b, 0x3a, 0xee, 0x63, 0x6a, 0x98, 0x27, 0x7d, 0xb9,
+	0x80, 0xb6, 0x60, 0x23, 0x4b, 0x35, 0x7e, 0x69, 0x22, 0x4b, 0xe8, 0x16, 0x5c, 0xcf, 0xd2, 0x0d,
+	0xbf, 0xd2, 0xe5, 0x99, 0x71, 0xce, 0x63, 0xbd, 0x9f, 0x3c, 0x8b, 0xb6, 0x61, 0x2b, 0x4b, 0x35,
+	0xd9, 0xe9, 0xcb, 0x73, 0x68, 0x03, 0x94, 0x6c, 0xfd, 0x48, 0xaf, 0x88, 0x76, 0xe1, 0x41, 0x96,
+	0xde, 0xd0, 0x75, 0x38, 0xaf, 0x98, 0xc6, 0xf0, 0x9d, 0x73, 0xc3, 0xd2, 0x1d, 0x82, 0x99, 0xdf,
+	0x82, 0x4f, 0x01, 0x11, 0x2b, 0xba, 0x08, 0xa2, 0xbc, 0xf5, 0x49, 0x01, 0x2e, 0xa5, 0xfd, 0x7d,
+	0x80, 0xd6, 0x60, 0xdc, 0x1f, 0x08, 0xf2, 0xb9, 0x31, 0x0a, 0xfc, 0x42, 0xa1, 0x20, 0x12, 0x91,
+	0xaa, 0x30, 0x14, 0x9c, 0x2c, 0x4d, 0xd2, 0x13, 0xd7, 0xf5, 0xf2, 0xcc, 0xaf, 0x01, 0x00, 0x00,
+	0xff, 0xff, 0x6a, 0x08, 0xd3, 0x77, 0x82, 0x1d, 0x00, 0x00,
 }

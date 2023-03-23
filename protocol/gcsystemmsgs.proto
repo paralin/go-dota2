@@ -1,9 +1,6 @@
 syntax = "proto2";
 package protocol;
 
-option optimize_for = SPEED;
-option cc_generic_services = false;
-
 enum ESOMsg {
 	k_ESOMsg_Create = 21;
 	k_ESOMsg_Update = 22;

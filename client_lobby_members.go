@@ -1,7 +1,7 @@
 package dota2
 
 import (
-	"github.com/faceit/go-steam/steamid"
+	"github.com/paralin/go-steam/steamid"
 	bgcm "github.com/paralin/go-dota2/protocol"
 )
 

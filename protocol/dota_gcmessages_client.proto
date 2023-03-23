@@ -12,9 +12,6 @@ import "base_gcmessages.proto";
 import "econ_gcmessages.proto";
 import "valveextensions.proto";
 
-option optimize_for = SPEED;
-option cc_generic_services = false;
-
 enum CMsgDOTARequestMatches_SkillLevel {
 	CMsgDOTARequestMatches_SkillLevel_Any = 0;
 	CMsgDOTARequestMatches_SkillLevel_Normal = 1;
@@ -504,28 +501,6 @@ message CMsgGCGetHeroTimedStatsResponse {
 
 	optional uint32 hero_id = 1;
 	repeated CMsgGCGetHeroTimedStatsResponse.RankChunkedStats rank_chunked_stats = 2;
-}
-
-message CMsgHeroRoleStats {
-	optional uint32 lane_selection_flags = 1;
-	optional uint32 match_count = 2;
-	optional uint32 win_count = 3;
-}
-
-message CMsgHeroRoleHeroStats {
-	optional uint32 hero_id = 1;
-	repeated CMsgHeroRoleStats role_stats = 2;
-}
-
-message CMsgHeroRoleRankStats {
-	optional uint32 rank_tier = 1;
-	repeated CMsgHeroRoleHeroStats hero_stats = 2;
-}
-
-message CMsgHeroRoleAllRanksStats {
-	optional uint32 start_timestamp = 1;
-	optional uint32 end_timestamp = 2;
-	repeated CMsgHeroRoleRankStats rank_stats = 3;
 }
 
 message CMsgGCItemEditorReservationsRequest {
@@ -1835,7 +1810,7 @@ message CMsgGCToClientCommendNotification {
 message CMsgDOTAClientToGCQuickStatsRequest {
 	optional uint32 player_account_id = 1;
 	optional uint32 hero_id = 2;
-	optional uint32 item_id = 3;
+	optional int32 item_id = 3 [default = -1];
 	optional uint32 league_id = 4;
 }
 
@@ -2003,7 +1978,7 @@ message CMsgProfileUpdateResponse {
 
 message CMsgTalentWinRates {
 	optional uint32 last_run = 1;
-	optional uint32 ability_id = 2;
+	optional int32 ability_id = 2 [default = -1];
 	optional uint32 game_count = 3;
 	optional uint32 win_count = 4;
 }
@@ -2094,7 +2069,7 @@ message CMsgActivatePlusFreeTrialResponse {
 
 message CMsgGCToClientCavernCrawlMapPathCompleted {
 	message CompletedPathInfo {
-		optional uint32 path_id_completed = 1;
+		optional uint32 path_id_completed = 1 [default = 255];
 		optional bool received_ultra_rare_reward = 2;
 		optional bool half_completed = 3;
 	}
@@ -2102,7 +2077,7 @@ message CMsgGCToClientCavernCrawlMapPathCompleted {
 	optional uint32 event_id = 1;
 	optional uint32 hero_id_completed = 2;
 	repeated CMsgGCToClientCavernCrawlMapPathCompleted.CompletedPathInfo completed_paths = 3;
-	optional uint32 map_variant = 4;
+	optional uint32 map_variant = 4 [default = 255];
 }
 
 message CMsgGCToClientCavernCrawlMapUpdated {
@@ -2111,8 +2086,8 @@ message CMsgGCToClientCavernCrawlMapUpdated {
 
 message CMsgClientToGCCavernCrawlClaimRoom {
 	optional uint32 event_id = 1;
-	optional uint32 room_id = 2;
-	optional uint32 map_variant = 3;
+	optional uint32 room_id = 2 [default = 255];
+	optional uint32 map_variant = 3 [default = 255];
 }
 
 message CMsgClientToGCCavernCrawlClaimRoomResponse {
@@ -2127,9 +2102,9 @@ message CMsgClientToGCCavernCrawlClaimRoomResponse {
 
 message CMsgClientToGCCavernCrawlUseItemOnRoom {
 	optional uint32 event_id = 1;
-	optional uint32 room_id = 2;
+	optional uint32 room_id = 2 [default = 255];
 	optional uint32 item_type = 3;
-	optional uint32 map_variant = 4;
+	optional uint32 map_variant = 4 [default = 255];
 }
 
 message CMsgClientToGCCavernCrawlUseItemOnRoomResponse {
@@ -2144,9 +2119,9 @@ message CMsgClientToGCCavernCrawlUseItemOnRoomResponse {
 
 message CMsgClientToGCCavernCrawlUseItemOnPath {
 	optional uint32 event_id = 1;
-	optional uint32 path_id = 2;
+	optional uint32 path_id = 2 [default = 255];
 	optional uint32 item_type = 3;
-	optional uint32 map_variant = 4;
+	optional uint32 map_variant = 4 [default = 255];
 }
 
 message CMsgClientToGCCavernCrawlUseItemOnPathResponse {
@@ -2165,8 +2140,8 @@ message CMsgClientToGCCavernCrawlRequestMapState {
 
 message CMsgClientToGCCavernCrawlRequestMapStateResponse {
 	message SwappedChallenge {
-		optional uint32 path_id_1 = 1;
-		optional uint32 path_id_2 = 2;
+		optional uint32 path_id_1 = 1 [default = 255];
+		optional uint32 path_id_2 = 2 [default = 255];
 	}
 
 	message InventoryItem {
@@ -2175,12 +2150,12 @@ message CMsgClientToGCCavernCrawlRequestMapStateResponse {
 	}
 
 	message TreasureMap {
-		optional uint32 map_room_id = 1;
-		optional uint32 revealed_room_id = 2;
+		optional uint32 map_room_id = 1 [default = 255];
+		optional uint32 revealed_room_id = 2 [default = 255];
 	}
 
 	message MapVariant {
-		optional uint32 map_variant = 1;
+		optional uint32 map_variant = 1 [default = 255];
 		optional fixed64 claimed_rooms_1 = 2;
 		optional fixed64 claimed_rooms_2 = 3;
 		optional fixed64 revealed_rooms_1 = 4;
@@ -2194,7 +2169,7 @@ message CMsgClientToGCCavernCrawlRequestMapStateResponse {
 		optional fixed64 half_completed_paths_3 = 12;
 		optional fixed64 half_completed_paths_4 = 13;
 		repeated CMsgClientToGCCavernCrawlRequestMapStateResponse.SwappedChallenge swapped_challenge = 14;
-		optional uint32 ultra_rare_reward_room_number = 15;
+		optional uint32 ultra_rare_reward_room_number = 15 [default = 255];
 		repeated CMsgClientToGCCavernCrawlRequestMapStateResponse.TreasureMap treasure_map = 16;
 	}
 
@@ -2216,7 +2191,7 @@ message CMsgClientToGCCavernCrawlGetClaimedRoomCount {
 
 message CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse {
 	message MapVariant {
-		optional uint32 map_variant = 1;
+		optional uint32 map_variant = 1 [default = 255];
 		optional uint32 count = 2;
 	}
 
@@ -2745,9 +2720,6 @@ message CMsgDraftTriviaVoteCount {
 	optional uint32 dire_votes = 3;
 }
 
-message CMsgClientToGCApplyGauntletTicket {
-}
-
 message CMsgClientToGCRecalibrateMMR {
 }
 
@@ -2914,6 +2886,7 @@ message CMsgClientToGCSetEventActiveSeasonIDResponse {
 		k_eTooBusy = 3;
 		k_eNotAllowed = 4;
 		k_eTimeout = 5;
+		k_eInternalSuccessNoChange = 6;
 	}
 
 	optional CMsgClientToGCSetEventActiveSeasonIDResponse.EResponse result = 1 [default = k_eInternalError];
@@ -3117,4 +3090,60 @@ message CMsgClientToGCSetFavoritePageResponse {
 	}
 
 	optional CMsgClientToGCSetFavoritePageResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCClaimSwag {
+	optional EEvent event_id = 1 [default = EVENT_ID_NONE];
+	optional uint32 action_id = 2;
+	optional uint32 data = 3;
+}
+
+message CMsgClientToGCClaimSwagResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooBusy = 4;
+		k_eAlreadyClaimed = 5;
+		k_eDisabled = 6;
+		k_eInvalidRequest = 7;
+		k_eUserNotEligible = 8;
+		k_eStorageError = 9;
+		k_eRewardDisabled = 10;
+	}
+
+	optional CMsgClientToGCClaimSwagResponse.EResponse response = 1 [default = k_eInternalError];
+}
+
+message CMsgClientToGCCollectorsCacheAvailableDataRequest {
+	optional uint32 contest_id = 1;
+}
+
+message CMsgGCToClientCollectorsCacheAvailableDataResponse {
+	message Vote {
+		enum EVoteType {
+			k_eUp = 0;
+			k_eDown = 1;
+		}
+
+		optional uint32 item_def = 1;
+		optional CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.EVoteType vote_type = 2 [default = k_eUp];
+	}
+
+	repeated CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote votes = 1;
+}
+
+message CMsgClientToGCUploadMatchClip {
+	optional CMatchClip match_clip = 1;
+}
+
+message CMsgGCToClientUploadMatchClipResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTimeout = 2;
+		k_eTooBusy = 4;
+	}
+
+	optional CMsgGCToClientUploadMatchClipResponse.EResponse response = 1 [default = k_eInternalError];
 }
