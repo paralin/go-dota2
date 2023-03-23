@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	gofmt "go/format"
 	"io/ioutil"
 )
@@ -12,17 +12,17 @@ var clientOutFile string
 var eventsOutFile string
 
 func init() {
-	commands = append(commands, cli.Command{
+	commands = append(commands, &cli.Command{
 		Name:  "generate-api",
 		Usage: "generates the API code",
 		Flags: []cli.Flag{
-			cli.StringFlag{
+			&cli.StringFlag{
 				Name:        "client-output",
 				Usage:       "client output file",
 				Value:       "../client_generated.go",
 				Destination: &clientOutFile,
 			},
-			cli.StringFlag{
+			&cli.StringFlag{
 				Name:        "events-output",
 				Usage:       "events output file",
 				Value:       "../events/generated.go",

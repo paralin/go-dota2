@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
 func init() {
-	commands = append(commands, cli.Command{
+	commands = append(commands, &cli.Command{
 		Name:  "print-type-list",
 		Usage: "prints the protobuf type names",
 		Action: func(c *cli.Context) error {

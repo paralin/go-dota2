@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-var commands []cli.Command
+var commands []*cli.Command
 
 // Generates a Go API for the Dota GC automatically with static analysis.
 func main() {
