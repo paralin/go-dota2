@@ -123,6 +123,143 @@ func (d *Dota2) CancelWatchGame() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCCancelWatchGame), req)
 }
 
+// ClaimCrawlCavernRoom claims a crawl cavern room.
+// Request ID: k_EMsgClientToGCCavernCrawlClaimRoom
+// Response ID: k_EMsgClientToGCCavernCrawlClaimRoomResponse
+// Request type: CMsgClientToGCCavernCrawlClaimRoom
+// Response type: CMsgClientToGCCavernCrawlClaimRoomResponse
+func (d *Dota2) ClaimCrawlCavernRoom(
+	ctx context.Context,
+	eventID uint32,
+	roomID uint32,
+	mapVariant uint32,
+) (*protocol.CMsgClientToGCCavernCrawlClaimRoomResponse, error) {
+	req := &protocol.CMsgClientToGCCavernCrawlClaimRoom{
+		EventId:    &eventID,
+		RoomId:     &roomID,
+		MapVariant: &mapVariant,
+	}
+	resp := &protocol.CMsgClientToGCCavernCrawlClaimRoomResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoom),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoomResponse),
+		resp,
+	)
+}
+
+// ClaimEventAction claims a event action.
+// Request ID: k_EMsgDOTAClaimEventAction
+// Response ID: k_EMsgDOTAClaimEventActionResponse
+// Request type: CMsgDOTAClaimEventAction
+// Response type: CMsgDOTAClaimEventActionResponse
+func (d *Dota2) ClaimEventAction(
+	ctx context.Context,
+	eventID uint32,
+	actionID uint32,
+	quantity uint32,
+	data protocol.CMsgDOTAClaimEventActionData,
+) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
+	req := &protocol.CMsgDOTAClaimEventAction{
+		EventId:  &eventID,
+		ActionId: &actionID,
+		Quantity: &quantity,
+		Data:     &data,
+	}
+	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventAction),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse),
+		resp,
+	)
+}
+
+// ClaimEventActionUsingItem claims a event action using item.
+// Request ID: k_EMsgClientToGCClaimEventActionUsingItem
+// Response ID: k_EMsgClientToGCClaimEventActionUsingItemResponse
+// Request type: CMsgClientToGCClaimEventActionUsingItem
+// Response type: CMsgClientToGCClaimEventActionUsingItemResponse
+func (d *Dota2) ClaimEventActionUsingItem(
+	ctx context.Context,
+	eventID uint32,
+	actionID uint32,
+	itemID uint64,
+	quantity uint32,
+) (*protocol.CMsgClientToGCClaimEventActionUsingItemResponse, error) {
+	req := &protocol.CMsgClientToGCClaimEventActionUsingItem{
+		EventId:  &eventID,
+		ActionId: &actionID,
+		ItemId:   &itemID,
+		Quantity: &quantity,
+	}
+	resp := &protocol.CMsgClientToGCClaimEventActionUsingItemResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse),
+		resp,
+	)
+}
+
+// ClaimLeaderboardRewards claims leaderboard rewards.
+// Request ID: k_EMsgClientToGCClaimLeaderboardRewards
+// Response ID: k_EMsgClientToGCClaimLeaderboardRewardsResponse
+// Request type: CMsgClientToGCClaimLeaderboardRewards
+// Response type: CMsgClientToGCClaimLeaderboardRewardsResponse
+func (d *Dota2) ClaimLeaderboardRewards(
+	ctx context.Context,
+	guildID uint32,
+	eventID protocol.EEvent,
+) (*protocol.CMsgClientToGCClaimLeaderboardRewardsResponse, error) {
+	req := &protocol.CMsgClientToGCClaimLeaderboardRewards{
+		GuildId: &guildID,
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCClaimLeaderboardRewardsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse),
+		resp,
+	)
+}
+
+// ClaimSwag claims a swag.
+// Request ID: k_EMsgClientToGCClaimSwag
+// Response ID: k_EMsgGCToClientClaimSwagResponse
+// Request type: CMsgClientToGCClaimSwag
+// Response type: CMsgClientToGCClaimSwagResponse
+func (d *Dota2) ClaimSwag(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	actionID uint32,
+	data uint32,
+) (*protocol.CMsgClientToGCClaimSwagResponse, error) {
+	req := &protocol.CMsgClientToGCClaimSwag{
+		EventId:  &eventID,
+		ActionId: &actionID,
+		Data:     &data,
+	}
+	resp := &protocol.CMsgClientToGCClaimSwagResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimSwag),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientClaimSwagResponse),
+		resp,
+	)
+}
+
 // CloseLobbyBroadcastChannel closes a lobby broadcast channel.
 // Request ID: k_EMsgGCPracticeLobbyCloseBroadcastChannel
 // Request type: CMsgPracticeLobbyCloseBroadcastChannel
@@ -4141,33 +4278,6 @@ func (d *Dota2) SendCandyShopDoVariableExchange(
 	)
 }
 
-// SendCavernCrawlClaimRoom sends a cavern crawl claim room.
-// Request ID: k_EMsgClientToGCCavernCrawlClaimRoom
-// Response ID: k_EMsgClientToGCCavernCrawlClaimRoomResponse
-// Request type: CMsgClientToGCCavernCrawlClaimRoom
-// Response type: CMsgClientToGCCavernCrawlClaimRoomResponse
-func (d *Dota2) SendCavernCrawlClaimRoom(
-	ctx context.Context,
-	eventID uint32,
-	roomID uint32,
-	mapVariant uint32,
-) (*protocol.CMsgClientToGCCavernCrawlClaimRoomResponse, error) {
-	req := &protocol.CMsgClientToGCCavernCrawlClaimRoom{
-		EventId:    &eventID,
-		RoomId:     &roomID,
-		MapVariant: &mapVariant,
-	}
-	resp := &protocol.CMsgClientToGCCavernCrawlClaimRoomResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoom),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoomResponse),
-		resp,
-	)
-}
-
 // SendCavernCrawlUseItemOnPath sends a cavern crawl use item on path.
 // Request ID: k_EMsgClientToGCCavernCrawlUseItemOnPath
 // Response ID: k_EMsgClientToGCCavernCrawlUseItemOnPathResponse
@@ -4233,116 +4343,6 @@ func (d *Dota2) SendChatMessage(
 	req *protocol.CMsgDOTAChatMessage,
 ) {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCChatMessage), req)
-}
-
-// SendClaimEventAction sends a claim event action.
-// Request ID: k_EMsgDOTAClaimEventAction
-// Response ID: k_EMsgDOTAClaimEventActionResponse
-// Request type: CMsgDOTAClaimEventAction
-// Response type: CMsgDOTAClaimEventActionResponse
-func (d *Dota2) SendClaimEventAction(
-	ctx context.Context,
-	eventID uint32,
-	actionID uint32,
-	quantity uint32,
-	data protocol.CMsgDOTAClaimEventActionData,
-) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
-	req := &protocol.CMsgDOTAClaimEventAction{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		Quantity: &quantity,
-		Data:     &data,
-	}
-	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventAction),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse),
-		resp,
-	)
-}
-
-// SendClaimEventActionUsingItem sends a claim event action using item.
-// Request ID: k_EMsgClientToGCClaimEventActionUsingItem
-// Response ID: k_EMsgClientToGCClaimEventActionUsingItemResponse
-// Request type: CMsgClientToGCClaimEventActionUsingItem
-// Response type: CMsgClientToGCClaimEventActionUsingItemResponse
-func (d *Dota2) SendClaimEventActionUsingItem(
-	ctx context.Context,
-	eventID uint32,
-	actionID uint32,
-	itemID uint64,
-	quantity uint32,
-) (*protocol.CMsgClientToGCClaimEventActionUsingItemResponse, error) {
-	req := &protocol.CMsgClientToGCClaimEventActionUsingItem{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		ItemId:   &itemID,
-		Quantity: &quantity,
-	}
-	resp := &protocol.CMsgClientToGCClaimEventActionUsingItemResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse),
-		resp,
-	)
-}
-
-// SendClaimLeaderboardRewards sends claim leaderboard rewards.
-// Request ID: k_EMsgClientToGCClaimLeaderboardRewards
-// Response ID: k_EMsgClientToGCClaimLeaderboardRewardsResponse
-// Request type: CMsgClientToGCClaimLeaderboardRewards
-// Response type: CMsgClientToGCClaimLeaderboardRewardsResponse
-func (d *Dota2) SendClaimLeaderboardRewards(
-	ctx context.Context,
-	guildID uint32,
-	eventID protocol.EEvent,
-) (*protocol.CMsgClientToGCClaimLeaderboardRewardsResponse, error) {
-	req := &protocol.CMsgClientToGCClaimLeaderboardRewards{
-		GuildId: &guildID,
-		EventId: &eventID,
-	}
-	resp := &protocol.CMsgClientToGCClaimLeaderboardRewardsResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse),
-		resp,
-	)
-}
-
-// SendClaimSwag sends a claim swag.
-// Request ID: k_EMsgClientToGCClaimSwag
-// Response ID: k_EMsgGCToClientClaimSwagResponse
-// Request type: CMsgClientToGCClaimSwag
-// Response type: CMsgClientToGCClaimSwagResponse
-func (d *Dota2) SendClaimSwag(
-	ctx context.Context,
-	eventID protocol.EEvent,
-	actionID uint32,
-	data uint32,
-) (*protocol.CMsgClientToGCClaimSwagResponse, error) {
-	req := &protocol.CMsgClientToGCClaimSwag{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		Data:     &data,
-	}
-	resp := &protocol.CMsgClientToGCClaimSwagResponse{}
-
-	return resp, d.MakeRequest(
-		ctx,
-		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimSwag),
-		req,
-		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientClaimSwagResponse),
-		resp,
-	)
 }
 
 // SendCoachFriend sends a coach friend.

@@ -17,6 +17,7 @@ func init() {
 		"Check",
 		"Close",
 		"Create",
+		"Claim",
 		"Demote",
 		"Destroy",
 		"Edit",
