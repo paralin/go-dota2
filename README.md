@@ -76,5 +76,4 @@ This means that ALL of the Dota API will be available in this codebase, although
 
 ## go-steam Dependency
 
-This library depends on `go-steam`. Currently we are using the [FACEIT fork](https://github.com/paralin/go-steam).
-
+This library depends on [go-steam](https://github.com/paralin/go-steam).
