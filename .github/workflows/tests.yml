@@ -51,6 +51,6 @@ jobs:
       #- name: Lint Go
       #  run: make lint
       - name: Lint Go
-        run: cd ~ && go install -v github.com/golangci/golangci-lint/cmd/golangci-lint && cd - && golangci-lint run ./...
+        run: cd ~ && go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@latest && cd - && golangci-lint run ./...
       - name: Test Go
         run: make test
