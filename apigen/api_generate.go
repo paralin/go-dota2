@@ -260,7 +260,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	for _, eventHandler := range eventHandlersOrdered {
 		fmt.Fprintf(eventsOutput, "\n")
-		fmt.Fprintf(eventsOutput, eventHandler.generateComment())
+		fmt.Fprint(eventsOutput, eventHandler.generateComment())
 		fmt.Fprintf(eventsOutput, "type %s struct {\n", eventHandler.eventName)
 		fmt.Fprintf(eventsOutput, "\t")
 		if err := printFieldType(eventsOutput, eventHandler.eventType.Obj.Type()); err != nil {

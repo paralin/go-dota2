@@ -4,7 +4,6 @@ import (
 	"math/rand"
 	"sync"
 
-	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -51,13 +50,6 @@ func (c *SOCacheContainer) parseObject(obj *gcsdkm.CMsgSOCacheSubscribed_Subscri
 	}
 
 	return so, nil
-}
-
-// stringifyObject converts an object to a json string.
-func (c *SOCacheContainer) stringifyObject(obj proto.Message) string {
-	m := &jsonpb.Marshaler{}
-	str, _ := m.MarshalToString(obj)
-	return str
 }
 
 // emitEvent emits an event to all listeners.
