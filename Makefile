@@ -35,4 +35,5 @@ gengo: $(PROTOWRAP) $(PROTOC_GEN_GO) vendor
 lint: $(GOLANGCI_LINT)
 	$(GOLANGCI_LINT) run ./...
 
-
+test:
+	go build -v ./...
