@@ -30,7 +30,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	eventsImports := make(map[string]struct{})
 	eventsImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
-	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
+	eventsImports["google.golang.org/protobuf/proto"] = struct{}{}
 
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}

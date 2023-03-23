@@ -1,5 +1,6 @@
 #!/bin/bash
 set -eo pipefail
+set -x
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_PROTOS=${REPO_ROOT}/protos
@@ -60,10 +61,24 @@ done
 # Fixup some issues in the protos
 sed -i -e "s/(.CMsgSteamLearn/(CMsgSteamLearn/g" ${WORK_DIR}/protos/steammessages_steamlearn.steamworkssdk.proto
 
+BASE_PKG=github.com/paralin/go-dota2
+
 # Generate protobufs
 cd ${WORK_DIR}/protos
-protoc -I $(pwd) --go_out=. $(pwd)/*.proto
+
+proto_files=$(find . -type f -name "*.proto")
+protoc_args=()
+for proto_file in $proto_files; do
+    filename=$(echo "${proto_file}" | sed -e 's,^\./,,')
+    protoc_args+=("--go_opt=M${filename}=${BASE_PKG}/protocol")
+done
+
+# compile protobufs
+protoc -I $(pwd) "${protoc_args[@]}" --go_out=. $(pwd)/*.proto
+
+# move protobufs
+mv ./${BASE_PKG}/protocol/* ./
+rm -rf ./github.com
 
 # Move final files out.
 rsync -rv --delete $(pwd)/ ${REPO_ROOT}/protocol/
-
