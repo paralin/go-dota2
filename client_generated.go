@@ -3530,6 +3530,29 @@ func (d *Dota2) RequestQuickStats(
 	)
 }
 
+// RequestRank requests a rank.
+// Request ID: k_EMsgClientToGCRankRequest
+// Response ID: k_EMsgGCToClientRankResponse
+// Request type: CMsgClientToGCRankRequest
+// Response type: CMsgGCToClientRankResponse
+func (d *Dota2) RequestRank(
+	ctx context.Context,
+	rankType protocol.ERankType,
+) (*protocol.CMsgGCToClientRankResponse, error) {
+	req := &protocol.CMsgClientToGCRankRequest{
+		RankType: &rankType,
+	}
+	resp := &protocol.CMsgGCToClientRankResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRankRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRankResponse),
+		resp,
+	)
+}
+
 // RequestReportsRemaining requests a reports remaining.
 // Request ID: k_EMsgGCReportsRemainingRequest
 // Response ID: k_EMsgGCReportsRemainingResponse
@@ -6142,6 +6165,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientQuestProgressUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.QuestProgressUpdated{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRankUpdate)] = d.getEventEmitter(func() events.Event {
+		return &events.RankUpdate{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCReadyUpStatus)] = d.getEventEmitter(func() events.Event {
 		return &events.ReadyUpStatus{}

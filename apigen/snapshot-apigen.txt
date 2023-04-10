@@ -1757,3 +1757,12 @@ Request: k_EMsgClientToGCUploadMatchClip matched to response: k_EMsgGCToClientUp
 CMsgToClientUploadMatchClipResponse
 CMsgGCToClientUploadMatchClipResponse
 Request: k_EMsgGCToClientUploadMatchClipResponse matched to type: CMsgGCToClientUploadMatchClipResponse
+CMsgClientToGCRankRequest
+Request: k_EMsgClientToGCRankRequest matched to type: CMsgClientToGCRankRequest
+Request: k_EMsgClientToGCRankRequest matched to response: k_EMsgGCToClientRankResponse
+CMsgToClientRankResponse
+CMsgGCToClientRankResponse
+Request: k_EMsgGCToClientRankResponse matched to type: CMsgGCToClientRankResponse
+CMsgToClientRankUpdate
+CMsgGCToClientRankUpdate
+Request: k_EMsgGCToClientRankUpdate matched to type: CMsgGCToClientRankUpdate

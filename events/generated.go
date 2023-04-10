@@ -992,6 +992,27 @@ func (e *QuestProgressUpdated) GetEventName() string {
 	return "QuestProgressUpdated"
 }
 
+// RankUpdate event.
+// MessageID: k_EMsgGCToClientRankUpdate
+type RankUpdate struct {
+	protocol.CMsgGCToClientRankUpdate
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *RankUpdate) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientRankUpdate
+}
+
+// GetEventBody returns the event body.
+func (e *RankUpdate) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientRankUpdate
+}
+
+// GetEventName returns the event name.
+func (e *RankUpdate) GetEventName() string {
+	return "RankUpdate"
+}
+
 // ReadyUpStatus event.
 // MessageID: k_EMsgGCReadyUpStatus
 type ReadyUpStatus struct {
