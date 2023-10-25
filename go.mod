@@ -8,7 +8,7 @@ replace github.com/golang/protobuf => github.com/aperturerobotics/go-protobuf-1.
 require (
 	github.com/fatih/camelcase v1.0.0
 	github.com/golang/protobuf v1.5.3
-	github.com/paralin/go-steam v0.0.0-20231025185642-e7c8d97e052a
+	github.com/paralin/go-steam v0.0.0-20231025162017-5f3b71532f44
 	github.com/pkg/errors v0.9.1
 	github.com/serenize/snaker v0.0.0-20201027110005-a7ad2135616e
 	github.com/sirupsen/logrus v1.9.3
