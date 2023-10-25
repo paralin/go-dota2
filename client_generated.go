@@ -123,6 +123,33 @@ func (d *Dota2) CancelWatchGame() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCCancelWatchGame), req)
 }
 
+// ClaimBingoRow claims a bingo row.
+// Request ID: k_EMsgClientToGCBingoClaimRow
+// Response ID: k_EMsgClientToGCBingoClaimRowResponse
+// Request type: CMsgClientToGCBingoClaimRow
+// Response type: CMsgClientToGCBingoClaimRowResponse
+func (d *Dota2) ClaimBingoRow(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+	rowIndex uint32,
+) (*protocol.CMsgClientToGCBingoClaimRowResponse, error) {
+	req := &protocol.CMsgClientToGCBingoClaimRow{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+		RowIndex:    &rowIndex,
+	}
+	resp := &protocol.CMsgClientToGCBingoClaimRowResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoClaimRow),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoClaimRowResponse),
+		resp,
+	)
+}
+
 // ClaimCrawlCavernRoom claims a crawl cavern room.
 // Request ID: k_EMsgClientToGCCavernCrawlClaimRoom
 // Response ID: k_EMsgClientToGCCavernCrawlClaimRoomResponse
@@ -485,6 +512,72 @@ func (d *Dota2) FlipLobbyTeams() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams), req)
 }
 
+// GetAdminShowcaseReportsRollup gets a admin showcase reports rollup.
+// Request ID: k_EMsgClientToGCShowcaseAdminGetReportsRollup
+// Response ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse
+// Request type: CMsgClientToGCShowcaseAdminGetReportsRollup
+// Response type: CMsgClientToGCShowcaseAdminGetReportsRollupResponse
+func (d *Dota2) GetAdminShowcaseReportsRollup(
+	ctx context.Context,
+	rollupID uint32,
+) (*protocol.CMsgClientToGCShowcaseAdminGetReportsRollupResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminGetReportsRollup{
+		RollupId: &rollupID,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminGetReportsRollupResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollup),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse),
+		resp,
+	)
+}
+
+// GetAdminShowcaseReportsRollupList gets a admin showcase reports rollup list.
+// Request ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupList
+// Response ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse
+// Request type: CMsgClientToGCShowcaseAdminGetReportsRollupList
+// Response type: CMsgClientToGCShowcaseAdminGetReportsRollupListResponse
+func (d *Dota2) GetAdminShowcaseReportsRollupList(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCShowcaseAdminGetReportsRollupListResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminGetReportsRollupList{}
+	resp := &protocol.CMsgClientToGCShowcaseAdminGetReportsRollupListResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupList),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse),
+		resp,
+	)
+}
+
+// GetAdminShowcaseUserDetails gets admin showcase user details.
+// Request ID: k_EMsgClientToGCShowcaseAdminGetUserDetails
+// Response ID: k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse
+// Request type: CMsgClientToGCShowcaseAdminGetUserDetails
+// Response type: CMsgClientToGCShowcaseAdminGetUserDetailsResponse
+func (d *Dota2) GetAdminShowcaseUserDetails(
+	ctx context.Context,
+	accountID uint32,
+) (*protocol.CMsgClientToGCShowcaseAdminGetUserDetailsResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminGetUserDetails{
+		AccountId: &accountID,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminGetUserDetailsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetails),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse),
+		resp,
+	)
+}
+
 // GetAllHeroOrder gets all hero order.
 // Request ID: k_EMsgClientToGCGetAllHeroOrder
 // Response ID: k_EMsgClientToGCGetAllHeroOrderResponse
@@ -677,6 +770,56 @@ func (d *Dota2) GetBattleReportMatchHistory(
 	)
 }
 
+// GetBingoStatsData gets a bingo stats data.
+// Request ID: k_EMsgClientToGCBingoGetStatsData
+// Response ID: k_EMsgClientToGCBingoGetStatsDataResponse
+// Request type: CMsgClientToGCBingoGetStatsData
+// Response type: CMsgClientToGCBingoGetStatsDataResponse
+func (d *Dota2) GetBingoStatsData(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+) (*protocol.CMsgClientToGCBingoGetStatsDataResponse, error) {
+	req := &protocol.CMsgClientToGCBingoGetStatsData{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+	}
+	resp := &protocol.CMsgClientToGCBingoGetStatsDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsDataResponse),
+		resp,
+	)
+}
+
+// GetBingoUserData gets a bingo user data.
+// Request ID: k_EMsgClientToGCBingoGetUserData
+// Response ID: k_EMsgClientToGCBingoGetUserDataResponse
+// Request type: CMsgClientToGCBingoGetUserData
+// Response type: CMsgClientToGCBingoGetUserDataResponse
+func (d *Dota2) GetBingoUserData(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+) (*protocol.CMsgClientToGCBingoGetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCBingoGetUserData{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+	}
+	resp := &protocol.CMsgClientToGCBingoGetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoGetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoGetUserDataResponse),
+		resp,
+	)
+}
+
 // GetChatMemberCount gets a chat member count.
 // Request ID: k_EMsgDOTAChatGetMemberCount
 // Response ID: k_EMsgDOTAChatGetMemberCountResponse
@@ -698,6 +841,31 @@ func (d *Dota2) GetChatMemberCount(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCount),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAChatGetMemberCountResponse),
+		resp,
+	)
+}
+
+// GetCraftingFantasyData gets a crafting fantasy data.
+// Request ID: k_EMsgClientToGCFantasyCraftingGetData
+// Response ID: k_EMsgClientToGCFantasyCraftingGetDataResponse
+// Request type: CMsgClientToGCFantasyCraftingGetData
+// Response type: CMsgClientToGCFantasyCraftingGetDataResponse
+func (d *Dota2) GetCraftingFantasyData(
+	ctx context.Context,
+	fantasyLeague uint32,
+	accountID uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingGetDataResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingGetData{
+		FantasyLeague: &fantasyLeague,
+		AccountId:     &accountID,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingGetDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetDataResponse),
 		resp,
 	)
 }
@@ -1100,6 +1268,77 @@ func (d *Dota2) GetShopCandyUserData(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserData),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserDataResponse),
+		resp,
+	)
+}
+
+// GetShowcaseUserData gets a showcase user data.
+// Request ID: k_EMsgClientToGCShowcaseGetUserData
+// Response ID: k_EMsgClientToGCShowcaseGetUserDataResponse
+// Request type: CMsgClientToGCShowcaseGetUserData
+// Response type: CMsgClientToGCShowcaseGetUserDataResponse
+func (d *Dota2) GetShowcaseUserData(
+	ctx context.Context,
+	accountID uint32,
+	showcaseType protocol.EShowcaseType,
+) (*protocol.CMsgClientToGCShowcaseGetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseGetUserData{
+		AccountId:    &accountID,
+		ShowcaseType: &showcaseType,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseGetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserDataResponse),
+		resp,
+	)
+}
+
+// GetToTIRoadActiveQuest gets a to ti road active quest.
+// Request ID: k_EMsgClientToGCRoadToTIGetActiveQuest
+// Response ID: k_EMsgClientToGCRoadToTIGetActiveQuestResponse
+// Request type: CMsgClientToGCRoadToTIGetActiveQuest
+// Response type: CMsgClientToGCRoadToTIGetActiveQuestResponse
+func (d *Dota2) GetToTIRoadActiveQuest(
+	ctx context.Context,
+	eventID uint32,
+) (*protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse, error) {
+	req := &protocol.CMsgClientToGCRoadToTIGetActiveQuest{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuestResponse),
+		resp,
+	)
+}
+
+// GetToTIRoadQuests gets to ti road quests.
+// Request ID: k_EMsgClientToGCRoadToTIGetQuests
+// Response ID: k_EMsgClientToGCRoadToTIGetQuestsResponse
+// Request type: CMsgClientToGCRoadToTIGetQuests
+// Response type: CMsgClientToGCRoadToTIGetQuestsResponse
+func (d *Dota2) GetToTIRoadQuests(
+	ctx context.Context,
+	eventID uint32,
+) (*protocol.CMsgClientToGCRoadToTIGetQuestsResponse, error) {
+	req := &protocol.CMsgClientToGCRoadToTIGetQuests{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgClientToGCRoadToTIGetQuestsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuests),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuestsResponse),
 		resp,
 	)
 }
@@ -3110,6 +3349,26 @@ func (d *Dota2) RequestLeagueAvailableLobbyNodes(
 	)
 }
 
+// RequestMapStats requests map stats.
+// Request ID: k_EMsgClientToGCMapStatsRequest
+// Response ID: k_EMsgGCToClientMapStatsResponse
+// Request type: CMsgClientToGCMapStatsRequest
+// Response type: CMsgGCToClientMapStatsResponse
+func (d *Dota2) RequestMapStats(
+	ctx context.Context,
+) (*protocol.CMsgGCToClientMapStatsResponse, error) {
+	req := &protocol.CMsgClientToGCMapStatsRequest{}
+	resp := &protocol.CMsgGCToClientMapStatsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMapStatsRequest),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMapStatsResponse),
+		resp,
+	)
+}
+
 // RequestMatchDetails requests match details.
 // Request ID: k_EMsgGCMatchDetailsRequest
 // Response ID: k_EMsgGCMatchDetailsResponse
@@ -3553,6 +3812,26 @@ func (d *Dota2) RequestRank(
 	)
 }
 
+// RequestReporterUpdates requests reporter updates.
+// Request ID: k_EMsgClientToGCRequestReporterUpdates
+// Response ID: k_EMsgClientToGCRequestReporterUpdatesResponse
+// Request type: CMsgClientToGCRequestReporterUpdates
+// Response type: CMsgClientToGCRequestReporterUpdatesResponse
+func (d *Dota2) RequestReporterUpdates(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCRequestReporterUpdatesResponse, error) {
+	req := &protocol.CMsgClientToGCRequestReporterUpdates{}
+	resp := &protocol.CMsgClientToGCRequestReporterUpdatesResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdates),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdatesResponse),
+		resp,
+	)
+}
+
 // RequestReportsRemaining requests a reports remaining.
 // Request ID: k_EMsgGCReportsRemainingRequest
 // Response ID: k_EMsgGCReportsRemainingResponse
@@ -3944,6 +4223,54 @@ func (d *Dota2) RequestWagering(
 	)
 }
 
+// RerollCraftingFantasyOptions rerolls crafting fantasy options.
+// Request ID: k_EMsgClientToGCFantasyCraftingRerollOptions
+// Response ID: k_EMsgClientToGCFantasyCraftingRerollOptionsResponse
+// Request type: CMsgClientToGCFantasyCraftingRerollOptions
+// Response type: CMsgClientToGCFantasyCraftingRerollOptionsResponse
+func (d *Dota2) RerollCraftingFantasyOptions(
+	ctx context.Context,
+	fantasyLeague uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingRerollOptions{
+		FantasyLeague: &fantasyLeague,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptions),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptionsResponse),
+		resp,
+	)
+}
+
+// RerollDevBingoCard rerolls a dev bingo card.
+// Request ID: k_EMsgClientToGCBingoDevRerollCard
+// Response ID: k_EMsgClientToGCBingoDevRerollCardResponse
+// Request type: CMsgClientToGCBingoDevRerollCard
+// Response type: CMsgClientToGCBingoDevRerollCardResponse
+func (d *Dota2) RerollDevBingoCard(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+) (*protocol.CMsgClientToGCBingoDevRerollCardResponse, error) {
+	req := &protocol.CMsgClientToGCBingoDevRerollCard{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+	}
+	resp := &protocol.CMsgClientToGCBingoDevRerollCardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCard),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCardResponse),
+		resp,
+	)
+}
+
 // RerollDraftUnder rerolls a draft under.
 // Request ID: k_EMsgClientToGCUnderDraftReroll
 // Response ID: k_EMsgClientToGCUnderDraftRerollResponse
@@ -4070,6 +4397,31 @@ func (d *Dota2) SelectCompendiumInGamePrediction(
 	)
 }
 
+// SelectCraftingFantasyPlayer selects a crafting fantasy player.
+// Request ID: k_EMsgClientToGCFantasyCraftingSelectPlayer
+// Response ID: k_EMsgClientToGCFantasyCraftingSelectPlayerResponse
+// Request type: CMsgClientToGCFantasyCraftingSelectPlayer
+// Response type: CMsgClientToGCFantasyCraftingSelectPlayerResponse
+func (d *Dota2) SelectCraftingFantasyPlayer(
+	ctx context.Context,
+	fantasyLeague uint32,
+	accountID uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingSelectPlayer{
+		FantasyLeague: &fantasyLeague,
+		AccountId:     &accountID,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayer),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayerResponse),
+		resp,
+	)
+}
+
 // SelectGuildContract selects a guild contract.
 // Request ID: k_EMsgClientToGCSelectGuildContract
 // Response ID: k_EMsgClientToGCSelectGuildContractResponse
@@ -4143,6 +4495,18 @@ func (d *Dota2) SendAcceptPrivateCoachingSession(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSessionResponse),
 		resp,
 	)
+}
+
+// SendAcknowledgeReporterUpdates sends acknowledge reporter updates.
+// Request ID: k_EMsgClientToGCAcknowledgeReporterUpdates
+// Request type: CMsgClientToGCAcknowledgeReporterUpdates
+func (d *Dota2) SendAcknowledgeReporterUpdates(
+	matchIDs []uint64,
+) {
+	req := &protocol.CMsgClientToGCAcknowledgeReporterUpdates{
+		MatchIds: matchIDs,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCAcknowledgeReporterUpdates), req)
 }
 
 // SendAddGuildRole sends a add guild role.
@@ -4511,6 +4875,91 @@ func (d *Dota2) SendDevResetEventState(
 	)
 }
 
+// SendFantasyCraftingDevModifyTablet sends a fantasy crafting dev modify tablet.
+// Request ID: k_EMsgClientToGCFantasyCraftingDevModifyTablet
+// Response ID: k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse
+// Request type: CMsgClientToGCFantasyCraftingDevModifyTablet
+// Response type: CMsgClientToGCFantasyCraftingDevModifyTabletResponse
+func (d *Dota2) SendFantasyCraftingDevModifyTablet(
+	ctx context.Context,
+	fantasyLeague uint32,
+	resetTablet bool,
+	modifyTokens uint32,
+	upgradeTablets bool,
+	fantasyPeriod uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingDevModifyTablet{
+		FantasyLeague:  &fantasyLeague,
+		ResetTablet:    &resetTablet,
+		ModifyTokens:   &modifyTokens,
+		UpgradeTablets: &upgradeTablets,
+		FantasyPeriod:  &fantasyPeriod,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTablet),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse),
+		resp,
+	)
+}
+
+// SendFantasyCraftingGenerateTablets sends fantasy crafting generate tablets.
+// Request ID: k_EMsgClientToGCFantasyCraftingGenerateTablets
+// Response ID: k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse
+// Request type: CMsgClientToGCFantasyCraftingGenerateTablets
+// Response type: CMsgClientToGCFantasyCraftingGenerateTabletsResponse
+func (d *Dota2) SendFantasyCraftingGenerateTablets(
+	ctx context.Context,
+	fantasyLeague uint32,
+	accountIDs []uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingGenerateTablets{
+		FantasyLeague: &fantasyLeague,
+		AccountIds:    accountIDs,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTablets),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse),
+		resp,
+	)
+}
+
+// SendFantasyCraftingPerformOperation sends a fantasy crafting perform operation.
+// Request ID: k_EMsgClientToGCFantasyCraftingPerformOperation
+// Response ID: k_EMsgClientToGCFantasyCraftingPerformOperationResponse
+// Request type: CMsgClientToGCFantasyCraftingPerformOperation
+// Response type: CMsgClientToGCFantasyCraftingPerformOperationResponse
+func (d *Dota2) SendFantasyCraftingPerformOperation(
+	ctx context.Context,
+	fantasyLeague uint32,
+	tabletID uint32,
+	operationID uint32,
+	extraData uint64,
+) (*protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingPerformOperation{
+		FantasyLeague: &fantasyLeague,
+		TabletId:      &tabletID,
+		OperationId:   &operationID,
+		ExtraData:     &extraData,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperation),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperationResponse),
+		resp,
+	)
+}
+
 // SendH264Unsupported sends a h 264 unsupported.
 // Request ID: k_EMsgClientToGCH264Unsupported
 // Request type: CMsgClientToGCH264Unsupported
@@ -4671,6 +5120,22 @@ func (d *Dota2) SendLobbyPlaytestDetails(
 		Json: &jSON,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyPlaytestDetails), req)
+}
+
+// SendLobbyRoadToTIMatchQuestData sends a lobby road to ti match quest data.
+// Request ID: k_EMsgLobbyRoadToTIMatchQuestData
+// Request type: CMsgLobbyRoadToTIMatchQuestData
+func (d *Dota2) SendLobbyRoadToTIMatchQuestData(
+	questData protocol.CMsgRoadToTIAssignedQuest,
+	questPeriod uint32,
+	questNumber uint32,
+) {
+	req := &protocol.CMsgLobbyRoadToTIMatchQuestData{
+		QuestData:   &questData,
+		QuestPeriod: &questPeriod,
+		QuestNumber: &questNumber,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyRoadToTIMatchQuestData), req)
 }
 
 // SendMMInfo sends a mm info.
@@ -4947,6 +5412,149 @@ func (d *Dota2) SendRemoveGuildRole(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRole),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRoleResponse),
+		resp,
+	)
+}
+
+// SendRoadToTIDevForceQuest sends a road to ti dev force quest.
+// Request ID: k_EMsgClientToGCRoadToTIDevForceQuest
+// Request type: CMsgClientToGCRoadToTIDevForceQuest
+func (d *Dota2) SendRoadToTIDevForceQuest(
+	eventID uint32,
+	forceMatchType bool,
+	forceID uint32,
+) {
+	req := &protocol.CMsgClientToGCRoadToTIDevForceQuest{
+		EventId:        &eventID,
+		ForceMatchType: &forceMatchType,
+		ForceId:        &forceID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIDevForceQuest), req)
+}
+
+// SendRoadToTIUseItem sends a road to ti use item.
+// Request ID: k_EMsgClientToGCRoadToTIUseItem
+// Response ID: k_EMsgClientToGCRoadToTIUseItemResponse
+// Request type: CMsgClientToGCRoadToTIUseItem
+// Response type: CMsgClientToGCRoadToTIUseItemResponse
+func (d *Dota2) SendRoadToTIUseItem(
+	ctx context.Context,
+	eventID uint32,
+	itemType uint32,
+	heroIndex uint32,
+) (*protocol.CMsgClientToGCRoadToTIUseItemResponse, error) {
+	req := &protocol.CMsgClientToGCRoadToTIUseItem{
+		EventId:   &eventID,
+		ItemType:  &itemType,
+		HeroIndex: &heroIndex,
+	}
+	resp := &protocol.CMsgClientToGCRoadToTIUseItemResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItem),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItemResponse),
+		resp,
+	)
+}
+
+// SendShowcaseAdminConvict sends a showcase admin convict.
+// Request ID: k_EMsgClientToGCShowcaseAdminConvict
+// Response ID: k_EMsgClientToGCShowcaseAdminConvictResponse
+// Request type: CMsgClientToGCShowcaseAdminConvict
+// Response type: CMsgClientToGCShowcaseAdminConvictResponse
+func (d *Dota2) SendShowcaseAdminConvict(
+	ctx context.Context,
+	targetAccountID uint32,
+	showcaseType protocol.EShowcaseType,
+) (*protocol.CMsgClientToGCShowcaseAdminConvictResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminConvict{
+		TargetAccountId: &targetAccountID,
+		ShowcaseType:    &showcaseType,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminConvictResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvict),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvictResponse),
+		resp,
+	)
+}
+
+// SendShowcaseAdminExonerate sends a showcase admin exonerate.
+// Request ID: k_EMsgClientToGCShowcaseAdminExonerate
+// Response ID: k_EMsgClientToGCShowcaseAdminExonerateResponse
+// Request type: CMsgClientToGCShowcaseAdminExonerate
+// Response type: CMsgClientToGCShowcaseAdminExonerateResponse
+func (d *Dota2) SendShowcaseAdminExonerate(
+	ctx context.Context,
+	targetAccountID uint32,
+	showcaseType protocol.EShowcaseType,
+) (*protocol.CMsgClientToGCShowcaseAdminExonerateResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminExonerate{
+		TargetAccountId: &targetAccountID,
+		ShowcaseType:    &showcaseType,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminExonerateResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerate),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerateResponse),
+		resp,
+	)
+}
+
+// SendShowcaseAdminLockAccount sends a showcase admin lock account.
+// Request ID: k_EMsgClientToGCShowcaseAdminLockAccount
+// Response ID: k_EMsgClientToGCShowcaseAdminLockAccountResponse
+// Request type: CMsgClientToGCShowcaseAdminLockAccount
+// Response type: CMsgClientToGCShowcaseAdminLockAccountResponse
+func (d *Dota2) SendShowcaseAdminLockAccount(
+	ctx context.Context,
+	targetAccountID uint32,
+	lockedUntilTimestamp uint32,
+) (*protocol.CMsgClientToGCShowcaseAdminLockAccountResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminLockAccount{
+		TargetAccountId:      &targetAccountID,
+		LockedUntilTimestamp: &lockedUntilTimestamp,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminLockAccountResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccount),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccountResponse),
+		resp,
+	)
+}
+
+// SendShowcaseAdminReset sends a showcase admin reset.
+// Request ID: k_EMsgClientToGCShowcaseAdminReset
+// Response ID: k_EMsgClientToGCShowcaseAdminResetResponse
+// Request type: CMsgClientToGCShowcaseAdminReset
+// Response type: CMsgClientToGCShowcaseAdminResetResponse
+func (d *Dota2) SendShowcaseAdminReset(
+	ctx context.Context,
+	targetAccountID uint32,
+	showcaseType protocol.EShowcaseType,
+) (*protocol.CMsgClientToGCShowcaseAdminResetResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseAdminReset{
+		TargetAccountId: &targetAccountID,
+		ShowcaseType:    &showcaseType,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseAdminResetResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminReset),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminResetResponse),
 		resp,
 	)
 }
@@ -5524,6 +6132,33 @@ func (d *Dota2) SetProfilePrivacy(
 	)
 }
 
+// SetShowcaseUserData sets a showcase user data.
+// Request ID: k_EMsgClientToGCShowcaseSetUserData
+// Response ID: k_EMsgClientToGCShowcaseSetUserDataResponse
+// Request type: CMsgClientToGCShowcaseSetUserData
+// Response type: CMsgClientToGCShowcaseSetUserDataResponse
+func (d *Dota2) SetShowcaseUserData(
+	ctx context.Context,
+	showcaseType protocol.EShowcaseType,
+	showcase protocol.CMsgShowcase,
+	formatVersion uint32,
+) (*protocol.CMsgClientToGCShowcaseSetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseSetUserData{
+		ShowcaseType:  &showcaseType,
+		Showcase:      &showcase,
+		FormatVersion: &formatVersion,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseSetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserDataResponse),
+		resp,
+	)
+}
+
 // SetSpectatorLobbyDetails sets spectator lobby details.
 // Request ID: k_EMsgClientToGCSetSpectatorLobbyDetails
 // Request type: CMsgSetSpectatorLobbyDetails
@@ -5844,6 +6479,33 @@ func (d *Dota2) SubmitPlayerReport(
 	)
 }
 
+// SubmitPlayerReportResponseV2 submits a player report response v 2.
+// Request ID: k_EMsgGCSubmitPlayerReportResponseV2
+// Request type: CMsgDOTASubmitPlayerReportResponseV2
+func (d *Dota2) SubmitPlayerReportResponseV2(
+	targetAccountID uint32,
+	reportReason []uint32,
+	debugMessage string,
+	enumResult protocol.CMsgDOTASubmitPlayerReportResponseV2_EResult,
+) {
+	req := &protocol.CMsgDOTASubmitPlayerReportResponseV2{
+		TargetAccountId: &targetAccountID,
+		ReportReason:    reportReason,
+		DebugMessage:    &debugMessage,
+		EnumResult:      &enumResult,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponseV2), req)
+}
+
+// SubmitPlayerReportV2 submits a player report v 2.
+// Request ID: k_EMsgGCSubmitPlayerReportV2
+// Request type: CMsgDOTASubmitPlayerReportV2
+func (d *Dota2) SubmitPlayerReportV2(
+	req *protocol.CMsgDOTASubmitPlayerReportV2,
+) {
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportV2), req)
+}
+
 // SubmitPrivateCoachingSessionRating submits a private coaching session rating.
 // Request ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRating
 // Response ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse
@@ -5865,6 +6527,33 @@ func (d *Dota2) SubmitPrivateCoachingSessionRating(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRating),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse),
+		resp,
+	)
+}
+
+// SubmitShowcaseReport submits a showcase report.
+// Request ID: k_EMsgClientToGCShowcaseSubmitReport
+// Response ID: k_EMsgClientToGCShowcaseSubmitReportResponse
+// Request type: CMsgClientToGCShowcaseSubmitReport
+// Response type: CMsgClientToGCShowcaseSubmitReportResponse
+func (d *Dota2) SubmitShowcaseReport(
+	ctx context.Context,
+	targetAccountID uint32,
+	showcaseType protocol.EShowcaseType,
+	reportComment string,
+) (*protocol.CMsgClientToGCShowcaseSubmitReportResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseSubmitReport{
+		TargetAccountId: &targetAccountID,
+		ShowcaseType:    &showcaseType,
+		ReportComment:   &reportComment,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseSubmitReportResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReport),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReportResponse),
 		resp,
 	)
 }
@@ -5948,6 +6637,29 @@ func (d *Dota2) UpgradeLeagueItem(
 		uint32(protocol.EDOTAGCMsg_k_EMsgUpgradeLeagueItem),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgUpgradeLeagueItemResponse),
+		resp,
+	)
+}
+
+// UpgradeToGcFantasyCraftingClientTablets upgrades to gc fantasy crafting client tablets.
+// Request ID: k_EMsgClientToGcFantasyCraftingUpgradeTablets
+// Response ID: k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse
+// Request type: CMsgClientToGcFantasyCraftingUpgradeTablets
+// Response type: CMsgClientToGcFantasyCraftingUpgradeTabletsResponse
+func (d *Dota2) UpgradeToGcFantasyCraftingClientTablets(
+	ctx context.Context,
+	fantasyLeague uint32,
+) (*protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse, error) {
+	req := &protocol.CMsgClientToGcFantasyCraftingUpgradeTablets{
+		FantasyLeague: &fantasyLeague,
+	}
+	resp := &protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTablets),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse),
 		resp,
 	)
 }
@@ -6042,6 +6754,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupRequest)] = d.getEventEmitter(func() events.Event {
 		return &events.BattlePassRollupRequest{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientBingoUserDataUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.BingoUserDataUpdated{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCBroadcastNotification)] = d.getEventEmitter(func() events.Event {
 		return &events.BroadcastNotification{}
@@ -6177,6 +6892,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRequestMMInfo)] = d.getEventEmitter(func() events.Event {
 		return &events.RequestMMInfo{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientRoadToTIQuestDataUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.RoadToTIQuestDataUpdated{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket)] = d.getEventEmitter(func() events.Event {
 		return &events.SteamDatagramTicket{}

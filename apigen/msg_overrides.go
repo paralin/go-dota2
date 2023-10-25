@@ -120,6 +120,8 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 	dm.EDOTAGCMsg_k_EMsgLobbyGauntletProgress:         MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgClientToGCApplyGauntletTicket: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgLobbyAdditionalAccountData:    MsgSenderNone,
+
+	dm.EDOTAGCMsg_k_EMsgGCToClientFantasyCraftingGetDataUpdated: MsgSenderNone,
 }
 
 // msgMethodNameOverrides overrides the generated client method names.

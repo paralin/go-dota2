@@ -593,6 +593,385 @@ func (CMsgDOTADPCSearchResults_ESearchResultsDesired) EnumDescriptor() ([]byte, 
 	return fileDescriptor_ad607e4a12cf9d50, []int{17, 0}
 }
 
+type CMsgClientToGCFantasyCraftingGetDataResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eInternalError CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eSuccess       CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eDisabled      CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eTimeout       CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingGetDataResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = 5
+)
+
+var CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+}
+
+var CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+}
+
+func (x CMsgClientToGCFantasyCraftingGetDataResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingGetDataResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingGetDataResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingGetDataResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingGetDataResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingGetDataResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingGetDataResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingGetDataResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{24, 0}
+}
+
+type CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eInternalError CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eSuccess       CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eDisabled      CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eTimeout       CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eNoTokens      CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 6
+	CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eMoreInfo      CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = 7
+)
+
+var CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+	6: "k_eNoTokens",
+	7: "k_eMoreInfo",
+}
+
+var CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+	"k_eNoTokens":      6,
+	"k_eMoreInfo":      7,
+}
+
+func (x CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{26, 0}
+}
+
+type CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eInternalError CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eSuccess       CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eDisabled      CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eTimeout       CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = 5
+)
+
+var CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+}
+
+var CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+}
+
+func (x CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{29, 0}
+}
+
+type CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eInternalError CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eSuccess       CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eDisabled      CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eTimeout       CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eInvalidPlayer CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = 6
+)
+
+var CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+	6: "k_eInvalidPlayer",
+}
+
+var CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+	"k_eInvalidPlayer": 6,
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{31, 0}
+}
+
+type CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInternalError CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eSuccess       CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eDisabled      CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eTimeout       CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInvalidPlayer CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 6
+)
+
+var CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+	6: "k_eInvalidPlayer",
+}
+
+var CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+	"k_eInvalidPlayer": 6,
+}
+
+func (x CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{33, 0}
+}
+
+type CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse int32
+
+const (
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eInternalError CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 0
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eSuccess       CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 1
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eTooBusy       CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 2
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eDisabled      CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 3
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eTimeout       CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 4
+	CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eInvalidLeague CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = 5
+)
+
+var CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+}
+
+var CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError": 0,
+	"k_eSuccess":       1,
+	"k_eTooBusy":       2,
+	"k_eDisabled":      3,
+	"k_eTimeout":       4,
+	"k_eInvalidLeague": 5,
+}
+
+func (x CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) Enum() *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse {
+	p := new(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_value, data, "CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{35, 0}
+}
+
+type CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eInternalError      CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eSuccess            CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eTooBusy            CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eDisabled           CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eTimeout            CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eInvalidLeague      CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eInsufficientTokens CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = 6
+)
+
+var CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_name = map[int32]string{
+	0: "k_eInternalError",
+	1: "k_eSuccess",
+	2: "k_eTooBusy",
+	3: "k_eDisabled",
+	4: "k_eTimeout",
+	5: "k_eInvalidLeague",
+	6: "k_eInsufficientTokens",
+}
+
+var CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_value = map[string]int32{
+	"k_eInternalError":      0,
+	"k_eSuccess":            1,
+	"k_eTooBusy":            2,
+	"k_eDisabled":           3,
+	"k_eTimeout":            4,
+	"k_eInvalidLeague":      5,
+	"k_eInsufficientTokens": 6,
+}
+
+func (x CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) String() string {
+	return proto.EnumName(CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_name, int32(x))
+}
+
+func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_value, data, "CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse")
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse(value)
+	return nil
+}
+
+func (CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{37, 0}
+}
+
 type CMsgDOTAPlayerInfo struct {
 	AccountId            *uint32                          `protobuf:"varint,1,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
 	Name                 *string                          `protobuf:"bytes,2,opt,name=name" json:"name,omitempty"`
@@ -2423,6 +2802,1578 @@ func (m *CMsgDOTADPCTeamFavoriteRankings_Team) GetFavorites() uint32 {
 	return 0
 }
 
+type CMsgDotaFantasyCraftingTabletPeriodData struct {
+	FantasyPeriod        *uint32                                           `protobuf:"varint,1,opt,name=fantasy_period,json=fantasyPeriod,def=4294967295" json:"fantasy_period,omitempty"`
+	Tablets              []*CMsgDotaFantasyCraftingTabletPeriodData_Tablet `protobuf:"bytes,2,rep,name=tablets" json:"tablets,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
+	XXX_unrecognized     []byte                                            `json:"-"`
+	XXX_sizecache        int32                                             `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) Reset() {
+	*m = CMsgDotaFantasyCraftingTabletPeriodData{}
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) String() string { return proto.CompactTextString(m) }
+func (*CMsgDotaFantasyCraftingTabletPeriodData) ProtoMessage()    {}
+func (*CMsgDotaFantasyCraftingTabletPeriodData) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{19}
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData proto.InternalMessageInfo
+
+const Default_CMsgDotaFantasyCraftingTabletPeriodData_FantasyPeriod uint32 = 4294967295
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) GetFantasyPeriod() uint32 {
+	if m != nil && m.FantasyPeriod != nil {
+		return *m.FantasyPeriod
+	}
+	return Default_CMsgDotaFantasyCraftingTabletPeriodData_FantasyPeriod
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData) GetTablets() []*CMsgDotaFantasyCraftingTabletPeriodData_Tablet {
+	if m != nil {
+		return m.Tablets
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingTabletPeriodData_Gem struct {
+	Type                 *Fantasy_Gem_Type `protobuf:"varint,1,opt,name=type,enum=protocol.Fantasy_Gem_Type,def=0" json:"type,omitempty"`
+	Slot                 *uint32           `protobuf:"varint,2,opt,name=slot" json:"slot,omitempty"`
+	Shape                *uint32           `protobuf:"varint,3,opt,name=shape" json:"shape,omitempty"`
+	Quality              *uint32           `protobuf:"varint,4,opt,name=quality" json:"quality,omitempty"`
+	Stat                 *Fantasy_Scoring  `protobuf:"varint,5,opt,name=stat,enum=protocol.Fantasy_Scoring,def=0" json:"stat,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) Reset() {
+	*m = CMsgDotaFantasyCraftingTabletPeriodData_Gem{}
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingTabletPeriodData_Gem) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingTabletPeriodData_Gem) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{19, 0}
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Gem proto.InternalMessageInfo
+
+const Default_CMsgDotaFantasyCraftingTabletPeriodData_Gem_Type Fantasy_Gem_Type = Fantasy_Gem_Type_FANTASY_GEM_TYPE_RUBY
+const Default_CMsgDotaFantasyCraftingTabletPeriodData_Gem_Stat Fantasy_Scoring = Fantasy_Scoring_FANTASY_SCORING_KILLS
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) GetType() Fantasy_Gem_Type {
+	if m != nil && m.Type != nil {
+		return *m.Type
+	}
+	return Default_CMsgDotaFantasyCraftingTabletPeriodData_Gem_Type
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) GetSlot() uint32 {
+	if m != nil && m.Slot != nil {
+		return *m.Slot
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) GetShape() uint32 {
+	if m != nil && m.Shape != nil {
+		return *m.Shape
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) GetQuality() uint32 {
+	if m != nil && m.Quality != nil {
+		return *m.Quality
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Gem) GetStat() Fantasy_Scoring {
+	if m != nil && m.Stat != nil {
+		return *m.Stat
+	}
+	return Default_CMsgDotaFantasyCraftingTabletPeriodData_Gem_Stat
+}
+
+type CMsgDotaFantasyCraftingTabletPeriodData_Tablet struct {
+	TabletId             *uint32                                        `protobuf:"varint,1,opt,name=tablet_id,json=tabletId" json:"tablet_id,omitempty"`
+	TabletLevel          *uint32                                        `protobuf:"varint,2,opt,name=tablet_level,json=tabletLevel" json:"tablet_level,omitempty"`
+	FantasyRole          *Fantasy_Roles                                 `protobuf:"varint,3,opt,name=fantasy_role,json=fantasyRole,enum=protocol.Fantasy_Roles,def=0" json:"fantasy_role,omitempty"`
+	AccountId            *uint32                                        `protobuf:"varint,4,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	Prefix               *uint32                                        `protobuf:"varint,5,opt,name=prefix" json:"prefix,omitempty"`
+	Suffix               *uint32                                        `protobuf:"varint,6,opt,name=suffix" json:"suffix,omitempty"`
+	Gems                 []*CMsgDotaFantasyCraftingTabletPeriodData_Gem `protobuf:"bytes,7,rep,name=gems" json:"gems,omitempty"`
+	Score                *float32                                       `protobuf:"fixed32,8,opt,name=score" json:"score,omitempty"`
+	BestSeries           *uint32                                        `protobuf:"varint,9,opt,name=best_series,json=bestSeries" json:"best_series,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) Reset() {
+	*m = CMsgDotaFantasyCraftingTabletPeriodData_Tablet{}
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingTabletPeriodData_Tablet) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingTabletPeriodData_Tablet) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{19, 1}
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingTabletPeriodData_Tablet proto.InternalMessageInfo
+
+const Default_CMsgDotaFantasyCraftingTabletPeriodData_Tablet_FantasyRole Fantasy_Roles = Fantasy_Roles_FANTASY_ROLE_UNDEFINED
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetTabletId() uint32 {
+	if m != nil && m.TabletId != nil {
+		return *m.TabletId
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetTabletLevel() uint32 {
+	if m != nil && m.TabletLevel != nil {
+		return *m.TabletLevel
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetFantasyRole() Fantasy_Roles {
+	if m != nil && m.FantasyRole != nil {
+		return *m.FantasyRole
+	}
+	return Default_CMsgDotaFantasyCraftingTabletPeriodData_Tablet_FantasyRole
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetAccountId() uint32 {
+	if m != nil && m.AccountId != nil {
+		return *m.AccountId
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetPrefix() uint32 {
+	if m != nil && m.Prefix != nil {
+		return *m.Prefix
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetSuffix() uint32 {
+	if m != nil && m.Suffix != nil {
+		return *m.Suffix
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetGems() []*CMsgDotaFantasyCraftingTabletPeriodData_Gem {
+	if m != nil {
+		return m.Gems
+	}
+	return nil
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetScore() float32 {
+	if m != nil && m.Score != nil {
+		return *m.Score
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetBestSeries() uint32 {
+	if m != nil && m.BestSeries != nil {
+		return *m.BestSeries
+	}
+	return 0
+}
+
+type CMsgDotaFantasyCraftingTabletData struct {
+	TabletPeriodData     []*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry `protobuf:"bytes,1,rep,name=tablet_period_data,json=tabletPeriodData" json:"tablet_period_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                   `json:"-"`
+	XXX_unrecognized     []byte                                                     `json:"-"`
+	XXX_sizecache        int32                                                      `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingTabletData) Reset()         { *m = CMsgDotaFantasyCraftingTabletData{} }
+func (m *CMsgDotaFantasyCraftingTabletData) String() string { return proto.CompactTextString(m) }
+func (*CMsgDotaFantasyCraftingTabletData) ProtoMessage()    {}
+func (*CMsgDotaFantasyCraftingTabletData) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{20}
+}
+
+func (m *CMsgDotaFantasyCraftingTabletData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingTabletData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingTabletData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletData.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingTabletData) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingTabletData) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletData.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingTabletData proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingTabletData) GetTabletPeriodData() []*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry {
+	if m != nil {
+		return m.TabletPeriodData
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry struct {
+	Key                  *uint32                                  `protobuf:"varint,1,opt,name=key" json:"key,omitempty"`
+	Value                *CMsgDotaFantasyCraftingTabletPeriodData `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                 `json:"-"`
+	XXX_unrecognized     []byte                                   `json:"-"`
+	XXX_sizecache        int32                                    `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) Reset() {
+	*m = CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry{}
+}
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{20, 0}
+}
+
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) GetKey() uint32 {
+	if m != nil && m.Key != nil {
+		return *m.Key
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) GetValue() *CMsgDotaFantasyCraftingTabletPeriodData {
+	if m != nil {
+		return m.Value
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingUserData struct {
+	AvailableRolls       []uint32                                                 `protobuf:"varint,1,rep,name=available_rolls,json=availableRolls" json:"available_rolls,omitempty"`
+	PeriodRollTokens     []*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry `protobuf:"bytes,2,rep,name=period_roll_tokens,json=periodRollTokens" json:"period_roll_tokens,omitempty"`
+	PeriodScores         []*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry     `protobuf:"bytes,3,rep,name=period_scores,json=periodScores" json:"period_scores,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                 `json:"-"`
+	XXX_unrecognized     []byte                                                   `json:"-"`
+	XXX_sizecache        int32                                                    `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingUserData) Reset()         { *m = CMsgDotaFantasyCraftingUserData{} }
+func (m *CMsgDotaFantasyCraftingUserData) String() string { return proto.CompactTextString(m) }
+func (*CMsgDotaFantasyCraftingUserData) ProtoMessage()    {}
+func (*CMsgDotaFantasyCraftingUserData) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{21}
+}
+
+func (m *CMsgDotaFantasyCraftingUserData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingUserData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingUserData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingUserData) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingUserData) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingUserData proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingUserData) GetAvailableRolls() []uint32 {
+	if m != nil {
+		return m.AvailableRolls
+	}
+	return nil
+}
+
+func (m *CMsgDotaFantasyCraftingUserData) GetPeriodRollTokens() []*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry {
+	if m != nil {
+		return m.PeriodRollTokens
+	}
+	return nil
+}
+
+func (m *CMsgDotaFantasyCraftingUserData) GetPeriodScores() []*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry {
+	if m != nil {
+		return m.PeriodScores
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingUserData_PeriodScore struct {
+	TotalScore           *float32 `protobuf:"fixed32,1,opt,name=total_score,json=totalScore" json:"total_score,omitempty"`
+	Percentile           *float32 `protobuf:"fixed32,2,opt,name=percentile" json:"percentile,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) Reset() {
+	*m = CMsgDotaFantasyCraftingUserData_PeriodScore{}
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingUserData_PeriodScore) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingUserData_PeriodScore) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{21, 0}
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScore proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) GetTotalScore() float32 {
+	if m != nil && m.TotalScore != nil {
+		return *m.TotalScore
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScore) GetPercentile() float32 {
+	if m != nil && m.Percentile != nil {
+		return *m.Percentile
+	}
+	return 0
+}
+
+type CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry struct {
+	Key                  *uint32  `protobuf:"varint,1,opt,name=key" json:"key,omitempty"`
+	Value                *uint32  `protobuf:"varint,2,opt,name=value" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) Reset() {
+	*m = CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry{}
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{21, 1}
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) GetKey() uint32 {
+	if m != nil && m.Key != nil {
+		return *m.Key
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) GetValue() uint32 {
+	if m != nil && m.Value != nil {
+		return *m.Value
+	}
+	return 0
+}
+
+type CMsgDotaFantasyCraftingUserData_PeriodScoresEntry struct {
+	Key                  *uint32                                      `protobuf:"varint,1,opt,name=key" json:"key,omitempty"`
+	Value                *CMsgDotaFantasyCraftingUserData_PeriodScore `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
+	XXX_unrecognized     []byte                                       `json:"-"`
+	XXX_sizecache        int32                                        `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) Reset() {
+	*m = CMsgDotaFantasyCraftingUserData_PeriodScoresEntry{}
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{21, 2}
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingUserData_PeriodScoresEntry proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) GetKey() uint32 {
+	if m != nil && m.Key != nil {
+		return *m.Key
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) GetValue() *CMsgDotaFantasyCraftingUserData_PeriodScore {
+	if m != nil {
+		return m.Value
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingDataCache struct {
+	CacheEntries         []*CMsgDotaFantasyCraftingDataCache_CacheEntry `protobuf:"bytes,1,rep,name=cache_entries,json=cacheEntries" json:"cache_entries,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache) Reset()         { *m = CMsgDotaFantasyCraftingDataCache{} }
+func (m *CMsgDotaFantasyCraftingDataCache) String() string { return proto.CompactTextString(m) }
+func (*CMsgDotaFantasyCraftingDataCache) ProtoMessage()    {}
+func (*CMsgDotaFantasyCraftingDataCache) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{22}
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingDataCache) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingDataCache) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingDataCache.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingDataCache) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingDataCache) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingDataCache.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingDataCache proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingDataCache) GetCacheEntries() []*CMsgDotaFantasyCraftingDataCache_CacheEntry {
+	if m != nil {
+		return m.CacheEntries
+	}
+	return nil
+}
+
+type CMsgDotaFantasyCraftingDataCache_CacheEntry struct {
+	AccountId            *uint32                                   `protobuf:"varint,1,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	FantasyLeague        *uint32                                   `protobuf:"varint,2,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	CacheData            *CMsgGCToClientFantasyCraftingDataUpdated `protobuf:"bytes,3,opt,name=cache_data,json=cacheData" json:"cache_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                  `json:"-"`
+	XXX_unrecognized     []byte                                    `json:"-"`
+	XXX_sizecache        int32                                     `json:"-"`
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) Reset() {
+	*m = CMsgDotaFantasyCraftingDataCache_CacheEntry{}
+}
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgDotaFantasyCraftingDataCache_CacheEntry) ProtoMessage() {}
+func (*CMsgDotaFantasyCraftingDataCache_CacheEntry) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{22, 0}
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry.Unmarshal(m, b)
+}
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry.Marshal(b, m, deterministic)
+}
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry.Merge(m, src)
+}
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) XXX_Size() int {
+	return xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry.Size(m)
+}
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgDotaFantasyCraftingDataCache_CacheEntry proto.InternalMessageInfo
+
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) GetAccountId() uint32 {
+	if m != nil && m.AccountId != nil {
+		return *m.AccountId
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgDotaFantasyCraftingDataCache_CacheEntry) GetCacheData() *CMsgGCToClientFantasyCraftingDataUpdated {
+	if m != nil {
+		return m.CacheData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingGetData struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	AccountId            *uint32  `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetData) Reset()         { *m = CMsgClientToGCFantasyCraftingGetData{} }
+func (m *CMsgClientToGCFantasyCraftingGetData) String() string { return proto.CompactTextString(m) }
+func (*CMsgClientToGCFantasyCraftingGetData) ProtoMessage()    {}
+func (*CMsgClientToGCFantasyCraftingGetData) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{23}
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingGetData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingGetData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingGetData) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingGetData) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingGetData proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingGetData) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetData) GetAccountId() uint32 {
+	if m != nil && m.AccountId != nil {
+		return *m.AccountId
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingGetDataResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingGetDataResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingGetDataResponse_EResponse,def=0" json:"response,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData                        `protobuf:"bytes,2,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                      `protobuf:"bytes,4,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                `json:"-"`
+	XXX_unrecognized     []byte                                                  `json:"-"`
+	XXX_sizecache        int32                                                   `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingGetDataResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingGetDataResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingGetDataResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{24}
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingGetDataResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingGetDataResponse_Response CMsgClientToGCFantasyCraftingGetDataResponse_EResponse = CMsgClientToGCFantasyCraftingGetDataResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) GetResponse() CMsgClientToGCFantasyCraftingGetDataResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingGetDataResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingGetDataResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingPerformOperation struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	TabletId             *uint32  `protobuf:"varint,2,opt,name=tablet_id,json=tabletId" json:"tablet_id,omitempty"`
+	OperationId          *uint32  `protobuf:"varint,3,opt,name=operation_id,json=operationId" json:"operation_id,omitempty"`
+	ExtraData            *uint64  `protobuf:"varint,4,opt,name=extra_data,json=extraData" json:"extra_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) Reset() {
+	*m = CMsgClientToGCFantasyCraftingPerformOperation{}
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingPerformOperation) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingPerformOperation) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{25}
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperation proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) GetTabletId() uint32 {
+	if m != nil && m.TabletId != nil {
+		return *m.TabletId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) GetOperationId() uint32 {
+	if m != nil && m.OperationId != nil {
+		return *m.OperationId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperation) GetExtraData() uint64 {
+	if m != nil && m.ExtraData != nil {
+		return *m.ExtraData
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingPerformOperationResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse     `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse,def=0" json:"response,omitempty"`
+	OperationId          *uint32                                                              `protobuf:"varint,2,opt,name=operation_id,json=operationId" json:"operation_id,omitempty"`
+	TabletId             *uint32                                                              `protobuf:"varint,7,opt,name=tablet_id,json=tabletId" json:"tablet_id,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData                                     `protobuf:"bytes,8,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                                   `protobuf:"bytes,9,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	PlayerChoices        []uint32                                                             `protobuf:"varint,3,rep,name=player_choices,json=playerChoices" json:"player_choices,omitempty"`
+	PrefixChoices        []uint32                                                             `protobuf:"varint,4,rep,name=prefix_choices,json=prefixChoices" json:"prefix_choices,omitempty"`
+	SuffixChoices        []uint32                                                             `protobuf:"varint,5,rep,name=suffix_choices,json=suffixChoices" json:"suffix_choices,omitempty"`
+	TitleChoices         []*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice `protobuf:"bytes,6,rep,name=title_choices,json=titleChoices" json:"title_choices,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                             `json:"-"`
+	XXX_unrecognized     []byte                                                               `json:"-"`
+	XXX_sizecache        int32                                                                `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingPerformOperationResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingPerformOperationResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingPerformOperationResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{26}
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingPerformOperationResponse_Response CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse = CMsgClientToGCFantasyCraftingPerformOperationResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetResponse() CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingPerformOperationResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetOperationId() uint32 {
+	if m != nil && m.OperationId != nil {
+		return *m.OperationId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetTabletId() uint32 {
+	if m != nil && m.TabletId != nil {
+		return *m.TabletId
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetPlayerChoices() []uint32 {
+	if m != nil {
+		return m.PlayerChoices
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetPrefixChoices() []uint32 {
+	if m != nil {
+		return m.PrefixChoices
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetSuffixChoices() []uint32 {
+	if m != nil {
+		return m.SuffixChoices
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse) GetTitleChoices() []*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice {
+	if m != nil {
+		return m.TitleChoices
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice struct {
+	PrefixChoice         *uint32  `protobuf:"varint,1,opt,name=prefix_choice,json=prefixChoice" json:"prefix_choice,omitempty"`
+	SuffixChoice         *uint32  `protobuf:"varint,2,opt,name=suffix_choice,json=suffixChoice" json:"suffix_choice,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) Reset() {
+	*m = CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice{}
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{26, 0}
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) GetPrefixChoice() uint32 {
+	if m != nil && m.PrefixChoice != nil {
+		return *m.PrefixChoice
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) GetSuffixChoice() uint32 {
+	if m != nil && m.SuffixChoice != nil {
+		return *m.SuffixChoice
+	}
+	return 0
+}
+
+type CMsgGCToClientFantasyCraftingDataUpdated struct {
+	FantasyLeague        *uint32                            `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData   `protobuf:"bytes,2,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData `protobuf:"bytes,4,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
+}
+
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) Reset() {
+	*m = CMsgGCToClientFantasyCraftingDataUpdated{}
+}
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) String() string { return proto.CompactTextString(m) }
+func (*CMsgGCToClientFantasyCraftingDataUpdated) ProtoMessage()    {}
+func (*CMsgGCToClientFantasyCraftingDataUpdated) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{27}
+}
+
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated.Unmarshal(m, b)
+}
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated.Marshal(b, m, deterministic)
+}
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated.Merge(m, src)
+}
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) XXX_Size() int {
+	return xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated.Size(m)
+}
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgGCToClientFantasyCraftingDataUpdated proto.InternalMessageInfo
+
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
+func (m *CMsgGCToClientFantasyCraftingDataUpdated) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingDevModifyTablet struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	ResetTablet          *bool    `protobuf:"varint,2,opt,name=reset_tablet,json=resetTablet" json:"reset_tablet,omitempty"`
+	ModifyTokens         *uint32  `protobuf:"varint,3,opt,name=modify_tokens,json=modifyTokens" json:"modify_tokens,omitempty"`
+	UpgradeTablets       *bool    `protobuf:"varint,6,opt,name=upgrade_tablets,json=upgradeTablets" json:"upgrade_tablets,omitempty"`
+	FantasyPeriod        *uint32  `protobuf:"varint,5,opt,name=fantasy_period,json=fantasyPeriod,def=4294967295" json:"fantasy_period,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) Reset() {
+	*m = CMsgClientToGCFantasyCraftingDevModifyTablet{}
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingDevModifyTablet) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingDevModifyTablet) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{28}
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTablet proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingDevModifyTablet_FantasyPeriod uint32 = 4294967295
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) GetResetTablet() bool {
+	if m != nil && m.ResetTablet != nil {
+		return *m.ResetTablet
+	}
+	return false
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) GetModifyTokens() uint32 {
+	if m != nil && m.ModifyTokens != nil {
+		return *m.ModifyTokens
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) GetUpgradeTablets() bool {
+	if m != nil && m.UpgradeTablets != nil {
+		return *m.UpgradeTablets
+	}
+	return false
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTablet) GetFantasyPeriod() uint32 {
+	if m != nil && m.FantasyPeriod != nil {
+		return *m.FantasyPeriod
+	}
+	return Default_CMsgClientToGCFantasyCraftingDevModifyTablet_FantasyPeriod
+}
+
+type CMsgClientToGCFantasyCraftingDevModifyTabletResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse,def=0" json:"response,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData                                `protobuf:"bytes,2,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                              `protobuf:"bytes,3,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                        `json:"-"`
+	XXX_unrecognized     []byte                                                          `json:"-"`
+	XXX_sizecache        int32                                                           `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingDevModifyTabletResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingDevModifyTabletResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingDevModifyTabletResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{29}
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingDevModifyTabletResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingDevModifyTabletResponse_Response CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse = CMsgClientToGCFantasyCraftingDevModifyTabletResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) GetResponse() CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingDevModifyTabletResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingDevModifyTabletResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingSelectPlayer struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	AccountId            *uint32  `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) Reset() {
+	*m = CMsgClientToGCFantasyCraftingSelectPlayer{}
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingSelectPlayer) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingSelectPlayer) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{30}
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayer proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayer) GetAccountId() uint32 {
+	if m != nil && m.AccountId != nil {
+		return *m.AccountId
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingSelectPlayerResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse,def=0" json:"response,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                           `protobuf:"bytes,2,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                     `json:"-"`
+	XXX_unrecognized     []byte                                                       `json:"-"`
+	XXX_sizecache        int32                                                        `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingSelectPlayerResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingSelectPlayerResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingSelectPlayerResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{31}
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingSelectPlayerResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingSelectPlayerResponse_Response CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse = CMsgClientToGCFantasyCraftingSelectPlayerResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) GetResponse() CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingSelectPlayerResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingSelectPlayerResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingGenerateTablets struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	AccountIds           []uint32 `protobuf:"varint,2,rep,name=account_ids,json=accountIds" json:"account_ids,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) Reset() {
+	*m = CMsgClientToGCFantasyCraftingGenerateTablets{}
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingGenerateTablets) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingGenerateTablets) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{32}
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTablets proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTablets) GetAccountIds() []uint32 {
+	if m != nil {
+		return m.AccountIds
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingGenerateTabletsResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse,def=0" json:"response,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData                                `protobuf:"bytes,2,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                              `protobuf:"bytes,3,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                        `json:"-"`
+	XXX_unrecognized     []byte                                                          `json:"-"`
+	XXX_sizecache        int32                                                           `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingGenerateTabletsResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingGenerateTabletsResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingGenerateTabletsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{33}
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingGenerateTabletsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingGenerateTabletsResponse_Response CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) GetResponse() CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingGenerateTabletsResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
+func (m *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGcFantasyCraftingUpgradeTablets struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) Reset() {
+	*m = CMsgClientToGcFantasyCraftingUpgradeTablets{}
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGcFantasyCraftingUpgradeTablets) ProtoMessage() {}
+func (*CMsgClientToGcFantasyCraftingUpgradeTablets) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{34}
+}
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets.Unmarshal(m, b)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets.Merge(m, src)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets.Size(m)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTablets proto.InternalMessageInfo
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTablets) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+type CMsgClientToGcFantasyCraftingUpgradeTabletsResponse struct {
+	Response             *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse,def=0" json:"response,omitempty"`
+	TabletData           *CMsgDotaFantasyCraftingTabletData                             `protobuf:"bytes,3,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                       `json:"-"`
+	XXX_unrecognized     []byte                                                         `json:"-"`
+	XXX_sizecache        int32                                                          `json:"-"`
+}
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) Reset() {
+	*m = CMsgClientToGcFantasyCraftingUpgradeTabletsResponse{}
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) ProtoMessage() {}
+func (*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{35}
+}
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.Size(m)
+}
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_Response CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse = CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_k_eInternalError
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) GetResponse() CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_Response
+}
+
+func (m *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if m != nil {
+		return m.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingRerollOptions struct {
+	FantasyLeague        *uint32  `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) Reset() {
+	*m = CMsgClientToGCFantasyCraftingRerollOptions{}
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingRerollOptions) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingRerollOptions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{36}
+}
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptions proto.InternalMessageInfo
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptions) GetFantasyLeague() uint32 {
+	if m != nil && m.FantasyLeague != nil {
+		return *m.FantasyLeague
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingRerollOptionsResponse struct {
+	Response             *CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse,def=0" json:"response,omitempty"`
+	UserData             *CMsgDotaFantasyCraftingUserData                              `protobuf:"bytes,2,opt,name=user_data,json=userData" json:"user_data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                                      `json:"-"`
+	XXX_unrecognized     []byte                                                        `json:"-"`
+	XXX_sizecache        int32                                                         `json:"-"`
+}
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) Reset() {
+	*m = CMsgClientToGCFantasyCraftingRerollOptionsResponse{}
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) String() string {
+	return proto.CompactTextString(m)
+}
+func (*CMsgClientToGCFantasyCraftingRerollOptionsResponse) ProtoMessage() {}
+func (*CMsgClientToGCFantasyCraftingRerollOptionsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad607e4a12cf9d50, []int{37}
+}
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse.Unmarshal(m, b)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse.Marshal(b, m, deterministic)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse.Merge(m, src)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) XXX_Size() int {
+	return xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse.Size(m)
+}
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CMsgClientToGCFantasyCraftingRerollOptionsResponse proto.InternalMessageInfo
+
+const Default_CMsgClientToGCFantasyCraftingRerollOptionsResponse_Response CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse = CMsgClientToGCFantasyCraftingRerollOptionsResponse_k_eInternalError
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) GetResponse() CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse {
+	if m != nil && m.Response != nil {
+		return *m.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingRerollOptionsResponse_Response
+}
+
+func (m *CMsgClientToGCFantasyCraftingRerollOptionsResponse) GetUserData() *CMsgDotaFantasyCraftingUserData {
+	if m != nil {
+		return m.UserData
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterEnum("protocol.DOTA_2013PassportSelectionIndices", DOTA_2013PassportSelectionIndices_name, DOTA_2013PassportSelectionIndices_value)
 	proto.RegisterEnum("protocol.CMsgClientToGCGetPlayerCardRosterResponse_Result", CMsgClientToGCGetPlayerCardRosterResponse_Result_name, CMsgClientToGCGetPlayerCardRosterResponse_Result_value)
@@ -2430,6 +4381,13 @@ func init() {
 	proto.RegisterEnum("protocol.CMsgClientToGCSetPlayerCardRosterResponse_Result", CMsgClientToGCSetPlayerCardRosterResponse_Result_name, CMsgClientToGCSetPlayerCardRosterResponse_Result_value)
 	proto.RegisterEnum("protocol.CMsgDOTAFantasyDPCLeagueStatus_ERosterStatus", CMsgDOTAFantasyDPCLeagueStatus_ERosterStatus_name, CMsgDOTAFantasyDPCLeagueStatus_ERosterStatus_value)
 	proto.RegisterEnum("protocol.CMsgDOTADPCSearchResults_ESearchResultsDesired", CMsgDOTADPCSearchResults_ESearchResultsDesired_name, CMsgDOTADPCSearchResults_ESearchResultsDesired_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingGetDataResponse_EResponse", CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_name, CMsgClientToGCFantasyCraftingGetDataResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse", CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_name, CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse", CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_name, CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse", CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_name, CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse", CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_name, CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse", CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_name, CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse_value)
+	proto.RegisterEnum("protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse", CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_name, CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse_value)
 	proto.RegisterType((*CMsgDOTAPlayerInfo)(nil), "protocol.CMsgDOTAPlayerInfo")
 	proto.RegisterType((*CMsgDOTAPlayerInfo_Results)(nil), "protocol.CMsgDOTAPlayerInfo.Results")
 	proto.RegisterType((*CMsgDOTAPlayerInfo_AuditEntry)(nil), "protocol.CMsgDOTAPlayerInfo.AuditEntry")
@@ -2461,6 +4419,33 @@ func init() {
 	proto.RegisterType((*CMsgDOTADPCSearchResults_League)(nil), "protocol.CMsgDOTADPCSearchResults.League")
 	proto.RegisterType((*CMsgDOTADPCTeamFavoriteRankings)(nil), "protocol.CMsgDOTADPCTeamFavoriteRankings")
 	proto.RegisterType((*CMsgDOTADPCTeamFavoriteRankings_Team)(nil), "protocol.CMsgDOTADPCTeamFavoriteRankings.Team")
+	proto.RegisterType((*CMsgDotaFantasyCraftingTabletPeriodData)(nil), "protocol.CMsgDotaFantasyCraftingTabletPeriodData")
+	proto.RegisterType((*CMsgDotaFantasyCraftingTabletPeriodData_Gem)(nil), "protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem")
+	proto.RegisterType((*CMsgDotaFantasyCraftingTabletPeriodData_Tablet)(nil), "protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet")
+	proto.RegisterType((*CMsgDotaFantasyCraftingTabletData)(nil), "protocol.CMsgDotaFantasyCraftingTabletData")
+	proto.RegisterType((*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry)(nil), "protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry")
+	proto.RegisterType((*CMsgDotaFantasyCraftingUserData)(nil), "protocol.CMsgDotaFantasyCraftingUserData")
+	proto.RegisterType((*CMsgDotaFantasyCraftingUserData_PeriodScore)(nil), "protocol.CMsgDotaFantasyCraftingUserData.PeriodScore")
+	proto.RegisterType((*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry)(nil), "protocol.CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry")
+	proto.RegisterType((*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry)(nil), "protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry")
+	proto.RegisterType((*CMsgDotaFantasyCraftingDataCache)(nil), "protocol.CMsgDotaFantasyCraftingDataCache")
+	proto.RegisterType((*CMsgDotaFantasyCraftingDataCache_CacheEntry)(nil), "protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingGetData)(nil), "protocol.CMsgClientToGCFantasyCraftingGetData")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingGetDataResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingGetDataResponse")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingPerformOperation)(nil), "protocol.CMsgClientToGCFantasyCraftingPerformOperation")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingPerformOperationResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice)(nil), "protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice")
+	proto.RegisterType((*CMsgGCToClientFantasyCraftingDataUpdated)(nil), "protocol.CMsgGCToClientFantasyCraftingDataUpdated")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingDevModifyTablet)(nil), "protocol.CMsgClientToGCFantasyCraftingDevModifyTablet")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingDevModifyTabletResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingSelectPlayer)(nil), "protocol.CMsgClientToGCFantasyCraftingSelectPlayer")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingSelectPlayerResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingGenerateTablets)(nil), "protocol.CMsgClientToGCFantasyCraftingGenerateTablets")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingGenerateTabletsResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse")
+	proto.RegisterType((*CMsgClientToGcFantasyCraftingUpgradeTablets)(nil), "protocol.CMsgClientToGcFantasyCraftingUpgradeTablets")
+	proto.RegisterType((*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse)(nil), "protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingRerollOptions)(nil), "protocol.CMsgClientToGCFantasyCraftingRerollOptions")
+	proto.RegisterType((*CMsgClientToGCFantasyCraftingRerollOptionsResponse)(nil), "protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse")
 }
 
 func init() {
@@ -2468,172 +4453,251 @@ func init() {
 }
 
 var fileDescriptor_ad607e4a12cf9d50 = []byte{
-	// 2667 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x98, 0x4b, 0x77, 0xdb, 0xc6,
-	0xf5, 0xc0, 0xc3, 0x87, 0x44, 0xea, 0xca, 0xa4, 0xae, 0xc6, 0x96, 0x4c, 0xd3, 0x0f, 0xc9, 0xb4,
-	0x13, 0x2b, 0x89, 0xad, 0xf0, 0xa9, 0xd7, 0x3f, 0x4e, 0xc2, 0x90, 0x90, 0xc2, 0x7f, 0x68, 0x92,
-	0x01, 0x49, 0x3b, 0xfe, 0xe7, 0x9f, 0x22, 0x30, 0x31, 0x92, 0x71, 0x02, 0x11, 0x2c, 0x06, 0x72,
-	0xe3, 0x7c, 0x82, 0x9e, 0xd3, 0x7d, 0xbf, 0x40, 0x4e, 0xbb, 0xea, 0xaa, 0xa7, 0x5d, 0xf5, 0xb4,
-	0x8b, 0x7e, 0x81, 0x2e, 0xfa, 0x51, 0xda, 0x45, 0x4f, 0x57, 0x3d, 0x33, 0x00, 0x08, 0x52, 0x24,
-	0x20, 0x25, 0xcd, 0xc9, 0x8a, 0x9c, 0xfb, 0x9b, 0xb9, 0xb8, 0xb8, 0xaf, 0x19, 0x0c, 0xdc, 0xd7,
-	0x4c, 0x5b, 0x55, 0x4e, 0x06, 0xa7, 0x94, 0x31, 0xf5, 0x84, 0x32, 0x65, 0x60, 0xe8, 0x74, 0x68,
-	0x2b, 0xc7, 0xea, 0xd0, 0x56, 0xd9, 0xeb, 0xed, 0x91, 0x65, 0xda, 0x26, 0x49, 0x8a, 0x9f, 0x81,
-	0x69, 0x64, 0xaf, 0x8b, 0xf9, 0xec, 0xa5, 0x6a, 0x51, 0x4d, 0xa1, 0xc3, 0xb3, 0x53, 0xe6, 0x4c,
-	0xc9, 0xfd, 0x21, 0x01, 0xa4, 0xf6, 0x84, 0x9d, 0xd4, 0xdb, 0xbd, 0x6a, 0xc7, 0x50, 0x5f, 0x53,
-	0xab, 0x31, 0x3c, 0x36, 0xc9, 0x6d, 0x00, 0x75, 0x30, 0x30, 0xcf, 0x86, 0xb6, 0xa2, 0x6b, 0x99,
-	0xc8, 0x66, 0x64, 0x2b, 0x25, 0x2f, 0xb9, 0x92, 0x86, 0x46, 0x08, 0xc4, 0x87, 0xea, 0x29, 0xcd,
-	0x44, 0x37, 0x23, 0x5b, 0x4b, 0xb2, 0xf8, 0x4f, 0xee, 0xc2, 0x15, 0x81, 0xad, 0xd7, 0xca, 0xc0,
-	0xd4, 0x68, 0x26, 0x26, 0xd8, 0xb2, 0x2b, 0xab, 0x99, 0x1a, 0x25, 0x32, 0x5c, 0x71, 0x0d, 0x54,
-	0x2c, 0xd3, 0xa0, 0x99, 0xf8, 0x66, 0x64, 0x2b, 0x5d, 0xbc, 0xbe, 0xed, 0x99, 0xb9, 0x7d, 0xe8,
-	0x52, 0xd9, 0x34, 0x28, 0x3b, 0x58, 0x3f, 0xac, 0xb6, 0x7a, 0xd5, 0xee, 0x73, 0x45, 0x6e, 0x37,
-	0x25, 0xa5, 0xdf, 0xaa, 0x4b, 0x87, 0x8d, 0x96, 0x54, 0x97, 0x97, 0x5d, 0x25, 0x7c, 0x16, 0xb9,
-	0x0e, 0x09, 0x9b, 0xaa, 0xa7, 0xdc, 0xcc, 0x05, 0x61, 0xe6, 0x22, 0x1f, 0x36, 0x34, 0x72, 0x13,
-	0x96, 0x04, 0x10, 0x86, 0x2e, 0x0a, 0x63, 0x92, 0x5c, 0xd0, 0xe2, 0xc6, 0xde, 0x00, 0xf1, 0x5f,
-	0xb1, 0xd5, 0x93, 0x4c, 0x42, 0x30, 0xa1, 0xa5, 0xa7, 0x9e, 0x90, 0x0c, 0x24, 0xd8, 0xc8, 0x1c,
-	0x32, 0xd3, 0xca, 0x24, 0x1d, 0xe2, 0x0e, 0xb9, 0x46, 0x9d, 0x29, 0x86, 0x39, 0xf8, 0x9a, 0x6a,
-	0x99, 0xa5, 0xcd, 0xc8, 0x56, 0x52, 0x4e, 0xea, 0xac, 0x29, 0xc6, 0x64, 0x0d, 0x16, 0x75, 0xa6,
-	0x8c, 0x2c, 0x33, 0x03, 0x82, 0x2c, 0xe8, 0xac, 0x63, 0x99, 0x7c, 0x8d, 0x45, 0x55, 0xc3, 0xb1,
-	0x62, 0xd9, 0xb1, 0x82, 0x0b, 0x84, 0x15, 0x6f, 0x42, 0xda, 0x36, 0x6d, 0xd5, 0x50, 0xa8, 0x6a,
-	0x0d, 0xf5, 0xe1, 0x09, 0xcb, 0xa4, 0xc4, 0x2b, 0xa4, 0x84, 0x54, 0x72, 0x85, 0xe4, 0x03, 0x48,
-	0x58, 0x94, 0x9d, 0x19, 0x36, 0xcb, 0xa4, 0x37, 0x63, 0x5b, 0xcb, 0xc5, 0xfb, 0xbe, 0xc7, 0x66,
-	0x63, 0xb7, 0x2d, 0x3b, 0x73, 0x65, 0x6f, 0x11, 0xc9, 0x41, 0x4a, 0xbc, 0xec, 0x99, 0x65, 0x28,
-	0x86, 0x79, 0x62, 0x66, 0x56, 0x9c, 0xd0, 0x70, 0x61, 0xdf, 0x32, 0x9a, 0xe6, 0x89, 0x49, 0x9a,
-	0x90, 0x52, 0xcf, 0x34, 0xdd, 0x56, 0xe8, 0xd0, 0xb6, 0x74, 0xca, 0x32, 0x28, 0x9e, 0xf4, 0x20,
-	0xf4, 0x49, 0x55, 0xbe, 0x42, 0xe2, 0xe1, 0x95, 0xaf, 0xa8, 0xde, 0x7f, 0x9d, 0x32, 0xf2, 0x2e,
-	0xac, 0x8a, 0x27, 0xaa, 0x2f, 0x5e, 0x58, 0xf4, 0x95, 0xae, 0xda, 0xba, 0x39, 0xcc, 0xac, 0x8a,
-	0xa7, 0x22, 0x07, 0xd5, 0x09, 0x79, 0xf6, 0x2b, 0x48, 0xb8, 0x26, 0x73, 0x6f, 0x19, 0x54, 0x3d,
-	0x39, 0xa3, 0x7e, 0xd6, 0x25, 0x1d, 0x41, 0x43, 0x23, 0xb7, 0x60, 0x69, 0x64, 0xa8, 0x03, 0x7a,
-	0x4a, 0x87, 0xb6, 0xc8, 0xbc, 0x94, 0xec, 0x0b, 0x48, 0x16, 0x92, 0x63, 0x2f, 0xc6, 0x9c, 0x95,
-	0xde, 0x38, 0xfb, 0xb7, 0x08, 0x80, 0x6f, 0x2b, 0x79, 0x00, 0x2b, 0xcc, 0x56, 0x2d, 0x5b, 0xb1,
-	0xf5, 0x53, 0xca, 0x6c, 0xf5, 0x74, 0xe4, 0x3e, 0x2b, 0x2d, 0xc4, 0x3d, 0x4f, 0x4a, 0xee, 0x41,
-	0x8a, 0x0e, 0xb5, 0x89, 0x69, 0xce, 0x53, 0xaf, 0xd0, 0xa1, 0xe6, 0x4f, 0x9a, 0x48, 0xc0, 0x58,
-	0x70, 0x02, 0xc6, 0x43, 0x12, 0x70, 0x61, 0x3a, 0x01, 0x67, 0xc2, 0xb5, 0x38, 0x13, 0xae, 0xdc,
-	0x73, 0x58, 0x9f, 0x8d, 0x47, 0x53, 0x67, 0x36, 0xf9, 0x10, 0xae, 0x8c, 0x84, 0x44, 0xd1, 0x87,
-	0xc7, 0x26, 0xcb, 0x44, 0x44, 0x1c, 0x6f, 0x85, 0xc5, 0x51, 0x5e, 0x1e, 0x8d, 0xff, 0xb3, 0xdc,
-	0x77, 0x11, 0xbf, 0x23, 0xf4, 0xa8, 0x7a, 0x2a, 0x9b, 0xcc, 0xa6, 0x16, 0xf7, 0xfe, 0x79, 0x77,
-	0xf9, 0x82, 0x49, 0x27, 0x44, 0xa7, 0x9c, 0xf0, 0x10, 0xc8, 0x29, 0x3d, 0x7d, 0x41, 0x2d, 0xc5,
-	0xef, 0x27, 0x3c, 0x40, 0xb1, 0xad, 0x94, 0x8c, 0x0e, 0xa9, 0x7a, 0x6d, 0x85, 0x91, 0x2d, 0xc0,
-	0x81, 0xa9, 0x0e, 0x5e, 0x4e, 0x4c, 0x16, 0x9e, 0x4b, 0xc9, 0x69, 0x21, 0x1f, 0x4f, 0xcd, 0xfd,
-	0x29, 0xee, 0x7b, 0xa0, 0xde, 0xa9, 0x75, 0x2c, 0xf3, 0x58, 0x37, 0xa8, 0xe8, 0x5d, 0x8f, 0x61,
-	0x79, 0xc2, 0x03, 0xc2, 0xd6, 0x8b, 0x1c, 0x00, 0xbe, 0x03, 0xc8, 0xe7, 0xb0, 0x32, 0xb2, 0xa8,
-	0xa6, 0x0f, 0x78, 0x72, 0x3a, 0x2a, 0xa2, 0x42, 0xc5, 0x7b, 0xb3, 0x2a, 0xa6, 0x9f, 0xbc, 0xdd,
-	0x19, 0xaf, 0x13, 0x5a, 0xd3, 0xa3, 0xa9, 0x31, 0x69, 0xfb, 0xed, 0x4f, 0xa8, 0x8d, 0x09, 0xb5,
-	0x0f, 0x2f, 0x54, 0xeb, 0x76, 0x45, 0x27, 0x54, 0xc7, 0xfe, 0x80, 0x54, 0x60, 0x5d, 0xd3, 0x99,
-	0xfa, 0xc2, 0xa0, 0x9a, 0x32, 0x34, 0x6d, 0xfd, 0x58, 0x1f, 0x88, 0x92, 0x62, 0x99, 0xb8, 0x70,
-	0xf0, 0x9a, 0x47, 0x5b, 0x93, 0x30, 0xfb, 0x19, 0xa4, 0xa7, 0x2d, 0xe5, 0x3d, 0x6f, 0x44, 0xad,
-	0x01, 0x2f, 0x2c, 0x27, 0xb4, 0xde, 0x90, 0xb7, 0x28, 0xbe, 0x6b, 0x68, 0xca, 0x2f, 0xf4, 0xa1,
-	0x53, 0x5c, 0xdc, 0x19, 0x0b, 0x72, 0x4a, 0x48, 0x9f, 0xb9, 0xc2, 0xec, 0xef, 0x22, 0xb0, 0x3c,
-	0x61, 0x26, 0x79, 0x0b, 0x56, 0x6c, 0x73, 0xa4, 0xec, 0xe7, 0x95, 0x63, 0x7d, 0xa8, 0xb3, 0x97,
-	0x94, 0xb9, 0x8a, 0x53, 0xb6, 0x39, 0xda, 0xcf, 0x1f, 0xba, 0x42, 0x6f, 0xde, 0x6e, 0xc5, 0x9f,
-	0x17, 0x1d, 0xcf, 0xdb, 0xad, 0x9c, 0x9f, 0x57, 0x99, 0xd0, 0x17, 0x1b, 0xcf, 0xab, 0xf8, 0xfa,
-	0x66, 0xcd, 0x75, 0xd2, 0x67, 0xda, 0xdc, 0xdc, 0x5f, 0x22, 0x70, 0xcd, 0x73, 0x76, 0x93, 0xaa,
-	0x1a, 0xb5, 0x5e, 0x98, 0xaa, 0xa5, 0x31, 0xd2, 0x83, 0x2b, 0xc6, 0xc4, 0x38, 0x13, 0x15, 0xd5,
-	0x93, 0x9f, 0x0d, 0xd1, 0xe4, 0xaa, 0x6d, 0x99, 0x9e, 0xe8, 0xe6, 0x70, 0x42, 0x24, 0x4f, 0x69,
-	0xc9, 0x76, 0x60, 0x75, 0x66, 0x0a, 0x6f, 0x58, 0x9a, 0xfe, 0x4a, 0x67, 0xbc, 0x35, 0xba, 0xad,
-	0xce, 0x1b, 0x93, 0x0d, 0x58, 0x9e, 0x2c, 0x97, 0xa8, 0x88, 0x26, 0x8c, 0xf7, 0x5f, 0x96, 0xfb,
-	0x16, 0x6e, 0x8f, 0xd3, 0x58, 0x65, 0x6c, 0x64, 0x5a, 0xf6, 0x53, 0xd3, 0xa6, 0xbc, 0x5e, 0x8f,
-	0xce, 0x28, 0xbb, 0xa0, 0x93, 0xde, 0x84, 0x25, 0xee, 0x1f, 0x5e, 0x21, 0x5e, 0xbd, 0x26, 0x1d,
-	0x41, 0x43, 0xe3, 0xcf, 0xb6, 0xce, 0xf8, 0xff, 0xb3, 0x91, 0xdf, 0xd3, 0xc0, 0x13, 0x35, 0xb4,
-	0xdc, 0x1f, 0x23, 0x70, 0x7f, 0xde, 0xc3, 0x8f, 0xe8, 0x90, 0x5a, 0xfa, 0xa0, 0x4b, 0x0d, 0x2a,
-	0x32, 0x8b, 0x98, 0xb0, 0xc2, 0xbc, 0x81, 0xa2, 0x0f, 0x35, 0xfa, 0x8d, 0xb0, 0x24, 0x5d, 0x7c,
-	0xd7, 0xf7, 0x27, 0x57, 0xa2, 0x14, 0xf3, 0x85, 0x92, 0xa7, 0x69, 0xbc, 0xbc, 0x31, 0xd4, 0xf4,
-	0x01, 0x65, 0x07, 0x37, 0x3a, 0x9d, 0x42, 0x49, 0xe9, 0x4a, 0x4d, 0xa5, 0xda, 0x6c, 0x76, 0x7b,
-	0x55, 0x59, 0xe9, 0x34, 0xab, 0xcf, 0x25, 0x59, 0xc9, 0xcb, 0x69, 0x36, 0x31, 0x99, 0x7e, 0xc3,
-	0x7b, 0xd4, 0x58, 0xe2, 0xed, 0x10, 0x63, 0x41, 0xee, 0x8b, 0x59, 0x9f, 0x75, 0x79, 0xf3, 0xa2,
-	0x9a, 0xd3, 0x09, 0x78, 0x4f, 0x66, 0x5e, 0x17, 0xe3, 0x86, 0xc6, 0xe5, 0x04, 0x73, 0xdb, 0xd8,
-	0x06, 0x2c, 0x8b, 0x46, 0xa7, 0x18, 0xf4, 0x15, 0x35, 0x5c, 0xdd, 0x20, 0x44, 0x4d, 0x2e, 0xc9,
-	0x7d, 0x02, 0xf7, 0xce, 0x2b, 0x77, 0xb4, 0xd6, 0x54, 0x4b, 0xab, 0xbd, 0x54, 0x0d, 0x83, 0x0e,
-	0x4f, 0x9c, 0x43, 0x92, 0x37, 0xf0, 0x23, 0xb3, 0x3c, 0x96, 0x35, 0xb4, 0xdc, 0x3f, 0xa3, 0x7e,
-	0x6e, 0x4e, 0xba, 0x97, 0x1c, 0x02, 0x08, 0xeb, 0x5e, 0x99, 0x36, 0xf5, 0xfa, 0xfa, 0xbc, 0xfd,
-	0x79, 0x5e, 0x3e, 0xc8, 0x62, 0x2b, 0xe2, 0x22, 0x46, 0xbe, 0x04, 0x72, 0xe2, 0x84, 0x4a, 0x19,
-	0x3b, 0xc7, 0xcb, 0xf4, 0xed, 0x70, 0x7d, 0xe7, 0x43, 0x2c, 0xaf, 0x9e, 0x9c, 0x93, 0x30, 0xd2,
-	0x11, 0xbb, 0x2b, 0x77, 0xab, 0xe2, 0x74, 0x55, 0xa7, 0xdd, 0x87, 0xda, 0x3a, 0x15, 0x07, 0xb1,
-	0x0d, 0xfb, 0x43, 0x46, 0x06, 0xb0, 0xee, 0x36, 0xf4, 0x01, 0x2f, 0xed, 0xb1, 0xb3, 0x9c, 0x36,
-	0xb7, 0x5c, 0x7c, 0x14, 0xac, 0x78, 0x4e, 0x0c, 0xe4, 0x6b, 0xa3, 0x59, 0x21, 0xaf, 0xa8, 0x2d,
-	0xbe, 0xb8, 0x26, 0xce, 0xd1, 0x3d, 0xf3, 0xa8, 0x76, 0x44, 0x27, 0x56, 0x3b, 0x9b, 0xa0, 0x4c,
-	0x7f, 0x7e, 0x46, 0x99, 0x1d, 0x5e, 0x5c, 0x05, 0x48, 0x7b, 0x5d, 0x7e, 0x44, 0x2d, 0xdd, 0x74,
-	0x4b, 0xe8, 0x00, 0xca, 0xc5, 0xfd, 0xf2, 0xfe, 0xce, 0x6e, 0x71, 0xbf, 0x22, 0xa7, 0xdc, 0x19,
-	0x1d, 0x31, 0x21, 0xf7, 0x8f, 0x28, 0xbc, 0x7d, 0x89, 0x87, 0x8b, 0x73, 0x28, 0x25, 0x5f, 0xc0,
-	0xa2, 0x73, 0xb2, 0x73, 0xab, 0xe9, 0x60, 0xfa, 0xf5, 0x2f, 0xa5, 0xc4, 0x3d, 0x24, 0x1e, 0x24,
-	0xba, 0xfd, 0x5a, 0x4d, 0xea, 0x76, 0x65, 0x57, 0x25, 0x79, 0x04, 0x57, 0x27, 0x7d, 0xad, 0xdb,
-	0xd4, 0xdd, 0xd4, 0x63, 0x5b, 0x71, 0x19, 0x7d, 0xcf, 0x35, 0x6c, 0xca, 0xeb, 0xe2, 0x1a, 0x2c,
-	0xb0, 0x81, 0x69, 0x39, 0xa7, 0xfd, 0xa8, 0xec, 0x0c, 0x78, 0x1d, 0x1e, 0xeb, 0x43, 0xd5, 0xd0,
-	0xbf, 0xa5, 0xce, 0xfe, 0x9d, 0x94, 0x7d, 0x01, 0xb9, 0x03, 0xe0, 0xee, 0x2e, 0xba, 0x41, 0xc5,
-	0xe1, 0x27, 0x2a, 0x4f, 0x48, 0x72, 0xc7, 0xb0, 0xe8, 0x58, 0x47, 0x96, 0xc1, 0xb3, 0x0f, 0xdf,
-	0x20, 0x6b, 0xb0, 0x2a, 0xc9, 0x72, 0x5b, 0x56, 0xfa, 0xad, 0x6e, 0x47, 0xaa, 0x35, 0x0e, 0x1b,
-	0x52, 0x1d, 0x23, 0xe4, 0x26, 0x5c, 0x77, 0xc4, 0x8d, 0xd6, 0xd3, 0x6a, 0xb3, 0x51, 0x57, 0x9a,
-	0x52, 0xf5, 0xa8, 0x2f, 0x29, 0x8d, 0x3a, 0x46, 0x67, 0x61, 0xaf, 0xf1, 0x44, 0xea, 0xf6, 0xaa,
-	0x4f, 0x3a, 0x18, 0xcb, 0xfd, 0x32, 0x0a, 0x8f, 0xa6, 0x1d, 0xf6, 0xb1, 0x6a, 0x0f, 0x5e, 0x86,
-	0xc4, 0xdd, 0x86, 0x55, 0x37, 0xee, 0xe3, 0x93, 0x8f, 0x57, 0x88, 0x47, 0x41, 0x41, 0xb8, 0x40,
-	0xe7, 0x76, 0x53, 0x28, 0x1c, 0x1f, 0x27, 0x65, 0x34, 0xa6, 0x05, 0x2c, 0xab, 0xc2, 0xca, 0xb9,
-	0x49, 0x3f, 0x7a, 0x02, 0xfe, 0x3b, 0x0e, 0x97, 0x36, 0xdb, 0xcd, 0x42, 0xca, 0x3f, 0x6c, 0x9c,
-	0xff, 0xff, 0x85, 0x0f, 0xbc, 0x6c, 0x9c, 0x1a, 0xca, 0xbe, 0xe6, 0xec, 0xbf, 0xa2, 0x90, 0x3e,
-	0xf7, 0xe4, 0x0b, 0x5e, 0xfe, 0x9a, 0x46, 0x47, 0x16, 0x1d, 0xa8, 0x36, 0x9d, 0x3d, 0xb9, 0x5f,
-	0xf5, 0x99, 0xef, 0xcc, 0xaf, 0xc6, 0xf5, 0x14, 0x13, 0xf5, 0xf4, 0xe1, 0x0f, 0x7f, 0x8d, 0xef,
-	0x57, 0x54, 0xf1, 0x8b, 0x8a, 0x6a, 0x21, 0xb0, 0xa8, 0x16, 0xc3, 0x8b, 0x2a, 0x71, 0xbe, 0xa8,
-	0xe6, 0x24, 0x45, 0xf2, 0xa2, 0xa4, 0xf8, 0xa9, 0xea, 0xf0, 0x57, 0xd1, 0xf3, 0xad, 0xb7, 0xfb,
-	0x83, 0x5b, 0xef, 0xf7, 0x0e, 0x3e, 0x81, 0x38, 0x33, 0x4c, 0xdb, 0x3d, 0xe6, 0x88, 0xff, 0xc1,
-	0xe1, 0x8a, 0xcc, 0x0d, 0xd7, 0x0d, 0x48, 0xd2, 0x57, 0xd4, 0xf9, 0x58, 0x71, 0xae, 0x20, 0x12,
-	0x62, 0x3c, 0xb7, 0x14, 0x17, 0x2f, 0xf2, 0xfa, 0x9f, 0x63, 0xe7, 0xf7, 0x82, 0xee, 0x8f, 0xb1,
-	0x17, 0x74, 0xbf, 0x7f, 0xda, 0xe6, 0x7e, 0x1f, 0xfd, 0x69, 0x32, 0x80, 0x6c, 0xc0, 0x4d, 0x07,
-	0xba, 0x27, 0xbb, 0x5a, 0x55, 0xae, 0x2b, 0xad, 0x76, 0x4f, 0x69, 0x3f, 0x6b, 0x49, 0x75, 0x8c,
-	0x93, 0x75, 0x20, 0xd3, 0xab, 0xbb, 0xcd, 0x76, 0x0f, 0x17, 0x48, 0x16, 0xd6, 0x1d, 0xf9, 0x61,
-	0xb5, 0xd1, 0x94, 0xea, 0xce, 0xc2, 0x46, 0xeb, 0xb0, 0x8d, 0x8b, 0xfe, 0x13, 0xab, 0xb5, 0x5a,
-	0xbb, 0xdf, 0xea, 0x29, 0xf5, 0x7e, 0xa7, 0xd9, 0xa8, 0x55, 0x7b, 0x12, 0x26, 0xfc, 0x85, 0xcd,
-	0x76, 0xed, 0x53, 0x69, 0xd2, 0x9a, 0x24, 0xb9, 0x07, 0x1b, 0x73, 0xdf, 0xe3, 0x90, 0x1b, 0x28,
-	0xc9, 0x8d, 0x76, 0x1d, 0x97, 0xc8, 0x75, 0xb8, 0x3a, 0x3d, 0x49, 0x7a, 0x2a, 0xb5, 0x7a, 0x08,
-	0xb9, 0xbf, 0xc7, 0xe0, 0x8e, 0x77, 0x0a, 0x71, 0xbf, 0x88, 0xea, 0x9d, 0x9a, 0xd3, 0xc0, 0xbb,
-	0xb6, 0x6a, 0x9f, 0x31, 0xf2, 0x54, 0x7c, 0x64, 0x88, 0x1c, 0x9e, 0xf8, 0x44, 0x2f, 0xcd, 0x9e,
-	0x62, 0xe6, 0xaf, 0x77, 0xb7, 0x0c, 0xe7, 0x73, 0xd0, 0x18, 0xff, 0x67, 0xd9, 0x5f, 0x47, 0x01,
-	0x7c, 0x16, 0x5e, 0x2a, 0x1b, 0xe0, 0x2e, 0x55, 0x26, 0x2e, 0xf2, 0xc0, 0x11, 0x89, 0x0b, 0x8a,
-	0x39, 0x97, 0x24, 0xb1, 0xcb, 0x5d, 0x92, 0xc4, 0xe7, 0x5c, 0x92, 0xbc, 0x09, 0x69, 0x4d, 0x7d,
-	0x3d, 0xb9, 0x6d, 0x2e, 0x88, 0x6f, 0x9a, 0x94, 0xa6, 0xbe, 0xf6, 0xb7, 0x3a, 0xd2, 0x87, 0x45,
-	0x26, 0xde, 0x51, 0x74, 0xa7, 0x74, 0x71, 0xe7, 0xd2, 0x3e, 0x91, 0x9c, 0x9c, 0x76, 0x46, 0x07,
-	0x0b, 0xfd, 0x56, 0x57, 0xea, 0xc9, 0xae, 0xb2, 0xdc, 0x47, 0x90, 0x9a, 0xe2, 0x64, 0x09, 0x9c,
-	0x19, 0xf8, 0x06, 0xcf, 0xec, 0x4e, 0x55, 0xee, 0x35, 0xaa, 0x4d, 0x8c, 0x90, 0x24, 0xc4, 0x0f,
-	0xfb, 0xcd, 0x26, 0x46, 0x49, 0x0a, 0x96, 0x6a, 0xed, 0x56, 0xad, 0xd9, 0xaf, 0x4b, 0x75, 0x8c,
-	0xe5, 0xfe, 0x1a, 0x87, 0xcc, 0xc4, 0xd7, 0x79, 0x97, 0xaa, 0xd6, 0xe0, 0xa5, 0x77, 0x6b, 0x55,
-	0x83, 0x84, 0x77, 0xd2, 0x75, 0x42, 0xf9, 0xf6, 0xdc, 0x4f, 0xfa, 0xa9, 0x45, 0xdb, 0xee, 0x59,
-	0xd7, 0x5b, 0x49, 0x1e, 0xc3, 0x02, 0x3f, 0xa2, 0x7b, 0x07, 0xf1, 0x07, 0x97, 0x50, 0x21, 0x6e,
-	0x67, 0x9c, 0x55, 0xdc, 0x06, 0x27, 0x78, 0xde, 0x69, 0xfb, 0x32, 0x36, 0x38, 0x1e, 0x94, 0xbd,
-	0x95, 0xd9, 0x06, 0x2c, 0xba, 0x9f, 0x42, 0x69, 0x88, 0x8e, 0x93, 0x26, 0xaa, 0xcf, 0xbf, 0xf0,
-	0x9d, 0xba, 0xda, 0x8c, 0x4d, 0x5f, 0x6d, 0x66, 0xdf, 0x87, 0x38, 0x37, 0xef, 0x52, 0x8a, 0x10,
-	0x62, 0x67, 0x96, 0xe1, 0xaa, 0xe0, 0x7f, 0xb3, 0x0f, 0x61, 0xd1, 0xb1, 0xed, 0x32, 0xeb, 0x73,
-	0xbf, 0x89, 0xc0, 0x9a, 0x34, 0xf5, 0x66, 0x75, 0xca, 0x74, 0x8b, 0x6a, 0xbc, 0x94, 0xbf, 0x56,
-	0xe6, 0x22, 0xc5, 0xfd, 0xb8, 0xc0, 0x08, 0xb9, 0x0b, 0xb7, 0x83, 0x26, 0xf1, 0x57, 0x60, 0x18,
-	0x0d, 0xd3, 0xe3, 0xd8, 0xc9, 0x30, 0xce, 0xbb, 0x58, 0xd0, 0xa4, 0xaa, 0x61, 0x60, 0x22, 0xf7,
-	0xdb, 0x08, 0x6c, 0x4c, 0xc4, 0x82, 0x2b, 0x3f, 0x54, 0x5f, 0x99, 0x96, 0x6e, 0x53, 0x59, 0x1d,
-	0x7e, 0x2d, 0xee, 0x7a, 0xeb, 0x5e, 0x1a, 0x44, 0x82, 0xbe, 0xc7, 0x02, 0x56, 0x4e, 0x66, 0x43,
-	0xf6, 0xb1, 0xeb, 0xfd, 0x89, 0x6b, 0xb9, 0xc8, 0xd4, 0xb5, 0x1c, 0x3f, 0x4c, 0xb8, 0x0a, 0xbc,
-	0x1b, 0x17, 0x5f, 0xf0, 0xce, 0x77, 0x6b, 0x70, 0xf7, 0xc2, 0x0f, 0x73, 0x72, 0x1b, 0x82, 0x3f,
-	0xcd, 0xf1, 0x8d, 0x30, 0x5c, 0xc0, 0x48, 0x18, 0x2e, 0x62, 0x34, 0x0c, 0x97, 0x30, 0x16, 0x86,
-	0xcb, 0x18, 0x0f, 0xc3, 0x15, 0x5c, 0x08, 0xc3, 0x3b, 0xb8, 0x18, 0x86, 0x77, 0x31, 0x11, 0x86,
-	0xf7, 0x30, 0x19, 0x86, 0xf7, 0x71, 0x89, 0xdc, 0x82, 0xcc, 0x18, 0x7f, 0xd6, 0xaf, 0x36, 0x3b,
-	0xb2, 0x54, 0x57, 0x9e, 0x49, 0xdd, 0x9e, 0x92, 0x47, 0x08, 0xa1, 0x05, 0x5c, 0x0e, 0xa1, 0x45,
-	0xbc, 0x12, 0x42, 0x4b, 0x98, 0x0a, 0xa1, 0x65, 0x4c, 0x87, 0xd0, 0x0a, 0xae, 0x84, 0xd0, 0x1d,
-	0xc4, 0x10, 0xba, 0x8b, 0xab, 0x21, 0x74, 0x0f, 0x49, 0x08, 0xdd, 0xc7, 0xab, 0x53, 0xae, 0x3c,
-	0xe7, 0x8d, 0x3c, 0x5e, 0x0b, 0xc3, 0x05, 0x5c, 0x0b, 0xc3, 0x45, 0x5c, 0x0f, 0xc3, 0x25, 0xbc,
-	0x1e, 0x86, 0xcb, 0x98, 0x99, 0x6f, 0xb8, 0x54, 0x15, 0x61, 0xbc, 0x11, 0x42, 0x0b, 0x98, 0x0d,
-	0xa1, 0x45, 0xbc, 0x19, 0x42, 0x4b, 0x78, 0x2b, 0x84, 0x96, 0xf1, 0x76, 0x08, 0xad, 0xe0, 0x9d,
-	0x10, 0xba, 0x83, 0x1b, 0x21, 0x74, 0x17, 0x37, 0x43, 0xe8, 0x1e, 0xde, 0x0d, 0xa1, 0xfb, 0x98,
-	0x9b, 0xef, 0x4a, 0xc7, 0x1b, 0x79, 0xbc, 0x17, 0x86, 0x0b, 0x78, 0x3f, 0x0c, 0x17, 0xf1, 0xcd,
-	0x30, 0x5c, 0xc2, 0xb7, 0xc2, 0x70, 0x19, 0x1f, 0x90, 0x1b, 0xb0, 0x36, 0xc6, 0x3d, 0xa9, 0xfa,
-	0xa4, 0xd6, 0xef, 0x88, 0x5f, 0xdc, 0xe2, 0xe7, 0xc7, 0x19, 0xe4, 0xd4, 0x31, 0xbe, 0x4d, 0xee,
-	0x40, 0x76, 0xee, 0x3a, 0x71, 0x9e, 0xc4, 0x77, 0xc8, 0x26, 0xdc, 0x0a, 0x58, 0xec, 0xcc, 0x78,
-	0x97, 0x64, 0xe0, 0xda, 0x78, 0x86, 0x38, 0x3b, 0x0a, 0xcb, 0xf2, 0xf8, 0x30, 0x80, 0x14, 0xf0,
-	0x51, 0x00, 0x29, 0xe2, 0x76, 0x00, 0x29, 0xe1, 0x7b, 0x01, 0xa4, 0x8c, 0xf9, 0x00, 0x52, 0xc1,
-	0x42, 0x00, 0xd9, 0xc1, 0x62, 0x00, 0xd9, 0xc5, 0x52, 0x00, 0xd9, 0xc3, 0x72, 0x00, 0xd9, 0xc7,
-	0xca, 0x94, 0xf7, 0x27, 0xde, 0x34, 0x8f, 0x3b, 0x41, 0xa8, 0x80, 0xbb, 0x41, 0xa8, 0x88, 0x7b,
-	0x41, 0xa8, 0x84, 0xfb, 0x41, 0xa8, 0x8c, 0x07, 0x41, 0xa8, 0x82, 0xff, 0x13, 0x84, 0x76, 0xf0,
-	0xfd, 0x20, 0xb4, 0x8b, 0x8f, 0x83, 0xd0, 0x1e, 0x7e, 0x10, 0x84, 0xf6, 0xf1, 0xc3, 0x00, 0x54,
-	0xcc, 0xe3, 0x47, 0x41, 0xa8, 0x80, 0xd5, 0x20, 0x54, 0xc4, 0x8f, 0x83, 0x50, 0x09, 0x6b, 0x41,
-	0xa8, 0x8c, 0xf5, 0x20, 0x54, 0x41, 0x29, 0x08, 0xed, 0xe0, 0x61, 0x10, 0xda, 0xc5, 0xa3, 0x20,
-	0xb4, 0x87, 0x9f, 0x04, 0xa1, 0x7d, 0x6c, 0x04, 0xa0, 0x52, 0x1e, 0xff, 0x37, 0x08, 0x15, 0xf0,
-	0xd3, 0x20, 0x54, 0xc4, 0x66, 0x10, 0x2a, 0xe1, 0x93, 0x20, 0x54, 0xc6, 0x56, 0x10, 0xaa, 0x60,
-	0x3b, 0x08, 0xed, 0x60, 0x27, 0x08, 0xed, 0xe2, 0x67, 0x41, 0x68, 0x0f, 0xe5, 0x20, 0xb4, 0x8f,
-	0xdd, 0x00, 0x54, 0xce, 0x63, 0x2f, 0x08, 0x15, 0xb0, 0x1f, 0x84, 0x8a, 0xf8, 0x34, 0x08, 0x95,
-	0xf0, 0x19, 0xb9, 0x0a, 0x2b, 0x63, 0xd4, 0x6d, 0x37, 0xdb, 0x4a, 0x1e, 0x3f, 0x9f, 0x15, 0x16,
-	0xf0, 0xf9, 0xac, 0xb0, 0x88, 0xff, 0x37, 0x2b, 0x2c, 0xe1, 0x17, 0xb3, 0xc2, 0x32, 0xfe, 0xff,
-	0xac, 0xb0, 0x82, 0x5f, 0xce, 0x0a, 0x77, 0xf0, 0x67, 0xb3, 0xc2, 0x5d, 0x54, 0xfe, 0x13, 0x00,
-	0x00, 0xff, 0xff, 0x83, 0xb1, 0x9f, 0x0f, 0x04, 0x23, 0x00, 0x00,
+	// 3934 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x5a, 0xcb, 0x73, 0x1b, 0xc9,
+	0x79, 0x5f, 0x3c, 0x08, 0x80, 0x1f, 0x08, 0xb0, 0xd5, 0x12, 0x25, 0x08, 0x92, 0x56, 0x12, 0xb4,
+	0x6b, 0x71, 0x2d, 0x2d, 0x4d, 0x82, 0x2f, 0x51, 0xf6, 0x5a, 0x8b, 0x05, 0x86, 0x5c, 0x44, 0x10,
+	0x81, 0x1d, 0x80, 0x92, 0xe5, 0x8d, 0x33, 0x3b, 0xc2, 0x34, 0xc9, 0x29, 0x0d, 0x30, 0xd8, 0x99,
+	0x01, 0x2d, 0xfa, 0x1f, 0x88, 0xab, 0x52, 0x95, 0x4b, 0xaa, 0x72, 0xc8, 0x29, 0x55, 0x2e, 0xfb,
+	0x94, 0xca, 0x21, 0x15, 0x9f, 0x52, 0xf1, 0x21, 0xff, 0x40, 0x0e, 0xa9, 0xe4, 0x1f, 0xc8, 0x21,
+	0xa7, 0x9c, 0xe2, 0x43, 0x9c, 0x53, 0xaa, 0x1f, 0xf3, 0xc0, 0x63, 0x06, 0xe0, 0xae, 0x6a, 0xd7,
+	0x7b, 0x21, 0xa7, 0xbf, 0x5f, 0xf7, 0xd7, 0x5f, 0x7f, 0xaf, 0xfe, 0xba, 0x1b, 0xf0, 0x9e, 0x66,
+	0x3a, 0xaa, 0x72, 0xd2, 0xed, 0x11, 0xdb, 0x56, 0x4f, 0x88, 0xad, 0x74, 0x0d, 0x9d, 0xf4, 0x1d,
+	0xe5, 0x58, 0xed, 0x3b, 0xaa, 0x7d, 0xbe, 0x36, 0xb0, 0x4c, 0xc7, 0xc4, 0x19, 0xf6, 0xaf, 0x6b,
+	0x1a, 0xc5, 0x6b, 0xac, 0xbf, 0x7d, 0xaa, 0x5a, 0x44, 0x53, 0x48, 0x7f, 0xd8, 0xb3, 0x79, 0x97,
+	0xd2, 0x3f, 0xa6, 0x01, 0x57, 0x9f, 0xd9, 0x27, 0xb5, 0x66, 0xa7, 0xd2, 0x32, 0xd4, 0x73, 0x62,
+	0xd5, 0xfb, 0xc7, 0x26, 0xbe, 0x05, 0xa0, 0x76, 0xbb, 0xe6, 0xb0, 0xef, 0x28, 0xba, 0x56, 0x88,
+	0xdd, 0x89, 0xad, 0xe6, 0xe4, 0x45, 0x41, 0xa9, 0x6b, 0x18, 0x43, 0xb2, 0xaf, 0xf6, 0x48, 0x21,
+	0x7e, 0x27, 0xb6, 0xba, 0x28, 0xb3, 0x6f, 0x7c, 0x17, 0x96, 0x18, 0x6c, 0x9d, 0x2b, 0x5d, 0x53,
+	0x23, 0x85, 0x04, 0xc3, 0xb2, 0x82, 0x56, 0x35, 0x35, 0x82, 0x65, 0x58, 0x12, 0x02, 0x2a, 0x96,
+	0x69, 0x90, 0x42, 0xf2, 0x4e, 0x6c, 0x35, 0x5f, 0xbe, 0xb6, 0xe6, 0x8a, 0xb9, 0xb6, 0x2f, 0x50,
+	0xd9, 0x34, 0x88, 0xfd, 0xf8, 0xea, 0x7e, 0xe5, 0xb0, 0x53, 0x69, 0xbf, 0x54, 0xe4, 0x66, 0x43,
+	0x52, 0x8e, 0x0e, 0x6b, 0xd2, 0x7e, 0xfd, 0x50, 0xaa, 0xc9, 0x59, 0xc1, 0x84, 0xf6, 0xc2, 0xd7,
+	0x20, 0xed, 0x10, 0xb5, 0x47, 0xc5, 0x5c, 0x60, 0x62, 0xa6, 0x68, 0xb3, 0xae, 0xe1, 0x1b, 0xb0,
+	0xc8, 0x00, 0x26, 0x68, 0x8a, 0x09, 0x93, 0xa1, 0x84, 0x43, 0x2a, 0xec, 0x75, 0x60, 0xdf, 0x8a,
+	0xa3, 0x9e, 0x14, 0xd2, 0x0c, 0x63, 0x5c, 0x3a, 0xea, 0x09, 0x2e, 0x40, 0xda, 0x1e, 0x98, 0x7d,
+	0xdb, 0xb4, 0x0a, 0x19, 0x8e, 0x88, 0x26, 0xe5, 0xa8, 0xdb, 0x8a, 0x61, 0x76, 0x5f, 0x13, 0xad,
+	0xb0, 0x78, 0x27, 0xb6, 0x9a, 0x91, 0x33, 0xba, 0xdd, 0x60, 0x6d, 0xbc, 0x02, 0x29, 0xdd, 0x56,
+	0x06, 0x96, 0x59, 0x00, 0x86, 0x2c, 0xe8, 0x76, 0xcb, 0x32, 0xe9, 0x18, 0x8b, 0xa8, 0x06, 0x97,
+	0x22, 0xcb, 0xa5, 0xa0, 0x04, 0x26, 0xc5, 0xfb, 0x90, 0x77, 0x4c, 0x47, 0x35, 0x14, 0xa2, 0x5a,
+	0x7d, 0xbd, 0x7f, 0x62, 0x17, 0x72, 0x6c, 0x09, 0x39, 0x46, 0x95, 0x04, 0x11, 0xff, 0x18, 0xd2,
+	0x16, 0xb1, 0x87, 0x86, 0x63, 0x17, 0xf2, 0x77, 0x12, 0xab, 0xd9, 0xf2, 0x7b, 0xbe, 0xc6, 0x26,
+	0x6d, 0xb7, 0x26, 0xf3, 0xbe, 0xb2, 0x3b, 0x08, 0x97, 0x20, 0xc7, 0x16, 0x3b, 0xb4, 0x0c, 0xc5,
+	0x30, 0x4f, 0xcc, 0xc2, 0x32, 0x37, 0x0d, 0x25, 0x1e, 0x59, 0x46, 0xc3, 0x3c, 0x31, 0x71, 0x03,
+	0x72, 0xea, 0x50, 0xd3, 0x1d, 0x85, 0xf4, 0x1d, 0x4b, 0x27, 0x76, 0x01, 0xb1, 0x99, 0xee, 0x47,
+	0xce, 0x54, 0xa1, 0x23, 0x24, 0x6a, 0x5e, 0x79, 0x49, 0x75, 0xbf, 0x75, 0x62, 0xe3, 0x07, 0x70,
+	0x89, 0xcd, 0xa8, 0xbe, 0x7a, 0x65, 0x91, 0x33, 0x5d, 0x75, 0x74, 0xb3, 0x5f, 0xb8, 0xc4, 0x66,
+	0x45, 0x14, 0xa8, 0x04, 0xe8, 0xc5, 0x2f, 0x20, 0x2d, 0x44, 0xa6, 0xda, 0x32, 0x88, 0x7a, 0x32,
+	0x24, 0xbe, 0xd7, 0x65, 0x38, 0xa1, 0xae, 0xe1, 0x9b, 0xb0, 0x38, 0x30, 0xd4, 0x2e, 0xe9, 0x91,
+	0xbe, 0xc3, 0x3c, 0x2f, 0x27, 0xfb, 0x04, 0x5c, 0x84, 0x8c, 0xa7, 0xc5, 0x04, 0x1f, 0xe9, 0xb6,
+	0x8b, 0xff, 0x1a, 0x03, 0xf0, 0x65, 0xc5, 0xf7, 0x61, 0xd9, 0x76, 0x54, 0xcb, 0x51, 0x1c, 0xbd,
+	0x47, 0x6c, 0x47, 0xed, 0x0d, 0xc4, 0x5c, 0x79, 0x46, 0xee, 0xb8, 0x54, 0x7c, 0x0f, 0x72, 0xa4,
+	0xaf, 0x05, 0xba, 0xf1, 0x59, 0x97, 0x48, 0x5f, 0xf3, 0x3b, 0x05, 0x1c, 0x30, 0x11, 0xee, 0x80,
+	0xc9, 0x08, 0x07, 0x5c, 0x18, 0x75, 0xc0, 0x09, 0x73, 0xa5, 0x26, 0xcc, 0x55, 0x7a, 0x09, 0x57,
+	0x27, 0xed, 0xd1, 0xd0, 0x6d, 0x07, 0x3f, 0x81, 0xa5, 0x01, 0xa3, 0x28, 0x7a, 0xff, 0xd8, 0xb4,
+	0x0b, 0x31, 0x66, 0xc7, 0x9b, 0x51, 0x76, 0x94, 0xb3, 0x03, 0xef, 0xdb, 0x2e, 0xfd, 0x2a, 0xe6,
+	0x67, 0x84, 0x0e, 0x51, 0x7b, 0xb2, 0x69, 0x3b, 0xc4, 0xa2, 0xda, 0x1f, 0x57, 0x97, 0x4f, 0x08,
+	0x2a, 0x21, 0x3e, 0xa2, 0x84, 0x87, 0x80, 0x7b, 0xa4, 0xf7, 0x8a, 0x58, 0x8a, 0x9f, 0x4f, 0xa8,
+	0x81, 0x12, 0xab, 0x39, 0x19, 0x71, 0xa4, 0xe2, 0xa6, 0x15, 0x1b, 0xaf, 0x02, 0xea, 0x9a, 0x6a,
+	0xf7, 0x34, 0xd0, 0x99, 0x69, 0x2e, 0x27, 0xe7, 0x19, 0xdd, 0xeb, 0x5a, 0xfa, 0xa7, 0xa4, 0xaf,
+	0x81, 0x5a, 0xab, 0xda, 0xb2, 0xcc, 0x63, 0xdd, 0x20, 0x2c, 0x77, 0x7d, 0x04, 0xd9, 0x80, 0x06,
+	0x98, 0xac, 0xb3, 0x14, 0x00, 0xbe, 0x02, 0xf0, 0x4f, 0x60, 0x79, 0x60, 0x11, 0x4d, 0xef, 0x52,
+	0xe7, 0xe4, 0x2c, 0xe2, 0x8c, 0xc5, 0x0f, 0x26, 0x59, 0x8c, 0xce, 0xbc, 0xd6, 0xf2, 0xc6, 0x31,
+	0xae, 0xf9, 0xc1, 0x48, 0x1b, 0x37, 0xfd, 0xf4, 0xc7, 0xd8, 0x26, 0x18, 0xdb, 0x87, 0x33, 0xd9,
+	0x8a, 0xac, 0xc8, 0x4d, 0x75, 0xec, 0x37, 0xf0, 0x36, 0x5c, 0xd5, 0x74, 0x5b, 0x7d, 0x65, 0x10,
+	0x4d, 0xe9, 0x9b, 0x8e, 0x7e, 0xac, 0x77, 0x59, 0x48, 0xd9, 0x85, 0x24, 0x53, 0xf0, 0x8a, 0x8b,
+	0x1e, 0x06, 0xc1, 0xe2, 0x67, 0x90, 0x1f, 0x95, 0x94, 0xe6, 0xbc, 0x01, 0xb1, 0xba, 0x34, 0xb0,
+	0xb8, 0x69, 0xdd, 0x26, 0x4d, 0x51, 0x74, 0xd7, 0xd0, 0x94, 0x9f, 0xeb, 0x7d, 0x1e, 0x5c, 0x54,
+	0x19, 0x0b, 0x72, 0x8e, 0x51, 0x5f, 0x08, 0x62, 0xf1, 0xef, 0x62, 0x90, 0x0d, 0x88, 0x89, 0xbf,
+	0x07, 0xcb, 0x8e, 0x39, 0x50, 0xf6, 0xd6, 0x95, 0x63, 0xbd, 0xaf, 0xdb, 0xa7, 0xc4, 0x16, 0x8c,
+	0x73, 0x8e, 0x39, 0xd8, 0x5b, 0xdf, 0x17, 0x44, 0xb7, 0xdf, 0xee, 0xb6, 0xdf, 0x2f, 0xee, 0xf5,
+	0xdb, 0xdd, 0x1e, 0xef, 0xb7, 0x1d, 0xe0, 0x97, 0xf0, 0xfa, 0x6d, 0xfb, 0xfc, 0x26, 0xc5, 0xe5,
+	0xee, 0x33, 0x2a, 0x6e, 0xe9, 0x77, 0x31, 0xb8, 0xe2, 0x2a, 0xbb, 0x41, 0x54, 0x8d, 0x58, 0xaf,
+	0x4c, 0xd5, 0xd2, 0x6c, 0xdc, 0x81, 0x25, 0x23, 0xd0, 0x2e, 0xc4, 0x59, 0xf4, 0xac, 0x4f, 0x9a,
+	0x28, 0x38, 0x6a, 0x4d, 0x26, 0x27, 0xba, 0xd9, 0x0f, 0x90, 0xe4, 0x11, 0x2e, 0xc5, 0x16, 0x5c,
+	0x9a, 0xe8, 0x42, 0x13, 0x96, 0xa6, 0x9f, 0xe9, 0x36, 0x4d, 0x8d, 0x22, 0xd5, 0xb9, 0x6d, 0x7c,
+	0x1b, 0xb2, 0xc1, 0x70, 0x89, 0x33, 0x6b, 0x82, 0xb7, 0xff, 0xda, 0xa5, 0x5f, 0xc0, 0x2d, 0xcf,
+	0x8d, 0x55, 0xdb, 0x1e, 0x98, 0x96, 0xf3, 0xdc, 0x74, 0x08, 0x8d, 0xd7, 0x83, 0x21, 0xb1, 0x67,
+	0x64, 0xd2, 0x1b, 0xb0, 0x48, 0xf5, 0x43, 0x23, 0xc4, 0x8d, 0xd7, 0x0c, 0x27, 0xd4, 0x35, 0x3a,
+	0xb7, 0x35, 0xa4, 0xdf, 0xc3, 0x81, 0x9f, 0xd3, 0xc0, 0x25, 0xd5, 0xb5, 0xd2, 0x6f, 0x63, 0xf0,
+	0xde, 0xb4, 0xc9, 0x0f, 0x48, 0x9f, 0x58, 0x7a, 0xb7, 0x4d, 0x0c, 0xc2, 0x3c, 0x0b, 0x9b, 0xb0,
+	0x6c, 0xbb, 0x0d, 0x45, 0xef, 0x6b, 0xe4, 0x0d, 0x93, 0x24, 0x5f, 0x7e, 0xe0, 0xeb, 0x93, 0x32,
+	0x51, 0xca, 0xeb, 0x1b, 0x9b, 0x2e, 0x27, 0x6f, 0x78, 0xbd, 0xaf, 0xe9, 0x5d, 0x62, 0x3f, 0xbe,
+	0xde, 0x6a, 0x6d, 0x6c, 0x2a, 0x6d, 0xa9, 0xa1, 0x54, 0x1a, 0x8d, 0x76, 0xa7, 0x22, 0x2b, 0xad,
+	0x46, 0xe5, 0xa5, 0x24, 0x2b, 0xeb, 0x72, 0xde, 0x0e, 0x74, 0x26, 0x6f, 0x68, 0x8e, 0xf2, 0x28,
+	0xee, 0x0e, 0xe1, 0x11, 0x4a, 0x9f, 0x4f, 0xea, 0xac, 0x4d, 0x93, 0x17, 0xd1, 0x78, 0x26, 0xa0,
+	0x39, 0xd9, 0x76, 0xb3, 0x18, 0x15, 0x34, 0x29, 0xa7, 0x6d, 0x91, 0xc6, 0x6e, 0x43, 0x96, 0x25,
+	0x3a, 0xc5, 0x20, 0x67, 0xc4, 0x10, 0xbc, 0x81, 0x91, 0x1a, 0x94, 0x52, 0xfa, 0x14, 0xee, 0x8d,
+	0x33, 0xe7, 0x5c, 0xab, 0xaa, 0xa5, 0x55, 0x4f, 0x55, 0xc3, 0x20, 0xfd, 0x13, 0x5e, 0x24, 0xb9,
+	0x0d, 0xdf, 0x32, 0x59, 0x8f, 0x56, 0xd7, 0x4a, 0xbf, 0x8f, 0xfb, 0xbe, 0x19, 0x54, 0x2f, 0xde,
+	0x07, 0x60, 0xd2, 0x9d, 0x99, 0x0e, 0x71, 0xf3, 0xfa, 0xb4, 0xfd, 0x79, 0x9a, 0x3f, 0xc8, 0x6c,
+	0x2b, 0xa2, 0x24, 0x1b, 0xff, 0x0c, 0xf0, 0x09, 0x37, 0x95, 0xe2, 0x29, 0xc7, 0xf5, 0xf4, 0xb5,
+	0x68, 0x7e, 0xe3, 0x26, 0x96, 0x2f, 0x9d, 0x8c, 0x51, 0x6c, 0xdc, 0x62, 0xbb, 0x2b, 0x55, 0xab,
+	0xc2, 0xb3, 0x2a, 0x4f, 0xf7, 0x91, 0xb2, 0x8e, 0xd8, 0x81, 0x6d, 0xc3, 0x7e, 0xd3, 0xc6, 0x5d,
+	0xb8, 0x2a, 0x12, 0x7a, 0x97, 0x86, 0xb6, 0xa7, 0x2c, 0x9e, 0xe6, 0xb2, 0xe5, 0x0f, 0xc3, 0x19,
+	0x4f, 0xb1, 0x81, 0x7c, 0x65, 0x30, 0x49, 0xa4, 0x11, 0xb5, 0x4a, 0x07, 0x57, 0x59, 0x1d, 0xdd,
+	0x31, 0x0f, 0xaa, 0x07, 0x24, 0x30, 0x9a, 0x6f, 0x82, 0x32, 0xf9, 0x72, 0x48, 0x6c, 0x27, 0x3a,
+	0xb8, 0x36, 0x20, 0xef, 0x66, 0xf9, 0x01, 0xb1, 0x74, 0x53, 0x84, 0xd0, 0x63, 0xd8, 0x2a, 0xef,
+	0x6d, 0xed, 0xed, 0xec, 0x96, 0xf7, 0xb6, 0xe5, 0x9c, 0xe8, 0xd1, 0x62, 0x1d, 0x4a, 0xff, 0x13,
+	0x87, 0x0f, 0xe6, 0x98, 0x9c, 0xd5, 0xa1, 0x04, 0x7f, 0x0e, 0x29, 0x5e, 0xd9, 0x89, 0x68, 0x7a,
+	0x3c, 0xba, 0xfc, 0xb9, 0x98, 0x88, 0x22, 0xf1, 0x71, 0xba, 0x7d, 0x54, 0xad, 0x4a, 0xed, 0xb6,
+	0x2c, 0x58, 0xe2, 0x0f, 0xe1, 0x72, 0x50, 0xd7, 0xba, 0x43, 0xc4, 0xa6, 0x9e, 0x58, 0x4d, 0xca,
+	0xc8, 0xd7, 0x5c, 0xdd, 0x21, 0x34, 0x2e, 0xae, 0xc0, 0x82, 0xdd, 0x35, 0x2d, 0x5e, 0xed, 0xc7,
+	0x65, 0xde, 0xa0, 0x71, 0x78, 0xac, 0xf7, 0x55, 0x43, 0xff, 0x05, 0xe1, 0xfb, 0x77, 0x46, 0xf6,
+	0x09, 0xf8, 0x5d, 0x00, 0xb1, 0xbb, 0xe8, 0x06, 0x61, 0xc5, 0x4f, 0x5c, 0x0e, 0x50, 0x4a, 0xc7,
+	0x90, 0xe2, 0xd2, 0xe1, 0x2c, 0xb8, 0xf2, 0xa1, 0x77, 0xf0, 0x0a, 0x5c, 0x92, 0x64, 0xb9, 0x29,
+	0x2b, 0x47, 0x87, 0xed, 0x96, 0x54, 0xad, 0xef, 0xd7, 0xa5, 0x1a, 0x8a, 0xe1, 0x1b, 0x70, 0x8d,
+	0x93, 0xeb, 0x87, 0xcf, 0x2b, 0x8d, 0x7a, 0x4d, 0x69, 0x48, 0x95, 0x83, 0x23, 0x49, 0xa9, 0xd7,
+	0x50, 0x7c, 0x12, 0xec, 0xd4, 0x9f, 0x49, 0xed, 0x4e, 0xe5, 0x59, 0x0b, 0x25, 0x4a, 0xbf, 0x8c,
+	0xc3, 0x87, 0xa3, 0x0a, 0xfb, 0x44, 0x75, 0xba, 0xa7, 0x11, 0x76, 0x77, 0xe0, 0x92, 0xb0, 0xbb,
+	0x57, 0xf9, 0xb8, 0x81, 0x78, 0x10, 0x66, 0x84, 0x19, 0x3c, 0xd7, 0x1a, 0x8c, 0xa1, 0x57, 0x4e,
+	0xca, 0xc8, 0x18, 0x25, 0xd8, 0x45, 0x15, 0x96, 0xc7, 0x3a, 0xbd, 0x75, 0x07, 0xfc, 0xbf, 0x24,
+	0xcc, 0x2d, 0xb6, 0xf0, 0x42, 0x42, 0x0f, 0x36, 0xfc, 0xfb, 0x6b, 0xe8, 0xc0, 0xf5, 0xc6, 0x91,
+	0xa6, 0xec, 0x73, 0x2e, 0xfe, 0x6f, 0x1c, 0xf2, 0x63, 0x33, 0xcf, 0x58, 0xfc, 0x15, 0x8d, 0x0c,
+	0x2c, 0xd2, 0x55, 0x1d, 0x32, 0x59, 0xb9, 0x5f, 0xf6, 0x31, 0x5f, 0x99, 0x5f, 0x78, 0xf1, 0x94,
+	0x60, 0xf1, 0xf4, 0xe4, 0xab, 0x2f, 0xe3, 0x62, 0x41, 0x95, 0x9c, 0x15, 0x54, 0x0b, 0xa1, 0x41,
+	0x95, 0x8a, 0x0e, 0xaa, 0xf4, 0x78, 0x50, 0x4d, 0x71, 0x8a, 0xcc, 0x2c, 0xa7, 0xf8, 0xa6, 0xe2,
+	0xf0, 0x2f, 0xe2, 0xe3, 0xa9, 0xb7, 0xfd, 0x95, 0x53, 0xef, 0x85, 0x8d, 0x8f, 0x21, 0x69, 0x1b,
+	0xa6, 0x23, 0xca, 0x1c, 0xf6, 0x1d, 0x6e, 0xae, 0xd8, 0x54, 0x73, 0x5d, 0x87, 0x0c, 0x39, 0x23,
+	0xfc, 0xb0, 0xc2, 0xaf, 0x20, 0xd2, 0xac, 0x3d, 0x35, 0x14, 0x53, 0xb3, 0xb4, 0xfe, 0xcf, 0x89,
+	0xf1, 0xbd, 0xa0, 0xfd, 0x36, 0xf6, 0x82, 0xf6, 0xc5, 0xdd, 0xb6, 0xf4, 0x0f, 0xf1, 0x6f, 0xc6,
+	0x03, 0xf0, 0x6d, 0xb8, 0xc1, 0x41, 0x51, 0xd9, 0x55, 0x2b, 0x72, 0x4d, 0x39, 0x6c, 0x76, 0x94,
+	0xe6, 0x8b, 0x43, 0xa9, 0x86, 0x92, 0xf8, 0x2a, 0xe0, 0xd1, 0xd1, 0xed, 0x46, 0xb3, 0x83, 0x16,
+	0x70, 0x11, 0xae, 0x72, 0xfa, 0x7e, 0xa5, 0xde, 0x90, 0x6a, 0x7c, 0x60, 0xfd, 0x70, 0xbf, 0x89,
+	0x52, 0xfe, 0x8c, 0x95, 0x6a, 0xb5, 0x79, 0x74, 0xd8, 0x51, 0x6a, 0x47, 0xad, 0x46, 0xbd, 0x5a,
+	0xe9, 0x48, 0x28, 0xed, 0x0f, 0x6c, 0x34, 0xab, 0x4f, 0xa5, 0xa0, 0x34, 0x19, 0x7c, 0x0f, 0x6e,
+	0x4f, 0x5d, 0xc7, 0x3e, 0x15, 0x50, 0x92, 0xeb, 0xcd, 0x1a, 0x5a, 0xc4, 0xd7, 0xe0, 0xf2, 0x68,
+	0x27, 0xe9, 0xb9, 0x74, 0xd8, 0x41, 0x50, 0xfa, 0xb7, 0x04, 0xbc, 0xeb, 0x56, 0x21, 0xe2, 0x44,
+	0x54, 0x6b, 0x55, 0x79, 0x02, 0x6f, 0x3b, 0xaa, 0x33, 0xb4, 0xf1, 0x73, 0x76, 0xc8, 0x60, 0x3e,
+	0x1c, 0x38, 0xa2, 0x6f, 0x4e, 0x56, 0x31, 0xd3, 0xc7, 0x8b, 0x2d, 0x83, 0x1f, 0x07, 0x0d, 0xef,
+	0xdb, 0x2e, 0xfe, 0x75, 0x1c, 0xc0, 0xc7, 0xa2, 0x43, 0xe5, 0x36, 0x88, 0xa1, 0x4a, 0xe0, 0x22,
+	0x0f, 0x38, 0x89, 0x5d, 0x50, 0x4c, 0xb9, 0x24, 0x49, 0xcc, 0x77, 0x49, 0x92, 0x9c, 0x72, 0x49,
+	0xf2, 0x3e, 0xe4, 0x35, 0xf5, 0x3c, 0xb8, 0x6d, 0x2e, 0xb0, 0x33, 0x4d, 0x4e, 0x53, 0xcf, 0xfd,
+	0xad, 0x0e, 0x1f, 0x41, 0xca, 0x66, 0x6b, 0x64, 0xd9, 0x29, 0x5f, 0xde, 0x99, 0x5b, 0x27, 0x12,
+	0xf7, 0x69, 0xde, 0x7a, 0xbc, 0x70, 0x74, 0xd8, 0x96, 0x3a, 0xb2, 0x60, 0x56, 0xfa, 0x18, 0x72,
+	0x23, 0x38, 0x5e, 0x04, 0xde, 0x03, 0xbd, 0x43, 0x3d, 0xbb, 0x55, 0x91, 0x3b, 0xf5, 0x4a, 0x03,
+	0xc5, 0x70, 0x06, 0x92, 0xfb, 0x47, 0x8d, 0x06, 0x8a, 0xe3, 0x1c, 0x2c, 0x56, 0x9b, 0x87, 0xd5,
+	0xc6, 0x51, 0x4d, 0xaa, 0xa1, 0x44, 0xe9, 0x5f, 0x92, 0x50, 0x08, 0x9c, 0xce, 0xdb, 0x44, 0xb5,
+	0xba, 0xa7, 0xee, 0xad, 0x55, 0x15, 0xd2, 0x6e, 0xa5, 0xcb, 0x4d, 0xf9, 0xc1, 0xd4, 0x23, 0xfd,
+	0xc8, 0xa0, 0x35, 0x51, 0xeb, 0xba, 0x23, 0xf1, 0x47, 0xb0, 0x40, 0x4b, 0x74, 0xb7, 0x10, 0xbf,
+	0x3f, 0x07, 0x0b, 0x76, 0x3b, 0xc3, 0x47, 0x51, 0x19, 0xb8, 0xf1, 0xdc, 0x6a, 0x7b, 0x1e, 0x19,
+	0xb8, 0x06, 0x65, 0x77, 0x64, 0xb1, 0x0e, 0x29, 0x71, 0x14, 0xca, 0x43, 0xdc, 0x73, 0x9a, 0xb8,
+	0x3e, 0xfd, 0xc2, 0x77, 0xe4, 0x6a, 0x33, 0x31, 0x7a, 0xb5, 0x59, 0xfc, 0x11, 0x24, 0xa9, 0x78,
+	0x73, 0x31, 0x42, 0x90, 0x18, 0x5a, 0x86, 0x60, 0x41, 0x3f, 0x8b, 0x0f, 0x21, 0xc5, 0x65, 0x9b,
+	0x67, 0x7c, 0xe9, 0xd7, 0x31, 0x58, 0x91, 0x46, 0x56, 0x56, 0x23, 0xb6, 0x6e, 0x11, 0x8d, 0x86,
+	0xf2, 0x6b, 0x65, 0x2a, 0xa4, 0x88, 0xc3, 0x05, 0x8a, 0xe1, 0xbb, 0x70, 0x2b, 0xac, 0x13, 0x5d,
+	0x82, 0x8d, 0xe2, 0x51, 0x7c, 0xb8, 0x9c, 0x36, 0x4a, 0xd2, 0x2c, 0x16, 0xd6, 0xa9, 0x62, 0x18,
+	0x28, 0x5d, 0xfa, 0x4d, 0x0c, 0x6e, 0x07, 0x6c, 0x41, 0x99, 0xef, 0xab, 0x67, 0xa6, 0xa5, 0x3b,
+	0x44, 0x56, 0xfb, 0xaf, 0xd9, 0x5d, 0x6f, 0xcd, 0x75, 0x83, 0x58, 0xd8, 0x79, 0x2c, 0x64, 0x64,
+	0xd0, 0x1b, 0x8a, 0x1f, 0x09, 0xed, 0x07, 0xae, 0xe5, 0x62, 0x23, 0xd7, 0x72, 0xb4, 0x98, 0x10,
+	0x0c, 0xdc, 0x1b, 0x17, 0x9f, 0x50, 0xfa, 0xc3, 0x02, 0xdc, 0x67, 0xd3, 0x99, 0x8e, 0x2a, 0xe2,
+	0xad, 0x6a, 0xa9, 0xc7, 0x8e, 0xde, 0x3f, 0xe9, 0xa8, 0xaf, 0x0c, 0xe2, 0xf0, 0xbd, 0xaa, 0xa6,
+	0x3a, 0xea, 0x94, 0x2d, 0x2e, 0x36, 0x63, 0x8b, 0xc3, 0x32, 0xa4, 0x1d, 0xc6, 0xc6, 0x75, 0xf6,
+	0x47, 0x63, 0xab, 0x9c, 0x3d, 0xed, 0x1a, 0x27, 0xc8, 0x2e, 0xa3, 0xe2, 0x7f, 0xc4, 0x20, 0x71,
+	0x40, 0x7a, 0x58, 0x82, 0xa4, 0x73, 0x3e, 0x20, 0x62, 0x3b, 0x2c, 0x4e, 0x3e, 0x2d, 0x1c, 0x90,
+	0x9e, 0xd2, 0x39, 0x1f, 0x90, 0xc7, 0x2b, 0xee, 0xeb, 0xc2, 0x81, 0xf4, 0x4c, 0xe9, 0xbc, 0x6c,
+	0x49, 0x8a, 0x7c, 0xf4, 0xc9, 0x4b, 0x99, 0x0d, 0xf7, 0xca, 0x82, 0x78, 0xa0, 0x2c, 0xa0, 0x65,
+	0xd9, 0xa9, 0x3a, 0x20, 0x22, 0x0f, 0xf2, 0x06, 0x2e, 0x40, 0xfa, 0xcb, 0xa1, 0x6a, 0xe8, 0xce,
+	0xb9, 0x48, 0x7c, 0x6e, 0x13, 0xd7, 0x20, 0x49, 0xf3, 0x0f, 0xab, 0x09, 0xf2, 0xe5, 0xeb, 0x93,
+	0xa2, 0xb4, 0xbb, 0xa6, 0xa5, 0xf7, 0x4f, 0x7c, 0x49, 0xda, 0xd5, 0xa6, 0x5c, 0x3f, 0x3c, 0x50,
+	0x9e, 0xd6, 0x1b, 0x8d, 0xb6, 0xcc, 0x46, 0x17, 0xff, 0x3b, 0x0e, 0x29, 0xbe, 0x58, 0x76, 0xa1,
+	0xcc, 0xbe, 0x02, 0x09, 0x9d, 0x13, 0xea, 0x1a, 0xbe, 0x0b, 0x4b, 0x02, 0x0c, 0x5e, 0x51, 0x64,
+	0x39, 0x8d, 0xdd, 0x51, 0x4c, 0x3c, 0xbf, 0x24, 0xde, 0xc2, 0xf3, 0xcb, 0xe8, 0x43, 0x51, 0x72,
+	0xfc, 0xa1, 0xe8, 0x2a, 0xa4, 0x06, 0x16, 0x39, 0xd6, 0xdf, 0xb8, 0x8f, 0x33, 0xbc, 0x45, 0xe9,
+	0xf6, 0xf0, 0x98, 0xd2, 0x53, 0x9c, 0xce, 0x5b, 0xb8, 0x0e, 0xc9, 0x13, 0xd2, 0xb3, 0x0b, 0x69,
+	0xe6, 0x17, 0xdb, 0x17, 0xf7, 0x8b, 0x03, 0xd2, 0x93, 0x19, 0x0b, 0xbf, 0x8a, 0xce, 0x04, 0xab,
+	0xe8, 0xdb, 0x90, 0x7d, 0x45, 0x6c, 0x47, 0xb1, 0x09, 0x7b, 0xe5, 0x58, 0xe4, 0x17, 0x39, 0x94,
+	0xd4, 0x66, 0x14, 0x7a, 0x2a, 0xbc, 0x1b, 0x39, 0x19, 0xf3, 0x7a, 0x13, 0xb0, 0xd0, 0x36, 0x77,
+	0x7a, 0x45, 0x53, 0x1d, 0x55, 0xc4, 0x6c, 0x65, 0x4e, 0xa9, 0x03, 0x7e, 0xec, 0x2f, 0x80, 0xbf,
+	0xa6, 0x20, 0x67, 0x8c, 0x5c, 0xb4, 0x60, 0x65, 0x6a, 0x57, 0x9a, 0x3c, 0x5f, 0x93, 0x73, 0xe1,
+	0x0e, 0xf4, 0x13, 0x1f, 0xc0, 0xc2, 0x99, 0x6a, 0x0c, 0x89, 0xb8, 0xb6, 0xde, 0xb8, 0xb0, 0x12,
+	0x65, 0x3e, 0xbe, 0xf4, 0xb7, 0x49, 0x91, 0xaf, 0x26, 0x87, 0x1c, 0xd9, 0xc4, 0x62, 0x8a, 0xb8,
+	0x0f, 0xcb, 0xea, 0x99, 0xaa, 0x1b, 0x94, 0x05, 0xf5, 0x2a, 0x83, 0x67, 0xae, 0x9c, 0x9c, 0xf7,
+	0xc8, 0x32, 0xa5, 0xe2, 0x1e, 0x60, 0xa1, 0x2a, 0xda, 0x4b, 0x71, 0xcc, 0xd7, 0xc4, 0xbb, 0x75,
+	0x7a, 0x32, 0x53, 0x44, 0x77, 0xbe, 0x35, 0x2e, 0x25, 0x65, 0xd9, 0x61, 0x1c, 0x84, 0xbe, 0x06,
+	0x63, 0x64, 0xfc, 0x05, 0xe4, 0xc4, 0x74, 0xcc, 0xee, 0xee, 0xae, 0xf8, 0xc3, 0x8b, 0xce, 0xd4,
+	0x66, 0xa3, 0xc5, 0x1b, 0xd7, 0x20, 0x40, 0x2a, 0x1e, 0x42, 0x36, 0xd0, 0x85, 0x3a, 0x16, 0x7f,
+	0xcb, 0xe3, 0x4e, 0x17, 0xe3, 0x27, 0x30, 0x46, 0xe2, 0x1d, 0x46, 0x4f, 0x68, 0xf1, 0xf1, 0x13,
+	0x5a, 0xf1, 0x09, 0xac, 0x4c, 0x5d, 0xdc, 0x14, 0x0b, 0x5f, 0x09, 0x5a, 0x38, 0x27, 0xcc, 0x55,
+	0xb4, 0xe0, 0xd2, 0x84, 0xcc, 0x53, 0x06, 0x3f, 0x1d, 0x75, 0x8f, 0xed, 0xaf, 0xa4, 0x11, 0xd7,
+	0x45, 0x7e, 0x13, 0x87, 0x3b, 0x21, 0xc3, 0xe8, 0x90, 0xaa, 0xda, 0x3d, 0x25, 0xf8, 0xa7, 0x90,
+	0xeb, 0xd2, 0x0f, 0xef, 0x6d, 0x31, 0x36, 0x67, 0x74, 0x7b, 0x2c, 0xd6, 0xd8, 0x5f, 0x61, 0x85,
+	0xae, 0xfb, 0xad, 0x13, 0xbb, 0xf8, 0xeb, 0x18, 0x80, 0x0f, 0xce, 0x7a, 0xb7, 0x7e, 0xdf, 0xdf,
+	0xac, 0x78, 0xcd, 0xe3, 0xbe, 0x36, 0x08, 0xaa, 0x28, 0x3a, 0x3e, 0x03, 0xe0, 0x02, 0xb3, 0xa8,
+	0xe6, 0xcf, 0x34, 0xe5, 0x51, 0x69, 0x0f, 0xaa, 0x1d, 0x93, 0x9f, 0xae, 0xa6, 0xc8, 0x7c, 0x34,
+	0xd0, 0xe8, 0x29, 0x53, 0x5e, 0x64, 0x5c, 0x28, 0xa5, 0x64, 0xf0, 0x3b, 0x73, 0xff, 0x40, 0x36,
+	0x36, 0xec, 0x40, 0x24, 0x96, 0x49, 0x09, 0x63, 0xd3, 0x24, 0x1c, 0x5d, 0x67, 0x7c, 0x6c, 0x9d,
+	0xa5, 0xbf, 0x4f, 0xc0, 0xc3, 0x79, 0xa6, 0xf3, 0xce, 0x91, 0x7d, 0xc8, 0xb8, 0x77, 0x2e, 0x62,
+	0xeb, 0xfc, 0x38, 0xec, 0x24, 0x19, 0xcd, 0x69, 0x4d, 0x72, 0xbf, 0x1e, 0xa3, 0xd7, 0x0a, 0xa9,
+	0xf7, 0x1d, 0x62, 0xf5, 0x55, 0x43, 0xb2, 0x2c, 0xd3, 0x92, 0xbd, 0x39, 0xf0, 0x3e, 0x2c, 0x0e,
+	0x6d, 0x62, 0x71, 0x05, 0x73, 0x47, 0xfc, 0x60, 0x6e, 0x47, 0x94, 0x33, 0x43, 0x37, 0xfd, 0x34,
+	0x40, 0xec, 0x70, 0x9c, 0x53, 0x92, 0x71, 0x7a, 0x70, 0x81, 0x04, 0x2c, 0x83, 0xe3, 0x7d, 0x97,
+	0xde, 0xc0, 0xa2, 0x27, 0x3e, 0xbe, 0x02, 0x13, 0x0b, 0x40, 0xef, 0xe0, 0x3c, 0xc0, 0x6b, 0x85,
+	0xb4, 0x87, 0xdd, 0x2e, 0xb1, 0x69, 0xf1, 0xc8, 0xdb, 0x1d, 0xd3, 0xfc, 0x64, 0x68, 0x9f, 0xa3,
+	0x38, 0x5e, 0x86, 0xec, 0x6b, 0x85, 0xd4, 0xc4, 0xbb, 0x1b, 0x4a, 0xb8, 0x1d, 0xf4, 0x1e, 0x31,
+	0x87, 0x0e, 0x4a, 0x7a, 0x6c, 0xcf, 0x54, 0x43, 0xd7, 0xb8, 0x35, 0xd1, 0x42, 0xe9, 0xb7, 0xb1,
+	0xf1, 0xbb, 0xc8, 0x31, 0x89, 0x5b, 0xc4, 0x3a, 0x36, 0xad, 0x5e, 0x73, 0x40, 0x2c, 0xf6, 0x8a,
+	0x37, 0xaf, 0xa3, 0x8c, 0xd4, 0x0c, 0xf1, 0xc9, 0x9a, 0xc1, 0x74, 0x19, 0xfa, 0x6f, 0x3d, 0x59,
+	0x8f, 0x56, 0xd7, 0xa8, 0xa3, 0x91, 0x37, 0x8e, 0xa5, 0xfa, 0xfa, 0x4d, 0xca, 0x8b, 0x8c, 0xc2,
+	0x34, 0xf6, 0x9f, 0x29, 0xd8, 0xbe, 0x90, 0xdc, 0x9e, 0x7a, 0x7f, 0x3e, 0xe1, 0x71, 0xf5, 0x39,
+	0x3d, 0x2e, 0x8c, 0xe5, 0x9c, 0xae, 0x37, 0xbe, 0xe8, 0xf8, 0xe4, 0xa2, 0x47, 0x94, 0x96, 0x1e,
+	0x53, 0xda, 0x88, 0xeb, 0x66, 0xde, 0x9a, 0xeb, 0x2e, 0x7e, 0x2d, 0xd7, 0xa5, 0xee, 0xe0, 0xde,
+	0x59, 0x9d, 0x9a, 0x7a, 0x97, 0xb8, 0x6f, 0xec, 0x39, 0x71, 0x5d, 0xc5, 0x89, 0xac, 0x1b, 0xab,
+	0xc0, 0xbc, 0x6e, 0x49, 0xd1, 0x8d, 0x51, 0x03, 0xdd, 0x78, 0x41, 0xe6, 0x75, 0x13, 0xc7, 0x75,
+	0x4e, 0x75, 0xbb, 0x0d, 0x20, 0xe7, 0xe8, 0x8e, 0x41, 0xbc, 0x5e, 0x29, 0x96, 0xd8, 0x9f, 0x7e,
+	0x5d, 0x43, 0x76, 0x28, 0x53, 0x3e, 0x89, 0xbc, 0xe4, 0xf8, 0x0d, 0xbb, 0xf8, 0x02, 0xb2, 0x01,
+	0x10, 0xdf, 0x83, 0xdc, 0xc8, 0x72, 0x44, 0x0c, 0x2c, 0x05, 0x57, 0x43, 0x3b, 0x8d, 0x2c, 0xc6,
+	0xfd, 0x15, 0x47, 0x70, 0x2d, 0xa5, 0xbf, 0x89, 0x7d, 0x5b, 0xb1, 0x2f, 0x86, 0x1d, 0x9a, 0x7c,
+	0xcf, 0x47, 0x29, 0x41, 0x78, 0x66, 0x5a, 0xec, 0x1e, 0x07, 0xa5, 0x4b, 0xff, 0x15, 0xe3, 0x37,
+	0xa4, 0xf3, 0x6c, 0x3a, 0xf3, 0x26, 0x86, 0x3f, 0xce, 0x0c, 0xfc, 0x87, 0xd8, 0x8c, 0x8d, 0xab,
+	0x46, 0xce, 0x9e, 0x99, 0x9a, 0x7e, 0x7c, 0x2e, 0xce, 0x44, 0x73, 0xae, 0xf6, 0x2e, 0x2c, 0x59,
+	0xc4, 0x26, 0x8e, 0xc2, 0xe7, 0x62, 0x0b, 0xce, 0xc8, 0x59, 0x46, 0x13, 0x9c, 0xee, 0x41, 0xae,
+	0xc7, 0x38, 0xbb, 0xb5, 0x29, 0xcf, 0x86, 0x4b, 0x9c, 0x28, 0xca, 0xca, 0xfb, 0xb0, 0x3c, 0x1c,
+	0x9c, 0x58, 0xaa, 0x46, 0x14, 0xf7, 0x08, 0xcb, 0xaf, 0xe2, 0xf3, 0x82, 0xcc, 0x99, 0xd9, 0x53,
+	0x8e, 0xc5, 0x0b, 0xb3, 0x6e, 0x7e, 0x7f, 0x97, 0x80, 0xad, 0x8b, 0xac, 0xdd, 0xf3, 0xd6, 0xb3,
+	0x89, 0x54, 0xfa, 0xe9, 0x9c, 0x11, 0x18, 0xc2, 0xf1, 0xdb, 0xdd, 0xc4, 0x13, 0xdf, 0xd5, 0x4d,
+	0xfc, 0xcb, 0xf1, 0x9b, 0xfb, 0x31, 0x81, 0xf9, 0x23, 0xb9, 0xb8, 0x61, 0x7b, 0x3b, 0x85, 0xde,
+	0x9f, 0x27, 0x60, 0x63, 0xee, 0x39, 0x3d, 0xad, 0xd8, 0x13, 0x0e, 0x23, 0xcd, 0xe9, 0x30, 0xd3,
+	0xd8, 0xcd, 0xe9, 0x2d, 0x63, 0x56, 0x8e, 0x7f, 0x3d, 0x2b, 0xff, 0xe5, 0xb7, 0x97, 0xaf, 0x47,
+	0xa8, 0x5c, 0x15, 0x28, 0x55, 0x3a, 0x9b, 0x59, 0x71, 0xf7, 0xe9, 0x36, 0xe7, 0x25, 0x88, 0x39,
+	0xed, 0x3f, 0xf3, 0x97, 0x40, 0xff, 0x3e, 0x2b, 0x6b, 0x8c, 0x4d, 0xfc, 0x16, 0xb2, 0x46, 0x08,
+	0xc7, 0xef, 0x74, 0xd6, 0xf8, 0xa3, 0xf3, 0xa7, 0x0e, 0x3c, 0x18, 0x31, 0x42, 0x77, 0x5c, 0x23,
+	0xa3, 0xfb, 0xcd, 0x7c, 0xee, 0x54, 0xfa, 0x7d, 0x1c, 0x36, 0x2f, 0xc0, 0xd6, 0x53, 0xc8, 0x70,
+	0xc2, 0x59, 0xc2, 0x1e, 0xfb, 0xe7, 0x63, 0xf8, 0xd5, 0x72, 0xc6, 0x77, 0x76, 0x67, 0x68, 0xc3,
+	0xf7, 0x23, 0x23, 0x4a, 0x26, 0x96, 0x69, 0x18, 0xcd, 0x01, 0xff, 0x05, 0xd5, 0x9c, 0xb6, 0xfc,
+	0x65, 0x02, 0xca, 0xf3, 0x73, 0xf5, 0x16, 0xee, 0x4c, 0x98, 0x72, 0x7f, 0xce, 0xb8, 0x9f, 0xca,
+	0xef, 0x9b, 0x8d, 0xfa, 0xd2, 0x5f, 0x7d, 0x7b, 0x71, 0x7a, 0x1d, 0x56, 0x18, 0x95, 0x9d, 0x1b,
+	0xba, 0x5c, 0x47, 0xbc, 0x62, 0xff, 0xfe, 0xaf, 0x56, 0xe0, 0xee, 0xcc, 0x5f, 0x32, 0xe2, 0x5b,
+	0x10, 0xfe, 0x5b, 0x46, 0xf4, 0x4e, 0x14, 0xbc, 0x81, 0x62, 0x51, 0x70, 0x19, 0xc5, 0xa3, 0xe0,
+	0x4d, 0x94, 0x88, 0x82, 0xb7, 0x50, 0x32, 0x0a, 0xde, 0x46, 0x0b, 0x51, 0xf0, 0x0e, 0x4a, 0x45,
+	0xc1, 0xbb, 0x28, 0x1d, 0x05, 0x3f, 0x42, 0x99, 0x28, 0x78, 0x0f, 0x2d, 0xe2, 0x9b, 0x50, 0xf0,
+	0xe0, 0xcf, 0x8e, 0x2a, 0x8d, 0x96, 0x2c, 0xd5, 0x94, 0x17, 0x52, 0xbb, 0xa3, 0xac, 0x23, 0x88,
+	0x40, 0x37, 0x50, 0x36, 0x02, 0x2d, 0xa3, 0xa5, 0x08, 0x74, 0x13, 0xe5, 0x22, 0xd0, 0x2d, 0x94,
+	0x8f, 0x40, 0xb7, 0xd1, 0x72, 0x04, 0xba, 0x83, 0x50, 0x04, 0xba, 0x8b, 0x2e, 0x45, 0xa0, 0x8f,
+	0x10, 0x8e, 0x40, 0xf7, 0xd0, 0xe5, 0x11, 0x55, 0x8e, 0x69, 0x63, 0x1d, 0x5d, 0x89, 0x82, 0x37,
+	0xd0, 0x4a, 0x14, 0x5c, 0x46, 0x57, 0xa3, 0xe0, 0x4d, 0x74, 0x2d, 0x0a, 0xde, 0x42, 0x85, 0xe9,
+	0x82, 0x4b, 0x15, 0x66, 0xc6, 0xeb, 0x11, 0xe8, 0x06, 0x2a, 0x46, 0xa0, 0x65, 0x74, 0x23, 0x02,
+	0xdd, 0x44, 0x37, 0x23, 0xd0, 0x2d, 0x74, 0x2b, 0x02, 0xdd, 0x46, 0xef, 0x46, 0xa0, 0x3b, 0xe8,
+	0x76, 0x04, 0xba, 0x8b, 0xee, 0x44, 0xa0, 0x8f, 0xd0, 0xdd, 0x08, 0x74, 0x0f, 0x95, 0xa6, 0xab,
+	0x92, 0x6b, 0x63, 0x1d, 0xdd, 0x8b, 0x82, 0x37, 0xd0, 0x7b, 0x51, 0x70, 0x19, 0xbd, 0x1f, 0x05,
+	0x6f, 0xa2, 0xef, 0x45, 0xc1, 0x5b, 0xe8, 0x3e, 0x4d, 0x82, 0x1e, 0xdc, 0x91, 0x2a, 0xcf, 0xaa,
+	0x47, 0x2d, 0xf6, 0x1f, 0xad, 0xe2, 0x1b, 0x70, 0x6d, 0x02, 0xe2, 0x71, 0x8c, 0x3e, 0xc0, 0xef,
+	0x42, 0x71, 0xea, 0x38, 0xf6, 0x03, 0x1c, 0xf4, 0x7d, 0x7c, 0x07, 0x6e, 0x86, 0x0c, 0xe6, 0x3d,
+	0x1e, 0xe0, 0x02, 0x5c, 0xf1, 0x7a, 0xb0, 0x1f, 0xdb, 0x30, 0xc9, 0xd6, 0xd1, 0xc3, 0x10, 0x64,
+	0x03, 0x7d, 0x18, 0x82, 0x94, 0xd1, 0x5a, 0x08, 0xb2, 0x89, 0x7e, 0x10, 0x82, 0x6c, 0xa1, 0xf5,
+	0x10, 0x64, 0x1b, 0x6d, 0x84, 0x20, 0x3b, 0xa8, 0x1c, 0x82, 0xec, 0xa2, 0xcd, 0x10, 0xe4, 0x11,
+	0xda, 0x0a, 0x41, 0xf6, 0xd0, 0xf6, 0x88, 0xf6, 0x03, 0x2b, 0x5d, 0x47, 0x3b, 0x61, 0xd0, 0x06,
+	0xda, 0x0d, 0x83, 0xca, 0xe8, 0x51, 0x18, 0xb4, 0x89, 0xf6, 0xc2, 0xa0, 0x2d, 0xf4, 0x38, 0x0c,
+	0xda, 0x46, 0x3f, 0x0c, 0x83, 0x76, 0xd0, 0x8f, 0xc2, 0xa0, 0x5d, 0xf4, 0x51, 0x18, 0xf4, 0x08,
+	0xfd, 0x38, 0x0c, 0xda, 0x43, 0x4f, 0x42, 0xa0, 0xf2, 0x3a, 0xfa, 0x38, 0x0c, 0xda, 0x40, 0x95,
+	0x30, 0xa8, 0x8c, 0x3e, 0x09, 0x83, 0x36, 0x51, 0x35, 0x0c, 0xda, 0x42, 0xb5, 0x30, 0x68, 0x1b,
+	0x49, 0x61, 0xd0, 0x0e, 0xda, 0x0f, 0x83, 0x76, 0xd1, 0x41, 0x18, 0xf4, 0x08, 0x7d, 0x1a, 0x06,
+	0xed, 0xa1, 0x7a, 0x08, 0xb4, 0xb9, 0x8e, 0xfe, 0x24, 0x0c, 0xda, 0x40, 0x4f, 0xc3, 0xa0, 0x32,
+	0x6a, 0x84, 0x41, 0x9b, 0xe8, 0x59, 0x18, 0xb4, 0x85, 0x0e, 0xc3, 0xa0, 0x6d, 0xd4, 0x0c, 0x83,
+	0x76, 0x50, 0x2b, 0x0c, 0xda, 0x45, 0x9f, 0x85, 0x41, 0x8f, 0x90, 0x1c, 0x06, 0xed, 0xa1, 0x76,
+	0x08, 0xb4, 0xb5, 0x8e, 0x3a, 0x61, 0xd0, 0x06, 0x3a, 0x0a, 0x83, 0xca, 0xe8, 0x79, 0x18, 0xb4,
+	0x89, 0x5e, 0xe0, 0xcb, 0xb0, 0xec, 0x41, 0xed, 0x66, 0xa3, 0xa9, 0xac, 0xa3, 0x9f, 0x4c, 0x12,
+	0x37, 0xd0, 0xcb, 0x49, 0x62, 0x19, 0xfd, 0x74, 0x92, 0xb8, 0x89, 0x3e, 0x9f, 0x24, 0x6e, 0xa1,
+	0x3f, 0x9d, 0x24, 0x6e, 0xa3, 0x9f, 0x4d, 0x12, 0x77, 0xd0, 0x9f, 0x4d, 0x12, 0x77, 0x91, 0xf2,
+	0xff, 0x01, 0x00, 0x00, 0xff, 0xff, 0xe4, 0x55, 0x22, 0x3c, 0x35, 0x3c, 0x00, 0x00,
 }

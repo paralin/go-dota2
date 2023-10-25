@@ -46,6 +46,7 @@ enum EStartFindingMatchResult {
 	k_EStartFindingMatchResult_MatchmakingBusy = 132;
 	k_EStartFindingMatchResult_SteamChinaBanned = 133;
 	k_EStartFindingMatchResult_SteamChinaInvalidMixedParty = 134;
+	k_EStartFindingMatchResult_RestrictedFromRanked = 135;
 }
 
 message CMsgStartFindingMatch {
@@ -160,6 +161,7 @@ message CMsgPracticeLobbySetDetails {
 	repeated uint32 requested_hero_ids = 50;
 	optional CMsgLobbyScenarioSave scenario_save = 51;
 	optional CMsgPracticeLobbySetDetails.AbilityDraftSpecificDetails ability_draft_specific_details = 52;
+	optional bool do_player_draft = 53;
 }
 
 message CMsgPracticeLobbyCreate {

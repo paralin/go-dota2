@@ -131,6 +131,27 @@ func (e *BattlePassRollupRequest) GetEventName() string {
 	return "BattlePassRollupRequest"
 }
 
+// BingoUserDataUpdated event.
+// MessageID: k_EMsgGCToClientBingoUserDataUpdated
+type BingoUserDataUpdated struct {
+	protocol.CMsgGCToClientBingoUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *BingoUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientBingoUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *BingoUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientBingoUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *BingoUserDataUpdated) GetEventName() string {
+	return "BingoUserDataUpdated"
+}
+
 // BroadcastNotification event.
 // MessageID: k_EMsgGCBroadcastNotification
 type BroadcastNotification struct {
@@ -1074,6 +1095,27 @@ func (e *RequestMMInfo) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *RequestMMInfo) GetEventName() string {
 	return "RequestMMInfo"
+}
+
+// RoadToTIQuestDataUpdated event.
+// MessageID: k_EMsgGCToClientRoadToTIQuestDataUpdated
+type RoadToTIQuestDataUpdated struct {
+	protocol.CMsgGCToClientRoadToTIQuestDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *RoadToTIQuestDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientRoadToTIQuestDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *RoadToTIQuestDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientRoadToTIQuestDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *RoadToTIQuestDataUpdated) GetEventName() string {
+	return "RoadToTIQuestDataUpdated"
 }
 
 // SteamDatagramTicket event.
