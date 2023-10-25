@@ -26,8 +26,8 @@ github.com/onsi/gomega v1.7.1/go.mod h1:XdKZgCCFLUoM/7CFJVPcG8C1xQ1AJ0vpAezJrB7J
 github.com/onsi/gomega v1.10.1/go.mod h1:iN09h71vgCQne3DLsj+A5owkum+a2tYe+TOCB1ybHNo=
 github.com/onsi/gomega v1.22.1 h1:pY8O4lBfsHKZHM/6nrxkhVPUznOlIu3quZcKP/M20KI=
 github.com/onsi/gomega v1.22.1/go.mod h1:x6n7VNe4hw0vkyYUM4mjIXx3JbLiPaBPNgB7PRQ1tuM=
-github.com/paralin/go-steam v0.0.0-20231025185415-208ad0e43d86 h1:wPt1So58M2GtOHenfmoY9qCPOv58cfDj+0g4dQWZW+k=
-github.com/paralin/go-steam v0.0.0-20231025185415-208ad0e43d86/go.mod h1:6bY/UkIylqrAw/h+H2NJ45watwI0pvtmIvf31QmLdiE=
+github.com/paralin/go-steam v0.0.0-20231025185642-e7c8d97e052a h1:nudTZVJ/2Ew319CAPa0vC12nD4HD2UBTFbUINUa61r4=
+github.com/paralin/go-steam v0.0.0-20231025185642-e7c8d97e052a/go.mod h1:Ls8fi7iC7icw2va7bXNGGgrbs2DGAbK5nnlDGZwjr/U=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
