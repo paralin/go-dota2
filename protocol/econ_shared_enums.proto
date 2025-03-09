@@ -1,6 +1,7 @@
 syntax = "proto2";
 package protocol;
 
+option go_package = "./protocol";
 enum EGCEconBaseMsg {
 	k_EMsgGCGenericResult = 2579;
 }

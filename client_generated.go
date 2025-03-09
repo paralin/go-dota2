@@ -41,6 +41,35 @@ func (d *Dota2) ApplyGemCombiner(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCApplyGemCombiner), req)
 }
 
+// ApplyModerationShowcaseModeration applys a moderation showcase moderation.
+// Request ID: k_EMsgClientToGCShowcaseModerationApplyModeration
+// Response ID: k_EMsgClientToGCShowcaseModerationApplyModerationResponse
+// Request type: CMsgClientToGCShowcaseModerationApplyModeration
+// Response type: CMsgClientToGCShowcaseModerationApplyModerationResponse
+func (d *Dota2) ApplyModerationShowcaseModeration(
+	ctx context.Context,
+	accountID uint32,
+	showcaseType protocol.EShowcaseType,
+	showcaseTimestamp uint32,
+	approve bool,
+) (*protocol.CMsgClientToGCShowcaseModerationApplyModerationResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseModerationApplyModeration{
+		AccountId:         &accountID,
+		ShowcaseType:      &showcaseType,
+		ShowcaseTimestamp: &showcaseTimestamp,
+		Approve:           &approve,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseModerationApplyModerationResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModeration),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModerationResponse),
+		resp,
+	)
+}
+
 // ApplyTeamToLobby applys a team to lobby.
 // Request ID: k_EMsgGCApplyTeamToPracticeLobby
 // Request type: CMsgApplyTeamToPracticeLobby
@@ -74,6 +103,18 @@ func (d *Dota2) AutographReward(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGameAutographRewardResponse),
 		resp,
 	)
+}
+
+// CancelGameFightingChallengeFriend cancels a game fighting challenge friend.
+// Request ID: k_EMsgClientToGCFightingGameCancelChallengeFriend
+// Request type: CMsgClientToGCFightingGameCancelChallengeFriend
+func (d *Dota2) CancelGameFightingChallengeFriend(
+	friendAccountID uint32,
+) {
+	req := &protocol.CMsgClientToGCFightingGameCancelChallengeFriend{
+		FriendAccountId: &friendAccountID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFightingGameCancelChallengeFriend), req)
 }
 
 // CancelInviteToGuild cancels a invite to guild.
@@ -188,12 +229,14 @@ func (d *Dota2) ClaimEventAction(
 	actionID uint32,
 	quantity uint32,
 	data protocol.CMsgDOTAClaimEventActionData,
+	scoreMode protocol.EEventActionScoreMode,
 ) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
 	req := &protocol.CMsgDOTAClaimEventAction{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		Quantity: &quantity,
-		Data:     &data,
+		EventId:   &eventID,
+		ActionId:  &actionID,
+		Quantity:  &quantity,
+		Data:      &data,
+		ScoreMode: &scoreMode,
 	}
 	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
 
@@ -256,6 +299,26 @@ func (d *Dota2) ClaimLeaderboardRewards(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse),
+		resp,
+	)
+}
+
+// ClaimOverworldEncounterReward claims a overworld encounter reward.
+// Request ID: k_EMsgClientToGCOverworldClaimEncounterReward
+// Response ID: k_EMsgClientToGCOverworldClaimEncounterRewardResponse
+// Request type: CMsgClientToGCOverworldClaimEncounterReward
+// Response type: CMsgClientToGCOverworldClaimEncounterRewardResponse
+func (d *Dota2) ClaimOverworldEncounterReward(
+	ctx context.Context,
+	req *protocol.CMsgClientToGCOverworldClaimEncounterReward,
+) (*protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse, error) {
+	resp := &protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterRewardResponse),
 		resp,
 	)
 }
@@ -803,11 +866,9 @@ func (d *Dota2) GetBingoStatsData(
 func (d *Dota2) GetBingoUserData(
 	ctx context.Context,
 	leagueID uint32,
-	leaguePhase uint32,
 ) (*protocol.CMsgClientToGCBingoGetUserDataResponse, error) {
 	req := &protocol.CMsgClientToGCBingoGetUserData{
-		LeagueId:    &leagueID,
-		LeaguePhase: &leaguePhase,
+		LeagueId: &leagueID,
 	}
 	resp := &protocol.CMsgClientToGCBingoGetUserDataResponse{}
 
@@ -866,6 +927,29 @@ func (d *Dota2) GetCraftingFantasyData(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetData),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetDataResponse),
+		resp,
+	)
+}
+
+// GetCraftworksUserData gets a craftworks user data.
+// Request ID: k_EMsgClientToGCCraftworksGetUserData
+// Response ID: k_EMsgClientToGCCraftworksGetUserDataResponse
+// Request type: CMsgClientToGCCraftworksGetUserData
+// Response type: CMsgClientToGCCraftworksGetUserDataResponse
+func (d *Dota2) GetCraftworksUserData(
+	ctx context.Context,
+	craftworksID uint32,
+) (*protocol.CMsgClientToGCCraftworksGetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCCraftworksGetUserData{
+		CraftworksId: &craftworksID,
+	}
+	resp := &protocol.CMsgClientToGCCraftworksGetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserDataResponse),
 		resp,
 	)
 }
@@ -1050,7 +1134,7 @@ func (d *Dota2) GetHeroStandings(
 // Response type: CMsgGCGetHeroStatsHistoryResponse
 func (d *Dota2) GetHeroStatsHistory(
 	ctx context.Context,
-	heroID uint32,
+	heroID int32,
 ) (*protocol.CMsgGCGetHeroStatsHistoryResponse, error) {
 	req := &protocol.CMsgGCGetHeroStatsHistory{
 		HeroId: &heroID,
@@ -1086,6 +1170,31 @@ func (d *Dota2) GetHeroStickers(
 	)
 }
 
+// GetModerationShowcaseQueue gets a moderation showcase queue.
+// Request ID: k_EMsgClientToGCShowcaseModerationGetQueue
+// Response ID: k_EMsgClientToGCShowcaseModerationGetQueueResponse
+// Request type: CMsgClientToGCShowcaseModerationGetQueue
+// Response type: CMsgClientToGCShowcaseModerationGetQueueResponse
+func (d *Dota2) GetModerationShowcaseQueue(
+	ctx context.Context,
+	startTimestamp uint32,
+	resultCount uint32,
+) (*protocol.CMsgClientToGCShowcaseModerationGetQueueResponse, error) {
+	req := &protocol.CMsgClientToGCShowcaseModerationGetQueue{
+		StartTimestamp: &startTimestamp,
+		ResultCount:    &resultCount,
+	}
+	resp := &protocol.CMsgClientToGCShowcaseModerationGetQueueResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueue),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueueResponse),
+		resp,
+	)
+}
+
 // GetOWMatchDetails gets ow match details.
 // Request ID: k_EMsgClientToGCGetOWMatchDetails
 // Response ID: k_EMsgClientToGCGetOWMatchDetailsResponse
@@ -1102,6 +1211,56 @@ func (d *Dota2) GetOWMatchDetails(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetails),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetailsResponse),
+		resp,
+	)
+}
+
+// GetOverworldDynamicImage gets a overworld dynamic image.
+// Request ID: k_EMsgClientToGCOverworldGetDynamicImage
+// Response ID: k_EMsgClientToGCOverworldGetDynamicImageResponse
+// Request type: CMsgClientToGCOverworldGetDynamicImage
+// Response type: CMsgClientToGCOverworldGetDynamicImageResponse
+func (d *Dota2) GetOverworldDynamicImage(
+	ctx context.Context,
+	magic uint32,
+	imageID uint32,
+	language uint32,
+) (*protocol.CMsgClientToGCOverworldGetDynamicImageResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldGetDynamicImage{
+		Magic:    &magic,
+		ImageId:  &imageID,
+		Language: &language,
+	}
+	resp := &protocol.CMsgClientToGCOverworldGetDynamicImageResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImage),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImageResponse),
+		resp,
+	)
+}
+
+// GetOverworldUserData gets a overworld user data.
+// Request ID: k_EMsgClientToGCOverworldGetUserData
+// Response ID: k_EMsgClientToGCOverworldGetUserDataResponse
+// Request type: CMsgClientToGCOverworldGetUserData
+// Response type: CMsgClientToGCOverworldGetUserDataResponse
+func (d *Dota2) GetOverworldUserData(
+	ctx context.Context,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldGetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldGetUserData{
+		OverworldId: &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldGetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserDataResponse),
 		resp,
 	)
 }
@@ -1426,6 +1585,31 @@ func (d *Dota2) GrantDevEventPoints(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventPoints),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevGrantEventPointsResponse),
+		resp,
+	)
+}
+
+// GrantDevOverworldTokens grants dev overworld tokens.
+// Request ID: k_EMsgClientToGCOverworldDevGrantTokens
+// Response ID: k_EMsgClientToGCOverworldDevGrantTokensResponse
+// Request type: CMsgClientToGCOverworldDevGrantTokens
+// Response type: CMsgClientToGCOverworldDevGrantTokensResponse
+func (d *Dota2) GrantDevOverworldTokens(
+	ctx context.Context,
+	overworldID uint32,
+	tokenQuantity protocol.CMsgOverworldTokenQuantity,
+) (*protocol.CMsgClientToGCOverworldDevGrantTokensResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldDevGrantTokens{
+		OverworldId:   &overworldID,
+		TokenQuantity: &tokenQuantity,
+	}
+	resp := &protocol.CMsgClientToGCOverworldDevGrantTokensResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokens),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokensResponse),
 		resp,
 	)
 }
@@ -2180,7 +2364,7 @@ func (d *Dota2) PurchaseFilteredPlayerSlot(
 // Response type: CMsgPurchaseHeroRandomRelicResponse
 func (d *Dota2) PurchaseHeroRandomRelic(
 	ctx context.Context,
-	heroID uint32,
+	heroID int32,
 	relicRarity protocol.EHeroRelicRarity,
 ) (*protocol.CMsgPurchaseHeroRandomRelicResponse, error) {
 	req := &protocol.CMsgPurchaseHeroRandomRelic{
@@ -3222,7 +3406,7 @@ func (d *Dota2) RequestGuildMembership(
 // Response type: CMsgHeroGlobalDataResponse
 func (d *Dota2) RequestHeroGlobalData(
 	ctx context.Context,
-	heroID uint32,
+	heroID int32,
 ) (*protocol.CMsgHeroGlobalDataResponse, error) {
 	req := &protocol.CMsgHeroGlobalDataRequest{
 		HeroId: &heroID,
@@ -3506,6 +3690,31 @@ func (d *Dota2) RequestOrderStickerbookTeamPage(
 	)
 }
 
+// RequestOverworldTokensNeededByFriend requests a overworld tokens needed by friend.
+// Request ID: k_EMsgClientToGCOverworldRequestTokensNeededByFriend
+// Response ID: k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+// Request type: CMsgClientToGCOverworldRequestTokensNeededByFriend
+// Response type: CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+func (d *Dota2) RequestOverworldTokensNeededByFriend(
+	ctx context.Context,
+	friendAccountID uint32,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldRequestTokensNeededByFriend{
+		FriendAccountId: &friendAccountID,
+		OverworldId:     &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriend),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse),
+		resp,
+	)
+}
+
 // RequestPlaceCollectionStickers requests place collection stickers.
 // Request ID: k_EMsgClientToGCPlaceCollectionStickersRequest
 // Response ID: k_EMsgClientToGCPlaceCollectionStickersResponse
@@ -3603,7 +3812,7 @@ func (d *Dota2) RequestPlayerCoachMatches(
 func (d *Dota2) RequestPlayerHeroRecentAccomplishments(
 	ctx context.Context,
 	accountID uint32,
-	heroID uint32,
+	heroID int32,
 ) (*protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse, error) {
 	req := &protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishments{
 		AccountId: &accountID,
@@ -3768,7 +3977,7 @@ func (d *Dota2) RequestProfile(
 func (d *Dota2) RequestQuickStats(
 	ctx context.Context,
 	playerAccountID uint32,
-	heroID uint32,
+	heroID int32,
 	itemID int32,
 	leagueID uint32,
 ) (*protocol.CMsgDOTAClientToGCQuickStatsResponse, error) {
@@ -4300,7 +4509,7 @@ func (d *Dota2) RerollDraftUnder(
 func (d *Dota2) RerollPlayerChallenge(
 	eventID protocol.EEvent,
 	sequenceID uint32,
-	heroID uint32,
+	heroID int32,
 ) {
 	req := &protocol.CMsgClientToGCRerollPlayerChallenge{
 		EventId:    &eventID,
@@ -4567,6 +4776,110 @@ func (d *Dota2) SendBalancedShuffleLobby() {
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby), req)
 }
 
+// SendBingoDevAddTokens sends bingo dev add tokens.
+// Request ID: k_EMsgClientToGCBingoDevAddTokens
+// Response ID: k_EMsgClientToGCBingoDevAddTokensResponse
+// Request type: CMsgClientToGCBingoDevAddTokens
+// Response type: CMsgClientToGCBingoDevAddTokensResponse
+func (d *Dota2) SendBingoDevAddTokens(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+	tokenCount int32,
+) (*protocol.CMsgClientToGCBingoDevAddTokensResponse, error) {
+	req := &protocol.CMsgClientToGCBingoDevAddTokens{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+		TokenCount:  &tokenCount,
+	}
+	resp := &protocol.CMsgClientToGCBingoDevAddTokensResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokens),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokensResponse),
+		resp,
+	)
+}
+
+// SendBingoDevClearInventory sends a bingo dev clear inventory.
+// Request ID: k_EMsgClientToGCBingoDevClearInventory
+// Response ID: k_EMsgClientToGCBingoDevClearInventoryResponse
+// Request type: CMsgClientToGCBingoDevClearInventory
+// Response type: CMsgClientToGCBingoDevClearInventoryResponse
+func (d *Dota2) SendBingoDevClearInventory(
+	ctx context.Context,
+	leagueID uint32,
+) (*protocol.CMsgClientToGCBingoDevClearInventoryResponse, error) {
+	req := &protocol.CMsgClientToGCBingoDevClearInventory{
+		LeagueId: &leagueID,
+	}
+	resp := &protocol.CMsgClientToGCBingoDevClearInventoryResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventory),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventoryResponse),
+		resp,
+	)
+}
+
+// SendBingoModifySquare sends a bingo modify square.
+// Request ID: k_EMsgClientToGCBingoModifySquare
+// Response ID: k_EMsgClientToGCBingoModifySquareResponse
+// Request type: CMsgClientToGCBingoModifySquare
+// Response type: CMsgClientToGCBingoModifySquareResponse
+func (d *Dota2) SendBingoModifySquare(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+	squareIndex uint32,
+	action protocol.CMsgClientToGCBingoModifySquare_EModifyAction,
+) (*protocol.CMsgClientToGCBingoModifySquareResponse, error) {
+	req := &protocol.CMsgClientToGCBingoModifySquare{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+		SquareIndex: &squareIndex,
+		Action:      &action,
+	}
+	resp := &protocol.CMsgClientToGCBingoModifySquareResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoModifySquare),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoModifySquareResponse),
+		resp,
+	)
+}
+
+// SendBingoShuffleCard sends a bingo shuffle card.
+// Request ID: k_EMsgClientToGCBingoShuffleCard
+// Response ID: k_EMsgClientToGCBingoShuffleCardResponse
+// Request type: CMsgClientToGCBingoShuffleCard
+// Response type: CMsgClientToGCBingoShuffleCardResponse
+func (d *Dota2) SendBingoShuffleCard(
+	ctx context.Context,
+	leagueID uint32,
+	leaguePhase uint32,
+) (*protocol.CMsgClientToGCBingoShuffleCardResponse, error) {
+	req := &protocol.CMsgClientToGCBingoShuffleCard{
+		LeagueId:    &leagueID,
+		LeaguePhase: &leaguePhase,
+	}
+	resp := &protocol.CMsgClientToGCBingoShuffleCardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCard),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCardResponse),
+		resp,
+	)
+}
+
 // SendCandyShopDevClearInventory sends a candy shop dev clear inventory.
 // Request ID: k_EMsgClientToGCCandyShopDevClearInventory
 // Response ID: k_EMsgClientToGCCandyShopDevClearInventoryResponse
@@ -4586,6 +4899,29 @@ func (d *Dota2) SendCandyShopDevClearInventory(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventory),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventoryResponse),
+		resp,
+	)
+}
+
+// SendCandyShopDevResetShop sends a candy shop dev reset shop.
+// Request ID: k_EMsgClientToGCCandyShopDevResetShop
+// Response ID: k_EMsgClientToGCCandyShopDevResetShopResponse
+// Request type: CMsgClientToGCCandyShopDevResetShop
+// Response type: CMsgClientToGCCandyShopDevResetShopResponse
+func (d *Dota2) SendCandyShopDevResetShop(
+	ctx context.Context,
+	candyShopID uint32,
+) (*protocol.CMsgClientToGCCandyShopDevResetShopResponse, error) {
+	req := &protocol.CMsgClientToGCCandyShopDevResetShop{
+		CandyShopId: &candyShopID,
+	}
+	resp := &protocol.CMsgClientToGCCandyShopDevResetShopResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShop),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShopResponse),
 		resp,
 	)
 }
@@ -4755,6 +5091,58 @@ func (d *Dota2) SendCoachFriend(
 	)
 }
 
+// SendCraftworksCraftRecipe sends a craftworks craft recipe.
+// Request ID: k_EMsgClientToGCCraftworksCraftRecipe
+// Response ID: k_EMsgClientToGCCraftworksCraftRecipeResponse
+// Request type: CMsgClientToGCCraftworksCraftRecipe
+// Response type: CMsgClientToGCCraftworksCraftRecipeResponse
+func (d *Dota2) SendCraftworksCraftRecipe(
+	ctx context.Context,
+	craftworksID uint32,
+	recipeID uint64,
+) (*protocol.CMsgClientToGCCraftworksCraftRecipeResponse, error) {
+	req := &protocol.CMsgClientToGCCraftworksCraftRecipe{
+		CraftworksId: &craftworksID,
+		RecipeId:     &recipeID,
+	}
+	resp := &protocol.CMsgClientToGCCraftworksCraftRecipeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipe),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipeResponse),
+		resp,
+	)
+}
+
+// SendCraftworksDevModifyComponents sends craftworks dev modify components.
+// Request ID: k_EMsgClientToGCCraftworksDevModifyComponents
+// Response ID: k_EMsgClientToGCCraftworksDevModifyComponentsResponse
+// Request type: CMsgClientToGCCraftworksDevModifyComponents
+// Response type: CMsgClientToGCCraftworksDevModifyComponentsResponse
+func (d *Dota2) SendCraftworksDevModifyComponents(
+	ctx context.Context,
+	craftworksID uint32,
+	components protocol.CMsgCraftworksComponents,
+	operation protocol.CMsgClientToGCCraftworksDevModifyComponents_EOperation,
+) (*protocol.CMsgClientToGCCraftworksDevModifyComponentsResponse, error) {
+	req := &protocol.CMsgClientToGCCraftworksDevModifyComponents{
+		CraftworksId: &craftworksID,
+		Components:   &components,
+		Operation:    &operation,
+	}
+	resp := &protocol.CMsgClientToGCCraftworksDevModifyComponentsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponents),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponentsResponse),
+		resp,
+	)
+}
+
 // SendCustomGameClientFinishedLoading sends a custom game client finished loading.
 // Request ID: k_EMsgCustomGameClientFinishedLoading
 // Request type: CMsgDOTACustomGameClientFinishedLoading
@@ -4803,22 +5191,6 @@ func (d *Dota2) SendDeclineInviteToGuild(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCDeclineInviteToGuildResponse),
 		resp,
 	)
-}
-
-// SendDetailedGameStats sends detailed game stats.
-// Request ID: k_EMsgDetailedGameStats
-// Request type: CMsgDetailedGameStats
-func (d *Dota2) SendDetailedGameStats(
-	minutes []*protocol.CMsgDetailedGameStats_MinuteEntry,
-	playerInfo []*protocol.CMsgDetailedGameStats_PlayerInfo,
-	gameStats protocol.CMsgDetailedGameStats_GameStats,
-) {
-	req := &protocol.CMsgDetailedGameStats{
-		Minutes:    minutes,
-		PlayerInfo: playerInfo,
-		GameStats:  &gameStats,
-	}
-	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDetailedGameStats), req)
 }
 
 // SendDevDeleteEventActions sends dev delete event actions.
@@ -4871,6 +5243,33 @@ func (d *Dota2) SendDevResetEventState(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevResetEventState),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevResetEventStateResponse),
+		resp,
+	)
+}
+
+// SendDotaLabsFeedback sends a dota labs feedback.
+// Request ID: k_EMsgClientToGCDotaLabsFeedback
+// Response ID: k_EMsgClientToGCDotaLabsFeedbackResponse
+// Request type: CMsgClientToGCDotaLabsFeedback
+// Response type: CMsgClientToGCDotaLabsFeedbackResponse
+func (d *Dota2) SendDotaLabsFeedback(
+	ctx context.Context,
+	language uint32,
+	feedbackItem uint32,
+	feedback string,
+) (*protocol.CMsgClientToGCDotaLabsFeedbackResponse, error) {
+	req := &protocol.CMsgClientToGCDotaLabsFeedback{
+		Language:     &language,
+		FeedbackItem: &feedbackItem,
+		Feedback:     &feedback,
+	}
+	resp := &protocol.CMsgClientToGCDotaLabsFeedbackResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedback),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedbackResponse),
 		resp,
 	)
 }
@@ -4956,6 +5355,54 @@ func (d *Dota2) SendFantasyCraftingPerformOperation(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperation),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperationResponse),
+		resp,
+	)
+}
+
+// SendFightingGameAnswerChallenge sends a fighting game answer challenge.
+// Request ID: k_EMsgClientToGCFightingGameAnswerChallenge
+// Response ID: k_EMsgClientToGCFightingGameAnswerChallengeResponse
+// Request type: CMsgClientToGCFightingGameAnswerChallenge
+// Response type: CMsgClientToGCFightingGameAnswerChallengeResponse
+func (d *Dota2) SendFightingGameAnswerChallenge(
+	ctx context.Context,
+	challengerAccountID uint32,
+	accept bool,
+) (*protocol.CMsgClientToGCFightingGameAnswerChallengeResponse, error) {
+	req := &protocol.CMsgClientToGCFightingGameAnswerChallenge{
+		ChallengerAccountId: &challengerAccountID,
+		Accept:              &accept,
+	}
+	resp := &protocol.CMsgClientToGCFightingGameAnswerChallengeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallenge),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallengeResponse),
+		resp,
+	)
+}
+
+// SendFightingGameChallengeFriend sends a fighting game challenge friend.
+// Request ID: k_EMsgClientToGCFightingGameChallengeFriend
+// Response ID: k_EMsgClientToGCFightingGameChallengeFriendResponse
+// Request type: CMsgClientToGCFightingGameChallengeFriend
+// Response type: CMsgClientToGCFightingGameChallengeFriendResponse
+func (d *Dota2) SendFightingGameChallengeFriend(
+	ctx context.Context,
+	friendAccountID uint32,
+) (*protocol.CMsgClientToGCFightingGameChallengeFriendResponse, error) {
+	req := &protocol.CMsgClientToGCFightingGameChallengeFriend{
+		FriendAccountId: &friendAccountID,
+	}
+	resp := &protocol.CMsgClientToGCFightingGameChallengeFriendResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriend),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriendResponse),
 		resp,
 	)
 }
@@ -5241,6 +5688,33 @@ func (d *Dota2) SendNeutralItemStats(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgNeutralItemStats), req)
 }
 
+// SendNewBloomGift sends a new bloom gift.
+// Request ID: k_EMsgClientToGCNewBloomGift
+// Response ID: k_EMsgClientToGCNewBloomGiftResponse
+// Request type: CMsgClientToGCNewBloomGift
+// Response type: CMsgClientToGCNewBloomGiftResponse
+func (d *Dota2) SendNewBloomGift(
+	ctx context.Context,
+	defindex uint32,
+	lobbyID uint64,
+	targetAccountIDs []uint32,
+) (*protocol.CMsgClientToGCNewBloomGiftResponse, error) {
+	req := &protocol.CMsgClientToGCNewBloomGift{
+		Defindex:         &defindex,
+		LobbyId:          &lobbyID,
+		TargetAccountIds: targetAccountIDs,
+	}
+	resp := &protocol.CMsgClientToGCNewBloomGiftResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCNewBloomGift),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCNewBloomGiftResponse),
+		resp,
+	)
+}
+
 // SendOverwatchReplayError sends a overwatch replay error.
 // Request ID: k_EMsgClientToGCOverwatchReplayError
 // Request type: CMsgClientToGCOverwatchReplayError
@@ -5251,6 +5725,329 @@ func (d *Dota2) SendOverwatchReplayError(
 		OverwatchReplayId: &overwatchReplayID,
 	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverwatchReplayError), req)
+}
+
+// SendOverworldCompletePath sends a overworld complete path.
+// Request ID: k_EMsgClientToGCOverworldCompletePath
+// Response ID: k_EMsgClientToGCOverworldCompletePathResponse
+// Request type: CMsgClientToGCOverworldCompletePath
+// Response type: CMsgClientToGCOverworldCompletePathResponse
+func (d *Dota2) SendOverworldCompletePath(
+	ctx context.Context,
+	overworldID uint32,
+	pathID uint32,
+) (*protocol.CMsgClientToGCOverworldCompletePathResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldCompletePath{
+		OverworldId: &overworldID,
+		PathId:      &pathID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldCompletePathResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePath),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePathResponse),
+		resp,
+	)
+}
+
+// SendOverworldDevClearInventory sends a overworld dev clear inventory.
+// Request ID: k_EMsgClientToGCOverworldDevClearInventory
+// Response ID: k_EMsgClientToGCOverworldDevClearInventoryResponse
+// Request type: CMsgClientToGCOverworldDevClearInventory
+// Response type: CMsgClientToGCOverworldDevClearInventoryResponse
+func (d *Dota2) SendOverworldDevClearInventory(
+	ctx context.Context,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldDevClearInventoryResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldDevClearInventory{
+		OverworldId: &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldDevClearInventoryResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventory),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventoryResponse),
+		resp,
+	)
+}
+
+// SendOverworldDevResetAll sends a overworld dev reset all.
+// Request ID: k_EMsgClientToGCOverworldDevResetAll
+// Response ID: k_EMsgClientToGCOverworldDevResetAllResponse
+// Request type: CMsgClientToGCOverworldDevResetAll
+// Response type: CMsgClientToGCOverworldDevResetAllResponse
+func (d *Dota2) SendOverworldDevResetAll(
+	ctx context.Context,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldDevResetAllResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldDevResetAll{
+		OverworldId: &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldDevResetAllResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAll),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAllResponse),
+		resp,
+	)
+}
+
+// SendOverworldDevResetNode sends a overworld dev reset node.
+// Request ID: k_EMsgClientToGCOverworldDevResetNode
+// Response ID: k_EMsgClientToGCOverworldDevResetNodeResponse
+// Request type: CMsgClientToGCOverworldDevResetNode
+// Response type: CMsgClientToGCOverworldDevResetNodeResponse
+func (d *Dota2) SendOverworldDevResetNode(
+	ctx context.Context,
+	overworldID uint32,
+	nodeID uint32,
+) (*protocol.CMsgClientToGCOverworldDevResetNodeResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldDevResetNode{
+		OverworldId: &overworldID,
+		NodeId:      &nodeID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldDevResetNodeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNode),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNodeResponse),
+		resp,
+	)
+}
+
+// SendOverworldEncounterChooseHeroData sends a overworld encounter choose hero data.
+// Request ID: k_EMsgOverworldEncounterChooseHeroData
+// Request type: CMsgOverworldEncounterChooseHeroData
+func (d *Dota2) SendOverworldEncounterChooseHeroData(
+	heroList protocol.CMsgOverworldHeroList,
+	additive bool,
+) {
+	req := &protocol.CMsgOverworldEncounterChooseHeroData{
+		HeroList: &heroList,
+		Additive: &additive,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgOverworldEncounterChooseHeroData), req)
+}
+
+// SendOverworldEncounterPitFighterRewardData sends a overworld encounter pit fighter reward data.
+// Request ID: k_EMsgOverworldEncounterPitFighterRewardData
+// Request type: CMsgOverworldEncounterPitFighterRewardData
+func (d *Dota2) SendOverworldEncounterPitFighterRewardData(
+	tokenID uint32,
+	choice uint32,
+) {
+	req := &protocol.CMsgOverworldEncounterPitFighterRewardData{
+		TokenId: &tokenID,
+		Choice:  &choice,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgOverworldEncounterPitFighterRewardData), req)
+}
+
+// SendOverworldEncounterProgressData sends a overworld encounter progress data.
+// Request ID: k_EMsgOverworldEncounterProgressData
+// Request type: CMsgOverworldEncounterProgressData
+func (d *Dota2) SendOverworldEncounterProgressData(
+	choice int32,
+	progress int32,
+	maxProgress int32,
+	visited bool,
+) {
+	req := &protocol.CMsgOverworldEncounterProgressData{
+		Choice:      &choice,
+		Progress:    &progress,
+		MaxProgress: &maxProgress,
+		Visited:     &visited,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgOverworldEncounterProgressData), req)
+}
+
+// SendOverworldEncounterTokenQuestData sends a overworld encounter token quest data.
+// Request ID: k_EMsgOverworldEncounterTokenQuestData
+// Request type: CMsgOverworldEncounterTokenQuestData
+func (d *Dota2) SendOverworldEncounterTokenQuestData(
+	quests []*protocol.CMsgOverworldEncounterTokenQuestData_Quest,
+) {
+	req := &protocol.CMsgOverworldEncounterTokenQuestData{
+		Quests: quests,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgOverworldEncounterTokenQuestData), req)
+}
+
+// SendOverworldEncounterTokenTreasureData sends a overworld encounter token treasure data.
+// Request ID: k_EMsgOverworldEncounterTokenTreasureData
+// Request type: CMsgOverworldEncounterTokenTreasureData
+func (d *Dota2) SendOverworldEncounterTokenTreasureData(
+	rewardOptions []*protocol.CMsgOverworldEncounterTokenTreasureData_RewardOption,
+) {
+	req := &protocol.CMsgOverworldEncounterTokenTreasureData{
+		RewardOptions: rewardOptions,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgOverworldEncounterTokenTreasureData), req)
+}
+
+// SendOverworldFeedback sends a overworld feedback.
+// Request ID: k_EMsgClientToGCOverworldFeedback
+// Response ID: k_EMsgClientToGCOverworldFeedbackResponse
+// Request type: CMsgClientToGCOverworldFeedback
+// Response type: CMsgClientToGCOverworldFeedbackResponse
+func (d *Dota2) SendOverworldFeedback(
+	ctx context.Context,
+	language uint32,
+	overworldID uint32,
+	feedback string,
+) (*protocol.CMsgClientToGCOverworldFeedbackResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldFeedback{
+		Language:    &language,
+		OverworldId: &overworldID,
+		Feedback:    &feedback,
+	}
+	resp := &protocol.CMsgClientToGCOverworldFeedbackResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldFeedback),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldFeedbackResponse),
+		resp,
+	)
+}
+
+// SendOverworldGiftTokens sends overworld gift tokens.
+// Request ID: k_EMsgClientToGCOverworldGiftTokens
+// Response ID: k_EMsgClientToGCOverworldGiftTokensResponse
+// Request type: CMsgClientToGCOverworldGiftTokens
+// Response type: CMsgClientToGCOverworldGiftTokensResponse
+func (d *Dota2) SendOverworldGiftTokens(
+	ctx context.Context,
+	overworldID uint32,
+	tokenGift protocol.CMsgOverworldTokenCount,
+	recipientAccountID uint32,
+	periodicResourceID uint32,
+) (*protocol.CMsgClientToGCOverworldGiftTokensResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldGiftTokens{
+		OverworldId:        &overworldID,
+		TokenGift:          &tokenGift,
+		RecipientAccountId: &recipientAccountID,
+		PeriodicResourceId: &periodicResourceID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldGiftTokensResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokens),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokensResponse),
+		resp,
+	)
+}
+
+// SendOverworldMinigameAction sends a overworld minigame action.
+// Request ID: k_EMsgClientToGCOverworldMinigameAction
+// Response ID: k_EMsgClientToGCOverworldMinigameActionResponse
+// Request type: CMsgClientToGCOverworldMinigameAction
+// Response type: CMsgClientToGCOverworldMinigameActionResponse
+func (d *Dota2) SendOverworldMinigameAction(
+	ctx context.Context,
+	req *protocol.CMsgClientToGCOverworldMinigameAction,
+) (*protocol.CMsgClientToGCOverworldMinigameActionResponse, error) {
+	resp := &protocol.CMsgClientToGCOverworldMinigameActionResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameAction),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameActionResponse),
+		resp,
+	)
+}
+
+// SendOverworldMoveToNode sends a overworld move to node.
+// Request ID: k_EMsgClientToGCOverworldMoveToNode
+// Response ID: k_EMsgClientToGCOverworldMoveToNodeResponse
+// Request type: CMsgClientToGCOverworldMoveToNode
+// Response type: CMsgClientToGCOverworldMoveToNodeResponse
+func (d *Dota2) SendOverworldMoveToNode(
+	ctx context.Context,
+	overworldID uint32,
+	nodeID uint32,
+) (*protocol.CMsgClientToGCOverworldMoveToNodeResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldMoveToNode{
+		OverworldId: &overworldID,
+		NodeId:      &nodeID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldMoveToNodeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNode),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNodeResponse),
+		resp,
+	)
+}
+
+// SendOverworldTradeTokens sends overworld trade tokens.
+// Request ID: k_EMsgClientToGCOverworldTradeTokens
+// Response ID: k_EMsgClientToGCOverworldTradeTokensResponse
+// Request type: CMsgClientToGCOverworldTradeTokens
+// Response type: CMsgClientToGCOverworldTradeTokensResponse
+func (d *Dota2) SendOverworldTradeTokens(
+	ctx context.Context,
+	overworldID uint32,
+	tokenOffer protocol.CMsgOverworldTokenQuantity,
+	tokenRequest protocol.CMsgOverworldTokenQuantity,
+	recipe uint32,
+	encounterID uint32,
+) (*protocol.CMsgClientToGCOverworldTradeTokensResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldTradeTokens{
+		OverworldId:  &overworldID,
+		TokenOffer:   &tokenOffer,
+		TokenRequest: &tokenRequest,
+		Recipe:       &recipe,
+		EncounterId:  &encounterID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldTradeTokensResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokens),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokensResponse),
+		resp,
+	)
+}
+
+// SendOverworldVisitEncounter sends a overworld visit encounter.
+// Request ID: k_EMsgClientToGCOverworldVisitEncounter
+// Response ID: k_EMsgClientToGCOverworldVisitEncounterResponse
+// Request type: CMsgClientToGCOverworldVisitEncounter
+// Response type: CMsgClientToGCOverworldVisitEncounterResponse
+func (d *Dota2) SendOverworldVisitEncounter(
+	ctx context.Context,
+	overworldID uint32,
+	nodeID uint32,
+) (*protocol.CMsgClientToGCOverworldVisitEncounterResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldVisitEncounter{
+		OverworldId: &overworldID,
+		NodeId:      &nodeID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldVisitEncounterResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounter),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounterResponse),
+		resp,
+	)
 }
 
 // SendPartyReadyCheck sends a party ready check.
@@ -5315,7 +6112,7 @@ func (d *Dota2) SendPingData(
 func (d *Dota2) SendProfileUpdate(
 	ctx context.Context,
 	backgroundItemID uint64,
-	featuredHeroIDs []uint32,
+	featuredHeroIDs []int32,
 ) (*protocol.CMsgProfileUpdateResponse, error) {
 	req := &protocol.CMsgProfileUpdate{
 		BackgroundItemId: &backgroundItemID,
@@ -5655,6 +6452,22 @@ func (d *Dota2) SendUnderDraftSell(
 	)
 }
 
+// SendUpdateComicBookStats sends update comic book stats.
+// Request ID: k_EMsgClientToGCUpdateComicBookStats
+// Request type: CMsgClientToGCUpdateComicBookStats
+func (d *Dota2) SendUpdateComicBookStats(
+	comicID uint32,
+	stats []*protocol.CMsgClientToGCUpdateComicBookStats_SingleStat,
+	languageStats protocol.CMsgClientToGCUpdateComicBookStats_LanguageStats,
+) {
+	req := &protocol.CMsgClientToGCUpdateComicBookStats{
+		ComicId:       &comicID,
+		Stats:         stats,
+		LanguageStats: &languageStats,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCUpdateComicBookStats), req)
+}
+
 // SendUpdateFilteredPlayerNote sends a update filtered player note.
 // Request ID: k_EMsgClientToGCUpdateFilteredPlayerNote
 // Response ID: k_EMsgGCToClientUpdateFilteredPlayerNoteResponse
@@ -5769,6 +6582,18 @@ func (d *Dota2) SendWatchGame(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCWatchGameResponse),
 		resp,
 	)
+}
+
+// SetBannedHeroes sets banned heroes.
+// Request ID: k_EMsgClientToGCSetBannedHeroes
+// Request type: CMsgClientToGCSetBannedHeroes
+func (d *Dota2) SetBannedHeroes(
+	bannedHeroIDs []int32,
+) {
+	req := &protocol.CMsgClientToGCSetBannedHeroes{
+		BannedHeroIds: bannedHeroIDs,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetBannedHeroes), req)
 }
 
 // SetCompendiumSelection sets a compendium selection.
@@ -5977,7 +6802,7 @@ func (d *Dota2) SetGuildRoleOrder(
 // Response type: CMsgClientToGCSetHeroStickerResponse
 func (d *Dota2) SetHeroSticker(
 	ctx context.Context,
-	heroID uint32,
+	heroID int32,
 	newItemID uint64,
 	oldItemID uint64,
 ) (*protocol.CMsgClientToGCSetHeroStickerResponse, error) {
@@ -6788,6 +7613,12 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCommendNotification)] = d.getEventEmitter(func() events.Event {
 		return &events.CommendNotification{}
 	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelections)] = d.getEventEmitter(func() events.Event {
+		return &events.CompendiumRemoveAllSelections{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientCraftworksUserDataUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.CraftworksUserDataUpdated{}
+	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule)] = d.getEventEmitter(func() events.Event {
 		return &events.DOTAWeekendTourneySchedule{}
 	})
@@ -6796,6 +7627,15 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats)] = d.getEventEmitter(func() events.Event {
 		return &events.FantasyFinalPlayerStats{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameChallenge)] = d.getEventEmitter(func() events.Event {
+		return &events.FightingGameChallenge{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameChallengeCanceled)] = d.getEventEmitter(func() events.Event {
+		return &events.FightingGameChallengeCanceled{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameStartMatch)] = d.getEventEmitter(func() events.Event {
+		return &events.FightingGameStartMatch{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientGuildDataUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.GuildDataUpdated{}
@@ -6844,6 +7684,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientOverwatchCasesAvailable)] = d.getEventEmitter(func() events.Event {
 		return &events.OverwatchCasesAvailable{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientOverworldUserDataUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.OverworldUserDataUpdated{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientPartyBeaconUpdate)] = d.getEventEmitter(func() events.Event {
 		return &events.PartyBeaconUpdate{}
