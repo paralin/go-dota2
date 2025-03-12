@@ -24,7 +24,7 @@ API scheme representation, which is then converted into Go code.
 
 ## Implementation Progress
 
-Complete.
+Complete (almost)
 
  - [x] GC session state management
  - [x] Player profile fetching / call tracking
@@ -38,7 +38,7 @@ Complete.
     - [x] Implement normal party operations
  - [x] Code generation for API
  - [x] Code generation for events
- - [] Update [go-steam](https://github.com/paralin/go-steam) to automatically fetch and update steam CM servers
+ - [ ] Update [go-steam](https://github.com/paralin/go-steam) to automatically fetch and update steam CM servers
 
 ## SOCache Mechanism
 
