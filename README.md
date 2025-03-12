@@ -38,6 +38,7 @@ Complete.
     - [x] Implement normal party operations
  - [x] Code generation for API
  - [x] Code generation for events
+ - [] Update [go-steam](https://github.com/paralin/go-steam) to automatically fetch and update steam CM servers
 
 ## SOCache Mechanism
 
