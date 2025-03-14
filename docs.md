@@ -5,8 +5,8 @@ Most of the client-to-gc functions can be found in [client_generated.go](https:/
 
 ### Updating protobufs
 Protobuf (protocol buffers) is a protocol for exchanging serialized and structured data types. Let's take a look on a CSODOTALobby object in protobuf format:
-´
-message CSODOTALobby {
+
+    message CSODOTALobby {
 	message CExtraMsg {
 		optional uint32 id = 1;
 		optional bytes contents = 2;
@@ -34,4 +34,3 @@ message CSODOTALobby {
 	optional fixed64 server_id = 6 [default = 0];
 	optional uint32 game_mode = 3;
 	// lots of other fields
-´
