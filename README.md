@@ -85,7 +85,7 @@ I'm currently working on a detailed documentation for this library. As soon as I
 
 ### Upd: 14.03.2025
 
-The work on the documentation has  [begun](https://github.com/voltageeee/go-dota2/docs.md).
+The work on the documentation has  [begun](https://github.com/voltageeee/go-dota2/blob/master/docs.md).
 
 ## Credits
 
