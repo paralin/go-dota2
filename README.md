@@ -83,6 +83,10 @@ This library depends on [go-steam](https://github.com/paralin/go-steam).
 
 I'm currently working on a detailed documentation for this library. As soon as I'm done with basic stuff such as updating protos and generating APIs, I'll be publishing it in this repo.
 
+### Upd: 14.03.2025
+
+The work on the documentation has  [begun](https://github.com/voltageeee/go-dota2/docs.md).
+
 ## Credits
 
 Thanks to [paralin](https://github.com/paralin), the original creator of this library. It seems, however, like he doesn't really maintain it anymore. That's the reason this fork exists.
