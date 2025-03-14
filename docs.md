@@ -4,7 +4,7 @@ Note: Since the library (in theory) has all of the dota 2 GC functions integrate
 Most of the client-to-gc functions can be found in [client_generated.go](https://github.com/voltageeee/go-dota2/blob/master/client_generated.go) file.
 
 ### Updating protobufs
-Protobuf (protocol buffers) is a protocol for exchanging serialized and structured data types. Let's take a look on a CSODOTALobby object in protobuf format:
+Protobuf (protocol buffers) is a protocol for exchanging serialized and structured data types. Let's take a look at a CSODOTALobby object in protobuf format:
 
     message CSODOTALobby {
 	message CExtraMsg {
@@ -34,3 +34,5 @@ Protobuf (protocol buffers) is a protocol for exchanging serialized and structur
 	optional fixed64 server_id = 6 [default = 0];
 	optional uint32 game_mode = 3;
 	// lots of other fields
+As you see, it contains all the information the GC needs to know about a lobby. The right structure is critical, so it is important to keep your protos up-to-date. We can turn that structure up there into a golang one thanks to protoc (protoc-gen-go, to be more specific). That allows us to use those structures in our GO code.
+To generate actual protobufs for the current game version, go to the [generator](https://github.com/voltageeee/go-dota2/tree/master/generator) folder and run the update_protos.bash script (windows implementation is still in progress) (hopefully, you cloned this repo with --recurse-submodules option). This action will generate the needed protobufs. (fixme: it won't due to changes in protoc-gen-go work pricniple. I will fix the script as soon as I can).
