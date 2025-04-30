@@ -10,6 +10,7 @@ import (
 )
 
 // CSOType is a shared object type identifier.
+//
 //go:generate stringer -type=CSOType
 type CSOType int32
 
@@ -47,7 +48,12 @@ const (
 	// PlayerChallenge represents a player challenge.
 	PlayerChallenge = 2010
 	// LobbyInvite is an invitation to a lobby.
-	LobbyInvite = 2011
+	LobbyInvite              = 2011
+	CSODOTAGameAccountPlus   = 2012
+	CSODOTALobby             = 2013
+	CSODOTAStaticLobby       = 2014
+	CSODOTAServerLobby       = 2015
+	CSODOTAServerStaticLobby = 2016
 )
 
 // csoTypeCtors links type IDs to constructors.
@@ -81,6 +87,21 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 	},
 	DropRateBonus: func() proto.Message {
 		return &bgcm.CSOEconItemDropRateBonus{}
+	},
+	CSODOTAGameAccountPlus: func() proto.Message {
+		return &gcmm.CSODOTAGameAccountPlus{}
+	},
+	CSODOTALobby: func() proto.Message {
+		return &gcmm.CSODOTALobby{}
+	},
+	CSODOTAStaticLobby: func() proto.Message {
+		return &gcmm.CSODOTAStaticLobby{}
+	},
+	CSODOTAServerLobby: func() proto.Message {
+		return &bgcm.CSODOTAServerLobby{}
+	},
+	CSODOTAServerStaticLobby: func() proto.Message {
+		return &gcmm.CSODOTAServerStaticLobby{}
 	},
 }
 

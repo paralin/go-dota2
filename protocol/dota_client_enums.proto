@@ -1,6 +1,7 @@
 syntax = "proto2";
 package protocol;
 
+option go_package = "./protocol";
 import "dota_shared_enums.proto";
 
 enum ETournamentTemplate {

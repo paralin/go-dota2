@@ -5,9 +5,9 @@ import (
 	"errors"
 	"sync"
 
+	"github.com/golang/protobuf/proto"
 	"github.com/paralin/go-steam"
 	"github.com/paralin/go-steam/protocol/gamecoordinator"
-	"github.com/golang/protobuf/proto"
 	"github.com/sirupsen/logrus"
 
 	devents "github.com/paralin/go-dota2/events"

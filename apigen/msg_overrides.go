@@ -8,15 +8,15 @@ import (
 // msgSenderOverrides overrides the heuristic-generated sender parties for each message
 // Most of the MsgSenderNone messages are not GC<->Client messages.
 var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
-	dm.EDOTAGCMsg_k_EMsgGCLiveScoreboardUpdate:      MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCPlayerFailedToConnect:     MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCGCToLANServerRelayConnect: MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnect:          MsgSenderNone,
-	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnectresponse:  MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCLiveScoreboardUpdate:          MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCPlayerFailedToConnect:         MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCGCToLANServerRelayConnect:     MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnect:              MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgGCGCToRelayConnectresponse:      MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetPath: MsgSenderNone,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSurvivorsTelemetry:    MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels: MsgSenderClient,
-
-	dm.EDOTAGCMsg_k_EMsgGCRewardTutorialPrizes: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: MsgSenderGC,
 	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel:   MsgSenderGC,
@@ -97,8 +97,6 @@ var msgSenderOverrides = map[dm.EDOTAGCMsg]MsgSender{
 
 	dm.EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsRequest: MsgSenderNone,
 	dm.EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsReponse: MsgSenderNone,
-
-	dm.EDOTAGCMsg_k_EMsgGCtoServerTensorflowInstance: MsgSenderNone,
 
 	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby: MsgSenderClient,
 	dm.EDOTAGCMsg_k_EMsgGCWatchGame:            MsgSenderClient,

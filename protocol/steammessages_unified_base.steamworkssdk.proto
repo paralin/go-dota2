@@ -1,6 +1,7 @@
 syntax = "proto2";
 package protocol;
 
+option go_package = "./protocol";
 import "google/protobuf/descriptor.proto";
 
 option optimize_for = SPEED;

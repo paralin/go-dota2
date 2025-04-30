@@ -2,12 +2,13 @@ package dota2
 
 import (
 	"context"
+	"fmt"
 
-	"github.com/paralin/go-steam/protocol/gamecoordinator"
 	devents "github.com/paralin/go-dota2/events"
 	gcsdkm "github.com/paralin/go-dota2/protocol"
 	gcsm "github.com/paralin/go-dota2/protocol"
 	"github.com/paralin/go-dota2/state"
+	"github.com/paralin/go-steam/protocol/gamecoordinator"
 )
 
 // SetPlaying informs Steam we are playing / not playing Dota 2.
@@ -70,6 +71,7 @@ func (d *Dota2) handleClientWelcome(packet *gamecoordinator.GCPacket) error {
 	for _, cache := range welcome.GetOutofdateSubscribedCaches() {
 		if err := d.cache.HandleSubscribed(cache); err != nil {
 			d.le.WithError(err).Warn("unable to handle welcome cache")
+			fmt.Println(err)
 		}
 	}
 
