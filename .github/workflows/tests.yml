@@ -43,9 +43,7 @@ jobs:
           key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
       - name: Vendor Go
         run: go mod vendor
-      #- name: Lint Go
-      #  run: make lint
       - name: Lint Go
-        run: cd ~ && go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@latest && cd - && golangci-lint run --timeout=10m ./...
+        run: make lint
       - name: Test Go
         run: make test
