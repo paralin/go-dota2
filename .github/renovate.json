@@ -7,9 +7,17 @@
     "workarounds:all"
   ],
   "branchConcurrentLimit": 0,
-  "packageRules": [{
-    "matchManagers": ["gomod"],
-    "matchDepTypes": ["replace"],
-    "enabled": false
-  }]
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["replace"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchPackageNames": ["github.com/urfave/cli", "github.com/urfave/cli/v2"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ]
 }
