@@ -362,6 +362,48 @@ func (e *CommendNotification) GetEventName() string {
 	return "CommendNotification"
 }
 
+// CompendiumRemoveAllSelections event.
+// MessageID: k_EMsgGCCompendiumRemoveAllSelections
+type CompendiumRemoveAllSelections struct {
+	protocol.CMsgDOTACompendiumRemoveAllSelections
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *CompendiumRemoveAllSelections) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelections
+}
+
+// GetEventBody returns the event body.
+func (e *CompendiumRemoveAllSelections) GetEventBody() proto.Message {
+	return &e.CMsgDOTACompendiumRemoveAllSelections
+}
+
+// GetEventName returns the event name.
+func (e *CompendiumRemoveAllSelections) GetEventName() string {
+	return "CompendiumRemoveAllSelections"
+}
+
+// CraftworksUserDataUpdated event.
+// MessageID: k_EMsgGCToClientCraftworksUserDataUpdated
+type CraftworksUserDataUpdated struct {
+	protocol.CMsgGCToClientCraftworksUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *CraftworksUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientCraftworksUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *CraftworksUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientCraftworksUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *CraftworksUserDataUpdated) GetEventName() string {
+	return "CraftworksUserDataUpdated"
+}
+
 // DOTAWeekendTourneySchedule event.
 // MessageID: k_EMsgDOTAWeekendTourneySchedule
 type DOTAWeekendTourneySchedule struct {
@@ -423,6 +465,69 @@ func (e *FantasyFinalPlayerStats) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *FantasyFinalPlayerStats) GetEventName() string {
 	return "FantasyFinalPlayerStats"
+}
+
+// FightingGameChallenge event.
+// MessageID: k_EMsgGCToClientFightingGameChallenge
+type FightingGameChallenge struct {
+	protocol.CMsgGCToClientFightingGameChallenge
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *FightingGameChallenge) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameChallenge
+}
+
+// GetEventBody returns the event body.
+func (e *FightingGameChallenge) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientFightingGameChallenge
+}
+
+// GetEventName returns the event name.
+func (e *FightingGameChallenge) GetEventName() string {
+	return "FightingGameChallenge"
+}
+
+// FightingGameChallengeCanceled event.
+// MessageID: k_EMsgGCToClientFightingGameChallengeCanceled
+type FightingGameChallengeCanceled struct {
+	protocol.CMsgGCToClientFightingGameChallengeCanceled
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *FightingGameChallengeCanceled) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameChallengeCanceled
+}
+
+// GetEventBody returns the event body.
+func (e *FightingGameChallengeCanceled) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientFightingGameChallengeCanceled
+}
+
+// GetEventName returns the event name.
+func (e *FightingGameChallengeCanceled) GetEventName() string {
+	return "FightingGameChallengeCanceled"
+}
+
+// FightingGameStartMatch event.
+// MessageID: k_EMsgGCToClientFightingGameStartMatch
+type FightingGameStartMatch struct {
+	protocol.CMsgGCToClientFightingGameStartMatch
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *FightingGameStartMatch) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientFightingGameStartMatch
+}
+
+// GetEventBody returns the event body.
+func (e *FightingGameStartMatch) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientFightingGameStartMatch
+}
+
+// GetEventName returns the event name.
+func (e *FightingGameStartMatch) GetEventName() string {
+	return "FightingGameStartMatch"
 }
 
 // GuildDataUpdated event.
@@ -759,6 +864,27 @@ func (e *OverwatchCasesAvailable) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *OverwatchCasesAvailable) GetEventName() string {
 	return "OverwatchCasesAvailable"
+}
+
+// OverworldUserDataUpdated event.
+// MessageID: k_EMsgGCToClientOverworldUserDataUpdated
+type OverworldUserDataUpdated struct {
+	protocol.CMsgGCToClientOverworldUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *OverworldUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientOverworldUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *OverworldUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientOverworldUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *OverworldUserDataUpdated) GetEventName() string {
+	return "OverworldUserDataUpdated"
 }
 
 // PartyBeaconUpdate event.

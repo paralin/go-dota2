@@ -43,7 +43,7 @@ cp -ra ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/orig/google/protobuf/
 
 cd ${WORK_DIR}
 # Add valve_extensions.proto
-cp ${REPO_PROTOS}/valve_extensions.proto ${WORK_DIR}/orig/
+# cp ${REPO_PROTOS}/valve_extensions.proto ${WORK_DIR}/orig/
 # Add package lines to each protobuf file.
 for f in ${WORK_DIR}/orig/*.proto ; do
     fname=$(basename $f)
@@ -52,7 +52,7 @@ for f in ${WORK_DIR}/orig/*.proto ; do
         sed -e "s/optional \./optional /g" \
             -e "s/required \./required /g" \
             -e "s/repeated \./repeated /g" \
-            -e "s#google/protobuf/valve_extensions.proto#valve_extensions.proto#g" \
+            -e "s#google/protobuf/valve_extensions.proto#valveextensions.proto#g" \
             -e "s/\t\./\t/g" >\
             ${WORK_DIR}/protos/${fname}
 done
@@ -60,10 +60,6 @@ done
 # Fixup some issues in the protos
 sed -i -e "s/(.CMsgSteamLearn/(CMsgSteamLearn/g" ${WORK_DIR}/protos/steammessages_steamlearn.steamworkssdk.proto
 
-# Generate protobufs
-cd ${WORK_DIR}/protos
-protoc -I $(pwd) --go_out=. $(pwd)/*.proto
-
 # Move final files out.
-rsync -rv --delete $(pwd)/ ${REPO_ROOT}/protocol/
-
+rsync -rv --delete $(pwd)/protos/ ${REPO_ROOT}/protocol/
+echo "package protocol" > ${REPO_ROOT}/protocol/protocol.go

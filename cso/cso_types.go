@@ -10,6 +10,7 @@ import (
 )
 
 // CSOType is a shared object type identifier.
+//
 //go:generate stringer -type=CSOType
 type CSOType int32
 
