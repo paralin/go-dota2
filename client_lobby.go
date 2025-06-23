@@ -77,8 +77,8 @@ func (d *Dota2) ClearTeamFromLobby() {
 	)
 }
 
-// AcceptInvite accepts a lobby invite.
-func (d *Dota2) AcceptInvite(lobbyId uint64, accept bool) {
+// RespondLobbyInvite responds to a lobby invite.
+func (d *Dota2) RespondLobbyInvite(lobbyId uint64, accept bool) {
 	d.write(uint32(gcm.EGCBaseMsg_k_EMsgGCLobbyInviteResponse), &gcm.CMsgLobbyInviteResponse{
 		LobbyId: &lobbyId,
 		Accept:  &accept,
