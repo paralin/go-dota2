@@ -223,6 +223,8 @@ const (
 	ETalentContentStatus_TALENT_CONTENT_STATUS_INVALID   ETalentContentStatus = 0
 	ETalentContentStatus_TALENT_CONTENT_STATUS_PENDING   ETalentContentStatus = 1
 	ETalentContentStatus_TALENT_CONTENT_STATUS_EVALUATED ETalentContentStatus = 2
+	ETalentContentStatus_TALENT_CONTENT_STATUS_REJECTED  ETalentContentStatus = 3
+	ETalentContentStatus_TALENT_CONTENT_STATUS_APPROVED  ETalentContentStatus = 4
 )
 
 // Enum value maps for ETalentContentStatus.
@@ -231,11 +233,15 @@ var (
 		0: "TALENT_CONTENT_STATUS_INVALID",
 		1: "TALENT_CONTENT_STATUS_PENDING",
 		2: "TALENT_CONTENT_STATUS_EVALUATED",
+		3: "TALENT_CONTENT_STATUS_REJECTED",
+		4: "TALENT_CONTENT_STATUS_APPROVED",
 	}
 	ETalentContentStatus_value = map[string]int32{
 		"TALENT_CONTENT_STATUS_INVALID":   0,
 		"TALENT_CONTENT_STATUS_PENDING":   1,
 		"TALENT_CONTENT_STATUS_EVALUATED": 2,
+		"TALENT_CONTENT_STATUS_REJECTED":  3,
+		"TALENT_CONTENT_STATUS_APPROVED":  4,
 	}
 )
 
@@ -606,6 +612,7 @@ type CMsgSetTalentContentResponse_EResult int32
 const (
 	CMsgSetTalentContentResponse_k_eSuccess       CMsgSetTalentContentResponse_EResult = 0
 	CMsgSetTalentContentResponse_k_eInternalError CMsgSetTalentContentResponse_EResult = 1
+	CMsgSetTalentContentResponse_k_eOutOfDate     CMsgSetTalentContentResponse_EResult = 2
 )
 
 // Enum value maps for CMsgSetTalentContentResponse_EResult.
@@ -613,10 +620,12 @@ var (
 	CMsgSetTalentContentResponse_EResult_name = map[int32]string{
 		0: "k_eSuccess",
 		1: "k_eInternalError",
+		2: "k_eOutOfDate",
 	}
 	CMsgSetTalentContentResponse_EResult_value = map[string]int32{
 		"k_eSuccess":       0,
 		"k_eInternalError": 1,
+		"k_eOutOfDate":     2,
 	}
 )
 
@@ -683,6 +692,7 @@ const (
 	CMsgDPCEvent_SUMMER_2023_MAJOR                         CMsgDPCEvent_ELeagueEvent = 20
 	CMsgDPCEvent_INTERNATIONAL_2023                        CMsgDPCEvent_ELeagueEvent = 21
 	CMsgDPCEvent_INTERNATIONAL_2024                        CMsgDPCEvent_ELeagueEvent = 23
+	CMsgDPCEvent_INTERNATIONAL_2025                        CMsgDPCEvent_ELeagueEvent = 24
 )
 
 // Enum value maps for CMsgDPCEvent_ELeagueEvent.
@@ -711,6 +721,7 @@ var (
 		20: "SUMMER_2023_MAJOR",
 		21: "INTERNATIONAL_2023",
 		23: "INTERNATIONAL_2024",
+		24: "INTERNATIONAL_2025",
 	}
 	CMsgDPCEvent_ELeagueEvent_value = map[string]int32{
 		"EVENT_INVALID":                             0,
@@ -736,6 +747,7 @@ var (
 		"SUMMER_2023_MAJOR":                         20,
 		"INTERNATIONAL_2023":                        21,
 		"INTERNATIONAL_2024":                        23,
+		"INTERNATIONAL_2025":                        24,
 	}
 )
 
@@ -2975,17 +2987,18 @@ func (x *CMsgTeamFanContentAutographStatus_TeamStatus) GetWorkshopAccountId() ui
 }
 
 type CMsgTalentContentStatus_TalentDetails struct {
-	state             protoimpl.MessageState          `protogen:"open.v1"`
-	AccountId         *uint32                         `protobuf:"varint,1,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
-	FullName          *string                         `protobuf:"bytes,2,opt,name=full_name,json=fullName" json:"full_name,omitempty"`
-	Nickname          *string                         `protobuf:"bytes,3,opt,name=nickname" json:"nickname,omitempty"`
-	WorkshopItemId    *uint32                         `protobuf:"varint,4,opt,name=workshop_item_id,json=workshopItemId" json:"workshop_item_id,omitempty"`
-	ZipFile           *string                         `protobuf:"bytes,5,opt,name=zip_file,json=zipFile" json:"zip_file,omitempty"`
-	Status            *ETalentContentStatus           `protobuf:"varint,6,opt,name=status,enum=protocol.ETalentContentStatus,def=0" json:"status,omitempty"`
-	AssetStatus       []*CMsgTalentContentAssetStatus `protobuf:"bytes,7,rep,name=asset_status,json=assetStatus" json:"asset_status,omitempty"`
-	BroadcastLanguage *uint32                         `protobuf:"varint,8,opt,name=broadcast_language,json=broadcastLanguage" json:"broadcast_language,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state               protoimpl.MessageState          `protogen:"open.v1"`
+	AccountId           *uint32                         `protobuf:"varint,1,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	FullName            *string                         `protobuf:"bytes,2,opt,name=full_name,json=fullName" json:"full_name,omitempty"`
+	Nickname            *string                         `protobuf:"bytes,3,opt,name=nickname" json:"nickname,omitempty"`
+	WorkshopItemId      *uint32                         `protobuf:"varint,4,opt,name=workshop_item_id,json=workshopItemId" json:"workshop_item_id,omitempty"`
+	ZipFile             *string                         `protobuf:"bytes,5,opt,name=zip_file,json=zipFile" json:"zip_file,omitempty"`
+	Status              *ETalentContentStatus           `protobuf:"varint,6,opt,name=status,enum=protocol.ETalentContentStatus,def=0" json:"status,omitempty"`
+	AssetStatus         []*CMsgTalentContentAssetStatus `protobuf:"bytes,7,rep,name=asset_status,json=assetStatus" json:"asset_status,omitempty"`
+	BroadcastLanguage   *uint32                         `protobuf:"varint,8,opt,name=broadcast_language,json=broadcastLanguage" json:"broadcast_language,omitempty"`
+	SubmissionTimestamp *uint32                         `protobuf:"varint,9,opt,name=submission_timestamp,json=submissionTimestamp" json:"submission_timestamp,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 // Default values for CMsgTalentContentStatus_TalentDetails fields.
@@ -3075,6 +3088,13 @@ func (x *CMsgTalentContentStatus_TalentDetails) GetAssetStatus() []*CMsgTalentCo
 func (x *CMsgTalentContentStatus_TalentDetails) GetBroadcastLanguage() uint32 {
 	if x != nil && x.BroadcastLanguage != nil {
 		return *x.BroadcastLanguage
+	}
+	return 0
+}
+
+func (x *CMsgTalentContentStatus_TalentDetails) GetSubmissionTimestamp() uint32 {
+	if x != nil && x.SubmissionTimestamp != nil {
+		return *x.SubmissionTimestamp
 	}
 	return 0
 }
@@ -3967,9 +3987,9 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"asset_type\x18\x01 \x01(\x0e2!.protocol.ETalentContentAssetType:\x1fk_eTalentContentAssetType_PhotoR\tassetType\x12\x1f\n" +
 	"\vasset_index\x18\x02 \x01(\rR\n" +
 	"assetIndex\x12h\n" +
-	"\fasset_status\x18\x03 \x01(\x0e2#.protocol.ETalentContentAssetStatus: k_eTalentContentAssetStatus_NoneR\vassetStatus\"\xef\x03\n" +
+	"\fasset_status\x18\x03 \x01(\x0e2#.protocol.ETalentContentAssetStatus: k_eTalentContentAssetStatus_NoneR\vassetStatus\"\xa2\x04\n" +
 	"\x17CMsgTalentContentStatus\x12T\n" +
-	"\rtalent_status\x18\x01 \x03(\v2/.protocol.CMsgTalentContentStatus.TalentDetailsR\ftalentStatus\x1a\xfd\x02\n" +
+	"\rtalent_status\x18\x01 \x03(\v2/.protocol.CMsgTalentContentStatus.TalentDetailsR\ftalentStatus\x1a\xb0\x03\n" +
 	"\rTalentDetails\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x1b\n" +
@@ -3979,14 +3999,16 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"\bzip_file\x18\x05 \x01(\tR\azipFile\x12U\n" +
 	"\x06status\x18\x06 \x01(\x0e2\x1e.protocol.ETalentContentStatus:\x1dTALENT_CONTENT_STATUS_INVALIDR\x06status\x12I\n" +
 	"\fasset_status\x18\a \x03(\v2&.protocol.CMsgTalentContentAssetStatusR\vassetStatus\x12-\n" +
-	"\x12broadcast_language\x18\b \x01(\rR\x11broadcastLanguage\"\xa3\x01\n" +
+	"\x12broadcast_language\x18\b \x01(\rR\x11broadcastLanguage\x121\n" +
+	"\x14submission_timestamp\x18\t \x01(\rR\x13submissionTimestamp\"\xb5\x01\n" +
 	"\x1cCMsgSetTalentContentResponse\x12R\n" +
 	"\x06result\x18\x01 \x01(\x0e2..protocol.CMsgSetTalentContentResponse.EResult:\n" +
-	"k_eSuccessR\x06result\"/\n" +
+	"k_eSuccessR\x06result\"A\n" +
 	"\aEResult\x12\x0e\n" +
 	"\n" +
 	"k_eSuccess\x10\x00\x12\x14\n" +
-	"\x10k_eInternalError\x10\x01\"\xb2\x11\n" +
+	"\x10k_eInternalError\x10\x01\x12\x10\n" +
+	"\fk_eOutOfDate\x10\x02\"\xca\x11\n" +
 	"\fCMsgDPCEvent\x12H\n" +
 	"\x05event\x18\x01 \x01(\x0e2#.protocol.CMsgDPCEvent.ELeagueEvent:\rEVENT_INVALIDR\x05event\x12O\n" +
 	"\n" +
@@ -4013,7 +4035,7 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"\x06region\x18\x01 \x01(\x0e2\x17.protocol.ELeagueRegion:\x13LEAGUE_REGION_UNSETR\x06region\x12L\n" +
 	"\bdivision\x18\x02 \x01(\x0e2\x19.protocol.ELeagueDivision:\x15LEAGUE_DIVISION_UNSETR\bdivision\x12\x1b\n" +
 	"\tleague_id\x18\x03 \x01(\rR\bleagueId\x128\n" +
-	"\x06phases\x18\x04 \x03(\v2 .protocol.CMsgDPCEvent.PhaseInfoR\x06phases\"\xeb\x04\n" +
+	"\x06phases\x18\x04 \x03(\v2 .protocol.CMsgDPCEvent.PhaseInfoR\x06phases\"\x83\x05\n" +
 	"\fELeagueEvent\x12\x11\n" +
 	"\rEVENT_INVALID\x10\x00\x12\x16\n" +
 	"\x12SPRING_2021_LEAGUE\x10\x01\x12\x15\n" +
@@ -4038,7 +4060,8 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"\x12SUMMER_2023_LEAGUE\x10\x13\x12\x15\n" +
 	"\x11SUMMER_2023_MAJOR\x10\x14\x12\x16\n" +
 	"\x12INTERNATIONAL_2023\x10\x15\x12\x16\n" +
-	"\x12INTERNATIONAL_2024\x10\x17\"\xc9\x01\n" +
+	"\x12INTERNATIONAL_2024\x10\x17\x12\x16\n" +
+	"\x12INTERNATIONAL_2025\x10\x18\"\xc9\x01\n" +
 	"\x11ELeagueEventPhase\x12\x11\n" +
 	"\rPHASE_INVALID\x10\x00\x12\r\n" +
 	"\tWILD_CARD\x10\x01\x12\x0f\n" +
@@ -4166,11 +4189,13 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"\x1aETeamFanContentAssetStatus\x12!\n" +
 	"\x1dk_eFanContentAssetStatus_None\x10\x00\x12%\n" +
 	"!k_eFanContentAssetStatus_Approved\x10\x01\x12%\n" +
-	"!k_eFanContentAssetStatus_Rejected\x10\x02*\x81\x01\n" +
+	"!k_eFanContentAssetStatus_Rejected\x10\x02*\xc9\x01\n" +
 	"\x14ETalentContentStatus\x12!\n" +
 	"\x1dTALENT_CONTENT_STATUS_INVALID\x10\x00\x12!\n" +
 	"\x1dTALENT_CONTENT_STATUS_PENDING\x10\x01\x12#\n" +
-	"\x1fTALENT_CONTENT_STATUS_EVALUATED\x10\x02*\x91\x01\n" +
+	"\x1fTALENT_CONTENT_STATUS_EVALUATED\x10\x02\x12\"\n" +
+	"\x1eTALENT_CONTENT_STATUS_REJECTED\x10\x03\x12\"\n" +
+	"\x1eTALENT_CONTENT_STATUS_APPROVED\x10\x04*\x91\x01\n" +
 	"\x17ETalentContentAssetType\x12#\n" +
 	"\x1fk_eTalentContentAssetType_Photo\x10\x01\x12'\n" +
 	"#k_eTalentContentAssetType_Autograph\x10\x02\x12(\n" +

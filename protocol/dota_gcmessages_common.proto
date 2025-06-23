@@ -1821,3 +1821,4 @@ message CDotaMsg_PredictionResult {
 	optional bool correct = 3;
 	repeated CDotaMsg_PredictionResult.Prediction predictions = 4;
 }
+

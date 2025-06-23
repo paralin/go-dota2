@@ -2,7 +2,6 @@ package dota2
 
 import (
 	"context"
-
 	"github.com/paralin/go-dota2/events"
 	"github.com/paralin/go-dota2/protocol"
 	"github.com/paralin/go-steam/steamid"
@@ -7173,19 +7172,8 @@ func (d *Dota2) SubmitDraftTriviaMatchAnswer(
 // Response type: CMsgGCPlayerInfoSubmitResponse
 func (d *Dota2) SubmitInfoPlayer(
 	ctx context.Context,
-	name string,
-	countryCode string,
-	fantasyRole uint32,
-	teamID uint32,
-	sponsor string,
+	req *protocol.CMsgGCPlayerInfoSubmit,
 ) (*protocol.CMsgGCPlayerInfoSubmitResponse, error) {
-	req := &protocol.CMsgGCPlayerInfoSubmit{
-		Name:        &name,
-		CountryCode: &countryCode,
-		FantasyRole: &fantasyRole,
-		TeamId:      &teamID,
-		Sponsor:     &sponsor,
-	}
 	resp := &protocol.CMsgGCPlayerInfoSubmitResponse{}
 
 	return resp, d.MakeRequest(

@@ -702,7 +702,6 @@ const (
 	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch                EDOTAGCMsg = 8729
 	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse        EDOTAGCMsg = 8730
 	EDOTAGCMsg_k_EMsgGCToClientUnderDraftGoldUpdated                              EDOTAGCMsg = 8731
-	EDOTAGCMsg_k_EMsgGCToServerRecordTrainingData                                 EDOTAGCMsg = 8732
 	EDOTAGCMsg_k_EMsgSignOutBounties                                              EDOTAGCMsg = 8733
 	EDOTAGCMsg_k_EMsgLobbyFeaturedGamemodeProgress                                EDOTAGCMsg = 8734
 	EDOTAGCMsg_k_EMsgLobbyGauntletProgress                                        EDOTAGCMsg = 8735
@@ -1666,7 +1665,6 @@ var (
 		8729: "k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch",
 		8730: "k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse",
 		8731: "k_EMsgGCToClientUnderDraftGoldUpdated",
-		8732: "k_EMsgGCToServerRecordTrainingData",
 		8733: "k_EMsgSignOutBounties",
 		8734: "k_EMsgLobbyFeaturedGamemodeProgress",
 		8735: "k_EMsgLobbyGauntletProgress",
@@ -2627,7 +2625,6 @@ var (
 		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch":                8729,
 		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse":        8730,
 		"k_EMsgGCToClientUnderDraftGoldUpdated":                              8731,
-		"k_EMsgGCToServerRecordTrainingData":                                 8732,
 		"k_EMsgSignOutBounties":                                              8733,
 		"k_EMsgLobbyFeaturedGamemodeProgress":                                8734,
 		"k_EMsgLobbyGauntletProgress":                                        8735,
@@ -2953,7 +2950,7 @@ var File_dota_gcmessages_msgid_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"\n" +
-	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\x9f\xc6\x02\n" +
+	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\xf6\xc5\x02\n" +
 	"\n" +
 	"EDOTAGCMsg\x12\x15\n" +
 	"\x10k_EMsgGCDOTABase\x10\xd86\x12\x1d\n" +
@@ -3632,8 +3629,7 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"6k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse\x10\x98D\x128\n" +
 	"3k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch\x10\x99D\x12@\n" +
 	";k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse\x10\x9aD\x12*\n" +
-	"%k_EMsgGCToClientUnderDraftGoldUpdated\x10\x9bD\x12'\n" +
-	"\"k_EMsgGCToServerRecordTrainingData\x10\x9cD\x12\x1a\n" +
+	"%k_EMsgGCToClientUnderDraftGoldUpdated\x10\x9bD\x12\x1a\n" +
 	"\x15k_EMsgSignOutBounties\x10\x9dD\x12(\n" +
 	"#k_EMsgLobbyFeaturedGamemodeProgress\x10\x9eD\x12 \n" +
 	"\x1bk_EMsgLobbyGauntletProgress\x10\x9fD\x121\n" +

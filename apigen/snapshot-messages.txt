@@ -675,7 +675,6 @@
 8729	CLIENT	k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch	RequestAccountGuildPersonaInfoBatch
 8730	GC    	k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse
 8731	GC    	k_EMsgGCToClientUnderDraftGoldUpdated
-8732	N/A   	k_EMsgGCToServerRecordTrainingData
 8733	N/A   	k_EMsgSignOutBounties
 8734	CLIENT	k_EMsgLobbyFeaturedGamemodeProgress	SendLobbyFeaturedGamemodeProgress
 8735	N/A   	k_EMsgLobbyGauntletProgress

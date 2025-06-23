@@ -2610,6 +2610,7 @@ type CSODOTAServerLobby struct {
 	state                protoimpl.MessageState      `protogen:"open.v1"`
 	AllMembers           []*CSODOTAServerLobbyMember `protobuf:"bytes,1,rep,name=all_members,json=allMembers" json:"all_members,omitempty"`
 	ExtraStartupMessages []*CSODOTALobby_CExtraMsg   `protobuf:"bytes,2,rep,name=extra_startup_messages,json=extraStartupMessages" json:"extra_startup_messages,omitempty"`
+	BroadcastActive      *bool                       `protobuf:"varint,3,opt,name=broadcast_active,json=broadcastActive" json:"broadcast_active,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -2656,6 +2657,13 @@ func (x *CSODOTAServerLobby) GetExtraStartupMessages() []*CSODOTALobby_CExtraMsg
 		return x.ExtraStartupMessages
 	}
 	return nil
+}
+
+func (x *CSODOTAServerLobby) GetBroadcastActive() bool {
+	if x != nil && x.BroadcastActive != nil {
+		return *x.BroadcastActive
+	}
+	return false
 }
 
 type CSODOTAStaticLobby struct {
@@ -2723,6 +2731,7 @@ type CSODOTAServerStaticLobby struct {
 	AllMembers                  []*CSODOTAServerStaticLobbyMember `protobuf:"bytes,1,rep,name=all_members,json=allMembers" json:"all_members,omitempty"`
 	PostPatchStrategyTimeBuffer *float32                          `protobuf:"fixed32,2,opt,name=post_patch_strategy_time_buffer,json=postPatchStrategyTimeBuffer" json:"post_patch_strategy_time_buffer,omitempty"`
 	LobbyEventPoints            []*CMsgLobbyEventPoints           `protobuf:"bytes,3,rep,name=lobby_event_points,json=lobbyEventPoints" json:"lobby_event_points,omitempty"`
+	BroadcastUrl                *string                           `protobuf:"bytes,4,opt,name=broadcast_url,json=broadcastUrl" json:"broadcast_url,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -2776,6 +2785,13 @@ func (x *CSODOTAServerStaticLobby) GetLobbyEventPoints() []*CMsgLobbyEventPoints
 		return x.LobbyEventPoints
 	}
 	return nil
+}
+
+func (x *CSODOTAServerStaticLobby) GetBroadcastUrl() string {
+	if x != nil && x.BroadcastUrl != nil {
+		return *x.BroadcastUrl
+	}
+	return ""
 }
 
 type CMsgAdditionalLobbyStartupAccountData struct {
@@ -3852,21 +3868,23 @@ const file_dota_gcmessages_common_lobby_proto_rawDesc = "" +
 	"\tSPECTATOR\x10\v\x12\x0f\n" +
 	"\vEVENT_MATCH\x10\f\x12\x13\n" +
 	"\x0fNEW_PLAYER_POOL\x10\x0e\x12\x15\n" +
-	"\x11FEATURED_GAMEMODE\x10\x0f\"\xb1\x01\n" +
+	"\x11FEATURED_GAMEMODE\x10\x0f\"\xdc\x01\n" +
 	"\x12CSODOTAServerLobby\x12C\n" +
 	"\vall_members\x18\x01 \x03(\v2\".protocol.CSODOTAServerLobbyMemberR\n" +
 	"allMembers\x12V\n" +
-	"\x16extra_startup_messages\x18\x02 \x03(\v2 .protocol.CSODOTALobby.CExtraMsgR\x14extraStartupMessages\"\xb7\x01\n" +
+	"\x16extra_startup_messages\x18\x02 \x03(\v2 .protocol.CSODOTALobby.CExtraMsgR\x14extraStartupMessages\x12)\n" +
+	"\x10broadcast_active\x18\x03 \x01(\bR\x0fbroadcastActive\"\xb7\x01\n" +
 	"\x12CSODOTAStaticLobby\x12C\n" +
 	"\vall_members\x18\x01 \x03(\v2\".protocol.CSODOTAStaticLobbyMemberR\n" +
 	"allMembers\x12&\n" +
 	"\x0fis_player_draft\x18\x02 \x01(\bR\risPlayerDraft\x124\n" +
-	"\x17is_last_match_in_series\x18\x03 \x01(\bR\x13isLastMatchInSeries\"\xf9\x01\n" +
+	"\x17is_last_match_in_series\x18\x03 \x01(\bR\x13isLastMatchInSeries\"\x9e\x02\n" +
 	"\x18CSODOTAServerStaticLobby\x12I\n" +
 	"\vall_members\x18\x01 \x03(\v2(.protocol.CSODOTAServerStaticLobbyMemberR\n" +
 	"allMembers\x12D\n" +
 	"\x1fpost_patch_strategy_time_buffer\x18\x02 \x01(\x02R\x1bpostPatchStrategyTimeBuffer\x12L\n" +
-	"\x12lobby_event_points\x18\x03 \x03(\v2\x1e.protocol.CMsgLobbyEventPointsR\x10lobbyEventPoints\"\xbc\x05\n" +
+	"\x12lobby_event_points\x18\x03 \x03(\v2\x1e.protocol.CMsgLobbyEventPointsR\x10lobbyEventPoints\x12#\n" +
+	"\rbroadcast_url\x18\x04 \x01(\tR\fbroadcastUrl\"\xbc\x05\n" +
 	"%CMsgAdditionalLobbyStartupAccountData\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12J\n" +

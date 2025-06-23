@@ -10225,14 +10225,17 @@ func (*CMsgGCNotificationsMarkReadRequest) Descriptor() ([]byte, []int) {
 }
 
 type CMsgGCPlayerInfoSubmit struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	CountryCode   *string                `protobuf:"bytes,2,opt,name=country_code,json=countryCode" json:"country_code,omitempty"`
-	FantasyRole   *uint32                `protobuf:"varint,3,opt,name=fantasy_role,json=fantasyRole" json:"fantasy_role,omitempty"`
-	TeamId        *uint32                `protobuf:"varint,4,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
-	Sponsor       *string                `protobuf:"bytes,5,opt,name=sponsor" json:"sponsor,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	PlayerName           *string                `protobuf:"bytes,1,opt,name=player_name,json=playerName" json:"player_name,omitempty"`
+	CountryCode          *string                `protobuf:"bytes,2,opt,name=country_code,json=countryCode" json:"country_code,omitempty"`
+	FantasyRole          *uint32                `protobuf:"varint,3,opt,name=fantasy_role,json=fantasyRole" json:"fantasy_role,omitempty"`
+	TeamId               *uint32                `protobuf:"varint,4,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
+	Sponsor              *string                `protobuf:"bytes,5,opt,name=sponsor" json:"sponsor,omitempty"`
+	AcceptedProAgreement *bool                  `protobuf:"varint,6,opt,name=accepted_pro_agreement,json=acceptedProAgreement" json:"accepted_pro_agreement,omitempty"`
+	RegistrationPeriod   *uint32                `protobuf:"varint,7,opt,name=registration_period,json=registrationPeriod" json:"registration_period,omitempty"`
+	RealName             *string                `protobuf:"bytes,8,opt,name=real_name,json=realName" json:"real_name,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *CMsgGCPlayerInfoSubmit) Reset() {
@@ -10265,9 +10268,9 @@ func (*CMsgGCPlayerInfoSubmit) Descriptor() ([]byte, []int) {
 	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{77}
 }
 
-func (x *CMsgGCPlayerInfoSubmit) GetName() string {
-	if x != nil && x.Name != nil {
-		return *x.Name
+func (x *CMsgGCPlayerInfoSubmit) GetPlayerName() string {
+	if x != nil && x.PlayerName != nil {
+		return *x.PlayerName
 	}
 	return ""
 }
@@ -10296,6 +10299,27 @@ func (x *CMsgGCPlayerInfoSubmit) GetTeamId() uint32 {
 func (x *CMsgGCPlayerInfoSubmit) GetSponsor() string {
 	if x != nil && x.Sponsor != nil {
 		return *x.Sponsor
+	}
+	return ""
+}
+
+func (x *CMsgGCPlayerInfoSubmit) GetAcceptedProAgreement() bool {
+	if x != nil && x.AcceptedProAgreement != nil {
+		return *x.AcceptedProAgreement
+	}
+	return false
+}
+
+func (x *CMsgGCPlayerInfoSubmit) GetRegistrationPeriod() uint32 {
+	if x != nil && x.RegistrationPeriod != nil {
+		return *x.RegistrationPeriod
+	}
+	return 0
+}
+
+func (x *CMsgGCPlayerInfoSubmit) GetRealName() string {
+	if x != nil && x.RealName != nil {
+		return *x.RealName
 	}
 	return ""
 }
@@ -33243,13 +33267,17 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\x11ERROR_UNSPECIFIED\x10\x01\"Z\n" +
 	"\x1bCMsgGCNotificationsResponse\x12;\n" +
 	"\x06update\x18\x01 \x01(\v2#.protocol.CMsgGCNotificationsUpdateR\x06update\"$\n" +
-	"\"CMsgGCNotificationsMarkReadRequest\"\xa5\x01\n" +
-	"\x16CMsgGCPlayerInfoSubmit\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12!\n" +
+	"\"CMsgGCNotificationsMarkReadRequest\"\xb6\x02\n" +
+	"\x16CMsgGCPlayerInfoSubmit\x12\x1f\n" +
+	"\vplayer_name\x18\x01 \x01(\tR\n" +
+	"playerName\x12!\n" +
 	"\fcountry_code\x18\x02 \x01(\tR\vcountryCode\x12!\n" +
 	"\ffantasy_role\x18\x03 \x01(\rR\vfantasyRole\x12\x17\n" +
 	"\ateam_id\x18\x04 \x01(\rR\x06teamId\x12\x18\n" +
-	"\asponsor\x18\x05 \x01(\tR\asponsor\"\xd7\x01\n" +
+	"\asponsor\x18\x05 \x01(\tR\asponsor\x124\n" +
+	"\x16accepted_pro_agreement\x18\x06 \x01(\bR\x14acceptedProAgreement\x12/\n" +
+	"\x13registration_period\x18\a \x01(\rR\x12registrationPeriod\x12\x1b\n" +
+	"\treal_name\x18\b \x01(\tR\brealName\"\xd7\x01\n" +
 	"\x1eCMsgGCPlayerInfoSubmitResponse\x12Q\n" +
 	"\x06result\x18\x01 \x01(\x0e20.protocol.CMsgGCPlayerInfoSubmitResponse.EResult:\aSUCCESSR\x06result\"b\n" +
 	"\aEResult\x12\v\n" +

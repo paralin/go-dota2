@@ -60,6 +60,9 @@ done
 # Fixup some issues in the protos
 sed -i -e "s/(.CMsgSteamLearn/(CMsgSteamLearn/g" ${WORK_DIR}/protos/steammessages_steamlearn.steamworkssdk.proto
 
+# Remove the problematic CDotaMsgStructuredTooltipProperties message block
+sed -i -e '/^message CDotaMsgStructuredTooltipProperties {/,/^}$/d' ${WORK_DIR}/protos/dota_gcmessages_common.proto
+
 # Move final files out.
 rsync -rv --delete $(pwd)/protos/ ${REPO_ROOT}/protocol/
 echo "package protocol" > ${REPO_ROOT}/protocol/protocol.go

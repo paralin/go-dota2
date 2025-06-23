@@ -114,13 +114,15 @@ func (CMsgBotWorldState_UnitType) EnumDescriptor() ([]byte, []int) {
 type CMsgBotWorldState_CourierState int32
 
 const (
-	CMsgBotWorldState_COURIER_STATE_INIT              CMsgBotWorldState_CourierState = -1
-	CMsgBotWorldState_COURIER_STATE_IDLE              CMsgBotWorldState_CourierState = 0
-	CMsgBotWorldState_COURIER_STATE_AT_BASE           CMsgBotWorldState_CourierState = 1
-	CMsgBotWorldState_COURIER_STATE_MOVING            CMsgBotWorldState_CourierState = 2
-	CMsgBotWorldState_COURIER_STATE_DELIVERING_ITEMS  CMsgBotWorldState_CourierState = 3
-	CMsgBotWorldState_COURIER_STATE_RETURNING_TO_BASE CMsgBotWorldState_CourierState = 4
-	CMsgBotWorldState_COURIER_STATE_DEAD              CMsgBotWorldState_CourierState = 5
+	CMsgBotWorldState_COURIER_STATE_INIT                 CMsgBotWorldState_CourierState = -1
+	CMsgBotWorldState_COURIER_STATE_IDLE                 CMsgBotWorldState_CourierState = 0
+	CMsgBotWorldState_COURIER_STATE_AT_BASE              CMsgBotWorldState_CourierState = 1
+	CMsgBotWorldState_COURIER_STATE_MOVING               CMsgBotWorldState_CourierState = 2
+	CMsgBotWorldState_COURIER_STATE_DELIVERING_ITEMS     CMsgBotWorldState_CourierState = 3
+	CMsgBotWorldState_COURIER_STATE_RETURNING_TO_BASE    CMsgBotWorldState_CourierState = 4
+	CMsgBotWorldState_COURIER_STATE_DEAD                 CMsgBotWorldState_CourierState = 5
+	CMsgBotWorldState_COURIER_STATE_GOING_TO_SECRET_SHOP CMsgBotWorldState_CourierState = 6
+	CMsgBotWorldState_COURIER_STATE_AT_SECRET_SHOP       CMsgBotWorldState_CourierState = 7
 )
 
 // Enum value maps for CMsgBotWorldState_CourierState.
@@ -133,15 +135,19 @@ var (
 		3:  "COURIER_STATE_DELIVERING_ITEMS",
 		4:  "COURIER_STATE_RETURNING_TO_BASE",
 		5:  "COURIER_STATE_DEAD",
+		6:  "COURIER_STATE_GOING_TO_SECRET_SHOP",
+		7:  "COURIER_STATE_AT_SECRET_SHOP",
 	}
 	CMsgBotWorldState_CourierState_value = map[string]int32{
-		"COURIER_STATE_INIT":              -1,
-		"COURIER_STATE_IDLE":              0,
-		"COURIER_STATE_AT_BASE":           1,
-		"COURIER_STATE_MOVING":            2,
-		"COURIER_STATE_DELIVERING_ITEMS":  3,
-		"COURIER_STATE_RETURNING_TO_BASE": 4,
-		"COURIER_STATE_DEAD":              5,
+		"COURIER_STATE_INIT":                 -1,
+		"COURIER_STATE_IDLE":                 0,
+		"COURIER_STATE_AT_BASE":              1,
+		"COURIER_STATE_MOVING":               2,
+		"COURIER_STATE_DELIVERING_ITEMS":     3,
+		"COURIER_STATE_RETURNING_TO_BASE":    4,
+		"COURIER_STATE_DEAD":                 5,
+		"COURIER_STATE_GOING_TO_SECRET_SHOP": 6,
+		"COURIER_STATE_AT_SECRET_SHOP":       7,
 	}
 )
 
@@ -2627,7 +2633,7 @@ var File_dota_gcmessages_common_bot_script_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_common_bot_script_proto_rawDesc = "" +
 	"\n" +
-	"'dota_gcmessages_common_bot_script.proto\x12\bprotocol\x1a\x15valveextensions.proto\"\x90M\n" +
+	"'dota_gcmessages_common_bot_script.proto\x12\bprotocol\x1a\x15valveextensions.proto\"\xdaM\n" +
 	"\x11CMsgBotWorldState\x12\x17\n" +
 	"\ateam_id\x18\x01 \x01(\rR\x06teamId\x12\x1b\n" +
 	"\tgame_time\x18\x02 \x01(\x02R\bgameTime\x12\x1b\n" +
@@ -2924,7 +2930,7 @@ const file_dota_gcmessages_common_bot_script_proto_rawDesc = "" +
 	"\bBUILDING\x10\n" +
 	"\x12\v\n" +
 	"\aCOURIER\x10\v\x12\b\n" +
-	"\x04WARD\x10\f\"\xdd\x01\n" +
+	"\x04WARD\x10\f\"\xa7\x02\n" +
 	"\fCourierState\x12\x1f\n" +
 	"\x12COURIER_STATE_INIT\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x16\n" +
 	"\x12COURIER_STATE_IDLE\x10\x00\x12\x19\n" +
@@ -2932,7 +2938,9 @@ const file_dota_gcmessages_common_bot_script_proto_rawDesc = "" +
 	"\x14COURIER_STATE_MOVING\x10\x02\x12\"\n" +
 	"\x1eCOURIER_STATE_DELIVERING_ITEMS\x10\x03\x12#\n" +
 	"\x1fCOURIER_STATE_RETURNING_TO_BASE\x10\x04\x12\x16\n" +
-	"\x12COURIER_STATE_DEAD\x10\x05"
+	"\x12COURIER_STATE_DEAD\x10\x05\x12&\n" +
+	"\"COURIER_STATE_GOING_TO_SECRET_SHOP\x10\x06\x12 \n" +
+	"\x1cCOURIER_STATE_AT_SECRET_SHOP\x10\a"
 
 var (
 	file_dota_gcmessages_common_bot_script_proto_rawDescOnce sync.Once

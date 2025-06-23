@@ -225,6 +225,7 @@ type CSourceTVGameSmall struct {
 	WeekendTourneyBracketRound *uint32                      `protobuf:"varint,29,opt,name=weekend_tourney_bracket_round,json=weekendTourneyBracketRound" json:"weekend_tourney_bracket_round,omitempty"`
 	CustomGameDifficulty       *uint32                      `protobuf:"varint,32,opt,name=custom_game_difficulty,json=customGameDifficulty" json:"custom_game_difficulty,omitempty"`
 	IsPlayerDraft              *bool                        `protobuf:"varint,33,opt,name=is_player_draft,json=isPlayerDraft" json:"is_player_draft,omitempty"`
+	IsWatchEligible            *bool                        `protobuf:"varint,34,opt,name=is_watch_eligible,json=isWatchEligible" json:"is_watch_eligible,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -479,6 +480,13 @@ func (x *CSourceTVGameSmall) GetCustomGameDifficulty() uint32 {
 func (x *CSourceTVGameSmall) GetIsPlayerDraft() bool {
 	if x != nil && x.IsPlayerDraft != nil {
 		return *x.IsPlayerDraft
+	}
+	return false
+}
+
+func (x *CSourceTVGameSmall) GetIsWatchEligible() bool {
+	if x != nil && x.IsWatchEligible != nil {
+		return *x.IsWatchEligible
 	}
 	return false
 }
@@ -1289,6 +1297,7 @@ type CMsgWatchGameResponse struct {
 	GameServerSteamid       *uint64                                `protobuf:"fixed64,5,opt,name=game_server_steamid,json=gameServerSteamid" json:"game_server_steamid,omitempty"`
 	WatchServerSteamid      *uint64                                `protobuf:"fixed64,6,opt,name=watch_server_steamid,json=watchServerSteamid" json:"watch_server_steamid,omitempty"`
 	WatchTvUniqueSecretCode *uint64                                `protobuf:"fixed64,7,opt,name=watch_tv_unique_secret_code,json=watchTvUniqueSecretCode" json:"watch_tv_unique_secret_code,omitempty"`
+	BroadcastUrl            *string                                `protobuf:"bytes,8,opt,name=broadcast_url,json=broadcastUrl" json:"broadcast_url,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -1375,6 +1384,13 @@ func (x *CMsgWatchGameResponse) GetWatchTvUniqueSecretCode() uint64 {
 		return *x.WatchTvUniqueSecretCode
 	}
 	return 0
+}
+
+func (x *CMsgWatchGameResponse) GetBroadcastUrl() string {
+	if x != nil && x.BroadcastUrl != nil {
+		return *x.BroadcastUrl
+	}
+	return ""
 }
 
 type CMsgPartyLeaderWatchGamePrompt struct {
@@ -1889,8 +1905,7 @@ var File_dota_gcmessages_client_watch_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_client_watch_proto_rawDesc = "" +
 	"\n" +
-	"\"dota_gcmessages_client_watch.proto\x12\bprotocol\x1a\x1cdota_gcmessages_common.proto\"\xfe\n" +
-	"\n" +
+	"\"dota_gcmessages_client_watch.proto\x12\bprotocol\x1a\x1cdota_gcmessages_common.proto\"\xaa\v\n" +
 	"\x12CSourceTVGameSmall\x12#\n" +
 	"\ractivate_time\x18\x01 \x01(\rR\factivateTime\x12'\n" +
 	"\x0fdeactivate_time\x18\x02 \x01(\rR\x0edeactivateTime\x12&\n" +
@@ -1931,7 +1946,8 @@ const file_dota_gcmessages_client_watch_proto_rawDesc = "" +
 	"\x1bweekend_tourney_skill_level\x18\x1c \x01(\rR\x18weekendTourneySkillLevel\x12A\n" +
 	"\x1dweekend_tourney_bracket_round\x18\x1d \x01(\rR\x1aweekendTourneyBracketRound\x124\n" +
 	"\x16custom_game_difficulty\x18  \x01(\rR\x14customGameDifficulty\x12&\n" +
-	"\x0fis_player_draft\x18! \x01(\bR\risPlayerDraft\x1aq\n" +
+	"\x0fis_player_draft\x18! \x01(\bR\risPlayerDraft\x12*\n" +
+	"\x11is_watch_eligible\x18\" \x01(\bR\x0fisWatchEligible\x1aq\n" +
 	"\x06Player\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x17\n" +
@@ -2013,7 +2029,7 @@ const file_dota_gcmessages_client_watch_proto_rawDesc = "" +
 	"\x14watch_server_steamid\x18\x03 \x01(\x06R\x12watchServerSteamid\x12\x19\n" +
 	"\blobby_id\x18\x04 \x01(\x04R\alobbyId\x12\x18\n" +
 	"\aregions\x18\x05 \x03(\rR\aregions\"\x15\n" +
-	"\x13CMsgCancelWatchGame\"\xda\x04\n" +
+	"\x13CMsgCancelWatchGame\"\xff\x04\n" +
 	"\x15CMsgWatchGameResponse\x12d\n" +
 	"\x11watch_game_result\x18\x01 \x01(\x0e2/.protocol.CMsgWatchGameResponse.WatchGameResult:\aPENDINGR\x0fwatchGameResult\x121\n" +
 	"\x15source_tv_public_addr\x18\x02 \x01(\rR\x12sourceTvPublicAddr\x123\n" +
@@ -2021,7 +2037,8 @@ const file_dota_gcmessages_client_watch_proto_rawDesc = "" +
 	"\x0esource_tv_port\x18\x04 \x01(\rR\fsourceTvPort\x12.\n" +
 	"\x13game_server_steamid\x18\x05 \x01(\x06R\x11gameServerSteamid\x120\n" +
 	"\x14watch_server_steamid\x18\x06 \x01(\x06R\x12watchServerSteamid\x12<\n" +
-	"\x1bwatch_tv_unique_secret_code\x18\a \x01(\x06R\x17watchTvUniqueSecretCode\"\xac\x01\n" +
+	"\x1bwatch_tv_unique_secret_code\x18\a \x01(\x06R\x17watchTvUniqueSecretCode\x12#\n" +
+	"\rbroadcast_url\x18\b \x01(\tR\fbroadcastUrl\"\xac\x01\n" +
 	"\x0fWatchGameResult\x12\v\n" +
 	"\aPENDING\x10\x00\x12\t\n" +
 	"\x05READY\x10\x01\x12\x16\n" +

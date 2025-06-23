@@ -405,21 +405,31 @@ const (
 	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION  ESteamLearnInferenceResult = 7
 	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND          ESteamLearnInferenceResult = 8
 	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_TOO_BUSY                   ESteamLearnInferenceResult = 9
+	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_FAIL       ESteamLearnInferenceResult = 10
+	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_NO_KEYS    ESteamLearnInferenceResult = 11
+	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_DISABLED                         ESteamLearnInferenceResult = 12
+	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_NO_OUTPUT                  ESteamLearnInferenceResult = 13
+	ESteamLearnInferenceResult_STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE    ESteamLearnInferenceResult = 14
 )
 
 // Enum value maps for ESteamLearnInferenceResult.
 var (
 	ESteamLearnInferenceResult_name = map[int32]string{
-		0: "STEAMLEARN_INFERENCE_ERROR",
-		1: "STEAMLEARN_INFERENCE_SUCCESS",
-		2: "STEAMLEARN_INFERENCE_ERROR_INVALID_PROJECT_ID",
-		3: "STEAMLEARN_INFERENCE_ERROR_MISSING_CACHED_SCHEMA_DATA",
-		4: "STEAMLEARN_INFERENCE_ERROR_NO_PUBLISHED_CONFIG",
-		5: "STEAMLEARN_INFERENCE_ERROR_FORBIDDEN",
-		6: "STEAMLEARN_INFERENCE_ERROR_INVALID_TIMESTAMP",
-		7: "STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION",
-		8: "STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND",
-		9: "STEAMLEARN_INFERENCE_ERROR_TOO_BUSY",
+		0:  "STEAMLEARN_INFERENCE_ERROR",
+		1:  "STEAMLEARN_INFERENCE_SUCCESS",
+		2:  "STEAMLEARN_INFERENCE_ERROR_INVALID_PROJECT_ID",
+		3:  "STEAMLEARN_INFERENCE_ERROR_MISSING_CACHED_SCHEMA_DATA",
+		4:  "STEAMLEARN_INFERENCE_ERROR_NO_PUBLISHED_CONFIG",
+		5:  "STEAMLEARN_INFERENCE_ERROR_FORBIDDEN",
+		6:  "STEAMLEARN_INFERENCE_ERROR_INVALID_TIMESTAMP",
+		7:  "STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION",
+		8:  "STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND",
+		9:  "STEAMLEARN_INFERENCE_ERROR_TOO_BUSY",
+		10: "STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_FAIL",
+		11: "STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_NO_KEYS",
+		12: "STEAMLEARN_INFERENCE_DISABLED",
+		13: "STEAMLEARN_INFERENCE_ERROR_NO_OUTPUT",
+		14: "STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE",
 	}
 	ESteamLearnInferenceResult_value = map[string]int32{
 		"STEAMLEARN_INFERENCE_ERROR":                            0,
@@ -432,6 +442,11 @@ var (
 		"STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION":  7,
 		"STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND":          8,
 		"STEAMLEARN_INFERENCE_ERROR_TOO_BUSY":                   9,
+		"STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_FAIL":       10,
+		"STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_NO_KEYS":    11,
+		"STEAMLEARN_INFERENCE_DISABLED":                         12,
+		"STEAMLEARN_INFERENCE_ERROR_NO_OUTPUT":                  13,
+		"STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE":    14,
 	}
 )
 
@@ -1619,21 +1634,125 @@ func (x *CMsgSteamLearn_GetAccessTokens_Response) GetAccessTokens() *CMsgSteamLe
 	return nil
 }
 
+type CMsgInferenceIterateBeamSearch struct {
+	state                    protoimpl.MessageState                             `protogen:"open.v1"`
+	BeamLength               *uint32                                            `protobuf:"varint,1,opt,name=beam_length,json=beamLength" json:"beam_length,omitempty"`
+	BeamWidth                *uint32                                            `protobuf:"varint,2,opt,name=beam_width,json=beamWidth" json:"beam_width,omitempty"`
+	ItemDecay                *float32                                           `protobuf:"fixed32,3,opt,name=item_decay,json=itemDecay" json:"item_decay,omitempty"`
+	NextItemCount            *uint32                                            `protobuf:"varint,4,opt,name=next_item_count,json=nextItemCount" json:"next_item_count,omitempty"`
+	ItemScalars              []*CMsgInferenceIterateBeamSearch_CustomItemScalar `protobuf:"bytes,5,rep,name=item_scalars,json=itemScalars" json:"item_scalars,omitempty"`
+	ItemSequenceEnd          *uint32                                            `protobuf:"varint,7,opt,name=item_sequence_end,json=itemSequenceEnd" json:"item_sequence_end,omitempty"`
+	ItemSequenceEndThreshold *float32                                           `protobuf:"fixed32,8,opt,name=item_sequence_end_threshold,json=itemSequenceEndThreshold" json:"item_sequence_end_threshold,omitempty"`
+	RepeatMultiplier         *float32                                           `protobuf:"fixed32,9,opt,name=repeat_multiplier,json=repeatMultiplier" json:"repeat_multiplier,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *CMsgInferenceIterateBeamSearch) Reset() {
+	*x = CMsgInferenceIterateBeamSearch{}
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgInferenceIterateBeamSearch) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgInferenceIterateBeamSearch) ProtoMessage() {}
+
+func (x *CMsgInferenceIterateBeamSearch) ProtoReflect() protoreflect.Message {
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgInferenceIterateBeamSearch.ProtoReflect.Descriptor instead.
+func (*CMsgInferenceIterateBeamSearch) Descriptor() ([]byte, []int) {
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetBeamLength() uint32 {
+	if x != nil && x.BeamLength != nil {
+		return *x.BeamLength
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetBeamWidth() uint32 {
+	if x != nil && x.BeamWidth != nil {
+		return *x.BeamWidth
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetItemDecay() float32 {
+	if x != nil && x.ItemDecay != nil {
+		return *x.ItemDecay
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetNextItemCount() uint32 {
+	if x != nil && x.NextItemCount != nil {
+		return *x.NextItemCount
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetItemScalars() []*CMsgInferenceIterateBeamSearch_CustomItemScalar {
+	if x != nil {
+		return x.ItemScalars
+	}
+	return nil
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetItemSequenceEnd() uint32 {
+	if x != nil && x.ItemSequenceEnd != nil {
+		return *x.ItemSequenceEnd
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetItemSequenceEndThreshold() float32 {
+	if x != nil && x.ItemSequenceEndThreshold != nil {
+		return *x.ItemSequenceEndThreshold
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch) GetRepeatMultiplier() float32 {
+	if x != nil && x.RepeatMultiplier != nil {
+		return *x.RepeatMultiplier
+	}
+	return 0
+}
+
 type CMsgSteamLearn_Inference_Request struct {
-	state            protoimpl.MessageState  `protogen:"open.v1"`
-	AccessToken      *string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
-	ProjectId        *uint32                 `protobuf:"varint,3,opt,name=project_id,json=projectId" json:"project_id,omitempty"`
-	PublishedVersion *uint32                 `protobuf:"varint,4,opt,name=published_version,json=publishedVersion" json:"published_version,omitempty"`
-	OverrideTrainId  *uint32                 `protobuf:"varint,5,opt,name=override_train_id,json=overrideTrainId" json:"override_train_id,omitempty"`
-	Data             *CMsgSteamLearnDataList `protobuf:"bytes,6,opt,name=data" json:"data,omitempty"`
-	AdditionalData   []float32               `protobuf:"fixed32,7,rep,name=additional_data,json=additionalData" json:"additional_data,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state             protoimpl.MessageState          `protogen:"open.v1"`
+	AccessToken       *string                         `protobuf:"bytes,1,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
+	ProjectId         *uint32                         `protobuf:"varint,3,opt,name=project_id,json=projectId" json:"project_id,omitempty"`
+	PublishedVersion  *uint32                         `protobuf:"varint,4,opt,name=published_version,json=publishedVersion" json:"published_version,omitempty"`
+	OverrideTrainId   *uint32                         `protobuf:"varint,5,opt,name=override_train_id,json=overrideTrainId" json:"override_train_id,omitempty"`
+	Data              *CMsgSteamLearnDataList         `protobuf:"bytes,6,opt,name=data" json:"data,omitempty"`
+	AdditionalData    []float32                       `protobuf:"fixed32,7,rep,name=additional_data,json=additionalData" json:"additional_data,omitempty"`
+	Keys              []uint64                        `protobuf:"varint,8,rep,name=keys" json:"keys,omitempty"`
+	NamedInference    *string                         `protobuf:"bytes,9,opt,name=named_inference,json=namedInference" json:"named_inference,omitempty"`
+	IterateBeamSearch *CMsgInferenceIterateBeamSearch `protobuf:"bytes,13,opt,name=iterate_beam_search,json=iterateBeamSearch" json:"iterate_beam_search,omitempty"`
+	DebugSpew         *uint32                         `protobuf:"varint,14,opt,name=debug_spew,json=debugSpew" json:"debug_spew,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *CMsgSteamLearn_Inference_Request) Reset() {
 	*x = CMsgSteamLearn_Inference_Request{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[18]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1645,7 +1764,7 @@ func (x *CMsgSteamLearn_Inference_Request) String() string {
 func (*CMsgSteamLearn_Inference_Request) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_Inference_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[18]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1658,7 +1777,7 @@ func (x *CMsgSteamLearn_Inference_Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSteamLearn_Inference_Request.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_Inference_Request) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{18}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CMsgSteamLearn_Inference_Request) GetAccessToken() string {
@@ -1703,6 +1822,34 @@ func (x *CMsgSteamLearn_Inference_Request) GetAdditionalData() []float32 {
 	return nil
 }
 
+func (x *CMsgSteamLearn_Inference_Request) GetKeys() []uint64 {
+	if x != nil {
+		return x.Keys
+	}
+	return nil
+}
+
+func (x *CMsgSteamLearn_Inference_Request) GetNamedInference() string {
+	if x != nil && x.NamedInference != nil {
+		return *x.NamedInference
+	}
+	return ""
+}
+
+func (x *CMsgSteamLearn_Inference_Request) GetIterateBeamSearch() *CMsgInferenceIterateBeamSearch {
+	if x != nil {
+		return x.IterateBeamSearch
+	}
+	return nil
+}
+
+func (x *CMsgSteamLearn_Inference_Request) GetDebugSpew() uint32 {
+	if x != nil && x.DebugSpew != nil {
+		return *x.DebugSpew
+	}
+	return 0
+}
+
 type CMsgSteamLearn_InferenceMetadata_Request struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	AccessToken      *string                `protobuf:"bytes,1,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
@@ -1715,7 +1862,7 @@ type CMsgSteamLearn_InferenceMetadata_Request struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Request) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Request{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[19]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1727,7 +1874,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Request) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Request) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[19]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1740,7 +1887,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Request) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Request.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Request) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{19}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Request) GetAccessToken() string {
@@ -1781,7 +1928,7 @@ type CMsgSteamLearn_InferenceMetadataBackend_Request struct {
 
 func (x *CMsgSteamLearn_InferenceMetadataBackend_Request) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadataBackend_Request{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[20]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1793,7 +1940,7 @@ func (x *CMsgSteamLearn_InferenceMetadataBackend_Request) String() string {
 func (*CMsgSteamLearn_InferenceMetadataBackend_Request) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadataBackend_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[20]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1806,7 +1953,7 @@ func (x *CMsgSteamLearn_InferenceMetadataBackend_Request) ProtoReflect() protore
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadataBackend_Request.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadataBackend_Request) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{20}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadataBackend_Request) GetProjectId() uint32 {
@@ -1845,7 +1992,7 @@ const (
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[21]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1857,7 +2004,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[21]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1870,7 +2017,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response) GetInferenceMetadataResult() ESteamLearnInferenceMetadataResult {
@@ -1945,7 +2092,7 @@ type CMsgSteamLearn_InferenceBackend_Response struct {
 
 func (x *CMsgSteamLearn_InferenceBackend_Response) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[22]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1957,7 +2104,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response) String() string {
 func (*CMsgSteamLearn_InferenceBackend_Response) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[22]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1970,7 +2117,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response) GetOutputs() []*CMsgSteamLearn_InferenceBackend_Response_Output {
@@ -1996,7 +2143,7 @@ const (
 
 func (x *CMsgSteamLearn_Inference_Response) Reset() {
 	*x = CMsgSteamLearn_Inference_Response{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[23]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2008,7 +2155,7 @@ func (x *CMsgSteamLearn_Inference_Response) String() string {
 func (*CMsgSteamLearn_Inference_Response) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_Inference_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[23]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2021,7 +2168,7 @@ func (x *CMsgSteamLearn_Inference_Response) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgSteamLearn_Inference_Response.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_Inference_Response) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *CMsgSteamLearn_Inference_Response) GetInferenceResult() ESteamLearnInferenceResult {
@@ -2055,7 +2202,7 @@ type CMsgSteamLearnAccessTokens_CacheDataAccessToken struct {
 
 func (x *CMsgSteamLearnAccessTokens_CacheDataAccessToken) Reset() {
 	*x = CMsgSteamLearnAccessTokens_CacheDataAccessToken{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[24]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2067,7 +2214,7 @@ func (x *CMsgSteamLearnAccessTokens_CacheDataAccessToken) String() string {
 func (*CMsgSteamLearnAccessTokens_CacheDataAccessToken) ProtoMessage() {}
 
 func (x *CMsgSteamLearnAccessTokens_CacheDataAccessToken) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[24]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2107,7 +2254,7 @@ type CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken struct {
 
 func (x *CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken) Reset() {
 	*x = CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[25]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2119,7 +2266,7 @@ func (x *CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken) String() string 
 func (*CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken) ProtoMessage() {}
 
 func (x *CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[25]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2159,7 +2306,7 @@ type CMsgSteamLearnAccessTokens_InferenceAccessToken struct {
 
 func (x *CMsgSteamLearnAccessTokens_InferenceAccessToken) Reset() {
 	*x = CMsgSteamLearnAccessTokens_InferenceAccessToken{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[26]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2171,7 +2318,7 @@ func (x *CMsgSteamLearnAccessTokens_InferenceAccessToken) String() string {
 func (*CMsgSteamLearnAccessTokens_InferenceAccessToken) ProtoMessage() {}
 
 func (x *CMsgSteamLearnAccessTokens_InferenceAccessToken) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[26]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2201,6 +2348,58 @@ func (x *CMsgSteamLearnAccessTokens_InferenceAccessToken) GetAccessToken() strin
 	return ""
 }
 
+type CMsgInferenceIterateBeamSearch_CustomItemScalar struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *uint32                `protobuf:"varint,1,opt,name=item" json:"item,omitempty"`
+	Scale         *float32               `protobuf:"fixed32,2,opt,name=scale" json:"scale,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgInferenceIterateBeamSearch_CustomItemScalar) Reset() {
+	*x = CMsgInferenceIterateBeamSearch_CustomItemScalar{}
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgInferenceIterateBeamSearch_CustomItemScalar) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgInferenceIterateBeamSearch_CustomItemScalar) ProtoMessage() {}
+
+func (x *CMsgInferenceIterateBeamSearch_CustomItemScalar) ProtoReflect() protoreflect.Message {
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgInferenceIterateBeamSearch_CustomItemScalar.ProtoReflect.Descriptor instead.
+func (*CMsgInferenceIterateBeamSearch_CustomItemScalar) Descriptor() ([]byte, []int) {
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{18, 0}
+}
+
+func (x *CMsgInferenceIterateBeamSearch_CustomItemScalar) GetItem() uint32 {
+	if x != nil && x.Item != nil {
+		return *x.Item
+	}
+	return 0
+}
+
+func (x *CMsgInferenceIterateBeamSearch_CustomItemScalar) GetScale() float32 {
+	if x != nil && x.Scale != nil {
+		return *x.Scale
+	}
+	return 0
+}
+
 type CMsgSteamLearn_InferenceMetadata_Response_RowRange struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	MinRow        *uint64                `protobuf:"varint,1,opt,name=min_row,json=minRow" json:"min_row,omitempty"`
@@ -2211,7 +2410,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_RowRange struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_RowRange) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_RowRange{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[27]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2223,7 +2422,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_RowRange) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response_RowRange) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_RowRange) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[27]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2236,7 +2435,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_RowRange) ProtoReflect() prot
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_RowRange.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_RowRange) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 0}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 0}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_RowRange) GetMinRow() uint64 {
@@ -2264,7 +2463,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_Range struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_Range) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_Range{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[28]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2276,7 +2475,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_Range) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response_Range) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_Range) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[28]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2289,7 +2488,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_Range) ProtoReflect() protore
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_Range.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_Range) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 1}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 1}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_Range) GetDataElementPath() string {
@@ -2324,7 +2523,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_StdDev struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_StdDev) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_StdDev{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[29]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2336,7 +2535,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_StdDev) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response_StdDev) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_StdDev) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[29]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2349,7 +2548,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_StdDev) ProtoReflect() protor
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_StdDev.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_StdDev) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 2}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 2}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_StdDev) GetDataElementPath() string {
@@ -2384,7 +2583,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_CompactTable struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_CompactTable{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[30]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2396,7 +2595,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable) String() string
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[30]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2409,7 +2608,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable) ProtoReflect() 
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_CompactTable.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 3}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 3}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable) GetName() string {
@@ -2445,7 +2644,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_SequenceTable struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_SequenceTable{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[31]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2457,7 +2656,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) String() strin
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[31]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2470,7 +2669,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) ProtoReflect()
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_SequenceTable.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 4}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 4}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable) GetName() string {
@@ -2511,7 +2710,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_KMeans struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_KMeans{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[32]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2523,7 +2722,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response_KMeans) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[32]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2536,7 +2735,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans) ProtoReflect() protor
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_KMeans.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_KMeans) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 5}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 5}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans) GetName() string {
@@ -2565,7 +2764,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[33]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2577,7 +2776,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) String() s
 func (*CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[33]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2590,7 +2789,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) ProtoRefle
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 6}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 6}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram) GetMinValue() float32 {
@@ -2636,7 +2835,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_AppInfo struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfo) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_AppInfo{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[34]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2648,7 +2847,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfo) String() string {
 func (*CMsgSteamLearn_InferenceMetadata_Response_AppInfo) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[34]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2661,7 +2860,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfo) ProtoReflect() proto
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_AppInfo.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_AppInfo) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 7}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 7}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfo) GetCountryAllow() string {
@@ -2723,7 +2922,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[35]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2735,7 +2934,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) String() string
 func (*CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[35]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2748,7 +2947,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) ProtoReflect() 
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 8}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 8}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry) GetKey() uint32 {
@@ -2776,7 +2975,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[36]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2788,7 +2987,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) String() 
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[36]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2801,7 +3000,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) ProtoRefl
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 3, 0}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 3, 0}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry) GetValue() uint32 {
@@ -2835,7 +3034,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry struc
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[37]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2847,7 +3046,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) 
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[37]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2860,7 +3059,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) 
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 3, 1}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 3, 1}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry) GetKey() uint32 {
@@ -2887,7 +3086,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry str
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[38]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2899,7 +3098,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[38]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2912,7 +3111,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 3, 2}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 3, 2}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry) GetKey() uint32 {
@@ -2940,7 +3139,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[39]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2952,7 +3151,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) String()
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[39]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2965,7 +3164,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) ProtoRef
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 4, 0}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 4, 0}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry) GetValues() []uint32 {
@@ -2999,7 +3198,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry stru
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[40]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3011,7 +3210,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry)
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[40]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3024,7 +3223,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry)
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 4, 1}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 4, 1}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry) GetKey() uint32 {
@@ -3051,7 +3250,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry st
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[41]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3063,7 +3262,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntr
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[41]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3076,7 +3275,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntr
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 4, 2}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 4, 2}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry) GetKey() string {
@@ -3107,7 +3306,7 @@ type CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster struct {
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) Reset() {
 	*x = CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[42]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3119,7 +3318,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) String() stri
 func (*CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[42]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3132,7 +3331,7 @@ func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) ProtoReflect(
 
 // Deprecated: Use CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{21, 5, 0}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 5, 0}
 }
 
 func (x *CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster) GetX() float32 {
@@ -3186,7 +3385,7 @@ type CMsgSteamLearn_InferenceBackend_Response_Sequence struct {
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_Sequence{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[43]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3198,7 +3397,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) String() string {
 func (*CMsgSteamLearn_InferenceBackend_Response_Sequence) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[43]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3211,7 +3410,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) ProtoReflect() proto
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_Sequence.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_Sequence) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 0}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 0}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) GetValue() []float32 {
@@ -3223,14 +3422,14 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Sequence) GetValue() []float32
 
 type CMsgSteamLearn_InferenceBackend_Response_RegressionOutput struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Value         *float32               `protobuf:"fixed32,1,opt,name=value" json:"value,omitempty"`
+	Value         *float32               `protobuf:"fixed32,2,opt,name=value" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_RegressionOutput{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[44]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3242,7 +3441,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) String() str
 func (*CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[44]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3255,7 +3454,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) ProtoReflect
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_RegressionOutput.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 1}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 1}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) GetValue() float32 {
@@ -3263,6 +3462,50 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput) GetValue() f
 		return *x.Value
 	}
 	return 0
+}
+
+type CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Value         []float32              `protobuf:"fixed32,3,rep,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) Reset() {
+	*x = CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput{}
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) ProtoMessage() {}
+
+func (x *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) ProtoReflect() protoreflect.Message {
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput.ProtoReflect.Descriptor instead.
+func (*CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) Descriptor() ([]byte, []int) {
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 2}
+}
+
+func (x *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput) GetValue() []float32 {
+	if x != nil {
+		return x.Value
+	}
+	return nil
 }
 
 type CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput struct {
@@ -3274,7 +3517,7 @@ type CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput struct {
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[45]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3286,7 +3529,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) Stri
 func (*CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[45]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3299,7 +3542,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) Prot
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 2}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 3}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput) GetValue() float32 {
@@ -3320,7 +3563,7 @@ type CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput stru
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[46]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3332,7 +3575,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput)
 func (*CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[46]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3345,7 +3588,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput)
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 3}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 4}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput) GetWeight() []float32 {
@@ -3380,7 +3623,7 @@ type CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput stru
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[47]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3392,7 +3635,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput)
 func (*CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[47]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3405,7 +3648,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput)
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 4}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 5}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput) GetWeight() []float32 {
@@ -3437,6 +3680,7 @@ type CMsgSteamLearn_InferenceBackend_Response_Output struct {
 	//	*CMsgSteamLearn_InferenceBackend_Response_Output_CategoricalCrossentropy
 	//	*CMsgSteamLearn_InferenceBackend_Response_Output_MultiBinaryCrossentropy
 	//	*CMsgSteamLearn_InferenceBackend_Response_Output_Regression
+	//	*CMsgSteamLearn_InferenceBackend_Response_Output_NamedInference
 	ResponseType  isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType `protobuf_oneof:"ResponseType"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -3444,7 +3688,7 @@ type CMsgSteamLearn_InferenceBackend_Response_Output struct {
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Output) Reset() {
 	*x = CMsgSteamLearn_InferenceBackend_Response_Output{}
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[48]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3456,7 +3700,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Output) String() string {
 func (*CMsgSteamLearn_InferenceBackend_Response_Output) ProtoMessage() {}
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Output) ProtoReflect() protoreflect.Message {
-	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[48]
+	mi := &file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3469,7 +3713,7 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Output) ProtoReflect() protore
 
 // Deprecated: Use CMsgSteamLearn_InferenceBackend_Response_Output.ProtoReflect.Descriptor instead.
 func (*CMsgSteamLearn_InferenceBackend_Response_Output) Descriptor() ([]byte, []int) {
-	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{22, 5}
+	return file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP(), []int{23, 6}
 }
 
 func (x *CMsgSteamLearn_InferenceBackend_Response_Output) GetResponseType() isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType {
@@ -3515,6 +3759,15 @@ func (x *CMsgSteamLearn_InferenceBackend_Response_Output) GetRegression() *CMsgS
 	return nil
 }
 
+func (x *CMsgSteamLearn_InferenceBackend_Response_Output) GetNamedInference() *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput {
+	if x != nil {
+		if x, ok := x.ResponseType.(*CMsgSteamLearn_InferenceBackend_Response_Output_NamedInference); ok {
+			return x.NamedInference
+		}
+	}
+	return nil
+}
+
 type isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType interface {
 	isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType()
 }
@@ -3535,6 +3788,10 @@ type CMsgSteamLearn_InferenceBackend_Response_Output_Regression struct {
 	Regression *CMsgSteamLearn_InferenceBackend_Response_RegressionOutput `protobuf:"bytes,4,opt,name=regression,oneof"`
 }
 
+type CMsgSteamLearn_InferenceBackend_Response_Output_NamedInference struct {
+	NamedInference *CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput `protobuf:"bytes,5,opt,name=named_inference,json=namedInference,oneof"`
+}
+
 func (*CMsgSteamLearn_InferenceBackend_Response_Output_BinaryCrossentropy) isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType() {
 }
 
@@ -3545,6 +3802,9 @@ func (*CMsgSteamLearn_InferenceBackend_Response_Output_MultiBinaryCrossentropy) 
 }
 
 func (*CMsgSteamLearn_InferenceBackend_Response_Output_Regression) isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType() {
+}
+
+func (*CMsgSteamLearn_InferenceBackend_Response_Output_NamedInference) isCMsgSteamLearn_InferenceBackend_Response_Output_ResponseType() {
 }
 
 var File_steammessages_steamlearn_steamworkssdk_proto protoreflect.FileDescriptor
@@ -3637,7 +3897,22 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	"\x05appid\x18\x01 \x01(\rR\x05appid\"\xdc\x01\n" +
 	"'CMsgSteamLearn_GetAccessTokens_Response\x12f\n" +
 	"\x06result\x18\x01 \x01(\x0e2*.protocol.ESteamLearnGetAccessTokensResult:\"STEAMLEARN_GET_ACCESS_TOKENS_ERRORR\x06result\x12I\n" +
-	"\raccess_tokens\x18\x02 \x01(\v2$.protocol.CMsgSteamLearnAccessTokensR\faccessTokens\"\x9c\x02\n" +
+	"\raccess_tokens\x18\x02 \x01(\v2$.protocol.CMsgSteamLearnAccessTokensR\faccessTokens\"\xdb\x03\n" +
+	"\x1eCMsgInferenceIterateBeamSearch\x12\x1f\n" +
+	"\vbeam_length\x18\x01 \x01(\rR\n" +
+	"beamLength\x12\x1d\n" +
+	"\n" +
+	"beam_width\x18\x02 \x01(\rR\tbeamWidth\x12\x1d\n" +
+	"\n" +
+	"item_decay\x18\x03 \x01(\x02R\titemDecay\x12&\n" +
+	"\x0fnext_item_count\x18\x04 \x01(\rR\rnextItemCount\x12\\\n" +
+	"\fitem_scalars\x18\x05 \x03(\v29.protocol.CMsgInferenceIterateBeamSearch.CustomItemScalarR\vitemScalars\x12*\n" +
+	"\x11item_sequence_end\x18\a \x01(\rR\x0fitemSequenceEnd\x12=\n" +
+	"\x1bitem_sequence_end_threshold\x18\b \x01(\x02R\x18itemSequenceEndThreshold\x12+\n" +
+	"\x11repeat_multiplier\x18\t \x01(\x02R\x10repeatMultiplier\x1a<\n" +
+	"\x10CustomItemScalar\x12\x12\n" +
+	"\x04item\x18\x01 \x01(\rR\x04item\x12\x14\n" +
+	"\x05scale\x18\x02 \x01(\x02R\x05scale\"\xd2\x03\n" +
 	" CMsgSteamLearn_Inference_Request\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12\x1d\n" +
 	"\n" +
@@ -3645,7 +3920,12 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	"\x11published_version\x18\x04 \x01(\rR\x10publishedVersion\x12*\n" +
 	"\x11override_train_id\x18\x05 \x01(\rR\x0foverrideTrainId\x124\n" +
 	"\x04data\x18\x06 \x01(\v2 .protocol.CMsgSteamLearnDataListR\x04data\x12'\n" +
-	"\x0fadditional_data\x18\a \x03(\x02R\x0eadditionalData\"\xc5\x01\n" +
+	"\x0fadditional_data\x18\a \x03(\x02R\x0eadditionalData\x12\x12\n" +
+	"\x04keys\x18\b \x03(\x04R\x04keys\x12'\n" +
+	"\x0fnamed_inference\x18\t \x01(\tR\x0enamedInference\x12X\n" +
+	"\x13iterate_beam_search\x18\r \x01(\v2(.protocol.CMsgInferenceIterateBeamSearchR\x11iterateBeamSearch\x12\x1d\n" +
+	"\n" +
+	"debug_spew\x18\x0e \x01(\rR\tdebugSpew\"\xc5\x01\n" +
 	"(CMsgSteamLearn_InferenceMetadata_Request\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12\x1d\n" +
 	"\n" +
@@ -3735,13 +4015,16 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	"\tadult_sex\x18\a \x01(\bR\badultSex\x1as\n" +
 	"\fAppInfoEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12Q\n" +
-	"\x05value\x18\x02 \x01(\v2;.protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoR\x05value\"\x88\t\n" +
+	"\x05value\x18\x02 \x01(\v2;.protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoR\x05value\"\xaa\n" +
+	"\n" +
 	"(CMsgSteamLearn_InferenceBackend_Response\x12S\n" +
 	"\aoutputs\x18\x01 \x03(\v29.protocol.CMsgSteamLearn_InferenceBackend_Response.OutputR\aoutputs\x1a \n" +
 	"\bSequence\x12\x14\n" +
 	"\x05value\x18\x01 \x03(\x02R\x05value\x1a(\n" +
 	"\x10RegressionOutput\x12\x14\n" +
-	"\x05value\x18\x01 \x01(\x02R\x05value\x1a0\n" +
+	"\x05value\x18\x02 \x01(\x02R\x05value\x1a,\n" +
+	"\x14NamedInferenceOutput\x12\x14\n" +
+	"\x05value\x18\x03 \x03(\x02R\x05value\x1a0\n" +
 	"\x18BinaryCrossEntropyOutput\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\x02R\x05value\x1a\xb1\x01\n" +
 	"\x1dMutliBinaryCrossEntropyOutput\x12\x16\n" +
@@ -3751,14 +4034,15 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	"\x1dCategoricalCrossEntropyOutput\x12\x16\n" +
 	"\x06weight\x18\x01 \x03(\x02R\x06weight\x12\x14\n" +
 	"\x05value\x18\x02 \x03(\x02R\x05value\x12b\n" +
-	"\x0evalue_sequence\x18\x03 \x03(\v2;.protocol.CMsgSteamLearn_InferenceBackend_Response.SequenceR\rvalueSequence\x1a\xa0\x04\n" +
+	"\x0evalue_sequence\x18\x03 \x03(\v2;.protocol.CMsgSteamLearn_InferenceBackend_Response.SequenceR\rvalueSequence\x1a\x94\x05\n" +
 	"\x06Output\x12~\n" +
 	"\x13binary_crossentropy\x18\x01 \x01(\v2K.protocol.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutputH\x00R\x12binaryCrossentropy\x12\x8d\x01\n" +
 	"\x18categorical_crossentropy\x18\x02 \x01(\v2P.protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutputH\x00R\x17categoricalCrossentropy\x12\x8e\x01\n" +
 	"\x19multi_binary_crossentropy\x18\x03 \x01(\v2P.protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutputH\x00R\x17multiBinaryCrossentropy\x12e\n" +
 	"\n" +
 	"regression\x18\x04 \x01(\v2C.protocol.CMsgSteamLearn_InferenceBackend_Response.RegressionOutputH\x00R\n" +
-	"regressionB\x0e\n" +
+	"regression\x12r\n" +
+	"\x0fnamed_inference\x18\x05 \x01(\v2G.protocol.CMsgSteamLearn_InferenceBackend_Response.NamedInferenceOutputH\x00R\x0enamedInferenceB\x0e\n" +
 	"\fResponseType\"\x83\x02\n" +
 	"!CMsgSteamLearn_Inference_Response\x12k\n" +
 	"\x10inference_result\x18\x01 \x01(\x0e2$.protocol.ESteamLearnInferenceResult:\x1aSTEAMLEARN_INFERENCE_ERRORR\x0finferenceResult\x12]\n" +
@@ -3810,7 +4094,7 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	";STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_PUBLISHED_VERSION\x10\f*t\n" +
 	" ESteamLearnGetAccessTokensResult\x12&\n" +
 	"\"STEAMLEARN_GET_ACCESS_TOKENS_ERROR\x10\x00\x12(\n" +
-	"$STEAMLEARN_GET_ACCESS_TOKENS_SUCCESS\x10\x01*\xf1\x03\n" +
+	"$STEAMLEARN_GET_ACCESS_TOKENS_SUCCESS\x10\x01*\xe3\x05\n" +
 	"\x1aESteamLearnInferenceResult\x12\x1e\n" +
 	"\x1aSTEAMLEARN_INFERENCE_ERROR\x10\x00\x12 \n" +
 	"\x1cSTEAMLEARN_INFERENCE_SUCCESS\x10\x01\x121\n" +
@@ -3821,7 +4105,13 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	",STEAMLEARN_INFERENCE_ERROR_INVALID_TIMESTAMP\x10\x06\x128\n" +
 	"4STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION\x10\a\x120\n" +
 	",STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND\x10\b\x12'\n" +
-	"#STEAMLEARN_INFERENCE_ERROR_TOO_BUSY\x10\t*\xdd\x03\n" +
+	"#STEAMLEARN_INFERENCE_ERROR_TOO_BUSY\x10\t\x123\n" +
+	"/STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_FAIL\x10\n" +
+	"\x126\n" +
+	"2STEAMLEARN_INFERENCE_ERROR_UNSUPPLIED_DATA_NO_KEYS\x10\v\x12!\n" +
+	"\x1dSTEAMLEARN_INFERENCE_DISABLED\x10\f\x12(\n" +
+	"$STEAMLEARN_INFERENCE_ERROR_NO_OUTPUT\x10\r\x126\n" +
+	"2STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE\x10\x0e*\xdd\x03\n" +
 	"\"ESteamLearnInferenceMetadataResult\x12'\n" +
 	"#STEAMLEARN_INFERENCE_METADATA_ERROR\x10\x00\x12)\n" +
 	"%STEAMLEARN_INFERENCE_METADATA_SUCCESS\x10\x01\x12:\n" +
@@ -3854,7 +4144,7 @@ func file_steammessages_steamlearn_steamworkssdk_proto_rawDescGZIP() []byte {
 }
 
 var file_steammessages_steamlearn_steamworkssdk_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_steammessages_steamlearn_steamworkssdk_proto_msgTypes = make([]protoimpl.MessageInfo, 49)
+var file_steammessages_steamlearn_steamworkssdk_proto_msgTypes = make([]protoimpl.MessageInfo, 52)
 var file_steammessages_steamlearn_steamworkssdk_proto_goTypes = []any{
 	(ESteamLearnDataType)(0),                                                         // 0: protocol.ESteamLearnDataType
 	(ESteammLearnRegisterDataSourceResult)(0),                                        // 1: protocol.ESteammLearnRegisterDataSourceResult
@@ -3881,37 +4171,40 @@ var file_steammessages_steamlearn_steamworkssdk_proto_goTypes = []any{
 	(*CMsgSteamLearnAccessTokens)(nil),                                               // 22: protocol.CMsgSteamLearnAccessTokens
 	(*CMsgSteamLearn_GetAccessTokens_Request)(nil),                                   // 23: protocol.CMsgSteamLearn_GetAccessTokens_Request
 	(*CMsgSteamLearn_GetAccessTokens_Response)(nil),                                  // 24: protocol.CMsgSteamLearn_GetAccessTokens_Response
-	(*CMsgSteamLearn_Inference_Request)(nil),                                         // 25: protocol.CMsgSteamLearn_Inference_Request
-	(*CMsgSteamLearn_InferenceMetadata_Request)(nil),                                 // 26: protocol.CMsgSteamLearn_InferenceMetadata_Request
-	(*CMsgSteamLearn_InferenceMetadataBackend_Request)(nil),                          // 27: protocol.CMsgSteamLearn_InferenceMetadataBackend_Request
-	(*CMsgSteamLearn_InferenceMetadata_Response)(nil),                                // 28: protocol.CMsgSteamLearn_InferenceMetadata_Response
-	(*CMsgSteamLearn_InferenceBackend_Response)(nil),                                 // 29: protocol.CMsgSteamLearn_InferenceBackend_Response
-	(*CMsgSteamLearn_Inference_Response)(nil),                                        // 30: protocol.CMsgSteamLearn_Inference_Response
-	(*CMsgSteamLearnAccessTokens_CacheDataAccessToken)(nil),                          // 31: protocol.CMsgSteamLearnAccessTokens.CacheDataAccessToken
-	(*CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken)(nil),                    // 32: protocol.CMsgSteamLearnAccessTokens.SnapshotProjectAccessToken
-	(*CMsgSteamLearnAccessTokens_InferenceAccessToken)(nil),                          // 33: protocol.CMsgSteamLearnAccessTokens.InferenceAccessToken
-	(*CMsgSteamLearn_InferenceMetadata_Response_RowRange)(nil),                       // 34: protocol.CMsgSteamLearn_InferenceMetadata_Response.RowRange
-	(*CMsgSteamLearn_InferenceMetadata_Response_Range)(nil),                          // 35: protocol.CMsgSteamLearn_InferenceMetadata_Response.Range
-	(*CMsgSteamLearn_InferenceMetadata_Response_StdDev)(nil),                         // 36: protocol.CMsgSteamLearn_InferenceMetadata_Response.StdDev
-	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable)(nil),                   // 37: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable
-	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable)(nil),                  // 38: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable
-	(*CMsgSteamLearn_InferenceMetadata_Response_KMeans)(nil),                         // 39: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans
-	(*CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram)(nil),              // 40: protocol.CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram
-	(*CMsgSteamLearn_InferenceMetadata_Response_AppInfo)(nil),                        // 41: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfo
-	(*CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry)(nil),                   // 42: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry
-	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry)(nil),             // 43: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
-	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry)(nil),    // 44: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry
-	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry)(nil),  // 45: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry
-	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry)(nil),            // 46: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
-	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry)(nil),   // 47: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry
-	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry)(nil), // 48: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry
-	(*CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster)(nil),                 // 49: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.Cluster
-	(*CMsgSteamLearn_InferenceBackend_Response_Sequence)(nil),                        // 50: protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
-	(*CMsgSteamLearn_InferenceBackend_Response_RegressionOutput)(nil),                // 51: protocol.CMsgSteamLearn_InferenceBackend_Response.RegressionOutput
-	(*CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput)(nil),        // 52: protocol.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput
-	(*CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput)(nil),   // 53: protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput
-	(*CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput)(nil),   // 54: protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput
-	(*CMsgSteamLearn_InferenceBackend_Response_Output)(nil),                          // 55: protocol.CMsgSteamLearn_InferenceBackend_Response.Output
+	(*CMsgInferenceIterateBeamSearch)(nil),                                           // 25: protocol.CMsgInferenceIterateBeamSearch
+	(*CMsgSteamLearn_Inference_Request)(nil),                                         // 26: protocol.CMsgSteamLearn_Inference_Request
+	(*CMsgSteamLearn_InferenceMetadata_Request)(nil),                                 // 27: protocol.CMsgSteamLearn_InferenceMetadata_Request
+	(*CMsgSteamLearn_InferenceMetadataBackend_Request)(nil),                          // 28: protocol.CMsgSteamLearn_InferenceMetadataBackend_Request
+	(*CMsgSteamLearn_InferenceMetadata_Response)(nil),                                // 29: protocol.CMsgSteamLearn_InferenceMetadata_Response
+	(*CMsgSteamLearn_InferenceBackend_Response)(nil),                                 // 30: protocol.CMsgSteamLearn_InferenceBackend_Response
+	(*CMsgSteamLearn_Inference_Response)(nil),                                        // 31: protocol.CMsgSteamLearn_Inference_Response
+	(*CMsgSteamLearnAccessTokens_CacheDataAccessToken)(nil),                          // 32: protocol.CMsgSteamLearnAccessTokens.CacheDataAccessToken
+	(*CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken)(nil),                    // 33: protocol.CMsgSteamLearnAccessTokens.SnapshotProjectAccessToken
+	(*CMsgSteamLearnAccessTokens_InferenceAccessToken)(nil),                          // 34: protocol.CMsgSteamLearnAccessTokens.InferenceAccessToken
+	(*CMsgInferenceIterateBeamSearch_CustomItemScalar)(nil),                          // 35: protocol.CMsgInferenceIterateBeamSearch.CustomItemScalar
+	(*CMsgSteamLearn_InferenceMetadata_Response_RowRange)(nil),                       // 36: protocol.CMsgSteamLearn_InferenceMetadata_Response.RowRange
+	(*CMsgSteamLearn_InferenceMetadata_Response_Range)(nil),                          // 37: protocol.CMsgSteamLearn_InferenceMetadata_Response.Range
+	(*CMsgSteamLearn_InferenceMetadata_Response_StdDev)(nil),                         // 38: protocol.CMsgSteamLearn_InferenceMetadata_Response.StdDev
+	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable)(nil),                   // 39: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable
+	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable)(nil),                  // 40: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable
+	(*CMsgSteamLearn_InferenceMetadata_Response_KMeans)(nil),                         // 41: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans
+	(*CMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram)(nil),              // 42: protocol.CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram
+	(*CMsgSteamLearn_InferenceMetadata_Response_AppInfo)(nil),                        // 43: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfo
+	(*CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry)(nil),                   // 44: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry
+	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry)(nil),             // 45: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
+	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry)(nil),    // 46: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry
+	(*CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry)(nil),  // 47: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry
+	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_Entry)(nil),            // 48: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
+	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry)(nil),   // 49: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry
+	(*CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry)(nil), // 50: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry
+	(*CMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster)(nil),                 // 51: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.Cluster
+	(*CMsgSteamLearn_InferenceBackend_Response_Sequence)(nil),                        // 52: protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
+	(*CMsgSteamLearn_InferenceBackend_Response_RegressionOutput)(nil),                // 53: protocol.CMsgSteamLearn_InferenceBackend_Response.RegressionOutput
+	(*CMsgSteamLearn_InferenceBackend_Response_NamedInferenceOutput)(nil),            // 54: protocol.CMsgSteamLearn_InferenceBackend_Response.NamedInferenceOutput
+	(*CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput)(nil),        // 55: protocol.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput
+	(*CMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput)(nil),   // 56: protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput
+	(*CMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput)(nil),   // 57: protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput
+	(*CMsgSteamLearn_InferenceBackend_Response_Output)(nil),                          // 58: protocol.CMsgSteamLearn_InferenceBackend_Response.Output
 }
 var file_steammessages_steamlearn_steamworkssdk_proto_depIdxs = []int32{
 	8,  // 0: protocol.CMsgSteamLearnDataSourceDescObject.elements:type_name -> protocol.CMsgSteamLearnDataSourceDescElement
@@ -3931,63 +4224,66 @@ var file_steammessages_steamlearn_steamworkssdk_proto_depIdxs = []int32{
 	3,  // 14: protocol.CMsgSteamLearn_SnapshotProject_Response.snapshot_result:type_name -> protocol.ESteamLearnSnapshotProjectResult
 	16, // 15: protocol.CMsgSteamLearn_BatchOperation_Request.cache_data_requests:type_name -> protocol.CMsgSteamLearn_CacheData_Request
 	18, // 16: protocol.CMsgSteamLearn_BatchOperation_Request.snapshot_requests:type_name -> protocol.CMsgSteamLearn_SnapshotProject_Request
-	25, // 17: protocol.CMsgSteamLearn_BatchOperation_Request.inference_requests:type_name -> protocol.CMsgSteamLearn_Inference_Request
+	26, // 17: protocol.CMsgSteamLearn_BatchOperation_Request.inference_requests:type_name -> protocol.CMsgSteamLearn_Inference_Request
 	17, // 18: protocol.CMsgSteamLearn_BatchOperation_Response.cache_data_responses:type_name -> protocol.CMsgSteamLearn_CacheData_Response
 	19, // 19: protocol.CMsgSteamLearn_BatchOperation_Response.snapshot_responses:type_name -> protocol.CMsgSteamLearn_SnapshotProject_Response
-	30, // 20: protocol.CMsgSteamLearn_BatchOperation_Response.inference_responses:type_name -> protocol.CMsgSteamLearn_Inference_Response
-	31, // 21: protocol.CMsgSteamLearnAccessTokens.cache_data_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.CacheDataAccessToken
-	32, // 22: protocol.CMsgSteamLearnAccessTokens.snapshot_project_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.SnapshotProjectAccessToken
-	33, // 23: protocol.CMsgSteamLearnAccessTokens.inference_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.InferenceAccessToken
+	31, // 20: protocol.CMsgSteamLearn_BatchOperation_Response.inference_responses:type_name -> protocol.CMsgSteamLearn_Inference_Response
+	32, // 21: protocol.CMsgSteamLearnAccessTokens.cache_data_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.CacheDataAccessToken
+	33, // 22: protocol.CMsgSteamLearnAccessTokens.snapshot_project_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.SnapshotProjectAccessToken
+	34, // 23: protocol.CMsgSteamLearnAccessTokens.inference_access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens.InferenceAccessToken
 	4,  // 24: protocol.CMsgSteamLearn_GetAccessTokens_Response.result:type_name -> protocol.ESteamLearnGetAccessTokensResult
 	22, // 25: protocol.CMsgSteamLearn_GetAccessTokens_Response.access_tokens:type_name -> protocol.CMsgSteamLearnAccessTokens
-	13, // 26: protocol.CMsgSteamLearn_Inference_Request.data:type_name -> protocol.CMsgSteamLearnDataList
-	6,  // 27: protocol.CMsgSteamLearn_InferenceMetadata_Response.inference_metadata_result:type_name -> protocol.ESteamLearnInferenceMetadataResult
-	34, // 28: protocol.CMsgSteamLearn_InferenceMetadata_Response.row_range:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.RowRange
-	35, // 29: protocol.CMsgSteamLearn_InferenceMetadata_Response.ranges:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.Range
-	36, // 30: protocol.CMsgSteamLearn_InferenceMetadata_Response.std_devs:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.StdDev
-	37, // 31: protocol.CMsgSteamLearn_InferenceMetadata_Response.compact_tables:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable
-	38, // 32: protocol.CMsgSteamLearn_InferenceMetadata_Response.sequence_tables:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable
-	39, // 33: protocol.CMsgSteamLearn_InferenceMetadata_Response.kmeans:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans
-	42, // 34: protocol.CMsgSteamLearn_InferenceMetadata_Response.app_info:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry
-	40, // 35: protocol.CMsgSteamLearn_InferenceMetadata_Response.snapshot_histogram:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram
-	55, // 36: protocol.CMsgSteamLearn_InferenceBackend_Response.outputs:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Output
-	5,  // 37: protocol.CMsgSteamLearn_Inference_Response.inference_result:type_name -> protocol.ESteamLearnInferenceResult
-	29, // 38: protocol.CMsgSteamLearn_Inference_Response.backend_response:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response
-	44, // 39: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.map_values:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry
-	45, // 40: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.map_mappings:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry
-	47, // 41: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.map_values:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry
-	48, // 42: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.map_mappings:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry
-	49, // 43: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.clusters:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.Cluster
-	41, // 44: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfo
-	43, // 45: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
-	43, // 46: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
-	46, // 47: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
-	46, // 48: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
-	50, // 49: protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput.value_sequence:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
-	50, // 50: protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput.value_sequence:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
-	52, // 51: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.binary_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput
-	54, // 52: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.categorical_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput
-	53, // 53: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.multi_binary_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput
-	51, // 54: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.regression:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.RegressionOutput
-	14, // 55: protocol.SteamLearn.RegisterDataSource:input_type -> protocol.CMsgSteamLearn_RegisterDataSource_Request
-	16, // 56: protocol.SteamLearn.CacheData:input_type -> protocol.CMsgSteamLearn_CacheData_Request
-	18, // 57: protocol.SteamLearn.SnapshotProject:input_type -> protocol.CMsgSteamLearn_SnapshotProject_Request
-	20, // 58: protocol.SteamLearn.BatchOperation:input_type -> protocol.CMsgSteamLearn_BatchOperation_Request
-	23, // 59: protocol.SteamLearn.GetAccessTokens:input_type -> protocol.CMsgSteamLearn_GetAccessTokens_Request
-	25, // 60: protocol.SteamLearn.Inference:input_type -> protocol.CMsgSteamLearn_Inference_Request
-	26, // 61: protocol.SteamLearn.InferenceMetadata:input_type -> protocol.CMsgSteamLearn_InferenceMetadata_Request
-	15, // 62: protocol.SteamLearn.RegisterDataSource:output_type -> protocol.CMsgSteamLearn_RegisterDataSource_Response
-	17, // 63: protocol.SteamLearn.CacheData:output_type -> protocol.CMsgSteamLearn_CacheData_Response
-	19, // 64: protocol.SteamLearn.SnapshotProject:output_type -> protocol.CMsgSteamLearn_SnapshotProject_Response
-	21, // 65: protocol.SteamLearn.BatchOperation:output_type -> protocol.CMsgSteamLearn_BatchOperation_Response
-	24, // 66: protocol.SteamLearn.GetAccessTokens:output_type -> protocol.CMsgSteamLearn_GetAccessTokens_Response
-	30, // 67: protocol.SteamLearn.Inference:output_type -> protocol.CMsgSteamLearn_Inference_Response
-	28, // 68: protocol.SteamLearn.InferenceMetadata:output_type -> protocol.CMsgSteamLearn_InferenceMetadata_Response
-	62, // [62:69] is the sub-list for method output_type
-	55, // [55:62] is the sub-list for method input_type
-	55, // [55:55] is the sub-list for extension type_name
-	55, // [55:55] is the sub-list for extension extendee
-	0,  // [0:55] is the sub-list for field type_name
+	35, // 26: protocol.CMsgInferenceIterateBeamSearch.item_scalars:type_name -> protocol.CMsgInferenceIterateBeamSearch.CustomItemScalar
+	13, // 27: protocol.CMsgSteamLearn_Inference_Request.data:type_name -> protocol.CMsgSteamLearnDataList
+	25, // 28: protocol.CMsgSteamLearn_Inference_Request.iterate_beam_search:type_name -> protocol.CMsgInferenceIterateBeamSearch
+	6,  // 29: protocol.CMsgSteamLearn_InferenceMetadata_Response.inference_metadata_result:type_name -> protocol.ESteamLearnInferenceMetadataResult
+	36, // 30: protocol.CMsgSteamLearn_InferenceMetadata_Response.row_range:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.RowRange
+	37, // 31: protocol.CMsgSteamLearn_InferenceMetadata_Response.ranges:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.Range
+	38, // 32: protocol.CMsgSteamLearn_InferenceMetadata_Response.std_devs:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.StdDev
+	39, // 33: protocol.CMsgSteamLearn_InferenceMetadata_Response.compact_tables:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable
+	40, // 34: protocol.CMsgSteamLearn_InferenceMetadata_Response.sequence_tables:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable
+	41, // 35: protocol.CMsgSteamLearn_InferenceMetadata_Response.kmeans:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans
+	44, // 36: protocol.CMsgSteamLearn_InferenceMetadata_Response.app_info:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry
+	42, // 37: protocol.CMsgSteamLearn_InferenceMetadata_Response.snapshot_histogram:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram
+	58, // 38: protocol.CMsgSteamLearn_InferenceBackend_Response.outputs:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Output
+	5,  // 39: protocol.CMsgSteamLearn_Inference_Response.inference_result:type_name -> protocol.ESteamLearnInferenceResult
+	30, // 40: protocol.CMsgSteamLearn_Inference_Response.backend_response:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response
+	46, // 41: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.map_values:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry
+	47, // 42: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.map_mappings:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry
+	49, // 43: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.map_values:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry
+	50, // 44: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.map_mappings:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry
+	51, // 45: protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.clusters:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.KMeans.Cluster
+	43, // 46: protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfoEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.AppInfo
+	45, // 47: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
+	45, // 48: protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
+	48, // 49: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapValuesEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
+	48, // 50: protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.MapMappingsEntry.value:type_name -> protocol.CMsgSteamLearn_InferenceMetadata_Response.SequenceTable.Entry
+	52, // 51: protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput.value_sequence:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
+	52, // 52: protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput.value_sequence:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.Sequence
+	55, // 53: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.binary_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput
+	57, // 54: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.categorical_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput
+	56, // 55: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.multi_binary_crossentropy:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput
+	53, // 56: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.regression:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.RegressionOutput
+	54, // 57: protocol.CMsgSteamLearn_InferenceBackend_Response.Output.named_inference:type_name -> protocol.CMsgSteamLearn_InferenceBackend_Response.NamedInferenceOutput
+	14, // 58: protocol.SteamLearn.RegisterDataSource:input_type -> protocol.CMsgSteamLearn_RegisterDataSource_Request
+	16, // 59: protocol.SteamLearn.CacheData:input_type -> protocol.CMsgSteamLearn_CacheData_Request
+	18, // 60: protocol.SteamLearn.SnapshotProject:input_type -> protocol.CMsgSteamLearn_SnapshotProject_Request
+	20, // 61: protocol.SteamLearn.BatchOperation:input_type -> protocol.CMsgSteamLearn_BatchOperation_Request
+	23, // 62: protocol.SteamLearn.GetAccessTokens:input_type -> protocol.CMsgSteamLearn_GetAccessTokens_Request
+	26, // 63: protocol.SteamLearn.Inference:input_type -> protocol.CMsgSteamLearn_Inference_Request
+	27, // 64: protocol.SteamLearn.InferenceMetadata:input_type -> protocol.CMsgSteamLearn_InferenceMetadata_Request
+	15, // 65: protocol.SteamLearn.RegisterDataSource:output_type -> protocol.CMsgSteamLearn_RegisterDataSource_Response
+	17, // 66: protocol.SteamLearn.CacheData:output_type -> protocol.CMsgSteamLearn_CacheData_Response
+	19, // 67: protocol.SteamLearn.SnapshotProject:output_type -> protocol.CMsgSteamLearn_SnapshotProject_Response
+	21, // 68: protocol.SteamLearn.BatchOperation:output_type -> protocol.CMsgSteamLearn_BatchOperation_Response
+	24, // 69: protocol.SteamLearn.GetAccessTokens:output_type -> protocol.CMsgSteamLearn_GetAccessTokens_Response
+	31, // 70: protocol.SteamLearn.Inference:output_type -> protocol.CMsgSteamLearn_Inference_Response
+	29, // 71: protocol.SteamLearn.InferenceMetadata:output_type -> protocol.CMsgSteamLearn_InferenceMetadata_Response
+	65, // [65:72] is the sub-list for method output_type
+	58, // [58:65] is the sub-list for method input_type
+	58, // [58:58] is the sub-list for extension type_name
+	58, // [58:58] is the sub-list for extension extendee
+	0,  // [0:58] is the sub-list for field type_name
 }
 
 func init() { file_steammessages_steamlearn_steamworkssdk_proto_init() }
@@ -3996,11 +4292,12 @@ func file_steammessages_steamlearn_steamworkssdk_proto_init() {
 		return
 	}
 	file_steammessages_unified_base_steamworkssdk_proto_init()
-	file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[48].OneofWrappers = []any{
+	file_steammessages_steamlearn_steamworkssdk_proto_msgTypes[51].OneofWrappers = []any{
 		(*CMsgSteamLearn_InferenceBackend_Response_Output_BinaryCrossentropy)(nil),
 		(*CMsgSteamLearn_InferenceBackend_Response_Output_CategoricalCrossentropy)(nil),
 		(*CMsgSteamLearn_InferenceBackend_Response_Output_MultiBinaryCrossentropy)(nil),
 		(*CMsgSteamLearn_InferenceBackend_Response_Output_Regression)(nil),
+		(*CMsgSteamLearn_InferenceBackend_Response_Output_NamedInference)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -4008,7 +4305,7 @@ func file_steammessages_steamlearn_steamworkssdk_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_steammessages_steamlearn_steamworkssdk_proto_rawDesc), len(file_steammessages_steamlearn_steamworkssdk_proto_rawDesc)),
 			NumEnums:      7,
-			NumMessages:   49,
+			NumMessages:   52,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

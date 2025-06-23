@@ -761,6 +761,7 @@ type CMsgDOTAChatMessage struct {
 	EventLevel                  *uint32                               `protobuf:"varint,42,opt,name=event_level,json=eventLevel" json:"event_level,omitempty"`
 	SuggestPickHeroFacet        *uint32                               `protobuf:"varint,43,opt,name=suggest_pick_hero_facet,json=suggestPickHeroFacet" json:"suggest_pick_hero_facet,omitempty"`
 	RequestedHeroId             *int32                                `protobuf:"varint,44,opt,name=requested_hero_id,json=requestedHeroId" json:"requested_hero_id,omitempty"`
+	RequestedHeroFacetKey       *uint64                               `protobuf:"varint,45,opt,name=requested_hero_facet_key,json=requestedHeroFacetKey" json:"requested_hero_facet_key,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -1085,6 +1086,13 @@ func (x *CMsgDOTAChatMessage) GetSuggestPickHeroFacet() uint32 {
 func (x *CMsgDOTAChatMessage) GetRequestedHeroId() int32 {
 	if x != nil && x.RequestedHeroId != nil {
 		return *x.RequestedHeroId
+	}
+	return 0
+}
+
+func (x *CMsgDOTAChatMessage) GetRequestedHeroFacetKey() uint64 {
+	if x != nil && x.RequestedHeroFacetKey != nil {
+		return *x.RequestedHeroFacetKey
 	}
 	return 0
 }
@@ -2251,7 +2259,7 @@ const file_dota_gcmessages_client_chat_proto_rawDesc = "" +
 	"channel_id\x18\x01 \x01(\x04R\tchannelId\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x02 \x01(\rR\taccountId\x12\x1a\n" +
-	"\bduration\x18\x03 \x01(\rR\bduration\"\x92\x14\n" +
+	"\bduration\x18\x03 \x01(\rR\bduration\"\xcb\x14\n" +
 	"\x13CMsgDOTAChatMessage\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x1d\n" +
@@ -2300,7 +2308,8 @@ const file_dota_gcmessages_client_chat_proto_rawDesc = "" +
 	"\vevent_level\x18* \x01(\rR\n" +
 	"eventLevel\x125\n" +
 	"\x17suggest_pick_hero_facet\x18+ \x01(\rR\x14suggestPickHeroFacet\x12*\n" +
-	"\x11requested_hero_id\x18, \x01(\x05R\x0frequestedHeroId\x1aX\n" +
+	"\x11requested_hero_id\x18, \x01(\x05R\x0frequestedHeroId\x127\n" +
+	"\x18requested_hero_facet_key\x18- \x01(\x04R\x15requestedHeroFacetKey\x1aX\n" +
 	"\bDiceRoll\x12\x19\n" +
 	"\broll_min\x18\x01 \x01(\x05R\arollMin\x12\x19\n" +
 	"\broll_max\x18\x02 \x01(\x05R\arollMax\x12\x16\n" +
