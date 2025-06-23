@@ -135,7 +135,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 					continue
 				}
 
-				reqFieldName = strings.Replace(reqFieldName, "Id", "ID", -1)
+				reqFieldName = strings.ReplaceAll(reqFieldName, "Id", "ID")
 
 				_, isSlice := reqField.Type().(*types.Slice)
 				if isSlice {

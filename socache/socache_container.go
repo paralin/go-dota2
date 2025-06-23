@@ -1,8 +1,8 @@
 package socache
 
 import (
-	"math/rand"
 	"sync"
+	"sync/atomic"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
@@ -18,11 +18,12 @@ type SOCacheContainer struct {
 	typeID        uint32
 	objects       sync.Map // map[uint64]proto.Message
 	subscriptions sync.Map // map[uint32]chan *CacheEvent
+	subIDCounter  atomic.Uint32
 }
 
 // NewSOCacheContainer builds a new container for a type id.
 func NewSOCacheContainer(le logrus.FieldLogger, typeID uint32) (*SOCacheContainer, error) {
-	typ := cso.CSOType(typeID)
+	typ := cso.CSOType(typeID) //nolint:gosec
 	if _, err := cso.NewSharedObject(typ); err != nil {
 		return nil, err
 	}
@@ -39,7 +40,7 @@ func (c *SOCacheContainer) GetTypeID() uint32 {
 func (c *SOCacheContainer) parseObject(obj *gcsdkm.CMsgSOCacheSubscribed_SubscribedType) (proto.Message, error) {
 	objData := obj.GetObjectData()[0]
 
-	so, err := cso.NewSharedObject(cso.CSOType(c.GetTypeID()))
+	so, err := cso.NewSharedObject(cso.CSOType(c.GetTypeID())) //nolint:gosec
 	if err != nil {
 		c.le.Debugf("unknown: %v", obj.String())
 		return nil, err
@@ -147,9 +148,9 @@ func (c *SOCacheContainer) HandleDestroy(msg *gcsdkm.CMsgSOSingleObject) error {
 
 // Subscribe subscribes to events for the object type.
 func (c *SOCacheContainer) Subscribe() (<-chan *CacheEvent, CacheUnsubscribeFunc, error) {
-	subID := uint32(rand.Int31())
+	subID := c.subIDCounter.Add(1)
 	ch := make(chan *CacheEvent, 10)
-	c.subscriptions.Store(subID, (chan *CacheEvent)(ch))
+	c.subscriptions.Store(subID, ch)
 	return ch, func() {
 		c.subscriptions.Delete(subID)
 	}, nil

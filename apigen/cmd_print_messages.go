@@ -49,7 +49,7 @@ func DumpMessageIDDebug() string {
 		(&buf).WriteString("\n")
 	}
 
-	(&buf).WriteString(fmt.Sprintf("\nComputed client methods: %v\n", allMethods))
+	fmt.Fprintf(&buf, "\nComputed client methods: %v\n", allMethods)
 
 	return (&buf).String()
 }

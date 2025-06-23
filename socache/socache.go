@@ -46,7 +46,7 @@ func (c *SOCache) HandleSubscribed(msg *gcsdkm.CMsgSOCacheSubscribed) error {
 			continue
 		}
 
-		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId()))
+		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId())) //nolint:gosec
 		if err == nil {
 			err = ctr.HandleSubscribed(msg, obj)
 		}
@@ -83,7 +83,7 @@ func (c *SOCache) HandleUnsubscribed(msg *gcsdkm.CMsgSOCacheUnsubscribed) error 
 // HandleUpdateMultiple handles a update multiple message.
 func (c *SOCache) HandleUpdateMultiple(msg *gcsdkm.CMsgSOMultipleObjects) error {
 	addUpdateObj := func(obj *gcsdkm.CMsgSOMultipleObjects_SingleObject) error {
-		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId()))
+		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId())) //nolint:gosec
 		if err != nil {
 			return nil
 		}
@@ -113,7 +113,7 @@ func (c *SOCache) HandleUpdateMultiple(msg *gcsdkm.CMsgSOMultipleObjects) error 
 	}
 
 	for _, obj := range msg.GetObjectsRemoved() {
-		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId()))
+		ctr, err := c.GetContainerForTypeID(uint32(obj.GetTypeId())) //nolint:gosec
 		if err != nil {
 			continue
 		}
@@ -128,7 +128,7 @@ func (c *SOCache) HandleUpdateMultiple(msg *gcsdkm.CMsgSOMultipleObjects) error 
 
 // HandleDestroy handles a object destroy message.
 func (c *SOCache) HandleDestroy(msg *gcsdkm.CMsgSOSingleObject) error {
-	ctr, err := c.GetContainerForTypeID(uint32(msg.GetTypeId()))
+	ctr, err := c.GetContainerForTypeID(uint32(msg.GetTypeId())) //nolint:gosec
 	if err != nil {
 		return err
 	}

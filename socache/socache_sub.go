@@ -31,7 +31,7 @@ type CacheUnsubscribeFunc func()
 
 // SubscribeType subscribes to events for an object type.
 func (c *SOCache) SubscribeType(id cso.CSOType) (<-chan *CacheEvent, CacheUnsubscribeFunc, error) {
-	ctr, err := c.GetContainerForTypeID(uint32(id))
+	ctr, err := c.GetContainerForTypeID(uint32(id)) //nolint:gosec
 	if err != nil {
 		return nil, nil, err
 	}

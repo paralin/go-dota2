@@ -86,10 +86,10 @@ func LookupMessageProtoType(protoMap map[string]*ProtoType, msgID gcm.EDOTAGCMsg
 	msgStr = strings.TrimPrefix(msgStr, "k_EMsg")
 
 	msgStr = strings.TrimPrefix(msgStr, "GC")
-	withoutDota := strings.Replace(msgStr, "DOTA", "", -1)
-	withoutToFrom := strings.Replace(msgStr, "GCToClient", "", -1)
-	withoutToFrom = strings.Replace(withoutToFrom, "ClientToGC", "", -1)
-	responseToResult := strings.Replace(msgStr, "Response", "Result", -1)
+	withoutDota := strings.ReplaceAll(msgStr, "DOTA", "")
+	withoutToFrom := strings.ReplaceAll(msgStr, "GCToClient", "")
+	withoutToFrom = strings.ReplaceAll(withoutToFrom, "ClientToGC", "")
+	responseToResult := strings.ReplaceAll(msgStr, "Response", "Result")
 	toAttempt := []string{
 		msgStr,
 		"GC" + msgStr,

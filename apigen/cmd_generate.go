@@ -9,8 +9,10 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-var clientOutFile string
-var eventsOutFile string
+var (
+	clientOutFile string
+	eventsOutFile string
+)
 
 func init() {
 	commands = append(commands, &cli.Command{
@@ -38,7 +40,7 @@ func init() {
 				return err
 			}
 
-			if err := os.WriteFile(clientOutFile, clientFileBuf.Bytes(), 0655); err != nil {
+			if err := os.WriteFile(clientOutFile, clientFileBuf.Bytes(), 0o655); err != nil {
 				return err
 			}
 
@@ -47,7 +49,7 @@ func init() {
 				clientFileDat = clientFileBuf.Bytes()
 			}
 
-			if err := os.WriteFile(clientOutFile, clientFileDat, 0655); err != nil {
+			if err := os.WriteFile(clientOutFile, clientFileDat, 0o655); err != nil {
 				return err
 			}
 
@@ -60,7 +62,7 @@ func init() {
 				eventsFileDat = eventsFileBuf.Bytes()
 			}
 
-			if err := os.WriteFile(eventsOutFile, eventsFileDat, 0655); err != nil {
+			if err := os.WriteFile(eventsOutFile, eventsFileDat, 0o655); err != nil {
 				return err
 			}
 

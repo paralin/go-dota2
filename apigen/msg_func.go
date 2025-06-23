@@ -31,7 +31,7 @@ func GetMessageFuncName(msg dota_gcmessages_msgid.EDOTAGCMsg) string {
 		msgName = "Query" + strings.TrimSuffix(msgName, "Query")
 	}
 
-	msgName = strings.Replace(msgName, "PracticeLobby", "Lobby", -1)
+	msgName = strings.ReplaceAll(msgName, "PracticeLobby", "Lobby")
 	words := camelcase.Split(msgName)
 	switch {
 	case len(words) < 2:

@@ -16,6 +16,6 @@ func GetMessageEventName(msg dota_gcmessages_msgid.EDOTAGCMsg) string {
 	msgName = strings.TrimPrefix(msgName, "k_EMsg")
 	msgName = strings.TrimPrefix(msgName, "GC")
 	msgName = strings.TrimPrefix(msgName, "ToClient")
-	msgName = strings.Replace(msgName, "_", "", -1)
+	msgName = strings.ReplaceAll(msgName, "_", "")
 	return msgName
 }
