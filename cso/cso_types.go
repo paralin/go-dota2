@@ -49,6 +49,8 @@ const (
 	PlayerChallenge = 2010
 	// LobbyInvite is an invitation to a lobby.
 	LobbyInvite = 2011
+	// GameAccountPlus is the DOTA plus account
+	GameAccountPlus = 2012
 )
 
 // csoTypeCtors links type IDs to constructors.
@@ -82,6 +84,9 @@ var csoTypeCtors = map[CSOType]func() proto.Message{
 	},
 	DropRateBonus: func() proto.Message {
 		return &bgcm.CSOEconItemDropRateBonus{}
+	},
+	GameAccountPlus: func() proto.Message {
+		return &gccm.CSODOTAGameAccountPlus{}
 	},
 }
 
