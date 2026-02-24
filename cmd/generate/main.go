@@ -97,19 +97,19 @@ func run(verbose, skipSubmodule, skipApigen bool) error {
 		return fmt.Errorf("protoc: %w", err)
 	}
 
-	// Step 5: Run goimports
-	log.Println("==> Running goimports...")
-	goimportsPath := filepath.Join(toolsBinDir, "goimports")
-	if err := runCmd(repoRoot, verbose, goimportsPath, "-w", "./"); err != nil {
-		return fmt.Errorf("goimports: %w", err)
-	}
-
-	// Step 6: Run apigen
+	// Step 5: Run apigen
 	if !skipApigen {
 		log.Println("==> Running apigen...")
 		if err := runApigen(repoRoot, verbose); err != nil {
 			return fmt.Errorf("apigen: %w", err)
 		}
+	}
+
+	// Step 6: Run goimports (after apigen so generated files are formatted)
+	log.Println("==> Running goimports...")
+	goimportsPath := filepath.Join(toolsBinDir, "goimports")
+	if err := runCmd(repoRoot, verbose, goimportsPath, "-w", "./"); err != nil {
+		return fmt.Errorf("goimports: %w", err)
 	}
 
 	log.Println("==> Done.")
