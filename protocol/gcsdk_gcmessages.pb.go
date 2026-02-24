@@ -3551,14 +3551,15 @@ func (x *CGCMsgCompressedMsgToClient) GetCompressedMsg() []byte {
 }
 
 type CMsgGCToGCMasterBroadcastMessage struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	UsersPerSecond *uint32                `protobuf:"varint,1,opt,name=users_per_second,json=usersPerSecond" json:"users_per_second,omitempty"`
-	SendToUsers    *bool                  `protobuf:"varint,2,opt,name=send_to_users,json=sendToUsers" json:"send_to_users,omitempty"`
-	SendToServers  *bool                  `protobuf:"varint,3,opt,name=send_to_servers,json=sendToServers" json:"send_to_servers,omitempty"`
-	MsgId          *uint32                `protobuf:"varint,4,opt,name=msg_id,json=msgId" json:"msg_id,omitempty"`
-	MsgData        []byte                 `protobuf:"bytes,5,opt,name=msg_data,json=msgData" json:"msg_data,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	UsersPerSecond     *uint32                `protobuf:"varint,1,opt,name=users_per_second,json=usersPerSecond" json:"users_per_second,omitempty"`
+	SendToUsers        *bool                  `protobuf:"varint,2,opt,name=send_to_users,json=sendToUsers" json:"send_to_users,omitempty"`
+	SendToServers      *bool                  `protobuf:"varint,3,opt,name=send_to_servers,json=sendToServers" json:"send_to_servers,omitempty"`
+	MsgId              *uint32                `protobuf:"varint,4,opt,name=msg_id,json=msgId" json:"msg_id,omitempty"`
+	MsgData            []byte                 `protobuf:"bytes,5,opt,name=msg_data,json=msgData" json:"msg_data,omitempty"`
+	TrustedServersOnly *bool                  `protobuf:"varint,6,opt,name=trusted_servers_only,json=trustedServersOnly" json:"trusted_servers_only,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *CMsgGCToGCMasterBroadcastMessage) Reset() {
@@ -3624,6 +3625,13 @@ func (x *CMsgGCToGCMasterBroadcastMessage) GetMsgData() []byte {
 		return x.MsgData
 	}
 	return nil
+}
+
+func (x *CMsgGCToGCMasterBroadcastMessage) GetTrustedServersOnly() bool {
+	if x != nil && x.TrustedServersOnly != nil {
+		return *x.TrustedServersOnly
+	}
+	return false
 }
 
 type CMsgGCToGCMasterSubscribeToCache struct {
@@ -5238,13 +5246,14 @@ const file_gcsdk_gcmessages_proto_rawDesc = "" +
 	"\fconvar_value\x18\x02 \x01(\tR\vconvarValue\"[\n" +
 	"\x1bCGCMsgCompressedMsgToClient\x12\x15\n" +
 	"\x06msg_id\x18\x01 \x01(\rR\x05msgId\x12%\n" +
-	"\x0ecompressed_msg\x18\x02 \x01(\fR\rcompressedMsg\"\xca\x01\n" +
+	"\x0ecompressed_msg\x18\x02 \x01(\fR\rcompressedMsg\"\xfc\x01\n" +
 	" CMsgGCToGCMasterBroadcastMessage\x12(\n" +
 	"\x10users_per_second\x18\x01 \x01(\rR\x0eusersPerSecond\x12\"\n" +
 	"\rsend_to_users\x18\x02 \x01(\bR\vsendToUsers\x12&\n" +
 	"\x0fsend_to_servers\x18\x03 \x01(\bR\rsendToServers\x12\x15\n" +
 	"\x06msg_id\x18\x04 \x01(\rR\x05msgId\x12\x19\n" +
-	"\bmsg_data\x18\x05 \x01(\fR\amsgData\"\x96\x01\n" +
+	"\bmsg_data\x18\x05 \x01(\fR\amsgData\x120\n" +
+	"\x14trusted_servers_only\x18\x06 \x01(\bR\x12trustedServersOnly\"\x96\x01\n" +
 	" CMsgGCToGCMasterSubscribeToCache\x12\x1b\n" +
 	"\tsoid_type\x18\x01 \x01(\rR\bsoidType\x12\x17\n" +
 	"\asoid_id\x18\x02 \x01(\x06R\x06soidId\x12\x1f\n" +

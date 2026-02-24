@@ -212,20 +212,21 @@ func (x *CDOTAMatchMetadataFile) GetPrivateMetadata() []byte {
 }
 
 type CDOTAMatchMetadata struct {
-	state                  protoimpl.MessageState                       `protogen:"open.v1"`
-	Teams                  []*CDOTAMatchMetadata_Team                   `protobuf:"bytes,1,rep,name=teams" json:"teams,omitempty"`
-	LobbyId                *uint64                                      `protobuf:"fixed64,3,opt,name=lobby_id,json=lobbyId" json:"lobby_id,omitempty"`
-	ReportUntilTime        *uint64                                      `protobuf:"fixed64,4,opt,name=report_until_time,json=reportUntilTime" json:"report_until_time,omitempty"`
-	EventGameCustomTable   []byte                                       `protobuf:"bytes,5,opt,name=event_game_custom_table,json=eventGameCustomTable" json:"event_game_custom_table,omitempty"`
-	PrimaryEventId         *uint32                                      `protobuf:"varint,6,opt,name=primary_event_id,json=primaryEventId" json:"primary_event_id,omitempty"`
-	MatchmakingStats       *CMsgMatchMatchmakingStats                   `protobuf:"bytes,8,opt,name=matchmaking_stats,json=matchmakingStats" json:"matchmaking_stats,omitempty"`
-	MvpData                *CMvpData                                    `protobuf:"bytes,9,opt,name=mvp_data,json=mvpData" json:"mvp_data,omitempty"`
-	GuildChallengeProgress []*CDOTAMatchMetadata_GuildChallengeProgress `protobuf:"bytes,10,rep,name=guild_challenge_progress,json=guildChallengeProgress" json:"guild_challenge_progress,omitempty"`
-	CustomPostGameTable    []byte                                       `protobuf:"bytes,11,opt,name=custom_post_game_table,json=customPostGameTable" json:"custom_post_game_table,omitempty"`
-	MatchTips              []*CDOTAMatchMetadata_Tip                    `protobuf:"bytes,12,rep,name=match_tips,json=matchTips" json:"match_tips,omitempty"`
-	MatchTrackedStats      []*CMsgTrackedStat                           `protobuf:"bytes,13,rep,name=match_tracked_stats,json=matchTrackedStats" json:"match_tracked_stats,omitempty"`
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	state                    protoimpl.MessageState                       `protogen:"open.v1"`
+	Teams                    []*CDOTAMatchMetadata_Team                   `protobuf:"bytes,1,rep,name=teams" json:"teams,omitempty"`
+	LobbyId                  *uint64                                      `protobuf:"fixed64,3,opt,name=lobby_id,json=lobbyId" json:"lobby_id,omitempty"`
+	ReportUntilTime          *uint64                                      `protobuf:"fixed64,4,opt,name=report_until_time,json=reportUntilTime" json:"report_until_time,omitempty"`
+	EventGameCustomTable     []byte                                       `protobuf:"bytes,5,opt,name=event_game_custom_table,json=eventGameCustomTable" json:"event_game_custom_table,omitempty"`
+	PrimaryEventId           *uint32                                      `protobuf:"varint,6,opt,name=primary_event_id,json=primaryEventId" json:"primary_event_id,omitempty"`
+	MatchmakingStats         *CMsgMatchMatchmakingStats                   `protobuf:"bytes,8,opt,name=matchmaking_stats,json=matchmakingStats" json:"matchmaking_stats,omitempty"`
+	MvpData                  *CMvpData                                    `protobuf:"bytes,9,opt,name=mvp_data,json=mvpData" json:"mvp_data,omitempty"`
+	GuildChallengeProgress   []*CDOTAMatchMetadata_GuildChallengeProgress `protobuf:"bytes,10,rep,name=guild_challenge_progress,json=guildChallengeProgress" json:"guild_challenge_progress,omitempty"`
+	CustomPostGameTable      []byte                                       `protobuf:"bytes,11,opt,name=custom_post_game_table,json=customPostGameTable" json:"custom_post_game_table,omitempty"`
+	MatchTips                []*CDOTAMatchMetadata_Tip                    `protobuf:"bytes,12,rep,name=match_tips,json=matchTips" json:"match_tips,omitempty"`
+	MatchTrackedStats        []*CMsgTrackedStat                           `protobuf:"bytes,13,rep,name=match_tracked_stats,json=matchTrackedStats" json:"match_tracked_stats,omitempty"`
+	PrimaryEventIdForDisplay *uint32                                      `protobuf:"varint,14,opt,name=primary_event_id_for_display,json=primaryEventIdForDisplay" json:"primary_event_id_for_display,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *CDOTAMatchMetadata) Reset() {
@@ -333,6 +334,13 @@ func (x *CDOTAMatchMetadata) GetMatchTrackedStats() []*CMsgTrackedStat {
 		return x.MatchTrackedStats
 	}
 	return nil
+}
+
+func (x *CDOTAMatchMetadata) GetPrimaryEventIdForDisplay() uint32 {
+	if x != nil && x.PrimaryEventIdForDisplay != nil {
+		return *x.PrimaryEventIdForDisplay
+	}
+	return 0
 }
 
 type CDOTAMatchPrivateMetadata struct {
@@ -1989,6 +1997,7 @@ type CDOTAMatchMetadata_Team_Player struct {
 	OverworldRewards           *CDOTAMatchMetadata_Team_Player_OverworldRewards   `protobuf:"bytes,59,opt,name=overworld_rewards,json=overworldRewards" json:"overworld_rewards,omitempty"`
 	CraftworksQuestRewards     []*CMsgCraftworksQuestReward                       `protobuf:"bytes,60,rep,name=craftworks_quest_rewards,json=craftworksQuestRewards" json:"craftworks_quest_rewards,omitempty"`
 	AdFacetHeroId              *int32                                             `protobuf:"varint,61,opt,name=ad_facet_hero_id,json=adFacetHeroId" json:"ad_facet_hero_id,omitempty"`
+	MonsterHunterRewards       *CMsgMonsterHunterMatchRewards_Player              `protobuf:"bytes,62,opt,name=monster_hunter_rewards,json=monsterHunterRewards" json:"monster_hunter_rewards,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -2420,6 +2429,13 @@ func (x *CDOTAMatchMetadata_Team_Player) GetAdFacetHeroId() int32 {
 		return *x.AdFacetHeroId
 	}
 	return 0
+}
+
+func (x *CDOTAMatchMetadata_Team_Player) GetMonsterHunterRewards() *CMsgMonsterHunterMatchRewards_Player {
+	if x != nil {
+		return x.MonsterHunterRewards
+	}
+	return nil
 }
 
 type CDOTAMatchMetadata_Team_Player_ContractProgress struct {
@@ -3509,6 +3525,7 @@ type CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget struct {
 	HeroId          *int32                 `protobuf:"varint,1,opt,name=hero_id,json=heroId" json:"hero_id,omitempty"`
 	ElapsedDuration *float32               `protobuf:"fixed32,2,opt,name=elapsed_duration,json=elapsedDuration" json:"elapsed_duration,omitempty"`
 	IsHidden        *bool                  `protobuf:"varint,3,opt,name=is_hidden,json=isHidden" json:"is_hidden,omitempty"`
+	InstanceCount   *int32                 `protobuf:"varint,4,opt,name=instance_count,json=instanceCount" json:"instance_count,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -3564,16 +3581,23 @@ func (x *CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget) GetIsHid
 	return false
 }
 
+func (x *CDOTAMatchPrivateMetadata_Team_Player_BuffRecord_ByHeroTarget) GetInstanceCount() int32 {
+	if x != nil && x.InstanceCount != nil {
+		return *x.InstanceCount
+	}
+	return 0
+}
+
 var File_dota_match_metadata_proto protoreflect.FileDescriptor
 
 const file_dota_match_metadata_proto_rawDesc = "" +
 	"\n" +
-	"\x19dota_match_metadata.proto\x12\bprotocol\x1a\x15base_gcmessages.proto\x1a-dota_gcmessages_common_match_management.proto\x1a\"dota_gcmessages_common_lobby.proto\x1a&dota_gcmessages_common_overworld.proto\x1a'dota_gcmessages_common_craftworks.proto\x1a\x1cdota_gcmessages_common.proto\x1a\x17dota_shared_enums.proto\x1a\x16gcsdk_gcmessages.proto\"\xb2\x01\n" +
+	"\x19dota_match_metadata.proto\x12\bprotocol\x1a\x15base_gcmessages.proto\x1a-dota_gcmessages_common_match_management.proto\x1a\"dota_gcmessages_common_lobby.proto\x1a&dota_gcmessages_common_overworld.proto\x1a'dota_gcmessages_common_craftworks.proto\x1a+dota_gcmessages_common_monster_hunter.proto\x1a\x1cdota_gcmessages_common.proto\x1a\x17dota_shared_enums.proto\x1a\x16gcsdk_gcmessages.proto\x1a\x16networkbasetypes.proto\"\xba\x01\n" +
 	"\x16CDOTAMatchMetadataFile\x12\x18\n" +
 	"\aversion\x18\x01 \x02(\x05R\aversion\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x02(\x04R\amatchId\x128\n" +
 	"\bmetadata\x18\x03 \x01(\v2\x1c.protocol.CDOTAMatchMetadataR\bmetadata\x12)\n" +
-	"\x10private_metadata\x18\x05 \x01(\fR\x0fprivateMetadata\"\xa0I\n" +
+	"\x10private_metadata\x18\x05 \x01(\fR\x0fprivateMetadata:\x06\x80\xb5\x18\xc0\x84=\"\xc6J\n" +
 	"\x12CDOTAMatchMetadata\x127\n" +
 	"\x05teams\x18\x01 \x03(\v2!.protocol.CDOTAMatchMetadata.TeamR\x05teams\x12\x19\n" +
 	"\blobby_id\x18\x03 \x01(\x06R\alobbyId\x12*\n" +
@@ -3587,13 +3611,14 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x16custom_post_game_table\x18\v \x01(\fR\x13customPostGameTable\x12?\n" +
 	"\n" +
 	"match_tips\x18\f \x03(\v2 .protocol.CDOTAMatchMetadata.TipR\tmatchTips\x12I\n" +
-	"\x13match_tracked_stats\x18\r \x03(\v2\x19.protocol.CMsgTrackedStatR\x11matchTrackedStats\x1a\xe1\x01\n" +
+	"\x13match_tracked_stats\x18\r \x03(\v2\x19.protocol.CMsgTrackedStatR\x11matchTrackedStats\x12>\n" +
+	"\x1cprimary_event_id_for_display\x18\x0e \x01(\rR\x18primaryEventIdForDisplay\x1a\xe1\x01\n" +
 	"\bEconItem\x12\x1b\n" +
 	"\tdef_index\x18\x01 \x01(\rR\bdefIndex\x12\x1b\n" +
 	"\aquality\x18\x02 \x01(\r:\x014R\aquality\x12<\n" +
 	"\tattribute\x18\x03 \x03(\v2\x1e.protocol.CSOEconItemAttributeR\tattribute\x12\x17\n" +
 	"\x05style\x18\x04 \x01(\r:\x010R\x05style\x12D\n" +
-	"\x0eequipped_state\x18\x05 \x03(\v2\x1d.protocol.CSOEconItemEquippedR\requippedState\x1a\xfb;\n" +
+	"\x0eequipped_state\x18\x05 \x03(\v2\x1d.protocol.CSOEconItemEquippedR\requippedState\x1a\xe1<\n" +
 	"\x04Team\x12\x1b\n" +
 	"\tdota_team\x18\x01 \x01(\rR\bdotaTeam\x12B\n" +
 	"\aplayers\x18\x02 \x03(\v2(.protocol.CDOTAMatchMetadata.Team.PlayerR\aplayers\x12)\n" +
@@ -3715,7 +3740,7 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x0fKILL_TYPE_TOWER\x10\x01\x12\x16\n" +
 	"\x12KILL_TYPE_BARRACKS\x10\x02\x12\x14\n" +
 	"\x10KILL_TYPE_ROSHAN\x10\x03\x12\x16\n" +
-	"\x12KILL_TYPE_MINIBOSS\x10\x04\x1a\xce\x1a\n" +
+	"\x12KILL_TYPE_MINIBOSS\x10\x04\x1a\xb4\x1b\n" +
 	"\x06Player\x12)\n" +
 	"\x10ability_upgrades\x18\x02 \x03(\x05R\x0fabilityUpgrades\x12\x1f\n" +
 	"\vplayer_slot\x18\x03 \x01(\rR\n" +
@@ -3782,7 +3807,8 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x14player_tracked_stats\x18: \x03(\v2\x19.protocol.CMsgTrackedStatR\x12playerTrackedStats\x12f\n" +
 	"\x11overworld_rewards\x18; \x01(\v29.protocol.CDOTAMatchMetadata.Team.Player.OverworldRewardsR\x10overworldRewards\x12]\n" +
 	"\x18craftworks_quest_rewards\x18< \x03(\v2#.protocol.CMsgCraftworksQuestRewardR\x16craftworksQuestRewards\x12'\n" +
-	"\x10ad_facet_hero_id\x18= \x01(\x05R\radFacetHeroId\x1a\x97\x02\n" +
+	"\x10ad_facet_hero_id\x18= \x01(\x05R\radFacetHeroId\x12d\n" +
+	"\x16monster_hunter_rewards\x18> \x01(\v2..protocol.CMsgMonsterHunterMatchRewards.PlayerR\x14monsterHunterRewards\x1a\x97\x02\n" +
 	"\x10ContractProgress\x12\x19\n" +
 	"\bguild_id\x18\x01 \x01(\rR\aguildId\x12\x19\n" +
 	"\bevent_id\x18\x02 \x01(\rR\aeventId\x122\n" +
@@ -3812,7 +3838,7 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x12target_player_slot\x18\x02 \x01(\rR\x10targetPlayerSlot\x12\x1d\n" +
 	"\n" +
 	"tip_amount\x18\x03 \x01(\rR\ttipAmount\x12:\n" +
-	"\bevent_id\x18\x04 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\x98\x18\n" +
+	"\bevent_id\x18\x04 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\xc0\x18\n" +
 	"\x19CDOTAMatchPrivateMetadata\x12>\n" +
 	"\x05teams\x18\x01 \x03(\v2(.protocol.CDOTAMatchPrivateMetadata.TeamR\x05teams\x122\n" +
 	"\x15graph_win_probability\x18\x02 \x03(\x02R\x13graphWinProbability\x12Q\n" +
@@ -3820,11 +3846,11 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\n" +
 	"StringName\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x1a\x81\x16\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x1a\xa9\x16\n" +
 	"\x04Team\x12\x1b\n" +
 	"\tdota_team\x18\x01 \x01(\rR\bdotaTeam\x12I\n" +
 	"\aplayers\x18\x02 \x03(\v2/.protocol.CDOTAMatchPrivateMetadata.Team.PlayerR\aplayers\x12O\n" +
-	"\tbuildings\x18\x03 \x03(\v21.protocol.CDOTAMatchPrivateMetadata.Team.BuildingR\tbuildings\x1a\xa2\x13\n" +
+	"\tbuildings\x18\x03 \x03(\v21.protocol.CDOTAMatchPrivateMetadata.Team.BuildingR\tbuildings\x1a\xca\x13\n" +
 	"\x06Player\x12\x1f\n" +
 	"\vplayer_slot\x18\x02 \x01(\rR\n" +
 	"playerSlot\x12'\n" +
@@ -3864,16 +3890,17 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x0fby_hero_targets\x18\x02 \x03(\v2[.protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.ByHeroTargetR\rbyHeroTargets\x1aA\n" +
 	"\fByHeroTarget\x12\x17\n" +
 	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12\x18\n" +
-	"\ahealing\x18\x02 \x01(\rR\ahealing\x1a\xc8\x02\n" +
+	"\ahealing\x18\x02 \x01(\rR\ahealing\x1a\xf0\x02\n" +
 	"\n" +
 	"BuffRecord\x12*\n" +
 	"\x0fbuff_ability_id\x18\x01 \x01(\x05:\x02-1R\rbuffAbilityId\x12,\n" +
 	"\x12buff_modifier_name\x18\x03 \x01(\tR\x10buffModifierName\x12o\n" +
-	"\x0fby_hero_targets\x18\x02 \x03(\v2G.protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTargetR\rbyHeroTargets\x1ao\n" +
+	"\x0fby_hero_targets\x18\x02 \x03(\v2G.protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTargetR\rbyHeroTargets\x1a\x96\x01\n" +
 	"\fByHeroTarget\x12\x17\n" +
 	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12)\n" +
 	"\x10elapsed_duration\x18\x02 \x01(\x02R\x0felapsedDuration\x12\x1b\n" +
-	"\tis_hidden\x18\x03 \x01(\bR\bisHidden\x1a\xe1\x01\n" +
+	"\tis_hidden\x18\x03 \x01(\bR\bisHidden\x12%\n" +
+	"\x0einstance_count\x18\x04 \x01(\x05R\rinstanceCount\x1a\xe1\x01\n" +
 	"\fGoldReceived\x12\x14\n" +
 	"\x05creep\x18\x01 \x01(\rR\x05creep\x12\x16\n" +
 	"\x06heroes\x18\x02 \x01(\rR\x06heroes\x12!\n" +
@@ -3967,7 +3994,8 @@ var file_dota_match_metadata_proto_goTypes = []any{
 	(EDOTAMMRBoostType)(0),                                                                    // 47: protocol.EDOTAMMRBoostType
 	(DOTA_GC_TEAM)(0),                                                                         // 48: protocol.DOTA_GC_TEAM
 	(*CMsgCraftworksQuestReward)(nil),                                                         // 49: protocol.CMsgCraftworksQuestReward
-	(*CMsgOverworldTokenQuantity)(nil),                                                        // 50: protocol.CMsgOverworldTokenQuantity
+	(*CMsgMonsterHunterMatchRewards_Player)(nil),                                              // 50: protocol.CMsgMonsterHunterMatchRewards.Player
+	(*CMsgOverworldTokenQuantity)(nil),                                                        // 51: protocol.CMsgOverworldTokenQuantity
 }
 var file_dota_match_metadata_proto_depIdxs = []int32{
 	3,  // 0: protocol.CDOTAMatchMetadataFile.metadata:type_name -> protocol.CDOTAMatchMetadata
@@ -4009,24 +4037,25 @@ var file_dota_match_metadata_proto_depIdxs = []int32{
 	42, // 36: protocol.CDOTAMatchMetadata.Team.Player.player_tracked_stats:type_name -> protocol.CMsgTrackedStat
 	25, // 37: protocol.CDOTAMatchMetadata.Team.Player.overworld_rewards:type_name -> protocol.CDOTAMatchMetadata.Team.Player.OverworldRewards
 	49, // 38: protocol.CDOTAMatchMetadata.Team.Player.craftworks_quest_rewards:type_name -> protocol.CMsgCraftworksQuestReward
-	50, // 39: protocol.CDOTAMatchMetadata.Team.Player.OverworldRewards.tokens:type_name -> protocol.CMsgOverworldTokenQuantity
-	29, // 40: protocol.CDOTAMatchPrivateMetadata.Team.players:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player
-	30, // 41: protocol.CDOTAMatchPrivateMetadata.Team.buildings:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Building
-	31, // 42: protocol.CDOTAMatchPrivateMetadata.Team.Player.combat_segments:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment
-	32, // 43: protocol.CDOTAMatchPrivateMetadata.Team.Player.buff_records:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord
-	33, // 44: protocol.CDOTAMatchPrivateMetadata.Team.Player.gold_received:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.GoldReceived
-	34, // 45: protocol.CDOTAMatchPrivateMetadata.Team.Player.xp_received:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.XPReceived
-	48, // 46: protocol.CDOTAMatchPrivateMetadata.Team.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
-	35, // 47: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.damage_by_ability:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility
-	36, // 48: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.healing_by_ability:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility
-	39, // 49: protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget
-	37, // 50: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility.ByHeroTarget
-	38, // 51: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.ByHeroTarget
-	52, // [52:52] is the sub-list for method output_type
-	52, // [52:52] is the sub-list for method input_type
-	52, // [52:52] is the sub-list for extension type_name
-	52, // [52:52] is the sub-list for extension extendee
-	0,  // [0:52] is the sub-list for field type_name
+	50, // 39: protocol.CDOTAMatchMetadata.Team.Player.monster_hunter_rewards:type_name -> protocol.CMsgMonsterHunterMatchRewards.Player
+	51, // 40: protocol.CDOTAMatchMetadata.Team.Player.OverworldRewards.tokens:type_name -> protocol.CMsgOverworldTokenQuantity
+	29, // 41: protocol.CDOTAMatchPrivateMetadata.Team.players:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player
+	30, // 42: protocol.CDOTAMatchPrivateMetadata.Team.buildings:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Building
+	31, // 43: protocol.CDOTAMatchPrivateMetadata.Team.Player.combat_segments:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment
+	32, // 44: protocol.CDOTAMatchPrivateMetadata.Team.Player.buff_records:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord
+	33, // 45: protocol.CDOTAMatchPrivateMetadata.Team.Player.gold_received:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.GoldReceived
+	34, // 46: protocol.CDOTAMatchPrivateMetadata.Team.Player.xp_received:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.XPReceived
+	48, // 47: protocol.CDOTAMatchPrivateMetadata.Team.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
+	35, // 48: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.damage_by_ability:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility
+	36, // 49: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.healing_by_ability:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility
+	39, // 50: protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget
+	37, // 51: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.DamageByAbility.ByHeroTarget
+	38, // 52: protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.by_hero_targets:type_name -> protocol.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility.ByHeroTarget
+	53, // [53:53] is the sub-list for method output_type
+	53, // [53:53] is the sub-list for method input_type
+	53, // [53:53] is the sub-list for extension type_name
+	53, // [53:53] is the sub-list for extension extendee
+	0,  // [0:53] is the sub-list for field type_name
 }
 
 func init() { file_dota_match_metadata_proto_init() }
@@ -4039,9 +4068,11 @@ func file_dota_match_metadata_proto_init() {
 	file_dota_gcmessages_common_lobby_proto_init()
 	file_dota_gcmessages_common_overworld_proto_init()
 	file_dota_gcmessages_common_craftworks_proto_init()
+	file_dota_gcmessages_common_monster_hunter_proto_init()
 	file_dota_gcmessages_common_proto_init()
 	file_dota_shared_enums_proto_init()
 	file_gcsdk_gcmessages_proto_init()
+	file_networkbasetypes_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.4
-// source: dota_gcmessages_client_battle_report.proto
+// source: dota_gcmessages_common_battle_report.proto
 
 package protocol
 
@@ -247,11 +247,11 @@ func (x CMsgBattleReport_HighlightType) String() string {
 }
 
 func (CMsgBattleReport_HighlightType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[0].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[0].Descriptor()
 }
 
 func (CMsgBattleReport_HighlightType) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[0]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[0]
 }
 
 func (x CMsgBattleReport_HighlightType) Number() protoreflect.EnumNumber {
@@ -270,7 +270,7 @@ func (x *CMsgBattleReport_HighlightType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_HighlightType.Descriptor instead.
 func (CMsgBattleReport_HighlightType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{0}
 }
 
 type CMsgBattleReport_HighlightCategory int32
@@ -306,11 +306,11 @@ func (x CMsgBattleReport_HighlightCategory) String() string {
 }
 
 func (CMsgBattleReport_HighlightCategory) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[1].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[1].Descriptor()
 }
 
 func (CMsgBattleReport_HighlightCategory) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[1]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[1]
 }
 
 func (x CMsgBattleReport_HighlightCategory) Number() protoreflect.EnumNumber {
@@ -329,7 +329,7 @@ func (x *CMsgBattleReport_HighlightCategory) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_HighlightCategory.Descriptor instead.
 func (CMsgBattleReport_HighlightCategory) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{1}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{1}
 }
 
 type CMsgBattleReport_Role int32
@@ -374,11 +374,11 @@ func (x CMsgBattleReport_Role) String() string {
 }
 
 func (CMsgBattleReport_Role) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[2].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[2].Descriptor()
 }
 
 func (CMsgBattleReport_Role) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[2]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[2]
 }
 
 func (x CMsgBattleReport_Role) Number() protoreflect.EnumNumber {
@@ -397,7 +397,7 @@ func (x *CMsgBattleReport_Role) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_Role.Descriptor instead.
 func (CMsgBattleReport_Role) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{2}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{2}
 }
 
 type CMsgBattleReport_CompareContext int32
@@ -439,11 +439,11 @@ func (x CMsgBattleReport_CompareContext) String() string {
 }
 
 func (CMsgBattleReport_CompareContext) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[3].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[3].Descriptor()
 }
 
 func (CMsgBattleReport_CompareContext) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[3]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[3]
 }
 
 func (x CMsgBattleReport_CompareContext) Number() protoreflect.EnumNumber {
@@ -462,7 +462,7 @@ func (x *CMsgBattleReport_CompareContext) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_CompareContext.Descriptor instead.
 func (CMsgBattleReport_CompareContext) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{3}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{3}
 }
 
 type CMsgBattleReport_HighlightTier int32
@@ -507,11 +507,11 @@ func (x CMsgBattleReport_HighlightTier) String() string {
 }
 
 func (CMsgBattleReport_HighlightTier) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[4].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[4].Descriptor()
 }
 
 func (CMsgBattleReport_HighlightTier) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[4]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[4]
 }
 
 func (x CMsgBattleReport_HighlightTier) Number() protoreflect.EnumNumber {
@@ -530,7 +530,7 @@ func (x *CMsgBattleReport_HighlightTier) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_HighlightTier.Descriptor instead.
 func (CMsgBattleReport_HighlightTier) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{4}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{4}
 }
 
 type CMsgBattleReport_HighlightRarity int32
@@ -566,11 +566,11 @@ func (x CMsgBattleReport_HighlightRarity) String() string {
 }
 
 func (CMsgBattleReport_HighlightRarity) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[5].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[5].Descriptor()
 }
 
 func (CMsgBattleReport_HighlightRarity) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[5]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[5]
 }
 
 func (x CMsgBattleReport_HighlightRarity) Number() protoreflect.EnumNumber {
@@ -589,7 +589,7 @@ func (x *CMsgBattleReport_HighlightRarity) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_HighlightRarity.Descriptor instead.
 func (CMsgBattleReport_HighlightRarity) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{5}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{5}
 }
 
 type CMsgBattleReport_EOutcome int32
@@ -622,11 +622,11 @@ func (x CMsgBattleReport_EOutcome) String() string {
 }
 
 func (CMsgBattleReport_EOutcome) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[6].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[6].Descriptor()
 }
 
 func (CMsgBattleReport_EOutcome) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[6]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[6]
 }
 
 func (x CMsgBattleReport_EOutcome) Number() protoreflect.EnumNumber {
@@ -645,7 +645,7 @@ func (x *CMsgBattleReport_EOutcome) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_EOutcome.Descriptor instead.
 func (CMsgBattleReport_EOutcome) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{6}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{6}
 }
 
 type CMsgBattleReport_ELaneOutcome int32
@@ -684,11 +684,11 @@ func (x CMsgBattleReport_ELaneOutcome) String() string {
 }
 
 func (CMsgBattleReport_ELaneOutcome) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[7].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[7].Descriptor()
 }
 
 func (CMsgBattleReport_ELaneOutcome) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[7]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[7]
 }
 
 func (x CMsgBattleReport_ELaneOutcome) Number() protoreflect.EnumNumber {
@@ -707,7 +707,7 @@ func (x *CMsgBattleReport_ELaneOutcome) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgBattleReport_ELaneOutcome.Descriptor instead.
 func (CMsgBattleReport_ELaneOutcome) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{7}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{7}
 }
 
 type CMsgClientToGCGetBattleReportResponse_EResponse int32
@@ -770,11 +770,11 @@ func (x CMsgClientToGCGetBattleReportResponse_EResponse) String() string {
 }
 
 func (CMsgClientToGCGetBattleReportResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[8].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[8].Descriptor()
 }
 
 func (CMsgClientToGCGetBattleReportResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[8]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[8]
 }
 
 func (x CMsgClientToGCGetBattleReportResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -793,7 +793,7 @@ func (x *CMsgClientToGCGetBattleReportResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCGetBattleReportResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetBattleReportResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{9, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{9, 0}
 }
 
 type CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse int32
@@ -841,11 +841,11 @@ func (x CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) String() 
 }
 
 func (CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[9].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[9].Descriptor()
 }
 
 func (CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[9]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[9]
 }
 
 func (x CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -864,7 +864,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) Unmarsha
 
 // Deprecated: Use CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetBattleReportAggregateStatsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{11, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{11, 0}
 }
 
 type CMsgClientToGCGetBattleReportInfoResponse_EResponse int32
@@ -909,11 +909,11 @@ func (x CMsgClientToGCGetBattleReportInfoResponse_EResponse) String() string {
 }
 
 func (CMsgClientToGCGetBattleReportInfoResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[10].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[10].Descriptor()
 }
 
 func (CMsgClientToGCGetBattleReportInfoResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[10]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[10]
 }
 
 func (x CMsgClientToGCGetBattleReportInfoResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -932,7 +932,7 @@ func (x *CMsgClientToGCGetBattleReportInfoResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgClientToGCGetBattleReportInfoResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetBattleReportInfoResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{13, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{13, 0}
 }
 
 type CMsgClientToGCAcknowledgeBattleReportResponse_EResponse int32
@@ -992,11 +992,11 @@ func (x CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) String() string
 }
 
 func (CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[11].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[11].Descriptor()
 }
 
 func (CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[11]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[11]
 }
 
 func (x CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1015,7 +1015,7 @@ func (x *CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCAcknowledgeBattleReportResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCAcknowledgeBattleReportResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{15, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{15, 0}
 }
 
 type CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse int32
@@ -1063,11 +1063,11 @@ func (x CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) String() st
 }
 
 func (CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_battle_report_proto_enumTypes[12].Descriptor()
+	return file_dota_gcmessages_common_battle_report_proto_enumTypes[12].Descriptor()
 }
 
 func (CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_battle_report_proto_enumTypes[12]
+	return &file_dota_gcmessages_common_battle_report_proto_enumTypes[12]
 }
 
 func (x CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1086,7 +1086,7 @@ func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) UnmarshalJ
 
 // Deprecated: Use CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{17, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{17, 0}
 }
 
 type CMsgClientToGCGetBattleReport struct {
@@ -1100,7 +1100,7 @@ type CMsgClientToGCGetBattleReport struct {
 
 func (x *CMsgClientToGCGetBattleReport) Reset() {
 	*x = CMsgClientToGCGetBattleReport{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[0]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1112,7 +1112,7 @@ func (x *CMsgClientToGCGetBattleReport) String() string {
 func (*CMsgClientToGCGetBattleReport) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReport) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[0]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1125,7 +1125,7 @@ func (x *CMsgClientToGCGetBattleReport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetBattleReport.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReport) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CMsgClientToGCGetBattleReport) GetAccountId() uint32 {
@@ -1220,7 +1220,7 @@ const (
 
 func (x *CMsgBattleReport_Game) Reset() {
 	*x = CMsgBattleReport_Game{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[1]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1232,7 +1232,7 @@ func (x *CMsgBattleReport_Game) String() string {
 func (*CMsgBattleReport_Game) ProtoMessage() {}
 
 func (x *CMsgBattleReport_Game) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[1]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1245,7 +1245,7 @@ func (x *CMsgBattleReport_Game) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReport_Game.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReport_Game) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{1}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CMsgBattleReport_Game) GetHeroId() int32 {
@@ -1607,7 +1607,7 @@ type CMsgBattleReport_GameList struct {
 
 func (x *CMsgBattleReport_GameList) Reset() {
 	*x = CMsgBattleReport_GameList{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[2]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1619,7 +1619,7 @@ func (x *CMsgBattleReport_GameList) String() string {
 func (*CMsgBattleReport_GameList) ProtoMessage() {}
 
 func (x *CMsgBattleReport_GameList) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[2]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1632,7 +1632,7 @@ func (x *CMsgBattleReport_GameList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReport_GameList.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReport_GameList) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{2}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CMsgBattleReport_GameList) GetGames() []*CMsgBattleReport_Game {
@@ -1652,7 +1652,7 @@ type CMsgBattleReport struct {
 
 func (x *CMsgBattleReport) Reset() {
 	*x = CMsgBattleReport{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[3]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1664,7 +1664,7 @@ func (x *CMsgBattleReport) String() string {
 func (*CMsgBattleReport) ProtoMessage() {}
 
 func (x *CMsgBattleReport) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[3]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1677,7 +1677,7 @@ func (x *CMsgBattleReport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReport.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReport) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{3}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CMsgBattleReport) GetGames() []*CMsgBattleReport_Game {
@@ -1709,7 +1709,7 @@ type CMsgBattleReportInfo struct {
 
 func (x *CMsgBattleReportInfo) Reset() {
 	*x = CMsgBattleReportInfo{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[4]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1721,7 +1721,7 @@ func (x *CMsgBattleReportInfo) String() string {
 func (*CMsgBattleReportInfo) ProtoMessage() {}
 
 func (x *CMsgBattleReportInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[4]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1734,7 +1734,7 @@ func (x *CMsgBattleReportInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReportInfo.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{4}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CMsgBattleReportInfo) GetTimestamp() uint32 {
@@ -1795,7 +1795,7 @@ type CMsgBattleReportInfoList struct {
 
 func (x *CMsgBattleReportInfoList) Reset() {
 	*x = CMsgBattleReportInfoList{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[5]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1807,7 +1807,7 @@ func (x *CMsgBattleReportInfoList) String() string {
 func (*CMsgBattleReportInfoList) ProtoMessage() {}
 
 func (x *CMsgBattleReportInfoList) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[5]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1820,7 +1820,7 @@ func (x *CMsgBattleReportInfoList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReportInfoList.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportInfoList) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{5}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CMsgBattleReportInfoList) GetBattleReportInfo() []*CMsgBattleReportInfo {
@@ -1839,7 +1839,7 @@ type CMsgBattleReportHighlights struct {
 
 func (x *CMsgBattleReportHighlights) Reset() {
 	*x = CMsgBattleReportHighlights{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[6]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1851,7 +1851,7 @@ func (x *CMsgBattleReportHighlights) String() string {
 func (*CMsgBattleReportHighlights) ProtoMessage() {}
 
 func (x *CMsgBattleReportHighlights) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[6]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1864,7 +1864,7 @@ func (x *CMsgBattleReportHighlights) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReportHighlights.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportHighlights) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{6}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CMsgBattleReportHighlights) GetHighlights() []*CMsgBattleReport_Highlight {
@@ -1883,7 +1883,7 @@ type CMsgBattleReportAggregateStats struct {
 
 func (x *CMsgBattleReportAggregateStats) Reset() {
 	*x = CMsgBattleReportAggregateStats{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[7]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1895,7 +1895,7 @@ func (x *CMsgBattleReportAggregateStats) String() string {
 func (*CMsgBattleReportAggregateStats) ProtoMessage() {}
 
 func (x *CMsgBattleReportAggregateStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[7]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1908,7 +1908,7 @@ func (x *CMsgBattleReportAggregateStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReportAggregateStats.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportAggregateStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{7}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CMsgBattleReportAggregateStats) GetResult() []*CMsgBattleReportAggregateStats_CMsgBattleReportAggregate {
@@ -1926,7 +1926,7 @@ type CMsgBattleReportAggregatedGeneralStats struct {
 
 func (x *CMsgBattleReportAggregatedGeneralStats) Reset() {
 	*x = CMsgBattleReportAggregatedGeneralStats{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[8]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1938,7 +1938,7 @@ func (x *CMsgBattleReportAggregatedGeneralStats) String() string {
 func (*CMsgBattleReportAggregatedGeneralStats) ProtoMessage() {}
 
 func (x *CMsgBattleReportAggregatedGeneralStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[8]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1951,7 +1951,7 @@ func (x *CMsgBattleReportAggregatedGeneralStats) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgBattleReportAggregatedGeneralStats.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportAggregatedGeneralStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{8}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{8}
 }
 
 type CMsgClientToGCGetBattleReportResponse struct {
@@ -1971,7 +1971,7 @@ const (
 
 func (x *CMsgClientToGCGetBattleReportResponse) Reset() {
 	*x = CMsgClientToGCGetBattleReportResponse{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[9]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1983,7 +1983,7 @@ func (x *CMsgClientToGCGetBattleReportResponse) String() string {
 func (*CMsgClientToGCGetBattleReportResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[9]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1996,7 +1996,7 @@ func (x *CMsgClientToGCGetBattleReportResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCGetBattleReportResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{9}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CMsgClientToGCGetBattleReportResponse) GetReport() *CMsgBattleReport {
@@ -2039,7 +2039,7 @@ type CMsgClientToGCGetBattleReportAggregateStats struct {
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats) Reset() {
 	*x = CMsgClientToGCGetBattleReportAggregateStats{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[10]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2051,7 +2051,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStats) String() string {
 func (*CMsgClientToGCGetBattleReportAggregateStats) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[10]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2064,7 +2064,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStats) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCGetBattleReportAggregateStats.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportAggregateStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{10}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats) GetAggregateKeys() []*CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey {
@@ -2110,7 +2110,7 @@ const (
 
 func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse) Reset() {
 	*x = CMsgClientToGCGetBattleReportAggregateStatsResponse{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[11]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2122,7 +2122,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse) String() string {
 func (*CMsgClientToGCGetBattleReportAggregateStatsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[11]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2135,7 +2135,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse) ProtoReflect() pro
 
 // Deprecated: Use CMsgClientToGCGetBattleReportAggregateStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportAggregateStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{11}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CMsgClientToGCGetBattleReportAggregateStatsResponse) GetAggregateStats() *CMsgBattleReportAggregateStats {
@@ -2161,7 +2161,7 @@ type CMsgClientToGCGetBattleReportInfo struct {
 
 func (x *CMsgClientToGCGetBattleReportInfo) Reset() {
 	*x = CMsgClientToGCGetBattleReportInfo{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[12]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2173,7 +2173,7 @@ func (x *CMsgClientToGCGetBattleReportInfo) String() string {
 func (*CMsgClientToGCGetBattleReportInfo) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[12]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2186,7 +2186,7 @@ func (x *CMsgClientToGCGetBattleReportInfo) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCGetBattleReportInfo.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{12}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CMsgClientToGCGetBattleReportInfo) GetAccountId() uint32 {
@@ -2211,7 +2211,7 @@ const (
 
 func (x *CMsgClientToGCGetBattleReportInfoResponse) Reset() {
 	*x = CMsgClientToGCGetBattleReportInfoResponse{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[13]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2223,7 +2223,7 @@ func (x *CMsgClientToGCGetBattleReportInfoResponse) String() string {
 func (*CMsgClientToGCGetBattleReportInfoResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[13]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2236,7 +2236,7 @@ func (x *CMsgClientToGCGetBattleReportInfoResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCGetBattleReportInfoResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportInfoResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{13}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *CMsgClientToGCGetBattleReportInfoResponse) GetBattleReportInfoList() *CMsgBattleReportInfoList {
@@ -2264,7 +2264,7 @@ type CMsgClientToGCAcknowledgeBattleReport struct {
 
 func (x *CMsgClientToGCAcknowledgeBattleReport) Reset() {
 	*x = CMsgClientToGCAcknowledgeBattleReport{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[14]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2276,7 +2276,7 @@ func (x *CMsgClientToGCAcknowledgeBattleReport) String() string {
 func (*CMsgClientToGCAcknowledgeBattleReport) ProtoMessage() {}
 
 func (x *CMsgClientToGCAcknowledgeBattleReport) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[14]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2289,7 +2289,7 @@ func (x *CMsgClientToGCAcknowledgeBattleReport) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCAcknowledgeBattleReport.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCAcknowledgeBattleReport) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{14}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CMsgClientToGCAcknowledgeBattleReport) GetAccountId() uint32 {
@@ -2328,7 +2328,7 @@ const (
 
 func (x *CMsgClientToGCAcknowledgeBattleReportResponse) Reset() {
 	*x = CMsgClientToGCAcknowledgeBattleReportResponse{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[15]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2340,7 +2340,7 @@ func (x *CMsgClientToGCAcknowledgeBattleReportResponse) String() string {
 func (*CMsgClientToGCAcknowledgeBattleReportResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCAcknowledgeBattleReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[15]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2353,7 +2353,7 @@ func (x *CMsgClientToGCAcknowledgeBattleReportResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCAcknowledgeBattleReportResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCAcknowledgeBattleReportResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{15}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *CMsgClientToGCAcknowledgeBattleReportResponse) GetResponse() CMsgClientToGCAcknowledgeBattleReportResponse_EResponse {
@@ -2381,7 +2381,7 @@ type CMsgClientToGCGetBattleReportMatchHistory struct {
 
 func (x *CMsgClientToGCGetBattleReportMatchHistory) Reset() {
 	*x = CMsgClientToGCGetBattleReportMatchHistory{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[16]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2393,7 +2393,7 @@ func (x *CMsgClientToGCGetBattleReportMatchHistory) String() string {
 func (*CMsgClientToGCGetBattleReportMatchHistory) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportMatchHistory) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[16]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2406,7 +2406,7 @@ func (x *CMsgClientToGCGetBattleReportMatchHistory) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCGetBattleReportMatchHistory.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportMatchHistory) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{16}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *CMsgClientToGCGetBattleReportMatchHistory) GetAccountId() uint32 {
@@ -2445,7 +2445,7 @@ const (
 
 func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse) Reset() {
 	*x = CMsgClientToGCGetBattleReportMatchHistoryResponse{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[17]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2457,7 +2457,7 @@ func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse) String() string {
 func (*CMsgClientToGCGetBattleReportMatchHistoryResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[17]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2470,7 +2470,7 @@ func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse) ProtoReflect() proto
 
 // Deprecated: Use CMsgClientToGCGetBattleReportMatchHistoryResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportMatchHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{17}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *CMsgClientToGCGetBattleReportMatchHistoryResponse) GetResponse() CMsgClientToGCGetBattleReportMatchHistoryResponse_EResponse {
@@ -2499,7 +2499,7 @@ type CMsgBattleReport_HighlightGeneral struct {
 
 func (x *CMsgBattleReport_HighlightGeneral) Reset() {
 	*x = CMsgBattleReport_HighlightGeneral{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[18]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2511,7 +2511,7 @@ func (x *CMsgBattleReport_HighlightGeneral) String() string {
 func (*CMsgBattleReport_HighlightGeneral) ProtoMessage() {}
 
 func (x *CMsgBattleReport_HighlightGeneral) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[18]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2524,7 +2524,7 @@ func (x *CMsgBattleReport_HighlightGeneral) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgBattleReport_HighlightGeneral.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReport_HighlightGeneral) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{3, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{3, 0}
 }
 
 func (x *CMsgBattleReport_HighlightGeneral) GetWinLossWindow() int32 {
@@ -2582,7 +2582,7 @@ const (
 
 func (x *CMsgBattleReport_Highlight) Reset() {
 	*x = CMsgBattleReport_Highlight{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[19]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2594,7 +2594,7 @@ func (x *CMsgBattleReport_Highlight) String() string {
 func (*CMsgBattleReport_Highlight) ProtoMessage() {}
 
 func (x *CMsgBattleReport_Highlight) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[19]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2607,7 +2607,7 @@ func (x *CMsgBattleReport_Highlight) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgBattleReport_Highlight.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReport_Highlight) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{3, 1}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{3, 1}
 }
 
 func (x *CMsgBattleReport_Highlight) GetHighlightId() uint32 {
@@ -2690,7 +2690,7 @@ type CMsgBattleReportAggregateStats_CMsgBattleReportStat struct {
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportStat) Reset() {
 	*x = CMsgBattleReportAggregateStats_CMsgBattleReportStat{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[20]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2702,7 +2702,7 @@ func (x *CMsgBattleReportAggregateStats_CMsgBattleReportStat) String() string {
 func (*CMsgBattleReportAggregateStats_CMsgBattleReportStat) ProtoMessage() {}
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportStat) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[20]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2715,7 +2715,7 @@ func (x *CMsgBattleReportAggregateStats_CMsgBattleReportStat) ProtoReflect() pro
 
 // Deprecated: Use CMsgBattleReportAggregateStats_CMsgBattleReportStat.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportAggregateStats_CMsgBattleReportStat) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{7, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{7, 0}
 }
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportStat) GetMean() float32 {
@@ -2771,7 +2771,7 @@ type CMsgBattleReportAggregateStats_CMsgBattleReportAggregate struct {
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) Reset() {
 	*x = CMsgBattleReportAggregateStats_CMsgBattleReportAggregate{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[21]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2783,7 +2783,7 @@ func (x *CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) String() stri
 func (*CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) ProtoMessage() {}
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[21]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2796,7 +2796,7 @@ func (x *CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) ProtoReflect(
 
 // Deprecated: Use CMsgBattleReportAggregateStats_CMsgBattleReportAggregate.ProtoReflect.Descriptor instead.
 func (*CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{7, 1}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{7, 1}
 }
 
 func (x *CMsgBattleReportAggregateStats_CMsgBattleReportAggregate) GetHeroId() int32 {
@@ -3026,7 +3026,7 @@ type CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey st
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey) Reset() {
 	*x = CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey{}
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[22]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3038,7 +3038,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKe
 func (*CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_battle_report_proto_msgTypes[22]
+	mi := &file_dota_gcmessages_common_battle_report_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3051,7 +3051,7 @@ func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKe
 
 // Deprecated: Use CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_battle_report_proto_rawDescGZIP(), []int{10, 0}
+	return file_dota_gcmessages_common_battle_report_proto_rawDescGZIP(), []int{10, 0}
 }
 
 func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey) GetHeroId() int32 {
@@ -3068,11 +3068,11 @@ func (x *CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKe
 	return 0
 }
 
-var File_dota_gcmessages_client_battle_report_proto protoreflect.FileDescriptor
+var File_dota_gcmessages_common_battle_report_proto protoreflect.FileDescriptor
 
-const file_dota_gcmessages_client_battle_report_proto_rawDesc = "" +
+const file_dota_gcmessages_common_battle_report_proto_rawDesc = "" +
 	"\n" +
-	"*dota_gcmessages_client_battle_report.proto\x12\bprotocol\x1a\x13steammessages.proto\x1a\x17dota_shared_enums.proto\x1a\x1cdota_gcmessages_common.proto\x1a\x1cdota_gcmessages_webapi.proto\x1a\x16gcsdk_gcmessages.proto\x1a\x15base_gcmessages.proto\x1a\x15econ_gcmessages.proto\x1a\x1cdota_gcmessages_client.proto\x1a\x15valveextensions.proto\"x\n" +
+	"*dota_gcmessages_common_battle_report.proto\x12\bprotocol\x1a\x13steammessages.proto\x1a\x17dota_shared_enums.proto\x1a\x1cdota_gcmessages_common.proto\x1a\x16gcsdk_gcmessages.proto\x1a\x15base_gcmessages.proto\x1a\x15econ_gcmessages.proto\x1a\x15valveextensions.proto\"x\n" +
 	"\x1dCMsgClientToGCGetBattleReport\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x1c\n" +
@@ -3442,20 +3442,20 @@ const file_dota_gcmessages_client_battle_report_proto_rawDesc = "" +
 	"\vk_eEvenLane\x10\x02"
 
 var (
-	file_dota_gcmessages_client_battle_report_proto_rawDescOnce sync.Once
-	file_dota_gcmessages_client_battle_report_proto_rawDescData []byte
+	file_dota_gcmessages_common_battle_report_proto_rawDescOnce sync.Once
+	file_dota_gcmessages_common_battle_report_proto_rawDescData []byte
 )
 
-func file_dota_gcmessages_client_battle_report_proto_rawDescGZIP() []byte {
-	file_dota_gcmessages_client_battle_report_proto_rawDescOnce.Do(func() {
-		file_dota_gcmessages_client_battle_report_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_dota_gcmessages_client_battle_report_proto_rawDesc), len(file_dota_gcmessages_client_battle_report_proto_rawDesc)))
+func file_dota_gcmessages_common_battle_report_proto_rawDescGZIP() []byte {
+	file_dota_gcmessages_common_battle_report_proto_rawDescOnce.Do(func() {
+		file_dota_gcmessages_common_battle_report_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_dota_gcmessages_common_battle_report_proto_rawDesc), len(file_dota_gcmessages_common_battle_report_proto_rawDesc)))
 	})
-	return file_dota_gcmessages_client_battle_report_proto_rawDescData
+	return file_dota_gcmessages_common_battle_report_proto_rawDescData
 }
 
-var file_dota_gcmessages_client_battle_report_proto_enumTypes = make([]protoimpl.EnumInfo, 13)
-var file_dota_gcmessages_client_battle_report_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_dota_gcmessages_client_battle_report_proto_goTypes = []any{
+var file_dota_gcmessages_common_battle_report_proto_enumTypes = make([]protoimpl.EnumInfo, 13)
+var file_dota_gcmessages_common_battle_report_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_dota_gcmessages_common_battle_report_proto_goTypes = []any{
 	(CMsgBattleReport_HighlightType)(0),                                              // 0: protocol.CMsgBattleReport_HighlightType
 	(CMsgBattleReport_HighlightCategory)(0),                                          // 1: protocol.CMsgBattleReport_HighlightCategory
 	(CMsgBattleReport_Role)(0),                                                       // 2: protocol.CMsgBattleReport_Role
@@ -3493,7 +3493,7 @@ var file_dota_gcmessages_client_battle_report_proto_goTypes = []any{
 	(*CMsgBattleReportAggregateStats_CMsgBattleReportAggregate)(nil),                 // 34: protocol.CMsgBattleReportAggregateStats.CMsgBattleReportAggregate
 	(*CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey)(nil), // 35: protocol.CMsgClientToGCGetBattleReportAggregateStats.CMsgBattleReportAggregateKey
 }
-var file_dota_gcmessages_client_battle_report_proto_depIdxs = []int32{
+var file_dota_gcmessages_common_battle_report_proto_depIdxs = []int32{
 	2,  // 0: protocol.CMsgBattleReport_Game.role:type_name -> protocol.CMsgBattleReport_Role
 	6,  // 1: protocol.CMsgBattleReport_Game.outcome:type_name -> protocol.CMsgBattleReport_EOutcome
 	7,  // 2: protocol.CMsgBattleReport_Game.lane_outcome:type_name -> protocol.CMsgBattleReport_ELaneOutcome
@@ -3553,36 +3553,34 @@ var file_dota_gcmessages_client_battle_report_proto_depIdxs = []int32{
 	0,  // [0:52] is the sub-list for field type_name
 }
 
-func init() { file_dota_gcmessages_client_battle_report_proto_init() }
-func file_dota_gcmessages_client_battle_report_proto_init() {
-	if File_dota_gcmessages_client_battle_report_proto != nil {
+func init() { file_dota_gcmessages_common_battle_report_proto_init() }
+func file_dota_gcmessages_common_battle_report_proto_init() {
+	if File_dota_gcmessages_common_battle_report_proto != nil {
 		return
 	}
 	file_steammessages_proto_init()
 	file_dota_shared_enums_proto_init()
 	file_dota_gcmessages_common_proto_init()
-	file_dota_gcmessages_webapi_proto_init()
 	file_gcsdk_gcmessages_proto_init()
 	file_base_gcmessages_proto_init()
 	file_econ_gcmessages_proto_init()
-	file_dota_gcmessages_client_proto_init()
 	file_valveextensions_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_client_battle_report_proto_rawDesc), len(file_dota_gcmessages_client_battle_report_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_common_battle_report_proto_rawDesc), len(file_dota_gcmessages_common_battle_report_proto_rawDesc)),
 			NumEnums:      13,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_dota_gcmessages_client_battle_report_proto_goTypes,
-		DependencyIndexes: file_dota_gcmessages_client_battle_report_proto_depIdxs,
-		EnumInfos:         file_dota_gcmessages_client_battle_report_proto_enumTypes,
-		MessageInfos:      file_dota_gcmessages_client_battle_report_proto_msgTypes,
+		GoTypes:           file_dota_gcmessages_common_battle_report_proto_goTypes,
+		DependencyIndexes: file_dota_gcmessages_common_battle_report_proto_depIdxs,
+		EnumInfos:         file_dota_gcmessages_common_battle_report_proto_enumTypes,
+		MessageInfos:      file_dota_gcmessages_common_battle_report_proto_msgTypes,
 	}.Build()
-	File_dota_gcmessages_client_battle_report_proto = out.File
-	file_dota_gcmessages_client_battle_report_proto_goTypes = nil
-	file_dota_gcmessages_client_battle_report_proto_depIdxs = nil
+	File_dota_gcmessages_common_battle_report_proto = out.File
+	file_dota_gcmessages_common_battle_report_proto_goTypes = nil
+	file_dota_gcmessages_common_battle_report_proto_depIdxs = nil
 }

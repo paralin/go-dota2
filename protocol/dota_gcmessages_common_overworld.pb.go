@@ -393,21 +393,23 @@ const (
 	CMsgClientToGCOverworldCompletePathResponse_k_eNotEnoughTokens     CMsgClientToGCOverworldCompletePathResponse_EResponse = 7
 	CMsgClientToGCOverworldCompletePathResponse_k_ePathIsLocked        CMsgClientToGCOverworldCompletePathResponse_EResponse = 8
 	CMsgClientToGCOverworldCompletePathResponse_k_ePathAlreadyUnlocked CMsgClientToGCOverworldCompletePathResponse_EResponse = 9
+	CMsgClientToGCOverworldCompletePathResponse_k_eEventExpired        CMsgClientToGCOverworldCompletePathResponse_EResponse = 10
 )
 
 // Enum value maps for CMsgClientToGCOverworldCompletePathResponse_EResponse.
 var (
 	CMsgClientToGCOverworldCompletePathResponse_EResponse_name = map[int32]string{
-		0: "k_eInternalError",
-		1: "k_eSuccess",
-		2: "k_eTooBusy",
-		3: "k_eDisabled",
-		4: "k_eTimeout",
-		5: "k_eInvalidOverworld",
-		6: "k_eInvalidPath",
-		7: "k_eNotEnoughTokens",
-		8: "k_ePathIsLocked",
-		9: "k_ePathAlreadyUnlocked",
+		0:  "k_eInternalError",
+		1:  "k_eSuccess",
+		2:  "k_eTooBusy",
+		3:  "k_eDisabled",
+		4:  "k_eTimeout",
+		5:  "k_eInvalidOverworld",
+		6:  "k_eInvalidPath",
+		7:  "k_eNotEnoughTokens",
+		8:  "k_ePathIsLocked",
+		9:  "k_ePathAlreadyUnlocked",
+		10: "k_eEventExpired",
 	}
 	CMsgClientToGCOverworldCompletePathResponse_EResponse_value = map[string]int32{
 		"k_eInternalError":       0,
@@ -420,6 +422,7 @@ var (
 		"k_eNotEnoughTokens":     7,
 		"k_ePathIsLocked":        8,
 		"k_ePathAlreadyUnlocked": 9,
+		"k_eEventExpired":        10,
 	}
 )
 
@@ -479,6 +482,7 @@ const (
 	CMsgClientToGCOverworldClaimEncounterRewardResponse_k_eNotEnoughTokensForReward    CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse = 13
 	CMsgClientToGCOverworldClaimEncounterRewardResponse_k_eNotEnoughResourceForReward  CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse = 14
 	CMsgClientToGCOverworldClaimEncounterRewardResponse_k_eInvalidRewardData           CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse = 15
+	CMsgClientToGCOverworldClaimEncounterRewardResponse_k_eEventExpired                CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse = 16
 )
 
 // Enum value maps for CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse.
@@ -500,6 +504,7 @@ var (
 		13: "k_eNotEnoughTokensForReward",
 		14: "k_eNotEnoughResourceForReward",
 		15: "k_eInvalidRewardData",
+		16: "k_eEventExpired",
 	}
 	CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse_value = map[string]int32{
 		"k_eInternalError":               0,
@@ -518,6 +523,7 @@ var (
 		"k_eNotEnoughTokensForReward":    13,
 		"k_eNotEnoughResourceForReward":  14,
 		"k_eInvalidRewardData":           15,
+		"k_eEventExpired":                16,
 	}
 )
 
@@ -4424,10 +4430,10 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\tuser_data\x18\x02 \x01(\v2\x1f.protocol.CMsgOverworldUserDataR\buserData\"a\n" +
 	"#CMsgClientToGCOverworldCompletePath\x12!\n" +
 	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12\x17\n" +
-	"\apath_id\x18\x02 \x01(\rR\x06pathId\"\xca\x03\n" +
+	"\apath_id\x18\x02 \x01(\rR\x06pathId\"\xdf\x03\n" +
 	"+CMsgClientToGCOverworldCompletePathResponse\x12m\n" +
 	"\bresponse\x18\x01 \x01(\x0e2?.protocol.CMsgClientToGCOverworldCompletePathResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
-	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\xd8\x01\n" +
+	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\xed\x01\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -4441,7 +4447,9 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x0ek_eInvalidPath\x10\x06\x12\x16\n" +
 	"\x12k_eNotEnoughTokens\x10\a\x12\x13\n" +
 	"\x0fk_ePathIsLocked\x10\b\x12\x1a\n" +
-	"\x16k_ePathAlreadyUnlocked\x10\t\"_\n" +
+	"\x16k_ePathAlreadyUnlocked\x10\t\x12\x13\n" +
+	"\x0fk_eEventExpired\x10\n" +
+	"\"_\n" +
 	"*CMsgOverworldEncounterPitFighterRewardData\x12\x19\n" +
 	"\btoken_id\x18\x01 \x01(\rR\atokenId\x12\x16\n" +
 	"\x06choice\x18\x02 \x01(\rR\x06choice\"\x96\x03\n" +
@@ -4454,11 +4462,11 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x11extra_reward_data\x18\x05 \x01(\v2$.protocol.CMsgOverworldEncounterDataR\x0fextraRewardData\x12)\n" +
 	"\x10leaderboard_data\x18\x06 \x01(\rR\x0fleaderboardData\x12+\n" +
 	"\x11leaderboard_index\x18\a \x01(\rR\x10leaderboardIndex\x12.\n" +
-	"\x13should_claim_reward\x18\b \x01(\bR\x11shouldClaimReward\"\xe8\x05\n" +
+	"\x13should_claim_reward\x18\b \x01(\bR\x11shouldClaimReward\"\xfd\x05\n" +
 	"3CMsgClientToGCOverworldClaimEncounterRewardResponse\x12u\n" +
 	"\bresponse\x18\x01 \x01(\x0e2G.protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
 	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\x12M\n" +
-	"\x0ftokens_received\x18\x03 \x01(\v2$.protocol.CMsgOverworldTokenQuantityR\x0etokensReceived\"\x97\x03\n" +
+	"\x0ftokens_received\x18\x03 \x01(\v2$.protocol.CMsgOverworldTokenQuantityR\x0etokensReceived\"\xac\x03\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -4479,7 +4487,8 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x17k_eInvalidEncounterData\x10\f\x12\x1f\n" +
 	"\x1bk_eNotEnoughTokensForReward\x10\r\x12!\n" +
 	"\x1dk_eNotEnoughResourceForReward\x10\x0e\x12\x18\n" +
-	"\x14k_eInvalidRewardData\x10\x0f\"c\n" +
+	"\x14k_eInvalidRewardData\x10\x0f\x12\x13\n" +
+	"\x0fk_eEventExpired\x10\x10\"c\n" +
 	"%CMsgClientToGCOverworldVisitEncounter\x12!\n" +
 	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12\x17\n" +
 	"\anode_id\x18\x02 \x01(\rR\x06nodeId\"\xf5\x02\n" +

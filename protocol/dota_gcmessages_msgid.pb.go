@@ -25,964 +25,1005 @@ const (
 type EDOTAGCMsg int32
 
 const (
-	EDOTAGCMsg_k_EMsgGCDOTABase                                                   EDOTAGCMsg = 7000
-	EDOTAGCMsg_k_EMsgGCGameMatchSignOut                                           EDOTAGCMsg = 7004
-	EDOTAGCMsg_k_EMsgGCGameMatchSignOutResponse                                   EDOTAGCMsg = 7005
-	EDOTAGCMsg_k_EMsgGCJoinChatChannel                                            EDOTAGCMsg = 7009
-	EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse                                    EDOTAGCMsg = 7010
-	EDOTAGCMsg_k_EMsgGCOtherJoinedChannel                                         EDOTAGCMsg = 7013
-	EDOTAGCMsg_k_EMsgGCOtherLeftChannel                                           EDOTAGCMsg = 7014
-	EDOTAGCMsg_k_EMsgServerToGCRequestStatus                                      EDOTAGCMsg = 7026
-	EDOTAGCMsg_k_EMsgGCStartFindingMatch                                          EDOTAGCMsg = 7033
-	EDOTAGCMsg_k_EMsgGCConnectedPlayers                                           EDOTAGCMsg = 7034
-	EDOTAGCMsg_k_EMsgGCAbandonCurrentGame                                         EDOTAGCMsg = 7035
-	EDOTAGCMsg_k_EMsgGCStopFindingMatch                                           EDOTAGCMsg = 7036
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyCreate                                        EDOTAGCMsg = 7038
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave                                         EDOTAGCMsg = 7040
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch                                        EDOTAGCMsg = 7041
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyList                                          EDOTAGCMsg = 7042
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyListResponse                                  EDOTAGCMsg = 7043
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoin                                          EDOTAGCMsg = 7044
-	EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails                                    EDOTAGCMsg = 7046
-	EDOTAGCMsg_k_EMsgGCPracticeLobbySetTeamSlot                                   EDOTAGCMsg = 7047
-	EDOTAGCMsg_k_EMsgGCInitialQuestionnaireResponse                               EDOTAGCMsg = 7049
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyResponse                                      EDOTAGCMsg = 7055
-	EDOTAGCMsg_k_EMsgGCBroadcastNotification                                      EDOTAGCMsg = 7056
-	EDOTAGCMsg_k_EMsgGCLiveScoreboardUpdate                                       EDOTAGCMsg = 7057
-	EDOTAGCMsg_k_EMsgGCRequestChatChannelList                                     EDOTAGCMsg = 7060
-	EDOTAGCMsg_k_EMsgGCRequestChatChannelListResponse                             EDOTAGCMsg = 7061
-	EDOTAGCMsg_k_EMsgGCReadyUp                                                    EDOTAGCMsg = 7070
-	EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue                                 EDOTAGCMsg = 7071
-	EDOTAGCMsg_k_EMsgGCLeaverDetected                                             EDOTAGCMsg = 7072
-	EDOTAGCMsg_k_EMsgGCSpectateFriendGame                                         EDOTAGCMsg = 7073
-	EDOTAGCMsg_k_EMsgGCSpectateFriendGameResponse                                 EDOTAGCMsg = 7074
-	EDOTAGCMsg_k_EMsgGCReportsRemainingRequest                                    EDOTAGCMsg = 7076
-	EDOTAGCMsg_k_EMsgGCReportsRemainingResponse                                   EDOTAGCMsg = 7077
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerReport                                         EDOTAGCMsg = 7078
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponse                                 EDOTAGCMsg = 7079
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyKick                                          EDOTAGCMsg = 7081
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportV2                                       EDOTAGCMsg = 7082
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponseV2                               EDOTAGCMsg = 7083
-	EDOTAGCMsg_k_EMsgGCRequestSaveGames                                           EDOTAGCMsg = 7084
-	EDOTAGCMsg_k_EMsgGCRequestSaveGamesServer                                     EDOTAGCMsg = 7085
-	EDOTAGCMsg_k_EMsgGCRequestSaveGamesResponse                                   EDOTAGCMsg = 7086
-	EDOTAGCMsg_k_EMsgGCLeaverDetectedResponse                                     EDOTAGCMsg = 7087
-	EDOTAGCMsg_k_EMsgGCPlayerFailedToConnect                                      EDOTAGCMsg = 7088
-	EDOTAGCMsg_k_EMsgGCGCToRelayConnect                                           EDOTAGCMsg = 7089
-	EDOTAGCMsg_k_EMsgGCGCToRelayConnectresponse                                   EDOTAGCMsg = 7090
-	EDOTAGCMsg_k_EMsgGCWatchGame                                                  EDOTAGCMsg = 7091
-	EDOTAGCMsg_k_EMsgGCWatchGameResponse                                          EDOTAGCMsg = 7092
-	EDOTAGCMsg_k_EMsgGCBanStatusRequest                                           EDOTAGCMsg = 7093
-	EDOTAGCMsg_k_EMsgGCBanStatusResponse                                          EDOTAGCMsg = 7094
-	EDOTAGCMsg_k_EMsgGCMatchDetailsRequest                                        EDOTAGCMsg = 7095
-	EDOTAGCMsg_k_EMsgGCMatchDetailsResponse                                       EDOTAGCMsg = 7096
-	EDOTAGCMsg_k_EMsgGCCancelWatchGame                                            EDOTAGCMsg = 7097
-	EDOTAGCMsg_k_EMsgGCPopup                                                      EDOTAGCMsg = 7102
-	EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListRequest                             EDOTAGCMsg = 7111
-	EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListResponse                            EDOTAGCMsg = 7112
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinResponse                                  EDOTAGCMsg = 7113
-	EDOTAGCMsg_k_EMsgGCCreateTeam                                                 EDOTAGCMsg = 7115
-	EDOTAGCMsg_k_EMsgGCCreateTeamResponse                                         EDOTAGCMsg = 7116
-	EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC                                     EDOTAGCMsg = 7122
-	EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter                    EDOTAGCMsg = 7123
-	EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee                              EDOTAGCMsg = 7124
-	EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC                             EDOTAGCMsg = 7125
-	EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter                             EDOTAGCMsg = 7126
-	EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee                             EDOTAGCMsg = 7127
-	EDOTAGCMsg_k_EMsgGCKickTeamMember                                             EDOTAGCMsg = 7128
-	EDOTAGCMsg_k_EMsgGCKickTeamMemberResponse                                     EDOTAGCMsg = 7129
-	EDOTAGCMsg_k_EMsgGCLeaveTeam                                                  EDOTAGCMsg = 7130
-	EDOTAGCMsg_k_EMsgGCLeaveTeamResponse                                          EDOTAGCMsg = 7131
-	EDOTAGCMsg_k_EMsgGCApplyTeamToPracticeLobby                                   EDOTAGCMsg = 7142
-	EDOTAGCMsg_k_EMsgGCTransferTeamAdmin                                          EDOTAGCMsg = 7144
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinBroadcastChannel                          EDOTAGCMsg = 7149
-	EDOTAGCMsg_k_EMsgGC_TournamentItemEvent                                       EDOTAGCMsg = 7150
-	EDOTAGCMsg_k_EMsgGC_TournamentItemEventResponse                               EDOTAGCMsg = 7151
-	EDOTAGCMsg_k_EMsgTeamFanfare                                                  EDOTAGCMsg = 7156
-	EDOTAGCMsg_k_EMsgResponseTeamFanfare                                          EDOTAGCMsg = 7157
-	EDOTAGCMsg_k_EMsgGCEditTeamDetails                                            EDOTAGCMsg = 7166
-	EDOTAGCMsg_k_EMsgGCEditTeamDetailsResponse                                    EDOTAGCMsg = 7167
-	EDOTAGCMsg_k_EMsgGCReadyUpStatus                                              EDOTAGCMsg = 7170
-	EDOTAGCMsg_k_EMsgGCToGCMatchCompleted                                         EDOTAGCMsg = 7186
-	EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby                                       EDOTAGCMsg = 7188
-	EDOTAGCMsg_k_EMsgGCMatchmakingStatsRequest                                    EDOTAGCMsg = 7197
-	EDOTAGCMsg_k_EMsgGCMatchmakingStatsResponse                                   EDOTAGCMsg = 7198
-	EDOTAGCMsg_k_EMsgGCBotGameCreate                                              EDOTAGCMsg = 7199
-	EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccess                                      EDOTAGCMsg = 7200
-	EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccessResponse                              EDOTAGCMsg = 7201
-	EDOTAGCMsg_k_EMsgUpgradeLeagueItem                                            EDOTAGCMsg = 7203
-	EDOTAGCMsg_k_EMsgUpgradeLeagueItemResponse                                    EDOTAGCMsg = 7204
-	EDOTAGCMsg_k_EMsgGCWatchDownloadedReplay                                      EDOTAGCMsg = 7206
-	EDOTAGCMsg_k_EMsgClientsRejoinChatChannels                                    EDOTAGCMsg = 7217
-	EDOTAGCMsg_k_EMsgGCToGCGetUserChatInfo                                        EDOTAGCMsg = 7218
-	EDOTAGCMsg_k_EMsgGCToGCGetUserChatInfoResponse                                EDOTAGCMsg = 7219
-	EDOTAGCMsg_k_EMsgGCToGCLeaveAllChatChannels                                   EDOTAGCMsg = 7220
-	EDOTAGCMsg_k_EMsgGCToGCUpdateAccountChatBan                                   EDOTAGCMsg = 7221
-	EDOTAGCMsg_k_EMsgGCToGCCanInviteUserToTeam                                    EDOTAGCMsg = 7234
-	EDOTAGCMsg_k_EMsgGCToGCCanInviteUserToTeamResponse                            EDOTAGCMsg = 7235
-	EDOTAGCMsg_k_EMsgGCToGCGetUserRank                                            EDOTAGCMsg = 7236
-	EDOTAGCMsg_k_EMsgGCToGCGetUserRankResponse                                    EDOTAGCMsg = 7237
-	EDOTAGCMsg_k_EMsgGCToGCAdjustUserRank                                         EDOTAGCMsg = 7238
-	EDOTAGCMsg_k_EMsgGCToGCAdjustUserRankResponse                                 EDOTAGCMsg = 7239
-	EDOTAGCMsg_k_EMsgGCToGCUpdateTeamStats                                        EDOTAGCMsg = 7240
-	EDOTAGCMsg_k_EMsgGCToGCValidateTeam                                           EDOTAGCMsg = 7241
-	EDOTAGCMsg_k_EMsgGCToGCValidateTeamResponse                                   EDOTAGCMsg = 7242
-	EDOTAGCMsg_k_EMsgGCToGCGetLeagueAdmin                                         EDOTAGCMsg = 7255
-	EDOTAGCMsg_k_EMsgGCToGCGetLeagueAdminResponse                                 EDOTAGCMsg = 7256
-	EDOTAGCMsg_k_EMsgGCLeaveChatChannel                                           EDOTAGCMsg = 7272
-	EDOTAGCMsg_k_EMsgGCChatMessage                                                EDOTAGCMsg = 7273
-	EDOTAGCMsg_k_EMsgGCGetHeroStandings                                           EDOTAGCMsg = 7274
-	EDOTAGCMsg_k_EMsgGCGetHeroStandingsResponse                                   EDOTAGCMsg = 7275
-	EDOTAGCMsg_k_EMsgGCItemEditorReservationsRequest                              EDOTAGCMsg = 7283
-	EDOTAGCMsg_k_EMsgGCItemEditorReservationsResponse                             EDOTAGCMsg = 7284
-	EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDef                                   EDOTAGCMsg = 7285
-	EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDefResponse                           EDOTAGCMsg = 7286
-	EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservation                               EDOTAGCMsg = 7287
-	EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservationResponse                       EDOTAGCMsg = 7288
-	EDOTAGCMsg_k_EMsgGCFantasyLivePlayerStats                                     EDOTAGCMsg = 7308
-	EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats                                    EDOTAGCMsg = 7309
-	EDOTAGCMsg_k_EMsgGCFlipLobbyTeams                                             EDOTAGCMsg = 7320
-	EDOTAGCMsg_k_EMsgGCToGCEvaluateReportedPlayer                                 EDOTAGCMsg = 7322
-	EDOTAGCMsg_k_EMsgGCToGCEvaluateReportedPlayerResponse                         EDOTAGCMsg = 7323
-	EDOTAGCMsg_k_EMsgGCToGCProcessPlayerReportForTarget                           EDOTAGCMsg = 7324
-	EDOTAGCMsg_k_EMsgGCToGCProcessReportSuccess                                   EDOTAGCMsg = 7325
-	EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange                                   EDOTAGCMsg = 7326
-	EDOTAGCMsg_k_EMsgGCSetProfilePrivacy                                          EDOTAGCMsg = 7327
-	EDOTAGCMsg_k_EMsgGCSetProfilePrivacyResponse                                  EDOTAGCMsg = 7328
-	EDOTAGCMsg_k_EMsgGCClientSuspended                                            EDOTAGCMsg = 7342
-	EDOTAGCMsg_k_EMsgGCPartyMemberSetCoach                                        EDOTAGCMsg = 7343
-	EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach                                      EDOTAGCMsg = 7346
-	EDOTAGCMsg_k_EMsgGCChatModeratorBan                                           EDOTAGCMsg = 7359
-	EDOTAGCMsg_k_EMsgGCLobbyUpdateBroadcastChannelInfo                            EDOTAGCMsg = 7367
-	EDOTAGCMsg_k_EMsgGCToGCGrantTournamentItem                                    EDOTAGCMsg = 7372
-	EDOTAGCMsg_k_EMsgGCToGCUpgradeTwitchViewerItems                               EDOTAGCMsg = 7375
-	EDOTAGCMsg_k_EMsgGCToGCGetLiveMatchAffiliates                                 EDOTAGCMsg = 7376
-	EDOTAGCMsg_k_EMsgGCToGCGetLiveMatchAffiliatesResponse                         EDOTAGCMsg = 7377
-	EDOTAGCMsg_k_EMsgGCToGCUpdatePlayerPennantCounts                              EDOTAGCMsg = 7378
-	EDOTAGCMsg_k_EMsgGCToGCGetPlayerPennantCounts                                 EDOTAGCMsg = 7379
-	EDOTAGCMsg_k_EMsgGCToGCGetPlayerPennantCountsResponse                         EDOTAGCMsg = 7380
-	EDOTAGCMsg_k_EMsgGCGameMatchSignOutPermissionRequest                          EDOTAGCMsg = 7381
-	EDOTAGCMsg_k_EMsgGCGameMatchSignOutPermissionResponse                         EDOTAGCMsg = 7382
-	EDOTAGCMsg_k_EMsgDOTAAwardEventPoints                                         EDOTAGCMsg = 7384
-	EDOTAGCMsg_k_EMsgDOTAGetEventPoints                                           EDOTAGCMsg = 7387
-	EDOTAGCMsg_k_EMsgDOTAGetEventPointsResponse                                   EDOTAGCMsg = 7388
-	EDOTAGCMsg_k_EMsgGCPartyLeaderWatchGamePrompt                                 EDOTAGCMsg = 7397
-	EDOTAGCMsg_k_EMsgGCCompendiumSetSelection                                     EDOTAGCMsg = 7405
-	EDOTAGCMsg_k_EMsgGCCompendiumDataRequest                                      EDOTAGCMsg = 7406
-	EDOTAGCMsg_k_EMsgGCCompendiumDataResponse                                     EDOTAGCMsg = 7407
-	EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistory                                    EDOTAGCMsg = 7408
-	EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistoryResponse                            EDOTAGCMsg = 7409
-	EDOTAGCMsg_k_EMsgGCToGCMatchmakingAddParty                                    EDOTAGCMsg = 7410
-	EDOTAGCMsg_k_EMsgGCToGCMatchmakingRemoveParty                                 EDOTAGCMsg = 7411
-	EDOTAGCMsg_k_EMsgGCToGCMatchmakingRemoveAllParties                            EDOTAGCMsg = 7412
-	EDOTAGCMsg_k_EMsgGCToGCMatchmakingMatchFound                                  EDOTAGCMsg = 7413
-	EDOTAGCMsg_k_EMsgGCToGCUpdateMatchManagementStats                             EDOTAGCMsg = 7414
-	EDOTAGCMsg_k_EMsgGCToGCUpdateMatchmakingStats                                 EDOTAGCMsg = 7415
-	EDOTAGCMsg_k_EMsgGCToServerPingRequest                                        EDOTAGCMsg = 7416
-	EDOTAGCMsg_k_EMsgGCToServerPingResponse                                       EDOTAGCMsg = 7417
-	EDOTAGCMsg_k_EMsgGCToServerEvaluateToxicChat                                  EDOTAGCMsg = 7418
-	EDOTAGCMsg_k_EMsgServerToGCEvaluateToxicChat                                  EDOTAGCMsg = 7419
-	EDOTAGCMsg_k_EMsgServerToGCEvaluateToxicChatResponse                          EDOTAGCMsg = 7420
-	EDOTAGCMsg_k_EMsgGCToGCProcessMatchLeaver                                     EDOTAGCMsg = 7426
-	EDOTAGCMsg_k_EMsgGCNotificationsRequest                                       EDOTAGCMsg = 7427
-	EDOTAGCMsg_k_EMsgGCNotificationsResponse                                      EDOTAGCMsg = 7428
-	EDOTAGCMsg_k_EMsgGCToGCModifyNotification                                     EDOTAGCMsg = 7429
-	EDOTAGCMsg_k_EMsgGCLeagueAdminList                                            EDOTAGCMsg = 7434
-	EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest                               EDOTAGCMsg = 7435
-	EDOTAGCMsg_k_EMsgServerToGCRequestBatchPlayerResources                        EDOTAGCMsg = 7450
-	EDOTAGCMsg_k_EMsgServerToGCRequestBatchPlayerResourcesResponse                EDOTAGCMsg = 7451
-	EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse                             EDOTAGCMsg = 7453
-	EDOTAGCMsg_k_EMsgGCRankedPlayerInfoSubmit                                     EDOTAGCMsg = 7454
-	EDOTAGCMsg_k_EMsgGCRankedPlayerInfoSubmitResponse                             EDOTAGCMsg = 7455
-	EDOTAGCMsg_k_EMsgGCPlayerInfoSubmit                                           EDOTAGCMsg = 7456
-	EDOTAGCMsg_k_EMsgGCPlayerInfoSubmitResponse                                   EDOTAGCMsg = 7457
-	EDOTAGCMsg_k_EMsgGCToGCGetAccountLevel                                        EDOTAGCMsg = 7458
-	EDOTAGCMsg_k_EMsgGCToGCGetAccountLevelResponse                                EDOTAGCMsg = 7459
-	EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule                                EDOTAGCMsg = 7464
-	EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule                                   EDOTAGCMsg = 7465
-	EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesRequest                             EDOTAGCMsg = 7466
-	EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesResponse                            EDOTAGCMsg = 7467
-	EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesRequest                               EDOTAGCMsg = 7468
-	EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesResponse                              EDOTAGCMsg = 7469
-	EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobby                                       EDOTAGCMsg = 7470
-	EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobbyResponse                               EDOTAGCMsg = 7471
-	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointAction                                  EDOTAGCMsg = 7472
-	EDOTAGCMsg_k_EMsgGCToGCSetCompendiumSelection                                 EDOTAGCMsg = 7478
-	EDOTAGCMsg_k_EMsgGCHasItemQuery                                               EDOTAGCMsg = 7484
-	EDOTAGCMsg_k_EMsgGCHasItemResponse                                            EDOTAGCMsg = 7485
-	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointActionMsg                               EDOTAGCMsg = 7488
-	EDOTAGCMsg_k_EMsgGCToGCGetCompendiumSelections                                EDOTAGCMsg = 7492
-	EDOTAGCMsg_k_EMsgGCToGCGetCompendiumSelectionsResponse                        EDOTAGCMsg = 7493
-	EDOTAGCMsg_k_EMsgServerToGCMatchConnectionStats                               EDOTAGCMsg = 7494
-	EDOTAGCMsg_k_EMsgGCToClientTournamentItemDrop                                 EDOTAGCMsg = 7495
-	EDOTAGCMsg_k_EMsgSQLDelayedGrantLeagueDrop                                    EDOTAGCMsg = 7496
-	EDOTAGCMsg_k_EMsgServerGCUpdateSpectatorCount                                 EDOTAGCMsg = 7497
-	EDOTAGCMsg_k_EMsgGCToGCEmoticonUnlock                                         EDOTAGCMsg = 7501
-	EDOTAGCMsg_k_EMsgSignOutDraftInfo                                             EDOTAGCMsg = 7502
-	EDOTAGCMsg_k_EMsgClientToGCEmoticonDataRequest                                EDOTAGCMsg = 7503
-	EDOTAGCMsg_k_EMsgGCToClientEmoticonData                                       EDOTAGCMsg = 7504
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus         EDOTAGCMsg = 7505
-	EDOTAGCMsg_k_EMsgDOTARedeemItem                                               EDOTAGCMsg = 7518
-	EDOTAGCMsg_k_EMsgDOTARedeemItemResponse                                       EDOTAGCMsg = 7519
-	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgress                                 EDOTAGCMsg = 7521
-	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgressResponse                         EDOTAGCMsg = 7522
-	EDOTAGCMsg_k_EMsgGCToGCGetServerForClient                                     EDOTAGCMsg = 7523
-	EDOTAGCMsg_k_EMsgGCToGCGetServerForClientResponse                             EDOTAGCMsg = 7524
-	EDOTAGCMsg_k_EMsgSQLProcessTournamentGameOutcome                              EDOTAGCMsg = 7525
-	EDOTAGCMsg_k_EMsgSQLGrantTrophyToAccount                                      EDOTAGCMsg = 7526
-	EDOTAGCMsg_k_EMsgClientToGCGetTrophyList                                      EDOTAGCMsg = 7527
-	EDOTAGCMsg_k_EMsgClientToGCGetTrophyListResponse                              EDOTAGCMsg = 7528
-	EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded                                      EDOTAGCMsg = 7529
-	EDOTAGCMsg_k_EMsgGCGameBotMatchSignOut                                        EDOTAGCMsg = 7530
-	EDOTAGCMsg_k_EMsgGCGameBotMatchSignOutPermissionRequest                       EDOTAGCMsg = 7531
-	EDOTAGCMsg_k_EMsgSignOutBotInfo                                               EDOTAGCMsg = 7532
-	EDOTAGCMsg_k_EMsgGCToGCUpdateProfileCards                                     EDOTAGCMsg = 7533
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileCard                                     EDOTAGCMsg = 7534
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse                             EDOTAGCMsg = 7535
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReport                                    EDOTAGCMsg = 7536
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportResponse                            EDOTAGCMsg = 7537
-	EDOTAGCMsg_k_EMsgClientToGCSetProfileCardSlots                                EDOTAGCMsg = 7538
-	EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated                                 EDOTAGCMsg = 7539
-	EDOTAGCMsg_k_EMsgServerToGCVictoryPredictions                                 EDOTAGCMsg = 7540
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportAggregateStats                      EDOTAGCMsg = 7541
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportAggregateStatsResponse              EDOTAGCMsg = 7542
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportInfo                                EDOTAGCMsg = 7543
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportInfoResponse                        EDOTAGCMsg = 7544
-	EDOTAGCMsg_k_EMsgSignOutCommunicationSummary                                  EDOTAGCMsg = 7545
-	EDOTAGCMsg_k_EMsgServerToGCRequestStatus_Response                             EDOTAGCMsg = 7546
-	EDOTAGCMsg_k_EMsgClientToGCCreateHeroStatue                                   EDOTAGCMsg = 7547
-	EDOTAGCMsg_k_EMsgGCToClientHeroStatueCreateResult                             EDOTAGCMsg = 7548
-	EDOTAGCMsg_k_EMsgGCGCToLANServerRelayConnect                                  EDOTAGCMsg = 7549
-	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeBattleReport                            EDOTAGCMsg = 7550
-	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeBattleReportResponse                    EDOTAGCMsg = 7551
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportMatchHistory                        EDOTAGCMsg = 7552
-	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportMatchHistoryResponse                EDOTAGCMsg = 7553
-	EDOTAGCMsg_k_EMsgServerToGCReportKillSummaries                                EDOTAGCMsg = 7554
-	EDOTAGCMsg_k_EMsgGCToGCUpdatePlayerPredictions                                EDOTAGCMsg = 7561
-	EDOTAGCMsg_k_EMsgGCToServerPredictionResult                                   EDOTAGCMsg = 7562
-	EDOTAGCMsg_k_EMsgGCToGCReplayMonitorValidateReplay                            EDOTAGCMsg = 7569
-	EDOTAGCMsg_k_EMsgLobbyEventPoints                                             EDOTAGCMsg = 7572
-	EDOTAGCMsg_k_EMsgGCToGCGetCustomGameTickets                                   EDOTAGCMsg = 7573
-	EDOTAGCMsg_k_EMsgGCToGCGetCustomGameTicketsResponse                           EDOTAGCMsg = 7574
-	EDOTAGCMsg_k_EMsgGCToGCCustomGamePlayed                                       EDOTAGCMsg = 7576
-	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointsToUser                                 EDOTAGCMsg = 7577
-	EDOTAGCMsg_k_EMsgGameserverCrashReport                                        EDOTAGCMsg = 7579
-	EDOTAGCMsg_k_EMsgGameserverCrashReportResponse                                EDOTAGCMsg = 7580
-	EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket                                EDOTAGCMsg = 7581
-	EDOTAGCMsg_k_EMsgGCToGCSendAccountsEventPoints                                EDOTAGCMsg = 7583
-	EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge                              EDOTAGCMsg = 7584
-	EDOTAGCMsg_k_EMsgServerToGCRerollPlayerChallenge                              EDOTAGCMsg = 7585
-	EDOTAGCMsg_k_EMsgGCRerollPlayerChallengeResponse                              EDOTAGCMsg = 7586
-	EDOTAGCMsg_k_EMsgSignOutUpdatePlayerChallenge                                 EDOTAGCMsg = 7587
-	EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader                                     EDOTAGCMsg = 7588
-	EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites                                 EDOTAGCMsg = 7589
-	EDOTAGCMsg_k_EMsgSQLGrantLeagueMatchToTicketHolders                           EDOTAGCMsg = 7592
-	EDOTAGCMsg_k_EMsgGCToGCEmoticonUnlockNoRollback                               EDOTAGCMsg = 7594
-	EDOTAGCMsg_k_EMsgClientToGCApplyGemCombiner                                   EDOTAGCMsg = 7603
-	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrder                                    EDOTAGCMsg = 7606
-	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrderResponse                            EDOTAGCMsg = 7607
-	EDOTAGCMsg_k_EMsgSQLGCToGCGrantBadgePoints                                    EDOTAGCMsg = 7608
-	EDOTAGCMsg_k_EMsgGCToGCCheckOwnsEntireEmoticonRange                           EDOTAGCMsg = 7611
-	EDOTAGCMsg_k_EMsgGCToGCCheckOwnsEntireEmoticonRangeResponse                   EDOTAGCMsg = 7612
-	EDOTAGCMsg_k_EMsgGCToClientRequestLaneSelection                               EDOTAGCMsg = 7623
-	EDOTAGCMsg_k_EMsgGCToClientRequestLaneSelectionResponse                       EDOTAGCMsg = 7624
-	EDOTAGCMsg_k_EMsgServerToGCCavernCrawlIsHeroActive                            EDOTAGCMsg = 7625
-	EDOTAGCMsg_k_EMsgServerToGCCavernCrawlIsHeroActiveResponse                    EDOTAGCMsg = 7626
-	EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseRequest                  EDOTAGCMsg = 7627
-	EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseResponse                 EDOTAGCMsg = 7628
-	EDOTAGCMsg_k_EMsgSQLSetIsLeagueAdmin                                          EDOTAGCMsg = 7630
-	EDOTAGCMsg_k_EMsgGCToGCGetLiveLeagueMatches                                   EDOTAGCMsg = 7631
-	EDOTAGCMsg_k_EMsgGCToGCGetLiveLeagueMatchesResponse                           EDOTAGCMsg = 7632
-	EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsRequest                              EDOTAGCMsg = 7633
-	EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsReponse                              EDOTAGCMsg = 7634
-	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchStarted                                     EDOTAGCMsg = 7645
-	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchCompleted                                   EDOTAGCMsg = 7646
-	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchStartedResponse                             EDOTAGCMsg = 7647
-	EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodesRequest                         EDOTAGCMsg = 7650
-	EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodes                                EDOTAGCMsg = 7651
-	EDOTAGCMsg_k_EMsgGCToGCLeagueRequest                                          EDOTAGCMsg = 7652
-	EDOTAGCMsg_k_EMsgGCToGCLeagueResponse                                         EDOTAGCMsg = 7653
-	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeGroupRequest                                 EDOTAGCMsg = 7654
-	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeGroupResponse                                EDOTAGCMsg = 7655
-	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeRequest                                      EDOTAGCMsg = 7656
-	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeResponse                                     EDOTAGCMsg = 7657
-	EDOTAGCMsg_k_EMsgGCToGCRealtimeStatsTerseRequest                              EDOTAGCMsg = 7658
-	EDOTAGCMsg_k_EMsgGCToGCRealtimeStatsTerseResponse                             EDOTAGCMsg = 7659
-	EDOTAGCMsg_k_EMsgGCToGCGetTopMatchesRequest                                   EDOTAGCMsg = 7660
-	EDOTAGCMsg_k_EMsgGCToGCGetTopMatchesResponse                                  EDOTAGCMsg = 7661
-	EDOTAGCMsg_k_EMsgClientToGCGetFilteredPlayers                                 EDOTAGCMsg = 7662
-	EDOTAGCMsg_k_EMsgGCToClientGetFilteredPlayersResponse                         EDOTAGCMsg = 7663
-	EDOTAGCMsg_k_EMsgClientToGCRemoveFilteredPlayer                               EDOTAGCMsg = 7664
-	EDOTAGCMsg_k_EMsgGCToClientRemoveFilteredPlayerResponse                       EDOTAGCMsg = 7665
-	EDOTAGCMsg_k_EMsgGCToClientPlayerBeaconState                                  EDOTAGCMsg = 7666
-	EDOTAGCMsg_k_EMsgGCToClientPartyBeaconUpdate                                  EDOTAGCMsg = 7667
-	EDOTAGCMsg_k_EMsgGCToClientPartySearchInvite                                  EDOTAGCMsg = 7668
-	EDOTAGCMsg_k_EMsgClientToGCUpdatePartyBeacon                                  EDOTAGCMsg = 7669
-	EDOTAGCMsg_k_EMsgClientToGCRequestActiveBeaconParties                         EDOTAGCMsg = 7670
-	EDOTAGCMsg_k_EMsgGCToClientRequestActiveBeaconPartiesResponse                 EDOTAGCMsg = 7671
-	EDOTAGCMsg_k_EMsgClientToGCManageFavorites                                    EDOTAGCMsg = 7672
-	EDOTAGCMsg_k_EMsgGCToClientManageFavoritesResponse                            EDOTAGCMsg = 7673
-	EDOTAGCMsg_k_EMsgClientToGCJoinPartyFromBeacon                                EDOTAGCMsg = 7674
-	EDOTAGCMsg_k_EMsgGCToClientJoinPartyFromBeaconResponse                        EDOTAGCMsg = 7675
-	EDOTAGCMsg_k_EMsgClientToGCGetFavoritePlayers                                 EDOTAGCMsg = 7676
-	EDOTAGCMsg_k_EMsgGCToClientGetFavoritePlayersResponse                         EDOTAGCMsg = 7677
-	EDOTAGCMsg_k_EMsgClientToGCVerifyFavoritePlayers                              EDOTAGCMsg = 7678
-	EDOTAGCMsg_k_EMsgGCToClientVerifyFavoritePlayersResponse                      EDOTAGCMsg = 7679
-	EDOTAGCMsg_k_EMsgGCToClientPartySearchInvites                                 EDOTAGCMsg = 7680
-	EDOTAGCMsg_k_EMsgGCToClientRequestMMInfo                                      EDOTAGCMsg = 7681
-	EDOTAGCMsg_k_EMsgClientToGCMMInfo                                             EDOTAGCMsg = 7682
-	EDOTAGCMsg_k_EMsgSignOutTextMuteInfo                                          EDOTAGCMsg = 7683
-	EDOTAGCMsg_k_EMsgClientToGCPurchaseLabyrinthBlessings                         EDOTAGCMsg = 7684
-	EDOTAGCMsg_k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse                 EDOTAGCMsg = 7685
-	EDOTAGCMsg_k_EMsgClientToGCPurchaseFilteredPlayerSlot                         EDOTAGCMsg = 7686
-	EDOTAGCMsg_k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse                 EDOTAGCMsg = 7687
-	EDOTAGCMsg_k_EMsgClientToGCUpdateFilteredPlayerNote                           EDOTAGCMsg = 7688
-	EDOTAGCMsg_k_EMsgGCToClientUpdateFilteredPlayerNoteResponse                   EDOTAGCMsg = 7689
-	EDOTAGCMsg_k_EMsgClientToGCClaimSwag                                          EDOTAGCMsg = 7690
-	EDOTAGCMsg_k_EMsgGCToClientClaimSwagResponse                                  EDOTAGCMsg = 7691
-	EDOTAGCMsg_k_EMsgServerToGCLockCharmTrading                                   EDOTAGCMsg = 8004
-	EDOTAGCMsg_k_EMsgClientToGCPlayerStatsRequest                                 EDOTAGCMsg = 8006
-	EDOTAGCMsg_k_EMsgGCToClientPlayerStatsResponse                                EDOTAGCMsg = 8007
-	EDOTAGCMsg_k_EMsgGCClearPracticeLobbyTeam                                     EDOTAGCMsg = 8008
-	EDOTAGCMsg_k_EMsgClientToGCFindTopSourceTVGames                               EDOTAGCMsg = 8009
-	EDOTAGCMsg_k_EMsgGCToClientFindTopSourceTVGamesResponse                       EDOTAGCMsg = 8010
-	EDOTAGCMsg_k_EMsgGCLobbyList                                                  EDOTAGCMsg = 8011
-	EDOTAGCMsg_k_EMsgGCLobbyListResponse                                          EDOTAGCMsg = 8012
-	EDOTAGCMsg_k_EMsgGCPlayerStatsMatchSignOut                                    EDOTAGCMsg = 8013
-	EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostCommentRequest                       EDOTAGCMsg = 8016
-	EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostCommentResponse                      EDOTAGCMsg = 8017
-	EDOTAGCMsg_k_EMsgClientToGCCustomGamesFriendsPlayedRequest                    EDOTAGCMsg = 8018
-	EDOTAGCMsg_k_EMsgGCToClientCustomGamesFriendsPlayedResponse                   EDOTAGCMsg = 8019
-	EDOTAGCMsg_k_EMsgClientToGCFriendsPlayedCustomGameRequest                     EDOTAGCMsg = 8020
-	EDOTAGCMsg_k_EMsgGCToClientFriendsPlayedCustomGameResponse                    EDOTAGCMsg = 8021
-	EDOTAGCMsg_k_EMsgGCTopCustomGamesList                                         EDOTAGCMsg = 8024
-	EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen                                       EDOTAGCMsg = 8029
-	EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite                                   EDOTAGCMsg = 8030
-	EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply                              EDOTAGCMsg = 8031
-	EDOTAGCMsg_k_EMsgClientToGCMergePartyResponse                                 EDOTAGCMsg = 8032
-	EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply                            EDOTAGCMsg = 8033
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardStats                                EDOTAGCMsg = 8034
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardStatsResponse                        EDOTAGCMsg = 8035
-	EDOTAGCMsg_k_EMsgClientToGCTopLeagueMatchesRequest                            EDOTAGCMsg = 8036
-	EDOTAGCMsg_k_EMsgClientToGCTopFriendMatchesRequest                            EDOTAGCMsg = 8037
-	EDOTAGCMsg_k_EMsgGCToClientProfileCardStatsUpdated                            EDOTAGCMsg = 8040
-	EDOTAGCMsg_k_EMsgServerToGCRealtimeStats                                      EDOTAGCMsg = 8041
-	EDOTAGCMsg_k_EMsgGCToServerRealtimeStatsStartStop                             EDOTAGCMsg = 8042
-	EDOTAGCMsg_k_EMsgGCToGCGetServersForClients                                   EDOTAGCMsg = 8045
-	EDOTAGCMsg_k_EMsgGCToGCGetServersForClientsResponse                           EDOTAGCMsg = 8046
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam                                  EDOTAGCMsg = 8047
-	EDOTAGCMsg_k_EMsgDOTAChatGetMemberCount                                       EDOTAGCMsg = 8048
-	EDOTAGCMsg_k_EMsgDOTAChatGetMemberCountResponse                               EDOTAGCMsg = 8049
-	EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostMessageRequest                       EDOTAGCMsg = 8050
-	EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostMessageResponse                      EDOTAGCMsg = 8051
-	EDOTAGCMsg_k_EMsgCustomGameListenServerStartedLoading                         EDOTAGCMsg = 8052
-	EDOTAGCMsg_k_EMsgCustomGameClientFinishedLoading                              EDOTAGCMsg = 8053
-	EDOTAGCMsg_k_EMsgGCPracticeLobbyCloseBroadcastChannel                         EDOTAGCMsg = 8054
-	EDOTAGCMsg_k_EMsgGCStartFindingMatchResponse                                  EDOTAGCMsg = 8055
-	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAccountFlag                                    EDOTAGCMsg = 8057
-	EDOTAGCMsg_k_EMsgGCToClientTopLeagueMatchesResponse                           EDOTAGCMsg = 8061
-	EDOTAGCMsg_k_EMsgGCToClientTopFriendMatchesResponse                           EDOTAGCMsg = 8062
-	EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalRequest                              EDOTAGCMsg = 8063
-	EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalResponse                             EDOTAGCMsg = 8064
-	EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled                                 EDOTAGCMsg = 8067
-	EDOTAGCMsg_k_EMsgClientToGCPingData                                           EDOTAGCMsg = 8068
-	EDOTAGCMsg_k_EMsgGCToGCEnsureAccountInParty                                   EDOTAGCMsg = 8071
-	EDOTAGCMsg_k_EMsgGCToGCEnsureAccountInPartyResponse                           EDOTAGCMsg = 8072
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileTickets                                  EDOTAGCMsg = 8073
-	EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse                          EDOTAGCMsg = 8074
-	EDOTAGCMsg_k_EMsgGCToClientMatchGroupsVersion                                 EDOTAGCMsg = 8075
-	EDOTAGCMsg_k_EMsgClientToGCH264Unsupported                                    EDOTAGCMsg = 8076
-	EDOTAGCMsg_k_EMsgClientToGCGetQuestProgress                                   EDOTAGCMsg = 8078
-	EDOTAGCMsg_k_EMsgClientToGCGetQuestProgressResponse                           EDOTAGCMsg = 8079
-	EDOTAGCMsg_k_EMsgSignOutXPCoins                                               EDOTAGCMsg = 8080
-	EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut                                     EDOTAGCMsg = 8081
-	EDOTAGCMsg_k_EMsgGCGetHeroStatsHistory                                        EDOTAGCMsg = 8082
-	EDOTAGCMsg_k_EMsgGCGetHeroStatsHistoryResponse                                EDOTAGCMsg = 8083
-	EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite                                  EDOTAGCMsg = 8084
-	EDOTAGCMsg_k_EMsgClientToGCPrivateChatKick                                    EDOTAGCMsg = 8088
-	EDOTAGCMsg_k_EMsgClientToGCPrivateChatPromote                                 EDOTAGCMsg = 8089
-	EDOTAGCMsg_k_EMsgClientToGCPrivateChatDemote                                  EDOTAGCMsg = 8090
-	EDOTAGCMsg_k_EMsgGCToClientPrivateChatResponse                                EDOTAGCMsg = 8091
-	EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest                      EDOTAGCMsg = 8095
-	EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard                             EDOTAGCMsg = 8096
-	EDOTAGCMsg_k_EMsgClientToGCWageringRequest                                    EDOTAGCMsg = 8099
-	EDOTAGCMsg_k_EMsgGCToClientWageringResponse                                   EDOTAGCMsg = 8100
-	EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest                                  EDOTAGCMsg = 8103
-	EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse                                 EDOTAGCMsg = 8104
-	EDOTAGCMsg_k_EMsgGCToGCLeaguePredictionsUpdate                                EDOTAGCMsg = 8108
-	EDOTAGCMsg_k_EMsgGCToGCAddUserToPostGameChat                                  EDOTAGCMsg = 8110
-	EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVP                               EDOTAGCMsg = 8111
-	EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVPResponse                       EDOTAGCMsg = 8112
-	EDOTAGCMsg_k_EMsgClientToGCVoteForMVP                                         EDOTAGCMsg = 8113
-	EDOTAGCMsg_k_EMsgClientToGCVoteForMVPResponse                                 EDOTAGCMsg = 8114
-	EDOTAGCMsg_k_EMsgGCToGCGetEventParticipation                                  EDOTAGCMsg = 8115
-	EDOTAGCMsg_k_EMsgGCToGCGetEventParticipationResponse                          EDOTAGCMsg = 8116
-	EDOTAGCMsg_k_EMsgGCToClientAutomatedTournamentStateChange                     EDOTAGCMsg = 8117
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOpts                                 EDOTAGCMsg = 8118
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOptsResponse                         EDOTAGCMsg = 8119
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave                                EDOTAGCMsg = 8120
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeaveResponse                        EDOTAGCMsg = 8121
-	EDOTAGCMsg_k_EMsgClientToGCTeammateStatsRequest                               EDOTAGCMsg = 8124
-	EDOTAGCMsg_k_EMsgClientToGCTeammateStatsResponse                              EDOTAGCMsg = 8125
-	EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissions                                 EDOTAGCMsg = 8126
-	EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissionsResponse                         EDOTAGCMsg = 8127
-	EDOTAGCMsg_k_EMsgClientToGCVoteForArcana                                      EDOTAGCMsg = 8128
-	EDOTAGCMsg_k_EMsgClientToGCVoteForArcanaResponse                              EDOTAGCMsg = 8129
-	EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemaining                        EDOTAGCMsg = 8130
-	EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemainingResponse                EDOTAGCMsg = 8131
-	EDOTAGCMsg_k_EMsgGCTransferTeamAdminResponse                                  EDOTAGCMsg = 8132
-	EDOTAGCMsg_k_EMsgGCToClientTeamInfo                                           EDOTAGCMsg = 8135
-	EDOTAGCMsg_k_EMsgGCToClientTeamsInfo                                          EDOTAGCMsg = 8136
-	EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest                                  EDOTAGCMsg = 8137
-	EDOTAGCMsg_k_EMsgClientToGCPublishUserStat                                    EDOTAGCMsg = 8140
-	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendWager                                      EDOTAGCMsg = 8141
-	EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVote                                         EDOTAGCMsg = 8144
-	EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVoteResponse                                 EDOTAGCMsg = 8145
-	EDOTAGCMsg_k_EMsgSignOutCommunityGoalProgress                                 EDOTAGCMsg = 8150
-	EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded                                    EDOTAGCMsg = 8152
-	EDOTAGCMsg_k_EMsgGCToClientQuestProgressUpdated                               EDOTAGCMsg = 8153
-	EDOTAGCMsg_k_EMsgGCToClientWageringUpdate                                     EDOTAGCMsg = 8154
-	EDOTAGCMsg_k_EMsgGCToClientArcanaVotesUpdate                                  EDOTAGCMsg = 8155
-	EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails                           EDOTAGCMsg = 8157
-	EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetailsResponse                   EDOTAGCMsg = 8158
-	EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby                               EDOTAGCMsg = 8159
-	EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobbyResponse                       EDOTAGCMsg = 8160
-	EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyList                                 EDOTAGCMsg = 8161
-	EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyListResponse                         EDOTAGCMsg = 8162
-	EDOTAGCMsg_k_EMsgSpectatorLobbyGameDetails                                    EDOTAGCMsg = 8163
-	EDOTAGCMsg_k_EMsgServerToGCCompendiumInGamePredictionResults                  EDOTAGCMsg = 8166
-	EDOTAGCMsg_k_EMsgServerToGCCloseCompendiumInGamePredictionVoting              EDOTAGCMsg = 8167
-	EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPack                                 EDOTAGCMsg = 8168
-	EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPackResponse                         EDOTAGCMsg = 8169
-	EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePrediction                   EDOTAGCMsg = 8170
-	EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePredictionResponse           EDOTAGCMsg = 8171
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats                       EDOTAGCMsg = 8172
-	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse               EDOTAGCMsg = 8173
-	EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCard                                  EDOTAGCMsg = 8174
-	EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCardResponse                          EDOTAGCMsg = 8175
-	EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack                               EDOTAGCMsg = 8176
-	EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse                       EDOTAGCMsg = 8177
-	EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterRequest                         EDOTAGCMsg = 8178
-	EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterResponse                        EDOTAGCMsg = 8179
-	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterRequest                         EDOTAGCMsg = 8180
-	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterResponse                        EDOTAGCMsg = 8181
-	EDOTAGCMsg_k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse      EDOTAGCMsg = 8183
-	EDOTAGCMsg_k_EMsgLobbyBattleCupVictory                                        EDOTAGCMsg = 8186
-	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfo                                      EDOTAGCMsg = 8187
-	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfoResponse                              EDOTAGCMsg = 8188
-	EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicket                         EDOTAGCMsg = 8189
-	EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicketResponse                 EDOTAGCMsg = 8190
-	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupRequest                            EDOTAGCMsg = 8191
-	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupResponse                           EDOTAGCMsg = 8192
-	EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRRequest                         EDOTAGCMsg = 8193
-	EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRResponse                        EDOTAGCMsg = 8194
-	EDOTAGCMsg_k_EMsgGCToGCPublicChatCommunicationBan                             EDOTAGCMsg = 8195
-	EDOTAGCMsg_k_EMsgGCToGCUpdateAccountInfo                                      EDOTAGCMsg = 8196
-	EDOTAGCMsg_k_EMsgGCChatReportPublicSpam                                       EDOTAGCMsg = 8197
-	EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions                             EDOTAGCMsg = 8198
-	EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptionsResponse                     EDOTAGCMsg = 8199
-	EDOTAGCMsg_k_EMsgGCToClientPlaytestStatus                                     EDOTAGCMsg = 8200
-	EDOTAGCMsg_k_EMsgClientToGCJoinPlaytest                                       EDOTAGCMsg = 8201
-	EDOTAGCMsg_k_EMsgClientToGCJoinPlaytestResponse                               EDOTAGCMsg = 8202
-	EDOTAGCMsg_k_EMsgLobbyPlaytestDetails                                         EDOTAGCMsg = 8203
-	EDOTAGCMsg_k_EMsgDOTASetFavoriteTeam                                          EDOTAGCMsg = 8204
-	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListRequest                        EDOTAGCMsg = 8205
-	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListResponse                       EDOTAGCMsg = 8206
-	EDOTAGCMsg_k_EMsgDOTAClaimEventAction                                         EDOTAGCMsg = 8209
-	EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse                                 EDOTAGCMsg = 8210
-	EDOTAGCMsg_k_EMsgDOTAGetPeriodicResource                                      EDOTAGCMsg = 8211
-	EDOTAGCMsg_k_EMsgDOTAGetPeriodicResourceResponse                              EDOTAGCMsg = 8212
-	EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated                                  EDOTAGCMsg = 8213
-	EDOTAGCMsg_k_EMsgServerToGCSpendWager                                         EDOTAGCMsg = 8214
-	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendWagerToken                                 EDOTAGCMsg = 8215
-	EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswer                                   EDOTAGCMsg = 8216
-	EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswerResponse                           EDOTAGCMsg = 8217
-	EDOTAGCMsg_k_EMsgClientToGCGiveTip                                            EDOTAGCMsg = 8218
-	EDOTAGCMsg_k_EMsgClientToGCGiveTipResponse                                    EDOTAGCMsg = 8219
-	EDOTAGCMsg_k_EMsgStartTriviaSession                                           EDOTAGCMsg = 8220
-	EDOTAGCMsg_k_EMsgStartTriviaSessionResponse                                   EDOTAGCMsg = 8221
-	EDOTAGCMsg_k_EMsgAnchorPhoneNumberRequest                                     EDOTAGCMsg = 8222
-	EDOTAGCMsg_k_EMsgAnchorPhoneNumberResponse                                    EDOTAGCMsg = 8223
-	EDOTAGCMsg_k_EMsgUnanchorPhoneNumberRequest                                   EDOTAGCMsg = 8224
-	EDOTAGCMsg_k_EMsgUnanchorPhoneNumberResponse                                  EDOTAGCMsg = 8225
-	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendRankWager                                  EDOTAGCMsg = 8229
-	EDOTAGCMsg_k_EMsgGCToGCGetFavoriteTeam                                        EDOTAGCMsg = 8230
-	EDOTAGCMsg_k_EMsgGCToGCGetFavoriteTeamResponse                                EDOTAGCMsg = 8231
-	EDOTAGCMsg_k_EMsgSignOutEventGameData                                         EDOTAGCMsg = 8232
-	EDOTAGCMsg_k_EMsgClientToGCQuickStatsRequest                                  EDOTAGCMsg = 8238
-	EDOTAGCMsg_k_EMsgClientToGCQuickStatsResponse                                 EDOTAGCMsg = 8239
-	EDOTAGCMsg_k_EMsgGCToGCSubtractEventPointsFromUser                            EDOTAGCMsg = 8240
-	EDOTAGCMsg_k_EMsgSelectionPriorityChoiceRequest                               EDOTAGCMsg = 8241
-	EDOTAGCMsg_k_EMsgSelectionPriorityChoiceResponse                              EDOTAGCMsg = 8242
-	EDOTAGCMsg_k_EMsgGCToGCCompendiumInGamePredictionResults                      EDOTAGCMsg = 8243
-	EDOTAGCMsg_k_EMsgGameAutographReward                                          EDOTAGCMsg = 8244
-	EDOTAGCMsg_k_EMsgGameAutographRewardResponse                                  EDOTAGCMsg = 8245
-	EDOTAGCMsg_k_EMsgDestroyLobbyRequest                                          EDOTAGCMsg = 8246
-	EDOTAGCMsg_k_EMsgDestroyLobbyResponse                                         EDOTAGCMsg = 8247
-	EDOTAGCMsg_k_EMsgPurchaseItemWithEventPoints                                  EDOTAGCMsg = 8248
-	EDOTAGCMsg_k_EMsgPurchaseItemWithEventPointsResponse                          EDOTAGCMsg = 8249
-	EDOTAGCMsg_k_EMsgServerToGCMatchPlayerItemPurchaseHistory                     EDOTAGCMsg = 8250
-	EDOTAGCMsg_k_EMsgGCToGCGrantPlusHeroMatchResults                              EDOTAGCMsg = 8251
-	EDOTAGCMsg_k_EMsgServerToGCMatchStateHistory                                  EDOTAGCMsg = 8255
-	EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelic                                      EDOTAGCMsg = 8258
-	EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelicResponse                              EDOTAGCMsg = 8259
-	EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem                          EDOTAGCMsg = 8260
-	EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse                  EDOTAGCMsg = 8261
-	EDOTAGCMsg_k_EMsgPartyReadyCheckRequest                                       EDOTAGCMsg = 8262
-	EDOTAGCMsg_k_EMsgPartyReadyCheckResponse                                      EDOTAGCMsg = 8263
-	EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge                                   EDOTAGCMsg = 8264
-	EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsRequest                              EDOTAGCMsg = 8265
-	EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsResponse                             EDOTAGCMsg = 8266
-	EDOTAGCMsg_k_EMsgGCToClientCommendNotification                                EDOTAGCMsg = 8267
-	EDOTAGCMsg_k_EMsgProfileRequest                                               EDOTAGCMsg = 8268
-	EDOTAGCMsg_k_EMsgProfileResponse                                              EDOTAGCMsg = 8269
-	EDOTAGCMsg_k_EMsgProfileUpdate                                                EDOTAGCMsg = 8270
-	EDOTAGCMsg_k_EMsgProfileUpdateResponse                                        EDOTAGCMsg = 8271
-	EDOTAGCMsg_k_EMsgHeroGlobalDataRequest                                        EDOTAGCMsg = 8274
-	EDOTAGCMsg_k_EMsgHeroGlobalDataResponse                                       EDOTAGCMsg = 8275
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResult                   EDOTAGCMsg = 8276
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse           EDOTAGCMsg = 8277
-	EDOTAGCMsg_k_EMsgGCToGCGrantPlusPrepaidTime                                   EDOTAGCMsg = 8278
-	EDOTAGCMsg_k_EMsgPrivateMetadataKeyRequest                                    EDOTAGCMsg = 8279
-	EDOTAGCMsg_k_EMsgPrivateMetadataKeyResponse                                   EDOTAGCMsg = 8280
-	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusStatus                                    EDOTAGCMsg = 8281
-	EDOTAGCMsg_k_EMsgGCToGCCheckPlusStatus                                        EDOTAGCMsg = 8282
-	EDOTAGCMsg_k_EMsgGCToGCCheckPlusStatusResponse                                EDOTAGCMsg = 8283
-	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusAutoGrantItems                            EDOTAGCMsg = 8284
-	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusStatusUnreliable                          EDOTAGCMsg = 8285
-	EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapPathCompleted                        EDOTAGCMsg = 8288
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoom                               EDOTAGCMsg = 8289
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoomResponse                       EDOTAGCMsg = 8290
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoom                           EDOTAGCMsg = 8291
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse                   EDOTAGCMsg = 8292
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPath                           EDOTAGCMsg = 8293
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPathResponse                   EDOTAGCMsg = 8294
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapState                         EDOTAGCMsg = 8295
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapStateResponse                 EDOTAGCMsg = 8296
-	EDOTAGCMsg_k_EMsgSignOutTips                                                  EDOTAGCMsg = 8297
-	EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogV2                             EDOTAGCMsg = 8298
-	EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogResponseV2                     EDOTAGCMsg = 8299
-	EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummary                            EDOTAGCMsg = 8300
-	EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummaryResponse                    EDOTAGCMsg = 8301
-	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeed                                  EDOTAGCMsg = 8303
-	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedResponse                          EDOTAGCMsg = 8304
-	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedComments                          EDOTAGCMsg = 8305
-	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedCommentsResponse                  EDOTAGCMsg = 8306
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCount                     EDOTAGCMsg = 8308
-	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse             EDOTAGCMsg = 8309
-	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusAutoGrantItemsUnreliable                  EDOTAGCMsg = 8310
-	EDOTAGCMsg_k_EMsgServerToGCAddBroadcastTimelineEvent                          EDOTAGCMsg = 8311
-	EDOTAGCMsg_k_EMsgGCToServerUpdateSteamBroadcasting                            EDOTAGCMsg = 8312
-	EDOTAGCMsg_k_EMsgClientToGCRecordContestVote                                  EDOTAGCMsg = 8313
-	EDOTAGCMsg_k_EMsgGCToClientRecordContestVoteResponse                          EDOTAGCMsg = 8314
-	EDOTAGCMsg_k_EMsgGCToGCGrantAutograph                                         EDOTAGCMsg = 8315
-	EDOTAGCMsg_k_EMsgGCToGCGrantAutographResponse                                 EDOTAGCMsg = 8316
-	EDOTAGCMsg_k_EMsgSignOutConsumableUsage                                       EDOTAGCMsg = 8317
-	EDOTAGCMsg_k_EMsgLobbyEventGameDetails                                        EDOTAGCMsg = 8318
-	EDOTAGCMsg_k_EMsgDevGrantEventPoints                                          EDOTAGCMsg = 8319
-	EDOTAGCMsg_k_EMsgDevGrantEventPointsResponse                                  EDOTAGCMsg = 8320
-	EDOTAGCMsg_k_EMsgDevGrantEventAction                                          EDOTAGCMsg = 8321
-	EDOTAGCMsg_k_EMsgDevGrantEventActionResponse                                  EDOTAGCMsg = 8322
-	EDOTAGCMsg_k_EMsgDevResetEventState                                           EDOTAGCMsg = 8323
-	EDOTAGCMsg_k_EMsgDevResetEventStateResponse                                   EDOTAGCMsg = 8324
-	EDOTAGCMsg_k_EMsgGCToGCReconcileEventOwnership                                EDOTAGCMsg = 8325
-	EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItem                                 EDOTAGCMsg = 8326
-	EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItemResponse                         EDOTAGCMsg = 8327
-	EDOTAGCMsg_k_EMsgGCToClientClaimEventActionUsingItemCompleted                 EDOTAGCMsg = 8328
-	EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapUpdated                              EDOTAGCMsg = 8329
-	EDOTAGCMsg_k_EMsgServerToGCRequestPlayerRecentAccomplishments                 EDOTAGCMsg = 8330
-	EDOTAGCMsg_k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse         EDOTAGCMsg = 8331
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishments                 EDOTAGCMsg = 8332
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse         EDOTAGCMsg = 8333
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments             EDOTAGCMsg = 8334
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse     EDOTAGCMsg = 8335
-	EDOTAGCMsg_k_EMsgSignOutEventActionGrants                                     EDOTAGCMsg = 8336
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatches                          EDOTAGCMsg = 8337
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchesResponse                  EDOTAGCMsg = 8338
-	EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRating                          EDOTAGCMsg = 8341
-	EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRatingResponse                  EDOTAGCMsg = 8342
-	EDOTAGCMsg_k_EMsgGCToClientCoachTeammateRatingsChanged                        EDOTAGCMsg = 8343
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatch                            EDOTAGCMsg = 8345
-	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchResponse                    EDOTAGCMsg = 8346
-	EDOTAGCMsg_k_EMsgClientToGCRequestContestVotes                                EDOTAGCMsg = 8347
-	EDOTAGCMsg_k_EMsgClientToGCRequestContestVotesResponse                        EDOTAGCMsg = 8348
-	EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeout                                     EDOTAGCMsg = 8349
-	EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeoutResponse                             EDOTAGCMsg = 8350
-	EDOTAGCMsg_k_EMsgMatchMatchmakingStats                                        EDOTAGCMsg = 8360
-	EDOTAGCMsg_k_EMsgClientToGCSubmitPlayerMatchSurvey                            EDOTAGCMsg = 8361
-	EDOTAGCMsg_k_EMsgClientToGCSubmitPlayerMatchSurveyResponse                    EDOTAGCMsg = 8362
-	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAllHeroProgressAccount                         EDOTAGCMsg = 8363
-	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAllHeroProgressVictory                         EDOTAGCMsg = 8364
-	EDOTAGCMsg_k_EMsgDevDeleteEventActions                                        EDOTAGCMsg = 8365
-	EDOTAGCMsg_k_EMsgDevDeleteEventActionsResponse                                EDOTAGCMsg = 8366
-	EDOTAGCMsg_k_EMsgGCToGCGetAllHeroCurrent                                      EDOTAGCMsg = 8635
-	EDOTAGCMsg_k_EMsgGCToGCGetAllHeroCurrentResponse                              EDOTAGCMsg = 8636
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerAvoidRequest                                   EDOTAGCMsg = 8637
-	EDOTAGCMsg_k_EMsgGCSubmitPlayerAvoidRequestResponse                           EDOTAGCMsg = 8638
-	EDOTAGCMsg_k_EMsgGCToClientNotificationsUpdated                               EDOTAGCMsg = 8639
-	EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo                         EDOTAGCMsg = 8640
-	EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfoResponse                 EDOTAGCMsg = 8641
-	EDOTAGCMsg_k_EMsgGCtoGCRequestRecalibrationCheck                              EDOTAGCMsg = 8642
-	EDOTAGCMsg_k_EMsgGCToClientVACReminder                                        EDOTAGCMsg = 8643
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftBuy                                      EDOTAGCMsg = 8644
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftBuyResponse                              EDOTAGCMsg = 8645
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftReroll                                   EDOTAGCMsg = 8646
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRerollResponse                           EDOTAGCMsg = 8647
-	EDOTAGCMsg_k_EMsgNeutralItemStats                                             EDOTAGCMsg = 8648
-	EDOTAGCMsg_k_EMsgClientToGCCreateGuild                                        EDOTAGCMsg = 8649
-	EDOTAGCMsg_k_EMsgClientToGCCreateGuildResponse                                EDOTAGCMsg = 8650
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildInfo                                       EDOTAGCMsg = 8651
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildInfoResponse                               EDOTAGCMsg = 8652
-	EDOTAGCMsg_k_EMsgClientToGCAddGuildRole                                       EDOTAGCMsg = 8653
-	EDOTAGCMsg_k_EMsgClientToGCAddGuildRoleResponse                               EDOTAGCMsg = 8654
-	EDOTAGCMsg_k_EMsgClientToGCModifyGuildRole                                    EDOTAGCMsg = 8655
-	EDOTAGCMsg_k_EMsgClientToGCModifyGuildRoleResponse                            EDOTAGCMsg = 8656
-	EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRole                                    EDOTAGCMsg = 8657
-	EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRoleResponse                            EDOTAGCMsg = 8658
-	EDOTAGCMsg_k_EMsgClientToGCJoinGuild                                          EDOTAGCMsg = 8659
-	EDOTAGCMsg_k_EMsgClientToGCJoinGuildResponse                                  EDOTAGCMsg = 8660
-	EDOTAGCMsg_k_EMsgClientToGCLeaveGuild                                         EDOTAGCMsg = 8661
-	EDOTAGCMsg_k_EMsgClientToGCLeaveGuildResponse                                 EDOTAGCMsg = 8662
-	EDOTAGCMsg_k_EMsgClientToGCInviteToGuild                                      EDOTAGCMsg = 8663
-	EDOTAGCMsg_k_EMsgClientToGCInviteToGuildResponse                              EDOTAGCMsg = 8664
-	EDOTAGCMsg_k_EMsgClientToGCDeclineInviteToGuild                               EDOTAGCMsg = 8665
-	EDOTAGCMsg_k_EMsgClientToGCDeclineInviteToGuildResponse                       EDOTAGCMsg = 8666
-	EDOTAGCMsg_k_EMsgClientToGCCancelInviteToGuild                                EDOTAGCMsg = 8667
-	EDOTAGCMsg_k_EMsgClientToGCCancelInviteToGuildResponse                        EDOTAGCMsg = 8668
-	EDOTAGCMsg_k_EMsgClientToGCKickGuildMember                                    EDOTAGCMsg = 8669
-	EDOTAGCMsg_k_EMsgClientToGCKickGuildMemberResponse                            EDOTAGCMsg = 8670
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildMemberRole                                 EDOTAGCMsg = 8671
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildMemberRoleResponse                         EDOTAGCMsg = 8672
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildData                                   EDOTAGCMsg = 8673
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildDataResponse                           EDOTAGCMsg = 8674
-	EDOTAGCMsg_k_EMsgGCToClientGuildDataUpdated                                   EDOTAGCMsg = 8675
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildMembership                             EDOTAGCMsg = 8676
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildMembershipResponse                     EDOTAGCMsg = 8677
-	EDOTAGCMsg_k_EMsgGCToClientGuildMembershipUpdated                             EDOTAGCMsg = 8678
-	EDOTAGCMsg_k_EMsgClientToGCAcceptInviteToGuild                                EDOTAGCMsg = 8681
-	EDOTAGCMsg_k_EMsgClientToGCAcceptInviteToGuildResponse                        EDOTAGCMsg = 8682
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildRoleOrder                                  EDOTAGCMsg = 8683
-	EDOTAGCMsg_k_EMsgClientToGCSetGuildRoleOrderResponse                          EDOTAGCMsg = 8684
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeed                                   EDOTAGCMsg = 8685
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeedResponse                           EDOTAGCMsg = 8686
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildEventData                       EDOTAGCMsg = 8687
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildEventDataResponse               EDOTAGCMsg = 8688
-	EDOTAGCMsg_k_EMsgGCToClientAccountGuildEventDataUpdated                       EDOTAGCMsg = 8689
-	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildContracts                        EDOTAGCMsg = 8690
-	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildContractsResponse                EDOTAGCMsg = 8691
-	EDOTAGCMsg_k_EMsgGCToClientActiveGuildContractsUpdated                        EDOTAGCMsg = 8692
-	EDOTAGCMsg_k_EMsgGCToClientGuildFeedUpdated                                   EDOTAGCMsg = 8693
-	EDOTAGCMsg_k_EMsgClientToGCSelectGuildContract                                EDOTAGCMsg = 8694
-	EDOTAGCMsg_k_EMsgClientToGCSelectGuildContractResponse                        EDOTAGCMsg = 8695
-	EDOTAGCMsg_k_EMsgGCToGCCompleteGuildContracts                                 EDOTAGCMsg = 8696
-	EDOTAGCMsg_k_EMsgClientToGCAddPlayerToGuildChat                               EDOTAGCMsg = 8698
-	EDOTAGCMsg_k_EMsgClientToGCAddPlayerToGuildChatResponse                       EDOTAGCMsg = 8699
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftSell                                     EDOTAGCMsg = 8700
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftSellResponse                             EDOTAGCMsg = 8701
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRequest                                  EDOTAGCMsg = 8702
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftResponse                                 EDOTAGCMsg = 8703
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRedeemReward                             EDOTAGCMsg = 8704
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRedeemRewardResponse                     EDOTAGCMsg = 8705
-	EDOTAGCMsg_k_EMsgGCToServerLobbyHeroBanRates                                  EDOTAGCMsg = 8708
-	EDOTAGCMsg_k_EMsgSignOutGuildContractProgress                                 EDOTAGCMsg = 8711
-	EDOTAGCMsg_k_EMsgSignOutMVPStats                                              EDOTAGCMsg = 8712
-	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildChallenge                        EDOTAGCMsg = 8713
-	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildChallengeResponse                EDOTAGCMsg = 8714
-	EDOTAGCMsg_k_EMsgGCToClientActiveGuildChallengeUpdated                        EDOTAGCMsg = 8715
-	EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdates                             EDOTAGCMsg = 8716
-	EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdatesResponse                     EDOTAGCMsg = 8717
-	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeReporterUpdates                         EDOTAGCMsg = 8718
-	EDOTAGCMsg_k_EMsgSignOutGuildChallengeProgress                                EDOTAGCMsg = 8720
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildEventMembers                           EDOTAGCMsg = 8721
-	EDOTAGCMsg_k_EMsgClientToGCRequestGuildEventMembersResponse                   EDOTAGCMsg = 8722
-	EDOTAGCMsg_k_EMsgClientToGCReportGuildContent                                 EDOTAGCMsg = 8725
-	EDOTAGCMsg_k_EMsgClientToGCReportGuildContentResponse                         EDOTAGCMsg = 8726
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfo                     EDOTAGCMsg = 8727
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse             EDOTAGCMsg = 8728
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch                EDOTAGCMsg = 8729
-	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse        EDOTAGCMsg = 8730
-	EDOTAGCMsg_k_EMsgGCToClientUnderDraftGoldUpdated                              EDOTAGCMsg = 8731
-	EDOTAGCMsg_k_EMsgSignOutBounties                                              EDOTAGCMsg = 8733
-	EDOTAGCMsg_k_EMsgLobbyFeaturedGamemodeProgress                                EDOTAGCMsg = 8734
-	EDOTAGCMsg_k_EMsgLobbyGauntletProgress                                        EDOTAGCMsg = 8735
-	EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswer                       EDOTAGCMsg = 8736
-	EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse               EDOTAGCMsg = 8737
-	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendBounty                                     EDOTAGCMsg = 8738
-	EDOTAGCMsg_k_EMsgClientToGCApplyGauntletTicket                                EDOTAGCMsg = 8739
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRollBackBench                            EDOTAGCMsg = 8740
-	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRollBackBenchResponse                    EDOTAGCMsg = 8741
-	EDOTAGCMsg_k_EMsgGCToGCGetEventActionScore                                    EDOTAGCMsg = 8742
-	EDOTAGCMsg_k_EMsgGCToGCGetEventActionScoreResponse                            EDOTAGCMsg = 8743
-	EDOTAGCMsg_k_EMsgServerToGCGetGuildContracts                                  EDOTAGCMsg = 8744
-	EDOTAGCMsg_k_EMsgServerToGCGetGuildContractsResponse                          EDOTAGCMsg = 8745
-	EDOTAGCMsg_k_EMsgLobbyEventGameData                                           EDOTAGCMsg = 8746
-	EDOTAGCMsg_k_EMsgGCToClientGuildMembersDataUpdated                            EDOTAGCMsg = 8747
-	EDOTAGCMsg_k_EMsgSignOutReportActivityMarkers                                 EDOTAGCMsg = 8748
-	EDOTAGCMsg_k_EMsgSignOutDiretideCandy                                         EDOTAGCMsg = 8749
-	EDOTAGCMsg_k_EMsgGCToClientPostGameItemAwardNotification                      EDOTAGCMsg = 8750
-	EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetails                                  EDOTAGCMsg = 8751
-	EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetailsResponse                          EDOTAGCMsg = 8752
-	EDOTAGCMsg_k_EMsgClientToGCSubmitOWConviction                                 EDOTAGCMsg = 8753
-	EDOTAGCMsg_k_EMsgClientToGCSubmitOWConvictionResponse                         EDOTAGCMsg = 8754
-	EDOTAGCMsg_k_EMsgGCToGCGetAccountSteamChina                                   EDOTAGCMsg = 8755
-	EDOTAGCMsg_k_EMsgGCToGCGetAccountSteamChinaResponse                           EDOTAGCMsg = 8756
-	EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards                            EDOTAGCMsg = 8757
-	EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse                    EDOTAGCMsg = 8758
-	EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMR                                     EDOTAGCMsg = 8759
-	EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMRResponse                             EDOTAGCMsg = 8760
-	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointActionList                              EDOTAGCMsg = 8761
-	EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLRequest                                 EDOTAGCMsg = 8764
-	EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLResponse                                EDOTAGCMsg = 8765
-	EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedRequest                            EDOTAGCMsg = 8766
-	EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedResponse                           EDOTAGCMsg = 8767
-	EDOTAGCMsg_k_EMsgSignOutOverwatchSuspicion                                    EDOTAGCMsg = 8768
-	EDOTAGCMsg_k_EMsgServerToGCGetSuspicionConfig                                 EDOTAGCMsg = 8769
-	EDOTAGCMsg_k_EMsgServerToGCGetSuspicionConfigResponse                         EDOTAGCMsg = 8770
-	EDOTAGCMsg_k_EMsgGCToGCGrantPlusHeroChallengeMatchResults                     EDOTAGCMsg = 8771
-	EDOTAGCMsg_k_EMsgGCToClientOverwatchCasesAvailable                            EDOTAGCMsg = 8772
-	EDOTAGCMsg_k_EMsgServerToGCAccountCheck                                       EDOTAGCMsg = 8773
-	EDOTAGCMsg_k_EMsgClientToGCStartWatchingOverwatch                             EDOTAGCMsg = 8774
-	EDOTAGCMsg_k_EMsgClientToGCStopWatchingOverwatch                              EDOTAGCMsg = 8775
-	EDOTAGCMsg_k_EMsgSignOutPerfData                                              EDOTAGCMsg = 8776
-	EDOTAGCMsg_k_EMsgClientToGCGetDPCFavorites                                    EDOTAGCMsg = 8777
-	EDOTAGCMsg_k_EMsgClientToGCGetDPCFavoritesResponse                            EDOTAGCMsg = 8778
-	EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteState                                EDOTAGCMsg = 8779
-	EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteStateResponse                        EDOTAGCMsg = 8780
-	EDOTAGCMsg_k_EMsgClientToGCOverwatchReplayError                               EDOTAGCMsg = 8781
-	EDOTAGCMsg_k_EMsgServerToGCPlayerChallengeHistory                             EDOTAGCMsg = 8782
-	EDOTAGCMsg_k_EMsgSignOutBanData                                               EDOTAGCMsg = 8783
-	EDOTAGCMsg_k_EMsgWebapiDPCSeasonResults                                       EDOTAGCMsg = 8784
-	EDOTAGCMsg_k_EMsgClientToGCCoachFriend                                        EDOTAGCMsg = 8785
-	EDOTAGCMsg_k_EMsgClientToGCCoachFriendResponse                                EDOTAGCMsg = 8786
-	EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSession                      EDOTAGCMsg = 8787
-	EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSessionResponse              EDOTAGCMsg = 8788
-	EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSession                       EDOTAGCMsg = 8789
-	EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSessionResponse               EDOTAGCMsg = 8790
-	EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSession                        EDOTAGCMsg = 8791
-	EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSessionResponse                EDOTAGCMsg = 8792
-	EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSession                   EDOTAGCMsg = 8793
-	EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse           EDOTAGCMsg = 8794
-	EDOTAGCMsg_k_EMsgGCToClientPrivateCoachingSessionUpdated                      EDOTAGCMsg = 8795
-	EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRating                 EDOTAGCMsg = 8796
-	EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse         EDOTAGCMsg = 8797
-	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessions                EDOTAGCMsg = 8798
-	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse        EDOTAGCMsg = 8799
-	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary         EDOTAGCMsg = 8800
-	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse EDOTAGCMsg = 8801
-	EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobby                    EDOTAGCMsg = 8802
-	EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse            EDOTAGCMsg = 8803
-	EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequest                        EDOTAGCMsg = 8804
-	EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequestResponse                EDOTAGCMsg = 8805
-	EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonID                             EDOTAGCMsg = 8806
-	EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonIDResponse                     EDOTAGCMsg = 8807
-	EDOTAGCMsg_k_EMsgServerToGCMatchPlayerNeutralItemEquipHistory                 EDOTAGCMsg = 8808
-	EDOTAGCMsg_k_EMsgServerToGCCompendiumChosenInGamePredictions                  EDOTAGCMsg = 8809
-	EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPack                           EDOTAGCMsg = 8810
-	EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPackResponse                   EDOTAGCMsg = 8811
-	EDOTAGCMsg_k_EMsgGCToServerSubmitCheerData                                    EDOTAGCMsg = 8812
-	EDOTAGCMsg_k_EMsgGCToServerCheerConfig                                        EDOTAGCMsg = 8813
-	EDOTAGCMsg_k_EMsgServerToGCGetCheerConfig                                     EDOTAGCMsg = 8814
-	EDOTAGCMsg_k_EMsgServerToGCGetCheerConfigResponse                             EDOTAGCMsg = 8815
-	EDOTAGCMsg_k_EMsgGCToGCGrantAutographByID                                     EDOTAGCMsg = 8816
-	EDOTAGCMsg_k_EMsgGCToServerCheerScalesOverride                                EDOTAGCMsg = 8817
-	EDOTAGCMsg_k_EMsgGCToServerGetCheerState                                      EDOTAGCMsg = 8818
-	EDOTAGCMsg_k_EMsgServerToGCReportCheerState                                   EDOTAGCMsg = 8819
-	EDOTAGCMsg_k_EMsgGCToServerScenarioSave                                       EDOTAGCMsg = 8820
-	EDOTAGCMsg_k_EMsgGCToServerAbilityDraftLobbyData                              EDOTAGCMsg = 8821
-	EDOTAGCMsg_k_EMsgSignOutReportCommunications                                  EDOTAGCMsg = 8822
-	EDOTAGCMsg_k_EMsgClientToGCBatchGetPlayerCardRosterRequest                    EDOTAGCMsg = 8823
-	EDOTAGCMsg_k_EMsgClientToGCBatchGetPlayerCardRosterResponse                   EDOTAGCMsg = 8824
-	EDOTAGCMsg_k_EMsgClientToGCGetStickerbookRequest                              EDOTAGCMsg = 8825
-	EDOTAGCMsg_k_EMsgClientToGCGetStickerbookResponse                             EDOTAGCMsg = 8826
-	EDOTAGCMsg_k_EMsgClientToGCCreateStickerbookPageRequest                       EDOTAGCMsg = 8827
-	EDOTAGCMsg_k_EMsgClientToGCCreateStickerbookPageResponse                      EDOTAGCMsg = 8828
-	EDOTAGCMsg_k_EMsgClientToGCDeleteStickerbookPageRequest                       EDOTAGCMsg = 8829
-	EDOTAGCMsg_k_EMsgClientToGCDeleteStickerbookPageResponse                      EDOTAGCMsg = 8830
-	EDOTAGCMsg_k_EMsgClientToGCPlaceStickersRequest                               EDOTAGCMsg = 8831
-	EDOTAGCMsg_k_EMsgClientToGCPlaceStickersResponse                              EDOTAGCMsg = 8832
-	EDOTAGCMsg_k_EMsgClientToGCPlaceCollectionStickersRequest                     EDOTAGCMsg = 8833
-	EDOTAGCMsg_k_EMsgClientToGCPlaceCollectionStickersResponse                    EDOTAGCMsg = 8834
-	EDOTAGCMsg_k_EMsgClientToGCOrderStickerbookTeamPageRequest                    EDOTAGCMsg = 8835
-	EDOTAGCMsg_k_EMsgClientToGCOrderStickerbookTeamPageResponse                   EDOTAGCMsg = 8836
-	EDOTAGCMsg_k_EMsgServerToGCGetStickerHeroes                                   EDOTAGCMsg = 8837
-	EDOTAGCMsg_k_EMsgServerToGCGetStickerHeroesResponse                           EDOTAGCMsg = 8838
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserData                               EDOTAGCMsg = 8840
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserDataResponse                       EDOTAGCMsg = 8841
-	EDOTAGCMsg_k_EMsgGCToClientCandyShopUserDataUpdated                           EDOTAGCMsg = 8842
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopPurchaseReward                            EDOTAGCMsg = 8843
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopPurchaseRewardResponse                    EDOTAGCMsg = 8844
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoExchange                                EDOTAGCMsg = 8845
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoExchangeResponse                        EDOTAGCMsg = 8846
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoVariableExchange                        EDOTAGCMsg = 8847
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoVariableExchangeResponse                EDOTAGCMsg = 8848
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewards                             EDOTAGCMsg = 8849
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewardsResponse                     EDOTAGCMsg = 8850
-	EDOTAGCMsg_k_EMsgClientToGCSetHeroSticker                                     EDOTAGCMsg = 8851
-	EDOTAGCMsg_k_EMsgClientToGCSetHeroStickerResponse                             EDOTAGCMsg = 8852
-	EDOTAGCMsg_k_EMsgClientToGCGetHeroStickers                                    EDOTAGCMsg = 8853
-	EDOTAGCMsg_k_EMsgClientToGCGetHeroStickersResponse                            EDOTAGCMsg = 8854
-	EDOTAGCMsg_k_EMsgClientToGCSetFavoritePage                                    EDOTAGCMsg = 8855
-	EDOTAGCMsg_k_EMsgClientToGCSetFavoritePageResponse                            EDOTAGCMsg = 8856
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandy                             EDOTAGCMsg = 8857
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyResponse                     EDOTAGCMsg = 8858
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventory                         EDOTAGCMsg = 8859
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventoryResponse                 EDOTAGCMsg = 8860
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBags                                  EDOTAGCMsg = 8861
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBagsResponse                          EDOTAGCMsg = 8862
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBags                         EDOTAGCMsg = 8863
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse                 EDOTAGCMsg = 8864
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchange                        EDOTAGCMsg = 8865
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchangeResponse                EDOTAGCMsg = 8866
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollCharges                     EDOTAGCMsg = 8867
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse             EDOTAGCMsg = 8868
-	EDOTAGCMsg_k_EMsgLobbyAdditionalAccountData                                   EDOTAGCMsg = 8869
-	EDOTAGCMsg_k_EMsgServerToGCLobbyInitialized                                   EDOTAGCMsg = 8870
-	EDOTAGCMsg_k_EMsgClientToGCCollectorsCacheAvailableDataRequest                EDOTAGCMsg = 8871
-	EDOTAGCMsg_k_EMsgGCToClientCollectorsCacheAvailableDataResponse               EDOTAGCMsg = 8872
-	EDOTAGCMsg_k_EMsgClientToGCUploadMatchClip                                    EDOTAGCMsg = 8873
-	EDOTAGCMsg_k_EMsgGCToClientUploadMatchClipResponse                            EDOTAGCMsg = 8874
-	EDOTAGCMsg_k_EMsgSignOutMuertaMinigame                                        EDOTAGCMsg = 8877
-	EDOTAGCMsg_k_EMsgGCToServerLobbyHeroRoleStats                                 EDOTAGCMsg = 8878
-	EDOTAGCMsg_k_EMsgClientToGCRankRequest                                        EDOTAGCMsg = 8879
-	EDOTAGCMsg_k_EMsgGCToClientRankResponse                                       EDOTAGCMsg = 8880
-	EDOTAGCMsg_k_EMsgGCToClientRankUpdate                                         EDOTAGCMsg = 8881
-	EDOTAGCMsg_k_EMsgSignOutMapStats                                              EDOTAGCMsg = 8882
-	EDOTAGCMsg_k_EMsgClientToGCMapStatsRequest                                    EDOTAGCMsg = 8883
-	EDOTAGCMsg_k_EMsgGCToClientMapStatsResponse                                   EDOTAGCMsg = 8884
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserData                                EDOTAGCMsg = 8886
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserDataResponse                        EDOTAGCMsg = 8887
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserData                                EDOTAGCMsg = 8888
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserDataResponse                        EDOTAGCMsg = 8889
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetData                             EDOTAGCMsg = 8890
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetDataResponse                     EDOTAGCMsg = 8891
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperation                    EDOTAGCMsg = 8892
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperationResponse            EDOTAGCMsg = 8893
-	EDOTAGCMsg_k_EMsgGCToClientFantasyCraftingGetDataUpdated                      EDOTAGCMsg = 8894
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTablet                     EDOTAGCMsg = 8895
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse             EDOTAGCMsg = 8896
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuests                                  EDOTAGCMsg = 8897
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuestsResponse                          EDOTAGCMsg = 8898
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuest                             EDOTAGCMsg = 8899
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuestResponse                     EDOTAGCMsg = 8900
-	EDOTAGCMsg_k_EMsgClientToGCBingoGetUserData                                   EDOTAGCMsg = 8901
-	EDOTAGCMsg_k_EMsgClientToGCBingoGetUserDataResponse                           EDOTAGCMsg = 8902
-	EDOTAGCMsg_k_EMsgClientToGCBingoClaimRow                                      EDOTAGCMsg = 8903
-	EDOTAGCMsg_k_EMsgClientToGCBingoClaimRowResponse                              EDOTAGCMsg = 8904
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCard                                 EDOTAGCMsg = 8905
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCardResponse                         EDOTAGCMsg = 8906
-	EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsData                                  EDOTAGCMsg = 8907
-	EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsDataResponse                          EDOTAGCMsg = 8908
-	EDOTAGCMsg_k_EMsgGCToClientBingoUserDataUpdated                               EDOTAGCMsg = 8909
-	EDOTAGCMsg_k_EMsgGCToClientRoadToTIQuestDataUpdated                           EDOTAGCMsg = 8910
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItem                                    EDOTAGCMsg = 8911
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItemResponse                            EDOTAGCMsg = 8912
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReport                               EDOTAGCMsg = 8913
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReportResponse                       EDOTAGCMsg = 8914
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupList                  EDOTAGCMsg = 8915
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse          EDOTAGCMsg = 8916
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollup                      EDOTAGCMsg = 8917
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse              EDOTAGCMsg = 8918
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetails                        EDOTAGCMsg = 8919
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse                EDOTAGCMsg = 8920
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvict                               EDOTAGCMsg = 8921
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvictResponse                       EDOTAGCMsg = 8922
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerate                             EDOTAGCMsg = 8923
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerateResponse                     EDOTAGCMsg = 8924
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminReset                                 EDOTAGCMsg = 8925
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminResetResponse                         EDOTAGCMsg = 8926
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccount                           EDOTAGCMsg = 8927
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccountResponse                   EDOTAGCMsg = 8928
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayer                        EDOTAGCMsg = 8929
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayerResponse                EDOTAGCMsg = 8930
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTablets                     EDOTAGCMsg = 8931
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse             EDOTAGCMsg = 8932
-	EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTablets                      EDOTAGCMsg = 8933
-	EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse              EDOTAGCMsg = 8934
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptions                       EDOTAGCMsg = 8936
-	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptionsResponse               EDOTAGCMsg = 8937
-	EDOTAGCMsg_k_EMsgClientToGCRoadToTIDevForceQuest                              EDOTAGCMsg = 8935
-	EDOTAGCMsg_k_EMsgLobbyRoadToTIMatchQuestData                                  EDOTAGCMsg = 8939
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueue                         EDOTAGCMsg = 8940
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueueResponse                 EDOTAGCMsg = 8941
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModeration                  EDOTAGCMsg = 8942
-	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModerationResponse          EDOTAGCMsg = 8943
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserData                               EDOTAGCMsg = 8944
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserDataResponse                       EDOTAGCMsg = 8945
-	EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePath                              EDOTAGCMsg = 8946
-	EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePathResponse                      EDOTAGCMsg = 8947
-	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterReward                      EDOTAGCMsg = 8948
-	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterRewardResponse              EDOTAGCMsg = 8949
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAll                               EDOTAGCMsg = 8950
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAllResponse                       EDOTAGCMsg = 8951
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNode                              EDOTAGCMsg = 8952
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNodeResponse                      EDOTAGCMsg = 8953
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetPath                              EDOTAGCMsg = 8954
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetPathResponse                      EDOTAGCMsg = 8955
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokens                            EDOTAGCMsg = 8956
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokensResponse                    EDOTAGCMsg = 8957
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventory                         EDOTAGCMsg = 8958
-	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventoryResponse                 EDOTAGCMsg = 8959
-	EDOTAGCMsg_k_EMsgServerToGCNewBloomGift                                       EDOTAGCMsg = 8960
-	EDOTAGCMsg_k_EMsgServerToGCNewBloomGiftResponse                               EDOTAGCMsg = 8961
-	EDOTAGCMsg_k_EMsgGCToClientOverworldUserDataUpdated                           EDOTAGCMsg = 8962
-	EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNode                                EDOTAGCMsg = 8963
-	EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNodeResponse                        EDOTAGCMsg = 8964
-	EDOTAGCMsg_k_EMsgClientToGCNewBloomGift                                       EDOTAGCMsg = 8965
-	EDOTAGCMsg_k_EMsgClientToGCNewBloomGiftResponse                               EDOTAGCMsg = 8966
-	EDOTAGCMsg_k_EMsgSignOutOverworld                                             EDOTAGCMsg = 8967
-	EDOTAGCMsg_k_EMsgClientToGCSetBannedHeroes                                    EDOTAGCMsg = 8969
-	EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokens                               EDOTAGCMsg = 8970
-	EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokensResponse                       EDOTAGCMsg = 8971
-	EDOTAGCMsg_k_EMsgOverworldEncounterTokenTreasureData                          EDOTAGCMsg = 8972
-	EDOTAGCMsg_k_EMsgOverworldEncounterTokenQuestData                             EDOTAGCMsg = 8973
-	EDOTAGCMsg_k_EMsgOverworldEncounterChooseHeroData                             EDOTAGCMsg = 8974
-	EDOTAGCMsg_k_EMsgClientToGCUpdateComicBookStats                               EDOTAGCMsg = 8975
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShop                              EDOTAGCMsg = 8976
-	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShopResponse                      EDOTAGCMsg = 8977
-	EDOTAGCMsg_k_EMsgOverworldEncounterProgressData                               EDOTAGCMsg = 8978
-	EDOTAGCMsg_k_EMsgClientToGCOverworldFeedback                                  EDOTAGCMsg = 8979
-	EDOTAGCMsg_k_EMsgClientToGCOverworldFeedbackResponse                          EDOTAGCMsg = 8980
-	EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounter                            EDOTAGCMsg = 8981
-	EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounterResponse                    EDOTAGCMsg = 8982
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokens                                EDOTAGCMsg = 8983
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokensResponse                        EDOTAGCMsg = 8984
-	EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedback                                   EDOTAGCMsg = 8985
-	EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedbackResponse                           EDOTAGCMsg = 8986
-	EDOTAGCMsg_k_EMsgOverworldEncounterPitFighterRewardData                       EDOTAGCMsg = 8987
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImage                           EDOTAGCMsg = 8988
-	EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImageResponse                   EDOTAGCMsg = 8989
-	EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriend                        EDOTAGCMsg = 8990
-	EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriendResponse                EDOTAGCMsg = 8991
-	EDOTAGCMsg_k_EMsgClientToGCFightingGameCancelChallengeFriend                  EDOTAGCMsg = 8992
-	EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallenge                        EDOTAGCMsg = 8993
-	EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallengeResponse                EDOTAGCMsg = 8994
-	EDOTAGCMsg_k_EMsgGCToClientFightingGameChallenge                              EDOTAGCMsg = 8995
-	EDOTAGCMsg_k_EMsgGCToClientFightingGameStartMatch                             EDOTAGCMsg = 8996
-	EDOTAGCMsg_k_EMsgGCToClientFightingGameChallengeCanceled                      EDOTAGCMsg = 8997
-	EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCard                                   EDOTAGCMsg = 8999
-	EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCardResponse                           EDOTAGCMsg = 9000
-	EDOTAGCMsg_k_EMsgClientToGCBingoModifySquare                                  EDOTAGCMsg = 9001
-	EDOTAGCMsg_k_EMsgClientToGCBingoModifySquareResponse                          EDOTAGCMsg = 9002
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokens                                  EDOTAGCMsg = 9003
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokensResponse                          EDOTAGCMsg = 9004
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventory                             EDOTAGCMsg = 9005
-	EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventoryResponse                     EDOTAGCMsg = 9006
-	EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelections                              EDOTAGCMsg = 9007
-	EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelectionsResponse                      EDOTAGCMsg = 9008
-	EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameAction                            EDOTAGCMsg = 9009
-	EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameActionResponse                    EDOTAGCMsg = 9010
-	EDOTAGCMsg_k_EMsgClientToGCSurvivorsTelemetry                                 EDOTAGCMsg = 9011
-	EDOTAGCMsg_k_EMsgClientToGCSurvivorsTelemetryResponse                         EDOTAGCMsg = 9012
-	EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriend               EDOTAGCMsg = 9013
-	EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse       EDOTAGCMsg = 9014
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserData                              EDOTAGCMsg = 9015
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserDataResponse                      EDOTAGCMsg = 9016
-	EDOTAGCMsg_k_EMsgGCToClientCraftworksUserDataUpdated                          EDOTAGCMsg = 9017
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipe                              EDOTAGCMsg = 9018
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipeResponse                      EDOTAGCMsg = 9019
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponents                      EDOTAGCMsg = 9020
-	EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponentsResponse              EDOTAGCMsg = 9021
-	EDOTAGCMsg_k_EMsgSignOutCraftworks                                            EDOTAGCMsg = 9022
+	EDOTAGCMsg_k_EMsgGCDOTABase                                                    EDOTAGCMsg = 7000
+	EDOTAGCMsg_k_EMsgGCGameMatchSignOut                                            EDOTAGCMsg = 7004
+	EDOTAGCMsg_k_EMsgGCGameMatchSignOutResponse                                    EDOTAGCMsg = 7005
+	EDOTAGCMsg_k_EMsgGCJoinChatChannel                                             EDOTAGCMsg = 7009
+	EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse                                     EDOTAGCMsg = 7010
+	EDOTAGCMsg_k_EMsgGCOtherJoinedChannel                                          EDOTAGCMsg = 7013
+	EDOTAGCMsg_k_EMsgGCOtherLeftChannel                                            EDOTAGCMsg = 7014
+	EDOTAGCMsg_k_EMsgServerToGCRequestStatus                                       EDOTAGCMsg = 7026
+	EDOTAGCMsg_k_EMsgGCStartFindingMatch                                           EDOTAGCMsg = 7033
+	EDOTAGCMsg_k_EMsgGCConnectedPlayers                                            EDOTAGCMsg = 7034
+	EDOTAGCMsg_k_EMsgGCAbandonCurrentGame                                          EDOTAGCMsg = 7035
+	EDOTAGCMsg_k_EMsgGCStopFindingMatch                                            EDOTAGCMsg = 7036
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyCreate                                         EDOTAGCMsg = 7038
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave                                          EDOTAGCMsg = 7040
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch                                         EDOTAGCMsg = 7041
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyList                                           EDOTAGCMsg = 7042
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyListResponse                                   EDOTAGCMsg = 7043
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoin                                           EDOTAGCMsg = 7044
+	EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails                                     EDOTAGCMsg = 7046
+	EDOTAGCMsg_k_EMsgGCPracticeLobbySetTeamSlot                                    EDOTAGCMsg = 7047
+	EDOTAGCMsg_k_EMsgGCInitialQuestionnaireResponse                                EDOTAGCMsg = 7049
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyResponse                                       EDOTAGCMsg = 7055
+	EDOTAGCMsg_k_EMsgGCBroadcastNotification                                       EDOTAGCMsg = 7056
+	EDOTAGCMsg_k_EMsgGCLiveScoreboardUpdate                                        EDOTAGCMsg = 7057
+	EDOTAGCMsg_k_EMsgGCRequestChatChannelList                                      EDOTAGCMsg = 7060
+	EDOTAGCMsg_k_EMsgGCRequestChatChannelListResponse                              EDOTAGCMsg = 7061
+	EDOTAGCMsg_k_EMsgGCReadyUp                                                     EDOTAGCMsg = 7070
+	EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue                                  EDOTAGCMsg = 7071
+	EDOTAGCMsg_k_EMsgGCLeaverDetected                                              EDOTAGCMsg = 7072
+	EDOTAGCMsg_k_EMsgGCSpectateFriendGame                                          EDOTAGCMsg = 7073
+	EDOTAGCMsg_k_EMsgGCSpectateFriendGameResponse                                  EDOTAGCMsg = 7074
+	EDOTAGCMsg_k_EMsgGCReportsRemainingRequest                                     EDOTAGCMsg = 7076
+	EDOTAGCMsg_k_EMsgGCReportsRemainingResponse                                    EDOTAGCMsg = 7077
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerReport                                          EDOTAGCMsg = 7078
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponse                                  EDOTAGCMsg = 7079
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyKick                                           EDOTAGCMsg = 7081
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportV2                                        EDOTAGCMsg = 7082
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerReportResponseV2                                EDOTAGCMsg = 7083
+	EDOTAGCMsg_k_EMsgGCRequestSaveGames                                            EDOTAGCMsg = 7084
+	EDOTAGCMsg_k_EMsgGCRequestSaveGamesServer                                      EDOTAGCMsg = 7085
+	EDOTAGCMsg_k_EMsgGCRequestSaveGamesResponse                                    EDOTAGCMsg = 7086
+	EDOTAGCMsg_k_EMsgGCLeaverDetectedResponse                                      EDOTAGCMsg = 7087
+	EDOTAGCMsg_k_EMsgGCPlayerFailedToConnect                                       EDOTAGCMsg = 7088
+	EDOTAGCMsg_k_EMsgGCGCToRelayConnect                                            EDOTAGCMsg = 7089
+	EDOTAGCMsg_k_EMsgGCGCToRelayConnectresponse                                    EDOTAGCMsg = 7090
+	EDOTAGCMsg_k_EMsgGCWatchGame                                                   EDOTAGCMsg = 7091
+	EDOTAGCMsg_k_EMsgGCWatchGameResponse                                           EDOTAGCMsg = 7092
+	EDOTAGCMsg_k_EMsgGCBanStatusRequest                                            EDOTAGCMsg = 7093
+	EDOTAGCMsg_k_EMsgGCBanStatusResponse                                           EDOTAGCMsg = 7094
+	EDOTAGCMsg_k_EMsgGCMatchDetailsRequest                                         EDOTAGCMsg = 7095
+	EDOTAGCMsg_k_EMsgGCMatchDetailsResponse                                        EDOTAGCMsg = 7096
+	EDOTAGCMsg_k_EMsgGCCancelWatchGame                                             EDOTAGCMsg = 7097
+	EDOTAGCMsg_k_EMsgGCPopup                                                       EDOTAGCMsg = 7102
+	EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListRequest                              EDOTAGCMsg = 7111
+	EDOTAGCMsg_k_EMsgGCFriendPracticeLobbyListResponse                             EDOTAGCMsg = 7112
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinResponse                                   EDOTAGCMsg = 7113
+	EDOTAGCMsg_k_EMsgGCCreateTeam                                                  EDOTAGCMsg = 7115
+	EDOTAGCMsg_k_EMsgGCCreateTeamResponse                                          EDOTAGCMsg = 7116
+	EDOTAGCMsg_k_EMsgGCTeamInvite_InviterToGC                                      EDOTAGCMsg = 7122
+	EDOTAGCMsg_k_EMsgGCTeamInvite_GCImmediateResponseToInviter                     EDOTAGCMsg = 7123
+	EDOTAGCMsg_k_EMsgGCTeamInvite_GCRequestToInvitee                               EDOTAGCMsg = 7124
+	EDOTAGCMsg_k_EMsgGCTeamInvite_InviteeResponseToGC                              EDOTAGCMsg = 7125
+	EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInviter                              EDOTAGCMsg = 7126
+	EDOTAGCMsg_k_EMsgGCTeamInvite_GCResponseToInvitee                              EDOTAGCMsg = 7127
+	EDOTAGCMsg_k_EMsgGCKickTeamMember                                              EDOTAGCMsg = 7128
+	EDOTAGCMsg_k_EMsgGCKickTeamMemberResponse                                      EDOTAGCMsg = 7129
+	EDOTAGCMsg_k_EMsgGCLeaveTeam                                                   EDOTAGCMsg = 7130
+	EDOTAGCMsg_k_EMsgGCLeaveTeamResponse                                           EDOTAGCMsg = 7131
+	EDOTAGCMsg_k_EMsgGCApplyTeamToPracticeLobby                                    EDOTAGCMsg = 7142
+	EDOTAGCMsg_k_EMsgGCTransferTeamAdmin                                           EDOTAGCMsg = 7144
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyJoinBroadcastChannel                           EDOTAGCMsg = 7149
+	EDOTAGCMsg_k_EMsgGC_TournamentItemEvent                                        EDOTAGCMsg = 7150
+	EDOTAGCMsg_k_EMsgGC_TournamentItemEventResponse                                EDOTAGCMsg = 7151
+	EDOTAGCMsg_k_EMsgTeamFanfare                                                   EDOTAGCMsg = 7156
+	EDOTAGCMsg_k_EMsgResponseTeamFanfare                                           EDOTAGCMsg = 7157
+	EDOTAGCMsg_k_EMsgGCEditTeamDetails                                             EDOTAGCMsg = 7166
+	EDOTAGCMsg_k_EMsgGCEditTeamDetailsResponse                                     EDOTAGCMsg = 7167
+	EDOTAGCMsg_k_EMsgGCReadyUpStatus                                               EDOTAGCMsg = 7170
+	EDOTAGCMsg_k_EMsgGCToGCMatchCompleted                                          EDOTAGCMsg = 7186
+	EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby                                        EDOTAGCMsg = 7188
+	EDOTAGCMsg_k_EMsgGCMatchmakingStatsRequest                                     EDOTAGCMsg = 7197
+	EDOTAGCMsg_k_EMsgGCMatchmakingStatsResponse                                    EDOTAGCMsg = 7198
+	EDOTAGCMsg_k_EMsgGCBotGameCreate                                               EDOTAGCMsg = 7199
+	EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccess                                       EDOTAGCMsg = 7200
+	EDOTAGCMsg_k_EMsgGCSetMatchHistoryAccessResponse                               EDOTAGCMsg = 7201
+	EDOTAGCMsg_k_EMsgUpgradeLeagueItem                                             EDOTAGCMsg = 7203
+	EDOTAGCMsg_k_EMsgUpgradeLeagueItemResponse                                     EDOTAGCMsg = 7204
+	EDOTAGCMsg_k_EMsgGCWatchDownloadedReplay                                       EDOTAGCMsg = 7206
+	EDOTAGCMsg_k_EMsgClientsRejoinChatChannels                                     EDOTAGCMsg = 7217
+	EDOTAGCMsg_k_EMsgGCToGCGetUserChatInfo                                         EDOTAGCMsg = 7218
+	EDOTAGCMsg_k_EMsgGCToGCGetUserChatInfoResponse                                 EDOTAGCMsg = 7219
+	EDOTAGCMsg_k_EMsgGCToGCLeaveAllChatChannels                                    EDOTAGCMsg = 7220
+	EDOTAGCMsg_k_EMsgGCToGCUpdateAccountChatBan                                    EDOTAGCMsg = 7221
+	EDOTAGCMsg_k_EMsgGCToGCCanInviteUserToTeam                                     EDOTAGCMsg = 7234
+	EDOTAGCMsg_k_EMsgGCToGCCanInviteUserToTeamResponse                             EDOTAGCMsg = 7235
+	EDOTAGCMsg_k_EMsgGCToGCGetUserRank                                             EDOTAGCMsg = 7236
+	EDOTAGCMsg_k_EMsgGCToGCGetUserRankResponse                                     EDOTAGCMsg = 7237
+	EDOTAGCMsg_k_EMsgGCToGCAdjustUserRank                                          EDOTAGCMsg = 7238
+	EDOTAGCMsg_k_EMsgGCToGCAdjustUserRankResponse                                  EDOTAGCMsg = 7239
+	EDOTAGCMsg_k_EMsgGCToGCUpdateTeamStats                                         EDOTAGCMsg = 7240
+	EDOTAGCMsg_k_EMsgGCToGCValidateTeam                                            EDOTAGCMsg = 7241
+	EDOTAGCMsg_k_EMsgGCToGCValidateTeamResponse                                    EDOTAGCMsg = 7242
+	EDOTAGCMsg_k_EMsgGCToGCGetLeagueAdmin                                          EDOTAGCMsg = 7255
+	EDOTAGCMsg_k_EMsgGCToGCGetLeagueAdminResponse                                  EDOTAGCMsg = 7256
+	EDOTAGCMsg_k_EMsgGCLeaveChatChannel                                            EDOTAGCMsg = 7272
+	EDOTAGCMsg_k_EMsgGCChatMessage                                                 EDOTAGCMsg = 7273
+	EDOTAGCMsg_k_EMsgGCGetHeroStandings                                            EDOTAGCMsg = 7274
+	EDOTAGCMsg_k_EMsgGCGetHeroStandingsResponse                                    EDOTAGCMsg = 7275
+	EDOTAGCMsg_k_EMsgGCItemEditorReservationsRequest                               EDOTAGCMsg = 7283
+	EDOTAGCMsg_k_EMsgGCItemEditorReservationsResponse                              EDOTAGCMsg = 7284
+	EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDef                                    EDOTAGCMsg = 7285
+	EDOTAGCMsg_k_EMsgGCItemEditorReserveItemDefResponse                            EDOTAGCMsg = 7286
+	EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservation                                EDOTAGCMsg = 7287
+	EDOTAGCMsg_k_EMsgGCItemEditorReleaseReservationResponse                        EDOTAGCMsg = 7288
+	EDOTAGCMsg_k_EMsgGCFantasyLivePlayerStats                                      EDOTAGCMsg = 7308
+	EDOTAGCMsg_k_EMsgGCFantasyFinalPlayerStats                                     EDOTAGCMsg = 7309
+	EDOTAGCMsg_k_EMsgGCFlipLobbyTeams                                              EDOTAGCMsg = 7320
+	EDOTAGCMsg_k_EMsgGCToGCEvaluateReportedPlayer                                  EDOTAGCMsg = 7322
+	EDOTAGCMsg_k_EMsgGCToGCEvaluateReportedPlayerResponse                          EDOTAGCMsg = 7323
+	EDOTAGCMsg_k_EMsgGCToGCProcessPlayerReportForTarget                            EDOTAGCMsg = 7324
+	EDOTAGCMsg_k_EMsgGCToGCProcessReportSuccess                                    EDOTAGCMsg = 7325
+	EDOTAGCMsg_k_EMsgGCNotifyAccountFlagsChange                                    EDOTAGCMsg = 7326
+	EDOTAGCMsg_k_EMsgGCSetProfilePrivacy                                           EDOTAGCMsg = 7327
+	EDOTAGCMsg_k_EMsgGCSetProfilePrivacyResponse                                   EDOTAGCMsg = 7328
+	EDOTAGCMsg_k_EMsgGCClientSuspended                                             EDOTAGCMsg = 7342
+	EDOTAGCMsg_k_EMsgGCPartyMemberSetCoach                                         EDOTAGCMsg = 7343
+	EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach                                       EDOTAGCMsg = 7346
+	EDOTAGCMsg_k_EMsgGCChatModeratorBan                                            EDOTAGCMsg = 7359
+	EDOTAGCMsg_k_EMsgGCLobbyUpdateBroadcastChannelInfo                             EDOTAGCMsg = 7367
+	EDOTAGCMsg_k_EMsgGCToGCGrantTournamentItem                                     EDOTAGCMsg = 7372
+	EDOTAGCMsg_k_EMsgGCToGCUpgradeTwitchViewerItems                                EDOTAGCMsg = 7375
+	EDOTAGCMsg_k_EMsgGCToGCGetLiveMatchAffiliates                                  EDOTAGCMsg = 7376
+	EDOTAGCMsg_k_EMsgGCToGCGetLiveMatchAffiliatesResponse                          EDOTAGCMsg = 7377
+	EDOTAGCMsg_k_EMsgGCToGCUpdatePlayerPennantCounts                               EDOTAGCMsg = 7378
+	EDOTAGCMsg_k_EMsgGCToGCGetPlayerPennantCounts                                  EDOTAGCMsg = 7379
+	EDOTAGCMsg_k_EMsgGCToGCGetPlayerPennantCountsResponse                          EDOTAGCMsg = 7380
+	EDOTAGCMsg_k_EMsgGCGameMatchSignOutPermissionRequest                           EDOTAGCMsg = 7381
+	EDOTAGCMsg_k_EMsgGCGameMatchSignOutPermissionResponse                          EDOTAGCMsg = 7382
+	EDOTAGCMsg_k_EMsgDOTAAwardEventPoints                                          EDOTAGCMsg = 7384
+	EDOTAGCMsg_k_EMsgDOTAGetEventPoints                                            EDOTAGCMsg = 7387
+	EDOTAGCMsg_k_EMsgDOTAGetEventPointsResponse                                    EDOTAGCMsg = 7388
+	EDOTAGCMsg_k_EMsgGCPartyLeaderWatchGamePrompt                                  EDOTAGCMsg = 7397
+	EDOTAGCMsg_k_EMsgGCCompendiumSetSelection                                      EDOTAGCMsg = 7405
+	EDOTAGCMsg_k_EMsgGCCompendiumDataRequest                                       EDOTAGCMsg = 7406
+	EDOTAGCMsg_k_EMsgGCCompendiumDataResponse                                      EDOTAGCMsg = 7407
+	EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistory                                     EDOTAGCMsg = 7408
+	EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistoryResponse                             EDOTAGCMsg = 7409
+	EDOTAGCMsg_k_EMsgGCToGCMatchmakingAddParty                                     EDOTAGCMsg = 7410
+	EDOTAGCMsg_k_EMsgGCToGCMatchmakingRemoveParty                                  EDOTAGCMsg = 7411
+	EDOTAGCMsg_k_EMsgGCToGCMatchmakingRemoveAllParties                             EDOTAGCMsg = 7412
+	EDOTAGCMsg_k_EMsgGCToGCMatchmakingMatchFound                                   EDOTAGCMsg = 7413
+	EDOTAGCMsg_k_EMsgGCToGCUpdateMatchManagementStats                              EDOTAGCMsg = 7414
+	EDOTAGCMsg_k_EMsgGCToGCUpdateMatchmakingStats                                  EDOTAGCMsg = 7415
+	EDOTAGCMsg_k_EMsgGCToServerPingRequest                                         EDOTAGCMsg = 7416
+	EDOTAGCMsg_k_EMsgGCToServerPingResponse                                        EDOTAGCMsg = 7417
+	EDOTAGCMsg_k_EMsgGCToServerEvaluateToxicChat                                   EDOTAGCMsg = 7418
+	EDOTAGCMsg_k_EMsgServerToGCEvaluateToxicChat                                   EDOTAGCMsg = 7419
+	EDOTAGCMsg_k_EMsgServerToGCEvaluateToxicChatResponse                           EDOTAGCMsg = 7420
+	EDOTAGCMsg_k_EMsgGCToGCProcessMatchLeaver                                      EDOTAGCMsg = 7426
+	EDOTAGCMsg_k_EMsgGCNotificationsRequest                                        EDOTAGCMsg = 7427
+	EDOTAGCMsg_k_EMsgGCNotificationsResponse                                       EDOTAGCMsg = 7428
+	EDOTAGCMsg_k_EMsgGCToGCModifyNotification                                      EDOTAGCMsg = 7429
+	EDOTAGCMsg_k_EMsgGCLeagueAdminList                                             EDOTAGCMsg = 7434
+	EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest                                EDOTAGCMsg = 7435
+	EDOTAGCMsg_k_EMsgServerToGCRequestBatchPlayerResources                         EDOTAGCMsg = 7450
+	EDOTAGCMsg_k_EMsgServerToGCRequestBatchPlayerResourcesResponse                 EDOTAGCMsg = 7451
+	EDOTAGCMsg_k_EMsgGCCompendiumSetSelectionResponse                              EDOTAGCMsg = 7453
+	EDOTAGCMsg_k_EMsgGCRankedPlayerInfoSubmit                                      EDOTAGCMsg = 7454
+	EDOTAGCMsg_k_EMsgGCRankedPlayerInfoSubmitResponse                              EDOTAGCMsg = 7455
+	EDOTAGCMsg_k_EMsgGCPlayerInfoSubmit                                            EDOTAGCMsg = 7456
+	EDOTAGCMsg_k_EMsgGCPlayerInfoSubmitResponse                                    EDOTAGCMsg = 7457
+	EDOTAGCMsg_k_EMsgGCToGCGetAccountLevel                                         EDOTAGCMsg = 7458
+	EDOTAGCMsg_k_EMsgGCToGCGetAccountLevelResponse                                 EDOTAGCMsg = 7459
+	EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule                                 EDOTAGCMsg = 7464
+	EDOTAGCMsg_k_EMsgDOTAWeekendTourneySchedule                                    EDOTAGCMsg = 7465
+	EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesRequest                              EDOTAGCMsg = 7466
+	EDOTAGCMsg_k_EMsgGCJoinableCustomGameModesResponse                             EDOTAGCMsg = 7467
+	EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesRequest                                EDOTAGCMsg = 7468
+	EDOTAGCMsg_k_EMsgGCJoinableCustomLobbiesResponse                               EDOTAGCMsg = 7469
+	EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobby                                        EDOTAGCMsg = 7470
+	EDOTAGCMsg_k_EMsgGCQuickJoinCustomLobbyResponse                                EDOTAGCMsg = 7471
+	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointAction                                   EDOTAGCMsg = 7472
+	EDOTAGCMsg_k_EMsgGCToGCSetCompendiumSelection                                  EDOTAGCMsg = 7478
+	EDOTAGCMsg_k_EMsgGCHasItemQuery                                                EDOTAGCMsg = 7484
+	EDOTAGCMsg_k_EMsgGCHasItemResponse                                             EDOTAGCMsg = 7485
+	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointActionMsg                                EDOTAGCMsg = 7488
+	EDOTAGCMsg_k_EMsgGCToGCGetCompendiumSelections                                 EDOTAGCMsg = 7492
+	EDOTAGCMsg_k_EMsgGCToGCGetCompendiumSelectionsResponse                         EDOTAGCMsg = 7493
+	EDOTAGCMsg_k_EMsgServerToGCMatchConnectionStats                                EDOTAGCMsg = 7494
+	EDOTAGCMsg_k_EMsgGCToClientTournamentItemDrop                                  EDOTAGCMsg = 7495
+	EDOTAGCMsg_k_EMsgSQLDelayedGrantLeagueDrop                                     EDOTAGCMsg = 7496
+	EDOTAGCMsg_k_EMsgServerGCUpdateSpectatorCount                                  EDOTAGCMsg = 7497
+	EDOTAGCMsg_k_EMsgGCToGCEmoticonUnlock                                          EDOTAGCMsg = 7501
+	EDOTAGCMsg_k_EMsgSignOutDraftInfo                                              EDOTAGCMsg = 7502
+	EDOTAGCMsg_k_EMsgClientToGCEmoticonDataRequest                                 EDOTAGCMsg = 7503
+	EDOTAGCMsg_k_EMsgGCToClientEmoticonData                                        EDOTAGCMsg = 7504
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus          EDOTAGCMsg = 7505
+	EDOTAGCMsg_k_EMsgDOTARedeemItem                                                EDOTAGCMsg = 7518
+	EDOTAGCMsg_k_EMsgDOTARedeemItemResponse                                        EDOTAGCMsg = 7519
+	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgress                                  EDOTAGCMsg = 7521
+	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroProgressResponse                          EDOTAGCMsg = 7522
+	EDOTAGCMsg_k_EMsgGCToGCGetServerForClient                                      EDOTAGCMsg = 7523
+	EDOTAGCMsg_k_EMsgGCToGCGetServerForClientResponse                              EDOTAGCMsg = 7524
+	EDOTAGCMsg_k_EMsgSQLProcessTournamentGameOutcome                               EDOTAGCMsg = 7525
+	EDOTAGCMsg_k_EMsgSQLGrantTrophyToAccount                                       EDOTAGCMsg = 7526
+	EDOTAGCMsg_k_EMsgClientToGCGetTrophyList                                       EDOTAGCMsg = 7527
+	EDOTAGCMsg_k_EMsgClientToGCGetTrophyListResponse                               EDOTAGCMsg = 7528
+	EDOTAGCMsg_k_EMsgGCToClientTrophyAwarded                                       EDOTAGCMsg = 7529
+	EDOTAGCMsg_k_EMsgGCGameBotMatchSignOut                                         EDOTAGCMsg = 7530
+	EDOTAGCMsg_k_EMsgGCGameBotMatchSignOutPermissionRequest                        EDOTAGCMsg = 7531
+	EDOTAGCMsg_k_EMsgSignOutBotInfo                                                EDOTAGCMsg = 7532
+	EDOTAGCMsg_k_EMsgGCToGCUpdateProfileCards                                      EDOTAGCMsg = 7533
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileCard                                      EDOTAGCMsg = 7534
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardResponse                              EDOTAGCMsg = 7535
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReport                                     EDOTAGCMsg = 7536
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportResponse                             EDOTAGCMsg = 7537
+	EDOTAGCMsg_k_EMsgClientToGCSetProfileCardSlots                                 EDOTAGCMsg = 7538
+	EDOTAGCMsg_k_EMsgGCToClientProfileCardUpdated                                  EDOTAGCMsg = 7539
+	EDOTAGCMsg_k_EMsgServerToGCVictoryPredictions                                  EDOTAGCMsg = 7540
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportAggregateStats                       EDOTAGCMsg = 7541
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportAggregateStatsResponse               EDOTAGCMsg = 7542
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportInfo                                 EDOTAGCMsg = 7543
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportInfoResponse                         EDOTAGCMsg = 7544
+	EDOTAGCMsg_k_EMsgSignOutCommunicationSummary                                   EDOTAGCMsg = 7545
+	EDOTAGCMsg_k_EMsgServerToGCRequestStatus_Response                              EDOTAGCMsg = 7546
+	EDOTAGCMsg_k_EMsgClientToGCCreateHeroStatue                                    EDOTAGCMsg = 7547
+	EDOTAGCMsg_k_EMsgGCToClientHeroStatueCreateResult                              EDOTAGCMsg = 7548
+	EDOTAGCMsg_k_EMsgGCGCToLANServerRelayConnect                                   EDOTAGCMsg = 7549
+	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeBattleReport                             EDOTAGCMsg = 7550
+	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeBattleReportResponse                     EDOTAGCMsg = 7551
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportMatchHistory                         EDOTAGCMsg = 7552
+	EDOTAGCMsg_k_EMsgClientToGCGetBattleReportMatchHistoryResponse                 EDOTAGCMsg = 7553
+	EDOTAGCMsg_k_EMsgServerToGCReportKillSummaries                                 EDOTAGCMsg = 7554
+	EDOTAGCMsg_k_EMsgGCToGCUpdatePlayerPredictions                                 EDOTAGCMsg = 7561
+	EDOTAGCMsg_k_EMsgGCToServerPredictionResult                                    EDOTAGCMsg = 7562
+	EDOTAGCMsg_k_EMsgGCToGCReplayMonitorValidateReplay                             EDOTAGCMsg = 7569
+	EDOTAGCMsg_k_EMsgLobbyEventPoints                                              EDOTAGCMsg = 7572
+	EDOTAGCMsg_k_EMsgGCToGCGetCustomGameTickets                                    EDOTAGCMsg = 7573
+	EDOTAGCMsg_k_EMsgGCToGCGetCustomGameTicketsResponse                            EDOTAGCMsg = 7574
+	EDOTAGCMsg_k_EMsgGCToGCCustomGamePlayed                                        EDOTAGCMsg = 7576
+	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointsToUser                                  EDOTAGCMsg = 7577
+	EDOTAGCMsg_k_EMsgGameserverCrashReport                                         EDOTAGCMsg = 7579
+	EDOTAGCMsg_k_EMsgGameserverCrashReportResponse                                 EDOTAGCMsg = 7580
+	EDOTAGCMsg_k_EMsgGCToClientSteamDatagramTicket                                 EDOTAGCMsg = 7581
+	EDOTAGCMsg_k_EMsgGCToGCSendAccountsEventPoints                                 EDOTAGCMsg = 7583
+	EDOTAGCMsg_k_EMsgClientToGCRerollPlayerChallenge                               EDOTAGCMsg = 7584
+	EDOTAGCMsg_k_EMsgServerToGCRerollPlayerChallenge                               EDOTAGCMsg = 7585
+	EDOTAGCMsg_k_EMsgGCRerollPlayerChallengeResponse                               EDOTAGCMsg = 7586
+	EDOTAGCMsg_k_EMsgSignOutUpdatePlayerChallenge                                  EDOTAGCMsg = 7587
+	EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader                                      EDOTAGCMsg = 7588
+	EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites                                  EDOTAGCMsg = 7589
+	EDOTAGCMsg_k_EMsgSQLGrantLeagueMatchToTicketHolders                            EDOTAGCMsg = 7592
+	EDOTAGCMsg_k_EMsgGCToGCEmoticonUnlockNoRollback                                EDOTAGCMsg = 7594
+	EDOTAGCMsg_k_EMsgClientToGCApplyGemCombiner                                    EDOTAGCMsg = 7603
+	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrder                                     EDOTAGCMsg = 7606
+	EDOTAGCMsg_k_EMsgClientToGCGetAllHeroOrderResponse                             EDOTAGCMsg = 7607
+	EDOTAGCMsg_k_EMsgSQLGCToGCGrantBadgePoints                                     EDOTAGCMsg = 7608
+	EDOTAGCMsg_k_EMsgGCToGCCheckOwnsEntireEmoticonRange                            EDOTAGCMsg = 7611
+	EDOTAGCMsg_k_EMsgGCToGCCheckOwnsEntireEmoticonRangeResponse                    EDOTAGCMsg = 7612
+	EDOTAGCMsg_k_EMsgGCToClientRequestLaneSelection                                EDOTAGCMsg = 7623
+	EDOTAGCMsg_k_EMsgGCToClientRequestLaneSelectionResponse                        EDOTAGCMsg = 7624
+	EDOTAGCMsg_k_EMsgServerToGCCavernCrawlIsHeroActive                             EDOTAGCMsg = 7625
+	EDOTAGCMsg_k_EMsgServerToGCCavernCrawlIsHeroActiveResponse                     EDOTAGCMsg = 7626
+	EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseRequest                   EDOTAGCMsg = 7627
+	EDOTAGCMsg_k_EMsgClientToGCPlayerCardSpecificPurchaseResponse                  EDOTAGCMsg = 7628
+	EDOTAGCMsg_k_EMsgSQLSetIsLeagueAdmin                                           EDOTAGCMsg = 7630
+	EDOTAGCMsg_k_EMsgGCToGCGetLiveLeagueMatches                                    EDOTAGCMsg = 7631
+	EDOTAGCMsg_k_EMsgGCToGCGetLiveLeagueMatchesResponse                            EDOTAGCMsg = 7632
+	EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsRequest                               EDOTAGCMsg = 7633
+	EDOTAGCMsg_k_EMsgDOTALeagueInfoListAdminsReponse                               EDOTAGCMsg = 7634
+	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchStarted                                      EDOTAGCMsg = 7645
+	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchCompleted                                    EDOTAGCMsg = 7646
+	EDOTAGCMsg_k_EMsgGCToGCLeagueMatchStartedResponse                              EDOTAGCMsg = 7647
+	EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodesRequest                          EDOTAGCMsg = 7650
+	EDOTAGCMsg_k_EMsgDOTALeagueAvailableLobbyNodes                                 EDOTAGCMsg = 7651
+	EDOTAGCMsg_k_EMsgGCToGCLeagueRequest                                           EDOTAGCMsg = 7652
+	EDOTAGCMsg_k_EMsgGCToGCLeagueResponse                                          EDOTAGCMsg = 7653
+	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeGroupRequest                                  EDOTAGCMsg = 7654
+	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeGroupResponse                                 EDOTAGCMsg = 7655
+	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeRequest                                       EDOTAGCMsg = 7656
+	EDOTAGCMsg_k_EMsgGCToGCLeagueNodeResponse                                      EDOTAGCMsg = 7657
+	EDOTAGCMsg_k_EMsgGCToGCRealtimeStatsTerseRequest                               EDOTAGCMsg = 7658
+	EDOTAGCMsg_k_EMsgGCToGCRealtimeStatsTerseResponse                              EDOTAGCMsg = 7659
+	EDOTAGCMsg_k_EMsgGCToGCGetTopMatchesRequest                                    EDOTAGCMsg = 7660
+	EDOTAGCMsg_k_EMsgGCToGCGetTopMatchesResponse                                   EDOTAGCMsg = 7661
+	EDOTAGCMsg_k_EMsgClientToGCGetFilteredPlayers                                  EDOTAGCMsg = 7662
+	EDOTAGCMsg_k_EMsgGCToClientGetFilteredPlayersResponse                          EDOTAGCMsg = 7663
+	EDOTAGCMsg_k_EMsgClientToGCRemoveFilteredPlayer                                EDOTAGCMsg = 7664
+	EDOTAGCMsg_k_EMsgGCToClientRemoveFilteredPlayerResponse                        EDOTAGCMsg = 7665
+	EDOTAGCMsg_k_EMsgGCToClientPlayerBeaconState                                   EDOTAGCMsg = 7666
+	EDOTAGCMsg_k_EMsgGCToClientPartyBeaconUpdate                                   EDOTAGCMsg = 7667
+	EDOTAGCMsg_k_EMsgGCToClientPartySearchInvite                                   EDOTAGCMsg = 7668
+	EDOTAGCMsg_k_EMsgClientToGCUpdatePartyBeacon                                   EDOTAGCMsg = 7669
+	EDOTAGCMsg_k_EMsgClientToGCRequestActiveBeaconParties                          EDOTAGCMsg = 7670
+	EDOTAGCMsg_k_EMsgGCToClientRequestActiveBeaconPartiesResponse                  EDOTAGCMsg = 7671
+	EDOTAGCMsg_k_EMsgClientToGCManageFavorites                                     EDOTAGCMsg = 7672
+	EDOTAGCMsg_k_EMsgGCToClientManageFavoritesResponse                             EDOTAGCMsg = 7673
+	EDOTAGCMsg_k_EMsgClientToGCJoinPartyFromBeacon                                 EDOTAGCMsg = 7674
+	EDOTAGCMsg_k_EMsgGCToClientJoinPartyFromBeaconResponse                         EDOTAGCMsg = 7675
+	EDOTAGCMsg_k_EMsgClientToGCGetFavoritePlayers                                  EDOTAGCMsg = 7676
+	EDOTAGCMsg_k_EMsgGCToClientGetFavoritePlayersResponse                          EDOTAGCMsg = 7677
+	EDOTAGCMsg_k_EMsgClientToGCVerifyFavoritePlayers                               EDOTAGCMsg = 7678
+	EDOTAGCMsg_k_EMsgGCToClientVerifyFavoritePlayersResponse                       EDOTAGCMsg = 7679
+	EDOTAGCMsg_k_EMsgGCToClientPartySearchInvites                                  EDOTAGCMsg = 7680
+	EDOTAGCMsg_k_EMsgGCToClientRequestMMInfo                                       EDOTAGCMsg = 7681
+	EDOTAGCMsg_k_EMsgClientToGCMMInfo                                              EDOTAGCMsg = 7682
+	EDOTAGCMsg_k_EMsgSignOutTextMuteInfo                                           EDOTAGCMsg = 7683
+	EDOTAGCMsg_k_EMsgClientToGCPurchaseLabyrinthBlessings                          EDOTAGCMsg = 7684
+	EDOTAGCMsg_k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse                  EDOTAGCMsg = 7685
+	EDOTAGCMsg_k_EMsgClientToGCPurchaseFilteredPlayerSlot                          EDOTAGCMsg = 7686
+	EDOTAGCMsg_k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse                  EDOTAGCMsg = 7687
+	EDOTAGCMsg_k_EMsgClientToGCUpdateFilteredPlayerNote                            EDOTAGCMsg = 7688
+	EDOTAGCMsg_k_EMsgGCToClientUpdateFilteredPlayerNoteResponse                    EDOTAGCMsg = 7689
+	EDOTAGCMsg_k_EMsgClientToGCClaimSwag                                           EDOTAGCMsg = 7690
+	EDOTAGCMsg_k_EMsgGCToClientClaimSwagResponse                                   EDOTAGCMsg = 7691
+	EDOTAGCMsg_k_EMsgServerToGCLockCharmTrading                                    EDOTAGCMsg = 8004
+	EDOTAGCMsg_k_EMsgClientToGCPlayerStatsRequest                                  EDOTAGCMsg = 8006
+	EDOTAGCMsg_k_EMsgGCToClientPlayerStatsResponse                                 EDOTAGCMsg = 8007
+	EDOTAGCMsg_k_EMsgGCClearPracticeLobbyTeam                                      EDOTAGCMsg = 8008
+	EDOTAGCMsg_k_EMsgClientToGCFindTopSourceTVGames                                EDOTAGCMsg = 8009
+	EDOTAGCMsg_k_EMsgGCToClientFindTopSourceTVGamesResponse                        EDOTAGCMsg = 8010
+	EDOTAGCMsg_k_EMsgGCLobbyList                                                   EDOTAGCMsg = 8011
+	EDOTAGCMsg_k_EMsgGCLobbyListResponse                                           EDOTAGCMsg = 8012
+	EDOTAGCMsg_k_EMsgGCPlayerStatsMatchSignOut                                     EDOTAGCMsg = 8013
+	EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostCommentRequest                        EDOTAGCMsg = 8016
+	EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostCommentResponse                       EDOTAGCMsg = 8017
+	EDOTAGCMsg_k_EMsgClientToGCCustomGamesFriendsPlayedRequest                     EDOTAGCMsg = 8018
+	EDOTAGCMsg_k_EMsgGCToClientCustomGamesFriendsPlayedResponse                    EDOTAGCMsg = 8019
+	EDOTAGCMsg_k_EMsgClientToGCFriendsPlayedCustomGameRequest                      EDOTAGCMsg = 8020
+	EDOTAGCMsg_k_EMsgGCToClientFriendsPlayedCustomGameResponse                     EDOTAGCMsg = 8021
+	EDOTAGCMsg_k_EMsgGCTopCustomGamesList                                          EDOTAGCMsg = 8024
+	EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen                                        EDOTAGCMsg = 8029
+	EDOTAGCMsg_k_EMsgClientToGCMergePartyInvite                                    EDOTAGCMsg = 8030
+	EDOTAGCMsg_k_EMsgGCToClientMergeGroupInviteReply                               EDOTAGCMsg = 8031
+	EDOTAGCMsg_k_EMsgClientToGCMergePartyResponse                                  EDOTAGCMsg = 8032
+	EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply                             EDOTAGCMsg = 8033
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardStats                                 EDOTAGCMsg = 8034
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileCardStatsResponse                         EDOTAGCMsg = 8035
+	EDOTAGCMsg_k_EMsgClientToGCTopLeagueMatchesRequest                             EDOTAGCMsg = 8036
+	EDOTAGCMsg_k_EMsgClientToGCTopFriendMatchesRequest                             EDOTAGCMsg = 8037
+	EDOTAGCMsg_k_EMsgGCToClientProfileCardStatsUpdated                             EDOTAGCMsg = 8040
+	EDOTAGCMsg_k_EMsgServerToGCRealtimeStats                                       EDOTAGCMsg = 8041
+	EDOTAGCMsg_k_EMsgGCToServerRealtimeStatsStartStop                              EDOTAGCMsg = 8042
+	EDOTAGCMsg_k_EMsgGCToGCGetServersForClients                                    EDOTAGCMsg = 8045
+	EDOTAGCMsg_k_EMsgGCToGCGetServersForClientsResponse                            EDOTAGCMsg = 8046
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyKickFromTeam                                   EDOTAGCMsg = 8047
+	EDOTAGCMsg_k_EMsgDOTAChatGetMemberCount                                        EDOTAGCMsg = 8048
+	EDOTAGCMsg_k_EMsgDOTAChatGetMemberCountResponse                                EDOTAGCMsg = 8049
+	EDOTAGCMsg_k_EMsgClientToGCSocialFeedPostMessageRequest                        EDOTAGCMsg = 8050
+	EDOTAGCMsg_k_EMsgGCToClientSocialFeedPostMessageResponse                       EDOTAGCMsg = 8051
+	EDOTAGCMsg_k_EMsgCustomGameListenServerStartedLoading                          EDOTAGCMsg = 8052
+	EDOTAGCMsg_k_EMsgCustomGameClientFinishedLoading                               EDOTAGCMsg = 8053
+	EDOTAGCMsg_k_EMsgGCPracticeLobbyCloseBroadcastChannel                          EDOTAGCMsg = 8054
+	EDOTAGCMsg_k_EMsgGCStartFindingMatchResponse                                   EDOTAGCMsg = 8055
+	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAccountFlag                                     EDOTAGCMsg = 8057
+	EDOTAGCMsg_k_EMsgGCToClientTopLeagueMatchesResponse                            EDOTAGCMsg = 8061
+	EDOTAGCMsg_k_EMsgGCToClientTopFriendMatchesResponse                            EDOTAGCMsg = 8062
+	EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalRequest                               EDOTAGCMsg = 8063
+	EDOTAGCMsg_k_EMsgClientToGCMatchesMinimalResponse                              EDOTAGCMsg = 8064
+	EDOTAGCMsg_k_EMsgGCToClientChatRegionsEnabled                                  EDOTAGCMsg = 8067
+	EDOTAGCMsg_k_EMsgClientToGCPingData                                            EDOTAGCMsg = 8068
+	EDOTAGCMsg_k_EMsgGCToGCEnsureAccountInParty                                    EDOTAGCMsg = 8071
+	EDOTAGCMsg_k_EMsgGCToGCEnsureAccountInPartyResponse                            EDOTAGCMsg = 8072
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileTickets                                   EDOTAGCMsg = 8073
+	EDOTAGCMsg_k_EMsgClientToGCGetProfileTicketsResponse                           EDOTAGCMsg = 8074
+	EDOTAGCMsg_k_EMsgGCToClientMatchGroupsVersion                                  EDOTAGCMsg = 8075
+	EDOTAGCMsg_k_EMsgClientToGCH264Unsupported                                     EDOTAGCMsg = 8076
+	EDOTAGCMsg_k_EMsgClientToGCWatchingBroadcast                                   EDOTAGCMsg = 8077
+	EDOTAGCMsg_k_EMsgClientToGCGetQuestProgress                                    EDOTAGCMsg = 8078
+	EDOTAGCMsg_k_EMsgClientToGCGetQuestProgressResponse                            EDOTAGCMsg = 8079
+	EDOTAGCMsg_k_EMsgSignOutXPCoins                                                EDOTAGCMsg = 8080
+	EDOTAGCMsg_k_EMsgGCToClientMatchSignedOut                                      EDOTAGCMsg = 8081
+	EDOTAGCMsg_k_EMsgGCGetHeroStatsHistory                                         EDOTAGCMsg = 8082
+	EDOTAGCMsg_k_EMsgGCGetHeroStatsHistoryResponse                                 EDOTAGCMsg = 8083
+	EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite                                   EDOTAGCMsg = 8084
+	EDOTAGCMsg_k_EMsgClientToGCPrivateChatKick                                     EDOTAGCMsg = 8088
+	EDOTAGCMsg_k_EMsgClientToGCPrivateChatPromote                                  EDOTAGCMsg = 8089
+	EDOTAGCMsg_k_EMsgClientToGCPrivateChatDemote                                   EDOTAGCMsg = 8090
+	EDOTAGCMsg_k_EMsgGCToClientPrivateChatResponse                                 EDOTAGCMsg = 8091
+	EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecardRequest                       EDOTAGCMsg = 8095
+	EDOTAGCMsg_k_EMsgClientToGCLatestConductScorecard                              EDOTAGCMsg = 8096
+	EDOTAGCMsg_k_EMsgClientToGCWageringRequest                                     EDOTAGCMsg = 8099
+	EDOTAGCMsg_k_EMsgGCToClientWageringResponse                                    EDOTAGCMsg = 8100
+	EDOTAGCMsg_k_EMsgClientToGCEventGoalsRequest                                   EDOTAGCMsg = 8103
+	EDOTAGCMsg_k_EMsgClientToGCEventGoalsResponse                                  EDOTAGCMsg = 8104
+	EDOTAGCMsg_k_EMsgGCToGCLeaguePredictionsUpdate                                 EDOTAGCMsg = 8108
+	EDOTAGCMsg_k_EMsgGCToGCAddUserToPostGameChat                                   EDOTAGCMsg = 8110
+	EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVP                                EDOTAGCMsg = 8111
+	EDOTAGCMsg_k_EMsgClientToGCHasPlayerVotedForMVPResponse                        EDOTAGCMsg = 8112
+	EDOTAGCMsg_k_EMsgClientToGCVoteForMVP                                          EDOTAGCMsg = 8113
+	EDOTAGCMsg_k_EMsgClientToGCVoteForMVPResponse                                  EDOTAGCMsg = 8114
+	EDOTAGCMsg_k_EMsgGCToGCGetEventParticipation                                   EDOTAGCMsg = 8115
+	EDOTAGCMsg_k_EMsgGCToGCGetEventParticipationResponse                           EDOTAGCMsg = 8116
+	EDOTAGCMsg_k_EMsgGCToClientAutomatedTournamentStateChange                      EDOTAGCMsg = 8117
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOpts                                  EDOTAGCMsg = 8118
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyOptsResponse                          EDOTAGCMsg = 8119
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave                                 EDOTAGCMsg = 8120
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeaveResponse                         EDOTAGCMsg = 8121
+	EDOTAGCMsg_k_EMsgClientToGCTeammateStatsRequest                                EDOTAGCMsg = 8124
+	EDOTAGCMsg_k_EMsgClientToGCTeammateStatsResponse                               EDOTAGCMsg = 8125
+	EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissions                                  EDOTAGCMsg = 8126
+	EDOTAGCMsg_k_EMsgClientToGCGetGiftPermissionsResponse                          EDOTAGCMsg = 8127
+	EDOTAGCMsg_k_EMsgClientToGCVoteForArcana                                       EDOTAGCMsg = 8128
+	EDOTAGCMsg_k_EMsgClientToGCVoteForArcanaResponse                               EDOTAGCMsg = 8129
+	EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemaining                         EDOTAGCMsg = 8130
+	EDOTAGCMsg_k_EMsgClientToGCRequestArcanaVotesRemainingResponse                 EDOTAGCMsg = 8131
+	EDOTAGCMsg_k_EMsgGCTransferTeamAdminResponse                                   EDOTAGCMsg = 8132
+	EDOTAGCMsg_k_EMsgGCToClientTeamInfo                                            EDOTAGCMsg = 8135
+	EDOTAGCMsg_k_EMsgGCToClientTeamsInfo                                           EDOTAGCMsg = 8136
+	EDOTAGCMsg_k_EMsgClientToGCMyTeamInfoRequest                                   EDOTAGCMsg = 8137
+	EDOTAGCMsg_k_EMsgClientToGCPublishUserStat                                     EDOTAGCMsg = 8140
+	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendWager                                       EDOTAGCMsg = 8141
+	EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVote                                          EDOTAGCMsg = 8144
+	EDOTAGCMsg_k_EMsgGCSubmitLobbyMVPVoteResponse                                  EDOTAGCMsg = 8145
+	EDOTAGCMsg_k_EMsgSignOutCommunityGoalProgress                                  EDOTAGCMsg = 8150
+	EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded                                     EDOTAGCMsg = 8152
+	EDOTAGCMsg_k_EMsgGCToClientQuestProgressUpdated                                EDOTAGCMsg = 8153
+	EDOTAGCMsg_k_EMsgGCToClientWageringUpdate                                      EDOTAGCMsg = 8154
+	EDOTAGCMsg_k_EMsgGCToClientArcanaVotesUpdate                                   EDOTAGCMsg = 8155
+	EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetails                            EDOTAGCMsg = 8157
+	EDOTAGCMsg_k_EMsgClientToGCSetSpectatorLobbyDetailsResponse                    EDOTAGCMsg = 8158
+	EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobby                                EDOTAGCMsg = 8159
+	EDOTAGCMsg_k_EMsgClientToGCCreateSpectatorLobbyResponse                        EDOTAGCMsg = 8160
+	EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyList                                  EDOTAGCMsg = 8161
+	EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyListResponse                          EDOTAGCMsg = 8162
+	EDOTAGCMsg_k_EMsgSpectatorLobbyGameDetails                                     EDOTAGCMsg = 8163
+	EDOTAGCMsg_k_EMsgServerToGCCompendiumInGamePredictionResults                   EDOTAGCMsg = 8166
+	EDOTAGCMsg_k_EMsgServerToGCCloseCompendiumInGamePredictionVoting               EDOTAGCMsg = 8167
+	EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPack                                  EDOTAGCMsg = 8168
+	EDOTAGCMsg_k_EMsgClientToGCOpenPlayerCardPackResponse                          EDOTAGCMsg = 8169
+	EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePrediction                    EDOTAGCMsg = 8170
+	EDOTAGCMsg_k_EMsgClientToGCSelectCompendiumInGamePredictionResponse            EDOTAGCMsg = 8171
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStats                        EDOTAGCMsg = 8172
+	EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse                EDOTAGCMsg = 8173
+	EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCard                                   EDOTAGCMsg = 8174
+	EDOTAGCMsg_k_EMsgClientToGCRecyclePlayerCardResponse                           EDOTAGCMsg = 8175
+	EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPack                                EDOTAGCMsg = 8176
+	EDOTAGCMsg_k_EMsgClientToGCCreatePlayerCardPackResponse                        EDOTAGCMsg = 8177
+	EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterRequest                          EDOTAGCMsg = 8178
+	EDOTAGCMsg_k_EMsgClientToGCGetPlayerCardRosterResponse                         EDOTAGCMsg = 8179
+	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterRequest                          EDOTAGCMsg = 8180
+	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterResponse                         EDOTAGCMsg = 8181
+	EDOTAGCMsg_k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse       EDOTAGCMsg = 8183
+	EDOTAGCMsg_k_EMsgLobbyBattleCupVictory                                         EDOTAGCMsg = 8186
+	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfo                                       EDOTAGCMsg = 8187
+	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfoResponse                               EDOTAGCMsg = 8188
+	EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicket                          EDOTAGCMsg = 8189
+	EDOTAGCMsg_k_EMsgClientToGCRequestSteamDatagramTicketResponse                  EDOTAGCMsg = 8190
+	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupRequest                             EDOTAGCMsg = 8191
+	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupResponse                            EDOTAGCMsg = 8192
+	EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRRequest                          EDOTAGCMsg = 8193
+	EDOTAGCMsg_k_EMsgClientToGCTransferSeasonalMMRResponse                         EDOTAGCMsg = 8194
+	EDOTAGCMsg_k_EMsgGCToGCPublicChatCommunicationBan                              EDOTAGCMsg = 8195
+	EDOTAGCMsg_k_EMsgGCToGCUpdateAccountInfo                                       EDOTAGCMsg = 8196
+	EDOTAGCMsg_k_EMsgGCChatReportPublicSpam                                        EDOTAGCMsg = 8197
+	EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions                              EDOTAGCMsg = 8198
+	EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptionsResponse                      EDOTAGCMsg = 8199
+	EDOTAGCMsg_k_EMsgGCToClientPlaytestStatus                                      EDOTAGCMsg = 8200
+	EDOTAGCMsg_k_EMsgClientToGCJoinPlaytest                                        EDOTAGCMsg = 8201
+	EDOTAGCMsg_k_EMsgClientToGCJoinPlaytestResponse                                EDOTAGCMsg = 8202
+	EDOTAGCMsg_k_EMsgLobbyPlaytestDetails                                          EDOTAGCMsg = 8203
+	EDOTAGCMsg_k_EMsgDOTASetFavoriteTeam                                           EDOTAGCMsg = 8204
+	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListRequest                         EDOTAGCMsg = 8205
+	EDOTAGCMsg_k_EMsgGCToClientBattlePassRollupListResponse                        EDOTAGCMsg = 8206
+	EDOTAGCMsg_k_EMsgDOTAClaimEventAction                                          EDOTAGCMsg = 8209
+	EDOTAGCMsg_k_EMsgDOTAClaimEventActionResponse                                  EDOTAGCMsg = 8210
+	EDOTAGCMsg_k_EMsgDOTAGetPeriodicResource                                       EDOTAGCMsg = 8211
+	EDOTAGCMsg_k_EMsgDOTAGetPeriodicResourceResponse                               EDOTAGCMsg = 8212
+	EDOTAGCMsg_k_EMsgDOTAPeriodicResourceUpdated                                   EDOTAGCMsg = 8213
+	EDOTAGCMsg_k_EMsgServerToGCSpendWager                                          EDOTAGCMsg = 8214
+	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendWagerToken                                  EDOTAGCMsg = 8215
+	EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswer                                    EDOTAGCMsg = 8216
+	EDOTAGCMsg_k_EMsgSubmitTriviaQuestionAnswerResponse                            EDOTAGCMsg = 8217
+	EDOTAGCMsg_k_EMsgClientToGCGiveTip                                             EDOTAGCMsg = 8218
+	EDOTAGCMsg_k_EMsgClientToGCGiveTipResponse                                     EDOTAGCMsg = 8219
+	EDOTAGCMsg_k_EMsgStartTriviaSession                                            EDOTAGCMsg = 8220
+	EDOTAGCMsg_k_EMsgStartTriviaSessionResponse                                    EDOTAGCMsg = 8221
+	EDOTAGCMsg_k_EMsgAnchorPhoneNumberRequest                                      EDOTAGCMsg = 8222
+	EDOTAGCMsg_k_EMsgAnchorPhoneNumberResponse                                     EDOTAGCMsg = 8223
+	EDOTAGCMsg_k_EMsgUnanchorPhoneNumberRequest                                    EDOTAGCMsg = 8224
+	EDOTAGCMsg_k_EMsgUnanchorPhoneNumberResponse                                   EDOTAGCMsg = 8225
+	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendRankWager                                   EDOTAGCMsg = 8229
+	EDOTAGCMsg_k_EMsgGCToGCGetFavoriteTeam                                         EDOTAGCMsg = 8230
+	EDOTAGCMsg_k_EMsgGCToGCGetFavoriteTeamResponse                                 EDOTAGCMsg = 8231
+	EDOTAGCMsg_k_EMsgSignOutEventGameData                                          EDOTAGCMsg = 8232
+	EDOTAGCMsg_k_EMsgClientToGCQuickStatsRequest                                   EDOTAGCMsg = 8238
+	EDOTAGCMsg_k_EMsgClientToGCQuickStatsResponse                                  EDOTAGCMsg = 8239
+	EDOTAGCMsg_k_EMsgGCToGCSubtractEventPointsFromUser                             EDOTAGCMsg = 8240
+	EDOTAGCMsg_k_EMsgSelectionPriorityChoiceRequest                                EDOTAGCMsg = 8241
+	EDOTAGCMsg_k_EMsgSelectionPriorityChoiceResponse                               EDOTAGCMsg = 8242
+	EDOTAGCMsg_k_EMsgGCToGCCompendiumInGamePredictionResults                       EDOTAGCMsg = 8243
+	EDOTAGCMsg_k_EMsgGameAutographReward                                           EDOTAGCMsg = 8244
+	EDOTAGCMsg_k_EMsgGameAutographRewardResponse                                   EDOTAGCMsg = 8245
+	EDOTAGCMsg_k_EMsgDestroyLobbyRequest                                           EDOTAGCMsg = 8246
+	EDOTAGCMsg_k_EMsgDestroyLobbyResponse                                          EDOTAGCMsg = 8247
+	EDOTAGCMsg_k_EMsgPurchaseItemWithEventPoints                                   EDOTAGCMsg = 8248
+	EDOTAGCMsg_k_EMsgPurchaseItemWithEventPointsResponse                           EDOTAGCMsg = 8249
+	EDOTAGCMsg_k_EMsgServerToGCMatchPlayerItemPurchaseHistory                      EDOTAGCMsg = 8250
+	EDOTAGCMsg_k_EMsgGCToGCGrantPlusHeroMatchResults                               EDOTAGCMsg = 8251
+	EDOTAGCMsg_k_EMsgServerToGCMatchStateHistory                                   EDOTAGCMsg = 8255
+	EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelic                                       EDOTAGCMsg = 8258
+	EDOTAGCMsg_k_EMsgPurchaseHeroRandomRelicResponse                               EDOTAGCMsg = 8259
+	EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem                           EDOTAGCMsg = 8260
+	EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse                   EDOTAGCMsg = 8261
+	EDOTAGCMsg_k_EMsgPartyReadyCheckRequest                                        EDOTAGCMsg = 8262
+	EDOTAGCMsg_k_EMsgPartyReadyCheckResponse                                       EDOTAGCMsg = 8263
+	EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge                                    EDOTAGCMsg = 8264
+	EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsRequest                               EDOTAGCMsg = 8265
+	EDOTAGCMsg_k_EMsgGetRecentPlayTimeFriendsResponse                              EDOTAGCMsg = 8266
+	EDOTAGCMsg_k_EMsgGCToClientCommendNotification                                 EDOTAGCMsg = 8267
+	EDOTAGCMsg_k_EMsgProfileRequest                                                EDOTAGCMsg = 8268
+	EDOTAGCMsg_k_EMsgProfileResponse                                               EDOTAGCMsg = 8269
+	EDOTAGCMsg_k_EMsgProfileUpdate                                                 EDOTAGCMsg = 8270
+	EDOTAGCMsg_k_EMsgProfileUpdateResponse                                         EDOTAGCMsg = 8271
+	EDOTAGCMsg_k_EMsgHeroGlobalDataRequest                                         EDOTAGCMsg = 8274
+	EDOTAGCMsg_k_EMsgHeroGlobalDataResponse                                        EDOTAGCMsg = 8275
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResult                    EDOTAGCMsg = 8276
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse            EDOTAGCMsg = 8277
+	EDOTAGCMsg_k_EMsgGCToGCGrantPlusPrepaidTime                                    EDOTAGCMsg = 8278
+	EDOTAGCMsg_k_EMsgPrivateMetadataKeyRequest                                     EDOTAGCMsg = 8279
+	EDOTAGCMsg_k_EMsgPrivateMetadataKeyResponse                                    EDOTAGCMsg = 8280
+	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusStatus                                     EDOTAGCMsg = 8281
+	EDOTAGCMsg_k_EMsgGCToGCCheckPlusStatus                                         EDOTAGCMsg = 8282
+	EDOTAGCMsg_k_EMsgGCToGCCheckPlusStatusResponse                                 EDOTAGCMsg = 8283
+	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusAutoGrantItems                             EDOTAGCMsg = 8284
+	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusStatusUnreliable                           EDOTAGCMsg = 8285
+	EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapPathCompleted                         EDOTAGCMsg = 8288
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoom                                EDOTAGCMsg = 8289
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlClaimRoomResponse                        EDOTAGCMsg = 8290
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoom                            EDOTAGCMsg = 8291
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse                    EDOTAGCMsg = 8292
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPath                            EDOTAGCMsg = 8293
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlUseItemOnPathResponse                    EDOTAGCMsg = 8294
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapState                          EDOTAGCMsg = 8295
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlRequestMapStateResponse                  EDOTAGCMsg = 8296
+	EDOTAGCMsg_k_EMsgSignOutTips                                                   EDOTAGCMsg = 8297
+	EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogV2                              EDOTAGCMsg = 8298
+	EDOTAGCMsg_k_EMsgClientToGCRequestEventPointLogResponseV2                      EDOTAGCMsg = 8299
+	EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummary                             EDOTAGCMsg = 8300
+	EDOTAGCMsg_k_EMsgClientToGCRequestEventTipsSummaryResponse                     EDOTAGCMsg = 8301
+	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeed                                   EDOTAGCMsg = 8303
+	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedResponse                           EDOTAGCMsg = 8304
+	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedComments                           EDOTAGCMsg = 8305
+	EDOTAGCMsg_k_EMsgClientToGCRequestSocialFeedCommentsResponse                   EDOTAGCMsg = 8306
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCount                      EDOTAGCMsg = 8308
+	EDOTAGCMsg_k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse              EDOTAGCMsg = 8309
+	EDOTAGCMsg_k_EMsgGCToGCReconcilePlusAutoGrantItemsUnreliable                   EDOTAGCMsg = 8310
+	EDOTAGCMsg_k_EMsgServerToGCAddBroadcastTimelineEvent                           EDOTAGCMsg = 8311
+	EDOTAGCMsg_k_EMsgGCToServerUpdateSteamBroadcasting                             EDOTAGCMsg = 8312
+	EDOTAGCMsg_k_EMsgClientToGCRecordContestVote                                   EDOTAGCMsg = 8313
+	EDOTAGCMsg_k_EMsgGCToClientRecordContestVoteResponse                           EDOTAGCMsg = 8314
+	EDOTAGCMsg_k_EMsgGCToGCGrantAutograph                                          EDOTAGCMsg = 8315
+	EDOTAGCMsg_k_EMsgGCToGCGrantAutographResponse                                  EDOTAGCMsg = 8316
+	EDOTAGCMsg_k_EMsgSignOutConsumableUsage                                        EDOTAGCMsg = 8317
+	EDOTAGCMsg_k_EMsgLobbyEventGameDetails                                         EDOTAGCMsg = 8318
+	EDOTAGCMsg_k_EMsgDevGrantEventPoints                                           EDOTAGCMsg = 8319
+	EDOTAGCMsg_k_EMsgDevGrantEventPointsResponse                                   EDOTAGCMsg = 8320
+	EDOTAGCMsg_k_EMsgDevGrantEventAction                                           EDOTAGCMsg = 8321
+	EDOTAGCMsg_k_EMsgDevGrantEventActionResponse                                   EDOTAGCMsg = 8322
+	EDOTAGCMsg_k_EMsgDevResetEventState                                            EDOTAGCMsg = 8323
+	EDOTAGCMsg_k_EMsgDevResetEventStateResponse                                    EDOTAGCMsg = 8324
+	EDOTAGCMsg_k_EMsgGCToGCReconcileEventOwnership                                 EDOTAGCMsg = 8325
+	EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItem                                  EDOTAGCMsg = 8326
+	EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItemResponse                          EDOTAGCMsg = 8327
+	EDOTAGCMsg_k_EMsgGCToClientClaimEventActionUsingItemCompleted                  EDOTAGCMsg = 8328
+	EDOTAGCMsg_k_EMsgGCToClientCavernCrawlMapUpdated                               EDOTAGCMsg = 8329
+	EDOTAGCMsg_k_EMsgServerToGCRequestPlayerRecentAccomplishments                  EDOTAGCMsg = 8330
+	EDOTAGCMsg_k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse          EDOTAGCMsg = 8331
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishments                  EDOTAGCMsg = 8332
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse          EDOTAGCMsg = 8333
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments              EDOTAGCMsg = 8334
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse      EDOTAGCMsg = 8335
+	EDOTAGCMsg_k_EMsgSignOutEventActionGrants                                      EDOTAGCMsg = 8336
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatches                           EDOTAGCMsg = 8337
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchesResponse                   EDOTAGCMsg = 8338
+	EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRating                           EDOTAGCMsg = 8341
+	EDOTAGCMsg_k_EMsgClientToGCSubmitCoachTeammateRatingResponse                   EDOTAGCMsg = 8342
+	EDOTAGCMsg_k_EMsgGCToClientCoachTeammateRatingsChanged                         EDOTAGCMsg = 8343
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatch                             EDOTAGCMsg = 8345
+	EDOTAGCMsg_k_EMsgClientToGCRequestPlayerCoachMatchResponse                     EDOTAGCMsg = 8346
+	EDOTAGCMsg_k_EMsgClientToGCRequestContestVotes                                 EDOTAGCMsg = 8347
+	EDOTAGCMsg_k_EMsgClientToGCRequestContestVotesResponse                         EDOTAGCMsg = 8348
+	EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeout                                      EDOTAGCMsg = 8349
+	EDOTAGCMsg_k_EMsgClientToGCMVPVoteTimeoutResponse                              EDOTAGCMsg = 8350
+	EDOTAGCMsg_k_EMsgMatchMatchmakingStats                                         EDOTAGCMsg = 8360
+	EDOTAGCMsg_k_EMsgClientToGCSubmitPlayerMatchSurvey                             EDOTAGCMsg = 8361
+	EDOTAGCMsg_k_EMsgClientToGCSubmitPlayerMatchSurveyResponse                     EDOTAGCMsg = 8362
+	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAllHeroProgressAccount                          EDOTAGCMsg = 8363
+	EDOTAGCMsg_k_EMsgSQLGCToGCGrantAllHeroProgressVictory                          EDOTAGCMsg = 8364
+	EDOTAGCMsg_k_EMsgDevDeleteEventActions                                         EDOTAGCMsg = 8365
+	EDOTAGCMsg_k_EMsgDevDeleteEventActionsResponse                                 EDOTAGCMsg = 8366
+	EDOTAGCMsg_k_EMsgDevReloadAllEvents                                            EDOTAGCMsg = 8367
+	EDOTAGCMsg_k_EMsgDevReloadAllEventsResponse                                    EDOTAGCMsg = 8368
+	EDOTAGCMsg_k_EMsgGCToGCGetAllHeroCurrent                                       EDOTAGCMsg = 8635
+	EDOTAGCMsg_k_EMsgGCToGCGetAllHeroCurrentResponse                               EDOTAGCMsg = 8636
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerAvoidRequest                                    EDOTAGCMsg = 8637
+	EDOTAGCMsg_k_EMsgGCSubmitPlayerAvoidRequestResponse                            EDOTAGCMsg = 8638
+	EDOTAGCMsg_k_EMsgGCToClientNotificationsUpdated                                EDOTAGCMsg = 8639
+	EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfo                          EDOTAGCMsg = 8640
+	EDOTAGCMsg_k_EMsgGCtoGCAssociatedExploiterAccountInfoResponse                  EDOTAGCMsg = 8641
+	EDOTAGCMsg_k_EMsgGCtoGCRequestRecalibrationCheck                               EDOTAGCMsg = 8642
+	EDOTAGCMsg_k_EMsgGCToClientVACReminder                                         EDOTAGCMsg = 8643
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftBuy                                       EDOTAGCMsg = 8644
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftBuyResponse                               EDOTAGCMsg = 8645
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftReroll                                    EDOTAGCMsg = 8646
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRerollResponse                            EDOTAGCMsg = 8647
+	EDOTAGCMsg_k_EMsgNeutralItemStats                                              EDOTAGCMsg = 8648
+	EDOTAGCMsg_k_EMsgClientToGCCreateGuild                                         EDOTAGCMsg = 8649
+	EDOTAGCMsg_k_EMsgClientToGCCreateGuildResponse                                 EDOTAGCMsg = 8650
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildInfo                                        EDOTAGCMsg = 8651
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildInfoResponse                                EDOTAGCMsg = 8652
+	EDOTAGCMsg_k_EMsgClientToGCAddGuildRole                                        EDOTAGCMsg = 8653
+	EDOTAGCMsg_k_EMsgClientToGCAddGuildRoleResponse                                EDOTAGCMsg = 8654
+	EDOTAGCMsg_k_EMsgClientToGCModifyGuildRole                                     EDOTAGCMsg = 8655
+	EDOTAGCMsg_k_EMsgClientToGCModifyGuildRoleResponse                             EDOTAGCMsg = 8656
+	EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRole                                     EDOTAGCMsg = 8657
+	EDOTAGCMsg_k_EMsgClientToGCRemoveGuildRoleResponse                             EDOTAGCMsg = 8658
+	EDOTAGCMsg_k_EMsgClientToGCJoinGuild                                           EDOTAGCMsg = 8659
+	EDOTAGCMsg_k_EMsgClientToGCJoinGuildResponse                                   EDOTAGCMsg = 8660
+	EDOTAGCMsg_k_EMsgClientToGCLeaveGuild                                          EDOTAGCMsg = 8661
+	EDOTAGCMsg_k_EMsgClientToGCLeaveGuildResponse                                  EDOTAGCMsg = 8662
+	EDOTAGCMsg_k_EMsgClientToGCInviteToGuild                                       EDOTAGCMsg = 8663
+	EDOTAGCMsg_k_EMsgClientToGCInviteToGuildResponse                               EDOTAGCMsg = 8664
+	EDOTAGCMsg_k_EMsgClientToGCDeclineInviteToGuild                                EDOTAGCMsg = 8665
+	EDOTAGCMsg_k_EMsgClientToGCDeclineInviteToGuildResponse                        EDOTAGCMsg = 8666
+	EDOTAGCMsg_k_EMsgClientToGCCancelInviteToGuild                                 EDOTAGCMsg = 8667
+	EDOTAGCMsg_k_EMsgClientToGCCancelInviteToGuildResponse                         EDOTAGCMsg = 8668
+	EDOTAGCMsg_k_EMsgClientToGCKickGuildMember                                     EDOTAGCMsg = 8669
+	EDOTAGCMsg_k_EMsgClientToGCKickGuildMemberResponse                             EDOTAGCMsg = 8670
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildMemberRole                                  EDOTAGCMsg = 8671
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildMemberRoleResponse                          EDOTAGCMsg = 8672
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildData                                    EDOTAGCMsg = 8673
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildDataResponse                            EDOTAGCMsg = 8674
+	EDOTAGCMsg_k_EMsgGCToClientGuildDataUpdated                                    EDOTAGCMsg = 8675
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildMembership                              EDOTAGCMsg = 8676
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildMembershipResponse                      EDOTAGCMsg = 8677
+	EDOTAGCMsg_k_EMsgGCToClientGuildMembershipUpdated                              EDOTAGCMsg = 8678
+	EDOTAGCMsg_k_EMsgClientToGCAcceptInviteToGuild                                 EDOTAGCMsg = 8681
+	EDOTAGCMsg_k_EMsgClientToGCAcceptInviteToGuildResponse                         EDOTAGCMsg = 8682
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildRoleOrder                                   EDOTAGCMsg = 8683
+	EDOTAGCMsg_k_EMsgClientToGCSetGuildRoleOrderResponse                           EDOTAGCMsg = 8684
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeed                                    EDOTAGCMsg = 8685
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildFeedResponse                            EDOTAGCMsg = 8686
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildEventData                        EDOTAGCMsg = 8687
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildEventDataResponse                EDOTAGCMsg = 8688
+	EDOTAGCMsg_k_EMsgGCToClientAccountGuildEventDataUpdated                        EDOTAGCMsg = 8689
+	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildContracts                         EDOTAGCMsg = 8690
+	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildContractsResponse                 EDOTAGCMsg = 8691
+	EDOTAGCMsg_k_EMsgGCToClientActiveGuildContractsUpdated                         EDOTAGCMsg = 8692
+	EDOTAGCMsg_k_EMsgGCToClientGuildFeedUpdated                                    EDOTAGCMsg = 8693
+	EDOTAGCMsg_k_EMsgClientToGCSelectGuildContract                                 EDOTAGCMsg = 8694
+	EDOTAGCMsg_k_EMsgClientToGCSelectGuildContractResponse                         EDOTAGCMsg = 8695
+	EDOTAGCMsg_k_EMsgGCToGCCompleteGuildContracts                                  EDOTAGCMsg = 8696
+	EDOTAGCMsg_k_EMsgClientToGCAddPlayerToGuildChat                                EDOTAGCMsg = 8698
+	EDOTAGCMsg_k_EMsgClientToGCAddPlayerToGuildChatResponse                        EDOTAGCMsg = 8699
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftSell                                      EDOTAGCMsg = 8700
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftSellResponse                              EDOTAGCMsg = 8701
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRequest                                   EDOTAGCMsg = 8702
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftResponse                                  EDOTAGCMsg = 8703
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRedeemReward                              EDOTAGCMsg = 8704
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRedeemRewardResponse                      EDOTAGCMsg = 8705
+	EDOTAGCMsg_k_EMsgGCToServerLobbyHeroBanRates                                   EDOTAGCMsg = 8708
+	EDOTAGCMsg_k_EMsgSignOutGuildContractProgress                                  EDOTAGCMsg = 8711
+	EDOTAGCMsg_k_EMsgSignOutMVPStats                                               EDOTAGCMsg = 8712
+	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildChallenge                         EDOTAGCMsg = 8713
+	EDOTAGCMsg_k_EMsgClientToGCRequestActiveGuildChallengeResponse                 EDOTAGCMsg = 8714
+	EDOTAGCMsg_k_EMsgGCToClientActiveGuildChallengeUpdated                         EDOTAGCMsg = 8715
+	EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdates                              EDOTAGCMsg = 8716
+	EDOTAGCMsg_k_EMsgClientToGCRequestReporterUpdatesResponse                      EDOTAGCMsg = 8717
+	EDOTAGCMsg_k_EMsgClientToGCAcknowledgeReporterUpdates                          EDOTAGCMsg = 8718
+	EDOTAGCMsg_k_EMsgSignOutGuildChallengeProgress                                 EDOTAGCMsg = 8720
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildEventMembers                            EDOTAGCMsg = 8721
+	EDOTAGCMsg_k_EMsgClientToGCRequestGuildEventMembersResponse                    EDOTAGCMsg = 8722
+	EDOTAGCMsg_k_EMsgClientToGCReportGuildContent                                  EDOTAGCMsg = 8725
+	EDOTAGCMsg_k_EMsgClientToGCReportGuildContentResponse                          EDOTAGCMsg = 8726
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfo                      EDOTAGCMsg = 8727
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse              EDOTAGCMsg = 8728
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch                 EDOTAGCMsg = 8729
+	EDOTAGCMsg_k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse         EDOTAGCMsg = 8730
+	EDOTAGCMsg_k_EMsgGCToClientUnderDraftGoldUpdated                               EDOTAGCMsg = 8731
+	EDOTAGCMsg_k_EMsgSignOutBounties                                               EDOTAGCMsg = 8733
+	EDOTAGCMsg_k_EMsgLobbyFeaturedGamemodeProgress                                 EDOTAGCMsg = 8734
+	EDOTAGCMsg_k_EMsgLobbyGauntletProgress                                         EDOTAGCMsg = 8735
+	EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswer                        EDOTAGCMsg = 8736
+	EDOTAGCMsg_k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse                EDOTAGCMsg = 8737
+	EDOTAGCMsg_k_EMsgGCToGCSignoutSpendBounty                                      EDOTAGCMsg = 8738
+	EDOTAGCMsg_k_EMsgClientToGCApplyGauntletTicket                                 EDOTAGCMsg = 8739
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRollBackBench                             EDOTAGCMsg = 8740
+	EDOTAGCMsg_k_EMsgClientToGCUnderDraftRollBackBenchResponse                     EDOTAGCMsg = 8741
+	EDOTAGCMsg_k_EMsgGCToGCGetEventActionScore                                     EDOTAGCMsg = 8742
+	EDOTAGCMsg_k_EMsgGCToGCGetEventActionScoreResponse                             EDOTAGCMsg = 8743
+	EDOTAGCMsg_k_EMsgServerToGCGetGuildContracts                                   EDOTAGCMsg = 8744
+	EDOTAGCMsg_k_EMsgServerToGCGetGuildContractsResponse                           EDOTAGCMsg = 8745
+	EDOTAGCMsg_k_EMsgLobbyEventGameData                                            EDOTAGCMsg = 8746
+	EDOTAGCMsg_k_EMsgGCToClientGuildMembersDataUpdated                             EDOTAGCMsg = 8747
+	EDOTAGCMsg_k_EMsgSignOutReportActivityMarkers                                  EDOTAGCMsg = 8748
+	EDOTAGCMsg_k_EMsgSignOutDiretideCandy                                          EDOTAGCMsg = 8749
+	EDOTAGCMsg_k_EMsgGCToClientPostGameItemAwardNotification                       EDOTAGCMsg = 8750
+	EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetails                                   EDOTAGCMsg = 8751
+	EDOTAGCMsg_k_EMsgClientToGCGetOWMatchDetailsResponse                           EDOTAGCMsg = 8752
+	EDOTAGCMsg_k_EMsgClientToGCSubmitOWConviction                                  EDOTAGCMsg = 8753
+	EDOTAGCMsg_k_EMsgClientToGCSubmitOWConvictionResponse                          EDOTAGCMsg = 8754
+	EDOTAGCMsg_k_EMsgGCToGCGetAccountSteamChina                                    EDOTAGCMsg = 8755
+	EDOTAGCMsg_k_EMsgGCToGCGetAccountSteamChinaResponse                            EDOTAGCMsg = 8756
+	EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewards                             EDOTAGCMsg = 8757
+	EDOTAGCMsg_k_EMsgClientToGCClaimLeaderboardRewardsResponse                     EDOTAGCMsg = 8758
+	EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMR                                      EDOTAGCMsg = 8759
+	EDOTAGCMsg_k_EMsgClientToGCRecalibrateMMRResponse                              EDOTAGCMsg = 8760
+	EDOTAGCMsg_k_EMsgGCToGCGrantEventPointActionList                               EDOTAGCMsg = 8761
+	EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLRequest                                  EDOTAGCMsg = 8764
+	EDOTAGCMsg_k_EMsgClientToGCChinaSSAURLResponse                                 EDOTAGCMsg = 8765
+	EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedRequest                             EDOTAGCMsg = 8766
+	EDOTAGCMsg_k_EMsgClientToGCChinaSSAAcceptedResponse                            EDOTAGCMsg = 8767
+	EDOTAGCMsg_k_EMsgSignOutOverwatchSuspicion                                     EDOTAGCMsg = 8768
+	EDOTAGCMsg_k_EMsgServerToGCGetSuspicionConfig                                  EDOTAGCMsg = 8769
+	EDOTAGCMsg_k_EMsgServerToGCGetSuspicionConfigResponse                          EDOTAGCMsg = 8770
+	EDOTAGCMsg_k_EMsgGCToGCGrantPlusHeroChallengeMatchResults                      EDOTAGCMsg = 8771
+	EDOTAGCMsg_k_EMsgGCToClientOverwatchCasesAvailable                             EDOTAGCMsg = 8772
+	EDOTAGCMsg_k_EMsgServerToGCAccountCheck                                        EDOTAGCMsg = 8773
+	EDOTAGCMsg_k_EMsgClientToGCStartWatchingOverwatch                              EDOTAGCMsg = 8774
+	EDOTAGCMsg_k_EMsgClientToGCStopWatchingOverwatch                               EDOTAGCMsg = 8775
+	EDOTAGCMsg_k_EMsgSignOutPerfData                                               EDOTAGCMsg = 8776
+	EDOTAGCMsg_k_EMsgClientToGCGetDPCFavorites                                     EDOTAGCMsg = 8777
+	EDOTAGCMsg_k_EMsgClientToGCGetDPCFavoritesResponse                             EDOTAGCMsg = 8778
+	EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteState                                 EDOTAGCMsg = 8779
+	EDOTAGCMsg_k_EMsgClientToGCSetDPCFavoriteStateResponse                         EDOTAGCMsg = 8780
+	EDOTAGCMsg_k_EMsgClientToGCOverwatchReplayError                                EDOTAGCMsg = 8781
+	EDOTAGCMsg_k_EMsgServerToGCPlayerChallengeHistory                              EDOTAGCMsg = 8782
+	EDOTAGCMsg_k_EMsgSignOutBanData                                                EDOTAGCMsg = 8783
+	EDOTAGCMsg_k_EMsgWebapiDPCSeasonResults                                        EDOTAGCMsg = 8784
+	EDOTAGCMsg_k_EMsgClientToGCCoachFriend                                         EDOTAGCMsg = 8785
+	EDOTAGCMsg_k_EMsgClientToGCCoachFriendResponse                                 EDOTAGCMsg = 8786
+	EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSession                       EDOTAGCMsg = 8787
+	EDOTAGCMsg_k_EMsgClientToGCRequestPrivateCoachingSessionResponse               EDOTAGCMsg = 8788
+	EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSession                        EDOTAGCMsg = 8789
+	EDOTAGCMsg_k_EMsgClientToGCAcceptPrivateCoachingSessionResponse                EDOTAGCMsg = 8790
+	EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSession                         EDOTAGCMsg = 8791
+	EDOTAGCMsg_k_EMsgClientToGCLeavePrivateCoachingSessionResponse                 EDOTAGCMsg = 8792
+	EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSession                    EDOTAGCMsg = 8793
+	EDOTAGCMsg_k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse            EDOTAGCMsg = 8794
+	EDOTAGCMsg_k_EMsgGCToClientPrivateCoachingSessionUpdated                       EDOTAGCMsg = 8795
+	EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRating                  EDOTAGCMsg = 8796
+	EDOTAGCMsg_k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse          EDOTAGCMsg = 8797
+	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessions                 EDOTAGCMsg = 8798
+	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse         EDOTAGCMsg = 8799
+	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary          EDOTAGCMsg = 8800
+	EDOTAGCMsg_k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse  EDOTAGCMsg = 8801
+	EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobby                     EDOTAGCMsg = 8802
+	EDOTAGCMsg_k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse             EDOTAGCMsg = 8803
+	EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequest                         EDOTAGCMsg = 8804
+	EDOTAGCMsg_k_EMsgClientToGCRespondToCoachFriendRequestResponse                 EDOTAGCMsg = 8805
+	EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonID                              EDOTAGCMsg = 8806
+	EDOTAGCMsg_k_EMsgClientToGCSetEventActiveSeasonIDResponse                      EDOTAGCMsg = 8807
+	EDOTAGCMsg_k_EMsgServerToGCMatchPlayerNeutralItemEquipHistory                  EDOTAGCMsg = 8808
+	EDOTAGCMsg_k_EMsgServerToGCCompendiumChosenInGamePredictions                   EDOTAGCMsg = 8809
+	EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPack                            EDOTAGCMsg = 8810
+	EDOTAGCMsg_k_EMsgClientToGCCreateTeamPlayerCardPackResponse                    EDOTAGCMsg = 8811
+	EDOTAGCMsg_k_EMsgGCToServerSubmitCheerData                                     EDOTAGCMsg = 8812
+	EDOTAGCMsg_k_EMsgGCToServerCheerConfig                                         EDOTAGCMsg = 8813
+	EDOTAGCMsg_k_EMsgServerToGCGetCheerConfig                                      EDOTAGCMsg = 8814
+	EDOTAGCMsg_k_EMsgServerToGCGetCheerConfigResponse                              EDOTAGCMsg = 8815
+	EDOTAGCMsg_k_EMsgGCToGCGrantAutographByID                                      EDOTAGCMsg = 8816
+	EDOTAGCMsg_k_EMsgGCToServerCheerScalesOverride                                 EDOTAGCMsg = 8817
+	EDOTAGCMsg_k_EMsgGCToServerGetCheerState                                       EDOTAGCMsg = 8818
+	EDOTAGCMsg_k_EMsgServerToGCReportCheerState                                    EDOTAGCMsg = 8819
+	EDOTAGCMsg_k_EMsgGCToServerScenarioSave                                        EDOTAGCMsg = 8820
+	EDOTAGCMsg_k_EMsgGCToServerAbilityDraftLobbyData                               EDOTAGCMsg = 8821
+	EDOTAGCMsg_k_EMsgSignOutReportCommunications                                   EDOTAGCMsg = 8822
+	EDOTAGCMsg_k_EMsgClientToGCBatchGetPlayerCardRosterRequest                     EDOTAGCMsg = 8823
+	EDOTAGCMsg_k_EMsgClientToGCBatchGetPlayerCardRosterResponse                    EDOTAGCMsg = 8824
+	EDOTAGCMsg_k_EMsgClientToGCGetStickerbookRequest                               EDOTAGCMsg = 8825
+	EDOTAGCMsg_k_EMsgClientToGCGetStickerbookResponse                              EDOTAGCMsg = 8826
+	EDOTAGCMsg_k_EMsgClientToGCCreateStickerbookPageRequest                        EDOTAGCMsg = 8827
+	EDOTAGCMsg_k_EMsgClientToGCCreateStickerbookPageResponse                       EDOTAGCMsg = 8828
+	EDOTAGCMsg_k_EMsgClientToGCDeleteStickerbookPageRequest                        EDOTAGCMsg = 8829
+	EDOTAGCMsg_k_EMsgClientToGCDeleteStickerbookPageResponse                       EDOTAGCMsg = 8830
+	EDOTAGCMsg_k_EMsgClientToGCPlaceStickersRequest                                EDOTAGCMsg = 8831
+	EDOTAGCMsg_k_EMsgClientToGCPlaceStickersResponse                               EDOTAGCMsg = 8832
+	EDOTAGCMsg_k_EMsgClientToGCPlaceCollectionStickersRequest                      EDOTAGCMsg = 8833
+	EDOTAGCMsg_k_EMsgClientToGCPlaceCollectionStickersResponse                     EDOTAGCMsg = 8834
+	EDOTAGCMsg_k_EMsgClientToGCOrderStickerbookTeamPageRequest                     EDOTAGCMsg = 8835
+	EDOTAGCMsg_k_EMsgClientToGCOrderStickerbookTeamPageResponse                    EDOTAGCMsg = 8836
+	EDOTAGCMsg_k_EMsgServerToGCGetStickerHeroes                                    EDOTAGCMsg = 8837
+	EDOTAGCMsg_k_EMsgServerToGCGetStickerHeroesResponse                            EDOTAGCMsg = 8838
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserData                                EDOTAGCMsg = 8840
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopGetUserDataResponse                        EDOTAGCMsg = 8841
+	EDOTAGCMsg_k_EMsgGCToClientCandyShopUserDataUpdated                            EDOTAGCMsg = 8842
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopPurchaseReward                             EDOTAGCMsg = 8843
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopPurchaseRewardResponse                     EDOTAGCMsg = 8844
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoExchange                                 EDOTAGCMsg = 8845
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoExchangeResponse                         EDOTAGCMsg = 8846
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoVariableExchange                         EDOTAGCMsg = 8847
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDoVariableExchangeResponse                 EDOTAGCMsg = 8848
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewards                              EDOTAGCMsg = 8849
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopRerollRewardsResponse                      EDOTAGCMsg = 8850
+	EDOTAGCMsg_k_EMsgClientToGCSetHeroSticker                                      EDOTAGCMsg = 8851
+	EDOTAGCMsg_k_EMsgClientToGCSetHeroStickerResponse                              EDOTAGCMsg = 8852
+	EDOTAGCMsg_k_EMsgClientToGCGetHeroStickers                                     EDOTAGCMsg = 8853
+	EDOTAGCMsg_k_EMsgClientToGCGetHeroStickersResponse                             EDOTAGCMsg = 8854
+	EDOTAGCMsg_k_EMsgClientToGCSetFavoritePage                                     EDOTAGCMsg = 8855
+	EDOTAGCMsg_k_EMsgClientToGCSetFavoritePageResponse                             EDOTAGCMsg = 8856
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandy                              EDOTAGCMsg = 8857
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyResponse                      EDOTAGCMsg = 8858
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventory                          EDOTAGCMsg = 8859
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevClearInventoryResponse                  EDOTAGCMsg = 8860
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBags                                   EDOTAGCMsg = 8861
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopOpenBagsResponse                           EDOTAGCMsg = 8862
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBags                          EDOTAGCMsg = 8863
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse                  EDOTAGCMsg = 8864
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchange                         EDOTAGCMsg = 8865
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevShuffleExchangeResponse                 EDOTAGCMsg = 8866
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollCharges                      EDOTAGCMsg = 8867
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse              EDOTAGCMsg = 8868
+	EDOTAGCMsg_k_EMsgLobbyAdditionalAccountData                                    EDOTAGCMsg = 8869
+	EDOTAGCMsg_k_EMsgServerToGCLobbyInitialized                                    EDOTAGCMsg = 8870
+	EDOTAGCMsg_k_EMsgClientToGCCollectorsCacheAvailableDataRequest                 EDOTAGCMsg = 8871
+	EDOTAGCMsg_k_EMsgGCToClientCollectorsCacheAvailableDataResponse                EDOTAGCMsg = 8872
+	EDOTAGCMsg_k_EMsgClientToGCUploadMatchClip                                     EDOTAGCMsg = 8873
+	EDOTAGCMsg_k_EMsgGCToClientUploadMatchClipResponse                             EDOTAGCMsg = 8874
+	EDOTAGCMsg_k_EMsgSignOutMuertaMinigame                                         EDOTAGCMsg = 8877
+	EDOTAGCMsg_k_EMsgGCToServerLobbyHeroRoleStats                                  EDOTAGCMsg = 8878
+	EDOTAGCMsg_k_EMsgClientToGCRankRequest                                         EDOTAGCMsg = 8879
+	EDOTAGCMsg_k_EMsgGCToClientRankResponse                                        EDOTAGCMsg = 8880
+	EDOTAGCMsg_k_EMsgGCToClientRankUpdate                                          EDOTAGCMsg = 8881
+	EDOTAGCMsg_k_EMsgSignOutMapStats                                               EDOTAGCMsg = 8882
+	EDOTAGCMsg_k_EMsgClientToGCMapStatsRequest                                     EDOTAGCMsg = 8883
+	EDOTAGCMsg_k_EMsgGCToClientMapStatsResponse                                    EDOTAGCMsg = 8884
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserData                                 EDOTAGCMsg = 8886
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseGetUserDataResponse                         EDOTAGCMsg = 8887
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserData                                 EDOTAGCMsg = 8888
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseSetUserDataResponse                         EDOTAGCMsg = 8889
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetData                              EDOTAGCMsg = 8890
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGetDataResponse                      EDOTAGCMsg = 8891
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperation                     EDOTAGCMsg = 8892
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingPerformOperationResponse             EDOTAGCMsg = 8893
+	EDOTAGCMsg_k_EMsgGCToClientFantasyCraftingGetDataUpdated                       EDOTAGCMsg = 8894
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTablet                      EDOTAGCMsg = 8895
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse              EDOTAGCMsg = 8896
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuests                                   EDOTAGCMsg = 8897
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetQuestsResponse                           EDOTAGCMsg = 8898
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuest                              EDOTAGCMsg = 8899
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIGetActiveQuestResponse                      EDOTAGCMsg = 8900
+	EDOTAGCMsg_k_EMsgClientToGCBingoGetUserData                                    EDOTAGCMsg = 8901
+	EDOTAGCMsg_k_EMsgClientToGCBingoGetUserDataResponse                            EDOTAGCMsg = 8902
+	EDOTAGCMsg_k_EMsgClientToGCBingoClaimRow                                       EDOTAGCMsg = 8903
+	EDOTAGCMsg_k_EMsgClientToGCBingoClaimRowResponse                               EDOTAGCMsg = 8904
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCard                                  EDOTAGCMsg = 8905
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevRerollCardResponse                          EDOTAGCMsg = 8906
+	EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsData                                   EDOTAGCMsg = 8907
+	EDOTAGCMsg_k_EMsgClientToGCBingoGetStatsDataResponse                           EDOTAGCMsg = 8908
+	EDOTAGCMsg_k_EMsgGCToClientBingoUserDataUpdated                                EDOTAGCMsg = 8909
+	EDOTAGCMsg_k_EMsgGCToClientRoadToTIQuestDataUpdated                            EDOTAGCMsg = 8910
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItem                                     EDOTAGCMsg = 8911
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIUseItemResponse                             EDOTAGCMsg = 8912
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReport                                EDOTAGCMsg = 8913
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseSubmitReportResponse                        EDOTAGCMsg = 8914
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupList                   EDOTAGCMsg = 8915
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse           EDOTAGCMsg = 8916
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollup                       EDOTAGCMsg = 8917
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse               EDOTAGCMsg = 8918
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetails                         EDOTAGCMsg = 8919
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse                 EDOTAGCMsg = 8920
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvict                                EDOTAGCMsg = 8921
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminConvictResponse                        EDOTAGCMsg = 8922
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerate                              EDOTAGCMsg = 8923
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminExonerateResponse                      EDOTAGCMsg = 8924
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminReset                                  EDOTAGCMsg = 8925
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminResetResponse                          EDOTAGCMsg = 8926
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccount                            EDOTAGCMsg = 8927
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseAdminLockAccountResponse                    EDOTAGCMsg = 8928
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayer                         EDOTAGCMsg = 8929
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayerResponse                 EDOTAGCMsg = 8930
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTablets                      EDOTAGCMsg = 8931
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse              EDOTAGCMsg = 8932
+	EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTablets                       EDOTAGCMsg = 8933
+	EDOTAGCMsg_k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse               EDOTAGCMsg = 8934
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptions                        EDOTAGCMsg = 8936
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingRerollOptionsResponse                EDOTAGCMsg = 8937
+	EDOTAGCMsg_k_EMsgClientToGCRoadToTIDevForceQuest                               EDOTAGCMsg = 8935
+	EDOTAGCMsg_k_EMsgLobbyRoadToTIMatchQuestData                                   EDOTAGCMsg = 8939
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueue                          EDOTAGCMsg = 8940
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationGetQueueResponse                  EDOTAGCMsg = 8941
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModeration                   EDOTAGCMsg = 8942
+	EDOTAGCMsg_k_EMsgClientToGCShowcaseModerationApplyModerationResponse           EDOTAGCMsg = 8943
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserData                                EDOTAGCMsg = 8944
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGetUserDataResponse                        EDOTAGCMsg = 8945
+	EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePath                               EDOTAGCMsg = 8946
+	EDOTAGCMsg_k_EMsgClientToGCOverworldCompletePathResponse                       EDOTAGCMsg = 8947
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterReward                       EDOTAGCMsg = 8948
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimEncounterRewardResponse               EDOTAGCMsg = 8949
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAll                                EDOTAGCMsg = 8950
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetAllResponse                        EDOTAGCMsg = 8951
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNode                               EDOTAGCMsg = 8952
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetNodeResponse                       EDOTAGCMsg = 8953
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetPath                               EDOTAGCMsg = 8954
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevResetPathResponse                       EDOTAGCMsg = 8955
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokens                             EDOTAGCMsg = 8956
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantTokensResponse                     EDOTAGCMsg = 8957
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventory                          EDOTAGCMsg = 8958
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearInventoryResponse                  EDOTAGCMsg = 8959
+	EDOTAGCMsg_k_EMsgServerToGCNewBloomGift                                        EDOTAGCMsg = 8960
+	EDOTAGCMsg_k_EMsgServerToGCNewBloomGiftResponse                                EDOTAGCMsg = 8961
+	EDOTAGCMsg_k_EMsgGCToClientOverworldUserDataUpdated                            EDOTAGCMsg = 8962
+	EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNode                                 EDOTAGCMsg = 8963
+	EDOTAGCMsg_k_EMsgClientToGCOverworldMoveToNodeResponse                         EDOTAGCMsg = 8964
+	EDOTAGCMsg_k_EMsgClientToGCNewBloomGift                                        EDOTAGCMsg = 8965
+	EDOTAGCMsg_k_EMsgClientToGCNewBloomGiftResponse                                EDOTAGCMsg = 8966
+	EDOTAGCMsg_k_EMsgSignOutOverworld                                              EDOTAGCMsg = 8967
+	EDOTAGCMsg_k_EMsgClientToGCSetBannedHeroes                                     EDOTAGCMsg = 8969
+	EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokens                                EDOTAGCMsg = 8970
+	EDOTAGCMsg_k_EMsgClientToGCOverworldTradeTokensResponse                        EDOTAGCMsg = 8971
+	EDOTAGCMsg_k_EMsgOverworldEncounterTokenTreasureData                           EDOTAGCMsg = 8972
+	EDOTAGCMsg_k_EMsgOverworldEncounterTokenQuestData                              EDOTAGCMsg = 8973
+	EDOTAGCMsg_k_EMsgOverworldEncounterChooseHeroData                              EDOTAGCMsg = 8974
+	EDOTAGCMsg_k_EMsgClientToGCUpdateComicBookStats                                EDOTAGCMsg = 8975
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShop                               EDOTAGCMsg = 8976
+	EDOTAGCMsg_k_EMsgClientToGCCandyShopDevResetShopResponse                       EDOTAGCMsg = 8977
+	EDOTAGCMsg_k_EMsgOverworldEncounterProgressData                                EDOTAGCMsg = 8978
+	EDOTAGCMsg_k_EMsgClientToGCOverworldFeedback                                   EDOTAGCMsg = 8979
+	EDOTAGCMsg_k_EMsgClientToGCOverworldFeedbackResponse                           EDOTAGCMsg = 8980
+	EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounter                             EDOTAGCMsg = 8981
+	EDOTAGCMsg_k_EMsgClientToGCOverworldVisitEncounterResponse                     EDOTAGCMsg = 8982
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokens                                 EDOTAGCMsg = 8983
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGiftTokensResponse                         EDOTAGCMsg = 8984
+	EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedback                                    EDOTAGCMsg = 8985
+	EDOTAGCMsg_k_EMsgClientToGCDotaLabsFeedbackResponse                            EDOTAGCMsg = 8986
+	EDOTAGCMsg_k_EMsgOverworldEncounterPitFighterRewardData                        EDOTAGCMsg = 8987
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImage                            EDOTAGCMsg = 8988
+	EDOTAGCMsg_k_EMsgClientToGCOverworldGetDynamicImageResponse                    EDOTAGCMsg = 8989
+	EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriend                         EDOTAGCMsg = 8990
+	EDOTAGCMsg_k_EMsgClientToGCFightingGameChallengeFriendResponse                 EDOTAGCMsg = 8991
+	EDOTAGCMsg_k_EMsgClientToGCFightingGameCancelChallengeFriend                   EDOTAGCMsg = 8992
+	EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallenge                         EDOTAGCMsg = 8993
+	EDOTAGCMsg_k_EMsgClientToGCFightingGameAnswerChallengeResponse                 EDOTAGCMsg = 8994
+	EDOTAGCMsg_k_EMsgGCToClientFightingGameChallenge                               EDOTAGCMsg = 8995
+	EDOTAGCMsg_k_EMsgGCToClientFightingGameStartMatch                              EDOTAGCMsg = 8996
+	EDOTAGCMsg_k_EMsgGCToClientFightingGameChallengeCanceled                       EDOTAGCMsg = 8997
+	EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCard                                    EDOTAGCMsg = 8999
+	EDOTAGCMsg_k_EMsgClientToGCBingoShuffleCardResponse                            EDOTAGCMsg = 9000
+	EDOTAGCMsg_k_EMsgClientToGCBingoModifySquare                                   EDOTAGCMsg = 9001
+	EDOTAGCMsg_k_EMsgClientToGCBingoModifySquareResponse                           EDOTAGCMsg = 9002
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokens                                   EDOTAGCMsg = 9003
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevAddTokensResponse                           EDOTAGCMsg = 9004
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventory                              EDOTAGCMsg = 9005
+	EDOTAGCMsg_k_EMsgClientToGCBingoDevClearInventoryResponse                      EDOTAGCMsg = 9006
+	EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelections                               EDOTAGCMsg = 9007
+	EDOTAGCMsg_k_EMsgGCCompendiumRemoveAllSelectionsResponse                       EDOTAGCMsg = 9008
+	EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameAction                             EDOTAGCMsg = 9009
+	EDOTAGCMsg_k_EMsgClientToGCOverworldMinigameActionResponse                     EDOTAGCMsg = 9010
+	EDOTAGCMsg_k_EMsgClientToGCSurvivorsTelemetry                                  EDOTAGCMsg = 9011
+	EDOTAGCMsg_k_EMsgClientToGCSurvivorsTelemetryResponse                          EDOTAGCMsg = 9012
+	EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriend                EDOTAGCMsg = 9013
+	EDOTAGCMsg_k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse        EDOTAGCMsg = 9014
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserData                               EDOTAGCMsg = 9015
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksGetUserDataResponse                       EDOTAGCMsg = 9016
+	EDOTAGCMsg_k_EMsgGCToClientCraftworksUserDataUpdated                           EDOTAGCMsg = 9017
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipe                               EDOTAGCMsg = 9018
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksCraftRecipeResponse                       EDOTAGCMsg = 9019
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponents                       EDOTAGCMsg = 9020
+	EDOTAGCMsg_k_EMsgClientToGCCraftworksDevModifyComponentsResponse               EDOTAGCMsg = 9021
+	EDOTAGCMsg_k_EMsgSignOutCraftworks                                             EDOTAGCMsg = 9022
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGetUserData                            EDOTAGCMsg = 9023
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGetUserDataResponse                    EDOTAGCMsg = 9024
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimReward                            EDOTAGCMsg = 9025
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimRewardResponse                    EDOTAGCMsg = 9026
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterTradeMaterials                         EDOTAGCMsg = 9027
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterTradeMaterialsResponse                 EDOTAGCMsg = 9028
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGiftMaterials                          EDOTAGCMsg = 9029
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGiftMaterialsResponse                  EDOTAGCMsg = 9030
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend         EDOTAGCMsg = 9031
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse EDOTAGCMsg = 9032
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevResetAll                            EDOTAGCMsg = 9033
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevResetAllResponse                    EDOTAGCMsg = 9034
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevGrantMaterials                      EDOTAGCMsg = 9035
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse              EDOTAGCMsg = 9036
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClearInventory                      EDOTAGCMsg = 9037
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClearInventoryResponse              EDOTAGCMsg = 9038
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards           EDOTAGCMsg = 9039
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse   EDOTAGCMsg = 9040
+	EDOTAGCMsg_k_EMsgGCToClientMonsterHunterUserDataUpdated                        EDOTAGCMsg = 9041
+	EDOTAGCMsg_k_EMsgSignOutMonsterHunter                                          EDOTAGCMsg = 9042
+	EDOTAGCMsg_k_EMsgClientToGCClaimGatedEvent                                     EDOTAGCMsg = 9043
+	EDOTAGCMsg_k_EMsgClientToGCClaimGatedEventResponse                             EDOTAGCMsg = 9044
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevModifyHeroCodex                     EDOTAGCMsg = 9045
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse             EDOTAGCMsg = 9046
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimCodexReward                       EDOTAGCMsg = 9047
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse               EDOTAGCMsg = 9048
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetReward                         EDOTAGCMsg = 9049
+	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetRewardResponse                 EDOTAGCMsg = 9050
+	EDOTAGCMsg_k_EMsgClientToGCGetEventRanking                                     EDOTAGCMsg = 9107
+	EDOTAGCMsg_k_EMsgClientToGCGetEventRankingResponse                             EDOTAGCMsg = 9108
+	EDOTAGCMsg_k_EMsgClientToGCGetEventCoupon                                      EDOTAGCMsg = 9109
+	EDOTAGCMsg_k_EMsgClientToGCGetEventCouponResponse                              EDOTAGCMsg = 9110
+	EDOTAGCMsg_k_EMsgClientToGCConvertEventPoints                                  EDOTAGCMsg = 9111
+	EDOTAGCMsg_k_EMsgClientToGCConvertEventPointsResponse                          EDOTAGCMsg = 9112
+	EDOTAGCMsg_k_EMsgServerToGCWarningLowServerFramerate                           EDOTAGCMsg = 9113
+	EDOTAGCMsg_k_EMsgServerToGCWarningInvalidBotAbilityUsage                       EDOTAGCMsg = 9114
+	EDOTAGCMsg_k_EMsgClientToGCInviteToDemoMode                                    EDOTAGCMsg = 9115
+	EDOTAGCMsg_k_EMsgGCToClientInviteToDemoMode                                    EDOTAGCMsg = 9116
 )
 
 // Enum value maps for EDOTAGCMsg.
@@ -1355,6 +1396,7 @@ var (
 		8074: "k_EMsgClientToGCGetProfileTicketsResponse",
 		8075: "k_EMsgGCToClientMatchGroupsVersion",
 		8076: "k_EMsgClientToGCH264Unsupported",
+		8077: "k_EMsgClientToGCWatchingBroadcast",
 		8078: "k_EMsgClientToGCGetQuestProgress",
 		8079: "k_EMsgClientToGCGetQuestProgressResponse",
 		8080: "k_EMsgSignOutXPCoins",
@@ -1578,6 +1620,8 @@ var (
 		8364: "k_EMsgSQLGCToGCGrantAllHeroProgressVictory",
 		8365: "k_EMsgDevDeleteEventActions",
 		8366: "k_EMsgDevDeleteEventActionsResponse",
+		8367: "k_EMsgDevReloadAllEvents",
+		8368: "k_EMsgDevReloadAllEventsResponse",
 		8635: "k_EMsgGCToGCGetAllHeroCurrent",
 		8636: "k_EMsgGCToGCGetAllHeroCurrentResponse",
 		8637: "k_EMsgGCSubmitPlayerAvoidRequest",
@@ -1946,966 +1990,1045 @@ var (
 		9020: "k_EMsgClientToGCCraftworksDevModifyComponents",
 		9021: "k_EMsgClientToGCCraftworksDevModifyComponentsResponse",
 		9022: "k_EMsgSignOutCraftworks",
+		9023: "k_EMsgClientToGCMonsterHunterGetUserData",
+		9024: "k_EMsgClientToGCMonsterHunterGetUserDataResponse",
+		9025: "k_EMsgClientToGCMonsterHunterClaimReward",
+		9026: "k_EMsgClientToGCMonsterHunterClaimRewardResponse",
+		9027: "k_EMsgClientToGCMonsterHunterTradeMaterials",
+		9028: "k_EMsgClientToGCMonsterHunterTradeMaterialsResponse",
+		9029: "k_EMsgClientToGCMonsterHunterGiftMaterials",
+		9030: "k_EMsgClientToGCMonsterHunterGiftMaterialsResponse",
+		9031: "k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend",
+		9032: "k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse",
+		9033: "k_EMsgClientToGCMonsterHunterDevResetAll",
+		9034: "k_EMsgClientToGCMonsterHunterDevResetAllResponse",
+		9035: "k_EMsgClientToGCMonsterHunterDevGrantMaterials",
+		9036: "k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse",
+		9037: "k_EMsgClientToGCMonsterHunterDevClearInventory",
+		9038: "k_EMsgClientToGCMonsterHunterDevClearInventoryResponse",
+		9039: "k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards",
+		9040: "k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse",
+		9041: "k_EMsgGCToClientMonsterHunterUserDataUpdated",
+		9042: "k_EMsgSignOutMonsterHunter",
+		9043: "k_EMsgClientToGCClaimGatedEvent",
+		9044: "k_EMsgClientToGCClaimGatedEventResponse",
+		9045: "k_EMsgClientToGCMonsterHunterDevModifyHeroCodex",
+		9046: "k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse",
+		9047: "k_EMsgClientToGCMonsterHunterClaimCodexReward",
+		9048: "k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse",
+		9049: "k_EMsgClientToGCMonsterHunterClaimSetReward",
+		9050: "k_EMsgClientToGCMonsterHunterClaimSetRewardResponse",
+		9107: "k_EMsgClientToGCGetEventRanking",
+		9108: "k_EMsgClientToGCGetEventRankingResponse",
+		9109: "k_EMsgClientToGCGetEventCoupon",
+		9110: "k_EMsgClientToGCGetEventCouponResponse",
+		9111: "k_EMsgClientToGCConvertEventPoints",
+		9112: "k_EMsgClientToGCConvertEventPointsResponse",
+		9113: "k_EMsgServerToGCWarningLowServerFramerate",
+		9114: "k_EMsgServerToGCWarningInvalidBotAbilityUsage",
+		9115: "k_EMsgClientToGCInviteToDemoMode",
+		9116: "k_EMsgGCToClientInviteToDemoMode",
 	}
 	EDOTAGCMsg_value = map[string]int32{
-		"k_EMsgGCDOTABase":                                                   7000,
-		"k_EMsgGCGameMatchSignOut":                                           7004,
-		"k_EMsgGCGameMatchSignOutResponse":                                   7005,
-		"k_EMsgGCJoinChatChannel":                                            7009,
-		"k_EMsgGCJoinChatChannelResponse":                                    7010,
-		"k_EMsgGCOtherJoinedChannel":                                         7013,
-		"k_EMsgGCOtherLeftChannel":                                           7014,
-		"k_EMsgServerToGCRequestStatus":                                      7026,
-		"k_EMsgGCStartFindingMatch":                                          7033,
-		"k_EMsgGCConnectedPlayers":                                           7034,
-		"k_EMsgGCAbandonCurrentGame":                                         7035,
-		"k_EMsgGCStopFindingMatch":                                           7036,
-		"k_EMsgGCPracticeLobbyCreate":                                        7038,
-		"k_EMsgGCPracticeLobbyLeave":                                         7040,
-		"k_EMsgGCPracticeLobbyLaunch":                                        7041,
-		"k_EMsgGCPracticeLobbyList":                                          7042,
-		"k_EMsgGCPracticeLobbyListResponse":                                  7043,
-		"k_EMsgGCPracticeLobbyJoin":                                          7044,
-		"k_EMsgGCPracticeLobbySetDetails":                                    7046,
-		"k_EMsgGCPracticeLobbySetTeamSlot":                                   7047,
-		"k_EMsgGCInitialQuestionnaireResponse":                               7049,
-		"k_EMsgGCPracticeLobbyResponse":                                      7055,
-		"k_EMsgGCBroadcastNotification":                                      7056,
-		"k_EMsgGCLiveScoreboardUpdate":                                       7057,
-		"k_EMsgGCRequestChatChannelList":                                     7060,
-		"k_EMsgGCRequestChatChannelListResponse":                             7061,
-		"k_EMsgGCReadyUp":                                                    7070,
-		"k_EMsgGCKickedFromMatchmakingQueue":                                 7071,
-		"k_EMsgGCLeaverDetected":                                             7072,
-		"k_EMsgGCSpectateFriendGame":                                         7073,
-		"k_EMsgGCSpectateFriendGameResponse":                                 7074,
-		"k_EMsgGCReportsRemainingRequest":                                    7076,
-		"k_EMsgGCReportsRemainingResponse":                                   7077,
-		"k_EMsgGCSubmitPlayerReport":                                         7078,
-		"k_EMsgGCSubmitPlayerReportResponse":                                 7079,
-		"k_EMsgGCPracticeLobbyKick":                                          7081,
-		"k_EMsgGCSubmitPlayerReportV2":                                       7082,
-		"k_EMsgGCSubmitPlayerReportResponseV2":                               7083,
-		"k_EMsgGCRequestSaveGames":                                           7084,
-		"k_EMsgGCRequestSaveGamesServer":                                     7085,
-		"k_EMsgGCRequestSaveGamesResponse":                                   7086,
-		"k_EMsgGCLeaverDetectedResponse":                                     7087,
-		"k_EMsgGCPlayerFailedToConnect":                                      7088,
-		"k_EMsgGCGCToRelayConnect":                                           7089,
-		"k_EMsgGCGCToRelayConnectresponse":                                   7090,
-		"k_EMsgGCWatchGame":                                                  7091,
-		"k_EMsgGCWatchGameResponse":                                          7092,
-		"k_EMsgGCBanStatusRequest":                                           7093,
-		"k_EMsgGCBanStatusResponse":                                          7094,
-		"k_EMsgGCMatchDetailsRequest":                                        7095,
-		"k_EMsgGCMatchDetailsResponse":                                       7096,
-		"k_EMsgGCCancelWatchGame":                                            7097,
-		"k_EMsgGCPopup":                                                      7102,
-		"k_EMsgGCFriendPracticeLobbyListRequest":                             7111,
-		"k_EMsgGCFriendPracticeLobbyListResponse":                            7112,
-		"k_EMsgGCPracticeLobbyJoinResponse":                                  7113,
-		"k_EMsgGCCreateTeam":                                                 7115,
-		"k_EMsgGCCreateTeamResponse":                                         7116,
-		"k_EMsgGCTeamInvite_InviterToGC":                                     7122,
-		"k_EMsgGCTeamInvite_GCImmediateResponseToInviter":                    7123,
-		"k_EMsgGCTeamInvite_GCRequestToInvitee":                              7124,
-		"k_EMsgGCTeamInvite_InviteeResponseToGC":                             7125,
-		"k_EMsgGCTeamInvite_GCResponseToInviter":                             7126,
-		"k_EMsgGCTeamInvite_GCResponseToInvitee":                             7127,
-		"k_EMsgGCKickTeamMember":                                             7128,
-		"k_EMsgGCKickTeamMemberResponse":                                     7129,
-		"k_EMsgGCLeaveTeam":                                                  7130,
-		"k_EMsgGCLeaveTeamResponse":                                          7131,
-		"k_EMsgGCApplyTeamToPracticeLobby":                                   7142,
-		"k_EMsgGCTransferTeamAdmin":                                          7144,
-		"k_EMsgGCPracticeLobbyJoinBroadcastChannel":                          7149,
-		"k_EMsgGC_TournamentItemEvent":                                       7150,
-		"k_EMsgGC_TournamentItemEventResponse":                               7151,
-		"k_EMsgTeamFanfare":                                                  7156,
-		"k_EMsgResponseTeamFanfare":                                          7157,
-		"k_EMsgGCEditTeamDetails":                                            7166,
-		"k_EMsgGCEditTeamDetailsResponse":                                    7167,
-		"k_EMsgGCReadyUpStatus":                                              7170,
-		"k_EMsgGCToGCMatchCompleted":                                         7186,
-		"k_EMsgGCBalancedShuffleLobby":                                       7188,
-		"k_EMsgGCMatchmakingStatsRequest":                                    7197,
-		"k_EMsgGCMatchmakingStatsResponse":                                   7198,
-		"k_EMsgGCBotGameCreate":                                              7199,
-		"k_EMsgGCSetMatchHistoryAccess":                                      7200,
-		"k_EMsgGCSetMatchHistoryAccessResponse":                              7201,
-		"k_EMsgUpgradeLeagueItem":                                            7203,
-		"k_EMsgUpgradeLeagueItemResponse":                                    7204,
-		"k_EMsgGCWatchDownloadedReplay":                                      7206,
-		"k_EMsgClientsRejoinChatChannels":                                    7217,
-		"k_EMsgGCToGCGetUserChatInfo":                                        7218,
-		"k_EMsgGCToGCGetUserChatInfoResponse":                                7219,
-		"k_EMsgGCToGCLeaveAllChatChannels":                                   7220,
-		"k_EMsgGCToGCUpdateAccountChatBan":                                   7221,
-		"k_EMsgGCToGCCanInviteUserToTeam":                                    7234,
-		"k_EMsgGCToGCCanInviteUserToTeamResponse":                            7235,
-		"k_EMsgGCToGCGetUserRank":                                            7236,
-		"k_EMsgGCToGCGetUserRankResponse":                                    7237,
-		"k_EMsgGCToGCAdjustUserRank":                                         7238,
-		"k_EMsgGCToGCAdjustUserRankResponse":                                 7239,
-		"k_EMsgGCToGCUpdateTeamStats":                                        7240,
-		"k_EMsgGCToGCValidateTeam":                                           7241,
-		"k_EMsgGCToGCValidateTeamResponse":                                   7242,
-		"k_EMsgGCToGCGetLeagueAdmin":                                         7255,
-		"k_EMsgGCToGCGetLeagueAdminResponse":                                 7256,
-		"k_EMsgGCLeaveChatChannel":                                           7272,
-		"k_EMsgGCChatMessage":                                                7273,
-		"k_EMsgGCGetHeroStandings":                                           7274,
-		"k_EMsgGCGetHeroStandingsResponse":                                   7275,
-		"k_EMsgGCItemEditorReservationsRequest":                              7283,
-		"k_EMsgGCItemEditorReservationsResponse":                             7284,
-		"k_EMsgGCItemEditorReserveItemDef":                                   7285,
-		"k_EMsgGCItemEditorReserveItemDefResponse":                           7286,
-		"k_EMsgGCItemEditorReleaseReservation":                               7287,
-		"k_EMsgGCItemEditorReleaseReservationResponse":                       7288,
-		"k_EMsgGCFantasyLivePlayerStats":                                     7308,
-		"k_EMsgGCFantasyFinalPlayerStats":                                    7309,
-		"k_EMsgGCFlipLobbyTeams":                                             7320,
-		"k_EMsgGCToGCEvaluateReportedPlayer":                                 7322,
-		"k_EMsgGCToGCEvaluateReportedPlayerResponse":                         7323,
-		"k_EMsgGCToGCProcessPlayerReportForTarget":                           7324,
-		"k_EMsgGCToGCProcessReportSuccess":                                   7325,
-		"k_EMsgGCNotifyAccountFlagsChange":                                   7326,
-		"k_EMsgGCSetProfilePrivacy":                                          7327,
-		"k_EMsgGCSetProfilePrivacyResponse":                                  7328,
-		"k_EMsgGCClientSuspended":                                            7342,
-		"k_EMsgGCPartyMemberSetCoach":                                        7343,
-		"k_EMsgGCPracticeLobbySetCoach":                                      7346,
-		"k_EMsgGCChatModeratorBan":                                           7359,
-		"k_EMsgGCLobbyUpdateBroadcastChannelInfo":                            7367,
-		"k_EMsgGCToGCGrantTournamentItem":                                    7372,
-		"k_EMsgGCToGCUpgradeTwitchViewerItems":                               7375,
-		"k_EMsgGCToGCGetLiveMatchAffiliates":                                 7376,
-		"k_EMsgGCToGCGetLiveMatchAffiliatesResponse":                         7377,
-		"k_EMsgGCToGCUpdatePlayerPennantCounts":                              7378,
-		"k_EMsgGCToGCGetPlayerPennantCounts":                                 7379,
-		"k_EMsgGCToGCGetPlayerPennantCountsResponse":                         7380,
-		"k_EMsgGCGameMatchSignOutPermissionRequest":                          7381,
-		"k_EMsgGCGameMatchSignOutPermissionResponse":                         7382,
-		"k_EMsgDOTAAwardEventPoints":                                         7384,
-		"k_EMsgDOTAGetEventPoints":                                           7387,
-		"k_EMsgDOTAGetEventPointsResponse":                                   7388,
-		"k_EMsgGCPartyLeaderWatchGamePrompt":                                 7397,
-		"k_EMsgGCCompendiumSetSelection":                                     7405,
-		"k_EMsgGCCompendiumDataRequest":                                      7406,
-		"k_EMsgGCCompendiumDataResponse":                                     7407,
-		"k_EMsgDOTAGetPlayerMatchHistory":                                    7408,
-		"k_EMsgDOTAGetPlayerMatchHistoryResponse":                            7409,
-		"k_EMsgGCToGCMatchmakingAddParty":                                    7410,
-		"k_EMsgGCToGCMatchmakingRemoveParty":                                 7411,
-		"k_EMsgGCToGCMatchmakingRemoveAllParties":                            7412,
-		"k_EMsgGCToGCMatchmakingMatchFound":                                  7413,
-		"k_EMsgGCToGCUpdateMatchManagementStats":                             7414,
-		"k_EMsgGCToGCUpdateMatchmakingStats":                                 7415,
-		"k_EMsgGCToServerPingRequest":                                        7416,
-		"k_EMsgGCToServerPingResponse":                                       7417,
-		"k_EMsgGCToServerEvaluateToxicChat":                                  7418,
-		"k_EMsgServerToGCEvaluateToxicChat":                                  7419,
-		"k_EMsgServerToGCEvaluateToxicChatResponse":                          7420,
-		"k_EMsgGCToGCProcessMatchLeaver":                                     7426,
-		"k_EMsgGCNotificationsRequest":                                       7427,
-		"k_EMsgGCNotificationsResponse":                                      7428,
-		"k_EMsgGCToGCModifyNotification":                                     7429,
-		"k_EMsgGCLeagueAdminList":                                            7434,
-		"k_EMsgGCNotificationsMarkReadRequest":                               7435,
-		"k_EMsgServerToGCRequestBatchPlayerResources":                        7450,
-		"k_EMsgServerToGCRequestBatchPlayerResourcesResponse":                7451,
-		"k_EMsgGCCompendiumSetSelectionResponse":                             7453,
-		"k_EMsgGCRankedPlayerInfoSubmit":                                     7454,
-		"k_EMsgGCRankedPlayerInfoSubmitResponse":                             7455,
-		"k_EMsgGCPlayerInfoSubmit":                                           7456,
-		"k_EMsgGCPlayerInfoSubmitResponse":                                   7457,
-		"k_EMsgGCToGCGetAccountLevel":                                        7458,
-		"k_EMsgGCToGCGetAccountLevelResponse":                                7459,
-		"k_EMsgDOTAGetWeekendTourneySchedule":                                7464,
-		"k_EMsgDOTAWeekendTourneySchedule":                                   7465,
-		"k_EMsgGCJoinableCustomGameModesRequest":                             7466,
-		"k_EMsgGCJoinableCustomGameModesResponse":                            7467,
-		"k_EMsgGCJoinableCustomLobbiesRequest":                               7468,
-		"k_EMsgGCJoinableCustomLobbiesResponse":                              7469,
-		"k_EMsgGCQuickJoinCustomLobby":                                       7470,
-		"k_EMsgGCQuickJoinCustomLobbyResponse":                               7471,
-		"k_EMsgGCToGCGrantEventPointAction":                                  7472,
-		"k_EMsgGCToGCSetCompendiumSelection":                                 7478,
-		"k_EMsgGCHasItemQuery":                                               7484,
-		"k_EMsgGCHasItemResponse":                                            7485,
-		"k_EMsgGCToGCGrantEventPointActionMsg":                               7488,
-		"k_EMsgGCToGCGetCompendiumSelections":                                7492,
-		"k_EMsgGCToGCGetCompendiumSelectionsResponse":                        7493,
-		"k_EMsgServerToGCMatchConnectionStats":                               7494,
-		"k_EMsgGCToClientTournamentItemDrop":                                 7495,
-		"k_EMsgSQLDelayedGrantLeagueDrop":                                    7496,
-		"k_EMsgServerGCUpdateSpectatorCount":                                 7497,
-		"k_EMsgGCToGCEmoticonUnlock":                                         7501,
-		"k_EMsgSignOutDraftInfo":                                             7502,
-		"k_EMsgClientToGCEmoticonDataRequest":                                7503,
-		"k_EMsgGCToClientEmoticonData":                                       7504,
-		"k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus":         7505,
-		"k_EMsgDOTARedeemItem":                                               7518,
-		"k_EMsgDOTARedeemItemResponse":                                       7519,
-		"k_EMsgClientToGCGetAllHeroProgress":                                 7521,
-		"k_EMsgClientToGCGetAllHeroProgressResponse":                         7522,
-		"k_EMsgGCToGCGetServerForClient":                                     7523,
-		"k_EMsgGCToGCGetServerForClientResponse":                             7524,
-		"k_EMsgSQLProcessTournamentGameOutcome":                              7525,
-		"k_EMsgSQLGrantTrophyToAccount":                                      7526,
-		"k_EMsgClientToGCGetTrophyList":                                      7527,
-		"k_EMsgClientToGCGetTrophyListResponse":                              7528,
-		"k_EMsgGCToClientTrophyAwarded":                                      7529,
-		"k_EMsgGCGameBotMatchSignOut":                                        7530,
-		"k_EMsgGCGameBotMatchSignOutPermissionRequest":                       7531,
-		"k_EMsgSignOutBotInfo":                                               7532,
-		"k_EMsgGCToGCUpdateProfileCards":                                     7533,
-		"k_EMsgClientToGCGetProfileCard":                                     7534,
-		"k_EMsgClientToGCGetProfileCardResponse":                             7535,
-		"k_EMsgClientToGCGetBattleReport":                                    7536,
-		"k_EMsgClientToGCGetBattleReportResponse":                            7537,
-		"k_EMsgClientToGCSetProfileCardSlots":                                7538,
-		"k_EMsgGCToClientProfileCardUpdated":                                 7539,
-		"k_EMsgServerToGCVictoryPredictions":                                 7540,
-		"k_EMsgClientToGCGetBattleReportAggregateStats":                      7541,
-		"k_EMsgClientToGCGetBattleReportAggregateStatsResponse":              7542,
-		"k_EMsgClientToGCGetBattleReportInfo":                                7543,
-		"k_EMsgClientToGCGetBattleReportInfoResponse":                        7544,
-		"k_EMsgSignOutCommunicationSummary":                                  7545,
-		"k_EMsgServerToGCRequestStatus_Response":                             7546,
-		"k_EMsgClientToGCCreateHeroStatue":                                   7547,
-		"k_EMsgGCToClientHeroStatueCreateResult":                             7548,
-		"k_EMsgGCGCToLANServerRelayConnect":                                  7549,
-		"k_EMsgClientToGCAcknowledgeBattleReport":                            7550,
-		"k_EMsgClientToGCAcknowledgeBattleReportResponse":                    7551,
-		"k_EMsgClientToGCGetBattleReportMatchHistory":                        7552,
-		"k_EMsgClientToGCGetBattleReportMatchHistoryResponse":                7553,
-		"k_EMsgServerToGCReportKillSummaries":                                7554,
-		"k_EMsgGCToGCUpdatePlayerPredictions":                                7561,
-		"k_EMsgGCToServerPredictionResult":                                   7562,
-		"k_EMsgGCToGCReplayMonitorValidateReplay":                            7569,
-		"k_EMsgLobbyEventPoints":                                             7572,
-		"k_EMsgGCToGCGetCustomGameTickets":                                   7573,
-		"k_EMsgGCToGCGetCustomGameTicketsResponse":                           7574,
-		"k_EMsgGCToGCCustomGamePlayed":                                       7576,
-		"k_EMsgGCToGCGrantEventPointsToUser":                                 7577,
-		"k_EMsgGameserverCrashReport":                                        7579,
-		"k_EMsgGameserverCrashReportResponse":                                7580,
-		"k_EMsgGCToClientSteamDatagramTicket":                                7581,
-		"k_EMsgGCToGCSendAccountsEventPoints":                                7583,
-		"k_EMsgClientToGCRerollPlayerChallenge":                              7584,
-		"k_EMsgServerToGCRerollPlayerChallenge":                              7585,
-		"k_EMsgGCRerollPlayerChallengeResponse":                              7586,
-		"k_EMsgSignOutUpdatePlayerChallenge":                                 7587,
-		"k_EMsgClientToGCSetPartyLeader":                                     7588,
-		"k_EMsgClientToGCCancelPartyInvites":                                 7589,
-		"k_EMsgSQLGrantLeagueMatchToTicketHolders":                           7592,
-		"k_EMsgGCToGCEmoticonUnlockNoRollback":                               7594,
-		"k_EMsgClientToGCApplyGemCombiner":                                   7603,
-		"k_EMsgClientToGCGetAllHeroOrder":                                    7606,
-		"k_EMsgClientToGCGetAllHeroOrderResponse":                            7607,
-		"k_EMsgSQLGCToGCGrantBadgePoints":                                    7608,
-		"k_EMsgGCToGCCheckOwnsEntireEmoticonRange":                           7611,
-		"k_EMsgGCToGCCheckOwnsEntireEmoticonRangeResponse":                   7612,
-		"k_EMsgGCToClientRequestLaneSelection":                               7623,
-		"k_EMsgGCToClientRequestLaneSelectionResponse":                       7624,
-		"k_EMsgServerToGCCavernCrawlIsHeroActive":                            7625,
-		"k_EMsgServerToGCCavernCrawlIsHeroActiveResponse":                    7626,
-		"k_EMsgClientToGCPlayerCardSpecificPurchaseRequest":                  7627,
-		"k_EMsgClientToGCPlayerCardSpecificPurchaseResponse":                 7628,
-		"k_EMsgSQLSetIsLeagueAdmin":                                          7630,
-		"k_EMsgGCToGCGetLiveLeagueMatches":                                   7631,
-		"k_EMsgGCToGCGetLiveLeagueMatchesResponse":                           7632,
-		"k_EMsgDOTALeagueInfoListAdminsRequest":                              7633,
-		"k_EMsgDOTALeagueInfoListAdminsReponse":                              7634,
-		"k_EMsgGCToGCLeagueMatchStarted":                                     7645,
-		"k_EMsgGCToGCLeagueMatchCompleted":                                   7646,
-		"k_EMsgGCToGCLeagueMatchStartedResponse":                             7647,
-		"k_EMsgDOTALeagueAvailableLobbyNodesRequest":                         7650,
-		"k_EMsgDOTALeagueAvailableLobbyNodes":                                7651,
-		"k_EMsgGCToGCLeagueRequest":                                          7652,
-		"k_EMsgGCToGCLeagueResponse":                                         7653,
-		"k_EMsgGCToGCLeagueNodeGroupRequest":                                 7654,
-		"k_EMsgGCToGCLeagueNodeGroupResponse":                                7655,
-		"k_EMsgGCToGCLeagueNodeRequest":                                      7656,
-		"k_EMsgGCToGCLeagueNodeResponse":                                     7657,
-		"k_EMsgGCToGCRealtimeStatsTerseRequest":                              7658,
-		"k_EMsgGCToGCRealtimeStatsTerseResponse":                             7659,
-		"k_EMsgGCToGCGetTopMatchesRequest":                                   7660,
-		"k_EMsgGCToGCGetTopMatchesResponse":                                  7661,
-		"k_EMsgClientToGCGetFilteredPlayers":                                 7662,
-		"k_EMsgGCToClientGetFilteredPlayersResponse":                         7663,
-		"k_EMsgClientToGCRemoveFilteredPlayer":                               7664,
-		"k_EMsgGCToClientRemoveFilteredPlayerResponse":                       7665,
-		"k_EMsgGCToClientPlayerBeaconState":                                  7666,
-		"k_EMsgGCToClientPartyBeaconUpdate":                                  7667,
-		"k_EMsgGCToClientPartySearchInvite":                                  7668,
-		"k_EMsgClientToGCUpdatePartyBeacon":                                  7669,
-		"k_EMsgClientToGCRequestActiveBeaconParties":                         7670,
-		"k_EMsgGCToClientRequestActiveBeaconPartiesResponse":                 7671,
-		"k_EMsgClientToGCManageFavorites":                                    7672,
-		"k_EMsgGCToClientManageFavoritesResponse":                            7673,
-		"k_EMsgClientToGCJoinPartyFromBeacon":                                7674,
-		"k_EMsgGCToClientJoinPartyFromBeaconResponse":                        7675,
-		"k_EMsgClientToGCGetFavoritePlayers":                                 7676,
-		"k_EMsgGCToClientGetFavoritePlayersResponse":                         7677,
-		"k_EMsgClientToGCVerifyFavoritePlayers":                              7678,
-		"k_EMsgGCToClientVerifyFavoritePlayersResponse":                      7679,
-		"k_EMsgGCToClientPartySearchInvites":                                 7680,
-		"k_EMsgGCToClientRequestMMInfo":                                      7681,
-		"k_EMsgClientToGCMMInfo":                                             7682,
-		"k_EMsgSignOutTextMuteInfo":                                          7683,
-		"k_EMsgClientToGCPurchaseLabyrinthBlessings":                         7684,
-		"k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse":                 7685,
-		"k_EMsgClientToGCPurchaseFilteredPlayerSlot":                         7686,
-		"k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse":                 7687,
-		"k_EMsgClientToGCUpdateFilteredPlayerNote":                           7688,
-		"k_EMsgGCToClientUpdateFilteredPlayerNoteResponse":                   7689,
-		"k_EMsgClientToGCClaimSwag":                                          7690,
-		"k_EMsgGCToClientClaimSwagResponse":                                  7691,
-		"k_EMsgServerToGCLockCharmTrading":                                   8004,
-		"k_EMsgClientToGCPlayerStatsRequest":                                 8006,
-		"k_EMsgGCToClientPlayerStatsResponse":                                8007,
-		"k_EMsgGCClearPracticeLobbyTeam":                                     8008,
-		"k_EMsgClientToGCFindTopSourceTVGames":                               8009,
-		"k_EMsgGCToClientFindTopSourceTVGamesResponse":                       8010,
-		"k_EMsgGCLobbyList":                                                  8011,
-		"k_EMsgGCLobbyListResponse":                                          8012,
-		"k_EMsgGCPlayerStatsMatchSignOut":                                    8013,
-		"k_EMsgClientToGCSocialFeedPostCommentRequest":                       8016,
-		"k_EMsgGCToClientSocialFeedPostCommentResponse":                      8017,
-		"k_EMsgClientToGCCustomGamesFriendsPlayedRequest":                    8018,
-		"k_EMsgGCToClientCustomGamesFriendsPlayedResponse":                   8019,
-		"k_EMsgClientToGCFriendsPlayedCustomGameRequest":                     8020,
-		"k_EMsgGCToClientFriendsPlayedCustomGameResponse":                    8021,
-		"k_EMsgGCTopCustomGamesList":                                         8024,
-		"k_EMsgClientToGCSetPartyOpen":                                       8029,
-		"k_EMsgClientToGCMergePartyInvite":                                   8030,
-		"k_EMsgGCToClientMergeGroupInviteReply":                              8031,
-		"k_EMsgClientToGCMergePartyResponse":                                 8032,
-		"k_EMsgGCToClientMergePartyResponseReply":                            8033,
-		"k_EMsgClientToGCGetProfileCardStats":                                8034,
-		"k_EMsgClientToGCGetProfileCardStatsResponse":                        8035,
-		"k_EMsgClientToGCTopLeagueMatchesRequest":                            8036,
-		"k_EMsgClientToGCTopFriendMatchesRequest":                            8037,
-		"k_EMsgGCToClientProfileCardStatsUpdated":                            8040,
-		"k_EMsgServerToGCRealtimeStats":                                      8041,
-		"k_EMsgGCToServerRealtimeStatsStartStop":                             8042,
-		"k_EMsgGCToGCGetServersForClients":                                   8045,
-		"k_EMsgGCToGCGetServersForClientsResponse":                           8046,
-		"k_EMsgGCPracticeLobbyKickFromTeam":                                  8047,
-		"k_EMsgDOTAChatGetMemberCount":                                       8048,
-		"k_EMsgDOTAChatGetMemberCountResponse":                               8049,
-		"k_EMsgClientToGCSocialFeedPostMessageRequest":                       8050,
-		"k_EMsgGCToClientSocialFeedPostMessageResponse":                      8051,
-		"k_EMsgCustomGameListenServerStartedLoading":                         8052,
-		"k_EMsgCustomGameClientFinishedLoading":                              8053,
-		"k_EMsgGCPracticeLobbyCloseBroadcastChannel":                         8054,
-		"k_EMsgGCStartFindingMatchResponse":                                  8055,
-		"k_EMsgSQLGCToGCGrantAccountFlag":                                    8057,
-		"k_EMsgGCToClientTopLeagueMatchesResponse":                           8061,
-		"k_EMsgGCToClientTopFriendMatchesResponse":                           8062,
-		"k_EMsgClientToGCMatchesMinimalRequest":                              8063,
-		"k_EMsgClientToGCMatchesMinimalResponse":                             8064,
-		"k_EMsgGCToClientChatRegionsEnabled":                                 8067,
-		"k_EMsgClientToGCPingData":                                           8068,
-		"k_EMsgGCToGCEnsureAccountInParty":                                   8071,
-		"k_EMsgGCToGCEnsureAccountInPartyResponse":                           8072,
-		"k_EMsgClientToGCGetProfileTickets":                                  8073,
-		"k_EMsgClientToGCGetProfileTicketsResponse":                          8074,
-		"k_EMsgGCToClientMatchGroupsVersion":                                 8075,
-		"k_EMsgClientToGCH264Unsupported":                                    8076,
-		"k_EMsgClientToGCGetQuestProgress":                                   8078,
-		"k_EMsgClientToGCGetQuestProgressResponse":                           8079,
-		"k_EMsgSignOutXPCoins":                                               8080,
-		"k_EMsgGCToClientMatchSignedOut":                                     8081,
-		"k_EMsgGCGetHeroStatsHistory":                                        8082,
-		"k_EMsgGCGetHeroStatsHistoryResponse":                                8083,
-		"k_EMsgClientToGCPrivateChatInvite":                                  8084,
-		"k_EMsgClientToGCPrivateChatKick":                                    8088,
-		"k_EMsgClientToGCPrivateChatPromote":                                 8089,
-		"k_EMsgClientToGCPrivateChatDemote":                                  8090,
-		"k_EMsgGCToClientPrivateChatResponse":                                8091,
-		"k_EMsgClientToGCLatestConductScorecardRequest":                      8095,
-		"k_EMsgClientToGCLatestConductScorecard":                             8096,
-		"k_EMsgClientToGCWageringRequest":                                    8099,
-		"k_EMsgGCToClientWageringResponse":                                   8100,
-		"k_EMsgClientToGCEventGoalsRequest":                                  8103,
-		"k_EMsgClientToGCEventGoalsResponse":                                 8104,
-		"k_EMsgGCToGCLeaguePredictionsUpdate":                                8108,
-		"k_EMsgGCToGCAddUserToPostGameChat":                                  8110,
-		"k_EMsgClientToGCHasPlayerVotedForMVP":                               8111,
-		"k_EMsgClientToGCHasPlayerVotedForMVPResponse":                       8112,
-		"k_EMsgClientToGCVoteForMVP":                                         8113,
-		"k_EMsgClientToGCVoteForMVPResponse":                                 8114,
-		"k_EMsgGCToGCGetEventParticipation":                                  8115,
-		"k_EMsgGCToGCGetEventParticipationResponse":                          8116,
-		"k_EMsgGCToClientAutomatedTournamentStateChange":                     8117,
-		"k_EMsgClientToGCWeekendTourneyOpts":                                 8118,
-		"k_EMsgClientToGCWeekendTourneyOptsResponse":                         8119,
-		"k_EMsgClientToGCWeekendTourneyLeave":                                8120,
-		"k_EMsgClientToGCWeekendTourneyLeaveResponse":                        8121,
-		"k_EMsgClientToGCTeammateStatsRequest":                               8124,
-		"k_EMsgClientToGCTeammateStatsResponse":                              8125,
-		"k_EMsgClientToGCGetGiftPermissions":                                 8126,
-		"k_EMsgClientToGCGetGiftPermissionsResponse":                         8127,
-		"k_EMsgClientToGCVoteForArcana":                                      8128,
-		"k_EMsgClientToGCVoteForArcanaResponse":                              8129,
-		"k_EMsgClientToGCRequestArcanaVotesRemaining":                        8130,
-		"k_EMsgClientToGCRequestArcanaVotesRemainingResponse":                8131,
-		"k_EMsgGCTransferTeamAdminResponse":                                  8132,
-		"k_EMsgGCToClientTeamInfo":                                           8135,
-		"k_EMsgGCToClientTeamsInfo":                                          8136,
-		"k_EMsgClientToGCMyTeamInfoRequest":                                  8137,
-		"k_EMsgClientToGCPublishUserStat":                                    8140,
-		"k_EMsgGCToGCSignoutSpendWager":                                      8141,
-		"k_EMsgGCSubmitLobbyMVPVote":                                         8144,
-		"k_EMsgGCSubmitLobbyMVPVoteResponse":                                 8145,
-		"k_EMsgSignOutCommunityGoalProgress":                                 8150,
-		"k_EMsgGCToClientLobbyMVPAwarded":                                    8152,
-		"k_EMsgGCToClientQuestProgressUpdated":                               8153,
-		"k_EMsgGCToClientWageringUpdate":                                     8154,
-		"k_EMsgGCToClientArcanaVotesUpdate":                                  8155,
-		"k_EMsgClientToGCSetSpectatorLobbyDetails":                           8157,
-		"k_EMsgClientToGCSetSpectatorLobbyDetailsResponse":                   8158,
-		"k_EMsgClientToGCCreateSpectatorLobby":                               8159,
-		"k_EMsgClientToGCCreateSpectatorLobbyResponse":                       8160,
-		"k_EMsgClientToGCSpectatorLobbyList":                                 8161,
-		"k_EMsgClientToGCSpectatorLobbyListResponse":                         8162,
-		"k_EMsgSpectatorLobbyGameDetails":                                    8163,
-		"k_EMsgServerToGCCompendiumInGamePredictionResults":                  8166,
-		"k_EMsgServerToGCCloseCompendiumInGamePredictionVoting":              8167,
-		"k_EMsgClientToGCOpenPlayerCardPack":                                 8168,
-		"k_EMsgClientToGCOpenPlayerCardPackResponse":                         8169,
-		"k_EMsgClientToGCSelectCompendiumInGamePrediction":                   8170,
-		"k_EMsgClientToGCSelectCompendiumInGamePredictionResponse":           8171,
-		"k_EMsgClientToGCWeekendTourneyGetPlayerStats":                       8172,
-		"k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse":               8173,
-		"k_EMsgClientToGCRecyclePlayerCard":                                  8174,
-		"k_EMsgClientToGCRecyclePlayerCardResponse":                          8175,
-		"k_EMsgClientToGCCreatePlayerCardPack":                               8176,
-		"k_EMsgClientToGCCreatePlayerCardPackResponse":                       8177,
-		"k_EMsgClientToGCGetPlayerCardRosterRequest":                         8178,
-		"k_EMsgClientToGCGetPlayerCardRosterResponse":                        8179,
-		"k_EMsgClientToGCSetPlayerCardRosterRequest":                         8180,
-		"k_EMsgClientToGCSetPlayerCardRosterResponse":                        8181,
-		"k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse":      8183,
-		"k_EMsgLobbyBattleCupVictory":                                        8186,
-		"k_EMsgGCGetPlayerCardItemInfo":                                      8187,
-		"k_EMsgGCGetPlayerCardItemInfoResponse":                              8188,
-		"k_EMsgClientToGCRequestSteamDatagramTicket":                         8189,
-		"k_EMsgClientToGCRequestSteamDatagramTicketResponse":                 8190,
-		"k_EMsgGCToClientBattlePassRollupRequest":                            8191,
-		"k_EMsgGCToClientBattlePassRollupResponse":                           8192,
-		"k_EMsgClientToGCTransferSeasonalMMRRequest":                         8193,
-		"k_EMsgClientToGCTransferSeasonalMMRResponse":                        8194,
-		"k_EMsgGCToGCPublicChatCommunicationBan":                             8195,
-		"k_EMsgGCToGCUpdateAccountInfo":                                      8196,
-		"k_EMsgGCChatReportPublicSpam":                                       8197,
-		"k_EMsgClientToGCSetPartyBuilderOptions":                             8198,
-		"k_EMsgClientToGCSetPartyBuilderOptionsResponse":                     8199,
-		"k_EMsgGCToClientPlaytestStatus":                                     8200,
-		"k_EMsgClientToGCJoinPlaytest":                                       8201,
-		"k_EMsgClientToGCJoinPlaytestResponse":                               8202,
-		"k_EMsgLobbyPlaytestDetails":                                         8203,
-		"k_EMsgDOTASetFavoriteTeam":                                          8204,
-		"k_EMsgGCToClientBattlePassRollupListRequest":                        8205,
-		"k_EMsgGCToClientBattlePassRollupListResponse":                       8206,
-		"k_EMsgDOTAClaimEventAction":                                         8209,
-		"k_EMsgDOTAClaimEventActionResponse":                                 8210,
-		"k_EMsgDOTAGetPeriodicResource":                                      8211,
-		"k_EMsgDOTAGetPeriodicResourceResponse":                              8212,
-		"k_EMsgDOTAPeriodicResourceUpdated":                                  8213,
-		"k_EMsgServerToGCSpendWager":                                         8214,
-		"k_EMsgGCToGCSignoutSpendWagerToken":                                 8215,
-		"k_EMsgSubmitTriviaQuestionAnswer":                                   8216,
-		"k_EMsgSubmitTriviaQuestionAnswerResponse":                           8217,
-		"k_EMsgClientToGCGiveTip":                                            8218,
-		"k_EMsgClientToGCGiveTipResponse":                                    8219,
-		"k_EMsgStartTriviaSession":                                           8220,
-		"k_EMsgStartTriviaSessionResponse":                                   8221,
-		"k_EMsgAnchorPhoneNumberRequest":                                     8222,
-		"k_EMsgAnchorPhoneNumberResponse":                                    8223,
-		"k_EMsgUnanchorPhoneNumberRequest":                                   8224,
-		"k_EMsgUnanchorPhoneNumberResponse":                                  8225,
-		"k_EMsgGCToGCSignoutSpendRankWager":                                  8229,
-		"k_EMsgGCToGCGetFavoriteTeam":                                        8230,
-		"k_EMsgGCToGCGetFavoriteTeamResponse":                                8231,
-		"k_EMsgSignOutEventGameData":                                         8232,
-		"k_EMsgClientToGCQuickStatsRequest":                                  8238,
-		"k_EMsgClientToGCQuickStatsResponse":                                 8239,
-		"k_EMsgGCToGCSubtractEventPointsFromUser":                            8240,
-		"k_EMsgSelectionPriorityChoiceRequest":                               8241,
-		"k_EMsgSelectionPriorityChoiceResponse":                              8242,
-		"k_EMsgGCToGCCompendiumInGamePredictionResults":                      8243,
-		"k_EMsgGameAutographReward":                                          8244,
-		"k_EMsgGameAutographRewardResponse":                                  8245,
-		"k_EMsgDestroyLobbyRequest":                                          8246,
-		"k_EMsgDestroyLobbyResponse":                                         8247,
-		"k_EMsgPurchaseItemWithEventPoints":                                  8248,
-		"k_EMsgPurchaseItemWithEventPointsResponse":                          8249,
-		"k_EMsgServerToGCMatchPlayerItemPurchaseHistory":                     8250,
-		"k_EMsgGCToGCGrantPlusHeroMatchResults":                              8251,
-		"k_EMsgServerToGCMatchStateHistory":                                  8255,
-		"k_EMsgPurchaseHeroRandomRelic":                                      8258,
-		"k_EMsgPurchaseHeroRandomRelicResponse":                              8259,
-		"k_EMsgClientToGCClaimEventActionUsingItem":                          8260,
-		"k_EMsgClientToGCClaimEventActionUsingItemResponse":                  8261,
-		"k_EMsgPartyReadyCheckRequest":                                       8262,
-		"k_EMsgPartyReadyCheckResponse":                                      8263,
-		"k_EMsgPartyReadyCheckAcknowledge":                                   8264,
-		"k_EMsgGetRecentPlayTimeFriendsRequest":                              8265,
-		"k_EMsgGetRecentPlayTimeFriendsResponse":                             8266,
-		"k_EMsgGCToClientCommendNotification":                                8267,
-		"k_EMsgProfileRequest":                                               8268,
-		"k_EMsgProfileResponse":                                              8269,
-		"k_EMsgProfileUpdate":                                                8270,
-		"k_EMsgProfileUpdateResponse":                                        8271,
-		"k_EMsgHeroGlobalDataRequest":                                        8274,
-		"k_EMsgHeroGlobalDataResponse":                                       8275,
-		"k_EMsgClientToGCRequestPlusWeeklyChallengeResult":                   8276,
-		"k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse":           8277,
-		"k_EMsgGCToGCGrantPlusPrepaidTime":                                   8278,
-		"k_EMsgPrivateMetadataKeyRequest":                                    8279,
-		"k_EMsgPrivateMetadataKeyResponse":                                   8280,
-		"k_EMsgGCToGCReconcilePlusStatus":                                    8281,
-		"k_EMsgGCToGCCheckPlusStatus":                                        8282,
-		"k_EMsgGCToGCCheckPlusStatusResponse":                                8283,
-		"k_EMsgGCToGCReconcilePlusAutoGrantItems":                            8284,
-		"k_EMsgGCToGCReconcilePlusStatusUnreliable":                          8285,
-		"k_EMsgGCToClientCavernCrawlMapPathCompleted":                        8288,
-		"k_EMsgClientToGCCavernCrawlClaimRoom":                               8289,
-		"k_EMsgClientToGCCavernCrawlClaimRoomResponse":                       8290,
-		"k_EMsgClientToGCCavernCrawlUseItemOnRoom":                           8291,
-		"k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse":                   8292,
-		"k_EMsgClientToGCCavernCrawlUseItemOnPath":                           8293,
-		"k_EMsgClientToGCCavernCrawlUseItemOnPathResponse":                   8294,
-		"k_EMsgClientToGCCavernCrawlRequestMapState":                         8295,
-		"k_EMsgClientToGCCavernCrawlRequestMapStateResponse":                 8296,
-		"k_EMsgSignOutTips":                                                  8297,
-		"k_EMsgClientToGCRequestEventPointLogV2":                             8298,
-		"k_EMsgClientToGCRequestEventPointLogResponseV2":                     8299,
-		"k_EMsgClientToGCRequestEventTipsSummary":                            8300,
-		"k_EMsgClientToGCRequestEventTipsSummaryResponse":                    8301,
-		"k_EMsgClientToGCRequestSocialFeed":                                  8303,
-		"k_EMsgClientToGCRequestSocialFeedResponse":                          8304,
-		"k_EMsgClientToGCRequestSocialFeedComments":                          8305,
-		"k_EMsgClientToGCRequestSocialFeedCommentsResponse":                  8306,
-		"k_EMsgClientToGCCavernCrawlGetClaimedRoomCount":                     8308,
-		"k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse":             8309,
-		"k_EMsgGCToGCReconcilePlusAutoGrantItemsUnreliable":                  8310,
-		"k_EMsgServerToGCAddBroadcastTimelineEvent":                          8311,
-		"k_EMsgGCToServerUpdateSteamBroadcasting":                            8312,
-		"k_EMsgClientToGCRecordContestVote":                                  8313,
-		"k_EMsgGCToClientRecordContestVoteResponse":                          8314,
-		"k_EMsgGCToGCGrantAutograph":                                         8315,
-		"k_EMsgGCToGCGrantAutographResponse":                                 8316,
-		"k_EMsgSignOutConsumableUsage":                                       8317,
-		"k_EMsgLobbyEventGameDetails":                                        8318,
-		"k_EMsgDevGrantEventPoints":                                          8319,
-		"k_EMsgDevGrantEventPointsResponse":                                  8320,
-		"k_EMsgDevGrantEventAction":                                          8321,
-		"k_EMsgDevGrantEventActionResponse":                                  8322,
-		"k_EMsgDevResetEventState":                                           8323,
-		"k_EMsgDevResetEventStateResponse":                                   8324,
-		"k_EMsgGCToGCReconcileEventOwnership":                                8325,
-		"k_EMsgConsumeEventSupportGrantItem":                                 8326,
-		"k_EMsgConsumeEventSupportGrantItemResponse":                         8327,
-		"k_EMsgGCToClientClaimEventActionUsingItemCompleted":                 8328,
-		"k_EMsgGCToClientCavernCrawlMapUpdated":                              8329,
-		"k_EMsgServerToGCRequestPlayerRecentAccomplishments":                 8330,
-		"k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse":         8331,
-		"k_EMsgClientToGCRequestPlayerRecentAccomplishments":                 8332,
-		"k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse":         8333,
-		"k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments":             8334,
-		"k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse":     8335,
-		"k_EMsgSignOutEventActionGrants":                                     8336,
-		"k_EMsgClientToGCRequestPlayerCoachMatches":                          8337,
-		"k_EMsgClientToGCRequestPlayerCoachMatchesResponse":                  8338,
-		"k_EMsgClientToGCSubmitCoachTeammateRating":                          8341,
-		"k_EMsgClientToGCSubmitCoachTeammateRatingResponse":                  8342,
-		"k_EMsgGCToClientCoachTeammateRatingsChanged":                        8343,
-		"k_EMsgClientToGCRequestPlayerCoachMatch":                            8345,
-		"k_EMsgClientToGCRequestPlayerCoachMatchResponse":                    8346,
-		"k_EMsgClientToGCRequestContestVotes":                                8347,
-		"k_EMsgClientToGCRequestContestVotesResponse":                        8348,
-		"k_EMsgClientToGCMVPVoteTimeout":                                     8349,
-		"k_EMsgClientToGCMVPVoteTimeoutResponse":                             8350,
-		"k_EMsgMatchMatchmakingStats":                                        8360,
-		"k_EMsgClientToGCSubmitPlayerMatchSurvey":                            8361,
-		"k_EMsgClientToGCSubmitPlayerMatchSurveyResponse":                    8362,
-		"k_EMsgSQLGCToGCGrantAllHeroProgressAccount":                         8363,
-		"k_EMsgSQLGCToGCGrantAllHeroProgressVictory":                         8364,
-		"k_EMsgDevDeleteEventActions":                                        8365,
-		"k_EMsgDevDeleteEventActionsResponse":                                8366,
-		"k_EMsgGCToGCGetAllHeroCurrent":                                      8635,
-		"k_EMsgGCToGCGetAllHeroCurrentResponse":                              8636,
-		"k_EMsgGCSubmitPlayerAvoidRequest":                                   8637,
-		"k_EMsgGCSubmitPlayerAvoidRequestResponse":                           8638,
-		"k_EMsgGCToClientNotificationsUpdated":                               8639,
-		"k_EMsgGCtoGCAssociatedExploiterAccountInfo":                         8640,
-		"k_EMsgGCtoGCAssociatedExploiterAccountInfoResponse":                 8641,
-		"k_EMsgGCtoGCRequestRecalibrationCheck":                              8642,
-		"k_EMsgGCToClientVACReminder":                                        8643,
-		"k_EMsgClientToGCUnderDraftBuy":                                      8644,
-		"k_EMsgClientToGCUnderDraftBuyResponse":                              8645,
-		"k_EMsgClientToGCUnderDraftReroll":                                   8646,
-		"k_EMsgClientToGCUnderDraftRerollResponse":                           8647,
-		"k_EMsgNeutralItemStats":                                             8648,
-		"k_EMsgClientToGCCreateGuild":                                        8649,
-		"k_EMsgClientToGCCreateGuildResponse":                                8650,
-		"k_EMsgClientToGCSetGuildInfo":                                       8651,
-		"k_EMsgClientToGCSetGuildInfoResponse":                               8652,
-		"k_EMsgClientToGCAddGuildRole":                                       8653,
-		"k_EMsgClientToGCAddGuildRoleResponse":                               8654,
-		"k_EMsgClientToGCModifyGuildRole":                                    8655,
-		"k_EMsgClientToGCModifyGuildRoleResponse":                            8656,
-		"k_EMsgClientToGCRemoveGuildRole":                                    8657,
-		"k_EMsgClientToGCRemoveGuildRoleResponse":                            8658,
-		"k_EMsgClientToGCJoinGuild":                                          8659,
-		"k_EMsgClientToGCJoinGuildResponse":                                  8660,
-		"k_EMsgClientToGCLeaveGuild":                                         8661,
-		"k_EMsgClientToGCLeaveGuildResponse":                                 8662,
-		"k_EMsgClientToGCInviteToGuild":                                      8663,
-		"k_EMsgClientToGCInviteToGuildResponse":                              8664,
-		"k_EMsgClientToGCDeclineInviteToGuild":                               8665,
-		"k_EMsgClientToGCDeclineInviteToGuildResponse":                       8666,
-		"k_EMsgClientToGCCancelInviteToGuild":                                8667,
-		"k_EMsgClientToGCCancelInviteToGuildResponse":                        8668,
-		"k_EMsgClientToGCKickGuildMember":                                    8669,
-		"k_EMsgClientToGCKickGuildMemberResponse":                            8670,
-		"k_EMsgClientToGCSetGuildMemberRole":                                 8671,
-		"k_EMsgClientToGCSetGuildMemberRoleResponse":                         8672,
-		"k_EMsgClientToGCRequestGuildData":                                   8673,
-		"k_EMsgClientToGCRequestGuildDataResponse":                           8674,
-		"k_EMsgGCToClientGuildDataUpdated":                                   8675,
-		"k_EMsgClientToGCRequestGuildMembership":                             8676,
-		"k_EMsgClientToGCRequestGuildMembershipResponse":                     8677,
-		"k_EMsgGCToClientGuildMembershipUpdated":                             8678,
-		"k_EMsgClientToGCAcceptInviteToGuild":                                8681,
-		"k_EMsgClientToGCAcceptInviteToGuildResponse":                        8682,
-		"k_EMsgClientToGCSetGuildRoleOrder":                                  8683,
-		"k_EMsgClientToGCSetGuildRoleOrderResponse":                          8684,
-		"k_EMsgClientToGCRequestGuildFeed":                                   8685,
-		"k_EMsgClientToGCRequestGuildFeedResponse":                           8686,
-		"k_EMsgClientToGCRequestAccountGuildEventData":                       8687,
-		"k_EMsgClientToGCRequestAccountGuildEventDataResponse":               8688,
-		"k_EMsgGCToClientAccountGuildEventDataUpdated":                       8689,
-		"k_EMsgClientToGCRequestActiveGuildContracts":                        8690,
-		"k_EMsgClientToGCRequestActiveGuildContractsResponse":                8691,
-		"k_EMsgGCToClientActiveGuildContractsUpdated":                        8692,
-		"k_EMsgGCToClientGuildFeedUpdated":                                   8693,
-		"k_EMsgClientToGCSelectGuildContract":                                8694,
-		"k_EMsgClientToGCSelectGuildContractResponse":                        8695,
-		"k_EMsgGCToGCCompleteGuildContracts":                                 8696,
-		"k_EMsgClientToGCAddPlayerToGuildChat":                               8698,
-		"k_EMsgClientToGCAddPlayerToGuildChatResponse":                       8699,
-		"k_EMsgClientToGCUnderDraftSell":                                     8700,
-		"k_EMsgClientToGCUnderDraftSellResponse":                             8701,
-		"k_EMsgClientToGCUnderDraftRequest":                                  8702,
-		"k_EMsgClientToGCUnderDraftResponse":                                 8703,
-		"k_EMsgClientToGCUnderDraftRedeemReward":                             8704,
-		"k_EMsgClientToGCUnderDraftRedeemRewardResponse":                     8705,
-		"k_EMsgGCToServerLobbyHeroBanRates":                                  8708,
-		"k_EMsgSignOutGuildContractProgress":                                 8711,
-		"k_EMsgSignOutMVPStats":                                              8712,
-		"k_EMsgClientToGCRequestActiveGuildChallenge":                        8713,
-		"k_EMsgClientToGCRequestActiveGuildChallengeResponse":                8714,
-		"k_EMsgGCToClientActiveGuildChallengeUpdated":                        8715,
-		"k_EMsgClientToGCRequestReporterUpdates":                             8716,
-		"k_EMsgClientToGCRequestReporterUpdatesResponse":                     8717,
-		"k_EMsgClientToGCAcknowledgeReporterUpdates":                         8718,
-		"k_EMsgSignOutGuildChallengeProgress":                                8720,
-		"k_EMsgClientToGCRequestGuildEventMembers":                           8721,
-		"k_EMsgClientToGCRequestGuildEventMembersResponse":                   8722,
-		"k_EMsgClientToGCReportGuildContent":                                 8725,
-		"k_EMsgClientToGCReportGuildContentResponse":                         8726,
-		"k_EMsgClientToGCRequestAccountGuildPersonaInfo":                     8727,
-		"k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse":             8728,
-		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch":                8729,
-		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse":        8730,
-		"k_EMsgGCToClientUnderDraftGoldUpdated":                              8731,
-		"k_EMsgSignOutBounties":                                              8733,
-		"k_EMsgLobbyFeaturedGamemodeProgress":                                8734,
-		"k_EMsgLobbyGauntletProgress":                                        8735,
-		"k_EMsgClientToGCSubmitDraftTriviaMatchAnswer":                       8736,
-		"k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse":               8737,
-		"k_EMsgGCToGCSignoutSpendBounty":                                     8738,
-		"k_EMsgClientToGCApplyGauntletTicket":                                8739,
-		"k_EMsgClientToGCUnderDraftRollBackBench":                            8740,
-		"k_EMsgClientToGCUnderDraftRollBackBenchResponse":                    8741,
-		"k_EMsgGCToGCGetEventActionScore":                                    8742,
-		"k_EMsgGCToGCGetEventActionScoreResponse":                            8743,
-		"k_EMsgServerToGCGetGuildContracts":                                  8744,
-		"k_EMsgServerToGCGetGuildContractsResponse":                          8745,
-		"k_EMsgLobbyEventGameData":                                           8746,
-		"k_EMsgGCToClientGuildMembersDataUpdated":                            8747,
-		"k_EMsgSignOutReportActivityMarkers":                                 8748,
-		"k_EMsgSignOutDiretideCandy":                                         8749,
-		"k_EMsgGCToClientPostGameItemAwardNotification":                      8750,
-		"k_EMsgClientToGCGetOWMatchDetails":                                  8751,
-		"k_EMsgClientToGCGetOWMatchDetailsResponse":                          8752,
-		"k_EMsgClientToGCSubmitOWConviction":                                 8753,
-		"k_EMsgClientToGCSubmitOWConvictionResponse":                         8754,
-		"k_EMsgGCToGCGetAccountSteamChina":                                   8755,
-		"k_EMsgGCToGCGetAccountSteamChinaResponse":                           8756,
-		"k_EMsgClientToGCClaimLeaderboardRewards":                            8757,
-		"k_EMsgClientToGCClaimLeaderboardRewardsResponse":                    8758,
-		"k_EMsgClientToGCRecalibrateMMR":                                     8759,
-		"k_EMsgClientToGCRecalibrateMMRResponse":                             8760,
-		"k_EMsgGCToGCGrantEventPointActionList":                              8761,
-		"k_EMsgClientToGCChinaSSAURLRequest":                                 8764,
-		"k_EMsgClientToGCChinaSSAURLResponse":                                8765,
-		"k_EMsgClientToGCChinaSSAAcceptedRequest":                            8766,
-		"k_EMsgClientToGCChinaSSAAcceptedResponse":                           8767,
-		"k_EMsgSignOutOverwatchSuspicion":                                    8768,
-		"k_EMsgServerToGCGetSuspicionConfig":                                 8769,
-		"k_EMsgServerToGCGetSuspicionConfigResponse":                         8770,
-		"k_EMsgGCToGCGrantPlusHeroChallengeMatchResults":                     8771,
-		"k_EMsgGCToClientOverwatchCasesAvailable":                            8772,
-		"k_EMsgServerToGCAccountCheck":                                       8773,
-		"k_EMsgClientToGCStartWatchingOverwatch":                             8774,
-		"k_EMsgClientToGCStopWatchingOverwatch":                              8775,
-		"k_EMsgSignOutPerfData":                                              8776,
-		"k_EMsgClientToGCGetDPCFavorites":                                    8777,
-		"k_EMsgClientToGCGetDPCFavoritesResponse":                            8778,
-		"k_EMsgClientToGCSetDPCFavoriteState":                                8779,
-		"k_EMsgClientToGCSetDPCFavoriteStateResponse":                        8780,
-		"k_EMsgClientToGCOverwatchReplayError":                               8781,
-		"k_EMsgServerToGCPlayerChallengeHistory":                             8782,
-		"k_EMsgSignOutBanData":                                               8783,
-		"k_EMsgWebapiDPCSeasonResults":                                       8784,
-		"k_EMsgClientToGCCoachFriend":                                        8785,
-		"k_EMsgClientToGCCoachFriendResponse":                                8786,
-		"k_EMsgClientToGCRequestPrivateCoachingSession":                      8787,
-		"k_EMsgClientToGCRequestPrivateCoachingSessionResponse":              8788,
-		"k_EMsgClientToGCAcceptPrivateCoachingSession":                       8789,
-		"k_EMsgClientToGCAcceptPrivateCoachingSessionResponse":               8790,
-		"k_EMsgClientToGCLeavePrivateCoachingSession":                        8791,
-		"k_EMsgClientToGCLeavePrivateCoachingSessionResponse":                8792,
-		"k_EMsgClientToGCGetCurrentPrivateCoachingSession":                   8793,
-		"k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse":           8794,
-		"k_EMsgGCToClientPrivateCoachingSessionUpdated":                      8795,
-		"k_EMsgClientToGCSubmitPrivateCoachingSessionRating":                 8796,
-		"k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse":         8797,
-		"k_EMsgClientToGCGetAvailablePrivateCoachingSessions":                8798,
-		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse":        8799,
-		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary":         8800,
-		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse": 8801,
-		"k_EMsgClientToGCJoinPrivateCoachingSessionLobby":                    8802,
-		"k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse":            8803,
-		"k_EMsgClientToGCRespondToCoachFriendRequest":                        8804,
-		"k_EMsgClientToGCRespondToCoachFriendRequestResponse":                8805,
-		"k_EMsgClientToGCSetEventActiveSeasonID":                             8806,
-		"k_EMsgClientToGCSetEventActiveSeasonIDResponse":                     8807,
-		"k_EMsgServerToGCMatchPlayerNeutralItemEquipHistory":                 8808,
-		"k_EMsgServerToGCCompendiumChosenInGamePredictions":                  8809,
-		"k_EMsgClientToGCCreateTeamPlayerCardPack":                           8810,
-		"k_EMsgClientToGCCreateTeamPlayerCardPackResponse":                   8811,
-		"k_EMsgGCToServerSubmitCheerData":                                    8812,
-		"k_EMsgGCToServerCheerConfig":                                        8813,
-		"k_EMsgServerToGCGetCheerConfig":                                     8814,
-		"k_EMsgServerToGCGetCheerConfigResponse":                             8815,
-		"k_EMsgGCToGCGrantAutographByID":                                     8816,
-		"k_EMsgGCToServerCheerScalesOverride":                                8817,
-		"k_EMsgGCToServerGetCheerState":                                      8818,
-		"k_EMsgServerToGCReportCheerState":                                   8819,
-		"k_EMsgGCToServerScenarioSave":                                       8820,
-		"k_EMsgGCToServerAbilityDraftLobbyData":                              8821,
-		"k_EMsgSignOutReportCommunications":                                  8822,
-		"k_EMsgClientToGCBatchGetPlayerCardRosterRequest":                    8823,
-		"k_EMsgClientToGCBatchGetPlayerCardRosterResponse":                   8824,
-		"k_EMsgClientToGCGetStickerbookRequest":                              8825,
-		"k_EMsgClientToGCGetStickerbookResponse":                             8826,
-		"k_EMsgClientToGCCreateStickerbookPageRequest":                       8827,
-		"k_EMsgClientToGCCreateStickerbookPageResponse":                      8828,
-		"k_EMsgClientToGCDeleteStickerbookPageRequest":                       8829,
-		"k_EMsgClientToGCDeleteStickerbookPageResponse":                      8830,
-		"k_EMsgClientToGCPlaceStickersRequest":                               8831,
-		"k_EMsgClientToGCPlaceStickersResponse":                              8832,
-		"k_EMsgClientToGCPlaceCollectionStickersRequest":                     8833,
-		"k_EMsgClientToGCPlaceCollectionStickersResponse":                    8834,
-		"k_EMsgClientToGCOrderStickerbookTeamPageRequest":                    8835,
-		"k_EMsgClientToGCOrderStickerbookTeamPageResponse":                   8836,
-		"k_EMsgServerToGCGetStickerHeroes":                                   8837,
-		"k_EMsgServerToGCGetStickerHeroesResponse":                           8838,
-		"k_EMsgClientToGCCandyShopGetUserData":                               8840,
-		"k_EMsgClientToGCCandyShopGetUserDataResponse":                       8841,
-		"k_EMsgGCToClientCandyShopUserDataUpdated":                           8842,
-		"k_EMsgClientToGCCandyShopPurchaseReward":                            8843,
-		"k_EMsgClientToGCCandyShopPurchaseRewardResponse":                    8844,
-		"k_EMsgClientToGCCandyShopDoExchange":                                8845,
-		"k_EMsgClientToGCCandyShopDoExchangeResponse":                        8846,
-		"k_EMsgClientToGCCandyShopDoVariableExchange":                        8847,
-		"k_EMsgClientToGCCandyShopDoVariableExchangeResponse":                8848,
-		"k_EMsgClientToGCCandyShopRerollRewards":                             8849,
-		"k_EMsgClientToGCCandyShopRerollRewardsResponse":                     8850,
-		"k_EMsgClientToGCSetHeroSticker":                                     8851,
-		"k_EMsgClientToGCSetHeroStickerResponse":                             8852,
-		"k_EMsgClientToGCGetHeroStickers":                                    8853,
-		"k_EMsgClientToGCGetHeroStickersResponse":                            8854,
-		"k_EMsgClientToGCSetFavoritePage":                                    8855,
-		"k_EMsgClientToGCSetFavoritePageResponse":                            8856,
-		"k_EMsgClientToGCCandyShopDevGrantCandy":                             8857,
-		"k_EMsgClientToGCCandyShopDevGrantCandyResponse":                     8858,
-		"k_EMsgClientToGCCandyShopDevClearInventory":                         8859,
-		"k_EMsgClientToGCCandyShopDevClearInventoryResponse":                 8860,
-		"k_EMsgClientToGCCandyShopOpenBags":                                  8861,
-		"k_EMsgClientToGCCandyShopOpenBagsResponse":                          8862,
-		"k_EMsgClientToGCCandyShopDevGrantCandyBags":                         8863,
-		"k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse":                 8864,
-		"k_EMsgClientToGCCandyShopDevShuffleExchange":                        8865,
-		"k_EMsgClientToGCCandyShopDevShuffleExchangeResponse":                8866,
-		"k_EMsgClientToGCCandyShopDevGrantRerollCharges":                     8867,
-		"k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse":             8868,
-		"k_EMsgLobbyAdditionalAccountData":                                   8869,
-		"k_EMsgServerToGCLobbyInitialized":                                   8870,
-		"k_EMsgClientToGCCollectorsCacheAvailableDataRequest":                8871,
-		"k_EMsgGCToClientCollectorsCacheAvailableDataResponse":               8872,
-		"k_EMsgClientToGCUploadMatchClip":                                    8873,
-		"k_EMsgGCToClientUploadMatchClipResponse":                            8874,
-		"k_EMsgSignOutMuertaMinigame":                                        8877,
-		"k_EMsgGCToServerLobbyHeroRoleStats":                                 8878,
-		"k_EMsgClientToGCRankRequest":                                        8879,
-		"k_EMsgGCToClientRankResponse":                                       8880,
-		"k_EMsgGCToClientRankUpdate":                                         8881,
-		"k_EMsgSignOutMapStats":                                              8882,
-		"k_EMsgClientToGCMapStatsRequest":                                    8883,
-		"k_EMsgGCToClientMapStatsResponse":                                   8884,
-		"k_EMsgClientToGCShowcaseGetUserData":                                8886,
-		"k_EMsgClientToGCShowcaseGetUserDataResponse":                        8887,
-		"k_EMsgClientToGCShowcaseSetUserData":                                8888,
-		"k_EMsgClientToGCShowcaseSetUserDataResponse":                        8889,
-		"k_EMsgClientToGCFantasyCraftingGetData":                             8890,
-		"k_EMsgClientToGCFantasyCraftingGetDataResponse":                     8891,
-		"k_EMsgClientToGCFantasyCraftingPerformOperation":                    8892,
-		"k_EMsgClientToGCFantasyCraftingPerformOperationResponse":            8893,
-		"k_EMsgGCToClientFantasyCraftingGetDataUpdated":                      8894,
-		"k_EMsgClientToGCFantasyCraftingDevModifyTablet":                     8895,
-		"k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse":             8896,
-		"k_EMsgClientToGCRoadToTIGetQuests":                                  8897,
-		"k_EMsgClientToGCRoadToTIGetQuestsResponse":                          8898,
-		"k_EMsgClientToGCRoadToTIGetActiveQuest":                             8899,
-		"k_EMsgClientToGCRoadToTIGetActiveQuestResponse":                     8900,
-		"k_EMsgClientToGCBingoGetUserData":                                   8901,
-		"k_EMsgClientToGCBingoGetUserDataResponse":                           8902,
-		"k_EMsgClientToGCBingoClaimRow":                                      8903,
-		"k_EMsgClientToGCBingoClaimRowResponse":                              8904,
-		"k_EMsgClientToGCBingoDevRerollCard":                                 8905,
-		"k_EMsgClientToGCBingoDevRerollCardResponse":                         8906,
-		"k_EMsgClientToGCBingoGetStatsData":                                  8907,
-		"k_EMsgClientToGCBingoGetStatsDataResponse":                          8908,
-		"k_EMsgGCToClientBingoUserDataUpdated":                               8909,
-		"k_EMsgGCToClientRoadToTIQuestDataUpdated":                           8910,
-		"k_EMsgClientToGCRoadToTIUseItem":                                    8911,
-		"k_EMsgClientToGCRoadToTIUseItemResponse":                            8912,
-		"k_EMsgClientToGCShowcaseSubmitReport":                               8913,
-		"k_EMsgClientToGCShowcaseSubmitReportResponse":                       8914,
-		"k_EMsgClientToGCShowcaseAdminGetReportsRollupList":                  8915,
-		"k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse":          8916,
-		"k_EMsgClientToGCShowcaseAdminGetReportsRollup":                      8917,
-		"k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse":              8918,
-		"k_EMsgClientToGCShowcaseAdminGetUserDetails":                        8919,
-		"k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse":                8920,
-		"k_EMsgClientToGCShowcaseAdminConvict":                               8921,
-		"k_EMsgClientToGCShowcaseAdminConvictResponse":                       8922,
-		"k_EMsgClientToGCShowcaseAdminExonerate":                             8923,
-		"k_EMsgClientToGCShowcaseAdminExonerateResponse":                     8924,
-		"k_EMsgClientToGCShowcaseAdminReset":                                 8925,
-		"k_EMsgClientToGCShowcaseAdminResetResponse":                         8926,
-		"k_EMsgClientToGCShowcaseAdminLockAccount":                           8927,
-		"k_EMsgClientToGCShowcaseAdminLockAccountResponse":                   8928,
-		"k_EMsgClientToGCFantasyCraftingSelectPlayer":                        8929,
-		"k_EMsgClientToGCFantasyCraftingSelectPlayerResponse":                8930,
-		"k_EMsgClientToGCFantasyCraftingGenerateTablets":                     8931,
-		"k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse":             8932,
-		"k_EMsgClientToGcFantasyCraftingUpgradeTablets":                      8933,
-		"k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse":              8934,
-		"k_EMsgClientToGCFantasyCraftingRerollOptions":                       8936,
-		"k_EMsgClientToGCFantasyCraftingRerollOptionsResponse":               8937,
-		"k_EMsgClientToGCRoadToTIDevForceQuest":                              8935,
-		"k_EMsgLobbyRoadToTIMatchQuestData":                                  8939,
-		"k_EMsgClientToGCShowcaseModerationGetQueue":                         8940,
-		"k_EMsgClientToGCShowcaseModerationGetQueueResponse":                 8941,
-		"k_EMsgClientToGCShowcaseModerationApplyModeration":                  8942,
-		"k_EMsgClientToGCShowcaseModerationApplyModerationResponse":          8943,
-		"k_EMsgClientToGCOverworldGetUserData":                               8944,
-		"k_EMsgClientToGCOverworldGetUserDataResponse":                       8945,
-		"k_EMsgClientToGCOverworldCompletePath":                              8946,
-		"k_EMsgClientToGCOverworldCompletePathResponse":                      8947,
-		"k_EMsgClientToGCOverworldClaimEncounterReward":                      8948,
-		"k_EMsgClientToGCOverworldClaimEncounterRewardResponse":              8949,
-		"k_EMsgClientToGCOverworldDevResetAll":                               8950,
-		"k_EMsgClientToGCOverworldDevResetAllResponse":                       8951,
-		"k_EMsgClientToGCOverworldDevResetNode":                              8952,
-		"k_EMsgClientToGCOverworldDevResetNodeResponse":                      8953,
-		"k_EMsgClientToGCOverworldDevResetPath":                              8954,
-		"k_EMsgClientToGCOverworldDevResetPathResponse":                      8955,
-		"k_EMsgClientToGCOverworldDevGrantTokens":                            8956,
-		"k_EMsgClientToGCOverworldDevGrantTokensResponse":                    8957,
-		"k_EMsgClientToGCOverworldDevClearInventory":                         8958,
-		"k_EMsgClientToGCOverworldDevClearInventoryResponse":                 8959,
-		"k_EMsgServerToGCNewBloomGift":                                       8960,
-		"k_EMsgServerToGCNewBloomGiftResponse":                               8961,
-		"k_EMsgGCToClientOverworldUserDataUpdated":                           8962,
-		"k_EMsgClientToGCOverworldMoveToNode":                                8963,
-		"k_EMsgClientToGCOverworldMoveToNodeResponse":                        8964,
-		"k_EMsgClientToGCNewBloomGift":                                       8965,
-		"k_EMsgClientToGCNewBloomGiftResponse":                               8966,
-		"k_EMsgSignOutOverworld":                                             8967,
-		"k_EMsgClientToGCSetBannedHeroes":                                    8969,
-		"k_EMsgClientToGCOverworldTradeTokens":                               8970,
-		"k_EMsgClientToGCOverworldTradeTokensResponse":                       8971,
-		"k_EMsgOverworldEncounterTokenTreasureData":                          8972,
-		"k_EMsgOverworldEncounterTokenQuestData":                             8973,
-		"k_EMsgOverworldEncounterChooseHeroData":                             8974,
-		"k_EMsgClientToGCUpdateComicBookStats":                               8975,
-		"k_EMsgClientToGCCandyShopDevResetShop":                              8976,
-		"k_EMsgClientToGCCandyShopDevResetShopResponse":                      8977,
-		"k_EMsgOverworldEncounterProgressData":                               8978,
-		"k_EMsgClientToGCOverworldFeedback":                                  8979,
-		"k_EMsgClientToGCOverworldFeedbackResponse":                          8980,
-		"k_EMsgClientToGCOverworldVisitEncounter":                            8981,
-		"k_EMsgClientToGCOverworldVisitEncounterResponse":                    8982,
-		"k_EMsgClientToGCOverworldGiftTokens":                                8983,
-		"k_EMsgClientToGCOverworldGiftTokensResponse":                        8984,
-		"k_EMsgClientToGCDotaLabsFeedback":                                   8985,
-		"k_EMsgClientToGCDotaLabsFeedbackResponse":                           8986,
-		"k_EMsgOverworldEncounterPitFighterRewardData":                       8987,
-		"k_EMsgClientToGCOverworldGetDynamicImage":                           8988,
-		"k_EMsgClientToGCOverworldGetDynamicImageResponse":                   8989,
-		"k_EMsgClientToGCFightingGameChallengeFriend":                        8990,
-		"k_EMsgClientToGCFightingGameChallengeFriendResponse":                8991,
-		"k_EMsgClientToGCFightingGameCancelChallengeFriend":                  8992,
-		"k_EMsgClientToGCFightingGameAnswerChallenge":                        8993,
-		"k_EMsgClientToGCFightingGameAnswerChallengeResponse":                8994,
-		"k_EMsgGCToClientFightingGameChallenge":                              8995,
-		"k_EMsgGCToClientFightingGameStartMatch":                             8996,
-		"k_EMsgGCToClientFightingGameChallengeCanceled":                      8997,
-		"k_EMsgClientToGCBingoShuffleCard":                                   8999,
-		"k_EMsgClientToGCBingoShuffleCardResponse":                           9000,
-		"k_EMsgClientToGCBingoModifySquare":                                  9001,
-		"k_EMsgClientToGCBingoModifySquareResponse":                          9002,
-		"k_EMsgClientToGCBingoDevAddTokens":                                  9003,
-		"k_EMsgClientToGCBingoDevAddTokensResponse":                          9004,
-		"k_EMsgClientToGCBingoDevClearInventory":                             9005,
-		"k_EMsgClientToGCBingoDevClearInventoryResponse":                     9006,
-		"k_EMsgGCCompendiumRemoveAllSelections":                              9007,
-		"k_EMsgGCCompendiumRemoveAllSelectionsResponse":                      9008,
-		"k_EMsgClientToGCOverworldMinigameAction":                            9009,
-		"k_EMsgClientToGCOverworldMinigameActionResponse":                    9010,
-		"k_EMsgClientToGCSurvivorsTelemetry":                                 9011,
-		"k_EMsgClientToGCSurvivorsTelemetryResponse":                         9012,
-		"k_EMsgClientToGCOverworldRequestTokensNeededByFriend":               9013,
-		"k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse":       9014,
-		"k_EMsgClientToGCCraftworksGetUserData":                              9015,
-		"k_EMsgClientToGCCraftworksGetUserDataResponse":                      9016,
-		"k_EMsgGCToClientCraftworksUserDataUpdated":                          9017,
-		"k_EMsgClientToGCCraftworksCraftRecipe":                              9018,
-		"k_EMsgClientToGCCraftworksCraftRecipeResponse":                      9019,
-		"k_EMsgClientToGCCraftworksDevModifyComponents":                      9020,
-		"k_EMsgClientToGCCraftworksDevModifyComponentsResponse":              9021,
-		"k_EMsgSignOutCraftworks":                                            9022,
+		"k_EMsgGCDOTABase":                                                    7000,
+		"k_EMsgGCGameMatchSignOut":                                            7004,
+		"k_EMsgGCGameMatchSignOutResponse":                                    7005,
+		"k_EMsgGCJoinChatChannel":                                             7009,
+		"k_EMsgGCJoinChatChannelResponse":                                     7010,
+		"k_EMsgGCOtherJoinedChannel":                                          7013,
+		"k_EMsgGCOtherLeftChannel":                                            7014,
+		"k_EMsgServerToGCRequestStatus":                                       7026,
+		"k_EMsgGCStartFindingMatch":                                           7033,
+		"k_EMsgGCConnectedPlayers":                                            7034,
+		"k_EMsgGCAbandonCurrentGame":                                          7035,
+		"k_EMsgGCStopFindingMatch":                                            7036,
+		"k_EMsgGCPracticeLobbyCreate":                                         7038,
+		"k_EMsgGCPracticeLobbyLeave":                                          7040,
+		"k_EMsgGCPracticeLobbyLaunch":                                         7041,
+		"k_EMsgGCPracticeLobbyList":                                           7042,
+		"k_EMsgGCPracticeLobbyListResponse":                                   7043,
+		"k_EMsgGCPracticeLobbyJoin":                                           7044,
+		"k_EMsgGCPracticeLobbySetDetails":                                     7046,
+		"k_EMsgGCPracticeLobbySetTeamSlot":                                    7047,
+		"k_EMsgGCInitialQuestionnaireResponse":                                7049,
+		"k_EMsgGCPracticeLobbyResponse":                                       7055,
+		"k_EMsgGCBroadcastNotification":                                       7056,
+		"k_EMsgGCLiveScoreboardUpdate":                                        7057,
+		"k_EMsgGCRequestChatChannelList":                                      7060,
+		"k_EMsgGCRequestChatChannelListResponse":                              7061,
+		"k_EMsgGCReadyUp":                                                     7070,
+		"k_EMsgGCKickedFromMatchmakingQueue":                                  7071,
+		"k_EMsgGCLeaverDetected":                                              7072,
+		"k_EMsgGCSpectateFriendGame":                                          7073,
+		"k_EMsgGCSpectateFriendGameResponse":                                  7074,
+		"k_EMsgGCReportsRemainingRequest":                                     7076,
+		"k_EMsgGCReportsRemainingResponse":                                    7077,
+		"k_EMsgGCSubmitPlayerReport":                                          7078,
+		"k_EMsgGCSubmitPlayerReportResponse":                                  7079,
+		"k_EMsgGCPracticeLobbyKick":                                           7081,
+		"k_EMsgGCSubmitPlayerReportV2":                                        7082,
+		"k_EMsgGCSubmitPlayerReportResponseV2":                                7083,
+		"k_EMsgGCRequestSaveGames":                                            7084,
+		"k_EMsgGCRequestSaveGamesServer":                                      7085,
+		"k_EMsgGCRequestSaveGamesResponse":                                    7086,
+		"k_EMsgGCLeaverDetectedResponse":                                      7087,
+		"k_EMsgGCPlayerFailedToConnect":                                       7088,
+		"k_EMsgGCGCToRelayConnect":                                            7089,
+		"k_EMsgGCGCToRelayConnectresponse":                                    7090,
+		"k_EMsgGCWatchGame":                                                   7091,
+		"k_EMsgGCWatchGameResponse":                                           7092,
+		"k_EMsgGCBanStatusRequest":                                            7093,
+		"k_EMsgGCBanStatusResponse":                                           7094,
+		"k_EMsgGCMatchDetailsRequest":                                         7095,
+		"k_EMsgGCMatchDetailsResponse":                                        7096,
+		"k_EMsgGCCancelWatchGame":                                             7097,
+		"k_EMsgGCPopup":                                                       7102,
+		"k_EMsgGCFriendPracticeLobbyListRequest":                              7111,
+		"k_EMsgGCFriendPracticeLobbyListResponse":                             7112,
+		"k_EMsgGCPracticeLobbyJoinResponse":                                   7113,
+		"k_EMsgGCCreateTeam":                                                  7115,
+		"k_EMsgGCCreateTeamResponse":                                          7116,
+		"k_EMsgGCTeamInvite_InviterToGC":                                      7122,
+		"k_EMsgGCTeamInvite_GCImmediateResponseToInviter":                     7123,
+		"k_EMsgGCTeamInvite_GCRequestToInvitee":                               7124,
+		"k_EMsgGCTeamInvite_InviteeResponseToGC":                              7125,
+		"k_EMsgGCTeamInvite_GCResponseToInviter":                              7126,
+		"k_EMsgGCTeamInvite_GCResponseToInvitee":                              7127,
+		"k_EMsgGCKickTeamMember":                                              7128,
+		"k_EMsgGCKickTeamMemberResponse":                                      7129,
+		"k_EMsgGCLeaveTeam":                                                   7130,
+		"k_EMsgGCLeaveTeamResponse":                                           7131,
+		"k_EMsgGCApplyTeamToPracticeLobby":                                    7142,
+		"k_EMsgGCTransferTeamAdmin":                                           7144,
+		"k_EMsgGCPracticeLobbyJoinBroadcastChannel":                           7149,
+		"k_EMsgGC_TournamentItemEvent":                                        7150,
+		"k_EMsgGC_TournamentItemEventResponse":                                7151,
+		"k_EMsgTeamFanfare":                                                   7156,
+		"k_EMsgResponseTeamFanfare":                                           7157,
+		"k_EMsgGCEditTeamDetails":                                             7166,
+		"k_EMsgGCEditTeamDetailsResponse":                                     7167,
+		"k_EMsgGCReadyUpStatus":                                               7170,
+		"k_EMsgGCToGCMatchCompleted":                                          7186,
+		"k_EMsgGCBalancedShuffleLobby":                                        7188,
+		"k_EMsgGCMatchmakingStatsRequest":                                     7197,
+		"k_EMsgGCMatchmakingStatsResponse":                                    7198,
+		"k_EMsgGCBotGameCreate":                                               7199,
+		"k_EMsgGCSetMatchHistoryAccess":                                       7200,
+		"k_EMsgGCSetMatchHistoryAccessResponse":                               7201,
+		"k_EMsgUpgradeLeagueItem":                                             7203,
+		"k_EMsgUpgradeLeagueItemResponse":                                     7204,
+		"k_EMsgGCWatchDownloadedReplay":                                       7206,
+		"k_EMsgClientsRejoinChatChannels":                                     7217,
+		"k_EMsgGCToGCGetUserChatInfo":                                         7218,
+		"k_EMsgGCToGCGetUserChatInfoResponse":                                 7219,
+		"k_EMsgGCToGCLeaveAllChatChannels":                                    7220,
+		"k_EMsgGCToGCUpdateAccountChatBan":                                    7221,
+		"k_EMsgGCToGCCanInviteUserToTeam":                                     7234,
+		"k_EMsgGCToGCCanInviteUserToTeamResponse":                             7235,
+		"k_EMsgGCToGCGetUserRank":                                             7236,
+		"k_EMsgGCToGCGetUserRankResponse":                                     7237,
+		"k_EMsgGCToGCAdjustUserRank":                                          7238,
+		"k_EMsgGCToGCAdjustUserRankResponse":                                  7239,
+		"k_EMsgGCToGCUpdateTeamStats":                                         7240,
+		"k_EMsgGCToGCValidateTeam":                                            7241,
+		"k_EMsgGCToGCValidateTeamResponse":                                    7242,
+		"k_EMsgGCToGCGetLeagueAdmin":                                          7255,
+		"k_EMsgGCToGCGetLeagueAdminResponse":                                  7256,
+		"k_EMsgGCLeaveChatChannel":                                            7272,
+		"k_EMsgGCChatMessage":                                                 7273,
+		"k_EMsgGCGetHeroStandings":                                            7274,
+		"k_EMsgGCGetHeroStandingsResponse":                                    7275,
+		"k_EMsgGCItemEditorReservationsRequest":                               7283,
+		"k_EMsgGCItemEditorReservationsResponse":                              7284,
+		"k_EMsgGCItemEditorReserveItemDef":                                    7285,
+		"k_EMsgGCItemEditorReserveItemDefResponse":                            7286,
+		"k_EMsgGCItemEditorReleaseReservation":                                7287,
+		"k_EMsgGCItemEditorReleaseReservationResponse":                        7288,
+		"k_EMsgGCFantasyLivePlayerStats":                                      7308,
+		"k_EMsgGCFantasyFinalPlayerStats":                                     7309,
+		"k_EMsgGCFlipLobbyTeams":                                              7320,
+		"k_EMsgGCToGCEvaluateReportedPlayer":                                  7322,
+		"k_EMsgGCToGCEvaluateReportedPlayerResponse":                          7323,
+		"k_EMsgGCToGCProcessPlayerReportForTarget":                            7324,
+		"k_EMsgGCToGCProcessReportSuccess":                                    7325,
+		"k_EMsgGCNotifyAccountFlagsChange":                                    7326,
+		"k_EMsgGCSetProfilePrivacy":                                           7327,
+		"k_EMsgGCSetProfilePrivacyResponse":                                   7328,
+		"k_EMsgGCClientSuspended":                                             7342,
+		"k_EMsgGCPartyMemberSetCoach":                                         7343,
+		"k_EMsgGCPracticeLobbySetCoach":                                       7346,
+		"k_EMsgGCChatModeratorBan":                                            7359,
+		"k_EMsgGCLobbyUpdateBroadcastChannelInfo":                             7367,
+		"k_EMsgGCToGCGrantTournamentItem":                                     7372,
+		"k_EMsgGCToGCUpgradeTwitchViewerItems":                                7375,
+		"k_EMsgGCToGCGetLiveMatchAffiliates":                                  7376,
+		"k_EMsgGCToGCGetLiveMatchAffiliatesResponse":                          7377,
+		"k_EMsgGCToGCUpdatePlayerPennantCounts":                               7378,
+		"k_EMsgGCToGCGetPlayerPennantCounts":                                  7379,
+		"k_EMsgGCToGCGetPlayerPennantCountsResponse":                          7380,
+		"k_EMsgGCGameMatchSignOutPermissionRequest":                           7381,
+		"k_EMsgGCGameMatchSignOutPermissionResponse":                          7382,
+		"k_EMsgDOTAAwardEventPoints":                                          7384,
+		"k_EMsgDOTAGetEventPoints":                                            7387,
+		"k_EMsgDOTAGetEventPointsResponse":                                    7388,
+		"k_EMsgGCPartyLeaderWatchGamePrompt":                                  7397,
+		"k_EMsgGCCompendiumSetSelection":                                      7405,
+		"k_EMsgGCCompendiumDataRequest":                                       7406,
+		"k_EMsgGCCompendiumDataResponse":                                      7407,
+		"k_EMsgDOTAGetPlayerMatchHistory":                                     7408,
+		"k_EMsgDOTAGetPlayerMatchHistoryResponse":                             7409,
+		"k_EMsgGCToGCMatchmakingAddParty":                                     7410,
+		"k_EMsgGCToGCMatchmakingRemoveParty":                                  7411,
+		"k_EMsgGCToGCMatchmakingRemoveAllParties":                             7412,
+		"k_EMsgGCToGCMatchmakingMatchFound":                                   7413,
+		"k_EMsgGCToGCUpdateMatchManagementStats":                              7414,
+		"k_EMsgGCToGCUpdateMatchmakingStats":                                  7415,
+		"k_EMsgGCToServerPingRequest":                                         7416,
+		"k_EMsgGCToServerPingResponse":                                        7417,
+		"k_EMsgGCToServerEvaluateToxicChat":                                   7418,
+		"k_EMsgServerToGCEvaluateToxicChat":                                   7419,
+		"k_EMsgServerToGCEvaluateToxicChatResponse":                           7420,
+		"k_EMsgGCToGCProcessMatchLeaver":                                      7426,
+		"k_EMsgGCNotificationsRequest":                                        7427,
+		"k_EMsgGCNotificationsResponse":                                       7428,
+		"k_EMsgGCToGCModifyNotification":                                      7429,
+		"k_EMsgGCLeagueAdminList":                                             7434,
+		"k_EMsgGCNotificationsMarkReadRequest":                                7435,
+		"k_EMsgServerToGCRequestBatchPlayerResources":                         7450,
+		"k_EMsgServerToGCRequestBatchPlayerResourcesResponse":                 7451,
+		"k_EMsgGCCompendiumSetSelectionResponse":                              7453,
+		"k_EMsgGCRankedPlayerInfoSubmit":                                      7454,
+		"k_EMsgGCRankedPlayerInfoSubmitResponse":                              7455,
+		"k_EMsgGCPlayerInfoSubmit":                                            7456,
+		"k_EMsgGCPlayerInfoSubmitResponse":                                    7457,
+		"k_EMsgGCToGCGetAccountLevel":                                         7458,
+		"k_EMsgGCToGCGetAccountLevelResponse":                                 7459,
+		"k_EMsgDOTAGetWeekendTourneySchedule":                                 7464,
+		"k_EMsgDOTAWeekendTourneySchedule":                                    7465,
+		"k_EMsgGCJoinableCustomGameModesRequest":                              7466,
+		"k_EMsgGCJoinableCustomGameModesResponse":                             7467,
+		"k_EMsgGCJoinableCustomLobbiesRequest":                                7468,
+		"k_EMsgGCJoinableCustomLobbiesResponse":                               7469,
+		"k_EMsgGCQuickJoinCustomLobby":                                        7470,
+		"k_EMsgGCQuickJoinCustomLobbyResponse":                                7471,
+		"k_EMsgGCToGCGrantEventPointAction":                                   7472,
+		"k_EMsgGCToGCSetCompendiumSelection":                                  7478,
+		"k_EMsgGCHasItemQuery":                                                7484,
+		"k_EMsgGCHasItemResponse":                                             7485,
+		"k_EMsgGCToGCGrantEventPointActionMsg":                                7488,
+		"k_EMsgGCToGCGetCompendiumSelections":                                 7492,
+		"k_EMsgGCToGCGetCompendiumSelectionsResponse":                         7493,
+		"k_EMsgServerToGCMatchConnectionStats":                                7494,
+		"k_EMsgGCToClientTournamentItemDrop":                                  7495,
+		"k_EMsgSQLDelayedGrantLeagueDrop":                                     7496,
+		"k_EMsgServerGCUpdateSpectatorCount":                                  7497,
+		"k_EMsgGCToGCEmoticonUnlock":                                          7501,
+		"k_EMsgSignOutDraftInfo":                                              7502,
+		"k_EMsgClientToGCEmoticonDataRequest":                                 7503,
+		"k_EMsgGCToClientEmoticonData":                                        7504,
+		"k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus":          7505,
+		"k_EMsgDOTARedeemItem":                                                7518,
+		"k_EMsgDOTARedeemItemResponse":                                        7519,
+		"k_EMsgClientToGCGetAllHeroProgress":                                  7521,
+		"k_EMsgClientToGCGetAllHeroProgressResponse":                          7522,
+		"k_EMsgGCToGCGetServerForClient":                                      7523,
+		"k_EMsgGCToGCGetServerForClientResponse":                              7524,
+		"k_EMsgSQLProcessTournamentGameOutcome":                               7525,
+		"k_EMsgSQLGrantTrophyToAccount":                                       7526,
+		"k_EMsgClientToGCGetTrophyList":                                       7527,
+		"k_EMsgClientToGCGetTrophyListResponse":                               7528,
+		"k_EMsgGCToClientTrophyAwarded":                                       7529,
+		"k_EMsgGCGameBotMatchSignOut":                                         7530,
+		"k_EMsgGCGameBotMatchSignOutPermissionRequest":                        7531,
+		"k_EMsgSignOutBotInfo":                                                7532,
+		"k_EMsgGCToGCUpdateProfileCards":                                      7533,
+		"k_EMsgClientToGCGetProfileCard":                                      7534,
+		"k_EMsgClientToGCGetProfileCardResponse":                              7535,
+		"k_EMsgClientToGCGetBattleReport":                                     7536,
+		"k_EMsgClientToGCGetBattleReportResponse":                             7537,
+		"k_EMsgClientToGCSetProfileCardSlots":                                 7538,
+		"k_EMsgGCToClientProfileCardUpdated":                                  7539,
+		"k_EMsgServerToGCVictoryPredictions":                                  7540,
+		"k_EMsgClientToGCGetBattleReportAggregateStats":                       7541,
+		"k_EMsgClientToGCGetBattleReportAggregateStatsResponse":               7542,
+		"k_EMsgClientToGCGetBattleReportInfo":                                 7543,
+		"k_EMsgClientToGCGetBattleReportInfoResponse":                         7544,
+		"k_EMsgSignOutCommunicationSummary":                                   7545,
+		"k_EMsgServerToGCRequestStatus_Response":                              7546,
+		"k_EMsgClientToGCCreateHeroStatue":                                    7547,
+		"k_EMsgGCToClientHeroStatueCreateResult":                              7548,
+		"k_EMsgGCGCToLANServerRelayConnect":                                   7549,
+		"k_EMsgClientToGCAcknowledgeBattleReport":                             7550,
+		"k_EMsgClientToGCAcknowledgeBattleReportResponse":                     7551,
+		"k_EMsgClientToGCGetBattleReportMatchHistory":                         7552,
+		"k_EMsgClientToGCGetBattleReportMatchHistoryResponse":                 7553,
+		"k_EMsgServerToGCReportKillSummaries":                                 7554,
+		"k_EMsgGCToGCUpdatePlayerPredictions":                                 7561,
+		"k_EMsgGCToServerPredictionResult":                                    7562,
+		"k_EMsgGCToGCReplayMonitorValidateReplay":                             7569,
+		"k_EMsgLobbyEventPoints":                                              7572,
+		"k_EMsgGCToGCGetCustomGameTickets":                                    7573,
+		"k_EMsgGCToGCGetCustomGameTicketsResponse":                            7574,
+		"k_EMsgGCToGCCustomGamePlayed":                                        7576,
+		"k_EMsgGCToGCGrantEventPointsToUser":                                  7577,
+		"k_EMsgGameserverCrashReport":                                         7579,
+		"k_EMsgGameserverCrashReportResponse":                                 7580,
+		"k_EMsgGCToClientSteamDatagramTicket":                                 7581,
+		"k_EMsgGCToGCSendAccountsEventPoints":                                 7583,
+		"k_EMsgClientToGCRerollPlayerChallenge":                               7584,
+		"k_EMsgServerToGCRerollPlayerChallenge":                               7585,
+		"k_EMsgGCRerollPlayerChallengeResponse":                               7586,
+		"k_EMsgSignOutUpdatePlayerChallenge":                                  7587,
+		"k_EMsgClientToGCSetPartyLeader":                                      7588,
+		"k_EMsgClientToGCCancelPartyInvites":                                  7589,
+		"k_EMsgSQLGrantLeagueMatchToTicketHolders":                            7592,
+		"k_EMsgGCToGCEmoticonUnlockNoRollback":                                7594,
+		"k_EMsgClientToGCApplyGemCombiner":                                    7603,
+		"k_EMsgClientToGCGetAllHeroOrder":                                     7606,
+		"k_EMsgClientToGCGetAllHeroOrderResponse":                             7607,
+		"k_EMsgSQLGCToGCGrantBadgePoints":                                     7608,
+		"k_EMsgGCToGCCheckOwnsEntireEmoticonRange":                            7611,
+		"k_EMsgGCToGCCheckOwnsEntireEmoticonRangeResponse":                    7612,
+		"k_EMsgGCToClientRequestLaneSelection":                                7623,
+		"k_EMsgGCToClientRequestLaneSelectionResponse":                        7624,
+		"k_EMsgServerToGCCavernCrawlIsHeroActive":                             7625,
+		"k_EMsgServerToGCCavernCrawlIsHeroActiveResponse":                     7626,
+		"k_EMsgClientToGCPlayerCardSpecificPurchaseRequest":                   7627,
+		"k_EMsgClientToGCPlayerCardSpecificPurchaseResponse":                  7628,
+		"k_EMsgSQLSetIsLeagueAdmin":                                           7630,
+		"k_EMsgGCToGCGetLiveLeagueMatches":                                    7631,
+		"k_EMsgGCToGCGetLiveLeagueMatchesResponse":                            7632,
+		"k_EMsgDOTALeagueInfoListAdminsRequest":                               7633,
+		"k_EMsgDOTALeagueInfoListAdminsReponse":                               7634,
+		"k_EMsgGCToGCLeagueMatchStarted":                                      7645,
+		"k_EMsgGCToGCLeagueMatchCompleted":                                    7646,
+		"k_EMsgGCToGCLeagueMatchStartedResponse":                              7647,
+		"k_EMsgDOTALeagueAvailableLobbyNodesRequest":                          7650,
+		"k_EMsgDOTALeagueAvailableLobbyNodes":                                 7651,
+		"k_EMsgGCToGCLeagueRequest":                                           7652,
+		"k_EMsgGCToGCLeagueResponse":                                          7653,
+		"k_EMsgGCToGCLeagueNodeGroupRequest":                                  7654,
+		"k_EMsgGCToGCLeagueNodeGroupResponse":                                 7655,
+		"k_EMsgGCToGCLeagueNodeRequest":                                       7656,
+		"k_EMsgGCToGCLeagueNodeResponse":                                      7657,
+		"k_EMsgGCToGCRealtimeStatsTerseRequest":                               7658,
+		"k_EMsgGCToGCRealtimeStatsTerseResponse":                              7659,
+		"k_EMsgGCToGCGetTopMatchesRequest":                                    7660,
+		"k_EMsgGCToGCGetTopMatchesResponse":                                   7661,
+		"k_EMsgClientToGCGetFilteredPlayers":                                  7662,
+		"k_EMsgGCToClientGetFilteredPlayersResponse":                          7663,
+		"k_EMsgClientToGCRemoveFilteredPlayer":                                7664,
+		"k_EMsgGCToClientRemoveFilteredPlayerResponse":                        7665,
+		"k_EMsgGCToClientPlayerBeaconState":                                   7666,
+		"k_EMsgGCToClientPartyBeaconUpdate":                                   7667,
+		"k_EMsgGCToClientPartySearchInvite":                                   7668,
+		"k_EMsgClientToGCUpdatePartyBeacon":                                   7669,
+		"k_EMsgClientToGCRequestActiveBeaconParties":                          7670,
+		"k_EMsgGCToClientRequestActiveBeaconPartiesResponse":                  7671,
+		"k_EMsgClientToGCManageFavorites":                                     7672,
+		"k_EMsgGCToClientManageFavoritesResponse":                             7673,
+		"k_EMsgClientToGCJoinPartyFromBeacon":                                 7674,
+		"k_EMsgGCToClientJoinPartyFromBeaconResponse":                         7675,
+		"k_EMsgClientToGCGetFavoritePlayers":                                  7676,
+		"k_EMsgGCToClientGetFavoritePlayersResponse":                          7677,
+		"k_EMsgClientToGCVerifyFavoritePlayers":                               7678,
+		"k_EMsgGCToClientVerifyFavoritePlayersResponse":                       7679,
+		"k_EMsgGCToClientPartySearchInvites":                                  7680,
+		"k_EMsgGCToClientRequestMMInfo":                                       7681,
+		"k_EMsgClientToGCMMInfo":                                              7682,
+		"k_EMsgSignOutTextMuteInfo":                                           7683,
+		"k_EMsgClientToGCPurchaseLabyrinthBlessings":                          7684,
+		"k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse":                  7685,
+		"k_EMsgClientToGCPurchaseFilteredPlayerSlot":                          7686,
+		"k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse":                  7687,
+		"k_EMsgClientToGCUpdateFilteredPlayerNote":                            7688,
+		"k_EMsgGCToClientUpdateFilteredPlayerNoteResponse":                    7689,
+		"k_EMsgClientToGCClaimSwag":                                           7690,
+		"k_EMsgGCToClientClaimSwagResponse":                                   7691,
+		"k_EMsgServerToGCLockCharmTrading":                                    8004,
+		"k_EMsgClientToGCPlayerStatsRequest":                                  8006,
+		"k_EMsgGCToClientPlayerStatsResponse":                                 8007,
+		"k_EMsgGCClearPracticeLobbyTeam":                                      8008,
+		"k_EMsgClientToGCFindTopSourceTVGames":                                8009,
+		"k_EMsgGCToClientFindTopSourceTVGamesResponse":                        8010,
+		"k_EMsgGCLobbyList":                                                   8011,
+		"k_EMsgGCLobbyListResponse":                                           8012,
+		"k_EMsgGCPlayerStatsMatchSignOut":                                     8013,
+		"k_EMsgClientToGCSocialFeedPostCommentRequest":                        8016,
+		"k_EMsgGCToClientSocialFeedPostCommentResponse":                       8017,
+		"k_EMsgClientToGCCustomGamesFriendsPlayedRequest":                     8018,
+		"k_EMsgGCToClientCustomGamesFriendsPlayedResponse":                    8019,
+		"k_EMsgClientToGCFriendsPlayedCustomGameRequest":                      8020,
+		"k_EMsgGCToClientFriendsPlayedCustomGameResponse":                     8021,
+		"k_EMsgGCTopCustomGamesList":                                          8024,
+		"k_EMsgClientToGCSetPartyOpen":                                        8029,
+		"k_EMsgClientToGCMergePartyInvite":                                    8030,
+		"k_EMsgGCToClientMergeGroupInviteReply":                               8031,
+		"k_EMsgClientToGCMergePartyResponse":                                  8032,
+		"k_EMsgGCToClientMergePartyResponseReply":                             8033,
+		"k_EMsgClientToGCGetProfileCardStats":                                 8034,
+		"k_EMsgClientToGCGetProfileCardStatsResponse":                         8035,
+		"k_EMsgClientToGCTopLeagueMatchesRequest":                             8036,
+		"k_EMsgClientToGCTopFriendMatchesRequest":                             8037,
+		"k_EMsgGCToClientProfileCardStatsUpdated":                             8040,
+		"k_EMsgServerToGCRealtimeStats":                                       8041,
+		"k_EMsgGCToServerRealtimeStatsStartStop":                              8042,
+		"k_EMsgGCToGCGetServersForClients":                                    8045,
+		"k_EMsgGCToGCGetServersForClientsResponse":                            8046,
+		"k_EMsgGCPracticeLobbyKickFromTeam":                                   8047,
+		"k_EMsgDOTAChatGetMemberCount":                                        8048,
+		"k_EMsgDOTAChatGetMemberCountResponse":                                8049,
+		"k_EMsgClientToGCSocialFeedPostMessageRequest":                        8050,
+		"k_EMsgGCToClientSocialFeedPostMessageResponse":                       8051,
+		"k_EMsgCustomGameListenServerStartedLoading":                          8052,
+		"k_EMsgCustomGameClientFinishedLoading":                               8053,
+		"k_EMsgGCPracticeLobbyCloseBroadcastChannel":                          8054,
+		"k_EMsgGCStartFindingMatchResponse":                                   8055,
+		"k_EMsgSQLGCToGCGrantAccountFlag":                                     8057,
+		"k_EMsgGCToClientTopLeagueMatchesResponse":                            8061,
+		"k_EMsgGCToClientTopFriendMatchesResponse":                            8062,
+		"k_EMsgClientToGCMatchesMinimalRequest":                               8063,
+		"k_EMsgClientToGCMatchesMinimalResponse":                              8064,
+		"k_EMsgGCToClientChatRegionsEnabled":                                  8067,
+		"k_EMsgClientToGCPingData":                                            8068,
+		"k_EMsgGCToGCEnsureAccountInParty":                                    8071,
+		"k_EMsgGCToGCEnsureAccountInPartyResponse":                            8072,
+		"k_EMsgClientToGCGetProfileTickets":                                   8073,
+		"k_EMsgClientToGCGetProfileTicketsResponse":                           8074,
+		"k_EMsgGCToClientMatchGroupsVersion":                                  8075,
+		"k_EMsgClientToGCH264Unsupported":                                     8076,
+		"k_EMsgClientToGCWatchingBroadcast":                                   8077,
+		"k_EMsgClientToGCGetQuestProgress":                                    8078,
+		"k_EMsgClientToGCGetQuestProgressResponse":                            8079,
+		"k_EMsgSignOutXPCoins":                                                8080,
+		"k_EMsgGCToClientMatchSignedOut":                                      8081,
+		"k_EMsgGCGetHeroStatsHistory":                                         8082,
+		"k_EMsgGCGetHeroStatsHistoryResponse":                                 8083,
+		"k_EMsgClientToGCPrivateChatInvite":                                   8084,
+		"k_EMsgClientToGCPrivateChatKick":                                     8088,
+		"k_EMsgClientToGCPrivateChatPromote":                                  8089,
+		"k_EMsgClientToGCPrivateChatDemote":                                   8090,
+		"k_EMsgGCToClientPrivateChatResponse":                                 8091,
+		"k_EMsgClientToGCLatestConductScorecardRequest":                       8095,
+		"k_EMsgClientToGCLatestConductScorecard":                              8096,
+		"k_EMsgClientToGCWageringRequest":                                     8099,
+		"k_EMsgGCToClientWageringResponse":                                    8100,
+		"k_EMsgClientToGCEventGoalsRequest":                                   8103,
+		"k_EMsgClientToGCEventGoalsResponse":                                  8104,
+		"k_EMsgGCToGCLeaguePredictionsUpdate":                                 8108,
+		"k_EMsgGCToGCAddUserToPostGameChat":                                   8110,
+		"k_EMsgClientToGCHasPlayerVotedForMVP":                                8111,
+		"k_EMsgClientToGCHasPlayerVotedForMVPResponse":                        8112,
+		"k_EMsgClientToGCVoteForMVP":                                          8113,
+		"k_EMsgClientToGCVoteForMVPResponse":                                  8114,
+		"k_EMsgGCToGCGetEventParticipation":                                   8115,
+		"k_EMsgGCToGCGetEventParticipationResponse":                           8116,
+		"k_EMsgGCToClientAutomatedTournamentStateChange":                      8117,
+		"k_EMsgClientToGCWeekendTourneyOpts":                                  8118,
+		"k_EMsgClientToGCWeekendTourneyOptsResponse":                          8119,
+		"k_EMsgClientToGCWeekendTourneyLeave":                                 8120,
+		"k_EMsgClientToGCWeekendTourneyLeaveResponse":                         8121,
+		"k_EMsgClientToGCTeammateStatsRequest":                                8124,
+		"k_EMsgClientToGCTeammateStatsResponse":                               8125,
+		"k_EMsgClientToGCGetGiftPermissions":                                  8126,
+		"k_EMsgClientToGCGetGiftPermissionsResponse":                          8127,
+		"k_EMsgClientToGCVoteForArcana":                                       8128,
+		"k_EMsgClientToGCVoteForArcanaResponse":                               8129,
+		"k_EMsgClientToGCRequestArcanaVotesRemaining":                         8130,
+		"k_EMsgClientToGCRequestArcanaVotesRemainingResponse":                 8131,
+		"k_EMsgGCTransferTeamAdminResponse":                                   8132,
+		"k_EMsgGCToClientTeamInfo":                                            8135,
+		"k_EMsgGCToClientTeamsInfo":                                           8136,
+		"k_EMsgClientToGCMyTeamInfoRequest":                                   8137,
+		"k_EMsgClientToGCPublishUserStat":                                     8140,
+		"k_EMsgGCToGCSignoutSpendWager":                                       8141,
+		"k_EMsgGCSubmitLobbyMVPVote":                                          8144,
+		"k_EMsgGCSubmitLobbyMVPVoteResponse":                                  8145,
+		"k_EMsgSignOutCommunityGoalProgress":                                  8150,
+		"k_EMsgGCToClientLobbyMVPAwarded":                                     8152,
+		"k_EMsgGCToClientQuestProgressUpdated":                                8153,
+		"k_EMsgGCToClientWageringUpdate":                                      8154,
+		"k_EMsgGCToClientArcanaVotesUpdate":                                   8155,
+		"k_EMsgClientToGCSetSpectatorLobbyDetails":                            8157,
+		"k_EMsgClientToGCSetSpectatorLobbyDetailsResponse":                    8158,
+		"k_EMsgClientToGCCreateSpectatorLobby":                                8159,
+		"k_EMsgClientToGCCreateSpectatorLobbyResponse":                        8160,
+		"k_EMsgClientToGCSpectatorLobbyList":                                  8161,
+		"k_EMsgClientToGCSpectatorLobbyListResponse":                          8162,
+		"k_EMsgSpectatorLobbyGameDetails":                                     8163,
+		"k_EMsgServerToGCCompendiumInGamePredictionResults":                   8166,
+		"k_EMsgServerToGCCloseCompendiumInGamePredictionVoting":               8167,
+		"k_EMsgClientToGCOpenPlayerCardPack":                                  8168,
+		"k_EMsgClientToGCOpenPlayerCardPackResponse":                          8169,
+		"k_EMsgClientToGCSelectCompendiumInGamePrediction":                    8170,
+		"k_EMsgClientToGCSelectCompendiumInGamePredictionResponse":            8171,
+		"k_EMsgClientToGCWeekendTourneyGetPlayerStats":                        8172,
+		"k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse":                8173,
+		"k_EMsgClientToGCRecyclePlayerCard":                                   8174,
+		"k_EMsgClientToGCRecyclePlayerCardResponse":                           8175,
+		"k_EMsgClientToGCCreatePlayerCardPack":                                8176,
+		"k_EMsgClientToGCCreatePlayerCardPackResponse":                        8177,
+		"k_EMsgClientToGCGetPlayerCardRosterRequest":                          8178,
+		"k_EMsgClientToGCGetPlayerCardRosterResponse":                         8179,
+		"k_EMsgClientToGCSetPlayerCardRosterRequest":                          8180,
+		"k_EMsgClientToGCSetPlayerCardRosterResponse":                         8181,
+		"k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse":       8183,
+		"k_EMsgLobbyBattleCupVictory":                                         8186,
+		"k_EMsgGCGetPlayerCardItemInfo":                                       8187,
+		"k_EMsgGCGetPlayerCardItemInfoResponse":                               8188,
+		"k_EMsgClientToGCRequestSteamDatagramTicket":                          8189,
+		"k_EMsgClientToGCRequestSteamDatagramTicketResponse":                  8190,
+		"k_EMsgGCToClientBattlePassRollupRequest":                             8191,
+		"k_EMsgGCToClientBattlePassRollupResponse":                            8192,
+		"k_EMsgClientToGCTransferSeasonalMMRRequest":                          8193,
+		"k_EMsgClientToGCTransferSeasonalMMRResponse":                         8194,
+		"k_EMsgGCToGCPublicChatCommunicationBan":                              8195,
+		"k_EMsgGCToGCUpdateAccountInfo":                                       8196,
+		"k_EMsgGCChatReportPublicSpam":                                        8197,
+		"k_EMsgClientToGCSetPartyBuilderOptions":                              8198,
+		"k_EMsgClientToGCSetPartyBuilderOptionsResponse":                      8199,
+		"k_EMsgGCToClientPlaytestStatus":                                      8200,
+		"k_EMsgClientToGCJoinPlaytest":                                        8201,
+		"k_EMsgClientToGCJoinPlaytestResponse":                                8202,
+		"k_EMsgLobbyPlaytestDetails":                                          8203,
+		"k_EMsgDOTASetFavoriteTeam":                                           8204,
+		"k_EMsgGCToClientBattlePassRollupListRequest":                         8205,
+		"k_EMsgGCToClientBattlePassRollupListResponse":                        8206,
+		"k_EMsgDOTAClaimEventAction":                                          8209,
+		"k_EMsgDOTAClaimEventActionResponse":                                  8210,
+		"k_EMsgDOTAGetPeriodicResource":                                       8211,
+		"k_EMsgDOTAGetPeriodicResourceResponse":                               8212,
+		"k_EMsgDOTAPeriodicResourceUpdated":                                   8213,
+		"k_EMsgServerToGCSpendWager":                                          8214,
+		"k_EMsgGCToGCSignoutSpendWagerToken":                                  8215,
+		"k_EMsgSubmitTriviaQuestionAnswer":                                    8216,
+		"k_EMsgSubmitTriviaQuestionAnswerResponse":                            8217,
+		"k_EMsgClientToGCGiveTip":                                             8218,
+		"k_EMsgClientToGCGiveTipResponse":                                     8219,
+		"k_EMsgStartTriviaSession":                                            8220,
+		"k_EMsgStartTriviaSessionResponse":                                    8221,
+		"k_EMsgAnchorPhoneNumberRequest":                                      8222,
+		"k_EMsgAnchorPhoneNumberResponse":                                     8223,
+		"k_EMsgUnanchorPhoneNumberRequest":                                    8224,
+		"k_EMsgUnanchorPhoneNumberResponse":                                   8225,
+		"k_EMsgGCToGCSignoutSpendRankWager":                                   8229,
+		"k_EMsgGCToGCGetFavoriteTeam":                                         8230,
+		"k_EMsgGCToGCGetFavoriteTeamResponse":                                 8231,
+		"k_EMsgSignOutEventGameData":                                          8232,
+		"k_EMsgClientToGCQuickStatsRequest":                                   8238,
+		"k_EMsgClientToGCQuickStatsResponse":                                  8239,
+		"k_EMsgGCToGCSubtractEventPointsFromUser":                             8240,
+		"k_EMsgSelectionPriorityChoiceRequest":                                8241,
+		"k_EMsgSelectionPriorityChoiceResponse":                               8242,
+		"k_EMsgGCToGCCompendiumInGamePredictionResults":                       8243,
+		"k_EMsgGameAutographReward":                                           8244,
+		"k_EMsgGameAutographRewardResponse":                                   8245,
+		"k_EMsgDestroyLobbyRequest":                                           8246,
+		"k_EMsgDestroyLobbyResponse":                                          8247,
+		"k_EMsgPurchaseItemWithEventPoints":                                   8248,
+		"k_EMsgPurchaseItemWithEventPointsResponse":                           8249,
+		"k_EMsgServerToGCMatchPlayerItemPurchaseHistory":                      8250,
+		"k_EMsgGCToGCGrantPlusHeroMatchResults":                               8251,
+		"k_EMsgServerToGCMatchStateHistory":                                   8255,
+		"k_EMsgPurchaseHeroRandomRelic":                                       8258,
+		"k_EMsgPurchaseHeroRandomRelicResponse":                               8259,
+		"k_EMsgClientToGCClaimEventActionUsingItem":                           8260,
+		"k_EMsgClientToGCClaimEventActionUsingItemResponse":                   8261,
+		"k_EMsgPartyReadyCheckRequest":                                        8262,
+		"k_EMsgPartyReadyCheckResponse":                                       8263,
+		"k_EMsgPartyReadyCheckAcknowledge":                                    8264,
+		"k_EMsgGetRecentPlayTimeFriendsRequest":                               8265,
+		"k_EMsgGetRecentPlayTimeFriendsResponse":                              8266,
+		"k_EMsgGCToClientCommendNotification":                                 8267,
+		"k_EMsgProfileRequest":                                                8268,
+		"k_EMsgProfileResponse":                                               8269,
+		"k_EMsgProfileUpdate":                                                 8270,
+		"k_EMsgProfileUpdateResponse":                                         8271,
+		"k_EMsgHeroGlobalDataRequest":                                         8274,
+		"k_EMsgHeroGlobalDataResponse":                                        8275,
+		"k_EMsgClientToGCRequestPlusWeeklyChallengeResult":                    8276,
+		"k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse":            8277,
+		"k_EMsgGCToGCGrantPlusPrepaidTime":                                    8278,
+		"k_EMsgPrivateMetadataKeyRequest":                                     8279,
+		"k_EMsgPrivateMetadataKeyResponse":                                    8280,
+		"k_EMsgGCToGCReconcilePlusStatus":                                     8281,
+		"k_EMsgGCToGCCheckPlusStatus":                                         8282,
+		"k_EMsgGCToGCCheckPlusStatusResponse":                                 8283,
+		"k_EMsgGCToGCReconcilePlusAutoGrantItems":                             8284,
+		"k_EMsgGCToGCReconcilePlusStatusUnreliable":                           8285,
+		"k_EMsgGCToClientCavernCrawlMapPathCompleted":                         8288,
+		"k_EMsgClientToGCCavernCrawlClaimRoom":                                8289,
+		"k_EMsgClientToGCCavernCrawlClaimRoomResponse":                        8290,
+		"k_EMsgClientToGCCavernCrawlUseItemOnRoom":                            8291,
+		"k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse":                    8292,
+		"k_EMsgClientToGCCavernCrawlUseItemOnPath":                            8293,
+		"k_EMsgClientToGCCavernCrawlUseItemOnPathResponse":                    8294,
+		"k_EMsgClientToGCCavernCrawlRequestMapState":                          8295,
+		"k_EMsgClientToGCCavernCrawlRequestMapStateResponse":                  8296,
+		"k_EMsgSignOutTips":                                                   8297,
+		"k_EMsgClientToGCRequestEventPointLogV2":                              8298,
+		"k_EMsgClientToGCRequestEventPointLogResponseV2":                      8299,
+		"k_EMsgClientToGCRequestEventTipsSummary":                             8300,
+		"k_EMsgClientToGCRequestEventTipsSummaryResponse":                     8301,
+		"k_EMsgClientToGCRequestSocialFeed":                                   8303,
+		"k_EMsgClientToGCRequestSocialFeedResponse":                           8304,
+		"k_EMsgClientToGCRequestSocialFeedComments":                           8305,
+		"k_EMsgClientToGCRequestSocialFeedCommentsResponse":                   8306,
+		"k_EMsgClientToGCCavernCrawlGetClaimedRoomCount":                      8308,
+		"k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse":              8309,
+		"k_EMsgGCToGCReconcilePlusAutoGrantItemsUnreliable":                   8310,
+		"k_EMsgServerToGCAddBroadcastTimelineEvent":                           8311,
+		"k_EMsgGCToServerUpdateSteamBroadcasting":                             8312,
+		"k_EMsgClientToGCRecordContestVote":                                   8313,
+		"k_EMsgGCToClientRecordContestVoteResponse":                           8314,
+		"k_EMsgGCToGCGrantAutograph":                                          8315,
+		"k_EMsgGCToGCGrantAutographResponse":                                  8316,
+		"k_EMsgSignOutConsumableUsage":                                        8317,
+		"k_EMsgLobbyEventGameDetails":                                         8318,
+		"k_EMsgDevGrantEventPoints":                                           8319,
+		"k_EMsgDevGrantEventPointsResponse":                                   8320,
+		"k_EMsgDevGrantEventAction":                                           8321,
+		"k_EMsgDevGrantEventActionResponse":                                   8322,
+		"k_EMsgDevResetEventState":                                            8323,
+		"k_EMsgDevResetEventStateResponse":                                    8324,
+		"k_EMsgGCToGCReconcileEventOwnership":                                 8325,
+		"k_EMsgConsumeEventSupportGrantItem":                                  8326,
+		"k_EMsgConsumeEventSupportGrantItemResponse":                          8327,
+		"k_EMsgGCToClientClaimEventActionUsingItemCompleted":                  8328,
+		"k_EMsgGCToClientCavernCrawlMapUpdated":                               8329,
+		"k_EMsgServerToGCRequestPlayerRecentAccomplishments":                  8330,
+		"k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse":          8331,
+		"k_EMsgClientToGCRequestPlayerRecentAccomplishments":                  8332,
+		"k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse":          8333,
+		"k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments":              8334,
+		"k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse":      8335,
+		"k_EMsgSignOutEventActionGrants":                                      8336,
+		"k_EMsgClientToGCRequestPlayerCoachMatches":                           8337,
+		"k_EMsgClientToGCRequestPlayerCoachMatchesResponse":                   8338,
+		"k_EMsgClientToGCSubmitCoachTeammateRating":                           8341,
+		"k_EMsgClientToGCSubmitCoachTeammateRatingResponse":                   8342,
+		"k_EMsgGCToClientCoachTeammateRatingsChanged":                         8343,
+		"k_EMsgClientToGCRequestPlayerCoachMatch":                             8345,
+		"k_EMsgClientToGCRequestPlayerCoachMatchResponse":                     8346,
+		"k_EMsgClientToGCRequestContestVotes":                                 8347,
+		"k_EMsgClientToGCRequestContestVotesResponse":                         8348,
+		"k_EMsgClientToGCMVPVoteTimeout":                                      8349,
+		"k_EMsgClientToGCMVPVoteTimeoutResponse":                              8350,
+		"k_EMsgMatchMatchmakingStats":                                         8360,
+		"k_EMsgClientToGCSubmitPlayerMatchSurvey":                             8361,
+		"k_EMsgClientToGCSubmitPlayerMatchSurveyResponse":                     8362,
+		"k_EMsgSQLGCToGCGrantAllHeroProgressAccount":                          8363,
+		"k_EMsgSQLGCToGCGrantAllHeroProgressVictory":                          8364,
+		"k_EMsgDevDeleteEventActions":                                         8365,
+		"k_EMsgDevDeleteEventActionsResponse":                                 8366,
+		"k_EMsgDevReloadAllEvents":                                            8367,
+		"k_EMsgDevReloadAllEventsResponse":                                    8368,
+		"k_EMsgGCToGCGetAllHeroCurrent":                                       8635,
+		"k_EMsgGCToGCGetAllHeroCurrentResponse":                               8636,
+		"k_EMsgGCSubmitPlayerAvoidRequest":                                    8637,
+		"k_EMsgGCSubmitPlayerAvoidRequestResponse":                            8638,
+		"k_EMsgGCToClientNotificationsUpdated":                                8639,
+		"k_EMsgGCtoGCAssociatedExploiterAccountInfo":                          8640,
+		"k_EMsgGCtoGCAssociatedExploiterAccountInfoResponse":                  8641,
+		"k_EMsgGCtoGCRequestRecalibrationCheck":                               8642,
+		"k_EMsgGCToClientVACReminder":                                         8643,
+		"k_EMsgClientToGCUnderDraftBuy":                                       8644,
+		"k_EMsgClientToGCUnderDraftBuyResponse":                               8645,
+		"k_EMsgClientToGCUnderDraftReroll":                                    8646,
+		"k_EMsgClientToGCUnderDraftRerollResponse":                            8647,
+		"k_EMsgNeutralItemStats":                                              8648,
+		"k_EMsgClientToGCCreateGuild":                                         8649,
+		"k_EMsgClientToGCCreateGuildResponse":                                 8650,
+		"k_EMsgClientToGCSetGuildInfo":                                        8651,
+		"k_EMsgClientToGCSetGuildInfoResponse":                                8652,
+		"k_EMsgClientToGCAddGuildRole":                                        8653,
+		"k_EMsgClientToGCAddGuildRoleResponse":                                8654,
+		"k_EMsgClientToGCModifyGuildRole":                                     8655,
+		"k_EMsgClientToGCModifyGuildRoleResponse":                             8656,
+		"k_EMsgClientToGCRemoveGuildRole":                                     8657,
+		"k_EMsgClientToGCRemoveGuildRoleResponse":                             8658,
+		"k_EMsgClientToGCJoinGuild":                                           8659,
+		"k_EMsgClientToGCJoinGuildResponse":                                   8660,
+		"k_EMsgClientToGCLeaveGuild":                                          8661,
+		"k_EMsgClientToGCLeaveGuildResponse":                                  8662,
+		"k_EMsgClientToGCInviteToGuild":                                       8663,
+		"k_EMsgClientToGCInviteToGuildResponse":                               8664,
+		"k_EMsgClientToGCDeclineInviteToGuild":                                8665,
+		"k_EMsgClientToGCDeclineInviteToGuildResponse":                        8666,
+		"k_EMsgClientToGCCancelInviteToGuild":                                 8667,
+		"k_EMsgClientToGCCancelInviteToGuildResponse":                         8668,
+		"k_EMsgClientToGCKickGuildMember":                                     8669,
+		"k_EMsgClientToGCKickGuildMemberResponse":                             8670,
+		"k_EMsgClientToGCSetGuildMemberRole":                                  8671,
+		"k_EMsgClientToGCSetGuildMemberRoleResponse":                          8672,
+		"k_EMsgClientToGCRequestGuildData":                                    8673,
+		"k_EMsgClientToGCRequestGuildDataResponse":                            8674,
+		"k_EMsgGCToClientGuildDataUpdated":                                    8675,
+		"k_EMsgClientToGCRequestGuildMembership":                              8676,
+		"k_EMsgClientToGCRequestGuildMembershipResponse":                      8677,
+		"k_EMsgGCToClientGuildMembershipUpdated":                              8678,
+		"k_EMsgClientToGCAcceptInviteToGuild":                                 8681,
+		"k_EMsgClientToGCAcceptInviteToGuildResponse":                         8682,
+		"k_EMsgClientToGCSetGuildRoleOrder":                                   8683,
+		"k_EMsgClientToGCSetGuildRoleOrderResponse":                           8684,
+		"k_EMsgClientToGCRequestGuildFeed":                                    8685,
+		"k_EMsgClientToGCRequestGuildFeedResponse":                            8686,
+		"k_EMsgClientToGCRequestAccountGuildEventData":                        8687,
+		"k_EMsgClientToGCRequestAccountGuildEventDataResponse":                8688,
+		"k_EMsgGCToClientAccountGuildEventDataUpdated":                        8689,
+		"k_EMsgClientToGCRequestActiveGuildContracts":                         8690,
+		"k_EMsgClientToGCRequestActiveGuildContractsResponse":                 8691,
+		"k_EMsgGCToClientActiveGuildContractsUpdated":                         8692,
+		"k_EMsgGCToClientGuildFeedUpdated":                                    8693,
+		"k_EMsgClientToGCSelectGuildContract":                                 8694,
+		"k_EMsgClientToGCSelectGuildContractResponse":                         8695,
+		"k_EMsgGCToGCCompleteGuildContracts":                                  8696,
+		"k_EMsgClientToGCAddPlayerToGuildChat":                                8698,
+		"k_EMsgClientToGCAddPlayerToGuildChatResponse":                        8699,
+		"k_EMsgClientToGCUnderDraftSell":                                      8700,
+		"k_EMsgClientToGCUnderDraftSellResponse":                              8701,
+		"k_EMsgClientToGCUnderDraftRequest":                                   8702,
+		"k_EMsgClientToGCUnderDraftResponse":                                  8703,
+		"k_EMsgClientToGCUnderDraftRedeemReward":                              8704,
+		"k_EMsgClientToGCUnderDraftRedeemRewardResponse":                      8705,
+		"k_EMsgGCToServerLobbyHeroBanRates":                                   8708,
+		"k_EMsgSignOutGuildContractProgress":                                  8711,
+		"k_EMsgSignOutMVPStats":                                               8712,
+		"k_EMsgClientToGCRequestActiveGuildChallenge":                         8713,
+		"k_EMsgClientToGCRequestActiveGuildChallengeResponse":                 8714,
+		"k_EMsgGCToClientActiveGuildChallengeUpdated":                         8715,
+		"k_EMsgClientToGCRequestReporterUpdates":                              8716,
+		"k_EMsgClientToGCRequestReporterUpdatesResponse":                      8717,
+		"k_EMsgClientToGCAcknowledgeReporterUpdates":                          8718,
+		"k_EMsgSignOutGuildChallengeProgress":                                 8720,
+		"k_EMsgClientToGCRequestGuildEventMembers":                            8721,
+		"k_EMsgClientToGCRequestGuildEventMembersResponse":                    8722,
+		"k_EMsgClientToGCReportGuildContent":                                  8725,
+		"k_EMsgClientToGCReportGuildContentResponse":                          8726,
+		"k_EMsgClientToGCRequestAccountGuildPersonaInfo":                      8727,
+		"k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse":              8728,
+		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch":                 8729,
+		"k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse":         8730,
+		"k_EMsgGCToClientUnderDraftGoldUpdated":                               8731,
+		"k_EMsgSignOutBounties":                                               8733,
+		"k_EMsgLobbyFeaturedGamemodeProgress":                                 8734,
+		"k_EMsgLobbyGauntletProgress":                                         8735,
+		"k_EMsgClientToGCSubmitDraftTriviaMatchAnswer":                        8736,
+		"k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse":                8737,
+		"k_EMsgGCToGCSignoutSpendBounty":                                      8738,
+		"k_EMsgClientToGCApplyGauntletTicket":                                 8739,
+		"k_EMsgClientToGCUnderDraftRollBackBench":                             8740,
+		"k_EMsgClientToGCUnderDraftRollBackBenchResponse":                     8741,
+		"k_EMsgGCToGCGetEventActionScore":                                     8742,
+		"k_EMsgGCToGCGetEventActionScoreResponse":                             8743,
+		"k_EMsgServerToGCGetGuildContracts":                                   8744,
+		"k_EMsgServerToGCGetGuildContractsResponse":                           8745,
+		"k_EMsgLobbyEventGameData":                                            8746,
+		"k_EMsgGCToClientGuildMembersDataUpdated":                             8747,
+		"k_EMsgSignOutReportActivityMarkers":                                  8748,
+		"k_EMsgSignOutDiretideCandy":                                          8749,
+		"k_EMsgGCToClientPostGameItemAwardNotification":                       8750,
+		"k_EMsgClientToGCGetOWMatchDetails":                                   8751,
+		"k_EMsgClientToGCGetOWMatchDetailsResponse":                           8752,
+		"k_EMsgClientToGCSubmitOWConviction":                                  8753,
+		"k_EMsgClientToGCSubmitOWConvictionResponse":                          8754,
+		"k_EMsgGCToGCGetAccountSteamChina":                                    8755,
+		"k_EMsgGCToGCGetAccountSteamChinaResponse":                            8756,
+		"k_EMsgClientToGCClaimLeaderboardRewards":                             8757,
+		"k_EMsgClientToGCClaimLeaderboardRewardsResponse":                     8758,
+		"k_EMsgClientToGCRecalibrateMMR":                                      8759,
+		"k_EMsgClientToGCRecalibrateMMRResponse":                              8760,
+		"k_EMsgGCToGCGrantEventPointActionList":                               8761,
+		"k_EMsgClientToGCChinaSSAURLRequest":                                  8764,
+		"k_EMsgClientToGCChinaSSAURLResponse":                                 8765,
+		"k_EMsgClientToGCChinaSSAAcceptedRequest":                             8766,
+		"k_EMsgClientToGCChinaSSAAcceptedResponse":                            8767,
+		"k_EMsgSignOutOverwatchSuspicion":                                     8768,
+		"k_EMsgServerToGCGetSuspicionConfig":                                  8769,
+		"k_EMsgServerToGCGetSuspicionConfigResponse":                          8770,
+		"k_EMsgGCToGCGrantPlusHeroChallengeMatchResults":                      8771,
+		"k_EMsgGCToClientOverwatchCasesAvailable":                             8772,
+		"k_EMsgServerToGCAccountCheck":                                        8773,
+		"k_EMsgClientToGCStartWatchingOverwatch":                              8774,
+		"k_EMsgClientToGCStopWatchingOverwatch":                               8775,
+		"k_EMsgSignOutPerfData":                                               8776,
+		"k_EMsgClientToGCGetDPCFavorites":                                     8777,
+		"k_EMsgClientToGCGetDPCFavoritesResponse":                             8778,
+		"k_EMsgClientToGCSetDPCFavoriteState":                                 8779,
+		"k_EMsgClientToGCSetDPCFavoriteStateResponse":                         8780,
+		"k_EMsgClientToGCOverwatchReplayError":                                8781,
+		"k_EMsgServerToGCPlayerChallengeHistory":                              8782,
+		"k_EMsgSignOutBanData":                                                8783,
+		"k_EMsgWebapiDPCSeasonResults":                                        8784,
+		"k_EMsgClientToGCCoachFriend":                                         8785,
+		"k_EMsgClientToGCCoachFriendResponse":                                 8786,
+		"k_EMsgClientToGCRequestPrivateCoachingSession":                       8787,
+		"k_EMsgClientToGCRequestPrivateCoachingSessionResponse":               8788,
+		"k_EMsgClientToGCAcceptPrivateCoachingSession":                        8789,
+		"k_EMsgClientToGCAcceptPrivateCoachingSessionResponse":                8790,
+		"k_EMsgClientToGCLeavePrivateCoachingSession":                         8791,
+		"k_EMsgClientToGCLeavePrivateCoachingSessionResponse":                 8792,
+		"k_EMsgClientToGCGetCurrentPrivateCoachingSession":                    8793,
+		"k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse":            8794,
+		"k_EMsgGCToClientPrivateCoachingSessionUpdated":                       8795,
+		"k_EMsgClientToGCSubmitPrivateCoachingSessionRating":                  8796,
+		"k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse":          8797,
+		"k_EMsgClientToGCGetAvailablePrivateCoachingSessions":                 8798,
+		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse":         8799,
+		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary":          8800,
+		"k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse":  8801,
+		"k_EMsgClientToGCJoinPrivateCoachingSessionLobby":                     8802,
+		"k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse":             8803,
+		"k_EMsgClientToGCRespondToCoachFriendRequest":                         8804,
+		"k_EMsgClientToGCRespondToCoachFriendRequestResponse":                 8805,
+		"k_EMsgClientToGCSetEventActiveSeasonID":                              8806,
+		"k_EMsgClientToGCSetEventActiveSeasonIDResponse":                      8807,
+		"k_EMsgServerToGCMatchPlayerNeutralItemEquipHistory":                  8808,
+		"k_EMsgServerToGCCompendiumChosenInGamePredictions":                   8809,
+		"k_EMsgClientToGCCreateTeamPlayerCardPack":                            8810,
+		"k_EMsgClientToGCCreateTeamPlayerCardPackResponse":                    8811,
+		"k_EMsgGCToServerSubmitCheerData":                                     8812,
+		"k_EMsgGCToServerCheerConfig":                                         8813,
+		"k_EMsgServerToGCGetCheerConfig":                                      8814,
+		"k_EMsgServerToGCGetCheerConfigResponse":                              8815,
+		"k_EMsgGCToGCGrantAutographByID":                                      8816,
+		"k_EMsgGCToServerCheerScalesOverride":                                 8817,
+		"k_EMsgGCToServerGetCheerState":                                       8818,
+		"k_EMsgServerToGCReportCheerState":                                    8819,
+		"k_EMsgGCToServerScenarioSave":                                        8820,
+		"k_EMsgGCToServerAbilityDraftLobbyData":                               8821,
+		"k_EMsgSignOutReportCommunications":                                   8822,
+		"k_EMsgClientToGCBatchGetPlayerCardRosterRequest":                     8823,
+		"k_EMsgClientToGCBatchGetPlayerCardRosterResponse":                    8824,
+		"k_EMsgClientToGCGetStickerbookRequest":                               8825,
+		"k_EMsgClientToGCGetStickerbookResponse":                              8826,
+		"k_EMsgClientToGCCreateStickerbookPageRequest":                        8827,
+		"k_EMsgClientToGCCreateStickerbookPageResponse":                       8828,
+		"k_EMsgClientToGCDeleteStickerbookPageRequest":                        8829,
+		"k_EMsgClientToGCDeleteStickerbookPageResponse":                       8830,
+		"k_EMsgClientToGCPlaceStickersRequest":                                8831,
+		"k_EMsgClientToGCPlaceStickersResponse":                               8832,
+		"k_EMsgClientToGCPlaceCollectionStickersRequest":                      8833,
+		"k_EMsgClientToGCPlaceCollectionStickersResponse":                     8834,
+		"k_EMsgClientToGCOrderStickerbookTeamPageRequest":                     8835,
+		"k_EMsgClientToGCOrderStickerbookTeamPageResponse":                    8836,
+		"k_EMsgServerToGCGetStickerHeroes":                                    8837,
+		"k_EMsgServerToGCGetStickerHeroesResponse":                            8838,
+		"k_EMsgClientToGCCandyShopGetUserData":                                8840,
+		"k_EMsgClientToGCCandyShopGetUserDataResponse":                        8841,
+		"k_EMsgGCToClientCandyShopUserDataUpdated":                            8842,
+		"k_EMsgClientToGCCandyShopPurchaseReward":                             8843,
+		"k_EMsgClientToGCCandyShopPurchaseRewardResponse":                     8844,
+		"k_EMsgClientToGCCandyShopDoExchange":                                 8845,
+		"k_EMsgClientToGCCandyShopDoExchangeResponse":                         8846,
+		"k_EMsgClientToGCCandyShopDoVariableExchange":                         8847,
+		"k_EMsgClientToGCCandyShopDoVariableExchangeResponse":                 8848,
+		"k_EMsgClientToGCCandyShopRerollRewards":                              8849,
+		"k_EMsgClientToGCCandyShopRerollRewardsResponse":                      8850,
+		"k_EMsgClientToGCSetHeroSticker":                                      8851,
+		"k_EMsgClientToGCSetHeroStickerResponse":                              8852,
+		"k_EMsgClientToGCGetHeroStickers":                                     8853,
+		"k_EMsgClientToGCGetHeroStickersResponse":                             8854,
+		"k_EMsgClientToGCSetFavoritePage":                                     8855,
+		"k_EMsgClientToGCSetFavoritePageResponse":                             8856,
+		"k_EMsgClientToGCCandyShopDevGrantCandy":                              8857,
+		"k_EMsgClientToGCCandyShopDevGrantCandyResponse":                      8858,
+		"k_EMsgClientToGCCandyShopDevClearInventory":                          8859,
+		"k_EMsgClientToGCCandyShopDevClearInventoryResponse":                  8860,
+		"k_EMsgClientToGCCandyShopOpenBags":                                   8861,
+		"k_EMsgClientToGCCandyShopOpenBagsResponse":                           8862,
+		"k_EMsgClientToGCCandyShopDevGrantCandyBags":                          8863,
+		"k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse":                  8864,
+		"k_EMsgClientToGCCandyShopDevShuffleExchange":                         8865,
+		"k_EMsgClientToGCCandyShopDevShuffleExchangeResponse":                 8866,
+		"k_EMsgClientToGCCandyShopDevGrantRerollCharges":                      8867,
+		"k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse":              8868,
+		"k_EMsgLobbyAdditionalAccountData":                                    8869,
+		"k_EMsgServerToGCLobbyInitialized":                                    8870,
+		"k_EMsgClientToGCCollectorsCacheAvailableDataRequest":                 8871,
+		"k_EMsgGCToClientCollectorsCacheAvailableDataResponse":                8872,
+		"k_EMsgClientToGCUploadMatchClip":                                     8873,
+		"k_EMsgGCToClientUploadMatchClipResponse":                             8874,
+		"k_EMsgSignOutMuertaMinigame":                                         8877,
+		"k_EMsgGCToServerLobbyHeroRoleStats":                                  8878,
+		"k_EMsgClientToGCRankRequest":                                         8879,
+		"k_EMsgGCToClientRankResponse":                                        8880,
+		"k_EMsgGCToClientRankUpdate":                                          8881,
+		"k_EMsgSignOutMapStats":                                               8882,
+		"k_EMsgClientToGCMapStatsRequest":                                     8883,
+		"k_EMsgGCToClientMapStatsResponse":                                    8884,
+		"k_EMsgClientToGCShowcaseGetUserData":                                 8886,
+		"k_EMsgClientToGCShowcaseGetUserDataResponse":                         8887,
+		"k_EMsgClientToGCShowcaseSetUserData":                                 8888,
+		"k_EMsgClientToGCShowcaseSetUserDataResponse":                         8889,
+		"k_EMsgClientToGCFantasyCraftingGetData":                              8890,
+		"k_EMsgClientToGCFantasyCraftingGetDataResponse":                      8891,
+		"k_EMsgClientToGCFantasyCraftingPerformOperation":                     8892,
+		"k_EMsgClientToGCFantasyCraftingPerformOperationResponse":             8893,
+		"k_EMsgGCToClientFantasyCraftingGetDataUpdated":                       8894,
+		"k_EMsgClientToGCFantasyCraftingDevModifyTablet":                      8895,
+		"k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse":              8896,
+		"k_EMsgClientToGCRoadToTIGetQuests":                                   8897,
+		"k_EMsgClientToGCRoadToTIGetQuestsResponse":                           8898,
+		"k_EMsgClientToGCRoadToTIGetActiveQuest":                              8899,
+		"k_EMsgClientToGCRoadToTIGetActiveQuestResponse":                      8900,
+		"k_EMsgClientToGCBingoGetUserData":                                    8901,
+		"k_EMsgClientToGCBingoGetUserDataResponse":                            8902,
+		"k_EMsgClientToGCBingoClaimRow":                                       8903,
+		"k_EMsgClientToGCBingoClaimRowResponse":                               8904,
+		"k_EMsgClientToGCBingoDevRerollCard":                                  8905,
+		"k_EMsgClientToGCBingoDevRerollCardResponse":                          8906,
+		"k_EMsgClientToGCBingoGetStatsData":                                   8907,
+		"k_EMsgClientToGCBingoGetStatsDataResponse":                           8908,
+		"k_EMsgGCToClientBingoUserDataUpdated":                                8909,
+		"k_EMsgGCToClientRoadToTIQuestDataUpdated":                            8910,
+		"k_EMsgClientToGCRoadToTIUseItem":                                     8911,
+		"k_EMsgClientToGCRoadToTIUseItemResponse":                             8912,
+		"k_EMsgClientToGCShowcaseSubmitReport":                                8913,
+		"k_EMsgClientToGCShowcaseSubmitReportResponse":                        8914,
+		"k_EMsgClientToGCShowcaseAdminGetReportsRollupList":                   8915,
+		"k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse":           8916,
+		"k_EMsgClientToGCShowcaseAdminGetReportsRollup":                       8917,
+		"k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse":               8918,
+		"k_EMsgClientToGCShowcaseAdminGetUserDetails":                         8919,
+		"k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse":                 8920,
+		"k_EMsgClientToGCShowcaseAdminConvict":                                8921,
+		"k_EMsgClientToGCShowcaseAdminConvictResponse":                        8922,
+		"k_EMsgClientToGCShowcaseAdminExonerate":                              8923,
+		"k_EMsgClientToGCShowcaseAdminExonerateResponse":                      8924,
+		"k_EMsgClientToGCShowcaseAdminReset":                                  8925,
+		"k_EMsgClientToGCShowcaseAdminResetResponse":                          8926,
+		"k_EMsgClientToGCShowcaseAdminLockAccount":                            8927,
+		"k_EMsgClientToGCShowcaseAdminLockAccountResponse":                    8928,
+		"k_EMsgClientToGCFantasyCraftingSelectPlayer":                         8929,
+		"k_EMsgClientToGCFantasyCraftingSelectPlayerResponse":                 8930,
+		"k_EMsgClientToGCFantasyCraftingGenerateTablets":                      8931,
+		"k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse":              8932,
+		"k_EMsgClientToGcFantasyCraftingUpgradeTablets":                       8933,
+		"k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse":               8934,
+		"k_EMsgClientToGCFantasyCraftingRerollOptions":                        8936,
+		"k_EMsgClientToGCFantasyCraftingRerollOptionsResponse":                8937,
+		"k_EMsgClientToGCRoadToTIDevForceQuest":                               8935,
+		"k_EMsgLobbyRoadToTIMatchQuestData":                                   8939,
+		"k_EMsgClientToGCShowcaseModerationGetQueue":                          8940,
+		"k_EMsgClientToGCShowcaseModerationGetQueueResponse":                  8941,
+		"k_EMsgClientToGCShowcaseModerationApplyModeration":                   8942,
+		"k_EMsgClientToGCShowcaseModerationApplyModerationResponse":           8943,
+		"k_EMsgClientToGCOverworldGetUserData":                                8944,
+		"k_EMsgClientToGCOverworldGetUserDataResponse":                        8945,
+		"k_EMsgClientToGCOverworldCompletePath":                               8946,
+		"k_EMsgClientToGCOverworldCompletePathResponse":                       8947,
+		"k_EMsgClientToGCOverworldClaimEncounterReward":                       8948,
+		"k_EMsgClientToGCOverworldClaimEncounterRewardResponse":               8949,
+		"k_EMsgClientToGCOverworldDevResetAll":                                8950,
+		"k_EMsgClientToGCOverworldDevResetAllResponse":                        8951,
+		"k_EMsgClientToGCOverworldDevResetNode":                               8952,
+		"k_EMsgClientToGCOverworldDevResetNodeResponse":                       8953,
+		"k_EMsgClientToGCOverworldDevResetPath":                               8954,
+		"k_EMsgClientToGCOverworldDevResetPathResponse":                       8955,
+		"k_EMsgClientToGCOverworldDevGrantTokens":                             8956,
+		"k_EMsgClientToGCOverworldDevGrantTokensResponse":                     8957,
+		"k_EMsgClientToGCOverworldDevClearInventory":                          8958,
+		"k_EMsgClientToGCOverworldDevClearInventoryResponse":                  8959,
+		"k_EMsgServerToGCNewBloomGift":                                        8960,
+		"k_EMsgServerToGCNewBloomGiftResponse":                                8961,
+		"k_EMsgGCToClientOverworldUserDataUpdated":                            8962,
+		"k_EMsgClientToGCOverworldMoveToNode":                                 8963,
+		"k_EMsgClientToGCOverworldMoveToNodeResponse":                         8964,
+		"k_EMsgClientToGCNewBloomGift":                                        8965,
+		"k_EMsgClientToGCNewBloomGiftResponse":                                8966,
+		"k_EMsgSignOutOverworld":                                              8967,
+		"k_EMsgClientToGCSetBannedHeroes":                                     8969,
+		"k_EMsgClientToGCOverworldTradeTokens":                                8970,
+		"k_EMsgClientToGCOverworldTradeTokensResponse":                        8971,
+		"k_EMsgOverworldEncounterTokenTreasureData":                           8972,
+		"k_EMsgOverworldEncounterTokenQuestData":                              8973,
+		"k_EMsgOverworldEncounterChooseHeroData":                              8974,
+		"k_EMsgClientToGCUpdateComicBookStats":                                8975,
+		"k_EMsgClientToGCCandyShopDevResetShop":                               8976,
+		"k_EMsgClientToGCCandyShopDevResetShopResponse":                       8977,
+		"k_EMsgOverworldEncounterProgressData":                                8978,
+		"k_EMsgClientToGCOverworldFeedback":                                   8979,
+		"k_EMsgClientToGCOverworldFeedbackResponse":                           8980,
+		"k_EMsgClientToGCOverworldVisitEncounter":                             8981,
+		"k_EMsgClientToGCOverworldVisitEncounterResponse":                     8982,
+		"k_EMsgClientToGCOverworldGiftTokens":                                 8983,
+		"k_EMsgClientToGCOverworldGiftTokensResponse":                         8984,
+		"k_EMsgClientToGCDotaLabsFeedback":                                    8985,
+		"k_EMsgClientToGCDotaLabsFeedbackResponse":                            8986,
+		"k_EMsgOverworldEncounterPitFighterRewardData":                        8987,
+		"k_EMsgClientToGCOverworldGetDynamicImage":                            8988,
+		"k_EMsgClientToGCOverworldGetDynamicImageResponse":                    8989,
+		"k_EMsgClientToGCFightingGameChallengeFriend":                         8990,
+		"k_EMsgClientToGCFightingGameChallengeFriendResponse":                 8991,
+		"k_EMsgClientToGCFightingGameCancelChallengeFriend":                   8992,
+		"k_EMsgClientToGCFightingGameAnswerChallenge":                         8993,
+		"k_EMsgClientToGCFightingGameAnswerChallengeResponse":                 8994,
+		"k_EMsgGCToClientFightingGameChallenge":                               8995,
+		"k_EMsgGCToClientFightingGameStartMatch":                              8996,
+		"k_EMsgGCToClientFightingGameChallengeCanceled":                       8997,
+		"k_EMsgClientToGCBingoShuffleCard":                                    8999,
+		"k_EMsgClientToGCBingoShuffleCardResponse":                            9000,
+		"k_EMsgClientToGCBingoModifySquare":                                   9001,
+		"k_EMsgClientToGCBingoModifySquareResponse":                           9002,
+		"k_EMsgClientToGCBingoDevAddTokens":                                   9003,
+		"k_EMsgClientToGCBingoDevAddTokensResponse":                           9004,
+		"k_EMsgClientToGCBingoDevClearInventory":                              9005,
+		"k_EMsgClientToGCBingoDevClearInventoryResponse":                      9006,
+		"k_EMsgGCCompendiumRemoveAllSelections":                               9007,
+		"k_EMsgGCCompendiumRemoveAllSelectionsResponse":                       9008,
+		"k_EMsgClientToGCOverworldMinigameAction":                             9009,
+		"k_EMsgClientToGCOverworldMinigameActionResponse":                     9010,
+		"k_EMsgClientToGCSurvivorsTelemetry":                                  9011,
+		"k_EMsgClientToGCSurvivorsTelemetryResponse":                          9012,
+		"k_EMsgClientToGCOverworldRequestTokensNeededByFriend":                9013,
+		"k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse":        9014,
+		"k_EMsgClientToGCCraftworksGetUserData":                               9015,
+		"k_EMsgClientToGCCraftworksGetUserDataResponse":                       9016,
+		"k_EMsgGCToClientCraftworksUserDataUpdated":                           9017,
+		"k_EMsgClientToGCCraftworksCraftRecipe":                               9018,
+		"k_EMsgClientToGCCraftworksCraftRecipeResponse":                       9019,
+		"k_EMsgClientToGCCraftworksDevModifyComponents":                       9020,
+		"k_EMsgClientToGCCraftworksDevModifyComponentsResponse":               9021,
+		"k_EMsgSignOutCraftworks":                                             9022,
+		"k_EMsgClientToGCMonsterHunterGetUserData":                            9023,
+		"k_EMsgClientToGCMonsterHunterGetUserDataResponse":                    9024,
+		"k_EMsgClientToGCMonsterHunterClaimReward":                            9025,
+		"k_EMsgClientToGCMonsterHunterClaimRewardResponse":                    9026,
+		"k_EMsgClientToGCMonsterHunterTradeMaterials":                         9027,
+		"k_EMsgClientToGCMonsterHunterTradeMaterialsResponse":                 9028,
+		"k_EMsgClientToGCMonsterHunterGiftMaterials":                          9029,
+		"k_EMsgClientToGCMonsterHunterGiftMaterialsResponse":                  9030,
+		"k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend":         9031,
+		"k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse": 9032,
+		"k_EMsgClientToGCMonsterHunterDevResetAll":                            9033,
+		"k_EMsgClientToGCMonsterHunterDevResetAllResponse":                    9034,
+		"k_EMsgClientToGCMonsterHunterDevGrantMaterials":                      9035,
+		"k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse":              9036,
+		"k_EMsgClientToGCMonsterHunterDevClearInventory":                      9037,
+		"k_EMsgClientToGCMonsterHunterDevClearInventoryResponse":              9038,
+		"k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards":           9039,
+		"k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse":   9040,
+		"k_EMsgGCToClientMonsterHunterUserDataUpdated":                        9041,
+		"k_EMsgSignOutMonsterHunter":                                          9042,
+		"k_EMsgClientToGCClaimGatedEvent":                                     9043,
+		"k_EMsgClientToGCClaimGatedEventResponse":                             9044,
+		"k_EMsgClientToGCMonsterHunterDevModifyHeroCodex":                     9045,
+		"k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse":             9046,
+		"k_EMsgClientToGCMonsterHunterClaimCodexReward":                       9047,
+		"k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse":               9048,
+		"k_EMsgClientToGCMonsterHunterClaimSetReward":                         9049,
+		"k_EMsgClientToGCMonsterHunterClaimSetRewardResponse":                 9050,
+		"k_EMsgClientToGCGetEventRanking":                                     9107,
+		"k_EMsgClientToGCGetEventRankingResponse":                             9108,
+		"k_EMsgClientToGCGetEventCoupon":                                      9109,
+		"k_EMsgClientToGCGetEventCouponResponse":                              9110,
+		"k_EMsgClientToGCConvertEventPoints":                                  9111,
+		"k_EMsgClientToGCConvertEventPointsResponse":                          9112,
+		"k_EMsgServerToGCWarningLowServerFramerate":                           9113,
+		"k_EMsgServerToGCWarningInvalidBotAbilityUsage":                       9114,
+		"k_EMsgClientToGCInviteToDemoMode":                                    9115,
+		"k_EMsgGCToClientInviteToDemoMode":                                    9116,
 	}
 )
 
@@ -2950,7 +3073,7 @@ var File_dota_gcmessages_msgid_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"\n" +
-	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\xf6\xc5\x02\n" +
+	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\x8e\xd6\x02\n" +
 	"\n" +
 	"EDOTAGCMsg\x12\x15\n" +
 	"\x10k_EMsgGCDOTABase\x10\xd86\x12\x1d\n" +
@@ -3319,7 +3442,8 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"!k_EMsgClientToGCGetProfileTickets\x10\x89?\x12.\n" +
 	")k_EMsgClientToGCGetProfileTicketsResponse\x10\x8a?\x12'\n" +
 	"\"k_EMsgGCToClientMatchGroupsVersion\x10\x8b?\x12$\n" +
-	"\x1fk_EMsgClientToGCH264Unsupported\x10\x8c?\x12%\n" +
+	"\x1fk_EMsgClientToGCH264Unsupported\x10\x8c?\x12&\n" +
+	"!k_EMsgClientToGCWatchingBroadcast\x10\x8d?\x12%\n" +
 	" k_EMsgClientToGCGetQuestProgress\x10\x8e?\x12-\n" +
 	"(k_EMsgClientToGCGetQuestProgressResponse\x10\x8f?\x12\x19\n" +
 	"\x14k_EMsgSignOutXPCoins\x10\x90?\x12#\n" +
@@ -3542,7 +3666,9 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"*k_EMsgSQLGCToGCGrantAllHeroProgressAccount\x10\xabA\x12/\n" +
 	"*k_EMsgSQLGCToGCGrantAllHeroProgressVictory\x10\xacA\x12 \n" +
 	"\x1bk_EMsgDevDeleteEventActions\x10\xadA\x12(\n" +
-	"#k_EMsgDevDeleteEventActionsResponse\x10\xaeA\x12\"\n" +
+	"#k_EMsgDevDeleteEventActionsResponse\x10\xaeA\x12\x1d\n" +
+	"\x18k_EMsgDevReloadAllEvents\x10\xafA\x12%\n" +
+	" k_EMsgDevReloadAllEventsResponse\x10\xb0A\x12\"\n" +
 	"\x1dk_EMsgGCToGCGetAllHeroCurrent\x10\xbbC\x12*\n" +
 	"%k_EMsgGCToGCGetAllHeroCurrentResponse\x10\xbcC\x12%\n" +
 	" k_EMsgGCSubmitPlayerAvoidRequest\x10\xbdC\x12-\n" +
@@ -3910,7 +4036,45 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"-k_EMsgClientToGCCraftworksCraftRecipeResponse\x10\xbbF\x122\n" +
 	"-k_EMsgClientToGCCraftworksDevModifyComponents\x10\xbcF\x12:\n" +
 	"5k_EMsgClientToGCCraftworksDevModifyComponentsResponse\x10\xbdF\x12\x1c\n" +
-	"\x17k_EMsgSignOutCraftworks\x10\xbeF"
+	"\x17k_EMsgSignOutCraftworks\x10\xbeF\x12-\n" +
+	"(k_EMsgClientToGCMonsterHunterGetUserData\x10\xbfF\x125\n" +
+	"0k_EMsgClientToGCMonsterHunterGetUserDataResponse\x10\xc0F\x12-\n" +
+	"(k_EMsgClientToGCMonsterHunterClaimReward\x10\xc1F\x125\n" +
+	"0k_EMsgClientToGCMonsterHunterClaimRewardResponse\x10\xc2F\x120\n" +
+	"+k_EMsgClientToGCMonsterHunterTradeMaterials\x10\xc3F\x128\n" +
+	"3k_EMsgClientToGCMonsterHunterTradeMaterialsResponse\x10\xc4F\x12/\n" +
+	"*k_EMsgClientToGCMonsterHunterGiftMaterials\x10\xc5F\x127\n" +
+	"2k_EMsgClientToGCMonsterHunterGiftMaterialsResponse\x10\xc6F\x12@\n" +
+	";k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend\x10\xc7F\x12H\n" +
+	"Ck_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse\x10\xc8F\x12-\n" +
+	"(k_EMsgClientToGCMonsterHunterDevResetAll\x10\xc9F\x125\n" +
+	"0k_EMsgClientToGCMonsterHunterDevResetAllResponse\x10\xcaF\x123\n" +
+	".k_EMsgClientToGCMonsterHunterDevGrantMaterials\x10\xcbF\x12;\n" +
+	"6k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse\x10\xccF\x123\n" +
+	".k_EMsgClientToGCMonsterHunterDevClearInventory\x10\xcdF\x12;\n" +
+	"6k_EMsgClientToGCMonsterHunterDevClearInventoryResponse\x10\xceF\x12>\n" +
+	"9k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards\x10\xcfF\x12F\n" +
+	"Ak_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse\x10\xd0F\x121\n" +
+	",k_EMsgGCToClientMonsterHunterUserDataUpdated\x10\xd1F\x12\x1f\n" +
+	"\x1ak_EMsgSignOutMonsterHunter\x10\xd2F\x12$\n" +
+	"\x1fk_EMsgClientToGCClaimGatedEvent\x10\xd3F\x12,\n" +
+	"'k_EMsgClientToGCClaimGatedEventResponse\x10\xd4F\x124\n" +
+	"/k_EMsgClientToGCMonsterHunterDevModifyHeroCodex\x10\xd5F\x12<\n" +
+	"7k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse\x10\xd6F\x122\n" +
+	"-k_EMsgClientToGCMonsterHunterClaimCodexReward\x10\xd7F\x12:\n" +
+	"5k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse\x10\xd8F\x120\n" +
+	"+k_EMsgClientToGCMonsterHunterClaimSetReward\x10\xd9F\x128\n" +
+	"3k_EMsgClientToGCMonsterHunterClaimSetRewardResponse\x10\xdaF\x12$\n" +
+	"\x1fk_EMsgClientToGCGetEventRanking\x10\x93G\x12,\n" +
+	"'k_EMsgClientToGCGetEventRankingResponse\x10\x94G\x12#\n" +
+	"\x1ek_EMsgClientToGCGetEventCoupon\x10\x95G\x12+\n" +
+	"&k_EMsgClientToGCGetEventCouponResponse\x10\x96G\x12'\n" +
+	"\"k_EMsgClientToGCConvertEventPoints\x10\x97G\x12/\n" +
+	"*k_EMsgClientToGCConvertEventPointsResponse\x10\x98G\x12.\n" +
+	")k_EMsgServerToGCWarningLowServerFramerate\x10\x99G\x122\n" +
+	"-k_EMsgServerToGCWarningInvalidBotAbilityUsage\x10\x9aG\x12%\n" +
+	" k_EMsgClientToGCInviteToDemoMode\x10\x9bG\x12%\n" +
+	" k_EMsgGCToClientInviteToDemoMode\x10\x9cG"
 
 var (
 	file_dota_gcmessages_msgid_proto_rawDescOnce sync.Once

@@ -635,6 +635,27 @@ func (e *HeroStatueCreateResult) GetEventName() string {
 	return "HeroStatueCreateResult"
 }
 
+// InviteToDemoMode event.
+// MessageID: k_EMsgGCToClientInviteToDemoMode
+type InviteToDemoMode struct {
+	protocol.CMsgGCToClientInviteToDemoMode
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *InviteToDemoMode) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientInviteToDemoMode
+}
+
+// GetEventBody returns the event body.
+func (e *InviteToDemoMode) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientInviteToDemoMode
+}
+
+// GetEventName returns the event name.
+func (e *InviteToDemoMode) GetEventName() string {
+	return "InviteToDemoMode"
+}
+
 // KickedFromMatchmakingQueue event.
 // MessageID: k_EMsgGCKickedFromMatchmakingQueue
 type KickedFromMatchmakingQueue struct {
@@ -801,6 +822,27 @@ func (e *MergePartyResponseReply) GetEventBody() proto.Message {
 // GetEventName returns the event name.
 func (e *MergePartyResponseReply) GetEventName() string {
 	return "MergePartyResponseReply"
+}
+
+// MonsterHunterUserDataUpdated event.
+// MessageID: k_EMsgGCToClientMonsterHunterUserDataUpdated
+type MonsterHunterUserDataUpdated struct {
+	protocol.CMsgGCToClientMonsterHunterUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *MonsterHunterUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientMonsterHunterUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *MonsterHunterUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientMonsterHunterUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *MonsterHunterUserDataUpdated) GetEventName() string {
+	return "MonsterHunterUserDataUpdated"
 }
 
 // NotificationsUpdated event.

@@ -25,6 +25,7 @@ mkdir -p ${WORK_DIR}/orig ${WORK_DIR}/protos
 cp \
     ./dota_gcmessages_*.proto \
     ./dota_client_enums.proto \
+    ./networkbasetypes.proto \
     ./network_connection.proto \
     ./base_gcmessages.proto \
     ./gcsdk_gcmessages.proto \

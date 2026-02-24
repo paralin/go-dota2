@@ -453,6 +453,14 @@ var file_network_connection_proto_extTypes = []protoimpl.ExtensionInfo{
 		Tag:           "bytes,50501,opt,name=network_connection_detail_token",
 		Filename:      "network_connection.proto",
 	},
+	{
+		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         50502,
+		Name:          "protocol.allowed_from_client",
+		Tag:           "varint,50502,opt,name=allowed_from_client,def=1",
+		Filename:      "network_connection.proto",
+	},
 }
 
 // Extension fields to descriptorpb.EnumValueOptions.
@@ -461,13 +469,15 @@ var (
 	E_NetworkConnectionToken = &file_network_connection_proto_extTypes[0]
 	// optional string network_connection_detail_token = 50501;
 	E_NetworkConnectionDetailToken = &file_network_connection_proto_extTypes[1]
+	// optional bool allowed_from_client = 50502;
+	E_AllowedFromClient = &file_network_connection_proto_extTypes[2]
 )
 
 var File_network_connection_proto protoreflect.FileDescriptor
 
 const file_network_connection_proto_rawDesc = "" +
 	"\n" +
-	"\x18network_connection.proto\x12\bprotocol\x1a google/protobuf/descriptor.proto*\xa8M\n" +
+	"\x18network_connection.proto\x12\bprotocol\x1a google/protobuf/descriptor.proto*\xb0M\n" +
 	"\x1bENetworkDisconnectionReason\x12\x1e\n" +
 	"\x1aNETWORK_DISCONNECT_INVALID\x10\x00\x12\x1f\n" +
 	"\x1bNETWORK_DISCONNECT_SHUTDOWN\x10\x01\x12F\n" +
@@ -482,8 +492,8 @@ const file_network_connection_proto_rawDesc = "" +
 	"&NETWORK_DISCONNECT_STEAM_AUTHCANCELLED\x10\n" +
 	"\x1a!\xa2\xd4\x18\x1d#GameUI_Disconnect_SteamLogon\x12O\n" +
 	"(NETWORK_DISCONNECT_STEAM_AUTHALREADYUSED\x10\v\x1a!\xa2\xd4\x18\x1d#GameUI_Disconnect_SteamLogon\x12K\n" +
-	"$NETWORK_DISCONNECT_STEAM_AUTHINVALID\x10\f\x1a!\xa2\xd4\x18\x1d#GameUI_Disconnect_SteamLogon\x12I\n" +
-	"$NETWORK_DISCONNECT_STEAM_VACBANSTATE\x10\r\x1a\x1f\xa2\xd4\x18\x1b#GameUI_Disconnect_SteamVAC\x12S\n" +
+	"$NETWORK_DISCONNECT_STEAM_AUTHINVALID\x10\f\x1a!\xa2\xd4\x18\x1d#GameUI_Disconnect_SteamLogon\x12M\n" +
+	"$NETWORK_DISCONNECT_STEAM_VACBANSTATE\x10\r\x1a#\xa2\xd4\x18\x1b#GameUI_Disconnect_SteamVAC\xb0\xd4\x18\x00\x12S\n" +
 	",NETWORK_DISCONNECT_STEAM_LOGGED_IN_ELSEWHERE\x10\x0e\x1a!\xa2\xd4\x18\x1d#GameUI_Disconnect_SteamInUse\x12T\n" +
 	"+NETWORK_DISCONNECT_STEAM_VAC_CHECK_TIMEDOUT\x10\x0f\x1a#\xa2\xd4\x18\x1f#GameUI_Disconnect_SteamTimeOut\x12I\n" +
 	" NETWORK_DISCONNECT_STEAM_DROPPED\x10\x10\x1a#\xa2\xd4\x18\x1f#GameUI_Disconnect_SteamDropped\x12M\n" +
@@ -588,11 +598,12 @@ const file_network_connection_proto_rawDesc = "" +
 	"!NETWORK_DISCONNECT_KICKED_SUICIDE\x10\x9f\x01\x1a$\xa2\xd4\x18 #Player_DisconnectReason_Suicide\x12V\n" +
 	"&NETWORK_DISCONNECT_KICKED_NOSTEAMLOGIN\x10\xa0\x01\x1a)\xa2\xd4\x18%#Player_DisconnectReason_NoSteamLogin\x12X\n" +
 	"'NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET\x10\xa1\x01\x1a*\xa2\xd4\x18&#Player_DisconnectReason_NoSteamTicket\x12\x8f\x01\n" +
-	")NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION\x10\xa2\x01\x1a_\xa2\xd4\x18(#Player_DisconnectReason_InputAutomation\xaa\xd4\x18/#Player_DisconnectReason_InputAutomation_Detail\x12j\n" +
-	"0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR\x10\xa3\x01\x1a3\xa2\xd4\x18/#Player_DisconnectReason_VacNetAbnormalBehavior\x12Z\n" +
+	")NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION\x10\xa2\x01\x1a_\xa2\xd4\x18(#Player_DisconnectReason_InputAutomation\xaa\xd4\x18/#Player_DisconnectReason_InputAutomation_Detail\x12n\n" +
+	"0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR\x10\xa3\x01\x1a7\xa2\xd4\x18/#Player_DisconnectReason_VacNetAbnormalBehavior\xb0\xd4\x18\x00\x12Z\n" +
 	"(NETWORK_DISCONNECT_KICKED_INSECURECLIENT\x10\xa4\x01\x1a+\xa2\xd4\x18'#Player_DisconnectReason_InsecureClient:]\n" +
 	"\x18network_connection_token\x12!.google.protobuf.EnumValueOptions\x18Ċ\x03 \x01(\tR\x16networkConnectionToken:j\n" +
-	"\x1fnetwork_connection_detail_token\x12!.google.protobuf.EnumValueOptions\x18Ŋ\x03 \x01(\tR\x1cnetworkConnectionDetailToken"
+	"\x1fnetwork_connection_detail_token\x12!.google.protobuf.EnumValueOptions\x18Ŋ\x03 \x01(\tR\x1cnetworkConnectionDetailToken:Y\n" +
+	"\x13allowed_from_client\x12!.google.protobuf.EnumValueOptions\x18Ɗ\x03 \x01(\b:\x04trueR\x11allowedFromClient"
 
 var (
 	file_network_connection_proto_rawDescOnce sync.Once
@@ -614,10 +625,11 @@ var file_network_connection_proto_goTypes = []any{
 var file_network_connection_proto_depIdxs = []int32{
 	1, // 0: protocol.network_connection_token:extendee -> google.protobuf.EnumValueOptions
 	1, // 1: protocol.network_connection_detail_token:extendee -> google.protobuf.EnumValueOptions
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	0, // [0:2] is the sub-list for extension extendee
+	1, // 2: protocol.allowed_from_client:extendee -> google.protobuf.EnumValueOptions
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	0, // [0:3] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
 }
 
@@ -633,7 +645,7 @@ func file_network_connection_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_network_connection_proto_rawDesc), len(file_network_connection_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   0,
-			NumExtensions: 2,
+			NumExtensions: 3,
 			NumServices:   0,
 		},
 		GoTypes:           file_network_connection_proto_goTypes,

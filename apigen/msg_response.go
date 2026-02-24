@@ -98,6 +98,7 @@ func LookupMessageProtoType(protoMap map[string]*ProtoType, msgID gcm.EDOTAGCMsg
 		withoutDota,
 		withoutToFrom,
 		"DOTA" + msgStr,
+		"DOTA" + withoutToFrom,
 	}
 
 	for _, att := range toAttempt {

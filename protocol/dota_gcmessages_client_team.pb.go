@@ -485,38 +485,36 @@ func (CMsgDOTALeaveTeamResponse_Result) EnumDescriptor() ([]byte, []int) {
 }
 
 type CMsgDOTATeamInfo struct {
-	state                      protoimpl.MessageState          `protogen:"open.v1"`
-	Members                    []*CMsgDOTATeamInfo_Member      `protobuf:"bytes,1,rep,name=members" json:"members,omitempty"`
-	TeamId                     *uint32                         `protobuf:"varint,2,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
-	Name                       *string                         `protobuf:"bytes,3,opt,name=name" json:"name,omitempty"`
-	Tag                        *string                         `protobuf:"bytes,4,opt,name=tag" json:"tag,omitempty"`
-	TimeCreated                *uint32                         `protobuf:"varint,5,opt,name=time_created,json=timeCreated" json:"time_created,omitempty"`
-	Pro                        *bool                           `protobuf:"varint,6,opt,name=pro" json:"pro,omitempty"`
-	PickupTeam                 *bool                           `protobuf:"varint,8,opt,name=pickup_team,json=pickupTeam" json:"pickup_team,omitempty"`
-	UgcLogo                    *uint64                         `protobuf:"varint,9,opt,name=ugc_logo,json=ugcLogo" json:"ugc_logo,omitempty"`
-	UgcBaseLogo                *uint64                         `protobuf:"varint,10,opt,name=ugc_base_logo,json=ugcBaseLogo" json:"ugc_base_logo,omitempty"`
-	UgcBannerLogo              *uint64                         `protobuf:"varint,11,opt,name=ugc_banner_logo,json=ugcBannerLogo" json:"ugc_banner_logo,omitempty"`
-	UgcSponsorLogo             *uint64                         `protobuf:"varint,12,opt,name=ugc_sponsor_logo,json=ugcSponsorLogo" json:"ugc_sponsor_logo,omitempty"`
-	CountryCode                *string                         `protobuf:"bytes,13,opt,name=country_code,json=countryCode" json:"country_code,omitempty"`
-	Url                        *string                         `protobuf:"bytes,14,opt,name=url" json:"url,omitempty"`
-	Wins                       *uint32                         `protobuf:"varint,15,opt,name=wins" json:"wins,omitempty"`
-	Losses                     *uint32                         `protobuf:"varint,16,opt,name=losses" json:"losses,omitempty"`
-	GamesPlayedTotal           *uint32                         `protobuf:"varint,19,opt,name=games_played_total,json=gamesPlayedTotal" json:"games_played_total,omitempty"`
-	GamesPlayedMatchmaking     *uint32                         `protobuf:"varint,20,opt,name=games_played_matchmaking,json=gamesPlayedMatchmaking" json:"games_played_matchmaking,omitempty"`
-	UrlLogo                    *string                         `protobuf:"bytes,24,opt,name=url_logo,json=urlLogo" json:"url_logo,omitempty"`
-	RegisteredMemberAccountIds []uint32                        `protobuf:"varint,30,rep,name=registered_member_account_ids,json=registeredMemberAccountIds" json:"registered_member_account_ids,omitempty"`
-	CoachAccountId             *uint32                         `protobuf:"varint,36,opt,name=coach_account_id,json=coachAccountId" json:"coach_account_id,omitempty"`
-	AuditEntries               []*CMsgDOTATeamInfo_AuditEntry  `protobuf:"bytes,31,rep,name=audit_entries,json=auditEntries" json:"audit_entries,omitempty"`
-	Region                     *ELeagueRegion                  `protobuf:"varint,29,opt,name=region,enum=protocol.ELeagueRegion,def=0" json:"region,omitempty"`
-	Abbreviation               *string                         `protobuf:"bytes,32,opt,name=abbreviation" json:"abbreviation,omitempty"`
-	MemberStats                []*CMsgDOTATeamInfo_MemberStats `protobuf:"bytes,33,rep,name=member_stats,json=memberStats" json:"member_stats,omitempty"`
-	TeamStats                  *CMsgDOTATeamInfo_TeamStats     `protobuf:"bytes,34,opt,name=team_stats,json=teamStats" json:"team_stats,omitempty"`
-	DpcResults                 []*CMsgDOTATeamInfo_DPCResult   `protobuf:"bytes,35,rep,name=dpc_results,json=dpcResults" json:"dpc_results,omitempty"`
-	ColorPrimary               *string                         `protobuf:"bytes,37,opt,name=color_primary,json=colorPrimary" json:"color_primary,omitempty"`
-	ColorSecondary             *string                         `protobuf:"bytes,38,opt,name=color_secondary,json=colorSecondary" json:"color_secondary,omitempty"`
-	TeamCaptain                *uint32                         `protobuf:"varint,39,opt,name=team_captain,json=teamCaptain" json:"team_captain,omitempty"`
-	unknownFields              protoimpl.UnknownFields
-	sizeCache                  protoimpl.SizeCache
+	state                  protoimpl.MessageState          `protogen:"open.v1"`
+	Members                []*CMsgDOTATeamInfo_Member      `protobuf:"bytes,1,rep,name=members" json:"members,omitempty"`
+	TeamId                 *uint32                         `protobuf:"varint,2,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
+	Name                   *string                         `protobuf:"bytes,3,opt,name=name" json:"name,omitempty"`
+	Tag                    *string                         `protobuf:"bytes,4,opt,name=tag" json:"tag,omitempty"`
+	TimeCreated            *uint32                         `protobuf:"varint,5,opt,name=time_created,json=timeCreated" json:"time_created,omitempty"`
+	Pro                    *bool                           `protobuf:"varint,6,opt,name=pro" json:"pro,omitempty"`
+	PickupTeam             *bool                           `protobuf:"varint,8,opt,name=pickup_team,json=pickupTeam" json:"pickup_team,omitempty"`
+	UgcLogo                *uint64                         `protobuf:"varint,9,opt,name=ugc_logo,json=ugcLogo" json:"ugc_logo,omitempty"`
+	UgcBaseLogo            *uint64                         `protobuf:"varint,10,opt,name=ugc_base_logo,json=ugcBaseLogo" json:"ugc_base_logo,omitempty"`
+	UgcBannerLogo          *uint64                         `protobuf:"varint,11,opt,name=ugc_banner_logo,json=ugcBannerLogo" json:"ugc_banner_logo,omitempty"`
+	UgcSponsorLogo         *uint64                         `protobuf:"varint,12,opt,name=ugc_sponsor_logo,json=ugcSponsorLogo" json:"ugc_sponsor_logo,omitempty"`
+	CountryCode            *string                         `protobuf:"bytes,13,opt,name=country_code,json=countryCode" json:"country_code,omitempty"`
+	Url                    *string                         `protobuf:"bytes,14,opt,name=url" json:"url,omitempty"`
+	Wins                   *uint32                         `protobuf:"varint,15,opt,name=wins" json:"wins,omitempty"`
+	Losses                 *uint32                         `protobuf:"varint,16,opt,name=losses" json:"losses,omitempty"`
+	GamesPlayedTotal       *uint32                         `protobuf:"varint,19,opt,name=games_played_total,json=gamesPlayedTotal" json:"games_played_total,omitempty"`
+	GamesPlayedMatchmaking *uint32                         `protobuf:"varint,20,opt,name=games_played_matchmaking,json=gamesPlayedMatchmaking" json:"games_played_matchmaking,omitempty"`
+	UrlLogo                *string                         `protobuf:"bytes,24,opt,name=url_logo,json=urlLogo" json:"url_logo,omitempty"`
+	AuditEntries           []*CMsgDOTATeamInfo_AuditEntry  `protobuf:"bytes,31,rep,name=audit_entries,json=auditEntries" json:"audit_entries,omitempty"`
+	Region                 *ELeagueRegion                  `protobuf:"varint,29,opt,name=region,enum=protocol.ELeagueRegion,def=0" json:"region,omitempty"`
+	Abbreviation           *string                         `protobuf:"bytes,32,opt,name=abbreviation" json:"abbreviation,omitempty"`
+	MemberStats            []*CMsgDOTATeamInfo_MemberStats `protobuf:"bytes,33,rep,name=member_stats,json=memberStats" json:"member_stats,omitempty"`
+	TeamStats              *CMsgDOTATeamInfo_TeamStats     `protobuf:"bytes,34,opt,name=team_stats,json=teamStats" json:"team_stats,omitempty"`
+	DpcResults             []*CMsgDOTATeamInfo_DPCResult   `protobuf:"bytes,35,rep,name=dpc_results,json=dpcResults" json:"dpc_results,omitempty"`
+	ColorPrimary           *string                         `protobuf:"bytes,37,opt,name=color_primary,json=colorPrimary" json:"color_primary,omitempty"`
+	ColorSecondary         *string                         `protobuf:"bytes,38,opt,name=color_secondary,json=colorSecondary" json:"color_secondary,omitempty"`
+	TeamCaptain            *uint32                         `protobuf:"varint,39,opt,name=team_captain,json=teamCaptain" json:"team_captain,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 // Default values for CMsgDOTATeamInfo fields.
@@ -678,20 +676,6 @@ func (x *CMsgDOTATeamInfo) GetUrlLogo() string {
 		return *x.UrlLogo
 	}
 	return ""
-}
-
-func (x *CMsgDOTATeamInfo) GetRegisteredMemberAccountIds() []uint32 {
-	if x != nil {
-		return x.RegisteredMemberAccountIds
-	}
-	return nil
-}
-
-func (x *CMsgDOTATeamInfo) GetCoachAccountId() uint32 {
-	if x != nil && x.CoachAccountId != nil {
-		return *x.CoachAccountId
-	}
-	return 0
 }
 
 func (x *CMsgDOTATeamInfo) GetAuditEntries() []*CMsgDOTATeamInfo_AuditEntry {
@@ -2495,7 +2479,7 @@ var File_dota_gcmessages_client_team_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_client_team_proto_rawDesc = "" +
 	"\n" +
-	"!dota_gcmessages_client_team.proto\x12\bprotocol\x1a\x17dota_shared_enums.proto\"\xce\x13\n" +
+	"!dota_gcmessages_client_team.proto\x12\bprotocol\x1a\x17dota_shared_enums.proto\"\xe1\x12\n" +
 	"\x10CMsgDOTATeamInfo\x12;\n" +
 	"\amembers\x18\x01 \x03(\v2!.protocol.CMsgDOTATeamInfo.MemberR\amembers\x12\x17\n" +
 	"\ateam_id\x18\x02 \x01(\rR\x06teamId\x12\x12\n" +
@@ -2516,9 +2500,7 @@ const file_dota_gcmessages_client_team_proto_rawDesc = "" +
 	"\x06losses\x18\x10 \x01(\rR\x06losses\x12,\n" +
 	"\x12games_played_total\x18\x13 \x01(\rR\x10gamesPlayedTotal\x128\n" +
 	"\x18games_played_matchmaking\x18\x14 \x01(\rR\x16gamesPlayedMatchmaking\x12\x19\n" +
-	"\burl_logo\x18\x18 \x01(\tR\aurlLogo\x12A\n" +
-	"\x1dregistered_member_account_ids\x18\x1e \x03(\rR\x1aregisteredMemberAccountIds\x12(\n" +
-	"\x10coach_account_id\x18$ \x01(\rR\x0ecoachAccountId\x12J\n" +
+	"\burl_logo\x18\x18 \x01(\tR\aurlLogo\x12J\n" +
 	"\raudit_entries\x18\x1f \x03(\v2%.protocol.CMsgDOTATeamInfo.AuditEntryR\fauditEntries\x12D\n" +
 	"\x06region\x18\x1d \x01(\x0e2\x17.protocol.ELeagueRegion:\x13LEAGUE_REGION_UNSETR\x06region\x12\"\n" +
 	"\fabbreviation\x18  \x01(\tR\fabbreviation\x12I\n" +

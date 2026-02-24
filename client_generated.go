@@ -225,19 +225,8 @@ func (d *Dota2) ClaimCrawlCavernRoom(
 // Response type: CMsgDOTAClaimEventActionResponse
 func (d *Dota2) ClaimEventAction(
 	ctx context.Context,
-	eventID uint32,
-	actionID uint32,
-	quantity uint32,
-	data protocol.CMsgDOTAClaimEventActionData,
-	scoreMode protocol.EEventActionScoreMode,
+	req *protocol.CMsgDOTAClaimEventAction,
 ) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
-	req := &protocol.CMsgDOTAClaimEventAction{
-		EventId:   &eventID,
-		ActionId:  &actionID,
-		Quantity:  &quantity,
-		Data:      &data,
-		ScoreMode: &scoreMode,
-	}
 	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
 
 	return resp, d.MakeRequest(
@@ -260,12 +249,14 @@ func (d *Dota2) ClaimEventActionUsingItem(
 	actionID uint32,
 	itemID uint64,
 	quantity uint32,
+	suppressRewards bool,
 ) (*protocol.CMsgClientToGCClaimEventActionUsingItemResponse, error) {
 	req := &protocol.CMsgClientToGCClaimEventActionUsingItem{
-		EventId:  &eventID,
-		ActionId: &actionID,
-		ItemId:   &itemID,
-		Quantity: &quantity,
+		EventId:         &eventID,
+		ActionId:        &actionID,
+		ItemId:          &itemID,
+		Quantity:        &quantity,
+		SuppressRewards: &suppressRewards,
 	}
 	resp := &protocol.CMsgClientToGCClaimEventActionUsingItemResponse{}
 
@@ -274,6 +265,122 @@ func (d *Dota2) ClaimEventActionUsingItem(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItem),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimEventActionUsingItemResponse),
+		resp,
+	)
+}
+
+// ClaimGatedEvent claims a gated event.
+// Request ID: k_EMsgClientToGCClaimGatedEvent
+// Response ID: k_EMsgClientToGCClaimGatedEventResponse
+// Request type: CMsgDOTAClaimGatedEvent
+// Response type: CMsgDOTAClaimGatedEventResponse
+func (d *Dota2) ClaimGatedEvent(
+	ctx context.Context,
+	eventID protocol.EEvent,
+) (*protocol.CMsgDOTAClaimGatedEventResponse, error) {
+	req := &protocol.CMsgDOTAClaimGatedEvent{
+		EventId: &eventID,
+	}
+	resp := &protocol.CMsgDOTAClaimGatedEventResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimGatedEvent),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCClaimGatedEventResponse),
+		resp,
+	)
+}
+
+// ClaimHunterDevMonsterInvestigationRewards claims hunter dev monster investigation rewards.
+// Request ID: k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards
+// Response ID: k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse
+// Request type: CMsgClientToGCMonsterHunterDevClaimInvestigationRewards
+// Response type: CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse
+func (d *Dota2) ClaimHunterDevMonsterInvestigationRewards(
+	ctx context.Context,
+	investigationGameState protocol.CMsgMonsterHunterInvestigationGameState,
+	win bool,
+) (*protocol.CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterDevClaimInvestigationRewards{
+		InvestigationGameState: &investigationGameState,
+		Win:                    &win,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse),
+		resp,
+	)
+}
+
+// ClaimHunterMonsterCodexReward claims a hunter monster codex reward.
+// Request ID: k_EMsgClientToGCMonsterHunterClaimCodexReward
+// Response ID: k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse
+// Request type: CMsgClientToGCMonsterHunterClaimCodexReward
+// Response type: CMsgClientToGCMonsterHunterClaimCodexRewardResponse
+func (d *Dota2) ClaimHunterMonsterCodexReward(
+	ctx context.Context,
+	codexID uint32,
+	reward uint32,
+) (*protocol.CMsgClientToGCMonsterHunterClaimCodexRewardResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterClaimCodexReward{
+		CodexId: &codexID,
+		Reward:  &reward,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterClaimCodexRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimCodexReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse),
+		resp,
+	)
+}
+
+// ClaimHunterMonsterReward claims a hunter monster reward.
+// Request ID: k_EMsgClientToGCMonsterHunterClaimReward
+// Response ID: k_EMsgClientToGCMonsterHunterClaimRewardResponse
+// Request type: CMsgClientToGCMonsterHunterClaimReward
+// Response type: CMsgClientToGCMonsterHunterClaimRewardResponse
+func (d *Dota2) ClaimHunterMonsterReward(
+	ctx context.Context,
+	req *protocol.CMsgClientToGCMonsterHunterClaimReward,
+) (*protocol.CMsgClientToGCMonsterHunterClaimRewardResponse, error) {
+	resp := &protocol.CMsgClientToGCMonsterHunterClaimRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimRewardResponse),
+		resp,
+	)
+}
+
+// ClaimHunterMonsterSetReward claims a hunter monster set reward.
+// Request ID: k_EMsgClientToGCMonsterHunterClaimSetReward
+// Response ID: k_EMsgClientToGCMonsterHunterClaimSetRewardResponse
+// Request type: CMsgClientToGCMonsterHunterClaimSetReward
+// Response type: CMsgClientToGCMonsterHunterClaimSetRewardResponse
+func (d *Dota2) ClaimHunterMonsterSetReward(
+	ctx context.Context,
+	itemSets []*protocol.CMsgMonsterHunterItemSet,
+) (*protocol.CMsgClientToGCMonsterHunterClaimSetRewardResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterClaimSetReward{
+		ItemSets: itemSets,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterClaimSetRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetRewardResponse),
 		resp,
 	)
 }
@@ -1017,6 +1124,31 @@ func (d *Dota2) GetDPCFavorites(
 	)
 }
 
+// GetEventCoupon gets a event coupon.
+// Request ID: k_EMsgClientToGCGetEventCoupon
+// Response ID: k_EMsgClientToGCGetEventCouponResponse
+// Request type: CMsgClientToGCGetEventCoupon
+// Response type: CMsgClientToGCGetEventCouponResponse
+func (d *Dota2) GetEventCoupon(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	couponIDs []uint32,
+) (*protocol.CMsgClientToGCGetEventCouponResponse, error) {
+	req := &protocol.CMsgClientToGCGetEventCoupon{
+		EventId:   &eventID,
+		CouponIds: couponIDs,
+	}
+	resp := &protocol.CMsgClientToGCGetEventCouponResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetEventCoupon),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetEventCouponResponse),
+		resp,
+	)
+}
+
 // GetEventPoints gets event points.
 // Request ID: k_EMsgDOTAGetEventPoints
 // Response ID: k_EMsgDOTAGetEventPointsResponse
@@ -1038,6 +1170,31 @@ func (d *Dota2) GetEventPoints(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetEventPoints),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetEventPointsResponse),
+		resp,
+	)
+}
+
+// GetEventRanking gets a event ranking.
+// Request ID: k_EMsgClientToGCGetEventRanking
+// Response ID: k_EMsgClientToGCGetEventRankingResponse
+// Request type: CMsgClientToGCGetEventRanking
+// Response type: CMsgClientToGCGetEventRankingResponse
+func (d *Dota2) GetEventRanking(
+	ctx context.Context,
+	eventID protocol.EEvent,
+	accountID uint32,
+) (*protocol.CMsgClientToGCGetEventRankingResponse, error) {
+	req := &protocol.CMsgClientToGCGetEventRanking{
+		EventId:   &eventID,
+		AccountId: &accountID,
+	}
+	resp := &protocol.CMsgClientToGCGetEventRankingResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetEventRanking),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetEventRankingResponse),
 		resp,
 	)
 }
@@ -1166,6 +1323,26 @@ func (d *Dota2) GetHeroStickers(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetHeroStickers),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCGetHeroStickersResponse),
+		resp,
+	)
+}
+
+// GetHunterMonsterUserData gets a hunter monster user data.
+// Request ID: k_EMsgClientToGCMonsterHunterGetUserData
+// Response ID: k_EMsgClientToGCMonsterHunterGetUserDataResponse
+// Request type: CMsgClientToGCMonsterHunterGetUserData
+// Response type: CMsgClientToGCMonsterHunterGetUserDataResponse
+func (d *Dota2) GetHunterMonsterUserData(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCMonsterHunterGetUserDataResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterGetUserData{}
+	resp := &protocol.CMsgClientToGCMonsterHunterGetUserDataResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGetUserData),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGetUserDataResponse),
 		resp,
 	)
 }
@@ -1633,6 +1810,29 @@ func (d *Dota2) GrantEventSupportConsumeItem(
 		uint32(protocol.EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItem),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgConsumeEventSupportGrantItemResponse),
+		resp,
+	)
+}
+
+// GrantHunterDevMonsterMaterials grants hunter dev monster materials.
+// Request ID: k_EMsgClientToGCMonsterHunterDevGrantMaterials
+// Response ID: k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse
+// Request type: CMsgClientToGCMonsterHunterDevGrantMaterials
+// Response type: CMsgClientToGCMonsterHunterDevGrantMaterialsResponse
+func (d *Dota2) GrantHunterDevMonsterMaterials(
+	ctx context.Context,
+	materialQuantity protocol.CMsgMonsterHunterMaterialQuantity,
+) (*protocol.CMsgClientToGCMonsterHunterDevGrantMaterialsResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterDevGrantMaterials{
+		MaterialQuantity: &materialQuantity,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterDevGrantMaterialsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevGrantMaterials),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse),
 		resp,
 	)
 }
@@ -3422,6 +3622,29 @@ func (d *Dota2) RequestHeroGlobalData(
 	)
 }
 
+// RequestHunterMonsterMaterialsNeededByFriend requests a hunter monster materials needed by friend.
+// Request ID: k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend
+// Response ID: k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse
+// Request type: CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend
+// Response type: CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse
+func (d *Dota2) RequestHunterMonsterMaterialsNeededByFriend(
+	ctx context.Context,
+	friendAccountID uint32,
+) (*protocol.CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend{
+		FriendAccountId: &friendAccountID,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse),
+		resp,
+	)
+}
+
 // RequestItemEditorReservations requests item editor reservations.
 // Request ID: k_EMsgGCItemEditorReservationsRequest
 // Response ID: k_EMsgGCItemEditorReservationsResponse
@@ -5091,6 +5314,35 @@ func (d *Dota2) SendCoachFriend(
 	)
 }
 
+// SendConvertEventPoints sends convert event points.
+// Request ID: k_EMsgClientToGCConvertEventPoints
+// Response ID: k_EMsgClientToGCConvertEventPointsResponse
+// Request type: CMsgClientToGCConvertEventPoints
+// Response type: CMsgClientToGCConvertEventPointsResponse
+func (d *Dota2) SendConvertEventPoints(
+	ctx context.Context,
+	eventIDPointsToBuy protocol.EEvent,
+	eventIDPointsToSpend protocol.EEvent,
+	numPointsToBuy uint32,
+	numPointsToSpend uint32,
+) (*protocol.CMsgClientToGCConvertEventPointsResponse, error) {
+	req := &protocol.CMsgClientToGCConvertEventPoints{
+		EventIdPointsToBuy:   &eventIDPointsToBuy,
+		EventIdPointsToSpend: &eventIDPointsToSpend,
+		NumPointsToBuy:       &numPointsToBuy,
+		NumPointsToSpend:     &numPointsToSpend,
+	}
+	resp := &protocol.CMsgClientToGCConvertEventPointsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCConvertEventPoints),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCConvertEventPointsResponse),
+		resp,
+	)
+}
+
 // SendCraftworksCraftRecipe sends a craftworks craft recipe.
 // Request ID: k_EMsgClientToGCCraftworksCraftRecipe
 // Response ID: k_EMsgClientToGCCraftworksCraftRecipeResponse
@@ -5218,6 +5470,26 @@ func (d *Dota2) SendDevDeleteEventActions(
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevDeleteEventActions),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgDevDeleteEventActionsResponse),
+		resp,
+	)
+}
+
+// SendDevReloadAllEvents sends dev reload all events.
+// Request ID: k_EMsgDevReloadAllEvents
+// Response ID: k_EMsgDevReloadAllEventsResponse
+// Request type: CMsgDevReloadAllEvents
+// Response type: CMsgDevReloadAllEventsResponse
+func (d *Dota2) SendDevReloadAllEvents(
+	ctx context.Context,
+) (*protocol.CMsgDevReloadAllEventsResponse, error) {
+	req := &protocol.CMsgDevReloadAllEvents{}
+	resp := &protocol.CMsgDevReloadAllEventsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevReloadAllEvents),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgDevReloadAllEventsResponse),
 		resp,
 	)
 }
@@ -5450,6 +5722,20 @@ func (d *Dota2) SendInitialQuestionnaireResponse(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCInitialQuestionnaireResponse), req)
 }
 
+// SendInviteToDemoMode sends a invite to demo mode.
+// Request ID: k_EMsgClientToGCInviteToDemoMode
+// Request type: CMsgClientToGCInviteToDemoMode
+func (d *Dota2) SendInviteToDemoMode(
+	serverID uint64,
+	invitedPlayerID uint64,
+) {
+	req := &protocol.CMsgClientToGCInviteToDemoMode{
+		ServerId:        &serverID,
+		InvitedPlayerId: &invitedPlayerID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCInviteToDemoMode), req)
+}
+
 // SendInviteToGuild sends a invite to guild.
 // Request ID: k_EMsgClientToGCInviteToGuild
 // Response ID: k_EMsgClientToGCInviteToGuildResponse
@@ -5672,6 +5958,126 @@ func (d *Dota2) SendModifyGuildRole(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCModifyGuildRole),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCModifyGuildRoleResponse),
+		resp,
+	)
+}
+
+// SendMonsterHunterDevClearInventory sends a monster hunter dev clear inventory.
+// Request ID: k_EMsgClientToGCMonsterHunterDevClearInventory
+// Response ID: k_EMsgClientToGCMonsterHunterDevClearInventoryResponse
+// Request type: CMsgClientToGCMonsterHunterDevClearInventory
+// Response type: CMsgClientToGCMonsterHunterDevClearInventoryResponse
+func (d *Dota2) SendMonsterHunterDevClearInventory(
+	ctx context.Context,
+) (*protocol.CMsgClientToGCMonsterHunterDevClearInventoryResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterDevClearInventory{}
+	resp := &protocol.CMsgClientToGCMonsterHunterDevClearInventoryResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClearInventory),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevClearInventoryResponse),
+		resp,
+	)
+}
+
+// SendMonsterHunterDevModifyHeroCodex sends a monster hunter dev modify hero codex.
+// Request ID: k_EMsgClientToGCMonsterHunterDevModifyHeroCodex
+// Response ID: k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse
+// Request type: CMsgClientToGCMonsterHunterDevModifyHeroCodex
+// Response type: CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse
+func (d *Dota2) SendMonsterHunterDevModifyHeroCodex(
+	ctx context.Context,
+	actions []*protocol.CMsgDevModifyCodexAction,
+) (*protocol.CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterDevModifyHeroCodex{
+		Actions: actions,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevModifyHeroCodex),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse),
+		resp,
+	)
+}
+
+// SendMonsterHunterDevResetAll sends a monster hunter dev reset all.
+// Request ID: k_EMsgClientToGCMonsterHunterDevResetAll
+// Response ID: k_EMsgClientToGCMonsterHunterDevResetAllResponse
+// Request type: CMsgClientToGCMonsterHunterDevResetAll
+// Response type: CMsgClientToGCMonsterHunterDevResetAllResponse
+func (d *Dota2) SendMonsterHunterDevResetAll(
+	ctx context.Context,
+	resetCodexOnly bool,
+) (*protocol.CMsgClientToGCMonsterHunterDevResetAllResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterDevResetAll{
+		ResetCodexOnly: &resetCodexOnly,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterDevResetAllResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevResetAll),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterDevResetAllResponse),
+		resp,
+	)
+}
+
+// SendMonsterHunterGiftMaterials sends monster hunter gift materials.
+// Request ID: k_EMsgClientToGCMonsterHunterGiftMaterials
+// Response ID: k_EMsgClientToGCMonsterHunterGiftMaterialsResponse
+// Request type: CMsgClientToGCMonsterHunterGiftMaterials
+// Response type: CMsgClientToGCMonsterHunterGiftMaterialsResponse
+func (d *Dota2) SendMonsterHunterGiftMaterials(
+	ctx context.Context,
+	tokenGift protocol.CMsgMonsterHunterMaterialCount,
+	recipientAccountID uint32,
+	periodicResourceID uint32,
+) (*protocol.CMsgClientToGCMonsterHunterGiftMaterialsResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterGiftMaterials{
+		TokenGift:          &tokenGift,
+		RecipientAccountId: &recipientAccountID,
+		PeriodicResourceId: &periodicResourceID,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterGiftMaterialsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGiftMaterials),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterGiftMaterialsResponse),
+		resp,
+	)
+}
+
+// SendMonsterHunterTradeMaterials sends monster hunter trade materials.
+// Request ID: k_EMsgClientToGCMonsterHunterTradeMaterials
+// Response ID: k_EMsgClientToGCMonsterHunterTradeMaterialsResponse
+// Request type: CMsgClientToGCMonsterHunterTradeMaterials
+// Response type: CMsgClientToGCMonsterHunterTradeMaterialsResponse
+func (d *Dota2) SendMonsterHunterTradeMaterials(
+	ctx context.Context,
+	materialOffer protocol.CMsgMonsterHunterMaterialQuantity,
+	materialRequest protocol.CMsgMonsterHunterMaterialQuantity,
+	recipeID uint32,
+) (*protocol.CMsgClientToGCMonsterHunterTradeMaterialsResponse, error) {
+	req := &protocol.CMsgClientToGCMonsterHunterTradeMaterials{
+		MaterialOffer:   &materialOffer,
+		MaterialRequest: &materialRequest,
+		RecipeId:        &recipeID,
+	}
+	resp := &protocol.CMsgClientToGCMonsterHunterTradeMaterialsResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterTradeMaterials),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterTradeMaterialsResponse),
 		resp,
 	)
 }
@@ -6582,6 +6988,18 @@ func (d *Dota2) SendWatchGame(
 		uint32(protocol.EDOTAGCMsg_k_EMsgGCWatchGameResponse),
 		resp,
 	)
+}
+
+// SendWatchingBroadcast sends a watching broadcast.
+// Request ID: k_EMsgClientToGCWatchingBroadcast
+// Request type: CMsgClientToGCWatchingBroadcast
+func (d *Dota2) SendWatchingBroadcast(
+	matchID uint64,
+) {
+	req := &protocol.CMsgClientToGCWatchingBroadcast{
+		MatchId: &matchID,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWatchingBroadcast), req)
 }
 
 // SetBannedHeroes sets banned heroes.
@@ -7664,6 +8082,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientHeroStatueCreateResult)] = d.getEventEmitter(func() events.Event {
 		return &events.HeroStatueCreateResult{}
 	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientInviteToDemoMode)] = d.getEventEmitter(func() events.Event {
+		return &events.InviteToDemoMode{}
+	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue)] = d.getEventEmitter(func() events.Event {
 		return &events.KickedFromMatchmakingQueue{}
 	})
@@ -7687,6 +8108,9 @@ func (d *Dota2) registerGeneratedHandlers() {
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMergePartyResponseReply)] = d.getEventEmitter(func() events.Event {
 		return &events.MergePartyResponseReply{}
+	})
+	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientMonsterHunterUserDataUpdated)] = d.getEventEmitter(func() events.Event {
+		return &events.MonsterHunterUserDataUpdated{}
 	})
 	d.handlers[uint32(protocol.EDOTAGCMsg_k_EMsgGCToClientNotificationsUpdated)] = d.getEventEmitter(func() events.Event {
 		return &events.NotificationsUpdated{}

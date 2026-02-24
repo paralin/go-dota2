@@ -51,6 +51,7 @@ const (
 	DOTA_GameMode_DOTA_GAMEMODE_TURBO             DOTA_GameMode = 23
 	DOTA_GameMode_DOTA_GAMEMODE_MUTATION          DOTA_GameMode = 24
 	DOTA_GameMode_DOTA_GAMEMODE_COACHES_CHALLENGE DOTA_GameMode = 25
+	DOTA_GameMode_DOTA_GAMEMODE_BOT_CHALLENGE     DOTA_GameMode = 26
 )
 
 // Enum value maps for DOTA_GameMode.
@@ -82,6 +83,7 @@ var (
 		23: "DOTA_GAMEMODE_TURBO",
 		24: "DOTA_GAMEMODE_MUTATION",
 		25: "DOTA_GAMEMODE_COACHES_CHALLENGE",
+		26: "DOTA_GAMEMODE_BOT_CHALLENGE",
 	}
 	DOTA_GameMode_value = map[string]int32{
 		"DOTA_GAMEMODE_NONE":              0,
@@ -110,6 +112,7 @@ var (
 		"DOTA_GAMEMODE_TURBO":             23,
 		"DOTA_GAMEMODE_MUTATION":          24,
 		"DOTA_GAMEMODE_COACHES_CHALLENGE": 25,
+		"DOTA_GAMEMODE_BOT_CHALLENGE":     26,
 	}
 )
 
@@ -390,6 +393,14 @@ const (
 	EEvent_EVENT_ID_FROSTIVUS_2023            EEvent = 48
 	EEvent_EVENT_ID_INTERNATIONAL_2024        EEvent = 49
 	EEvent_EVENT_ID_FROSTIVUS_2024            EEvent = 50
+	EEvent_EVENT_ID_MONSTER_HUNTER            EEvent = 51
+	EEvent_EVENT_ID_INTERNATIONAL_2025        EEvent = 52
+	EEvent_EVENT_ID_FALL_2025                 EEvent = 53
+	EEvent_EVENT_ID_WINTER_2025               EEvent = 55
+	EEvent_EVENT_ID_SPRING_2026               EEvent = 56
+	EEvent_EVENT_ID_SUMMER_2026               EEvent = 57
+	EEvent_EVENT_ID_FALL_2026                 EEvent = 58
+	EEvent_EVENT_ID_WINTER_2026               EEvent = 59
 )
 
 // Enum value maps for EEvent.
@@ -445,6 +456,14 @@ var (
 		48: "EVENT_ID_FROSTIVUS_2023",
 		49: "EVENT_ID_INTERNATIONAL_2024",
 		50: "EVENT_ID_FROSTIVUS_2024",
+		51: "EVENT_ID_MONSTER_HUNTER",
+		52: "EVENT_ID_INTERNATIONAL_2025",
+		53: "EVENT_ID_FALL_2025",
+		55: "EVENT_ID_WINTER_2025",
+		56: "EVENT_ID_SPRING_2026",
+		57: "EVENT_ID_SUMMER_2026",
+		58: "EVENT_ID_FALL_2026",
+		59: "EVENT_ID_WINTER_2026",
 	}
 	EEvent_value = map[string]int32{
 		"EVENT_ID_NONE":                      0,
@@ -497,6 +516,14 @@ var (
 		"EVENT_ID_FROSTIVUS_2023":            48,
 		"EVENT_ID_INTERNATIONAL_2024":        49,
 		"EVENT_ID_FROSTIVUS_2024":            50,
+		"EVENT_ID_MONSTER_HUNTER":            51,
+		"EVENT_ID_INTERNATIONAL_2025":        52,
+		"EVENT_ID_FALL_2025":                 53,
+		"EVENT_ID_WINTER_2025":               55,
+		"EVENT_ID_SPRING_2026":               56,
+		"EVENT_ID_SUMMER_2026":               57,
+		"EVENT_ID_FALL_2026":                 58,
+		"EVENT_ID_WINTER_2026":               59,
 	}
 )
 
@@ -852,7 +879,7 @@ const (
 	Fantasy_Scoring_FANTASY_SCORING_FIRST_BLOOD             Fantasy_Scoring = 10
 	Fantasy_Scoring_FANTASY_SCORING_STUNS                   Fantasy_Scoring = 11
 	Fantasy_Scoring_FANTASY_SCORING_SMOKES_USED             Fantasy_Scoring = 12
-	Fantasy_Scoring_FANTASY_SCORING_NEUTRAL_TOKENS_FOUND    Fantasy_Scoring = 13
+	Fantasy_Scoring_FANTASY_SCORING_MADSTONE                Fantasy_Scoring = 13
 	Fantasy_Scoring_FANTASY_SCORING_WATCHERS_TAKEN          Fantasy_Scoring = 14
 	Fantasy_Scoring_FANTASY_SCORING_LOTUSES_GAINED          Fantasy_Scoring = 15
 	Fantasy_Scoring_FANTASY_SCORING_TORMENTOR_KILLS         Fantasy_Scoring = 16
@@ -877,7 +904,7 @@ var (
 		10: "FANTASY_SCORING_FIRST_BLOOD",
 		11: "FANTASY_SCORING_STUNS",
 		12: "FANTASY_SCORING_SMOKES_USED",
-		13: "FANTASY_SCORING_NEUTRAL_TOKENS_FOUND",
+		13: "FANTASY_SCORING_MADSTONE",
 		14: "FANTASY_SCORING_WATCHERS_TAKEN",
 		15: "FANTASY_SCORING_LOTUSES_GAINED",
 		16: "FANTASY_SCORING_TORMENTOR_KILLS",
@@ -899,7 +926,7 @@ var (
 		"FANTASY_SCORING_FIRST_BLOOD":             10,
 		"FANTASY_SCORING_STUNS":                   11,
 		"FANTASY_SCORING_SMOKES_USED":             12,
-		"FANTASY_SCORING_NEUTRAL_TOKENS_FOUND":    13,
+		"FANTASY_SCORING_MADSTONE":                13,
 		"FANTASY_SCORING_WATCHERS_TAKEN":          14,
 		"FANTASY_SCORING_LOTUSES_GAINED":          15,
 		"FANTASY_SCORING_TORMENTOR_KILLS":         16,
@@ -2490,33 +2517,34 @@ func (DOTABotDifficulty) EnumDescriptor() ([]byte, []int) {
 type DOTA_BOT_MODE int32
 
 const (
-	DOTA_BOT_MODE_DOTA_BOT_MODE_NONE                 DOTA_BOT_MODE = 0
-	DOTA_BOT_MODE_DOTA_BOT_MODE_LANING               DOTA_BOT_MODE = 1
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ATTACK               DOTA_BOT_MODE = 2
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ROAM                 DOTA_BOT_MODE = 3
-	DOTA_BOT_MODE_DOTA_BOT_MODE_RETREAT              DOTA_BOT_MODE = 4
-	DOTA_BOT_MODE_DOTA_BOT_MODE_SECRET_SHOP          DOTA_BOT_MODE = 5
-	DOTA_BOT_MODE_DOTA_BOT_MODE_SIDE_SHOP            DOTA_BOT_MODE = 6
-	DOTA_BOT_MODE_DOTA_BOT_MODE_RUNE                 DOTA_BOT_MODE = 7
-	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_TOP       DOTA_BOT_MODE = 8
-	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_MID       DOTA_BOT_MODE = 9
-	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_BOT       DOTA_BOT_MODE = 10
-	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_TOP     DOTA_BOT_MODE = 11
-	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_MID     DOTA_BOT_MODE = 12
-	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_BOT     DOTA_BOT_MODE = 13
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ASSEMBLE             DOTA_BOT_MODE = 14
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ASSEMBLE_WITH_HUMANS DOTA_BOT_MODE = 15
-	DOTA_BOT_MODE_DOTA_BOT_MODE_TEAM_ROAM            DOTA_BOT_MODE = 16
-	DOTA_BOT_MODE_DOTA_BOT_MODE_FARM                 DOTA_BOT_MODE = 17
-	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_ALLY          DOTA_BOT_MODE = 18
-	DOTA_BOT_MODE_DOTA_BOT_MODE_EVASIVE_MANEUVERS    DOTA_BOT_MODE = 19
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ROSHAN               DOTA_BOT_MODE = 20
-	DOTA_BOT_MODE_DOTA_BOT_MODE_ITEM                 DOTA_BOT_MODE = 21
-	DOTA_BOT_MODE_DOTA_BOT_MODE_WARD                 DOTA_BOT_MODE = 22
-	DOTA_BOT_MODE_DOTA_BOT_MODE_COMPANION            DOTA_BOT_MODE = 23
-	DOTA_BOT_MODE_DOTA_BOT_MODE_TUTORIAL_BOSS        DOTA_BOT_MODE = 24
-	DOTA_BOT_MODE_DOTA_BOT_MODE_MINION               DOTA_BOT_MODE = 25
-	DOTA_BOT_MODE_DOTA_BOT_MODE_OUTPOST              DOTA_BOT_MODE = 26
+	DOTA_BOT_MODE_DOTA_BOT_MODE_NONE                  DOTA_BOT_MODE = 0
+	DOTA_BOT_MODE_DOTA_BOT_MODE_LANING                DOTA_BOT_MODE = 1
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ATTACK                DOTA_BOT_MODE = 2
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ROAM                  DOTA_BOT_MODE = 3
+	DOTA_BOT_MODE_DOTA_BOT_MODE_RETREAT               DOTA_BOT_MODE = 4
+	DOTA_BOT_MODE_DOTA_BOT_MODE_SECRET_SHOP           DOTA_BOT_MODE = 5
+	DOTA_BOT_MODE_DOTA_BOT_MODE_SIDE_SHOP             DOTA_BOT_MODE = 6
+	DOTA_BOT_MODE_DOTA_BOT_MODE_RUNE                  DOTA_BOT_MODE = 7
+	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_TOP        DOTA_BOT_MODE = 8
+	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_MID        DOTA_BOT_MODE = 9
+	DOTA_BOT_MODE_DOTA_BOT_MODE_PUSH_TOWER_BOT        DOTA_BOT_MODE = 10
+	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_TOP      DOTA_BOT_MODE = 11
+	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_MID      DOTA_BOT_MODE = 12
+	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_TOWER_BOT      DOTA_BOT_MODE = 13
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ASSEMBLE              DOTA_BOT_MODE = 14
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ASSEMBLE_WITH_HUMANS  DOTA_BOT_MODE = 15
+	DOTA_BOT_MODE_DOTA_BOT_MODE_TEAM_ROAM             DOTA_BOT_MODE = 16
+	DOTA_BOT_MODE_DOTA_BOT_MODE_FARM                  DOTA_BOT_MODE = 17
+	DOTA_BOT_MODE_DOTA_BOT_MODE_DEFEND_ALLY           DOTA_BOT_MODE = 18
+	DOTA_BOT_MODE_DOTA_BOT_MODE_EVASIVE_MANEUVERS     DOTA_BOT_MODE = 19
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ROSHAN                DOTA_BOT_MODE = 20
+	DOTA_BOT_MODE_DOTA_BOT_MODE_ITEM                  DOTA_BOT_MODE = 21
+	DOTA_BOT_MODE_DOTA_BOT_MODE_WARD                  DOTA_BOT_MODE = 22
+	DOTA_BOT_MODE_DOTA_BOT_MODE_COMPANION             DOTA_BOT_MODE = 23
+	DOTA_BOT_MODE_DOTA_BOT_MODE_TUTORIAL_BOSS         DOTA_BOT_MODE = 24
+	DOTA_BOT_MODE_DOTA_BOT_MODE_MINION                DOTA_BOT_MODE = 25
+	DOTA_BOT_MODE_DOTA_BOT_MODE_OUTPOST               DOTA_BOT_MODE = 26
+	DOTA_BOT_MODE_DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME DOTA_BOT_MODE = 27
 )
 
 // Enum value maps for DOTA_BOT_MODE.
@@ -2549,35 +2577,37 @@ var (
 		24: "DOTA_BOT_MODE_TUTORIAL_BOSS",
 		25: "DOTA_BOT_MODE_MINION",
 		26: "DOTA_BOT_MODE_OUTPOST",
+		27: "DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME",
 	}
 	DOTA_BOT_MODE_value = map[string]int32{
-		"DOTA_BOT_MODE_NONE":                 0,
-		"DOTA_BOT_MODE_LANING":               1,
-		"DOTA_BOT_MODE_ATTACK":               2,
-		"DOTA_BOT_MODE_ROAM":                 3,
-		"DOTA_BOT_MODE_RETREAT":              4,
-		"DOTA_BOT_MODE_SECRET_SHOP":          5,
-		"DOTA_BOT_MODE_SIDE_SHOP":            6,
-		"DOTA_BOT_MODE_RUNE":                 7,
-		"DOTA_BOT_MODE_PUSH_TOWER_TOP":       8,
-		"DOTA_BOT_MODE_PUSH_TOWER_MID":       9,
-		"DOTA_BOT_MODE_PUSH_TOWER_BOT":       10,
-		"DOTA_BOT_MODE_DEFEND_TOWER_TOP":     11,
-		"DOTA_BOT_MODE_DEFEND_TOWER_MID":     12,
-		"DOTA_BOT_MODE_DEFEND_TOWER_BOT":     13,
-		"DOTA_BOT_MODE_ASSEMBLE":             14,
-		"DOTA_BOT_MODE_ASSEMBLE_WITH_HUMANS": 15,
-		"DOTA_BOT_MODE_TEAM_ROAM":            16,
-		"DOTA_BOT_MODE_FARM":                 17,
-		"DOTA_BOT_MODE_DEFEND_ALLY":          18,
-		"DOTA_BOT_MODE_EVASIVE_MANEUVERS":    19,
-		"DOTA_BOT_MODE_ROSHAN":               20,
-		"DOTA_BOT_MODE_ITEM":                 21,
-		"DOTA_BOT_MODE_WARD":                 22,
-		"DOTA_BOT_MODE_COMPANION":            23,
-		"DOTA_BOT_MODE_TUTORIAL_BOSS":        24,
-		"DOTA_BOT_MODE_MINION":               25,
-		"DOTA_BOT_MODE_OUTPOST":              26,
+		"DOTA_BOT_MODE_NONE":                  0,
+		"DOTA_BOT_MODE_LANING":                1,
+		"DOTA_BOT_MODE_ATTACK":                2,
+		"DOTA_BOT_MODE_ROAM":                  3,
+		"DOTA_BOT_MODE_RETREAT":               4,
+		"DOTA_BOT_MODE_SECRET_SHOP":           5,
+		"DOTA_BOT_MODE_SIDE_SHOP":             6,
+		"DOTA_BOT_MODE_RUNE":                  7,
+		"DOTA_BOT_MODE_PUSH_TOWER_TOP":        8,
+		"DOTA_BOT_MODE_PUSH_TOWER_MID":        9,
+		"DOTA_BOT_MODE_PUSH_TOWER_BOT":        10,
+		"DOTA_BOT_MODE_DEFEND_TOWER_TOP":      11,
+		"DOTA_BOT_MODE_DEFEND_TOWER_MID":      12,
+		"DOTA_BOT_MODE_DEFEND_TOWER_BOT":      13,
+		"DOTA_BOT_MODE_ASSEMBLE":              14,
+		"DOTA_BOT_MODE_ASSEMBLE_WITH_HUMANS":  15,
+		"DOTA_BOT_MODE_TEAM_ROAM":             16,
+		"DOTA_BOT_MODE_FARM":                  17,
+		"DOTA_BOT_MODE_DEFEND_ALLY":           18,
+		"DOTA_BOT_MODE_EVASIVE_MANEUVERS":     19,
+		"DOTA_BOT_MODE_ROSHAN":                20,
+		"DOTA_BOT_MODE_ITEM":                  21,
+		"DOTA_BOT_MODE_WARD":                  22,
+		"DOTA_BOT_MODE_COMPANION":             23,
+		"DOTA_BOT_MODE_TUTORIAL_BOSS":         24,
+		"DOTA_BOT_MODE_MINION":                25,
+		"DOTA_BOT_MODE_OUTPOST":               26,
+		"DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME": 27,
 	}
 )
 
@@ -2963,6 +2993,11 @@ const (
 	EBadgeType_k_EBadgeType_TI13_FinalsDay2    EBadgeType = 19
 	EBadgeType_k_EBadgeType_TI13_FinalsDay3    EBadgeType = 20
 	EBadgeType_k_EBadgeType_TI13_Special       EBadgeType = 21
+	EBadgeType_k_EBadgeType_TI14_FinalsDay1    EBadgeType = 22
+	EBadgeType_k_EBadgeType_TI14_FinalsDay2    EBadgeType = 23
+	EBadgeType_k_EBadgeType_TI14_FinalsDay3    EBadgeType = 24
+	EBadgeType_k_EBadgeType_TI14_FinalsDay4    EBadgeType = 25
+	EBadgeType_k_EBadgeType_TI14_Special       EBadgeType = 26
 )
 
 // Enum value maps for EBadgeType.
@@ -2990,6 +3025,11 @@ var (
 		19: "k_EBadgeType_TI13_FinalsDay2",
 		20: "k_EBadgeType_TI13_FinalsDay3",
 		21: "k_EBadgeType_TI13_Special",
+		22: "k_EBadgeType_TI14_FinalsDay1",
+		23: "k_EBadgeType_TI14_FinalsDay2",
+		24: "k_EBadgeType_TI14_FinalsDay3",
+		25: "k_EBadgeType_TI14_FinalsDay4",
+		26: "k_EBadgeType_TI14_Special",
 	}
 	EBadgeType_value = map[string]int32{
 		"k_EBadgeType_Invalid":            0,
@@ -3014,6 +3054,11 @@ var (
 		"k_EBadgeType_TI13_FinalsDay2":    19,
 		"k_EBadgeType_TI13_FinalsDay3":    20,
 		"k_EBadgeType_TI13_Special":       21,
+		"k_EBadgeType_TI14_FinalsDay1":    22,
+		"k_EBadgeType_TI14_FinalsDay2":    23,
+		"k_EBadgeType_TI14_FinalsDay3":    24,
+		"k_EBadgeType_TI14_FinalsDay4":    25,
+		"k_EBadgeType_TI14_Special":       26,
 	}
 )
 
@@ -5339,6 +5384,246 @@ func (x *CMsgPendingEventAward) GetAuditData() uint64 {
 	return 0
 }
 
+type CMsgMonsterHunterMaterialQuantity struct {
+	state          protoimpl.MessageState                                   `protogen:"open.v1"`
+	MaterialCounts []*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry `protobuf:"bytes,1,rep,name=material_counts,json=materialCounts" json:"material_counts,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity) Reset() {
+	*x = CMsgMonsterHunterMaterialQuantity{}
+	mi := &file_dota_shared_enums_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterMaterialQuantity) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterMaterialQuantity) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterMaterialQuantity.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterMaterialQuantity) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity) GetMaterialCounts() []*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry {
+	if x != nil {
+		return x.MaterialCounts
+	}
+	return nil
+}
+
+type CMsgMonsterHunterInvestigation struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	HeroId        *int32                             `protobuf:"varint,1,opt,name=hero_id,json=heroId" json:"hero_id,omitempty"`
+	PersonaId     *int32                             `protobuf:"varint,2,opt,name=persona_id,json=personaId" json:"persona_id,omitempty"`
+	MatchRewards  *CMsgMonsterHunterMaterialQuantity `protobuf:"bytes,3,opt,name=match_rewards,json=matchRewards" json:"match_rewards,omitempty"`
+	HuntRewards   *CMsgMonsterHunterMaterialQuantity `protobuf:"bytes,4,opt,name=hunt_rewards,json=huntRewards" json:"hunt_rewards,omitempty"`
+	SuccessState  *bool                              `protobuf:"varint,5,opt,name=success_state,json=successState" json:"success_state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterInvestigation) Reset() {
+	*x = CMsgMonsterHunterInvestigation{}
+	mi := &file_dota_shared_enums_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterInvestigation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterInvestigation) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterInvestigation) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterInvestigation.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterInvestigation) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *CMsgMonsterHunterInvestigation) GetHeroId() int32 {
+	if x != nil && x.HeroId != nil {
+		return *x.HeroId
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterInvestigation) GetPersonaId() int32 {
+	if x != nil && x.PersonaId != nil {
+		return *x.PersonaId
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterInvestigation) GetMatchRewards() *CMsgMonsterHunterMaterialQuantity {
+	if x != nil {
+		return x.MatchRewards
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterInvestigation) GetHuntRewards() *CMsgMonsterHunterMaterialQuantity {
+	if x != nil {
+		return x.HuntRewards
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterInvestigation) GetSuccessState() bool {
+	if x != nil && x.SuccessState != nil {
+		return *x.SuccessState
+	}
+	return false
+}
+
+type CMsgMonsterHunterInvestigationGameState struct {
+	state                 protoimpl.MessageState                              `protogen:"open.v1"`
+	SelectedInvestigation *CMsgMonsterHunterInvestigation                     `protobuf:"bytes,1,opt,name=selected_investigation,json=selectedInvestigation" json:"selected_investigation,omitempty"`
+	HuntedBy              []*CMsgMonsterHunterInvestigationGameState_HuntedBy `protobuf:"bytes,2,rep,name=hunted_by,json=huntedBy" json:"hunted_by,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState) Reset() {
+	*x = CMsgMonsterHunterInvestigationGameState{}
+	mi := &file_dota_shared_enums_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterInvestigationGameState) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterInvestigationGameState) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterInvestigationGameState.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterInvestigationGameState) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState) GetSelectedInvestigation() *CMsgMonsterHunterInvestigation {
+	if x != nil {
+		return x.SelectedInvestigation
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState) GetHuntedBy() []*CMsgMonsterHunterInvestigationGameState_HuntedBy {
+	if x != nil {
+		return x.HuntedBy
+	}
+	return nil
+}
+
+type CMsgMonsterHunterCodexUpdateData struct {
+	state         protoimpl.MessageState                       `protogen:"open.v1"`
+	PlayerHero    *int32                                       `protobuf:"varint,1,opt,name=player_hero,json=playerHero" json:"player_hero,omitempty"`
+	Allies        []int32                                      `protobuf:"varint,2,rep,name=allies" json:"allies,omitempty"`
+	Enemies       []int32                                      `protobuf:"varint,3,rep,name=enemies" json:"enemies,omitempty"`
+	PlayerKills   []*CMsgMonsterHunterCodexUpdateData_KillInfo `protobuf:"bytes,4,rep,name=player_kills,json=playerKills" json:"player_kills,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) Reset() {
+	*x = CMsgMonsterHunterCodexUpdateData{}
+	mi := &file_dota_shared_enums_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterCodexUpdateData) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterCodexUpdateData) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterCodexUpdateData.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterCodexUpdateData) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) GetPlayerHero() int32 {
+	if x != nil && x.PlayerHero != nil {
+		return *x.PlayerHero
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) GetAllies() []int32 {
+	if x != nil {
+		return x.Allies
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) GetEnemies() []int32 {
+	if x != nil {
+		return x.Enemies
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData) GetPlayerKills() []*CMsgMonsterHunterCodexUpdateData_KillInfo {
+	if x != nil {
+		return x.PlayerKills
+	}
+	return nil
+}
+
 type CDOTASaveGame_Player struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Team          *DOTA_GC_TEAM          `protobuf:"varint,1,opt,name=team,enum=protocol.DOTA_GC_TEAM,def=0" json:"team,omitempty"`
@@ -5355,7 +5640,7 @@ const (
 
 func (x *CDOTASaveGame_Player) Reset() {
 	*x = CDOTASaveGame_Player{}
-	mi := &file_dota_shared_enums_proto_msgTypes[4]
+	mi := &file_dota_shared_enums_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5367,7 +5652,7 @@ func (x *CDOTASaveGame_Player) String() string {
 func (*CDOTASaveGame_Player) ProtoMessage() {}
 
 func (x *CDOTASaveGame_Player) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_shared_enums_proto_msgTypes[4]
+	mi := &file_dota_shared_enums_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5418,7 +5703,7 @@ type CDOTASaveGame_SaveInstance struct {
 
 func (x *CDOTASaveGame_SaveInstance) Reset() {
 	*x = CDOTASaveGame_SaveInstance{}
-	mi := &file_dota_shared_enums_proto_msgTypes[5]
+	mi := &file_dota_shared_enums_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5430,7 +5715,7 @@ func (x *CDOTASaveGame_SaveInstance) String() string {
 func (*CDOTASaveGame_SaveInstance) ProtoMessage() {}
 
 func (x *CDOTASaveGame_SaveInstance) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_shared_enums_proto_msgTypes[5]
+	mi := &file_dota_shared_enums_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5498,7 +5783,7 @@ type CDOTASaveGame_SaveInstance_PlayerPositions struct {
 
 func (x *CDOTASaveGame_SaveInstance_PlayerPositions) Reset() {
 	*x = CDOTASaveGame_SaveInstance_PlayerPositions{}
-	mi := &file_dota_shared_enums_proto_msgTypes[6]
+	mi := &file_dota_shared_enums_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5510,7 +5795,7 @@ func (x *CDOTASaveGame_SaveInstance_PlayerPositions) String() string {
 func (*CDOTASaveGame_SaveInstance_PlayerPositions) ProtoMessage() {}
 
 func (x *CDOTASaveGame_SaveInstance_PlayerPositions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_shared_enums_proto_msgTypes[6]
+	mi := &file_dota_shared_enums_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5536,6 +5821,178 @@ func (x *CDOTASaveGame_SaveInstance_PlayerPositions) GetX() float32 {
 func (x *CDOTASaveGame_SaveInstance_PlayerPositions) GetY() float32 {
 	if x != nil && x.Y != nil {
 		return *x.Y
+	}
+	return 0
+}
+
+type CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *uint32                `protobuf:"varint,1,opt,name=key" json:"key,omitempty"`
+	Value         *int32                 `protobuf:"varint,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) Reset() {
+	*x = CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry{}
+	mi := &file_dota_shared_enums_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{4, 0}
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) GetKey() uint32 {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry) GetValue() int32 {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return 0
+}
+
+type CMsgMonsterHunterInvestigationGameState_HuntedBy struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	HeroId        *int32                             `protobuf:"varint,1,opt,name=hero_id,json=heroId" json:"hero_id,omitempty"`
+	PersonaId     *int32                             `protobuf:"varint,2,opt,name=persona_id,json=personaId" json:"persona_id,omitempty"`
+	HuntRewards   *CMsgMonsterHunterMaterialQuantity `protobuf:"bytes,3,opt,name=hunt_rewards,json=huntRewards" json:"hunt_rewards,omitempty"`
+	SuccessState  *bool                              `protobuf:"varint,4,opt,name=success_state,json=successState" json:"success_state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) Reset() {
+	*x = CMsgMonsterHunterInvestigationGameState_HuntedBy{}
+	mi := &file_dota_shared_enums_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterInvestigationGameState_HuntedBy) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterInvestigationGameState_HuntedBy.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterInvestigationGameState_HuntedBy) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{6, 0}
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) GetHeroId() int32 {
+	if x != nil && x.HeroId != nil {
+		return *x.HeroId
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) GetPersonaId() int32 {
+	if x != nil && x.PersonaId != nil {
+		return *x.PersonaId
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) GetHuntRewards() *CMsgMonsterHunterMaterialQuantity {
+	if x != nil {
+		return x.HuntRewards
+	}
+	return nil
+}
+
+func (x *CMsgMonsterHunterInvestigationGameState_HuntedBy) GetSuccessState() bool {
+	if x != nil && x.SuccessState != nil {
+		return *x.SuccessState
+	}
+	return false
+}
+
+type CMsgMonsterHunterCodexUpdateData_KillInfo struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	HeroId        *int32                 `protobuf:"varint,1,opt,name=hero_id,json=heroId" json:"hero_id,omitempty"`
+	KillCount     *int32                 `protobuf:"varint,2,opt,name=kill_count,json=killCount" json:"kill_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData_KillInfo) Reset() {
+	*x = CMsgMonsterHunterCodexUpdateData_KillInfo{}
+	mi := &file_dota_shared_enums_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData_KillInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgMonsterHunterCodexUpdateData_KillInfo) ProtoMessage() {}
+
+func (x *CMsgMonsterHunterCodexUpdateData_KillInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_shared_enums_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgMonsterHunterCodexUpdateData_KillInfo.ProtoReflect.Descriptor instead.
+func (*CMsgMonsterHunterCodexUpdateData_KillInfo) Descriptor() ([]byte, []int) {
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{7, 0}
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData_KillInfo) GetHeroId() int32 {
+	if x != nil && x.HeroId != nil {
+		return *x.HeroId
+	}
+	return 0
+}
+
+func (x *CMsgMonsterHunterCodexUpdateData_KillInfo) GetKillCount() int32 {
+	if x != nil && x.KillCount != nil {
+		return *x.KillCount
 	}
 	return 0
 }
@@ -5673,7 +6130,38 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"score_mode\x18\x04 \x01(\x0e2\x1f.protocol.EEventActionScoreMode:\x1bk_eEventActionScoreMode_AddR\tscoreMode\x12!\n" +
 	"\faudit_action\x18\x05 \x01(\rR\vauditAction\x12\x1d\n" +
 	"\n" +
-	"audit_data\x18\x06 \x01(\x04R\tauditData*\x9a\x05\n" +
+	"audit_data\x18\x06 \x01(\x04R\tauditData\"\xcc\x01\n" +
+	"!CMsgMonsterHunterMaterialQuantity\x12h\n" +
+	"\x0fmaterial_counts\x18\x01 \x03(\v2?.protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntryR\x0ematerialCounts\x1a=\n" +
+	"\x13MaterialCountsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x05R\x05value\"\x9f\x02\n" +
+	"\x1eCMsgMonsterHunterInvestigation\x12\x17\n" +
+	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12\x1d\n" +
+	"\n" +
+	"persona_id\x18\x02 \x01(\x05R\tpersonaId\x12P\n" +
+	"\rmatch_rewards\x18\x03 \x01(\v2+.protocol.CMsgMonsterHunterMaterialQuantityR\fmatchRewards\x12N\n" +
+	"\fhunt_rewards\x18\x04 \x01(\v2+.protocol.CMsgMonsterHunterMaterialQuantityR\vhuntRewards\x12#\n" +
+	"\rsuccess_state\x18\x05 \x01(\bR\fsuccessState\"\x9d\x03\n" +
+	"'CMsgMonsterHunterInvestigationGameState\x12_\n" +
+	"\x16selected_investigation\x18\x01 \x01(\v2(.protocol.CMsgMonsterHunterInvestigationR\x15selectedInvestigation\x12W\n" +
+	"\thunted_by\x18\x02 \x03(\v2:.protocol.CMsgMonsterHunterInvestigationGameState.HuntedByR\bhuntedBy\x1a\xb7\x01\n" +
+	"\bHuntedBy\x12\x17\n" +
+	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12\x1d\n" +
+	"\n" +
+	"persona_id\x18\x02 \x01(\x05R\tpersonaId\x12N\n" +
+	"\fhunt_rewards\x18\x03 \x01(\v2+.protocol.CMsgMonsterHunterMaterialQuantityR\vhuntRewards\x12#\n" +
+	"\rsuccess_state\x18\x04 \x01(\bR\fsuccessState\"\x91\x02\n" +
+	" CMsgMonsterHunterCodexUpdateData\x12\x1f\n" +
+	"\vplayer_hero\x18\x01 \x01(\x05R\n" +
+	"playerHero\x12\x16\n" +
+	"\x06allies\x18\x02 \x03(\x05R\x06allies\x12\x18\n" +
+	"\aenemies\x18\x03 \x03(\x05R\aenemies\x12V\n" +
+	"\fplayer_kills\x18\x04 \x03(\v23.protocol.CMsgMonsterHunterCodexUpdateData.KillInfoR\vplayerKills\x1aB\n" +
+	"\bKillInfo\x12\x17\n" +
+	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12\x1d\n" +
+	"\n" +
+	"kill_count\x18\x02 \x01(\x05R\tkillCount*\xbb\x05\n" +
 	"\rDOTA_GameMode\x12\x16\n" +
 	"\x12DOTA_GAMEMODE_NONE\x10\x00\x12\x14\n" +
 	"\x10DOTA_GAMEMODE_AP\x10\x01\x12\x14\n" +
@@ -5701,7 +6189,8 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x17DOTA_GAMEMODE_ALL_DRAFT\x10\x16\x12\x17\n" +
 	"\x13DOTA_GAMEMODE_TURBO\x10\x17\x12\x1a\n" +
 	"\x16DOTA_GAMEMODE_MUTATION\x10\x18\x12#\n" +
-	"\x1fDOTA_GAMEMODE_COACHES_CHALLENGE\x10\x19*\xbc\x04\n" +
+	"\x1fDOTA_GAMEMODE_COACHES_CHALLENGE\x10\x19\x12\x1f\n" +
+	"\x1bDOTA_GAMEMODE_BOT_CHALLENGE\x10\x1a*\xbc\x04\n" +
 	"\x0eDOTA_GameState\x12\x1d\n" +
 	"\x19DOTA_GAMERULES_STATE_INIT\x10\x00\x121\n" +
 	"-DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD\x10\x01\x12'\n" +
@@ -5734,7 +6223,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x15DOTA_GC_TEAM_CUSTOM_6\x10\v\x12\x19\n" +
 	"\x15DOTA_GC_TEAM_CUSTOM_7\x10\f\x12\x19\n" +
 	"\x15DOTA_GC_TEAM_CUSTOM_8\x10\r\x12\x19\n" +
-	"\x15DOTA_GC_TEAM_NEUTRALS\x10\x0e*\xf6\v\n" +
+	"\x15DOTA_GC_TEAM_NEUTRALS\x10\x0e*\xcc\r\n" +
 	"\x06EEvent\x12\x11\n" +
 	"\rEVENT_ID_NONE\x10\x00\x12\x15\n" +
 	"\x11EVENT_ID_DIRETIDE\x10\x01\x12\x1c\n" +
@@ -5786,7 +6275,15 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x12EVENT_ID_CROWNFALL\x10/\x12\x1b\n" +
 	"\x17EVENT_ID_FROSTIVUS_2023\x100\x12\x1f\n" +
 	"\x1bEVENT_ID_INTERNATIONAL_2024\x101\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2024\x102*\xbb\x02\n" +
+	"\x17EVENT_ID_FROSTIVUS_2024\x102\x12\x1b\n" +
+	"\x17EVENT_ID_MONSTER_HUNTER\x103\x12\x1f\n" +
+	"\x1bEVENT_ID_INTERNATIONAL_2025\x104\x12\x16\n" +
+	"\x12EVENT_ID_FALL_2025\x105\x12\x18\n" +
+	"\x14EVENT_ID_WINTER_2025\x107\x12\x18\n" +
+	"\x14EVENT_ID_SPRING_2026\x108\x12\x18\n" +
+	"\x14EVENT_ID_SUMMER_2026\x109\x12\x16\n" +
+	"\x12EVENT_ID_FALL_2026\x10:\x12\x18\n" +
+	"\x14EVENT_ID_WINTER_2026\x10;*\xbb\x02\n" +
 	"\tERankType\x12\x17\n" +
 	"\x13k_ERankType_Invalid\x10\x00\x12\x16\n" +
 	"\x12k_ERankType_Casual\x10\x01\x12\x16\n" +
@@ -5823,7 +6320,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x11FANTASY_ROLE_CORE\x10\x01\x12\x18\n" +
 	"\x14FANTASY_ROLE_SUPPORT\x10\x02\x12\x18\n" +
 	"\x14FANTASY_ROLE_OFFLANE\x10\x03\x12\x14\n" +
-	"\x10FANTASY_ROLE_MID\x10\x04*\xa1\x05\n" +
+	"\x10FANTASY_ROLE_MID\x10\x04*\x95\x05\n" +
 	"\x0fFantasy_Scoring\x12\x19\n" +
 	"\x15FANTASY_SCORING_KILLS\x10\x00\x12\x1a\n" +
 	"\x16FANTASY_SCORING_DEATHS\x10\x01\x12\x16\n" +
@@ -5838,8 +6335,8 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x1bFANTASY_SCORING_FIRST_BLOOD\x10\n" +
 	"\x12\x19\n" +
 	"\x15FANTASY_SCORING_STUNS\x10\v\x12\x1f\n" +
-	"\x1bFANTASY_SCORING_SMOKES_USED\x10\f\x12(\n" +
-	"$FANTASY_SCORING_NEUTRAL_TOKENS_FOUND\x10\r\x12\"\n" +
+	"\x1bFANTASY_SCORING_SMOKES_USED\x10\f\x12\x1c\n" +
+	"\x18FANTASY_SCORING_MADSTONE\x10\r\x12\"\n" +
 	"\x1eFANTASY_SCORING_WATCHERS_TAKEN\x10\x0e\x12\"\n" +
 	"\x1eFANTASY_SCORING_LOTUSES_GAINED\x10\x0f\x12#\n" +
 	"\x1fFANTASY_SCORING_TORMENTOR_KILLS\x10\x10\x12!\n" +
@@ -6017,7 +6514,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x15BOT_DIFFICULTY_EXTRA1\x10\x06\x12\x19\n" +
 	"\x15BOT_DIFFICULTY_EXTRA2\x10\a\x12\x19\n" +
 	"\x15BOT_DIFFICULTY_EXTRA3\x10\b\x12\x16\n" +
-	"\x12BOT_DIFFICULTY_NPX\x10\t*\xae\x06\n" +
+	"\x12BOT_DIFFICULTY_NPX\x10\t*\xd7\x06\n" +
 	"\rDOTA_BOT_MODE\x12\x16\n" +
 	"\x12DOTA_BOT_MODE_NONE\x10\x00\x12\x18\n" +
 	"\x14DOTA_BOT_MODE_LANING\x10\x01\x12\x18\n" +
@@ -6046,7 +6543,8 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x17DOTA_BOT_MODE_COMPANION\x10\x17\x12\x1f\n" +
 	"\x1bDOTA_BOT_MODE_TUTORIAL_BOSS\x10\x18\x12\x18\n" +
 	"\x14DOTA_BOT_MODE_MINION\x10\x19\x12\x19\n" +
-	"\x15DOTA_BOT_MODE_OUTPOST\x10\x1a*\xf3\x01\n" +
+	"\x15DOTA_BOT_MODE_OUTPOST\x10\x1a\x12'\n" +
+	"#DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME\x10\x1b*\xf3\x01\n" +
 	"\x0eMatchLanguages\x12\x1a\n" +
 	"\x16MATCH_LANGUAGE_INVALID\x10\x00\x12\x1a\n" +
 	"\x16MATCH_LANGUAGE_ENGLISH\x10\x01\x12\x1a\n" +
@@ -6091,7 +6589,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\rLANE_TYPE_OFF\x10\x02\x12\x11\n" +
 	"\rLANE_TYPE_MID\x10\x03\x12\x14\n" +
 	"\x10LANE_TYPE_JUNGLE\x10\x04\x12\x12\n" +
-	"\x0eLANE_TYPE_ROAM\x10\x05*\xdb\x05\n" +
+	"\x0eLANE_TYPE_ROAM\x10\x05*\x82\a\n" +
 	"\n" +
 	"EBadgeType\x12\x18\n" +
 	"\x14k_EBadgeType_Invalid\x10\x00\x12\x1c\n" +
@@ -6116,7 +6614,12 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x1ck_EBadgeType_TI13_FinalsDay1\x10\x12\x12 \n" +
 	"\x1ck_EBadgeType_TI13_FinalsDay2\x10\x13\x12 \n" +
 	"\x1ck_EBadgeType_TI13_FinalsDay3\x10\x14\x12\x1d\n" +
-	"\x19k_EBadgeType_TI13_Special\x10\x15*\xd4\x01\n" +
+	"\x19k_EBadgeType_TI13_Special\x10\x15\x12 \n" +
+	"\x1ck_EBadgeType_TI14_FinalsDay1\x10\x16\x12 \n" +
+	"\x1ck_EBadgeType_TI14_FinalsDay2\x10\x17\x12 \n" +
+	"\x1ck_EBadgeType_TI14_FinalsDay3\x10\x18\x12 \n" +
+	"\x1ck_EBadgeType_TI14_FinalsDay4\x10\x19\x12\x1d\n" +
+	"\x19k_EBadgeType_TI14_Special\x10\x1a*\xd4\x01\n" +
 	"\rELeagueStatus\x12\x17\n" +
 	"\x13LEAGUE_STATUS_UNSET\x10\x00\x12\x1d\n" +
 	"\x19LEAGUE_STATUS_UNSUBMITTED\x10\x01\x12\x1b\n" +
@@ -6319,7 +6822,7 @@ func file_dota_shared_enums_proto_rawDescGZIP() []byte {
 }
 
 var file_dota_shared_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 54)
-var file_dota_shared_enums_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_dota_shared_enums_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_dota_shared_enums_proto_goTypes = []any{
 	(DOTA_GameMode)(0),                                 // 0: protocol.DOTA_GameMode
 	(DOTA_GameState)(0),                                // 1: protocol.DOTA_GameState
@@ -6379,23 +6882,37 @@ var file_dota_shared_enums_proto_goTypes = []any{
 	(*CDOTASaveGame)(nil),                              // 55: protocol.CDOTASaveGame
 	(*CMsgDOTACombatLogEntry)(nil),                     // 56: protocol.CMsgDOTACombatLogEntry
 	(*CMsgPendingEventAward)(nil),                      // 57: protocol.CMsgPendingEventAward
-	(*CDOTASaveGame_Player)(nil),                       // 58: protocol.CDOTASaveGame.Player
-	(*CDOTASaveGame_SaveInstance)(nil),                 // 59: protocol.CDOTASaveGame.SaveInstance
-	(*CDOTASaveGame_SaveInstance_PlayerPositions)(nil), // 60: protocol.CDOTASaveGame.SaveInstance.PlayerPositions
+	(*CMsgMonsterHunterMaterialQuantity)(nil),          // 58: protocol.CMsgMonsterHunterMaterialQuantity
+	(*CMsgMonsterHunterInvestigation)(nil),             // 59: protocol.CMsgMonsterHunterInvestigation
+	(*CMsgMonsterHunterInvestigationGameState)(nil),    // 60: protocol.CMsgMonsterHunterInvestigationGameState
+	(*CMsgMonsterHunterCodexUpdateData)(nil),           // 61: protocol.CMsgMonsterHunterCodexUpdateData
+	(*CDOTASaveGame_Player)(nil),                       // 62: protocol.CDOTASaveGame.Player
+	(*CDOTASaveGame_SaveInstance)(nil),                 // 63: protocol.CDOTASaveGame.SaveInstance
+	(*CDOTASaveGame_SaveInstance_PlayerPositions)(nil), // 64: protocol.CDOTASaveGame.SaveInstance.PlayerPositions
+	(*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry)(nil), // 65: protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
+	(*CMsgMonsterHunterInvestigationGameState_HuntedBy)(nil),      // 66: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
+	(*CMsgMonsterHunterCodexUpdateData_KillInfo)(nil),             // 67: protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
 }
 var file_dota_shared_enums_proto_depIdxs = []int32{
-	58, // 0: protocol.CDOTASaveGame.players:type_name -> protocol.CDOTASaveGame.Player
-	59, // 1: protocol.CDOTASaveGame.save_instances:type_name -> protocol.CDOTASaveGame.SaveInstance
+	62, // 0: protocol.CDOTASaveGame.players:type_name -> protocol.CDOTASaveGame.Player
+	63, // 1: protocol.CDOTASaveGame.save_instances:type_name -> protocol.CDOTASaveGame.SaveInstance
 	45, // 2: protocol.CMsgDOTACombatLogEntry.type:type_name -> protocol.DOTA_COMBATLOG_TYPES
 	3,  // 3: protocol.CMsgPendingEventAward.event_id:type_name -> protocol.EEvent
 	48, // 4: protocol.CMsgPendingEventAward.score_mode:type_name -> protocol.EEventActionScoreMode
-	2,  // 5: protocol.CDOTASaveGame.Player.team:type_name -> protocol.DOTA_GC_TEAM
-	60, // 6: protocol.CDOTASaveGame.SaveInstance.player_positions:type_name -> protocol.CDOTASaveGame.SaveInstance.PlayerPositions
-	7,  // [7:7] is the sub-list for method output_type
-	7,  // [7:7] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	65, // 5: protocol.CMsgMonsterHunterMaterialQuantity.material_counts:type_name -> protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
+	58, // 6: protocol.CMsgMonsterHunterInvestigation.match_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	58, // 7: protocol.CMsgMonsterHunterInvestigation.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	59, // 8: protocol.CMsgMonsterHunterInvestigationGameState.selected_investigation:type_name -> protocol.CMsgMonsterHunterInvestigation
+	66, // 9: protocol.CMsgMonsterHunterInvestigationGameState.hunted_by:type_name -> protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
+	67, // 10: protocol.CMsgMonsterHunterCodexUpdateData.player_kills:type_name -> protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
+	2,  // 11: protocol.CDOTASaveGame.Player.team:type_name -> protocol.DOTA_GC_TEAM
+	64, // 12: protocol.CDOTASaveGame.SaveInstance.player_positions:type_name -> protocol.CDOTASaveGame.SaveInstance.PlayerPositions
+	58, // 13: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_dota_shared_enums_proto_init() }
@@ -6409,7 +6926,7 @@ func file_dota_shared_enums_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_shared_enums_proto_rawDesc), len(file_dota_shared_enums_proto_rawDesc)),
 			NumEnums:      54,
-			NumMessages:   7,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

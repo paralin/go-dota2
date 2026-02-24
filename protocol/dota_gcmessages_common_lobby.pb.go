@@ -276,17 +276,18 @@ func (CSODOTALobby_State) EnumDescriptor() ([]byte, []int) {
 type CSODOTALobby_LobbyType int32
 
 const (
-	CSODOTALobby_INVALID           CSODOTALobby_LobbyType = -1
-	CSODOTALobby_CASUAL_MATCH      CSODOTALobby_LobbyType = 0
-	CSODOTALobby_PRACTICE          CSODOTALobby_LobbyType = 1
-	CSODOTALobby_COOP_BOT_MATCH    CSODOTALobby_LobbyType = 4
-	CSODOTALobby_COMPETITIVE_MATCH CSODOTALobby_LobbyType = 7
-	CSODOTALobby_WEEKEND_TOURNEY   CSODOTALobby_LobbyType = 9
-	CSODOTALobby_LOCAL_BOT_MATCH   CSODOTALobby_LobbyType = 10
-	CSODOTALobby_SPECTATOR         CSODOTALobby_LobbyType = 11
-	CSODOTALobby_EVENT_MATCH       CSODOTALobby_LobbyType = 12
-	CSODOTALobby_NEW_PLAYER_POOL   CSODOTALobby_LobbyType = 14
-	CSODOTALobby_FEATURED_GAMEMODE CSODOTALobby_LobbyType = 15
+	CSODOTALobby_INVALID                  CSODOTALobby_LobbyType = -1
+	CSODOTALobby_CASUAL_MATCH             CSODOTALobby_LobbyType = 0
+	CSODOTALobby_PRACTICE                 CSODOTALobby_LobbyType = 1
+	CSODOTALobby_COOP_BOT_MATCH           CSODOTALobby_LobbyType = 4
+	CSODOTALobby_COMPETITIVE_MATCH        CSODOTALobby_LobbyType = 7
+	CSODOTALobby_WEEKEND_TOURNEY          CSODOTALobby_LobbyType = 9
+	CSODOTALobby_LOCAL_BOT_MATCH          CSODOTALobby_LobbyType = 10
+	CSODOTALobby_SPECTATOR                CSODOTALobby_LobbyType = 11
+	CSODOTALobby_EVENT_MATCH              CSODOTALobby_LobbyType = 12
+	CSODOTALobby_NEW_PLAYER_POOL          CSODOTALobby_LobbyType = 14
+	CSODOTALobby_FEATURED_GAMEMODE        CSODOTALobby_LobbyType = 15
+	CSODOTALobby_AUTOMATED_BOT_ONLY_MATCH CSODOTALobby_LobbyType = 16
 )
 
 // Enum value maps for CSODOTALobby_LobbyType.
@@ -303,19 +304,21 @@ var (
 		12: "EVENT_MATCH",
 		14: "NEW_PLAYER_POOL",
 		15: "FEATURED_GAMEMODE",
+		16: "AUTOMATED_BOT_ONLY_MATCH",
 	}
 	CSODOTALobby_LobbyType_value = map[string]int32{
-		"INVALID":           -1,
-		"CASUAL_MATCH":      0,
-		"PRACTICE":          1,
-		"COOP_BOT_MATCH":    4,
-		"COMPETITIVE_MATCH": 7,
-		"WEEKEND_TOURNEY":   9,
-		"LOCAL_BOT_MATCH":   10,
-		"SPECTATOR":         11,
-		"EVENT_MATCH":       12,
-		"NEW_PLAYER_POOL":   14,
-		"FEATURED_GAMEMODE": 15,
+		"INVALID":                  -1,
+		"CASUAL_MATCH":             0,
+		"PRACTICE":                 1,
+		"COOP_BOT_MATCH":           4,
+		"COMPETITIVE_MATCH":        7,
+		"WEEKEND_TOURNEY":          9,
+		"LOCAL_BOT_MATCH":          10,
+		"SPECTATOR":                11,
+		"EVENT_MATCH":              12,
+		"NEW_PLAYER_POOL":          14,
+		"FEATURED_GAMEMODE":        15,
+		"AUTOMATED_BOT_ONLY_MATCH": 16,
 	}
 )
 
@@ -1900,6 +1903,7 @@ type CSODOTALobby struct {
 	SeriesCurrentNonPriorityTeamChoice         *DOTASelectionPriorityChoice   `protobuf:"varint,101,opt,name=series_current_non_priority_team_choice,json=seriesCurrentNonPriorityTeamChoice,enum=protocol.DOTASelectionPriorityChoice,def=0" json:"series_current_non_priority_team_choice,omitempty"`
 	SeriesCurrentSelectionPriorityUsedCoinToss *bool                          `protobuf:"varint,102,opt,name=series_current_selection_priority_used_coin_toss,json=seriesCurrentSelectionPriorityUsedCoinToss" json:"series_current_selection_priority_used_coin_toss,omitempty"`
 	CurrentPrimaryEvent                        *EEvent                        `protobuf:"varint,103,opt,name=current_primary_event,json=currentPrimaryEvent,enum=protocol.EEvent,def=0" json:"current_primary_event,omitempty"`
+	CurrentPrimaryEventForDisplay              *EEvent                        `protobuf:"varint,104,opt,name=current_primary_event_for_display,json=currentPrimaryEventForDisplay,enum=protocol.EEvent,def=0" json:"current_primary_event_for_display,omitempty"`
 	EmergencyDisabledHeroIds                   []int32                        `protobuf:"varint,105,rep,name=emergency_disabled_hero_ids,json=emergencyDisabledHeroIds" json:"emergency_disabled_hero_ids,omitempty"`
 	CustomGamePrivateKey                       *uint64                        `protobuf:"fixed64,106,opt,name=custom_game_private_key,json=customGamePrivateKey" json:"custom_game_private_key,omitempty"`
 	CustomGamePenalties                        *bool                          `protobuf:"varint,107,opt,name=custom_game_penalties,json=customGamePenalties" json:"custom_game_penalties,omitempty"`
@@ -1944,6 +1948,7 @@ const (
 	Default_CSODOTALobby_SeriesCurrentPriorityTeamChoice    = DOTASelectionPriorityChoice_k_DOTASelectionPriorityChoice_Invalid
 	Default_CSODOTALobby_SeriesCurrentNonPriorityTeamChoice = DOTASelectionPriorityChoice_k_DOTASelectionPriorityChoice_Invalid
 	Default_CSODOTALobby_CurrentPrimaryEvent                = EEvent_EVENT_ID_NONE
+	Default_CSODOTALobby_CurrentPrimaryEventForDisplay      = EEvent_EVENT_ID_NONE
 )
 
 func (x *CSODOTALobby) Reset() {
@@ -2478,6 +2483,13 @@ func (x *CSODOTALobby) GetCurrentPrimaryEvent() EEvent {
 		return *x.CurrentPrimaryEvent
 	}
 	return Default_CSODOTALobby_CurrentPrimaryEvent
+}
+
+func (x *CSODOTALobby) GetCurrentPrimaryEventForDisplay() EEvent {
+	if x != nil && x.CurrentPrimaryEventForDisplay != nil {
+		return *x.CurrentPrimaryEventForDisplay
+	}
+	return Default_CSODOTALobby_CurrentPrimaryEventForDisplay
 }
 
 func (x *CSODOTALobby) GetEmergencyDisabledHeroIds() []int32 {
@@ -3743,7 +3755,7 @@ const file_dota_gcmessages_common_lobby_proto_rawDesc = "" +
 	"\x0foverall_quality\x18\x01 \x01(\rR\x0eoverallQuality\x12!\n" +
 	"\fteam_balance\x18\x02 \x01(\rR\vteamBalance\x12*\n" +
 	"\x11match_skill_range\x18\x03 \x01(\rR\x0fmatchSkillRange\x12%\n" +
-	"\x0ematch_behavior\x18\x04 \x01(\rR\rmatchBehavior\"\x82+\n" +
+	"\x0ematch_behavior\x18\x04 \x01(\rR\rmatchBehavior\"\x8b,\n" +
 	"\fCSODOTALobby\x12\x1f\n" +
 	"\blobby_id\x18\x01 \x01(\x04B\x04\x80\xa6\x1d\x01R\alobbyId\x12=\n" +
 	"\vall_members\x18x \x03(\v2\x1c.protocol.CSODOTALobbyMemberR\n" +
@@ -3826,7 +3838,8 @@ const file_dota_gcmessages_common_lobby_proto_rawDesc = "" +
 	"#series_current_priority_team_choice\x18d \x01(\x0e2%.protocol.DOTASelectionPriorityChoice:%k_DOTASelectionPriorityChoice_InvalidR\x1fseriesCurrentPriorityTeamChoice\x12\xa1\x01\n" +
 	"'series_current_non_priority_team_choice\x18e \x01(\x0e2%.protocol.DOTASelectionPriorityChoice:%k_DOTASelectionPriorityChoice_InvalidR\"seriesCurrentNonPriorityTeamChoice\x12d\n" +
 	"0series_current_selection_priority_used_coin_toss\x18f \x01(\bR*seriesCurrentSelectionPriorityUsedCoinToss\x12S\n" +
-	"\x15current_primary_event\x18g \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x13currentPrimaryEvent\x12=\n" +
+	"\x15current_primary_event\x18g \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x13currentPrimaryEvent\x12i\n" +
+	"!current_primary_event_for_display\x18h \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x1dcurrentPrimaryEventForDisplay\x12=\n" +
 	"\x1bemergency_disabled_hero_ids\x18i \x03(\x05R\x18emergencyDisabledHeroIds\x125\n" +
 	"\x17custom_game_private_key\x18j \x01(\x06R\x14customGamePrivateKey\x122\n" +
 	"\x15custom_game_penalties\x18k \x01(\bR\x13customGamePenalties\x123\n" +
@@ -3855,7 +3868,7 @@ const file_dota_gcmessages_common_lobby_proto_rawDesc = "" +
 	"\x03RUN\x10\x02\x12\f\n" +
 	"\bPOSTGAME\x10\x03\x12\f\n" +
 	"\bNOTREADY\x10\x05\x12\x10\n" +
-	"\fSERVERASSIGN\x10\x06\"\xe2\x01\n" +
+	"\fSERVERASSIGN\x10\x06\"\x80\x02\n" +
 	"\tLobbyType\x12\x14\n" +
 	"\aINVALID\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x10\n" +
 	"\fCASUAL_MATCH\x10\x00\x12\f\n" +
@@ -3868,7 +3881,8 @@ const file_dota_gcmessages_common_lobby_proto_rawDesc = "" +
 	"\tSPECTATOR\x10\v\x12\x0f\n" +
 	"\vEVENT_MATCH\x10\f\x12\x13\n" +
 	"\x0fNEW_PLAYER_POOL\x10\x0e\x12\x15\n" +
-	"\x11FEATURED_GAMEMODE\x10\x0f\"\xdc\x01\n" +
+	"\x11FEATURED_GAMEMODE\x10\x0f\x12\x1c\n" +
+	"\x18AUTOMATED_BOT_ONLY_MATCH\x10\x10\"\xdc\x01\n" +
 	"\x12CSODOTAServerLobby\x12C\n" +
 	"\vall_members\x18\x01 \x03(\v2\".protocol.CSODOTAServerLobbyMemberR\n" +
 	"allMembers\x12V\n" +
@@ -4041,31 +4055,32 @@ var file_dota_gcmessages_common_lobby_proto_depIdxs = []int32{
 	48, // 29: protocol.CSODOTALobby.series_current_priority_team_choice:type_name -> protocol.DOTASelectionPriorityChoice
 	48, // 30: protocol.CSODOTALobby.series_current_non_priority_team_choice:type_name -> protocol.DOTASelectionPriorityChoice
 	41, // 31: protocol.CSODOTALobby.current_primary_event:type_name -> protocol.EEvent
-	20, // 32: protocol.CSODOTALobby.guild_challenges:type_name -> protocol.CLobbyGuildChallenge
-	17, // 33: protocol.CSODOTALobby.guild_details:type_name -> protocol.CLobbyGuildDetails
-	5,  // 34: protocol.CSODOTALobby.coach_friend_requests:type_name -> protocol.CMsgLobbyCoachFriendRequest
-	21, // 35: protocol.CSODOTALobby.match_quality_data:type_name -> protocol.CDOTALobbyMatchQualityData
-	13, // 36: protocol.CSODOTAServerLobby.all_members:type_name -> protocol.CSODOTAServerLobbyMember
-	34, // 37: protocol.CSODOTAServerLobby.extra_startup_messages:type_name -> protocol.CSODOTALobby.CExtraMsg
-	14, // 38: protocol.CSODOTAStaticLobby.all_members:type_name -> protocol.CSODOTAStaticLobbyMember
-	15, // 39: protocol.CSODOTAServerStaticLobby.all_members:type_name -> protocol.CSODOTAServerStaticLobbyMember
-	9,  // 40: protocol.CSODOTAServerStaticLobby.lobby_event_points:type_name -> protocol.CMsgLobbyEventPoints
-	6,  // 41: protocol.CMsgAdditionalLobbyStartupAccountData.plus_data:type_name -> protocol.CMsgLobbyPlayerPlusSubscriptionData
-	35, // 42: protocol.CMsgAdditionalLobbyStartupAccountData.unlocked_chat_wheel_message_ranges:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData.ChatWheelMessageRange
-	36, // 43: protocol.CMsgAdditionalLobbyStartupAccountData.unlocked_ping_wheel_message_ranges:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData.PingWheelMessageRange
-	41, // 44: protocol.CMsgLocalServerGuildData.event_id:type_name -> protocol.EEvent
-	9,  // 45: protocol.CMsgLocalServerFakeLobbyData.event_points:type_name -> protocol.CMsgLobbyEventPoints
-	29, // 46: protocol.CMsgLocalServerFakeLobbyData.guild_info:type_name -> protocol.CMsgLocalServerGuildData
-	26, // 47: protocol.CMsgLocalServerFakeLobbyData.additional_data:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData
-	7,  // 48: protocol.CMsgLobbyEventPoints.AccountPoints.event_game_custom_actions:type_name -> protocol.CMsgEventActionData
-	7,  // 49: protocol.CMsgLobbyEventPoints.AccountPoints.networked_event_actions:type_name -> protocol.CMsgEventActionData
-	8,  // 50: protocol.CMsgLobbyEventPoints.AccountPoints.periodic_resources:type_name -> protocol.CMsgPeriodicResourceData
-	49, // 51: protocol.CMsgLobbyEventPoints.AccountPoints.extra_event_messages:type_name -> protocol.CExtraMsgBlock
-	52, // [52:52] is the sub-list for method output_type
-	52, // [52:52] is the sub-list for method input_type
-	52, // [52:52] is the sub-list for extension type_name
-	52, // [52:52] is the sub-list for extension extendee
-	0,  // [0:52] is the sub-list for field type_name
+	41, // 32: protocol.CSODOTALobby.current_primary_event_for_display:type_name -> protocol.EEvent
+	20, // 33: protocol.CSODOTALobby.guild_challenges:type_name -> protocol.CLobbyGuildChallenge
+	17, // 34: protocol.CSODOTALobby.guild_details:type_name -> protocol.CLobbyGuildDetails
+	5,  // 35: protocol.CSODOTALobby.coach_friend_requests:type_name -> protocol.CMsgLobbyCoachFriendRequest
+	21, // 36: protocol.CSODOTALobby.match_quality_data:type_name -> protocol.CDOTALobbyMatchQualityData
+	13, // 37: protocol.CSODOTAServerLobby.all_members:type_name -> protocol.CSODOTAServerLobbyMember
+	34, // 38: protocol.CSODOTAServerLobby.extra_startup_messages:type_name -> protocol.CSODOTALobby.CExtraMsg
+	14, // 39: protocol.CSODOTAStaticLobby.all_members:type_name -> protocol.CSODOTAStaticLobbyMember
+	15, // 40: protocol.CSODOTAServerStaticLobby.all_members:type_name -> protocol.CSODOTAServerStaticLobbyMember
+	9,  // 41: protocol.CSODOTAServerStaticLobby.lobby_event_points:type_name -> protocol.CMsgLobbyEventPoints
+	6,  // 42: protocol.CMsgAdditionalLobbyStartupAccountData.plus_data:type_name -> protocol.CMsgLobbyPlayerPlusSubscriptionData
+	35, // 43: protocol.CMsgAdditionalLobbyStartupAccountData.unlocked_chat_wheel_message_ranges:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData.ChatWheelMessageRange
+	36, // 44: protocol.CMsgAdditionalLobbyStartupAccountData.unlocked_ping_wheel_message_ranges:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData.PingWheelMessageRange
+	41, // 45: protocol.CMsgLocalServerGuildData.event_id:type_name -> protocol.EEvent
+	9,  // 46: protocol.CMsgLocalServerFakeLobbyData.event_points:type_name -> protocol.CMsgLobbyEventPoints
+	29, // 47: protocol.CMsgLocalServerFakeLobbyData.guild_info:type_name -> protocol.CMsgLocalServerGuildData
+	26, // 48: protocol.CMsgLocalServerFakeLobbyData.additional_data:type_name -> protocol.CMsgAdditionalLobbyStartupAccountData
+	7,  // 49: protocol.CMsgLobbyEventPoints.AccountPoints.event_game_custom_actions:type_name -> protocol.CMsgEventActionData
+	7,  // 50: protocol.CMsgLobbyEventPoints.AccountPoints.networked_event_actions:type_name -> protocol.CMsgEventActionData
+	8,  // 51: protocol.CMsgLobbyEventPoints.AccountPoints.periodic_resources:type_name -> protocol.CMsgPeriodicResourceData
+	49, // 52: protocol.CMsgLobbyEventPoints.AccountPoints.extra_event_messages:type_name -> protocol.CExtraMsgBlock
+	53, // [53:53] is the sub-list for method output_type
+	53, // [53:53] is the sub-list for method input_type
+	53, // [53:53] is the sub-list for extension type_name
+	53, // [53:53] is the sub-list for extension extendee
+	0,  // [0:53] is the sub-list for field type_name
 }
 
 func init() { file_dota_gcmessages_common_lobby_proto_init() }

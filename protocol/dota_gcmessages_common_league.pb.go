@@ -381,6 +381,7 @@ type CMsgDOTALeagueNodeGroup struct {
 	DefaultNodeType               *ELeagueNodeType                        `protobuf:"varint,9,opt,name=default_node_type,json=defaultNodeType,enum=protocol.ELeagueNodeType,def=0" json:"default_node_type,omitempty"`
 	Round                         *uint32                                 `protobuf:"varint,10,opt,name=round" json:"round,omitempty"`
 	MaxRounds                     *uint32                                 `protobuf:"varint,11,opt,name=max_rounds,json=maxRounds" json:"max_rounds,omitempty"`
+	WinLossLimit                  *uint32                                 `protobuf:"varint,27,opt,name=win_loss_limit,json=winLossLimit" json:"win_loss_limit,omitempty"`
 	IsTiebreaker                  *bool                                   `protobuf:"varint,12,opt,name=is_tiebreaker,json=isTiebreaker" json:"is_tiebreaker,omitempty"`
 	IsFinalGroup                  *bool                                   `protobuf:"varint,13,opt,name=is_final_group,json=isFinalGroup" json:"is_final_group,omitempty"`
 	IsCompleted                   *bool                                   `protobuf:"varint,14,opt,name=is_completed,json=isCompleted" json:"is_completed,omitempty"`
@@ -511,6 +512,13 @@ func (x *CMsgDOTALeagueNodeGroup) GetRound() uint32 {
 func (x *CMsgDOTALeagueNodeGroup) GetMaxRounds() uint32 {
 	if x != nil && x.MaxRounds != nil {
 		return *x.MaxRounds
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNodeGroup) GetWinLossLimit() uint32 {
+	if x != nil && x.WinLossLimit != nil {
+		return *x.WinLossLimit
 	}
 	return 0
 }
@@ -1567,23 +1575,24 @@ func (x *CMsgDOTALeagueNode_VOD) GetUrl() string {
 }
 
 type CMsgDOTALeagueNodeGroup_TeamStanding struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Standing            *uint32                `protobuf:"varint,1,opt,name=standing" json:"standing,omitempty"`
-	TeamId              *uint32                `protobuf:"varint,2,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
-	TeamName            *string                `protobuf:"bytes,3,opt,name=team_name,json=teamName" json:"team_name,omitempty"`
-	TeamTag             *string                `protobuf:"bytes,4,opt,name=team_tag,json=teamTag" json:"team_tag,omitempty"`
-	TeamLogo            *uint64                `protobuf:"varint,5,opt,name=team_logo,json=teamLogo" json:"team_logo,omitempty"`
-	TeamLogoUrl         *string                `protobuf:"bytes,6,opt,name=team_logo_url,json=teamLogoUrl" json:"team_logo_url,omitempty"`
-	Wins                *uint32                `protobuf:"varint,7,opt,name=wins" json:"wins,omitempty"`
-	Losses              *uint32                `protobuf:"varint,8,opt,name=losses" json:"losses,omitempty"`
-	Score               *int64                 `protobuf:"varint,9,opt,name=score" json:"score,omitempty"`
-	TeamAbbreviation    *string                `protobuf:"bytes,10,opt,name=team_abbreviation,json=teamAbbreviation" json:"team_abbreviation,omitempty"`
-	ScoreTiebreakGroup  *int64                 `protobuf:"varint,11,opt,name=score_tiebreak_group,json=scoreTiebreakGroup" json:"score_tiebreak_group,omitempty"`
-	ScoreTiebreakBelow  *int64                 `protobuf:"varint,12,opt,name=score_tiebreak_below,json=scoreTiebreakBelow" json:"score_tiebreak_below,omitempty"`
-	ScoreTiebreakRandom *int64                 `protobuf:"varint,13,opt,name=score_tiebreak_random,json=scoreTiebreakRandom" json:"score_tiebreak_random,omitempty"`
-	IsPro               *bool                  `protobuf:"varint,14,opt,name=is_pro,json=isPro" json:"is_pro,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Standing                   *uint32                `protobuf:"varint,1,opt,name=standing" json:"standing,omitempty"`
+	TeamId                     *uint32                `protobuf:"varint,2,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
+	TeamName                   *string                `protobuf:"bytes,3,opt,name=team_name,json=teamName" json:"team_name,omitempty"`
+	TeamTag                    *string                `protobuf:"bytes,4,opt,name=team_tag,json=teamTag" json:"team_tag,omitempty"`
+	TeamLogo                   *uint64                `protobuf:"varint,5,opt,name=team_logo,json=teamLogo" json:"team_logo,omitempty"`
+	TeamLogoUrl                *string                `protobuf:"bytes,6,opt,name=team_logo_url,json=teamLogoUrl" json:"team_logo_url,omitempty"`
+	Wins                       *uint32                `protobuf:"varint,7,opt,name=wins" json:"wins,omitempty"`
+	Losses                     *uint32                `protobuf:"varint,8,opt,name=losses" json:"losses,omitempty"`
+	Score                      *int64                 `protobuf:"varint,9,opt,name=score" json:"score,omitempty"`
+	TeamAbbreviation           *string                `protobuf:"bytes,10,opt,name=team_abbreviation,json=teamAbbreviation" json:"team_abbreviation,omitempty"`
+	IsPro                      *bool                  `protobuf:"varint,14,opt,name=is_pro,json=isPro" json:"is_pro,omitempty"`
+	TiebreakGameWinPct         *uint32                `protobuf:"varint,15,opt,name=tiebreak_game_win_pct,json=tiebreakGameWinPct" json:"tiebreak_game_win_pct,omitempty"`
+	TiebreakOpponentMatchWins  *uint32                `protobuf:"varint,16,opt,name=tiebreak_opponent_match_wins,json=tiebreakOpponentMatchWins" json:"tiebreak_opponent_match_wins,omitempty"`
+	TiebreakOpponentGameWinPct *uint32                `protobuf:"varint,17,opt,name=tiebreak_opponent_game_win_pct,json=tiebreakOpponentGameWinPct" json:"tiebreak_opponent_game_win_pct,omitempty"`
+	TiebreakCoinflip           *uint32                `protobuf:"varint,18,opt,name=tiebreak_coinflip,json=tiebreakCoinflip" json:"tiebreak_coinflip,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
 }
 
 func (x *CMsgDOTALeagueNodeGroup_TeamStanding) Reset() {
@@ -1686,32 +1695,39 @@ func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTeamAbbreviation() string {
 	return ""
 }
 
-func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetScoreTiebreakGroup() int64 {
-	if x != nil && x.ScoreTiebreakGroup != nil {
-		return *x.ScoreTiebreakGroup
-	}
-	return 0
-}
-
-func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetScoreTiebreakBelow() int64 {
-	if x != nil && x.ScoreTiebreakBelow != nil {
-		return *x.ScoreTiebreakBelow
-	}
-	return 0
-}
-
-func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetScoreTiebreakRandom() int64 {
-	if x != nil && x.ScoreTiebreakRandom != nil {
-		return *x.ScoreTiebreakRandom
-	}
-	return 0
-}
-
 func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetIsPro() bool {
 	if x != nil && x.IsPro != nil {
 		return *x.IsPro
 	}
 	return false
+}
+
+func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakGameWinPct() uint32 {
+	if x != nil && x.TiebreakGameWinPct != nil {
+		return *x.TiebreakGameWinPct
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakOpponentMatchWins() uint32 {
+	if x != nil && x.TiebreakOpponentMatchWins != nil {
+		return *x.TiebreakOpponentMatchWins
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakOpponentGameWinPct() uint32 {
+	if x != nil && x.TiebreakOpponentGameWinPct != nil {
+		return *x.TiebreakOpponentGameWinPct
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakCoinflip() uint32 {
+	if x != nil && x.TiebreakCoinflip != nil {
+		return *x.TiebreakCoinflip
+	}
+	return 0
 }
 
 type CMsgDOTALeague_Info struct {
@@ -3322,7 +3338,7 @@ const file_dota_gcmessages_common_league_proto_rawDesc = "" +
 	"\vseries_game\x18\x01 \x01(\rR\n" +
 	"seriesGame\x12\x1b\n" +
 	"\tstream_id\x18\x02 \x01(\rR\bstreamId\x12\x10\n" +
-	"\x03url\x18\x03 \x01(\tR\x03url\"\xd8\x0e\n" +
+	"\x03url\x18\x03 \x01(\tR\x03url\"\xcb\x0f\n" +
 	"\x17CMsgDOTALeagueNodeGroup\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
 	"\rnode_group_id\x18\x02 \x01(\rR\vnodeGroupId\x12/\n" +
@@ -3337,7 +3353,8 @@ const file_dota_gcmessages_common_league_proto_rawDesc = "" +
 	"\x05round\x18\n" +
 	" \x01(\rR\x05round\x12\x1d\n" +
 	"\n" +
-	"max_rounds\x18\v \x01(\rR\tmaxRounds\x12#\n" +
+	"max_rounds\x18\v \x01(\rR\tmaxRounds\x12$\n" +
+	"\x0ewin_loss_limit\x18\x1b \x01(\rR\fwinLossLimit\x12#\n" +
 	"\ris_tiebreaker\x18\f \x01(\bR\fisTiebreaker\x12$\n" +
 	"\x0eis_final_group\x18\r \x01(\bR\fisFinalGroup\x12!\n" +
 	"\fis_completed\x18\x0e \x01(\bR\visCompleted\x12@\n" +
@@ -3354,7 +3371,7 @@ const file_dota_gcmessages_common_league_proto_rawDesc = "" +
 	"\x0eteam_standings\x18\x0f \x03(\v2..protocol.CMsgDOTALeagueNodeGroup.TeamStandingR\rteamStandings\x122\n" +
 	"\x05nodes\x18\x10 \x03(\v2\x1c.protocol.CMsgDOTALeagueNodeR\x05nodes\x12B\n" +
 	"\vnode_groups\x18\x11 \x03(\v2!.protocol.CMsgDOTALeagueNodeGroupR\n" +
-	"nodeGroups\x1a\xda\x03\n" +
+	"nodeGroups\x1a\xa7\x04\n" +
 	"\fTeamStanding\x12\x1a\n" +
 	"\bstanding\x18\x01 \x01(\rR\bstanding\x12\x17\n" +
 	"\ateam_id\x18\x02 \x01(\rR\x06teamId\x12\x1b\n" +
@@ -3366,11 +3383,12 @@ const file_dota_gcmessages_common_league_proto_rawDesc = "" +
 	"\x06losses\x18\b \x01(\rR\x06losses\x12\x14\n" +
 	"\x05score\x18\t \x01(\x03R\x05score\x12+\n" +
 	"\x11team_abbreviation\x18\n" +
-	" \x01(\tR\x10teamAbbreviation\x120\n" +
-	"\x14score_tiebreak_group\x18\v \x01(\x03R\x12scoreTiebreakGroup\x120\n" +
-	"\x14score_tiebreak_below\x18\f \x01(\x03R\x12scoreTiebreakBelow\x122\n" +
-	"\x15score_tiebreak_random\x18\r \x01(\x03R\x13scoreTiebreakRandom\x12\x15\n" +
-	"\x06is_pro\x18\x0e \x01(\bR\x05isPro\"\xb9\x10\n" +
+	" \x01(\tR\x10teamAbbreviation\x12\x15\n" +
+	"\x06is_pro\x18\x0e \x01(\bR\x05isPro\x121\n" +
+	"\x15tiebreak_game_win_pct\x18\x0f \x01(\rR\x12tiebreakGameWinPct\x12?\n" +
+	"\x1ctiebreak_opponent_match_wins\x18\x10 \x01(\rR\x19tiebreakOpponentMatchWins\x12B\n" +
+	"\x1etiebreak_opponent_game_win_pct\x18\x11 \x01(\rR\x1atiebreakOpponentGameWinPct\x12+\n" +
+	"\x11tiebreak_coinflip\x18\x12 \x01(\rR\x10tiebreakCoinflip\"\xb9\x10\n" +
 	"\x0eCMsgDOTALeague\x121\n" +
 	"\x04info\x18\x01 \x01(\v2\x1d.protocol.CMsgDOTALeague.InfoR\x04info\x12A\n" +
 	"\n" +

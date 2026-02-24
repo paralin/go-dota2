@@ -1261,7 +1261,7 @@ func (x *CMsgGCNotificationsUpdate_EResult) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgGCNotificationsUpdate_EResult.Descriptor instead.
 func (CMsgGCNotificationsUpdate_EResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{74, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{75, 0}
 }
 
 type CMsgGCPlayerInfoSubmitResponse_EResult int32
@@ -1323,7 +1323,7 @@ func (x *CMsgGCPlayerInfoSubmitResponse_EResult) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgGCPlayerInfoSubmitResponse_EResult.Descriptor instead.
 func (CMsgGCPlayerInfoSubmitResponse_EResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{78, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{79, 0}
 }
 
 type CMsgGCToClientRankResponse_EResultCode int32
@@ -1382,7 +1382,7 @@ func (x *CMsgGCToClientRankResponse_EResultCode) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgGCToClientRankResponse_EResultCode.Descriptor instead.
 func (CMsgGCToClientRankResponse_EResultCode) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{91, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{92, 0}
 }
 
 type CMsgGCGetHeroStatsHistoryResponse_EResponse int32
@@ -1444,7 +1444,7 @@ func (x *CMsgGCGetHeroStatsHistoryResponse_EResponse) UnmarshalJSON(b []byte) er
 
 // Deprecated: Use CMsgGCGetHeroStatsHistoryResponse_EResponse.Descriptor instead.
 func (CMsgGCGetHeroStatsHistoryResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{118, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{119, 0}
 }
 
 type CMsgPlayerConductScorecard_EBehaviorRating int32
@@ -1503,7 +1503,7 @@ func (x *CMsgPlayerConductScorecard_EBehaviorRating) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use CMsgPlayerConductScorecard_EBehaviorRating.Descriptor instead.
 func (CMsgPlayerConductScorecard_EBehaviorRating) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{120, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{121, 0}
 }
 
 type CMsgClientToGCVoteForArcanaResponse_Result int32
@@ -1562,7 +1562,7 @@ func (x *CMsgClientToGCVoteForArcanaResponse_Result) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use CMsgClientToGCVoteForArcanaResponse_Result.Descriptor instead.
 func (CMsgClientToGCVoteForArcanaResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{139, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{140, 0}
 }
 
 type CMsgDOTARedeemItemResponse_EResultCode int32
@@ -1618,7 +1618,7 @@ func (x *CMsgDOTARedeemItemResponse_EResultCode) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgDOTARedeemItemResponse_EResultCode.Descriptor instead.
 func (CMsgDOTARedeemItemResponse_EResultCode) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{149, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{150, 0}
 }
 
 type CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult int32
@@ -1680,7 +1680,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult) Unmarsh
 
 // Deprecated: Use CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult.Descriptor instead.
 func (CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{151, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{152, 0}
 }
 
 type CMsgClientToGCOpenPlayerCardPackResponse_Result int32
@@ -1751,7 +1751,7 @@ func (x *CMsgClientToGCOpenPlayerCardPackResponse_Result) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCOpenPlayerCardPackResponse_Result.Descriptor instead.
 func (CMsgClientToGCOpenPlayerCardPackResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{153, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{154, 0}
 }
 
 type CMsgClientToGCRecyclePlayerCardResponse_Result int32
@@ -1822,7 +1822,7 @@ func (x *CMsgClientToGCRecyclePlayerCardResponse_Result) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgClientToGCRecyclePlayerCardResponse_Result.Descriptor instead.
 func (CMsgClientToGCRecyclePlayerCardResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{155, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{156, 0}
 }
 
 type CMsgClientToGCCreatePlayerCardPackResponse_Result int32
@@ -1893,7 +1893,7 @@ func (x *CMsgClientToGCCreatePlayerCardPackResponse_Result) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgClientToGCCreatePlayerCardPackResponse_Result.Descriptor instead.
 func (CMsgClientToGCCreatePlayerCardPackResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{157, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{158, 0}
 }
 
 type CMsgClientToGCCreateTeamPlayerCardPackResponse_Result int32
@@ -1964,7 +1964,7 @@ func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse_Result) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCCreateTeamPlayerCardPackResponse_Result.Descriptor instead.
 func (CMsgClientToGCCreateTeamPlayerCardPackResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{159, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 0}
 }
 
 type CMsgDOTAAnchorPhoneNumberResponse_Result int32
@@ -2032,7 +2032,7 @@ func (x *CMsgDOTAAnchorPhoneNumberResponse_Result) UnmarshalJSON(b []byte) error
 
 // Deprecated: Use CMsgDOTAAnchorPhoneNumberResponse_Result.Descriptor instead.
 func (CMsgDOTAAnchorPhoneNumberResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{183, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{184, 0}
 }
 
 type CMsgDOTAUnanchorPhoneNumberResponse_Result int32
@@ -2088,7 +2088,7 @@ func (x *CMsgDOTAUnanchorPhoneNumberResponse_Result) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use CMsgDOTAUnanchorPhoneNumberResponse_Result.Descriptor instead.
 func (CMsgDOTAUnanchorPhoneNumberResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{185, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{186, 0}
 }
 
 type CMsgDOTASelectionPriorityChoiceResponse_Result int32
@@ -2144,7 +2144,7 @@ func (x *CMsgDOTASelectionPriorityChoiceResponse_Result) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgDOTASelectionPriorityChoiceResponse_Result.Descriptor instead.
 func (CMsgDOTASelectionPriorityChoiceResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{190, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{191, 0}
 }
 
 type CMsgDOTAGameAutographRewardResponse_Result int32
@@ -2200,7 +2200,7 @@ func (x *CMsgDOTAGameAutographRewardResponse_Result) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use CMsgDOTAGameAutographRewardResponse_Result.Descriptor instead.
 func (CMsgDOTAGameAutographRewardResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{192, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{193, 0}
 }
 
 type CMsgDOTADestroyLobbyResponse_Result int32
@@ -2256,7 +2256,7 @@ func (x *CMsgDOTADestroyLobbyResponse_Result) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgDOTADestroyLobbyResponse_Result.Descriptor instead.
 func (CMsgDOTADestroyLobbyResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{194, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{195, 0}
 }
 
 type CMsgPurchaseItemWithEventPointsResponse_Result int32
@@ -2348,7 +2348,7 @@ func (x *CMsgPurchaseItemWithEventPointsResponse_Result) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgPurchaseItemWithEventPointsResponse_Result.Descriptor instead.
 func (CMsgPurchaseItemWithEventPointsResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{198, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{199, 0}
 }
 
 type CMsgProfileResponse_EResponse int32
@@ -2410,7 +2410,7 @@ func (x *CMsgProfileResponse_EResponse) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgProfileResponse_EResponse.Descriptor instead.
 func (CMsgProfileResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{204, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{205, 0}
 }
 
 type CMsgProfileUpdateResponse_Result int32
@@ -2475,7 +2475,7 @@ func (x *CMsgProfileUpdateResponse_Result) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgProfileUpdateResponse_Result.Descriptor instead.
 func (CMsgProfileUpdateResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{206, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{207, 0}
 }
 
 type CMsgActivatePlusFreeTrialResponse_Result int32
@@ -2540,7 +2540,7 @@ func (x *CMsgActivatePlusFreeTrialResponse_Result) UnmarshalJSON(b []byte) error
 
 // Deprecated: Use CMsgActivatePlusFreeTrialResponse_Result.Descriptor instead.
 func (CMsgActivatePlusFreeTrialResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{215, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{216, 0}
 }
 
 type CMsgClientToGCCavernCrawlClaimRoomResponse_Result int32
@@ -2599,7 +2599,7 @@ func (x *CMsgClientToGCCavernCrawlClaimRoomResponse_Result) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgClientToGCCavernCrawlClaimRoomResponse_Result.Descriptor instead.
 func (CMsgClientToGCCavernCrawlClaimRoomResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{219, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{220, 0}
 }
 
 type CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result int32
@@ -2658,7 +2658,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result.Descriptor instead.
 func (CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{221, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{222, 0}
 }
 
 type CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result int32
@@ -2717,7 +2717,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result.Descriptor instead.
 func (CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{223, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{224, 0}
 }
 
 type CMsgClientToGCCavernCrawlRequestMapStateResponse_Result int32
@@ -2776,7 +2776,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_Result) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse_Result.Descriptor instead.
 func (CMsgClientToGCCavernCrawlRequestMapStateResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226, 0}
 }
 
 type CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result int32
@@ -2835,7 +2835,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result) UnmarshalJ
 
 // Deprecated: Use CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result.Descriptor instead.
 func (CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{227, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{228, 0}
 }
 
 type CMsgSocialFeedResponse_Result int32
@@ -2903,7 +2903,7 @@ func (x *CMsgSocialFeedResponse_Result) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgSocialFeedResponse_Result.Descriptor instead.
 func (CMsgSocialFeedResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{232, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{233, 0}
 }
 
 type CMsgSocialFeedCommentsResponse_Result int32
@@ -2962,7 +2962,7 @@ func (x *CMsgSocialFeedCommentsResponse_Result) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgSocialFeedCommentsResponse_Result.Descriptor instead.
 func (CMsgSocialFeedCommentsResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{234, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{235, 0}
 }
 
 type CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result int32
@@ -3030,7 +3030,7 @@ func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result.Descriptor instead.
 func (CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{236, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{237, 0}
 }
 
 type CMsgClientToGCRequestContestVotesResponse_EResponse int32
@@ -3092,7 +3092,7 @@ func (x *CMsgClientToGCRequestContestVotesResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgClientToGCRequestContestVotesResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRequestContestVotesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{238, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{239, 0}
 }
 
 type CMsgGCToClientRecordContestVoteResponse_EResult int32
@@ -3160,7 +3160,7 @@ func (x *CMsgGCToClientRecordContestVoteResponse_EResult) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgGCToClientRecordContestVoteResponse_EResult.Descriptor instead.
 func (CMsgGCToClientRecordContestVoteResponse_EResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{240, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{241, 0}
 }
 
 type CMsgGCToClientGetFilteredPlayersResponse_Result int32
@@ -3216,7 +3216,7 @@ func (x *CMsgGCToClientGetFilteredPlayersResponse_Result) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgGCToClientGetFilteredPlayersResponse_Result.Descriptor instead.
 func (CMsgGCToClientGetFilteredPlayersResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{252, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{255, 0}
 }
 
 type CMsgGCToClientRemoveFilteredPlayerResponse_Result int32
@@ -3272,7 +3272,7 @@ func (x *CMsgGCToClientRemoveFilteredPlayerResponse_Result) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgGCToClientRemoveFilteredPlayerResponse_Result.Descriptor instead.
 func (CMsgGCToClientRemoveFilteredPlayerResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{254, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{257, 0}
 }
 
 type CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result int32
@@ -3334,7 +3334,7 @@ func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result) UnmarshalJSON(
 
 // Deprecated: Use CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result.Descriptor instead.
 func (CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{256, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{259, 0}
 }
 
 type CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result int32
@@ -3393,7 +3393,7 @@ func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result.Descriptor instead.
 func (CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{258, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{261, 0}
 }
 
 type CMsgClientToGCUpdatePartyBeacon_Action int32
@@ -3449,7 +3449,7 @@ func (x *CMsgClientToGCUpdatePartyBeacon_Action) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgClientToGCUpdatePartyBeacon_Action.Descriptor instead.
 func (CMsgClientToGCUpdatePartyBeacon_Action) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{262, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{265, 0}
 }
 
 type CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse int32
@@ -3508,7 +3508,7 @@ func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse) UnmarshalJS
 
 // Deprecated: Use CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{264, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{267, 0}
 }
 
 type CMsgGCToClientJoinPartyFromBeaconResponse_EResponse int32
@@ -3570,7 +3570,7 @@ func (x *CMsgGCToClientJoinPartyFromBeaconResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgGCToClientJoinPartyFromBeaconResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientJoinPartyFromBeaconResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{266, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{269, 0}
 }
 
 type CMsgClientToGCManageFavorites_Action int32
@@ -3626,7 +3626,7 @@ func (x *CMsgClientToGCManageFavorites_Action) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use CMsgClientToGCManageFavorites_Action.Descriptor instead.
 func (CMsgClientToGCManageFavorites_Action) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{267, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{270, 0}
 }
 
 type CMsgGCToClientManageFavoritesResponse_EResponse int32
@@ -3694,7 +3694,7 @@ func (x *CMsgGCToClientManageFavoritesResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgGCToClientManageFavoritesResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientManageFavoritesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{268, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{271, 0}
 }
 
 type CMsgGCToClientGetFavoritePlayersResponse_EResponse int32
@@ -3750,7 +3750,7 @@ func (x *CMsgGCToClientGetFavoritePlayersResponse_EResponse) UnmarshalJSON(b []b
 
 // Deprecated: Use CMsgGCToClientGetFavoritePlayersResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientGetFavoritePlayersResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{270, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{273, 0}
 }
 
 type CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse int32
@@ -3812,7 +3812,7 @@ func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse) Unm
 
 // Deprecated: Use CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{275, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{278, 0}
 }
 
 type CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse int32
@@ -3874,7 +3874,7 @@ func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse)
 
 // Deprecated: Use CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{277, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{280, 0}
 }
 
 type CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse int32
@@ -3942,7 +3942,7 @@ func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{279, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{282, 0}
 }
 
 type CMsgClientToGCRequestReporterUpdatesResponse_EResponse int32
@@ -4013,7 +4013,7 @@ func (x *CMsgClientToGCRequestReporterUpdatesResponse_EResponse) UnmarshalJSON(b
 
 // Deprecated: Use CMsgClientToGCRequestReporterUpdatesResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRequestReporterUpdatesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{298, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{301, 0}
 }
 
 type CMsgClientToGCRecalibrateMMRResponse_EResponse int32
@@ -4084,7 +4084,7 @@ func (x *CMsgClientToGCRecalibrateMMRResponse_EResponse) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgClientToGCRecalibrateMMRResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRecalibrateMMRResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{301, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{304, 0}
 }
 
 type CMsgClientToGCGetOWMatchDetailsResponse_EResponse int32
@@ -4152,7 +4152,7 @@ func (x *CMsgClientToGCGetOWMatchDetailsResponse_EResponse) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgClientToGCGetOWMatchDetailsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetOWMatchDetailsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{304, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{307, 0}
 }
 
 type CMsgClientToGCSubmitOWConvictionResponse_EResponse int32
@@ -4226,7 +4226,7 @@ func (x *CMsgClientToGCSubmitOWConvictionResponse_EResponse) UnmarshalJSON(b []b
 
 // Deprecated: Use CMsgClientToGCSubmitOWConvictionResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSubmitOWConvictionResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{306, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{309, 0}
 }
 
 type CMsgClientToGCGetDPCFavoritesResponse_EResponse int32
@@ -4294,7 +4294,7 @@ func (x *CMsgClientToGCGetDPCFavoritesResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCGetDPCFavoritesResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetDPCFavoritesResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{316, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{319, 0}
 }
 
 type CMsgClientToGCSetDPCFavoriteStateResponse_EResponse int32
@@ -4371,7 +4371,7 @@ func (x *CMsgClientToGCSetDPCFavoriteStateResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgClientToGCSetDPCFavoriteStateResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSetDPCFavoriteStateResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{318, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{321, 0}
 }
 
 type CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse int32
@@ -4442,7 +4442,7 @@ func (x *CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse) UnmarshalJSON(b
 
 // Deprecated: Use CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{320, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{323, 0}
 }
 
 type CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse int32
@@ -4510,7 +4510,7 @@ func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse) UnmarshalJS
 
 // Deprecated: Use CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{322, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{325, 0}
 }
 
 type CMsgClientToGCGetStickerbookResponse_EResponse int32
@@ -4575,7 +4575,7 @@ func (x *CMsgClientToGCGetStickerbookResponse_EResponse) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgClientToGCGetStickerbookResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetStickerbookResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{324, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{327, 0}
 }
 
 type CMsgClientToGCCreateStickerbookPageResponse_EResponse int32
@@ -4640,7 +4640,7 @@ func (x *CMsgClientToGCCreateStickerbookPageResponse_EResponse) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCCreateStickerbookPageResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCCreateStickerbookPageResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{326, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{329, 0}
 }
 
 type CMsgClientToGCDeleteStickerbookPageResponse_EResponse int32
@@ -4711,7 +4711,7 @@ func (x *CMsgClientToGCDeleteStickerbookPageResponse_EResponse) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCDeleteStickerbookPageResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCDeleteStickerbookPageResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{328, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{331, 0}
 }
 
 type CMsgClientToGCPlaceStickersResponse_EResponse int32
@@ -4788,7 +4788,7 @@ func (x *CMsgClientToGCPlaceStickersResponse_EResponse) UnmarshalJSON(b []byte) 
 
 // Deprecated: Use CMsgClientToGCPlaceStickersResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCPlaceStickersResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{330, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{333, 0}
 }
 
 type CMsgClientToGCPlaceCollectionStickersResponse_EResponse int32
@@ -4871,7 +4871,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCPlaceCollectionStickersResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCPlaceCollectionStickersResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{332, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{335, 0}
 }
 
 type CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse int32
@@ -4939,7 +4939,7 @@ func (x *CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse) UnmarshalJSON
 
 // Deprecated: Use CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{334, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{337, 0}
 }
 
 type CMsgClientToGCSetHeroStickerResponse_EResponse int32
@@ -5010,7 +5010,7 @@ func (x *CMsgClientToGCSetHeroStickerResponse_EResponse) UnmarshalJSON(b []byte)
 
 // Deprecated: Use CMsgClientToGCSetHeroStickerResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSetHeroStickerResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{336, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{339, 0}
 }
 
 type CMsgClientToGCGetHeroStickersResponse_EResponse int32
@@ -5072,7 +5072,7 @@ func (x *CMsgClientToGCGetHeroStickersResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCGetHeroStickersResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCGetHeroStickersResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{338, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{341, 0}
 }
 
 type CMsgClientToGCSetFavoritePageResponse_EResponse int32
@@ -5137,7 +5137,7 @@ func (x *CMsgClientToGCSetFavoritePageResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCSetFavoritePageResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCSetFavoritePageResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{340, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{343, 0}
 }
 
 type CMsgClientToGCClaimSwagResponse_EResponse int32
@@ -5217,7 +5217,7 @@ func (x *CMsgClientToGCClaimSwagResponse_EResponse) UnmarshalJSON(b []byte) erro
 
 // Deprecated: Use CMsgClientToGCClaimSwagResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCClaimSwagResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{342, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{345, 0}
 }
 
 type CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType int32
@@ -5273,7 +5273,7 @@ func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType) Unma
 
 // Deprecated: Use CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType.Descriptor instead.
 func (CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_EVoteType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{344, 0, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{347, 0, 0}
 }
 
 type CMsgGCToClientUploadMatchClipResponse_EResponse int32
@@ -5335,7 +5335,7 @@ func (x *CMsgGCToClientUploadMatchClipResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgGCToClientUploadMatchClipResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientUploadMatchClipResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{346, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{349, 0}
 }
 
 type CMsgGCToClientMapStatsResponse_EResponse int32
@@ -5391,7 +5391,7 @@ func (x *CMsgGCToClientMapStatsResponse_EResponse) UnmarshalJSON(b []byte) error
 
 // Deprecated: Use CMsgGCToClientMapStatsResponse_EResponse.Descriptor instead.
 func (CMsgGCToClientMapStatsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{348, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{351, 0}
 }
 
 type CMsgClientToGCRoadToTIGetQuestsResponse_EResponse int32
@@ -5459,7 +5459,7 @@ func (x *CMsgClientToGCRoadToTIGetQuestsResponse_EResponse) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetQuestsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRoadToTIGetQuestsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{352, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{355, 0}
 }
 
 type CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse int32
@@ -5530,7 +5530,7 @@ func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse) UnmarshalJSON(b
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{354, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{357, 0}
 }
 
 type CMsgClientToGCRoadToTIUseItemResponse_EResponse int32
@@ -5601,7 +5601,7 @@ func (x *CMsgClientToGCRoadToTIUseItemResponse_EResponse) UnmarshalJSON(b []byte
 
 // Deprecated: Use CMsgClientToGCRoadToTIUseItemResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCRoadToTIUseItemResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{357, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{360, 0}
 }
 
 type CMsgGCRankedPlayerInfoSubmitResponse_EResult int32
@@ -5657,7 +5657,217 @@ func (x *CMsgGCRankedPlayerInfoSubmitResponse_EResult) UnmarshalJSON(b []byte) e
 
 // Deprecated: Use CMsgGCRankedPlayerInfoSubmitResponse_EResult.Descriptor instead.
 func (CMsgGCRankedPlayerInfoSubmitResponse_EResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{365, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{368, 0}
+}
+
+type CMsgDOTAClaimGatedEventResponse_ResultCode int32
+
+const (
+	CMsgDOTAClaimGatedEventResponse_Success        CMsgDOTAClaimGatedEventResponse_ResultCode = 0
+	CMsgDOTAClaimGatedEventResponse_InvalidEvent   CMsgDOTAClaimGatedEventResponse_ResultCode = 1
+	CMsgDOTAClaimGatedEventResponse_EventNotActive CMsgDOTAClaimGatedEventResponse_ResultCode = 2
+	CMsgDOTAClaimGatedEventResponse_UserIneligible CMsgDOTAClaimGatedEventResponse_ResultCode = 3
+	CMsgDOTAClaimGatedEventResponse_AlreadyClaimed CMsgDOTAClaimGatedEventResponse_ResultCode = 4
+	CMsgDOTAClaimGatedEventResponse_ServerError    CMsgDOTAClaimGatedEventResponse_ResultCode = 5
+	CMsgDOTAClaimGatedEventResponse_RateLimit      CMsgDOTAClaimGatedEventResponse_ResultCode = 6
+)
+
+// Enum value maps for CMsgDOTAClaimGatedEventResponse_ResultCode.
+var (
+	CMsgDOTAClaimGatedEventResponse_ResultCode_name = map[int32]string{
+		0: "Success",
+		1: "InvalidEvent",
+		2: "EventNotActive",
+		3: "UserIneligible",
+		4: "AlreadyClaimed",
+		5: "ServerError",
+		6: "RateLimit",
+	}
+	CMsgDOTAClaimGatedEventResponse_ResultCode_value = map[string]int32{
+		"Success":        0,
+		"InvalidEvent":   1,
+		"EventNotActive": 2,
+		"UserIneligible": 3,
+		"AlreadyClaimed": 4,
+		"ServerError":    5,
+		"RateLimit":      6,
+	}
+)
+
+func (x CMsgDOTAClaimGatedEventResponse_ResultCode) Enum() *CMsgDOTAClaimGatedEventResponse_ResultCode {
+	p := new(CMsgDOTAClaimGatedEventResponse_ResultCode)
+	*p = x
+	return p
+}
+
+func (x CMsgDOTAClaimGatedEventResponse_ResultCode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgDOTAClaimGatedEventResponse_ResultCode) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_proto_enumTypes[83].Descriptor()
+}
+
+func (CMsgDOTAClaimGatedEventResponse_ResultCode) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_proto_enumTypes[83]
+}
+
+func (x CMsgDOTAClaimGatedEventResponse_ResultCode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgDOTAClaimGatedEventResponse_ResultCode) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgDOTAClaimGatedEventResponse_ResultCode(num)
+	return nil
+}
+
+// Deprecated: Use CMsgDOTAClaimGatedEventResponse_ResultCode.Descriptor instead.
+func (CMsgDOTAClaimGatedEventResponse_ResultCode) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{370, 0}
+}
+
+type CMsgClientToGCGetEventCouponResponse_ResultCode int32
+
+const (
+	CMsgClientToGCGetEventCouponResponse_Success         CMsgClientToGCGetEventCouponResponse_ResultCode = 0
+	CMsgClientToGCGetEventCouponResponse_InvalidEvent    CMsgClientToGCGetEventCouponResponse_ResultCode = 1
+	CMsgClientToGCGetEventCouponResponse_EventNotActive  CMsgClientToGCGetEventCouponResponse_ResultCode = 2
+	CMsgClientToGCGetEventCouponResponse_UserIneligible  CMsgClientToGCGetEventCouponResponse_ResultCode = 3
+	CMsgClientToGCGetEventCouponResponse_ServerError     CMsgClientToGCGetEventCouponResponse_ResultCode = 4
+	CMsgClientToGCGetEventCouponResponse_Timeout         CMsgClientToGCGetEventCouponResponse_ResultCode = 5
+	CMsgClientToGCGetEventCouponResponse_MultipleCoupons CMsgClientToGCGetEventCouponResponse_ResultCode = 6
+)
+
+// Enum value maps for CMsgClientToGCGetEventCouponResponse_ResultCode.
+var (
+	CMsgClientToGCGetEventCouponResponse_ResultCode_name = map[int32]string{
+		0: "Success",
+		1: "InvalidEvent",
+		2: "EventNotActive",
+		3: "UserIneligible",
+		4: "ServerError",
+		5: "Timeout",
+		6: "MultipleCoupons",
+	}
+	CMsgClientToGCGetEventCouponResponse_ResultCode_value = map[string]int32{
+		"Success":         0,
+		"InvalidEvent":    1,
+		"EventNotActive":  2,
+		"UserIneligible":  3,
+		"ServerError":     4,
+		"Timeout":         5,
+		"MultipleCoupons": 6,
+	}
+)
+
+func (x CMsgClientToGCGetEventCouponResponse_ResultCode) Enum() *CMsgClientToGCGetEventCouponResponse_ResultCode {
+	p := new(CMsgClientToGCGetEventCouponResponse_ResultCode)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCGetEventCouponResponse_ResultCode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCGetEventCouponResponse_ResultCode) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_proto_enumTypes[84].Descriptor()
+}
+
+func (CMsgClientToGCGetEventCouponResponse_ResultCode) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_proto_enumTypes[84]
+}
+
+func (x CMsgClientToGCGetEventCouponResponse_ResultCode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCGetEventCouponResponse_ResultCode) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCGetEventCouponResponse_ResultCode(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCGetEventCouponResponse_ResultCode.Descriptor instead.
+func (CMsgClientToGCGetEventCouponResponse_ResultCode) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{374, 0}
+}
+
+type CMsgClientToGCConvertEventPointsResponse_ResultCode int32
+
+const (
+	CMsgClientToGCConvertEventPointsResponse_Success        CMsgClientToGCConvertEventPointsResponse_ResultCode = 0
+	CMsgClientToGCConvertEventPointsResponse_InvalidEvent   CMsgClientToGCConvertEventPointsResponse_ResultCode = 1
+	CMsgClientToGCConvertEventPointsResponse_EventNotActive CMsgClientToGCConvertEventPointsResponse_ResultCode = 2
+	CMsgClientToGCConvertEventPointsResponse_UserIneligible CMsgClientToGCConvertEventPointsResponse_ResultCode = 3
+	CMsgClientToGCConvertEventPointsResponse_ServerError    CMsgClientToGCConvertEventPointsResponse_ResultCode = 4
+	CMsgClientToGCConvertEventPointsResponse_Timeout        CMsgClientToGCConvertEventPointsResponse_ResultCode = 5
+)
+
+// Enum value maps for CMsgClientToGCConvertEventPointsResponse_ResultCode.
+var (
+	CMsgClientToGCConvertEventPointsResponse_ResultCode_name = map[int32]string{
+		0: "Success",
+		1: "InvalidEvent",
+		2: "EventNotActive",
+		3: "UserIneligible",
+		4: "ServerError",
+		5: "Timeout",
+	}
+	CMsgClientToGCConvertEventPointsResponse_ResultCode_value = map[string]int32{
+		"Success":        0,
+		"InvalidEvent":   1,
+		"EventNotActive": 2,
+		"UserIneligible": 3,
+		"ServerError":    4,
+		"Timeout":        5,
+	}
+)
+
+func (x CMsgClientToGCConvertEventPointsResponse_ResultCode) Enum() *CMsgClientToGCConvertEventPointsResponse_ResultCode {
+	p := new(CMsgClientToGCConvertEventPointsResponse_ResultCode)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCConvertEventPointsResponse_ResultCode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCConvertEventPointsResponse_ResultCode) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_proto_enumTypes[85].Descriptor()
+}
+
+func (CMsgClientToGCConvertEventPointsResponse_ResultCode) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_proto_enumTypes[85]
+}
+
+func (x CMsgClientToGCConvertEventPointsResponse_ResultCode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCConvertEventPointsResponse_ResultCode) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCConvertEventPointsResponse_ResultCode(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCConvertEventPointsResponse_ResultCode.Descriptor instead.
+func (CMsgClientToGCConvertEventPointsResponse_ResultCode) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{376, 0}
 }
 
 type CMsgClientSuspended struct {
@@ -6985,14 +7195,16 @@ type CMsgDOTAWelcome struct {
 	RemainingPlaytime          *int32                            `protobuf:"varint,32,opt,name=remaining_playtime,json=remainingPlaytime,def=-1" json:"remaining_playtime,omitempty"`
 	DisableGuildPersonaInfo    *bool                             `protobuf:"varint,33,opt,name=disable_guild_persona_info,json=disableGuildPersonaInfo" json:"disable_guild_persona_info,omitempty"`
 	ExtraMessageBlocks         []*CExtraMsgBlock                 `protobuf:"bytes,34,rep,name=extra_message_blocks,json=extraMessageBlocks" json:"extra_message_blocks,omitempty"`
+	ActiveEventForDisplay      *EEvent                           `protobuf:"varint,35,opt,name=active_event_for_display,json=activeEventForDisplay,enum=protocol.EEvent,def=0" json:"active_event_for_display,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
 
 // Default values for CMsgDOTAWelcome fields.
 const (
-	Default_CMsgDOTAWelcome_ActiveEvent       = EEvent_EVENT_ID_NONE
-	Default_CMsgDOTAWelcome_RemainingPlaytime = int32(-1)
+	Default_CMsgDOTAWelcome_ActiveEvent           = EEvent_EVENT_ID_NONE
+	Default_CMsgDOTAWelcome_RemainingPlaytime     = int32(-1)
+	Default_CMsgDOTAWelcome_ActiveEventForDisplay = EEvent_EVENT_ID_NONE
 )
 
 func (x *CMsgDOTAWelcome) Reset() {
@@ -7149,6 +7361,13 @@ func (x *CMsgDOTAWelcome) GetExtraMessageBlocks() []*CExtraMsgBlock {
 		return x.ExtraMessageBlocks
 	}
 	return nil
+}
+
+func (x *CMsgDOTAWelcome) GetActiveEventForDisplay() EEvent {
+	if x != nil && x.ActiveEventForDisplay != nil {
+		return *x.ActiveEventForDisplay
+	}
+	return Default_CMsgDOTAWelcome_ActiveEventForDisplay
 }
 
 type CSODOTAGameHeroFavorites struct {
@@ -7890,6 +8109,50 @@ func (x *CMsgGCWatchDownloadedReplay) GetWatchType() DOTA_WatchReplayType {
 	return Default_CMsgGCWatchDownloadedReplay_WatchType
 }
 
+type CMsgClientToGCWatchingBroadcast struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MatchId       *uint64                `protobuf:"varint,1,opt,name=match_id,json=matchId" json:"match_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCWatchingBroadcast) Reset() {
+	*x = CMsgClientToGCWatchingBroadcast{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCWatchingBroadcast) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCWatchingBroadcast) ProtoMessage() {}
+
+func (x *CMsgClientToGCWatchingBroadcast) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCWatchingBroadcast.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCWatchingBroadcast) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *CMsgClientToGCWatchingBroadcast) GetMatchId() uint64 {
+	if x != nil && x.MatchId != nil {
+		return *x.MatchId
+	}
+	return 0
+}
+
 type CMsgClientsRejoinChatChannels struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -7898,7 +8161,7 @@ type CMsgClientsRejoinChatChannels struct {
 
 func (x *CMsgClientsRejoinChatChannels) Reset() {
 	*x = CMsgClientsRejoinChatChannels{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7910,7 +8173,7 @@ func (x *CMsgClientsRejoinChatChannels) String() string {
 func (*CMsgClientsRejoinChatChannels) ProtoMessage() {}
 
 func (x *CMsgClientsRejoinChatChannels) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7923,7 +8186,7 @@ func (x *CMsgClientsRejoinChatChannels) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientsRejoinChatChannels.ProtoReflect.Descriptor instead.
 func (*CMsgClientsRejoinChatChannels) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{38}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{39}
 }
 
 type CMsgGCGetHeroStandings struct {
@@ -7934,7 +8197,7 @@ type CMsgGCGetHeroStandings struct {
 
 func (x *CMsgGCGetHeroStandings) Reset() {
 	*x = CMsgGCGetHeroStandings{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7946,7 +8209,7 @@ func (x *CMsgGCGetHeroStandings) String() string {
 func (*CMsgGCGetHeroStandings) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroStandings) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7959,7 +8222,7 @@ func (x *CMsgGCGetHeroStandings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCGetHeroStandings.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroStandings) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{39}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{40}
 }
 
 type CMsgGCGetHeroStandingsResponse struct {
@@ -7971,7 +8234,7 @@ type CMsgGCGetHeroStandingsResponse struct {
 
 func (x *CMsgGCGetHeroStandingsResponse) Reset() {
 	*x = CMsgGCGetHeroStandingsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7983,7 +8246,7 @@ func (x *CMsgGCGetHeroStandingsResponse) String() string {
 func (*CMsgGCGetHeroStandingsResponse) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroStandingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7996,7 +8259,7 @@ func (x *CMsgGCGetHeroStandingsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCGetHeroStandingsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroStandingsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{40}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *CMsgGCGetHeroStandingsResponse) GetStandings() []*CMsgGCGetHeroStandingsResponse_Hero {
@@ -8027,7 +8290,7 @@ type CMatchPlayerTimedStatAverages struct {
 
 func (x *CMatchPlayerTimedStatAverages) Reset() {
 	*x = CMatchPlayerTimedStatAverages{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8039,7 +8302,7 @@ func (x *CMatchPlayerTimedStatAverages) String() string {
 func (*CMatchPlayerTimedStatAverages) ProtoMessage() {}
 
 func (x *CMatchPlayerTimedStatAverages) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8052,7 +8315,7 @@ func (x *CMatchPlayerTimedStatAverages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMatchPlayerTimedStatAverages.ProtoReflect.Descriptor instead.
 func (*CMatchPlayerTimedStatAverages) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{41}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *CMatchPlayerTimedStatAverages) GetKills() float32 {
@@ -8184,7 +8447,7 @@ const (
 
 func (x *CMatchPlayerTimedStatStdDeviations) Reset() {
 	*x = CMatchPlayerTimedStatStdDeviations{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8196,7 +8459,7 @@ func (x *CMatchPlayerTimedStatStdDeviations) String() string {
 func (*CMatchPlayerTimedStatStdDeviations) ProtoMessage() {}
 
 func (x *CMatchPlayerTimedStatStdDeviations) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8209,7 +8472,7 @@ func (x *CMatchPlayerTimedStatStdDeviations) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMatchPlayerTimedStatStdDeviations.ProtoReflect.Descriptor instead.
 func (*CMatchPlayerTimedStatStdDeviations) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{42}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *CMatchPlayerTimedStatStdDeviations) GetKills() float32 {
@@ -8313,7 +8576,7 @@ type CMsgGCGetHeroTimedStatsResponse struct {
 
 func (x *CMsgGCGetHeroTimedStatsResponse) Reset() {
 	*x = CMsgGCGetHeroTimedStatsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8325,7 +8588,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse) String() string {
 func (*CMsgGCGetHeroTimedStatsResponse) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroTimedStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8338,7 +8601,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCGetHeroTimedStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroTimedStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{43}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *CMsgGCGetHeroTimedStatsResponse) GetHeroId() int32 {
@@ -8363,7 +8626,7 @@ type CMsgGCItemEditorReservationsRequest struct {
 
 func (x *CMsgGCItemEditorReservationsRequest) Reset() {
 	*x = CMsgGCItemEditorReservationsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8375,7 +8638,7 @@ func (x *CMsgGCItemEditorReservationsRequest) String() string {
 func (*CMsgGCItemEditorReservationsRequest) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReservationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8388,7 +8651,7 @@ func (x *CMsgGCItemEditorReservationsRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgGCItemEditorReservationsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReservationsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{44}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{45}
 }
 
 type CMsgGCItemEditorReservation struct {
@@ -8401,7 +8664,7 @@ type CMsgGCItemEditorReservation struct {
 
 func (x *CMsgGCItemEditorReservation) Reset() {
 	*x = CMsgGCItemEditorReservation{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8413,7 +8676,7 @@ func (x *CMsgGCItemEditorReservation) String() string {
 func (*CMsgGCItemEditorReservation) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReservation) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8426,7 +8689,7 @@ func (x *CMsgGCItemEditorReservation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCItemEditorReservation.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReservation) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{45}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *CMsgGCItemEditorReservation) GetDefIndex() uint32 {
@@ -8452,7 +8715,7 @@ type CMsgGCItemEditorReservationsResponse struct {
 
 func (x *CMsgGCItemEditorReservationsResponse) Reset() {
 	*x = CMsgGCItemEditorReservationsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8464,7 +8727,7 @@ func (x *CMsgGCItemEditorReservationsResponse) String() string {
 func (*CMsgGCItemEditorReservationsResponse) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReservationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8477,7 +8740,7 @@ func (x *CMsgGCItemEditorReservationsResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgGCItemEditorReservationsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReservationsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{46}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *CMsgGCItemEditorReservationsResponse) GetReservations() []*CMsgGCItemEditorReservation {
@@ -8497,7 +8760,7 @@ type CMsgGCItemEditorReserveItemDef struct {
 
 func (x *CMsgGCItemEditorReserveItemDef) Reset() {
 	*x = CMsgGCItemEditorReserveItemDef{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8509,7 +8772,7 @@ func (x *CMsgGCItemEditorReserveItemDef) String() string {
 func (*CMsgGCItemEditorReserveItemDef) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReserveItemDef) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8522,7 +8785,7 @@ func (x *CMsgGCItemEditorReserveItemDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCItemEditorReserveItemDef.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReserveItemDef) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{47}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *CMsgGCItemEditorReserveItemDef) GetDefIndex() uint32 {
@@ -8550,7 +8813,7 @@ type CMsgGCItemEditorReserveItemDefResponse struct {
 
 func (x *CMsgGCItemEditorReserveItemDefResponse) Reset() {
 	*x = CMsgGCItemEditorReserveItemDefResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8562,7 +8825,7 @@ func (x *CMsgGCItemEditorReserveItemDefResponse) String() string {
 func (*CMsgGCItemEditorReserveItemDefResponse) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReserveItemDefResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8575,7 +8838,7 @@ func (x *CMsgGCItemEditorReserveItemDefResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgGCItemEditorReserveItemDefResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReserveItemDefResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{48}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *CMsgGCItemEditorReserveItemDefResponse) GetDefIndex() uint32 {
@@ -8609,7 +8872,7 @@ type CMsgGCItemEditorReleaseReservation struct {
 
 func (x *CMsgGCItemEditorReleaseReservation) Reset() {
 	*x = CMsgGCItemEditorReleaseReservation{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8621,7 +8884,7 @@ func (x *CMsgGCItemEditorReleaseReservation) String() string {
 func (*CMsgGCItemEditorReleaseReservation) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReleaseReservation) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8634,7 +8897,7 @@ func (x *CMsgGCItemEditorReleaseReservation) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCItemEditorReleaseReservation.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReleaseReservation) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{49}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *CMsgGCItemEditorReleaseReservation) GetDefIndex() uint32 {
@@ -8661,7 +8924,7 @@ type CMsgGCItemEditorReleaseReservationResponse struct {
 
 func (x *CMsgGCItemEditorReleaseReservationResponse) Reset() {
 	*x = CMsgGCItemEditorReleaseReservationResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8673,7 +8936,7 @@ func (x *CMsgGCItemEditorReleaseReservationResponse) String() string {
 func (*CMsgGCItemEditorReleaseReservationResponse) ProtoMessage() {}
 
 func (x *CMsgGCItemEditorReleaseReservationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8686,7 +8949,7 @@ func (x *CMsgGCItemEditorReleaseReservationResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgGCItemEditorReleaseReservationResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCItemEditorReleaseReservationResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{50}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *CMsgGCItemEditorReleaseReservationResponse) GetDefIndex() uint32 {
@@ -8711,7 +8974,7 @@ type CMsgFlipLobbyTeams struct {
 
 func (x *CMsgFlipLobbyTeams) Reset() {
 	*x = CMsgFlipLobbyTeams{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8723,7 +8986,7 @@ func (x *CMsgFlipLobbyTeams) String() string {
 func (*CMsgFlipLobbyTeams) ProtoMessage() {}
 
 func (x *CMsgFlipLobbyTeams) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8736,7 +8999,7 @@ func (x *CMsgFlipLobbyTeams) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgFlipLobbyTeams.ProtoReflect.Descriptor instead.
 func (*CMsgFlipLobbyTeams) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{51}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{52}
 }
 
 type CMsgGCLobbyUpdateBroadcastChannelInfo struct {
@@ -8751,7 +9014,7 @@ type CMsgGCLobbyUpdateBroadcastChannelInfo struct {
 
 func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) Reset() {
 	*x = CMsgGCLobbyUpdateBroadcastChannelInfo{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8763,7 +9026,7 @@ func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) String() string {
 func (*CMsgGCLobbyUpdateBroadcastChannelInfo) ProtoMessage() {}
 
 func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8776,7 +9039,7 @@ func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgGCLobbyUpdateBroadcastChannelInfo.ProtoReflect.Descriptor instead.
 func (*CMsgGCLobbyUpdateBroadcastChannelInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{52}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) GetChannelId() uint32 {
@@ -8808,15 +9071,16 @@ func (x *CMsgGCLobbyUpdateBroadcastChannelInfo) GetLanguageCode() string {
 }
 
 type CMsgDOTAClaimEventActionData struct {
-	state             protoimpl.MessageState                          `protogen:"open.v1"`
-	GrantItemGiftData *CMsgDOTAClaimEventActionData_GrantItemGiftData `protobuf:"bytes,4,opt,name=grant_item_gift_data,json=grantItemGiftData" json:"grant_item_gift_data,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state                  protoimpl.MessageState                          `protogen:"open.v1"`
+	GrantItemGiftData      *CMsgDOTAClaimEventActionData_GrantItemGiftData `protobuf:"bytes,4,opt,name=grant_item_gift_data,json=grantItemGiftData" json:"grant_item_gift_data,omitempty"`
+	GrantItemChoiceItemDef *uint64                                         `protobuf:"varint,5,opt,name=grant_item_choice_item_def,json=grantItemChoiceItemDef" json:"grant_item_choice_item_def,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *CMsgDOTAClaimEventActionData) Reset() {
 	*x = CMsgDOTAClaimEventActionData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8828,7 +9092,7 @@ func (x *CMsgDOTAClaimEventActionData) String() string {
 func (*CMsgDOTAClaimEventActionData) ProtoMessage() {}
 
 func (x *CMsgDOTAClaimEventActionData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8841,7 +9105,7 @@ func (x *CMsgDOTAClaimEventActionData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAClaimEventActionData.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClaimEventActionData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{53}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *CMsgDOTAClaimEventActionData) GetGrantItemGiftData() *CMsgDOTAClaimEventActionData_GrantItemGiftData {
@@ -8851,15 +9115,23 @@ func (x *CMsgDOTAClaimEventActionData) GetGrantItemGiftData() *CMsgDOTAClaimEven
 	return nil
 }
 
+func (x *CMsgDOTAClaimEventActionData) GetGrantItemChoiceItemDef() uint64 {
+	if x != nil && x.GrantItemChoiceItemDef != nil {
+		return *x.GrantItemChoiceItemDef
+	}
+	return 0
+}
+
 type CMsgDOTAClaimEventAction struct {
-	state         protoimpl.MessageState        `protogen:"open.v1"`
-	EventId       *uint32                       `protobuf:"varint,1,opt,name=event_id,json=eventId" json:"event_id,omitempty"`
-	ActionId      *uint32                       `protobuf:"varint,2,opt,name=action_id,json=actionId" json:"action_id,omitempty"`
-	Quantity      *uint32                       `protobuf:"varint,3,opt,name=quantity" json:"quantity,omitempty"`
-	Data          *CMsgDOTAClaimEventActionData `protobuf:"bytes,4,opt,name=data" json:"data,omitempty"`
-	ScoreMode     *EEventActionScoreMode        `protobuf:"varint,5,opt,name=score_mode,json=scoreMode,enum=protocol.EEventActionScoreMode,def=0" json:"score_mode,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState        `protogen:"open.v1"`
+	EventId         *uint32                       `protobuf:"varint,1,opt,name=event_id,json=eventId" json:"event_id,omitempty"`
+	ActionId        *uint32                       `protobuf:"varint,2,opt,name=action_id,json=actionId" json:"action_id,omitempty"`
+	Quantity        *uint32                       `protobuf:"varint,3,opt,name=quantity" json:"quantity,omitempty"`
+	Data            *CMsgDOTAClaimEventActionData `protobuf:"bytes,4,opt,name=data" json:"data,omitempty"`
+	ScoreMode       *EEventActionScoreMode        `protobuf:"varint,5,opt,name=score_mode,json=scoreMode,enum=protocol.EEventActionScoreMode,def=0" json:"score_mode,omitempty"`
+	SuppressRewards *bool                         `protobuf:"varint,6,opt,name=suppress_rewards,json=suppressRewards" json:"suppress_rewards,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 // Default values for CMsgDOTAClaimEventAction fields.
@@ -8869,7 +9141,7 @@ const (
 
 func (x *CMsgDOTAClaimEventAction) Reset() {
 	*x = CMsgDOTAClaimEventAction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8881,7 +9153,7 @@ func (x *CMsgDOTAClaimEventAction) String() string {
 func (*CMsgDOTAClaimEventAction) ProtoMessage() {}
 
 func (x *CMsgDOTAClaimEventAction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8894,7 +9166,7 @@ func (x *CMsgDOTAClaimEventAction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAClaimEventAction.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClaimEventAction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{54}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *CMsgDOTAClaimEventAction) GetEventId() uint32 {
@@ -8932,19 +9204,27 @@ func (x *CMsgDOTAClaimEventAction) GetScoreMode() EEventActionScoreMode {
 	return Default_CMsgDOTAClaimEventAction_ScoreMode
 }
 
+func (x *CMsgDOTAClaimEventAction) GetSuppressRewards() bool {
+	if x != nil && x.SuppressRewards != nil {
+		return *x.SuppressRewards
+	}
+	return false
+}
+
 type CMsgClientToGCClaimEventActionUsingItem struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	EventId       *uint32                `protobuf:"varint,1,opt,name=event_id,json=eventId" json:"event_id,omitempty"`
-	ActionId      *uint32                `protobuf:"varint,2,opt,name=action_id,json=actionId" json:"action_id,omitempty"`
-	ItemId        *uint64                `protobuf:"varint,3,opt,name=item_id,json=itemId" json:"item_id,omitempty"`
-	Quantity      *uint32                `protobuf:"varint,4,opt,name=quantity" json:"quantity,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	EventId         *uint32                `protobuf:"varint,1,opt,name=event_id,json=eventId" json:"event_id,omitempty"`
+	ActionId        *uint32                `protobuf:"varint,2,opt,name=action_id,json=actionId" json:"action_id,omitempty"`
+	ItemId          *uint64                `protobuf:"varint,3,opt,name=item_id,json=itemId" json:"item_id,omitempty"`
+	Quantity        *uint32                `protobuf:"varint,4,opt,name=quantity" json:"quantity,omitempty"`
+	SuppressRewards *bool                  `protobuf:"varint,5,opt,name=suppress_rewards,json=suppressRewards" json:"suppress_rewards,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *CMsgClientToGCClaimEventActionUsingItem) Reset() {
 	*x = CMsgClientToGCClaimEventActionUsingItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8956,7 +9236,7 @@ func (x *CMsgClientToGCClaimEventActionUsingItem) String() string {
 func (*CMsgClientToGCClaimEventActionUsingItem) ProtoMessage() {}
 
 func (x *CMsgClientToGCClaimEventActionUsingItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8969,7 +9249,7 @@ func (x *CMsgClientToGCClaimEventActionUsingItem) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgClientToGCClaimEventActionUsingItem.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCClaimEventActionUsingItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{55}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *CMsgClientToGCClaimEventActionUsingItem) GetEventId() uint32 {
@@ -9000,6 +9280,13 @@ func (x *CMsgClientToGCClaimEventActionUsingItem) GetQuantity() uint32 {
 	return 0
 }
 
+func (x *CMsgClientToGCClaimEventActionUsingItem) GetSuppressRewards() bool {
+	if x != nil && x.SuppressRewards != nil {
+		return *x.SuppressRewards
+	}
+	return false
+}
+
 type CMsgClientToGCClaimEventActionUsingItemResponse struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
 	ActionResults *CMsgDOTAClaimEventActionResponse `protobuf:"bytes,1,opt,name=action_results,json=actionResults" json:"action_results,omitempty"`
@@ -9009,7 +9296,7 @@ type CMsgClientToGCClaimEventActionUsingItemResponse struct {
 
 func (x *CMsgClientToGCClaimEventActionUsingItemResponse) Reset() {
 	*x = CMsgClientToGCClaimEventActionUsingItemResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9021,7 +9308,7 @@ func (x *CMsgClientToGCClaimEventActionUsingItemResponse) String() string {
 func (*CMsgClientToGCClaimEventActionUsingItemResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCClaimEventActionUsingItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9034,7 +9321,7 @@ func (x *CMsgClientToGCClaimEventActionUsingItemResponse) ProtoReflect() protore
 
 // Deprecated: Use CMsgClientToGCClaimEventActionUsingItemResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCClaimEventActionUsingItemResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{56}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *CMsgClientToGCClaimEventActionUsingItemResponse) GetActionResults() *CMsgDOTAClaimEventActionResponse {
@@ -9054,7 +9341,7 @@ type CMsgGCToClientClaimEventActionUsingItemCompleted struct {
 
 func (x *CMsgGCToClientClaimEventActionUsingItemCompleted) Reset() {
 	*x = CMsgGCToClientClaimEventActionUsingItemCompleted{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9066,7 +9353,7 @@ func (x *CMsgGCToClientClaimEventActionUsingItemCompleted) String() string {
 func (*CMsgGCToClientClaimEventActionUsingItemCompleted) ProtoMessage() {}
 
 func (x *CMsgGCToClientClaimEventActionUsingItemCompleted) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9079,7 +9366,7 @@ func (x *CMsgGCToClientClaimEventActionUsingItemCompleted) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCToClientClaimEventActionUsingItemCompleted.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientClaimEventActionUsingItemCompleted) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{57}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *CMsgGCToClientClaimEventActionUsingItemCompleted) GetItemId() uint64 {
@@ -9106,7 +9393,7 @@ type CMsgDOTAGetEventPoints struct {
 
 func (x *CMsgDOTAGetEventPoints) Reset() {
 	*x = CMsgDOTAGetEventPoints{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[58]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9118,7 +9405,7 @@ func (x *CMsgDOTAGetEventPoints) String() string {
 func (*CMsgDOTAGetEventPoints) ProtoMessage() {}
 
 func (x *CMsgDOTAGetEventPoints) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[58]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9131,7 +9418,7 @@ func (x *CMsgDOTAGetEventPoints) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAGetEventPoints.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetEventPoints) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{58}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *CMsgDOTAGetEventPoints) GetEventId() uint32 {
@@ -9166,7 +9453,7 @@ type CMsgDOTAGetEventPointsResponse struct {
 
 func (x *CMsgDOTAGetEventPointsResponse) Reset() {
 	*x = CMsgDOTAGetEventPointsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[59]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9178,7 +9465,7 @@ func (x *CMsgDOTAGetEventPointsResponse) String() string {
 func (*CMsgDOTAGetEventPointsResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAGetEventPointsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[59]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9191,7 +9478,7 @@ func (x *CMsgDOTAGetEventPointsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAGetEventPointsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetEventPointsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{59}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *CMsgDOTAGetEventPointsResponse) GetTotalPoints() uint32 {
@@ -9275,7 +9562,7 @@ type CMsgDOTAGetPeriodicResource struct {
 
 func (x *CMsgDOTAGetPeriodicResource) Reset() {
 	*x = CMsgDOTAGetPeriodicResource{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[60]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9287,7 +9574,7 @@ func (x *CMsgDOTAGetPeriodicResource) String() string {
 func (*CMsgDOTAGetPeriodicResource) ProtoMessage() {}
 
 func (x *CMsgDOTAGetPeriodicResource) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[60]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9300,7 +9587,7 @@ func (x *CMsgDOTAGetPeriodicResource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAGetPeriodicResource.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetPeriodicResource) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{60}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *CMsgDOTAGetPeriodicResource) GetAccountId() uint32 {
@@ -9334,7 +9621,7 @@ type CMsgDOTAGetPeriodicResourceResponse struct {
 
 func (x *CMsgDOTAGetPeriodicResourceResponse) Reset() {
 	*x = CMsgDOTAGetPeriodicResourceResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[61]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9346,7 +9633,7 @@ func (x *CMsgDOTAGetPeriodicResourceResponse) String() string {
 func (*CMsgDOTAGetPeriodicResourceResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAGetPeriodicResourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[61]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9359,7 +9646,7 @@ func (x *CMsgDOTAGetPeriodicResourceResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgDOTAGetPeriodicResourceResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetPeriodicResourceResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{61}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *CMsgDOTAGetPeriodicResourceResponse) GetPeriodicResourceMax() uint32 {
@@ -9386,7 +9673,7 @@ type CMsgDOTAPeriodicResourceUpdated struct {
 
 func (x *CMsgDOTAPeriodicResourceUpdated) Reset() {
 	*x = CMsgDOTAPeriodicResourceUpdated{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[62]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9398,7 +9685,7 @@ func (x *CMsgDOTAPeriodicResourceUpdated) String() string {
 func (*CMsgDOTAPeriodicResourceUpdated) ProtoMessage() {}
 
 func (x *CMsgDOTAPeriodicResourceUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[62]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9411,7 +9698,7 @@ func (x *CMsgDOTAPeriodicResourceUpdated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAPeriodicResourceUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAPeriodicResourceUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{62}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *CMsgDOTAPeriodicResourceUpdated) GetPeriodicResourceKey() *CMsgDOTAGetPeriodicResource {
@@ -9439,7 +9726,7 @@ type CMsgDOTACompendiumSelection struct {
 
 func (x *CMsgDOTACompendiumSelection) Reset() {
 	*x = CMsgDOTACompendiumSelection{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[63]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9451,7 +9738,7 @@ func (x *CMsgDOTACompendiumSelection) String() string {
 func (*CMsgDOTACompendiumSelection) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumSelection) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[63]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9464,7 +9751,7 @@ func (x *CMsgDOTACompendiumSelection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTACompendiumSelection.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumSelection) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{63}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *CMsgDOTACompendiumSelection) GetSelectionIndex() uint32 {
@@ -9502,7 +9789,7 @@ const (
 
 func (x *CMsgDOTACompendiumSelectionResponse) Reset() {
 	*x = CMsgDOTACompendiumSelectionResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[64]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9514,7 +9801,7 @@ func (x *CMsgDOTACompendiumSelectionResponse) String() string {
 func (*CMsgDOTACompendiumSelectionResponse) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumSelectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[64]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9527,7 +9814,7 @@ func (x *CMsgDOTACompendiumSelectionResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgDOTACompendiumSelectionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumSelectionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{64}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *CMsgDOTACompendiumSelectionResponse) GetEresult() uint32 {
@@ -9546,7 +9833,7 @@ type CMsgDOTACompendiumRemoveAllSelections struct {
 
 func (x *CMsgDOTACompendiumRemoveAllSelections) Reset() {
 	*x = CMsgDOTACompendiumRemoveAllSelections{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[65]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9558,7 +9845,7 @@ func (x *CMsgDOTACompendiumRemoveAllSelections) String() string {
 func (*CMsgDOTACompendiumRemoveAllSelections) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumRemoveAllSelections) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[65]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9571,7 +9858,7 @@ func (x *CMsgDOTACompendiumRemoveAllSelections) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgDOTACompendiumRemoveAllSelections.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumRemoveAllSelections) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{65}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *CMsgDOTACompendiumRemoveAllSelections) GetLeagueid() uint32 {
@@ -9595,7 +9882,7 @@ const (
 
 func (x *CMsgDOTACompendiumRemoveAllSelectionsResponse) Reset() {
 	*x = CMsgDOTACompendiumRemoveAllSelectionsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[66]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9607,7 +9894,7 @@ func (x *CMsgDOTACompendiumRemoveAllSelectionsResponse) String() string {
 func (*CMsgDOTACompendiumRemoveAllSelectionsResponse) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumRemoveAllSelectionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[66]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9620,7 +9907,7 @@ func (x *CMsgDOTACompendiumRemoveAllSelectionsResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgDOTACompendiumRemoveAllSelectionsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumRemoveAllSelectionsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{66}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *CMsgDOTACompendiumRemoveAllSelectionsResponse) GetEresult() uint32 {
@@ -9639,7 +9926,7 @@ type CMsgDOTACompendiumData struct {
 
 func (x *CMsgDOTACompendiumData) Reset() {
 	*x = CMsgDOTACompendiumData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[67]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9651,7 +9938,7 @@ func (x *CMsgDOTACompendiumData) String() string {
 func (*CMsgDOTACompendiumData) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[67]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9664,7 +9951,7 @@ func (x *CMsgDOTACompendiumData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTACompendiumData.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{67}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *CMsgDOTACompendiumData) GetSelections() []*CMsgDOTACompendiumSelection {
@@ -9684,7 +9971,7 @@ type CMsgDOTACompendiumDataRequest struct {
 
 func (x *CMsgDOTACompendiumDataRequest) Reset() {
 	*x = CMsgDOTACompendiumDataRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[68]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9696,7 +9983,7 @@ func (x *CMsgDOTACompendiumDataRequest) String() string {
 func (*CMsgDOTACompendiumDataRequest) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[68]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9709,7 +9996,7 @@ func (x *CMsgDOTACompendiumDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTACompendiumDataRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumDataRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{68}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *CMsgDOTACompendiumDataRequest) GetAccountId() uint32 {
@@ -9743,7 +10030,7 @@ const (
 
 func (x *CMsgDOTACompendiumDataResponse) Reset() {
 	*x = CMsgDOTACompendiumDataResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[69]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9755,7 +10042,7 @@ func (x *CMsgDOTACompendiumDataResponse) String() string {
 func (*CMsgDOTACompendiumDataResponse) ProtoMessage() {}
 
 func (x *CMsgDOTACompendiumDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[69]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9768,7 +10055,7 @@ func (x *CMsgDOTACompendiumDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTACompendiumDataResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACompendiumDataResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{69}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *CMsgDOTACompendiumDataResponse) GetAccountId() uint32 {
@@ -9815,7 +10102,7 @@ type CMsgDOTAGetPlayerMatchHistory struct {
 
 func (x *CMsgDOTAGetPlayerMatchHistory) Reset() {
 	*x = CMsgDOTAGetPlayerMatchHistory{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[70]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9827,7 +10114,7 @@ func (x *CMsgDOTAGetPlayerMatchHistory) String() string {
 func (*CMsgDOTAGetPlayerMatchHistory) ProtoMessage() {}
 
 func (x *CMsgDOTAGetPlayerMatchHistory) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[70]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9840,7 +10127,7 @@ func (x *CMsgDOTAGetPlayerMatchHistory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAGetPlayerMatchHistory.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetPlayerMatchHistory) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{70}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *CMsgDOTAGetPlayerMatchHistory) GetAccountId() uint32 {
@@ -9909,7 +10196,7 @@ type CMsgDOTAGetPlayerMatchHistoryResponse struct {
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse) Reset() {
 	*x = CMsgDOTAGetPlayerMatchHistoryResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[71]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9921,7 +10208,7 @@ func (x *CMsgDOTAGetPlayerMatchHistoryResponse) String() string {
 func (*CMsgDOTAGetPlayerMatchHistoryResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[71]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9934,7 +10221,7 @@ func (x *CMsgDOTAGetPlayerMatchHistoryResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgDOTAGetPlayerMatchHistoryResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetPlayerMatchHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{71}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse) GetMatches() []*CMsgDOTAGetPlayerMatchHistoryResponse_Match {
@@ -9959,7 +10246,7 @@ type CMsgGCNotificationsRequest struct {
 
 func (x *CMsgGCNotificationsRequest) Reset() {
 	*x = CMsgGCNotificationsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[72]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9971,7 +10258,7 @@ func (x *CMsgGCNotificationsRequest) String() string {
 func (*CMsgGCNotificationsRequest) ProtoMessage() {}
 
 func (x *CMsgGCNotificationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[72]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9984,7 +10271,7 @@ func (x *CMsgGCNotificationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCNotificationsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgGCNotificationsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{72}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{73}
 }
 
 type CMsgGCNotifications_Notification struct {
@@ -10003,7 +10290,7 @@ type CMsgGCNotifications_Notification struct {
 
 func (x *CMsgGCNotifications_Notification) Reset() {
 	*x = CMsgGCNotifications_Notification{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[73]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10015,7 +10302,7 @@ func (x *CMsgGCNotifications_Notification) String() string {
 func (*CMsgGCNotifications_Notification) ProtoMessage() {}
 
 func (x *CMsgGCNotifications_Notification) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[73]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10028,7 +10315,7 @@ func (x *CMsgGCNotifications_Notification) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCNotifications_Notification.ProtoReflect.Descriptor instead.
 func (*CMsgGCNotifications_Notification) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{73}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *CMsgGCNotifications_Notification) GetId() uint64 {
@@ -10102,7 +10389,7 @@ const (
 
 func (x *CMsgGCNotificationsUpdate) Reset() {
 	*x = CMsgGCNotificationsUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[74]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10114,7 +10401,7 @@ func (x *CMsgGCNotificationsUpdate) String() string {
 func (*CMsgGCNotificationsUpdate) ProtoMessage() {}
 
 func (x *CMsgGCNotificationsUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[74]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10127,7 +10414,7 @@ func (x *CMsgGCNotificationsUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCNotificationsUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgGCNotificationsUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{74}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *CMsgGCNotificationsUpdate) GetResult() CMsgGCNotificationsUpdate_EResult {
@@ -10153,7 +10440,7 @@ type CMsgGCNotificationsResponse struct {
 
 func (x *CMsgGCNotificationsResponse) Reset() {
 	*x = CMsgGCNotificationsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[75]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10165,7 +10452,7 @@ func (x *CMsgGCNotificationsResponse) String() string {
 func (*CMsgGCNotificationsResponse) ProtoMessage() {}
 
 func (x *CMsgGCNotificationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[75]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10178,7 +10465,7 @@ func (x *CMsgGCNotificationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCNotificationsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCNotificationsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{75}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *CMsgGCNotificationsResponse) GetUpdate() *CMsgGCNotificationsUpdate {
@@ -10196,7 +10483,7 @@ type CMsgGCNotificationsMarkReadRequest struct {
 
 func (x *CMsgGCNotificationsMarkReadRequest) Reset() {
 	*x = CMsgGCNotificationsMarkReadRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[76]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10208,7 +10495,7 @@ func (x *CMsgGCNotificationsMarkReadRequest) String() string {
 func (*CMsgGCNotificationsMarkReadRequest) ProtoMessage() {}
 
 func (x *CMsgGCNotificationsMarkReadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[76]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10221,7 +10508,7 @@ func (x *CMsgGCNotificationsMarkReadRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCNotificationsMarkReadRequest.ProtoReflect.Descriptor instead.
 func (*CMsgGCNotificationsMarkReadRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{76}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{77}
 }
 
 type CMsgGCPlayerInfoSubmit struct {
@@ -10240,7 +10527,7 @@ type CMsgGCPlayerInfoSubmit struct {
 
 func (x *CMsgGCPlayerInfoSubmit) Reset() {
 	*x = CMsgGCPlayerInfoSubmit{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[77]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10252,7 +10539,7 @@ func (x *CMsgGCPlayerInfoSubmit) String() string {
 func (*CMsgGCPlayerInfoSubmit) ProtoMessage() {}
 
 func (x *CMsgGCPlayerInfoSubmit) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[77]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10265,7 +10552,7 @@ func (x *CMsgGCPlayerInfoSubmit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCPlayerInfoSubmit.ProtoReflect.Descriptor instead.
 func (*CMsgGCPlayerInfoSubmit) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{77}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *CMsgGCPlayerInfoSubmit) GetPlayerName() string {
@@ -10338,7 +10625,7 @@ const (
 
 func (x *CMsgGCPlayerInfoSubmitResponse) Reset() {
 	*x = CMsgGCPlayerInfoSubmitResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[78]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10350,7 +10637,7 @@ func (x *CMsgGCPlayerInfoSubmitResponse) String() string {
 func (*CMsgGCPlayerInfoSubmitResponse) ProtoMessage() {}
 
 func (x *CMsgGCPlayerInfoSubmitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[78]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10363,7 +10650,7 @@ func (x *CMsgGCPlayerInfoSubmitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCPlayerInfoSubmitResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCPlayerInfoSubmitResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{78}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *CMsgGCPlayerInfoSubmitResponse) GetResult() CMsgGCPlayerInfoSubmitResponse_EResult {
@@ -10383,7 +10670,7 @@ type CMsgDOTAEmoticonAccessSDO struct {
 
 func (x *CMsgDOTAEmoticonAccessSDO) Reset() {
 	*x = CMsgDOTAEmoticonAccessSDO{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[79]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10395,7 +10682,7 @@ func (x *CMsgDOTAEmoticonAccessSDO) String() string {
 func (*CMsgDOTAEmoticonAccessSDO) ProtoMessage() {}
 
 func (x *CMsgDOTAEmoticonAccessSDO) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[79]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10408,7 +10695,7 @@ func (x *CMsgDOTAEmoticonAccessSDO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAEmoticonAccessSDO.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAEmoticonAccessSDO) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{79}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *CMsgDOTAEmoticonAccessSDO) GetAccountId() uint32 {
@@ -10433,7 +10720,7 @@ type CMsgClientToGCEmoticonDataRequest struct {
 
 func (x *CMsgClientToGCEmoticonDataRequest) Reset() {
 	*x = CMsgClientToGCEmoticonDataRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[80]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10445,7 +10732,7 @@ func (x *CMsgClientToGCEmoticonDataRequest) String() string {
 func (*CMsgClientToGCEmoticonDataRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCEmoticonDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[80]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10458,7 +10745,7 @@ func (x *CMsgClientToGCEmoticonDataRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCEmoticonDataRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCEmoticonDataRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{80}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{81}
 }
 
 type CMsgGCToClientEmoticonData struct {
@@ -10470,7 +10757,7 @@ type CMsgGCToClientEmoticonData struct {
 
 func (x *CMsgGCToClientEmoticonData) Reset() {
 	*x = CMsgGCToClientEmoticonData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[81]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10482,7 +10769,7 @@ func (x *CMsgGCToClientEmoticonData) String() string {
 func (*CMsgGCToClientEmoticonData) ProtoMessage() {}
 
 func (x *CMsgGCToClientEmoticonData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[81]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10495,7 +10782,7 @@ func (x *CMsgGCToClientEmoticonData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientEmoticonData.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientEmoticonData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{81}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *CMsgGCToClientEmoticonData) GetEmoticonAccess() *CMsgDOTAEmoticonAccessSDO {
@@ -10515,7 +10802,7 @@ type CMsgGCToClientTournamentItemDrop struct {
 
 func (x *CMsgGCToClientTournamentItemDrop) Reset() {
 	*x = CMsgGCToClientTournamentItemDrop{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[82]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10527,7 +10814,7 @@ func (x *CMsgGCToClientTournamentItemDrop) String() string {
 func (*CMsgGCToClientTournamentItemDrop) ProtoMessage() {}
 
 func (x *CMsgGCToClientTournamentItemDrop) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[82]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10540,7 +10827,7 @@ func (x *CMsgGCToClientTournamentItemDrop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientTournamentItemDrop.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientTournamentItemDrop) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{82}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *CMsgGCToClientTournamentItemDrop) GetItemDef() uint32 {
@@ -10565,7 +10852,7 @@ type CMsgClientToGCGetAllHeroOrder struct {
 
 func (x *CMsgClientToGCGetAllHeroOrder) Reset() {
 	*x = CMsgClientToGCGetAllHeroOrder{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[83]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10577,7 +10864,7 @@ func (x *CMsgClientToGCGetAllHeroOrder) String() string {
 func (*CMsgClientToGCGetAllHeroOrder) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetAllHeroOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[83]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10590,7 +10877,7 @@ func (x *CMsgClientToGCGetAllHeroOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetAllHeroOrder.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetAllHeroOrder) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{83}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{84}
 }
 
 type CMsgClientToGCGetAllHeroOrderResponse struct {
@@ -10602,7 +10889,7 @@ type CMsgClientToGCGetAllHeroOrderResponse struct {
 
 func (x *CMsgClientToGCGetAllHeroOrderResponse) Reset() {
 	*x = CMsgClientToGCGetAllHeroOrderResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[84]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10614,7 +10901,7 @@ func (x *CMsgClientToGCGetAllHeroOrderResponse) String() string {
 func (*CMsgClientToGCGetAllHeroOrderResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetAllHeroOrderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[84]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10627,7 +10914,7 @@ func (x *CMsgClientToGCGetAllHeroOrderResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCGetAllHeroOrderResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetAllHeroOrderResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{84}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *CMsgClientToGCGetAllHeroOrderResponse) GetHeroIds() []int32 {
@@ -10646,7 +10933,7 @@ type CMsgClientToGCGetAllHeroProgress struct {
 
 func (x *CMsgClientToGCGetAllHeroProgress) Reset() {
 	*x = CMsgClientToGCGetAllHeroProgress{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[85]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10658,7 +10945,7 @@ func (x *CMsgClientToGCGetAllHeroProgress) String() string {
 func (*CMsgClientToGCGetAllHeroProgress) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetAllHeroProgress) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[85]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10671,7 +10958,7 @@ func (x *CMsgClientToGCGetAllHeroProgress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetAllHeroProgress.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetAllHeroProgress) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{85}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *CMsgClientToGCGetAllHeroProgress) GetAccountId() uint32 {
@@ -10709,7 +10996,7 @@ type CMsgClientToGCGetAllHeroProgressResponse struct {
 
 func (x *CMsgClientToGCGetAllHeroProgressResponse) Reset() {
 	*x = CMsgClientToGCGetAllHeroProgressResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[86]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10721,7 +11008,7 @@ func (x *CMsgClientToGCGetAllHeroProgressResponse) String() string {
 func (*CMsgClientToGCGetAllHeroProgressResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetAllHeroProgressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[86]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10734,7 +11021,7 @@ func (x *CMsgClientToGCGetAllHeroProgressResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCGetAllHeroProgressResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetAllHeroProgressResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{86}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *CMsgClientToGCGetAllHeroProgressResponse) GetAccountId() uint32 {
@@ -10886,7 +11173,7 @@ type CMsgClientToGCGetTrophyList struct {
 
 func (x *CMsgClientToGCGetTrophyList) Reset() {
 	*x = CMsgClientToGCGetTrophyList{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[87]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10898,7 +11185,7 @@ func (x *CMsgClientToGCGetTrophyList) String() string {
 func (*CMsgClientToGCGetTrophyList) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetTrophyList) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[87]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10911,7 +11198,7 @@ func (x *CMsgClientToGCGetTrophyList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetTrophyList.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetTrophyList) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{87}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *CMsgClientToGCGetTrophyList) GetAccountId() uint32 {
@@ -10930,7 +11217,7 @@ type CMsgClientToGCGetTrophyListResponse struct {
 
 func (x *CMsgClientToGCGetTrophyListResponse) Reset() {
 	*x = CMsgClientToGCGetTrophyListResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[88]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10942,7 +11229,7 @@ func (x *CMsgClientToGCGetTrophyListResponse) String() string {
 func (*CMsgClientToGCGetTrophyListResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetTrophyListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[88]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10955,7 +11242,7 @@ func (x *CMsgClientToGCGetTrophyListResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCGetTrophyListResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetTrophyListResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{88}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *CMsgClientToGCGetTrophyListResponse) GetTrophies() []*CMsgClientToGCGetTrophyListResponse_Trophy {
@@ -10977,7 +11264,7 @@ type CMsgGCToClientTrophyAwarded struct {
 
 func (x *CMsgGCToClientTrophyAwarded) Reset() {
 	*x = CMsgGCToClientTrophyAwarded{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[89]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10989,7 +11276,7 @@ func (x *CMsgGCToClientTrophyAwarded) String() string {
 func (*CMsgGCToClientTrophyAwarded) ProtoMessage() {}
 
 func (x *CMsgGCToClientTrophyAwarded) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[89]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11002,7 +11289,7 @@ func (x *CMsgGCToClientTrophyAwarded) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientTrophyAwarded.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientTrophyAwarded) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{89}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *CMsgGCToClientTrophyAwarded) GetTrophyId() uint32 {
@@ -11047,7 +11334,7 @@ const (
 
 func (x *CMsgClientToGCRankRequest) Reset() {
 	*x = CMsgClientToGCRankRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[90]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11059,7 +11346,7 @@ func (x *CMsgClientToGCRankRequest) String() string {
 func (*CMsgClientToGCRankRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCRankRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[90]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11072,7 +11359,7 @@ func (x *CMsgClientToGCRankRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRankRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRankRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{90}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *CMsgClientToGCRankRequest) GetRankType() ERankType {
@@ -11100,7 +11387,7 @@ const (
 
 func (x *CMsgGCToClientRankResponse) Reset() {
 	*x = CMsgGCToClientRankResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[91]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11112,7 +11399,7 @@ func (x *CMsgGCToClientRankResponse) String() string {
 func (*CMsgGCToClientRankResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientRankResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[91]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11125,7 +11412,7 @@ func (x *CMsgGCToClientRankResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientRankResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRankResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{91}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *CMsgGCToClientRankResponse) GetResult() CMsgGCToClientRankResponse_EResultCode {
@@ -11178,7 +11465,7 @@ const (
 
 func (x *CMsgGCToClientRankUpdate) Reset() {
 	*x = CMsgGCToClientRankUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[92]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11190,7 +11477,7 @@ func (x *CMsgGCToClientRankUpdate) String() string {
 func (*CMsgGCToClientRankUpdate) ProtoMessage() {}
 
 func (x *CMsgGCToClientRankUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[92]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11203,7 +11490,7 @@ func (x *CMsgGCToClientRankUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientRankUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRankUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{92}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *CMsgGCToClientRankUpdate) GetRankType() ERankType {
@@ -11229,7 +11516,7 @@ type CMsgClientToGCGetProfileCard struct {
 
 func (x *CMsgClientToGCGetProfileCard) Reset() {
 	*x = CMsgClientToGCGetProfileCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[93]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11241,7 +11528,7 @@ func (x *CMsgClientToGCGetProfileCard) String() string {
 func (*CMsgClientToGCGetProfileCard) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetProfileCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[93]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11254,7 +11541,7 @@ func (x *CMsgClientToGCGetProfileCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetProfileCard.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetProfileCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{93}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *CMsgClientToGCGetProfileCard) GetAccountId() uint32 {
@@ -11273,7 +11560,7 @@ type CMsgClientToGCSetProfileCardSlots struct {
 
 func (x *CMsgClientToGCSetProfileCardSlots) Reset() {
 	*x = CMsgClientToGCSetProfileCardSlots{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[94]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11285,7 +11572,7 @@ func (x *CMsgClientToGCSetProfileCardSlots) String() string {
 func (*CMsgClientToGCSetProfileCardSlots) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetProfileCardSlots) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[94]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11298,7 +11585,7 @@ func (x *CMsgClientToGCSetProfileCardSlots) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCSetProfileCardSlots.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetProfileCardSlots) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{94}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *CMsgClientToGCSetProfileCardSlots) GetSlots() []*CMsgClientToGCSetProfileCardSlots_CardSlot {
@@ -11316,7 +11603,7 @@ type CMsgClientToGCGetProfileCardStats struct {
 
 func (x *CMsgClientToGCGetProfileCardStats) Reset() {
 	*x = CMsgClientToGCGetProfileCardStats{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[95]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11328,7 +11615,7 @@ func (x *CMsgClientToGCGetProfileCardStats) String() string {
 func (*CMsgClientToGCGetProfileCardStats) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetProfileCardStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[95]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11341,7 +11628,7 @@ func (x *CMsgClientToGCGetProfileCardStats) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCGetProfileCardStats.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetProfileCardStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{95}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{96}
 }
 
 type CMsgClientToGCCreateHeroStatue struct {
@@ -11361,7 +11648,7 @@ type CMsgClientToGCCreateHeroStatue struct {
 
 func (x *CMsgClientToGCCreateHeroStatue) Reset() {
 	*x = CMsgClientToGCCreateHeroStatue{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[96]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11373,7 +11660,7 @@ func (x *CMsgClientToGCCreateHeroStatue) String() string {
 func (*CMsgClientToGCCreateHeroStatue) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreateHeroStatue) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[96]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11386,7 +11673,7 @@ func (x *CMsgClientToGCCreateHeroStatue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCCreateHeroStatue.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreateHeroStatue) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{96}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *CMsgClientToGCCreateHeroStatue) GetSourceItemId() uint64 {
@@ -11461,7 +11748,7 @@ type CMsgGCToClientHeroStatueCreateResult struct {
 
 func (x *CMsgGCToClientHeroStatueCreateResult) Reset() {
 	*x = CMsgGCToClientHeroStatueCreateResult{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[97]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11473,7 +11760,7 @@ func (x *CMsgGCToClientHeroStatueCreateResult) String() string {
 func (*CMsgGCToClientHeroStatueCreateResult) ProtoMessage() {}
 
 func (x *CMsgGCToClientHeroStatueCreateResult) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[97]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11486,7 +11773,7 @@ func (x *CMsgGCToClientHeroStatueCreateResult) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgGCToClientHeroStatueCreateResult.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientHeroStatueCreateResult) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{97}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *CMsgGCToClientHeroStatueCreateResult) GetResultingItemId() uint64 {
@@ -11505,7 +11792,7 @@ type CMsgClientToGCPlayerStatsRequest struct {
 
 func (x *CMsgClientToGCPlayerStatsRequest) Reset() {
 	*x = CMsgClientToGCPlayerStatsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[98]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11517,7 +11804,7 @@ func (x *CMsgClientToGCPlayerStatsRequest) String() string {
 func (*CMsgClientToGCPlayerStatsRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlayerStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[98]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11530,7 +11817,7 @@ func (x *CMsgClientToGCPlayerStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCPlayerStatsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlayerStatsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{98}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *CMsgClientToGCPlayerStatsRequest) GetAccountId() uint32 {
@@ -11571,7 +11858,7 @@ type CMsgGCToClientPlayerStatsResponse struct {
 
 func (x *CMsgGCToClientPlayerStatsResponse) Reset() {
 	*x = CMsgGCToClientPlayerStatsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[99]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11583,7 +11870,7 @@ func (x *CMsgGCToClientPlayerStatsResponse) String() string {
 func (*CMsgGCToClientPlayerStatsResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientPlayerStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[99]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11596,7 +11883,7 @@ func (x *CMsgGCToClientPlayerStatsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgGCToClientPlayerStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPlayerStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{99}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *CMsgGCToClientPlayerStatsResponse) GetAccountId() uint32 {
@@ -11768,7 +12055,7 @@ type CMsgClientToGCCustomGamesFriendsPlayedRequest struct {
 
 func (x *CMsgClientToGCCustomGamesFriendsPlayedRequest) Reset() {
 	*x = CMsgClientToGCCustomGamesFriendsPlayedRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[100]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11780,7 +12067,7 @@ func (x *CMsgClientToGCCustomGamesFriendsPlayedRequest) String() string {
 func (*CMsgClientToGCCustomGamesFriendsPlayedRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCCustomGamesFriendsPlayedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[100]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11793,7 +12080,7 @@ func (x *CMsgClientToGCCustomGamesFriendsPlayedRequest) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCCustomGamesFriendsPlayedRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCustomGamesFriendsPlayedRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{100}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{101}
 }
 
 type CMsgGCToClientCustomGamesFriendsPlayedResponse struct {
@@ -11806,7 +12093,7 @@ type CMsgGCToClientCustomGamesFriendsPlayedResponse struct {
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse) Reset() {
 	*x = CMsgGCToClientCustomGamesFriendsPlayedResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[101]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11818,7 +12105,7 @@ func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse) String() string {
 func (*CMsgGCToClientCustomGamesFriendsPlayedResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[101]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11831,7 +12118,7 @@ func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgGCToClientCustomGamesFriendsPlayedResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCustomGamesFriendsPlayedResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{101}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse) GetAccountId() uint32 {
@@ -11858,7 +12145,7 @@ type CMsgClientToGCSocialFeedPostCommentRequest struct {
 
 func (x *CMsgClientToGCSocialFeedPostCommentRequest) Reset() {
 	*x = CMsgClientToGCSocialFeedPostCommentRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[102]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11870,7 +12157,7 @@ func (x *CMsgClientToGCSocialFeedPostCommentRequest) String() string {
 func (*CMsgClientToGCSocialFeedPostCommentRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCSocialFeedPostCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[102]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11883,7 +12170,7 @@ func (x *CMsgClientToGCSocialFeedPostCommentRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCSocialFeedPostCommentRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSocialFeedPostCommentRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{102}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *CMsgClientToGCSocialFeedPostCommentRequest) GetEventId() uint64 {
@@ -11909,7 +12196,7 @@ type CMsgGCToClientSocialFeedPostCommentResponse struct {
 
 func (x *CMsgGCToClientSocialFeedPostCommentResponse) Reset() {
 	*x = CMsgGCToClientSocialFeedPostCommentResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[103]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[104]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11921,7 +12208,7 @@ func (x *CMsgGCToClientSocialFeedPostCommentResponse) String() string {
 func (*CMsgGCToClientSocialFeedPostCommentResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientSocialFeedPostCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[103]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[104]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11934,7 +12221,7 @@ func (x *CMsgGCToClientSocialFeedPostCommentResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgGCToClientSocialFeedPostCommentResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientSocialFeedPostCommentResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{103}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *CMsgGCToClientSocialFeedPostCommentResponse) GetSuccess() bool {
@@ -11955,7 +12242,7 @@ type CMsgClientToGCSocialFeedPostMessageRequest struct {
 
 func (x *CMsgClientToGCSocialFeedPostMessageRequest) Reset() {
 	*x = CMsgClientToGCSocialFeedPostMessageRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[104]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11967,7 +12254,7 @@ func (x *CMsgClientToGCSocialFeedPostMessageRequest) String() string {
 func (*CMsgClientToGCSocialFeedPostMessageRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCSocialFeedPostMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[104]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11980,7 +12267,7 @@ func (x *CMsgClientToGCSocialFeedPostMessageRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCSocialFeedPostMessageRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSocialFeedPostMessageRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{104}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *CMsgClientToGCSocialFeedPostMessageRequest) GetMessage() string {
@@ -12013,7 +12300,7 @@ type CMsgGCToClientSocialFeedPostMessageResponse struct {
 
 func (x *CMsgGCToClientSocialFeedPostMessageResponse) Reset() {
 	*x = CMsgGCToClientSocialFeedPostMessageResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[105]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12025,7 +12312,7 @@ func (x *CMsgGCToClientSocialFeedPostMessageResponse) String() string {
 func (*CMsgGCToClientSocialFeedPostMessageResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientSocialFeedPostMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[105]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12038,7 +12325,7 @@ func (x *CMsgGCToClientSocialFeedPostMessageResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgGCToClientSocialFeedPostMessageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientSocialFeedPostMessageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{105}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *CMsgGCToClientSocialFeedPostMessageResponse) GetSuccess() bool {
@@ -12057,7 +12344,7 @@ type CMsgClientToGCFriendsPlayedCustomGameRequest struct {
 
 func (x *CMsgClientToGCFriendsPlayedCustomGameRequest) Reset() {
 	*x = CMsgClientToGCFriendsPlayedCustomGameRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[106]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12069,7 +12356,7 @@ func (x *CMsgClientToGCFriendsPlayedCustomGameRequest) String() string {
 func (*CMsgClientToGCFriendsPlayedCustomGameRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCFriendsPlayedCustomGameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[106]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12082,7 +12369,7 @@ func (x *CMsgClientToGCFriendsPlayedCustomGameRequest) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCFriendsPlayedCustomGameRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCFriendsPlayedCustomGameRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{106}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *CMsgClientToGCFriendsPlayedCustomGameRequest) GetCustomGameId() uint64 {
@@ -12102,7 +12389,7 @@ type CMsgGCToClientFriendsPlayedCustomGameResponse struct {
 
 func (x *CMsgGCToClientFriendsPlayedCustomGameResponse) Reset() {
 	*x = CMsgGCToClientFriendsPlayedCustomGameResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[107]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[108]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12114,7 +12401,7 @@ func (x *CMsgGCToClientFriendsPlayedCustomGameResponse) String() string {
 func (*CMsgGCToClientFriendsPlayedCustomGameResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientFriendsPlayedCustomGameResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[107]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[108]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12127,7 +12414,7 @@ func (x *CMsgGCToClientFriendsPlayedCustomGameResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgGCToClientFriendsPlayedCustomGameResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientFriendsPlayedCustomGameResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{107}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *CMsgGCToClientFriendsPlayedCustomGameResponse) GetCustomGameId() uint64 {
@@ -12166,7 +12453,7 @@ const (
 
 func (x *CMsgDOTAPartyRichPresence) Reset() {
 	*x = CMsgDOTAPartyRichPresence{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[108]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[109]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12178,7 +12465,7 @@ func (x *CMsgDOTAPartyRichPresence) String() string {
 func (*CMsgDOTAPartyRichPresence) ProtoMessage() {}
 
 func (x *CMsgDOTAPartyRichPresence) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[108]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[109]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12191,7 +12478,7 @@ func (x *CMsgDOTAPartyRichPresence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAPartyRichPresence.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAPartyRichPresence) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{108}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{109}
 }
 
 func (x *CMsgDOTAPartyRichPresence) GetPartyId() uint64 {
@@ -12280,7 +12567,7 @@ const (
 
 func (x *CMsgDOTALobbyRichPresence) Reset() {
 	*x = CMsgDOTALobbyRichPresence{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[109]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[110]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12292,7 +12579,7 @@ func (x *CMsgDOTALobbyRichPresence) String() string {
 func (*CMsgDOTALobbyRichPresence) ProtoMessage() {}
 
 func (x *CMsgDOTALobbyRichPresence) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[109]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[110]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12305,7 +12592,7 @@ func (x *CMsgDOTALobbyRichPresence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTALobbyRichPresence.ProtoReflect.Descriptor instead.
 func (*CMsgDOTALobbyRichPresence) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{109}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *CMsgDOTALobbyRichPresence) GetLobbyId() uint64 {
@@ -12383,7 +12670,7 @@ type CMsgDOTACustomGameListenServerStartedLoading struct {
 
 func (x *CMsgDOTACustomGameListenServerStartedLoading) Reset() {
 	*x = CMsgDOTACustomGameListenServerStartedLoading{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[110]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[111]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12395,7 +12682,7 @@ func (x *CMsgDOTACustomGameListenServerStartedLoading) String() string {
 func (*CMsgDOTACustomGameListenServerStartedLoading) ProtoMessage() {}
 
 func (x *CMsgDOTACustomGameListenServerStartedLoading) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[110]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[111]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12408,7 +12695,7 @@ func (x *CMsgDOTACustomGameListenServerStartedLoading) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgDOTACustomGameListenServerStartedLoading.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACustomGameListenServerStartedLoading) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{110}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *CMsgDOTACustomGameListenServerStartedLoading) GetLobbyId() uint64 {
@@ -12453,7 +12740,7 @@ type CMsgDOTACustomGameClientFinishedLoading struct {
 
 func (x *CMsgDOTACustomGameClientFinishedLoading) Reset() {
 	*x = CMsgDOTACustomGameClientFinishedLoading{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[111]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[112]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12465,7 +12752,7 @@ func (x *CMsgDOTACustomGameClientFinishedLoading) String() string {
 func (*CMsgDOTACustomGameClientFinishedLoading) ProtoMessage() {}
 
 func (x *CMsgDOTACustomGameClientFinishedLoading) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[111]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[112]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12478,7 +12765,7 @@ func (x *CMsgDOTACustomGameClientFinishedLoading) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgDOTACustomGameClientFinishedLoading.ProtoReflect.Descriptor instead.
 func (*CMsgDOTACustomGameClientFinishedLoading) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{111}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *CMsgDOTACustomGameClientFinishedLoading) GetLobbyId() uint64 {
@@ -12533,7 +12820,7 @@ type CMsgClientToGCApplyGemCombiner struct {
 
 func (x *CMsgClientToGCApplyGemCombiner) Reset() {
 	*x = CMsgClientToGCApplyGemCombiner{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[112]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[113]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12545,7 +12832,7 @@ func (x *CMsgClientToGCApplyGemCombiner) String() string {
 func (*CMsgClientToGCApplyGemCombiner) ProtoMessage() {}
 
 func (x *CMsgClientToGCApplyGemCombiner) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[112]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[113]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12558,7 +12845,7 @@ func (x *CMsgClientToGCApplyGemCombiner) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCApplyGemCombiner.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCApplyGemCombiner) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{112}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *CMsgClientToGCApplyGemCombiner) GetItemId_1() uint64 {
@@ -12583,7 +12870,7 @@ type CMsgClientToGCH264Unsupported struct {
 
 func (x *CMsgClientToGCH264Unsupported) Reset() {
 	*x = CMsgClientToGCH264Unsupported{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[113]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[114]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12595,7 +12882,7 @@ func (x *CMsgClientToGCH264Unsupported) String() string {
 func (*CMsgClientToGCH264Unsupported) ProtoMessage() {}
 
 func (x *CMsgClientToGCH264Unsupported) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[113]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[114]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12608,7 +12895,7 @@ func (x *CMsgClientToGCH264Unsupported) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCH264Unsupported.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCH264Unsupported) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{113}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{114}
 }
 
 type CMsgClientToGCGetQuestProgress struct {
@@ -12620,7 +12907,7 @@ type CMsgClientToGCGetQuestProgress struct {
 
 func (x *CMsgClientToGCGetQuestProgress) Reset() {
 	*x = CMsgClientToGCGetQuestProgress{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[114]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[115]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12632,7 +12919,7 @@ func (x *CMsgClientToGCGetQuestProgress) String() string {
 func (*CMsgClientToGCGetQuestProgress) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetQuestProgress) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[114]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[115]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12645,7 +12932,7 @@ func (x *CMsgClientToGCGetQuestProgress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetQuestProgress.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetQuestProgress) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{114}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *CMsgClientToGCGetQuestProgress) GetQuestIds() []uint32 {
@@ -12665,7 +12952,7 @@ type CMsgClientToGCGetQuestProgressResponse struct {
 
 func (x *CMsgClientToGCGetQuestProgressResponse) Reset() {
 	*x = CMsgClientToGCGetQuestProgressResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[115]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[116]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12677,7 +12964,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse) String() string {
 func (*CMsgClientToGCGetQuestProgressResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetQuestProgressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[115]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[116]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12690,7 +12977,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCGetQuestProgressResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetQuestProgressResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{115}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *CMsgClientToGCGetQuestProgressResponse) GetSuccess() bool {
@@ -12716,7 +13003,7 @@ type CMsgGCToClientMatchSignedOut struct {
 
 func (x *CMsgGCToClientMatchSignedOut) Reset() {
 	*x = CMsgGCToClientMatchSignedOut{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[116]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[117]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12728,7 +13015,7 @@ func (x *CMsgGCToClientMatchSignedOut) String() string {
 func (*CMsgGCToClientMatchSignedOut) ProtoMessage() {}
 
 func (x *CMsgGCToClientMatchSignedOut) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[116]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[117]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12741,7 +13028,7 @@ func (x *CMsgGCToClientMatchSignedOut) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientMatchSignedOut.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientMatchSignedOut) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{116}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *CMsgGCToClientMatchSignedOut) GetMatchId() uint64 {
@@ -12760,7 +13047,7 @@ type CMsgGCGetHeroStatsHistory struct {
 
 func (x *CMsgGCGetHeroStatsHistory) Reset() {
 	*x = CMsgGCGetHeroStatsHistory{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[117]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[118]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12772,7 +13059,7 @@ func (x *CMsgGCGetHeroStatsHistory) String() string {
 func (*CMsgGCGetHeroStatsHistory) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroStatsHistory) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[117]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[118]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12785,7 +13072,7 @@ func (x *CMsgGCGetHeroStatsHistory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCGetHeroStatsHistory.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroStatsHistory) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{117}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *CMsgGCGetHeroStatsHistory) GetHeroId() int32 {
@@ -12811,7 +13098,7 @@ const (
 
 func (x *CMsgGCGetHeroStatsHistoryResponse) Reset() {
 	*x = CMsgGCGetHeroStatsHistoryResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[118]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[119]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12823,7 +13110,7 @@ func (x *CMsgGCGetHeroStatsHistoryResponse) String() string {
 func (*CMsgGCGetHeroStatsHistoryResponse) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroStatsHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[118]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[119]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12836,7 +13123,7 @@ func (x *CMsgGCGetHeroStatsHistoryResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgGCGetHeroStatsHistoryResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroStatsHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{118}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{119}
 }
 
 func (x *CMsgGCGetHeroStatsHistoryResponse) GetHeroId() int32 {
@@ -12868,7 +13155,7 @@ type CMsgPlayerConductScorecardRequest struct {
 
 func (x *CMsgPlayerConductScorecardRequest) Reset() {
 	*x = CMsgPlayerConductScorecardRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[119]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[120]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12880,7 +13167,7 @@ func (x *CMsgPlayerConductScorecardRequest) String() string {
 func (*CMsgPlayerConductScorecardRequest) ProtoMessage() {}
 
 func (x *CMsgPlayerConductScorecardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[119]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[120]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12893,7 +13180,7 @@ func (x *CMsgPlayerConductScorecardRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgPlayerConductScorecardRequest.ProtoReflect.Descriptor instead.
 func (*CMsgPlayerConductScorecardRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{119}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{120}
 }
 
 type CMsgPlayerConductScorecard struct {
@@ -12926,7 +13213,7 @@ const (
 
 func (x *CMsgPlayerConductScorecard) Reset() {
 	*x = CMsgPlayerConductScorecard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[120]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[121]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12938,7 +13225,7 @@ func (x *CMsgPlayerConductScorecard) String() string {
 func (*CMsgPlayerConductScorecard) ProtoMessage() {}
 
 func (x *CMsgPlayerConductScorecard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[120]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[121]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12951,7 +13238,7 @@ func (x *CMsgPlayerConductScorecard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPlayerConductScorecard.ProtoReflect.Descriptor instead.
 func (*CMsgPlayerConductScorecard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{120}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{121}
 }
 
 func (x *CMsgPlayerConductScorecard) GetAccountId() uint32 {
@@ -13082,7 +13369,7 @@ type CMsgClientToGCWageringRequest struct {
 
 func (x *CMsgClientToGCWageringRequest) Reset() {
 	*x = CMsgClientToGCWageringRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[121]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[122]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13094,7 +13381,7 @@ func (x *CMsgClientToGCWageringRequest) String() string {
 func (*CMsgClientToGCWageringRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCWageringRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[121]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[122]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13107,7 +13394,7 @@ func (x *CMsgClientToGCWageringRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCWageringRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCWageringRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{121}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{122}
 }
 
 func (x *CMsgClientToGCWageringRequest) GetEventId() uint32 {
@@ -13138,7 +13425,7 @@ type CMsgGCToClientWageringResponse struct {
 
 func (x *CMsgGCToClientWageringResponse) Reset() {
 	*x = CMsgGCToClientWageringResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[122]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[123]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13150,7 +13437,7 @@ func (x *CMsgGCToClientWageringResponse) String() string {
 func (*CMsgGCToClientWageringResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientWageringResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[122]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[123]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13163,7 +13450,7 @@ func (x *CMsgGCToClientWageringResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientWageringResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientWageringResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{122}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{123}
 }
 
 func (x *CMsgGCToClientWageringResponse) GetCoinsRemaining() uint32 {
@@ -13267,7 +13554,7 @@ type CMsgGCToClientWageringUpdate struct {
 
 func (x *CMsgGCToClientWageringUpdate) Reset() {
 	*x = CMsgGCToClientWageringUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[123]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[124]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13279,7 +13566,7 @@ func (x *CMsgGCToClientWageringUpdate) String() string {
 func (*CMsgGCToClientWageringUpdate) ProtoMessage() {}
 
 func (x *CMsgGCToClientWageringUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[123]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[124]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13292,7 +13579,7 @@ func (x *CMsgGCToClientWageringUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientWageringUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientWageringUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{123}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *CMsgGCToClientWageringUpdate) GetEventId() uint32 {
@@ -13319,7 +13606,7 @@ type CMsgGCToClientArcanaVotesUpdate struct {
 
 func (x *CMsgGCToClientArcanaVotesUpdate) Reset() {
 	*x = CMsgGCToClientArcanaVotesUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[124]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[125]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13331,7 +13618,7 @@ func (x *CMsgGCToClientArcanaVotesUpdate) String() string {
 func (*CMsgGCToClientArcanaVotesUpdate) ProtoMessage() {}
 
 func (x *CMsgGCToClientArcanaVotesUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[124]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[125]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13344,7 +13631,7 @@ func (x *CMsgGCToClientArcanaVotesUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientArcanaVotesUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientArcanaVotesUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{124}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{125}
 }
 
 func (x *CMsgGCToClientArcanaVotesUpdate) GetEventId() uint32 {
@@ -13370,7 +13657,7 @@ type CMsgClientToGCGetEventGoals struct {
 
 func (x *CMsgClientToGCGetEventGoals) Reset() {
 	*x = CMsgClientToGCGetEventGoals{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[125]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[126]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13382,7 +13669,7 @@ func (x *CMsgClientToGCGetEventGoals) String() string {
 func (*CMsgClientToGCGetEventGoals) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetEventGoals) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[125]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[126]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13395,7 +13682,7 @@ func (x *CMsgClientToGCGetEventGoals) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetEventGoals.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetEventGoals) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{125}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{126}
 }
 
 func (x *CMsgClientToGCGetEventGoals) GetEventIds() []EEvent {
@@ -13414,7 +13701,7 @@ type CMsgEventGoals struct {
 
 func (x *CMsgEventGoals) Reset() {
 	*x = CMsgEventGoals{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[126]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[127]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13426,7 +13713,7 @@ func (x *CMsgEventGoals) String() string {
 func (*CMsgEventGoals) ProtoMessage() {}
 
 func (x *CMsgEventGoals) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[126]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[127]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13439,7 +13726,7 @@ func (x *CMsgEventGoals) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgEventGoals.ProtoReflect.Descriptor instead.
 func (*CMsgEventGoals) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{126}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{127}
 }
 
 func (x *CMsgEventGoals) GetEventGoals() []*CMsgEventGoals_EventGoal {
@@ -13458,7 +13745,7 @@ type CMsgGCToGCLeaguePredictions struct {
 
 func (x *CMsgGCToGCLeaguePredictions) Reset() {
 	*x = CMsgGCToGCLeaguePredictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[127]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[128]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13470,7 +13757,7 @@ func (x *CMsgGCToGCLeaguePredictions) String() string {
 func (*CMsgGCToGCLeaguePredictions) ProtoMessage() {}
 
 func (x *CMsgGCToGCLeaguePredictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[127]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[128]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13483,7 +13770,7 @@ func (x *CMsgGCToGCLeaguePredictions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToGCLeaguePredictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToGCLeaguePredictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{127}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{128}
 }
 
 func (x *CMsgGCToGCLeaguePredictions) GetLeagueId() uint32 {
@@ -13502,7 +13789,7 @@ type CMsgPredictionRankings struct {
 
 func (x *CMsgPredictionRankings) Reset() {
 	*x = CMsgPredictionRankings{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[128]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[129]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13514,7 +13801,7 @@ func (x *CMsgPredictionRankings) String() string {
 func (*CMsgPredictionRankings) ProtoMessage() {}
 
 func (x *CMsgPredictionRankings) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[128]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[129]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13527,7 +13814,7 @@ func (x *CMsgPredictionRankings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPredictionRankings.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionRankings) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{128}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129}
 }
 
 func (x *CMsgPredictionRankings) GetPredictions() []*CMsgPredictionRankings_Prediction {
@@ -13546,7 +13833,7 @@ type CMsgPredictionResults struct {
 
 func (x *CMsgPredictionResults) Reset() {
 	*x = CMsgPredictionResults{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[129]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[130]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13558,7 +13845,7 @@ func (x *CMsgPredictionResults) String() string {
 func (*CMsgPredictionResults) ProtoMessage() {}
 
 func (x *CMsgPredictionResults) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[129]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[130]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13571,7 +13858,7 @@ func (x *CMsgPredictionResults) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPredictionResults.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionResults) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{130}
 }
 
 func (x *CMsgPredictionResults) GetResults() []*CMsgPredictionResults_Result {
@@ -13590,7 +13877,7 @@ type CMsgClientToGCHasPlayerVotedForMVP struct {
 
 func (x *CMsgClientToGCHasPlayerVotedForMVP) Reset() {
 	*x = CMsgClientToGCHasPlayerVotedForMVP{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[130]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[131]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13602,7 +13889,7 @@ func (x *CMsgClientToGCHasPlayerVotedForMVP) String() string {
 func (*CMsgClientToGCHasPlayerVotedForMVP) ProtoMessage() {}
 
 func (x *CMsgClientToGCHasPlayerVotedForMVP) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[130]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[131]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13615,7 +13902,7 @@ func (x *CMsgClientToGCHasPlayerVotedForMVP) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCHasPlayerVotedForMVP.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCHasPlayerVotedForMVP) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{130}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{131}
 }
 
 func (x *CMsgClientToGCHasPlayerVotedForMVP) GetMatchId() uint64 {
@@ -13634,7 +13921,7 @@ type CMsgClientToGCHasPlayerVotedForMVPResponse struct {
 
 func (x *CMsgClientToGCHasPlayerVotedForMVPResponse) Reset() {
 	*x = CMsgClientToGCHasPlayerVotedForMVPResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[131]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[132]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13646,7 +13933,7 @@ func (x *CMsgClientToGCHasPlayerVotedForMVPResponse) String() string {
 func (*CMsgClientToGCHasPlayerVotedForMVPResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCHasPlayerVotedForMVPResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[131]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[132]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13659,7 +13946,7 @@ func (x *CMsgClientToGCHasPlayerVotedForMVPResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCHasPlayerVotedForMVPResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCHasPlayerVotedForMVPResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{131}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{132}
 }
 
 func (x *CMsgClientToGCHasPlayerVotedForMVPResponse) GetResult() bool {
@@ -13679,7 +13966,7 @@ type CMsgClientToGCVoteForMVP struct {
 
 func (x *CMsgClientToGCVoteForMVP) Reset() {
 	*x = CMsgClientToGCVoteForMVP{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[132]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[133]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13691,7 +13978,7 @@ func (x *CMsgClientToGCVoteForMVP) String() string {
 func (*CMsgClientToGCVoteForMVP) ProtoMessage() {}
 
 func (x *CMsgClientToGCVoteForMVP) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[132]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[133]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13704,7 +13991,7 @@ func (x *CMsgClientToGCVoteForMVP) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCVoteForMVP.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCVoteForMVP) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{132}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{133}
 }
 
 func (x *CMsgClientToGCVoteForMVP) GetMatchId() uint64 {
@@ -13730,7 +14017,7 @@ type CMsgClientToGCVoteForMVPResponse struct {
 
 func (x *CMsgClientToGCVoteForMVPResponse) Reset() {
 	*x = CMsgClientToGCVoteForMVPResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[133]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[134]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13742,7 +14029,7 @@ func (x *CMsgClientToGCVoteForMVPResponse) String() string {
 func (*CMsgClientToGCVoteForMVPResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCVoteForMVPResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[133]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[134]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13755,7 +14042,7 @@ func (x *CMsgClientToGCVoteForMVPResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCVoteForMVPResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCVoteForMVPResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{133}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{134}
 }
 
 func (x *CMsgClientToGCVoteForMVPResponse) GetResult() bool {
@@ -13774,7 +14061,7 @@ type CMsgClientToGCMVPVoteTimeout struct {
 
 func (x *CMsgClientToGCMVPVoteTimeout) Reset() {
 	*x = CMsgClientToGCMVPVoteTimeout{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[134]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[135]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13786,7 +14073,7 @@ func (x *CMsgClientToGCMVPVoteTimeout) String() string {
 func (*CMsgClientToGCMVPVoteTimeout) ProtoMessage() {}
 
 func (x *CMsgClientToGCMVPVoteTimeout) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[134]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[135]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13799,7 +14086,7 @@ func (x *CMsgClientToGCMVPVoteTimeout) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCMVPVoteTimeout.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCMVPVoteTimeout) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{134}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{135}
 }
 
 func (x *CMsgClientToGCMVPVoteTimeout) GetMatchId() uint64 {
@@ -13818,7 +14105,7 @@ type CMsgClientToGCMVPVoteTimeoutResponse struct {
 
 func (x *CMsgClientToGCMVPVoteTimeoutResponse) Reset() {
 	*x = CMsgClientToGCMVPVoteTimeoutResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[135]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[136]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13830,7 +14117,7 @@ func (x *CMsgClientToGCMVPVoteTimeoutResponse) String() string {
 func (*CMsgClientToGCMVPVoteTimeoutResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCMVPVoteTimeoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[135]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[136]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13843,7 +14130,7 @@ func (x *CMsgClientToGCMVPVoteTimeoutResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCMVPVoteTimeoutResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCMVPVoteTimeoutResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{135}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{136}
 }
 
 func (x *CMsgClientToGCMVPVoteTimeoutResponse) GetResult() bool {
@@ -13861,7 +14148,7 @@ type CMsgClientToGCTeammateStatsRequest struct {
 
 func (x *CMsgClientToGCTeammateStatsRequest) Reset() {
 	*x = CMsgClientToGCTeammateStatsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[136]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[137]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13873,7 +14160,7 @@ func (x *CMsgClientToGCTeammateStatsRequest) String() string {
 func (*CMsgClientToGCTeammateStatsRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCTeammateStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[136]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[137]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13886,7 +14173,7 @@ func (x *CMsgClientToGCTeammateStatsRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCTeammateStatsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCTeammateStatsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{136}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{137}
 }
 
 type CMsgClientToGCTeammateStatsResponse struct {
@@ -13899,7 +14186,7 @@ type CMsgClientToGCTeammateStatsResponse struct {
 
 func (x *CMsgClientToGCTeammateStatsResponse) Reset() {
 	*x = CMsgClientToGCTeammateStatsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[137]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[138]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13911,7 +14198,7 @@ func (x *CMsgClientToGCTeammateStatsResponse) String() string {
 func (*CMsgClientToGCTeammateStatsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCTeammateStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[137]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[138]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13924,7 +14211,7 @@ func (x *CMsgClientToGCTeammateStatsResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCTeammateStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCTeammateStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{137}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{138}
 }
 
 func (x *CMsgClientToGCTeammateStatsResponse) GetSuccess() bool {
@@ -13950,7 +14237,7 @@ type CMsgClientToGCVoteForArcana struct {
 
 func (x *CMsgClientToGCVoteForArcana) Reset() {
 	*x = CMsgClientToGCVoteForArcana{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[138]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[139]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13962,7 +14249,7 @@ func (x *CMsgClientToGCVoteForArcana) String() string {
 func (*CMsgClientToGCVoteForArcana) ProtoMessage() {}
 
 func (x *CMsgClientToGCVoteForArcana) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[138]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[139]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13975,7 +14262,7 @@ func (x *CMsgClientToGCVoteForArcana) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCVoteForArcana.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCVoteForArcana) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{138}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{139}
 }
 
 func (x *CMsgClientToGCVoteForArcana) GetMatches() []*CMsgArcanaVoteMatchVotes {
@@ -13999,7 +14286,7 @@ const (
 
 func (x *CMsgClientToGCVoteForArcanaResponse) Reset() {
 	*x = CMsgClientToGCVoteForArcanaResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[139]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[140]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14011,7 +14298,7 @@ func (x *CMsgClientToGCVoteForArcanaResponse) String() string {
 func (*CMsgClientToGCVoteForArcanaResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCVoteForArcanaResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[139]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[140]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14024,7 +14311,7 @@ func (x *CMsgClientToGCVoteForArcanaResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCVoteForArcanaResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCVoteForArcanaResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{139}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{140}
 }
 
 func (x *CMsgClientToGCVoteForArcanaResponse) GetResult() CMsgClientToGCVoteForArcanaResponse_Result {
@@ -14042,7 +14329,7 @@ type CMsgClientToGCRequestArcanaVotesRemaining struct {
 
 func (x *CMsgClientToGCRequestArcanaVotesRemaining) Reset() {
 	*x = CMsgClientToGCRequestArcanaVotesRemaining{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[140]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[141]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14054,7 +14341,7 @@ func (x *CMsgClientToGCRequestArcanaVotesRemaining) String() string {
 func (*CMsgClientToGCRequestArcanaVotesRemaining) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestArcanaVotesRemaining) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[140]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[141]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14067,7 +14354,7 @@ func (x *CMsgClientToGCRequestArcanaVotesRemaining) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCRequestArcanaVotesRemaining.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestArcanaVotesRemaining) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{140}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{141}
 }
 
 type CMsgClientToGCRequestArcanaVotesRemainingResponse struct {
@@ -14082,7 +14369,7 @@ type CMsgClientToGCRequestArcanaVotesRemainingResponse struct {
 
 func (x *CMsgClientToGCRequestArcanaVotesRemainingResponse) Reset() {
 	*x = CMsgClientToGCRequestArcanaVotesRemainingResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[141]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[142]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14094,7 +14381,7 @@ func (x *CMsgClientToGCRequestArcanaVotesRemainingResponse) String() string {
 func (*CMsgClientToGCRequestArcanaVotesRemainingResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestArcanaVotesRemainingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[141]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[142]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14107,7 +14394,7 @@ func (x *CMsgClientToGCRequestArcanaVotesRemainingResponse) ProtoReflect() proto
 
 // Deprecated: Use CMsgClientToGCRequestArcanaVotesRemainingResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestArcanaVotesRemainingResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{141}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{142}
 }
 
 func (x *CMsgClientToGCRequestArcanaVotesRemainingResponse) GetResult() bool {
@@ -14147,7 +14434,7 @@ type CMsgClientToGCRequestEventPointLogV2 struct {
 
 func (x *CMsgClientToGCRequestEventPointLogV2) Reset() {
 	*x = CMsgClientToGCRequestEventPointLogV2{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[142]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[143]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14159,7 +14446,7 @@ func (x *CMsgClientToGCRequestEventPointLogV2) String() string {
 func (*CMsgClientToGCRequestEventPointLogV2) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestEventPointLogV2) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[142]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[143]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14172,7 +14459,7 @@ func (x *CMsgClientToGCRequestEventPointLogV2) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCRequestEventPointLogV2.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestEventPointLogV2) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{142}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{143}
 }
 
 func (x *CMsgClientToGCRequestEventPointLogV2) GetEventId() uint32 {
@@ -14198,7 +14485,7 @@ const (
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2) Reset() {
 	*x = CMsgClientToGCRequestEventPointLogResponseV2{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[143]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[144]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14210,7 +14497,7 @@ func (x *CMsgClientToGCRequestEventPointLogResponseV2) String() string {
 func (*CMsgClientToGCRequestEventPointLogResponseV2) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[143]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[144]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14223,7 +14510,7 @@ func (x *CMsgClientToGCRequestEventPointLogResponseV2) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCRequestEventPointLogResponseV2.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestEventPointLogResponseV2) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{143}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{144}
 }
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2) GetResult() bool {
@@ -14257,7 +14544,7 @@ type CMsgClientToGCPublishUserStat struct {
 
 func (x *CMsgClientToGCPublishUserStat) Reset() {
 	*x = CMsgClientToGCPublishUserStat{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[144]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[145]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14269,7 +14556,7 @@ func (x *CMsgClientToGCPublishUserStat) String() string {
 func (*CMsgClientToGCPublishUserStat) ProtoMessage() {}
 
 func (x *CMsgClientToGCPublishUserStat) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[144]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[145]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14282,7 +14569,7 @@ func (x *CMsgClientToGCPublishUserStat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCPublishUserStat.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPublishUserStat) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{144}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{145}
 }
 
 func (x *CMsgClientToGCPublishUserStat) GetUserStatsEvent() uint32 {
@@ -14315,7 +14602,7 @@ const (
 
 func (x *CMsgClientToGCRequestSlarkGameResult) Reset() {
 	*x = CMsgClientToGCRequestSlarkGameResult{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[145]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[146]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14327,7 +14614,7 @@ func (x *CMsgClientToGCRequestSlarkGameResult) String() string {
 func (*CMsgClientToGCRequestSlarkGameResult) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestSlarkGameResult) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[145]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[146]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14340,7 +14627,7 @@ func (x *CMsgClientToGCRequestSlarkGameResult) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCRequestSlarkGameResult.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestSlarkGameResult) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{145}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{146}
 }
 
 func (x *CMsgClientToGCRequestSlarkGameResult) GetEventId() EEvent {
@@ -14374,7 +14661,7 @@ type CMsgClientToGCRequestSlarkGameResultResponse struct {
 
 func (x *CMsgClientToGCRequestSlarkGameResultResponse) Reset() {
 	*x = CMsgClientToGCRequestSlarkGameResultResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[146]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[147]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14386,7 +14673,7 @@ func (x *CMsgClientToGCRequestSlarkGameResultResponse) String() string {
 func (*CMsgClientToGCRequestSlarkGameResultResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestSlarkGameResultResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[146]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[147]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14399,7 +14686,7 @@ func (x *CMsgClientToGCRequestSlarkGameResultResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCRequestSlarkGameResultResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestSlarkGameResultResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{146}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{147}
 }
 
 func (x *CMsgClientToGCRequestSlarkGameResultResponse) GetPointsWon() uint32 {
@@ -14426,7 +14713,7 @@ type CMsgGCToClientQuestProgressUpdated struct {
 
 func (x *CMsgGCToClientQuestProgressUpdated) Reset() {
 	*x = CMsgGCToClientQuestProgressUpdated{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[147]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[148]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14438,7 +14725,7 @@ func (x *CMsgGCToClientQuestProgressUpdated) String() string {
 func (*CMsgGCToClientQuestProgressUpdated) ProtoMessage() {}
 
 func (x *CMsgGCToClientQuestProgressUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[147]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[148]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14451,7 +14738,7 @@ func (x *CMsgGCToClientQuestProgressUpdated) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCToClientQuestProgressUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientQuestProgressUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{147}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{148}
 }
 
 func (x *CMsgGCToClientQuestProgressUpdated) GetQuestId() uint32 {
@@ -14478,7 +14765,7 @@ type CMsgDOTARedeemItem struct {
 
 func (x *CMsgDOTARedeemItem) Reset() {
 	*x = CMsgDOTARedeemItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[148]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[149]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14490,7 +14777,7 @@ func (x *CMsgDOTARedeemItem) String() string {
 func (*CMsgDOTARedeemItem) ProtoMessage() {}
 
 func (x *CMsgDOTARedeemItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[148]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[149]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14503,7 +14790,7 @@ func (x *CMsgDOTARedeemItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTARedeemItem.ProtoReflect.Descriptor instead.
 func (*CMsgDOTARedeemItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{148}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{149}
 }
 
 func (x *CMsgDOTARedeemItem) GetCurrencyId() uint64 {
@@ -14534,7 +14821,7 @@ const (
 
 func (x *CMsgDOTARedeemItemResponse) Reset() {
 	*x = CMsgDOTARedeemItemResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[149]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[150]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14546,7 +14833,7 @@ func (x *CMsgDOTARedeemItemResponse) String() string {
 func (*CMsgDOTARedeemItemResponse) ProtoMessage() {}
 
 func (x *CMsgDOTARedeemItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[149]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[150]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14559,7 +14846,7 @@ func (x *CMsgDOTARedeemItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTARedeemItemResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTARedeemItemResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{149}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{150}
 }
 
 func (x *CMsgDOTARedeemItemResponse) GetResponse() CMsgDOTARedeemItemResponse_EResultCode {
@@ -14580,7 +14867,7 @@ type CMsgClientToGCSelectCompendiumInGamePrediction struct {
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction) Reset() {
 	*x = CMsgClientToGCSelectCompendiumInGamePrediction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[150]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[151]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14592,7 +14879,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePrediction) String() string {
 func (*CMsgClientToGCSelectCompendiumInGamePrediction) ProtoMessage() {}
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[150]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[151]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14605,7 +14892,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePrediction) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCSelectCompendiumInGamePrediction.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSelectCompendiumInGamePrediction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{150}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{151}
 }
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction) GetMatchId() uint64 {
@@ -14643,7 +14930,7 @@ const (
 
 func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse) Reset() {
 	*x = CMsgClientToGCSelectCompendiumInGamePredictionResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[151]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[152]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14655,7 +14942,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse) String() string
 func (*CMsgClientToGCSelectCompendiumInGamePredictionResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[151]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[152]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14668,7 +14955,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse) ProtoReflect() 
 
 // Deprecated: Use CMsgClientToGCSelectCompendiumInGamePredictionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSelectCompendiumInGamePredictionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{151}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{152}
 }
 
 func (x *CMsgClientToGCSelectCompendiumInGamePredictionResponse) GetResult() CMsgClientToGCSelectCompendiumInGamePredictionResponse_EResult {
@@ -14695,7 +14982,7 @@ const (
 
 func (x *CMsgClientToGCOpenPlayerCardPack) Reset() {
 	*x = CMsgClientToGCOpenPlayerCardPack{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[152]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[153]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14707,7 +14994,7 @@ func (x *CMsgClientToGCOpenPlayerCardPack) String() string {
 func (*CMsgClientToGCOpenPlayerCardPack) ProtoMessage() {}
 
 func (x *CMsgClientToGCOpenPlayerCardPack) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[152]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[153]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14720,7 +15007,7 @@ func (x *CMsgClientToGCOpenPlayerCardPack) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCOpenPlayerCardPack.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOpenPlayerCardPack) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{152}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{153}
 }
 
 func (x *CMsgClientToGCOpenPlayerCardPack) GetPlayerCardPackItemId() uint64 {
@@ -14766,7 +15053,7 @@ const (
 
 func (x *CMsgClientToGCOpenPlayerCardPackResponse) Reset() {
 	*x = CMsgClientToGCOpenPlayerCardPackResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[153]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[154]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14778,7 +15065,7 @@ func (x *CMsgClientToGCOpenPlayerCardPackResponse) String() string {
 func (*CMsgClientToGCOpenPlayerCardPackResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOpenPlayerCardPackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[153]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[154]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14791,7 +15078,7 @@ func (x *CMsgClientToGCOpenPlayerCardPackResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCOpenPlayerCardPackResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOpenPlayerCardPackResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{153}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{154}
 }
 
 func (x *CMsgClientToGCOpenPlayerCardPackResponse) GetResult() CMsgClientToGCOpenPlayerCardPackResponse_Result {
@@ -14818,7 +15105,7 @@ type CMsgClientToGCRecyclePlayerCard struct {
 
 func (x *CMsgClientToGCRecyclePlayerCard) Reset() {
 	*x = CMsgClientToGCRecyclePlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[154]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[155]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14830,7 +15117,7 @@ func (x *CMsgClientToGCRecyclePlayerCard) String() string {
 func (*CMsgClientToGCRecyclePlayerCard) ProtoMessage() {}
 
 func (x *CMsgClientToGCRecyclePlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[154]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[155]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14843,7 +15130,7 @@ func (x *CMsgClientToGCRecyclePlayerCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRecyclePlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRecyclePlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{154}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{155}
 }
 
 func (x *CMsgClientToGCRecyclePlayerCard) GetPlayerCardItemIds() []uint64 {
@@ -14875,7 +15162,7 @@ const (
 
 func (x *CMsgClientToGCRecyclePlayerCardResponse) Reset() {
 	*x = CMsgClientToGCRecyclePlayerCardResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[155]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[156]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14887,7 +15174,7 @@ func (x *CMsgClientToGCRecyclePlayerCardResponse) String() string {
 func (*CMsgClientToGCRecyclePlayerCardResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRecyclePlayerCardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[155]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[156]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14900,7 +15187,7 @@ func (x *CMsgClientToGCRecyclePlayerCardResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgClientToGCRecyclePlayerCardResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRecyclePlayerCardResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{155}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{156}
 }
 
 func (x *CMsgClientToGCRecyclePlayerCardResponse) GetResult() CMsgClientToGCRecyclePlayerCardResponse_Result {
@@ -14928,7 +15215,7 @@ type CMsgClientToGCCreatePlayerCardPack struct {
 
 func (x *CMsgClientToGCCreatePlayerCardPack) Reset() {
 	*x = CMsgClientToGCCreatePlayerCardPack{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[156]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[157]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14940,7 +15227,7 @@ func (x *CMsgClientToGCCreatePlayerCardPack) String() string {
 func (*CMsgClientToGCCreatePlayerCardPack) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreatePlayerCardPack) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[156]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[157]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14953,7 +15240,7 @@ func (x *CMsgClientToGCCreatePlayerCardPack) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCCreatePlayerCardPack.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreatePlayerCardPack) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{156}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{157}
 }
 
 func (x *CMsgClientToGCCreatePlayerCardPack) GetCardDustItemId() uint64 {
@@ -14991,7 +15278,7 @@ const (
 
 func (x *CMsgClientToGCCreatePlayerCardPackResponse) Reset() {
 	*x = CMsgClientToGCCreatePlayerCardPackResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[157]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[158]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15003,7 +15290,7 @@ func (x *CMsgClientToGCCreatePlayerCardPackResponse) String() string {
 func (*CMsgClientToGCCreatePlayerCardPackResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreatePlayerCardPackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[157]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[158]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15016,7 +15303,7 @@ func (x *CMsgClientToGCCreatePlayerCardPackResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCCreatePlayerCardPackResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreatePlayerCardPackResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{157}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{158}
 }
 
 func (x *CMsgClientToGCCreatePlayerCardPackResponse) GetResult() CMsgClientToGCCreatePlayerCardPackResponse_Result {
@@ -15038,7 +15325,7 @@ type CMsgClientToGCCreateTeamPlayerCardPack struct {
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPack) Reset() {
 	*x = CMsgClientToGCCreateTeamPlayerCardPack{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[158]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[159]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15050,7 +15337,7 @@ func (x *CMsgClientToGCCreateTeamPlayerCardPack) String() string {
 func (*CMsgClientToGCCreateTeamPlayerCardPack) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPack) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[158]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[159]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15063,7 +15350,7 @@ func (x *CMsgClientToGCCreateTeamPlayerCardPack) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCCreateTeamPlayerCardPack.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreateTeamPlayerCardPack) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{158}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{159}
 }
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPack) GetCardDustItemId() uint64 {
@@ -15108,7 +15395,7 @@ const (
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse) Reset() {
 	*x = CMsgClientToGCCreateTeamPlayerCardPackResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[159]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[160]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15120,7 +15407,7 @@ func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse) String() string {
 func (*CMsgClientToGCCreateTeamPlayerCardPackResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[159]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[160]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15133,7 +15420,7 @@ func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCCreateTeamPlayerCardPackResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreateTeamPlayerCardPackResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{159}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160}
 }
 
 func (x *CMsgClientToGCCreateTeamPlayerCardPackResponse) GetResult() CMsgClientToGCCreateTeamPlayerCardPackResponse_Result {
@@ -15160,7 +15447,7 @@ type CMsgGCToClientBattlePassRollup_International2016 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[160]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[161]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15172,7 +15459,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016) String() string {
 func (*CMsgGCToClientBattlePassRollup_International2016) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[160]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[161]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15185,7 +15472,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016) GetBattlePassLevel() uint32 {
@@ -15268,7 +15555,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[161]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[162]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15280,7 +15567,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[161]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[162]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15293,7 +15580,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016) GetBattlePassLevel() uint32 {
@@ -15376,7 +15663,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[162]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[163]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15388,7 +15675,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[162]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[163]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15401,7 +15688,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017) GetBattlePassLevel() uint32 {
@@ -15484,7 +15771,7 @@ type CMsgGCToClientBattlePassRollup_TI7 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[163]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[164]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15496,7 +15783,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[163]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[164]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15509,7 +15796,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7) GetBattlePassLevel() uint32 {
@@ -15591,7 +15878,7 @@ type CMsgGCToClientBattlePassRollup_TI8 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[164]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[165]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15603,7 +15890,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[164]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[165]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15616,7 +15903,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8) GetBattlePassLevel() uint32 {
@@ -15684,7 +15971,7 @@ type CMsgGCToClientBattlePassRollup_TI9 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI9) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI9{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[165]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[166]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15696,7 +15983,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI9) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI9) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI9) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[165]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[166]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15709,7 +15996,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI9) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI9.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI9) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{166}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI9) GetBattlePassLevel() uint32 {
@@ -15728,7 +16015,7 @@ type CMsgGCToClientBattlePassRollup_TI10 struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI10) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI10{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[166]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[167]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15740,7 +16027,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI10) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI10) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI10) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[166]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[167]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15753,7 +16040,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI10) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI10.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI10) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{166}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{167}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI10) GetBattlePassLevel() uint32 {
@@ -15773,7 +16060,7 @@ type CMsgGCToClientBattlePassRollupRequest struct {
 
 func (x *CMsgGCToClientBattlePassRollupRequest) Reset() {
 	*x = CMsgGCToClientBattlePassRollupRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[167]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[168]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15785,7 +16072,7 @@ func (x *CMsgGCToClientBattlePassRollupRequest) String() string {
 func (*CMsgGCToClientBattlePassRollupRequest) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollupRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[167]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[168]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15798,7 +16085,7 @@ func (x *CMsgGCToClientBattlePassRollupRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgGCToClientBattlePassRollupRequest.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollupRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{167}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{168}
 }
 
 func (x *CMsgGCToClientBattlePassRollupRequest) GetEventId() uint32 {
@@ -15830,7 +16117,7 @@ type CMsgGCToClientBattlePassRollupResponse struct {
 
 func (x *CMsgGCToClientBattlePassRollupResponse) Reset() {
 	*x = CMsgGCToClientBattlePassRollupResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[168]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[169]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15842,7 +16129,7 @@ func (x *CMsgGCToClientBattlePassRollupResponse) String() string {
 func (*CMsgGCToClientBattlePassRollupResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollupResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[168]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[169]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15855,7 +16142,7 @@ func (x *CMsgGCToClientBattlePassRollupResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgGCToClientBattlePassRollupResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollupResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{168}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{169}
 }
 
 func (x *CMsgGCToClientBattlePassRollupResponse) GetEventTi6() *CMsgGCToClientBattlePassRollup_International2016 {
@@ -15916,7 +16203,7 @@ type CMsgGCToClientBattlePassRollupListRequest struct {
 
 func (x *CMsgGCToClientBattlePassRollupListRequest) Reset() {
 	*x = CMsgGCToClientBattlePassRollupListRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[169]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[170]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15928,7 +16215,7 @@ func (x *CMsgGCToClientBattlePassRollupListRequest) String() string {
 func (*CMsgGCToClientBattlePassRollupListRequest) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollupListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[169]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[170]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15941,7 +16228,7 @@ func (x *CMsgGCToClientBattlePassRollupListRequest) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgGCToClientBattlePassRollupListRequest.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollupListRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{169}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{170}
 }
 
 func (x *CMsgGCToClientBattlePassRollupListRequest) GetAccountId() uint32 {
@@ -15960,7 +16247,7 @@ type CMsgGCToClientBattlePassRollupListResponse struct {
 
 func (x *CMsgGCToClientBattlePassRollupListResponse) Reset() {
 	*x = CMsgGCToClientBattlePassRollupListResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[170]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[171]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15972,7 +16259,7 @@ func (x *CMsgGCToClientBattlePassRollupListResponse) String() string {
 func (*CMsgGCToClientBattlePassRollupListResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollupListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[170]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[171]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15985,7 +16272,7 @@ func (x *CMsgGCToClientBattlePassRollupListResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgGCToClientBattlePassRollupListResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollupListResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{170}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{171}
 }
 
 func (x *CMsgGCToClientBattlePassRollupListResponse) GetEventInfo() []*CMsgGCToClientBattlePassRollupListResponse_EventInfo {
@@ -16004,7 +16291,7 @@ type CMsgClientToGCTransferSeasonalMMRRequest struct {
 
 func (x *CMsgClientToGCTransferSeasonalMMRRequest) Reset() {
 	*x = CMsgClientToGCTransferSeasonalMMRRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[171]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[172]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16016,7 +16303,7 @@ func (x *CMsgClientToGCTransferSeasonalMMRRequest) String() string {
 func (*CMsgClientToGCTransferSeasonalMMRRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCTransferSeasonalMMRRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[171]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[172]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16029,7 +16316,7 @@ func (x *CMsgClientToGCTransferSeasonalMMRRequest) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCTransferSeasonalMMRRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCTransferSeasonalMMRRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{171}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{172}
 }
 
 func (x *CMsgClientToGCTransferSeasonalMMRRequest) GetIsParty() bool {
@@ -16048,7 +16335,7 @@ type CMsgClientToGCTransferSeasonalMMRResponse struct {
 
 func (x *CMsgClientToGCTransferSeasonalMMRResponse) Reset() {
 	*x = CMsgClientToGCTransferSeasonalMMRResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[172]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[173]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16060,7 +16347,7 @@ func (x *CMsgClientToGCTransferSeasonalMMRResponse) String() string {
 func (*CMsgClientToGCTransferSeasonalMMRResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCTransferSeasonalMMRResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[172]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[173]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16073,7 +16360,7 @@ func (x *CMsgClientToGCTransferSeasonalMMRResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCTransferSeasonalMMRResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCTransferSeasonalMMRResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{172}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{173}
 }
 
 func (x *CMsgClientToGCTransferSeasonalMMRResponse) GetSuccess() bool {
@@ -16092,7 +16379,7 @@ type CMsgGCToClientPlaytestStatus struct {
 
 func (x *CMsgGCToClientPlaytestStatus) Reset() {
 	*x = CMsgGCToClientPlaytestStatus{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[173]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[174]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16104,7 +16391,7 @@ func (x *CMsgGCToClientPlaytestStatus) String() string {
 func (*CMsgGCToClientPlaytestStatus) ProtoMessage() {}
 
 func (x *CMsgGCToClientPlaytestStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[173]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[174]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16117,7 +16404,7 @@ func (x *CMsgGCToClientPlaytestStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientPlaytestStatus.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPlaytestStatus) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{173}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{174}
 }
 
 func (x *CMsgGCToClientPlaytestStatus) GetActive() bool {
@@ -16136,7 +16423,7 @@ type CMsgClientToGCJoinPlaytest struct {
 
 func (x *CMsgClientToGCJoinPlaytest) Reset() {
 	*x = CMsgClientToGCJoinPlaytest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[174]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[175]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16148,7 +16435,7 @@ func (x *CMsgClientToGCJoinPlaytest) String() string {
 func (*CMsgClientToGCJoinPlaytest) ProtoMessage() {}
 
 func (x *CMsgClientToGCJoinPlaytest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[174]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[175]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16161,7 +16448,7 @@ func (x *CMsgClientToGCJoinPlaytest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCJoinPlaytest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCJoinPlaytest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{174}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{175}
 }
 
 func (x *CMsgClientToGCJoinPlaytest) GetClientVersion() uint32 {
@@ -16180,7 +16467,7 @@ type CMsgClientToGCJoinPlaytestResponse struct {
 
 func (x *CMsgClientToGCJoinPlaytestResponse) Reset() {
 	*x = CMsgClientToGCJoinPlaytestResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[175]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[176]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16192,7 +16479,7 @@ func (x *CMsgClientToGCJoinPlaytestResponse) String() string {
 func (*CMsgClientToGCJoinPlaytestResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCJoinPlaytestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[175]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[176]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16205,7 +16492,7 @@ func (x *CMsgClientToGCJoinPlaytestResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCJoinPlaytestResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCJoinPlaytestResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{175}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{176}
 }
 
 func (x *CMsgClientToGCJoinPlaytestResponse) GetError() string {
@@ -16225,7 +16512,7 @@ type CMsgDOTASetFavoriteTeam struct {
 
 func (x *CMsgDOTASetFavoriteTeam) Reset() {
 	*x = CMsgDOTASetFavoriteTeam{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[176]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[177]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16237,7 +16524,7 @@ func (x *CMsgDOTASetFavoriteTeam) String() string {
 func (*CMsgDOTASetFavoriteTeam) ProtoMessage() {}
 
 func (x *CMsgDOTASetFavoriteTeam) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[176]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[177]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16250,7 +16537,7 @@ func (x *CMsgDOTASetFavoriteTeam) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTASetFavoriteTeam.ProtoReflect.Descriptor instead.
 func (*CMsgDOTASetFavoriteTeam) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{176}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{177}
 }
 
 func (x *CMsgDOTASetFavoriteTeam) GetTeamId() uint32 {
@@ -16277,7 +16564,7 @@ type CMsgDOTATriviaCurrentQuestions struct {
 
 func (x *CMsgDOTATriviaCurrentQuestions) Reset() {
 	*x = CMsgDOTATriviaCurrentQuestions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[177]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[178]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16289,7 +16576,7 @@ func (x *CMsgDOTATriviaCurrentQuestions) String() string {
 func (*CMsgDOTATriviaCurrentQuestions) ProtoMessage() {}
 
 func (x *CMsgDOTATriviaCurrentQuestions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[177]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[178]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16302,7 +16589,7 @@ func (x *CMsgDOTATriviaCurrentQuestions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTATriviaCurrentQuestions.ProtoReflect.Descriptor instead.
 func (*CMsgDOTATriviaCurrentQuestions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{177}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{178}
 }
 
 func (x *CMsgDOTATriviaCurrentQuestions) GetQuestions() []*CMsgDOTATriviaQuestion {
@@ -16329,7 +16616,7 @@ type CMsgDOTASubmitTriviaQuestionAnswer struct {
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswer) Reset() {
 	*x = CMsgDOTASubmitTriviaQuestionAnswer{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[178]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[179]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16341,7 +16628,7 @@ func (x *CMsgDOTASubmitTriviaQuestionAnswer) String() string {
 func (*CMsgDOTASubmitTriviaQuestionAnswer) ProtoMessage() {}
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswer) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[178]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[179]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16354,7 +16641,7 @@ func (x *CMsgDOTASubmitTriviaQuestionAnswer) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgDOTASubmitTriviaQuestionAnswer.ProtoReflect.Descriptor instead.
 func (*CMsgDOTASubmitTriviaQuestionAnswer) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{178}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{179}
 }
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswer) GetQuestionId() uint32 {
@@ -16385,7 +16672,7 @@ const (
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswerResponse) Reset() {
 	*x = CMsgDOTASubmitTriviaQuestionAnswerResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[179]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[180]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16397,7 +16684,7 @@ func (x *CMsgDOTASubmitTriviaQuestionAnswerResponse) String() string {
 func (*CMsgDOTASubmitTriviaQuestionAnswerResponse) ProtoMessage() {}
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[179]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[180]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16410,7 +16697,7 @@ func (x *CMsgDOTASubmitTriviaQuestionAnswerResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgDOTASubmitTriviaQuestionAnswerResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTASubmitTriviaQuestionAnswerResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{179}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{180}
 }
 
 func (x *CMsgDOTASubmitTriviaQuestionAnswerResponse) GetResult() EDOTATriviaAnswerResult {
@@ -16428,7 +16715,7 @@ type CMsgDOTAStartTriviaSession struct {
 
 func (x *CMsgDOTAStartTriviaSession) Reset() {
 	*x = CMsgDOTAStartTriviaSession{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[180]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[181]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16440,7 +16727,7 @@ func (x *CMsgDOTAStartTriviaSession) String() string {
 func (*CMsgDOTAStartTriviaSession) ProtoMessage() {}
 
 func (x *CMsgDOTAStartTriviaSession) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[180]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[181]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16453,7 +16740,7 @@ func (x *CMsgDOTAStartTriviaSession) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAStartTriviaSession.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAStartTriviaSession) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{180}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{181}
 }
 
 type CMsgDOTAStartTriviaSessionResponse struct {
@@ -16466,7 +16753,7 @@ type CMsgDOTAStartTriviaSessionResponse struct {
 
 func (x *CMsgDOTAStartTriviaSessionResponse) Reset() {
 	*x = CMsgDOTAStartTriviaSessionResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[181]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[182]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16478,7 +16765,7 @@ func (x *CMsgDOTAStartTriviaSessionResponse) String() string {
 func (*CMsgDOTAStartTriviaSessionResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAStartTriviaSessionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[181]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[182]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16491,7 +16778,7 @@ func (x *CMsgDOTAStartTriviaSessionResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgDOTAStartTriviaSessionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAStartTriviaSessionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{181}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{182}
 }
 
 func (x *CMsgDOTAStartTriviaSessionResponse) GetTriviaEnabled() bool {
@@ -16516,7 +16803,7 @@ type CMsgDOTAAnchorPhoneNumberRequest struct {
 
 func (x *CMsgDOTAAnchorPhoneNumberRequest) Reset() {
 	*x = CMsgDOTAAnchorPhoneNumberRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[182]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[183]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16528,7 +16815,7 @@ func (x *CMsgDOTAAnchorPhoneNumberRequest) String() string {
 func (*CMsgDOTAAnchorPhoneNumberRequest) ProtoMessage() {}
 
 func (x *CMsgDOTAAnchorPhoneNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[182]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[183]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16541,7 +16828,7 @@ func (x *CMsgDOTAAnchorPhoneNumberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAAnchorPhoneNumberRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAAnchorPhoneNumberRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{182}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{183}
 }
 
 type CMsgDOTAAnchorPhoneNumberResponse struct {
@@ -16558,7 +16845,7 @@ const (
 
 func (x *CMsgDOTAAnchorPhoneNumberResponse) Reset() {
 	*x = CMsgDOTAAnchorPhoneNumberResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[183]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[184]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16570,7 +16857,7 @@ func (x *CMsgDOTAAnchorPhoneNumberResponse) String() string {
 func (*CMsgDOTAAnchorPhoneNumberResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAAnchorPhoneNumberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[183]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[184]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16583,7 +16870,7 @@ func (x *CMsgDOTAAnchorPhoneNumberResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgDOTAAnchorPhoneNumberResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAAnchorPhoneNumberResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{183}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{184}
 }
 
 func (x *CMsgDOTAAnchorPhoneNumberResponse) GetResult() CMsgDOTAAnchorPhoneNumberResponse_Result {
@@ -16601,7 +16888,7 @@ type CMsgDOTAUnanchorPhoneNumberRequest struct {
 
 func (x *CMsgDOTAUnanchorPhoneNumberRequest) Reset() {
 	*x = CMsgDOTAUnanchorPhoneNumberRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[184]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[185]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16613,7 +16900,7 @@ func (x *CMsgDOTAUnanchorPhoneNumberRequest) String() string {
 func (*CMsgDOTAUnanchorPhoneNumberRequest) ProtoMessage() {}
 
 func (x *CMsgDOTAUnanchorPhoneNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[184]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[185]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16626,7 +16913,7 @@ func (x *CMsgDOTAUnanchorPhoneNumberRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgDOTAUnanchorPhoneNumberRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAUnanchorPhoneNumberRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{184}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{185}
 }
 
 type CMsgDOTAUnanchorPhoneNumberResponse struct {
@@ -16643,7 +16930,7 @@ const (
 
 func (x *CMsgDOTAUnanchorPhoneNumberResponse) Reset() {
 	*x = CMsgDOTAUnanchorPhoneNumberResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[185]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[186]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16655,7 +16942,7 @@ func (x *CMsgDOTAUnanchorPhoneNumberResponse) String() string {
 func (*CMsgDOTAUnanchorPhoneNumberResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAUnanchorPhoneNumberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[185]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[186]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16668,7 +16955,7 @@ func (x *CMsgDOTAUnanchorPhoneNumberResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgDOTAUnanchorPhoneNumberResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAUnanchorPhoneNumberResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{185}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{186}
 }
 
 func (x *CMsgDOTAUnanchorPhoneNumberResponse) GetResult() CMsgDOTAUnanchorPhoneNumberResponse_Result {
@@ -16690,7 +16977,7 @@ type CMsgGCToClientCommendNotification struct {
 
 func (x *CMsgGCToClientCommendNotification) Reset() {
 	*x = CMsgGCToClientCommendNotification{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[186]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[187]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16702,7 +16989,7 @@ func (x *CMsgGCToClientCommendNotification) String() string {
 func (*CMsgGCToClientCommendNotification) ProtoMessage() {}
 
 func (x *CMsgGCToClientCommendNotification) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[186]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[187]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16715,7 +17002,7 @@ func (x *CMsgGCToClientCommendNotification) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgGCToClientCommendNotification.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCommendNotification) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{186}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{187}
 }
 
 func (x *CMsgGCToClientCommendNotification) GetCommenderAccountId() uint32 {
@@ -16763,7 +17050,7 @@ const (
 
 func (x *CMsgDOTAClientToGCQuickStatsRequest) Reset() {
 	*x = CMsgDOTAClientToGCQuickStatsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[187]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[188]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16775,7 +17062,7 @@ func (x *CMsgDOTAClientToGCQuickStatsRequest) String() string {
 func (*CMsgDOTAClientToGCQuickStatsRequest) ProtoMessage() {}
 
 func (x *CMsgDOTAClientToGCQuickStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[187]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[188]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16788,7 +17075,7 @@ func (x *CMsgDOTAClientToGCQuickStatsRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgDOTAClientToGCQuickStatsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClientToGCQuickStatsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{187}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{188}
 }
 
 func (x *CMsgDOTAClientToGCQuickStatsRequest) GetPlayerAccountId() uint32 {
@@ -16834,7 +17121,7 @@ type CMsgDOTAClientToGCQuickStatsResponse struct {
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse) Reset() {
 	*x = CMsgDOTAClientToGCQuickStatsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[188]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[189]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16846,7 +17133,7 @@ func (x *CMsgDOTAClientToGCQuickStatsResponse) String() string {
 func (*CMsgDOTAClientToGCQuickStatsResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[188]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[189]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16859,7 +17146,7 @@ func (x *CMsgDOTAClientToGCQuickStatsResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgDOTAClientToGCQuickStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClientToGCQuickStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{188}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{189}
 }
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse) GetOriginalRequest() *CMsgDOTAClientToGCQuickStatsRequest {
@@ -16925,7 +17212,7 @@ const (
 
 func (x *CMsgDOTASelectionPriorityChoiceRequest) Reset() {
 	*x = CMsgDOTASelectionPriorityChoiceRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[189]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[190]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16937,7 +17224,7 @@ func (x *CMsgDOTASelectionPriorityChoiceRequest) String() string {
 func (*CMsgDOTASelectionPriorityChoiceRequest) ProtoMessage() {}
 
 func (x *CMsgDOTASelectionPriorityChoiceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[189]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[190]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16950,7 +17237,7 @@ func (x *CMsgDOTASelectionPriorityChoiceRequest) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgDOTASelectionPriorityChoiceRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTASelectionPriorityChoiceRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{189}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{190}
 }
 
 func (x *CMsgDOTASelectionPriorityChoiceRequest) GetChoice() DOTASelectionPriorityChoice {
@@ -16974,7 +17261,7 @@ const (
 
 func (x *CMsgDOTASelectionPriorityChoiceResponse) Reset() {
 	*x = CMsgDOTASelectionPriorityChoiceResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[190]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[191]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16986,7 +17273,7 @@ func (x *CMsgDOTASelectionPriorityChoiceResponse) String() string {
 func (*CMsgDOTASelectionPriorityChoiceResponse) ProtoMessage() {}
 
 func (x *CMsgDOTASelectionPriorityChoiceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[190]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[191]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16999,7 +17286,7 @@ func (x *CMsgDOTASelectionPriorityChoiceResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgDOTASelectionPriorityChoiceResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTASelectionPriorityChoiceResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{190}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{191}
 }
 
 func (x *CMsgDOTASelectionPriorityChoiceResponse) GetResult() CMsgDOTASelectionPriorityChoiceResponse_Result {
@@ -17018,7 +17305,7 @@ type CMsgDOTAGameAutographReward struct {
 
 func (x *CMsgDOTAGameAutographReward) Reset() {
 	*x = CMsgDOTAGameAutographReward{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[191]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[192]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17030,7 +17317,7 @@ func (x *CMsgDOTAGameAutographReward) String() string {
 func (*CMsgDOTAGameAutographReward) ProtoMessage() {}
 
 func (x *CMsgDOTAGameAutographReward) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[191]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[192]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17043,7 +17330,7 @@ func (x *CMsgDOTAGameAutographReward) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAGameAutographReward.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGameAutographReward) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{191}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{192}
 }
 
 func (x *CMsgDOTAGameAutographReward) GetBadgeId() string {
@@ -17067,7 +17354,7 @@ const (
 
 func (x *CMsgDOTAGameAutographRewardResponse) Reset() {
 	*x = CMsgDOTAGameAutographRewardResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[192]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[193]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17079,7 +17366,7 @@ func (x *CMsgDOTAGameAutographRewardResponse) String() string {
 func (*CMsgDOTAGameAutographRewardResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAGameAutographRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[192]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[193]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17092,7 +17379,7 @@ func (x *CMsgDOTAGameAutographRewardResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgDOTAGameAutographRewardResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGameAutographRewardResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{192}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{193}
 }
 
 func (x *CMsgDOTAGameAutographRewardResponse) GetResult() CMsgDOTAGameAutographRewardResponse_Result {
@@ -17110,7 +17397,7 @@ type CMsgDOTADestroyLobbyRequest struct {
 
 func (x *CMsgDOTADestroyLobbyRequest) Reset() {
 	*x = CMsgDOTADestroyLobbyRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[193]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[194]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17122,7 +17409,7 @@ func (x *CMsgDOTADestroyLobbyRequest) String() string {
 func (*CMsgDOTADestroyLobbyRequest) ProtoMessage() {}
 
 func (x *CMsgDOTADestroyLobbyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[193]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[194]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17135,7 +17422,7 @@ func (x *CMsgDOTADestroyLobbyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTADestroyLobbyRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTADestroyLobbyRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{193}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{194}
 }
 
 type CMsgDOTADestroyLobbyResponse struct {
@@ -17152,7 +17439,7 @@ const (
 
 func (x *CMsgDOTADestroyLobbyResponse) Reset() {
 	*x = CMsgDOTADestroyLobbyResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[194]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[195]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17164,7 +17451,7 @@ func (x *CMsgDOTADestroyLobbyResponse) String() string {
 func (*CMsgDOTADestroyLobbyResponse) ProtoMessage() {}
 
 func (x *CMsgDOTADestroyLobbyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[194]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[195]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17177,7 +17464,7 @@ func (x *CMsgDOTADestroyLobbyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTADestroyLobbyResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTADestroyLobbyResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{194}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{195}
 }
 
 func (x *CMsgDOTADestroyLobbyResponse) GetResult() CMsgDOTADestroyLobbyResponse_Result {
@@ -17195,7 +17482,7 @@ type CMsgDOTAGetRecentPlayTimeFriendsRequest struct {
 
 func (x *CMsgDOTAGetRecentPlayTimeFriendsRequest) Reset() {
 	*x = CMsgDOTAGetRecentPlayTimeFriendsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[195]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[196]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17207,7 +17494,7 @@ func (x *CMsgDOTAGetRecentPlayTimeFriendsRequest) String() string {
 func (*CMsgDOTAGetRecentPlayTimeFriendsRequest) ProtoMessage() {}
 
 func (x *CMsgDOTAGetRecentPlayTimeFriendsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[195]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[196]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17220,7 +17507,7 @@ func (x *CMsgDOTAGetRecentPlayTimeFriendsRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgDOTAGetRecentPlayTimeFriendsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetRecentPlayTimeFriendsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{195}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{196}
 }
 
 type CMsgDOTAGetRecentPlayTimeFriendsResponse struct {
@@ -17232,7 +17519,7 @@ type CMsgDOTAGetRecentPlayTimeFriendsResponse struct {
 
 func (x *CMsgDOTAGetRecentPlayTimeFriendsResponse) Reset() {
 	*x = CMsgDOTAGetRecentPlayTimeFriendsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[196]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[197]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17244,7 +17531,7 @@ func (x *CMsgDOTAGetRecentPlayTimeFriendsResponse) String() string {
 func (*CMsgDOTAGetRecentPlayTimeFriendsResponse) ProtoMessage() {}
 
 func (x *CMsgDOTAGetRecentPlayTimeFriendsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[196]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[197]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17257,7 +17544,7 @@ func (x *CMsgDOTAGetRecentPlayTimeFriendsResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgDOTAGetRecentPlayTimeFriendsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetRecentPlayTimeFriendsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{196}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{197}
 }
 
 func (x *CMsgDOTAGetRecentPlayTimeFriendsResponse) GetAccountIds() []uint32 {
@@ -17284,7 +17571,7 @@ const (
 
 func (x *CMsgPurchaseItemWithEventPoints) Reset() {
 	*x = CMsgPurchaseItemWithEventPoints{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[197]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[198]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17296,7 +17583,7 @@ func (x *CMsgPurchaseItemWithEventPoints) String() string {
 func (*CMsgPurchaseItemWithEventPoints) ProtoMessage() {}
 
 func (x *CMsgPurchaseItemWithEventPoints) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[197]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[198]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17309,7 +17596,7 @@ func (x *CMsgPurchaseItemWithEventPoints) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPurchaseItemWithEventPoints.ProtoReflect.Descriptor instead.
 func (*CMsgPurchaseItemWithEventPoints) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{197}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{198}
 }
 
 func (x *CMsgPurchaseItemWithEventPoints) GetItemDef() uint32 {
@@ -17354,7 +17641,7 @@ const (
 
 func (x *CMsgPurchaseItemWithEventPointsResponse) Reset() {
 	*x = CMsgPurchaseItemWithEventPointsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[198]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[199]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17366,7 +17653,7 @@ func (x *CMsgPurchaseItemWithEventPointsResponse) String() string {
 func (*CMsgPurchaseItemWithEventPointsResponse) ProtoMessage() {}
 
 func (x *CMsgPurchaseItemWithEventPointsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[198]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[199]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17379,7 +17666,7 @@ func (x *CMsgPurchaseItemWithEventPointsResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgPurchaseItemWithEventPointsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgPurchaseItemWithEventPointsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{198}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{199}
 }
 
 func (x *CMsgPurchaseItemWithEventPointsResponse) GetResult() CMsgPurchaseItemWithEventPointsResponse_Result {
@@ -17404,7 +17691,7 @@ const (
 
 func (x *CMsgPurchaseHeroRandomRelic) Reset() {
 	*x = CMsgPurchaseHeroRandomRelic{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[199]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[200]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17416,7 +17703,7 @@ func (x *CMsgPurchaseHeroRandomRelic) String() string {
 func (*CMsgPurchaseHeroRandomRelic) ProtoMessage() {}
 
 func (x *CMsgPurchaseHeroRandomRelic) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[199]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[200]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17429,7 +17716,7 @@ func (x *CMsgPurchaseHeroRandomRelic) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPurchaseHeroRandomRelic.ProtoReflect.Descriptor instead.
 func (*CMsgPurchaseHeroRandomRelic) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{199}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{200}
 }
 
 func (x *CMsgPurchaseHeroRandomRelic) GetHeroId() int32 {
@@ -17461,7 +17748,7 @@ const (
 
 func (x *CMsgPurchaseHeroRandomRelicResponse) Reset() {
 	*x = CMsgPurchaseHeroRandomRelicResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[200]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[201]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17473,7 +17760,7 @@ func (x *CMsgPurchaseHeroRandomRelicResponse) String() string {
 func (*CMsgPurchaseHeroRandomRelicResponse) ProtoMessage() {}
 
 func (x *CMsgPurchaseHeroRandomRelicResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[200]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[201]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17486,7 +17773,7 @@ func (x *CMsgPurchaseHeroRandomRelicResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgPurchaseHeroRandomRelicResponse.ProtoReflect.Descriptor instead.
 func (*CMsgPurchaseHeroRandomRelicResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{200}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{201}
 }
 
 func (x *CMsgPurchaseHeroRandomRelicResponse) GetResult() EPurchaseHeroRelicResult {
@@ -17518,7 +17805,7 @@ const (
 
 func (x *CMsgClientToGCRequestPlusWeeklyChallengeResult) Reset() {
 	*x = CMsgClientToGCRequestPlusWeeklyChallengeResult{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[201]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[202]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17530,7 +17817,7 @@ func (x *CMsgClientToGCRequestPlusWeeklyChallengeResult) String() string {
 func (*CMsgClientToGCRequestPlusWeeklyChallengeResult) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlusWeeklyChallengeResult) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[201]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[202]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17543,7 +17830,7 @@ func (x *CMsgClientToGCRequestPlusWeeklyChallengeResult) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCRequestPlusWeeklyChallengeResult.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlusWeeklyChallengeResult) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{201}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{202}
 }
 
 func (x *CMsgClientToGCRequestPlusWeeklyChallengeResult) GetEventId() EEvent {
@@ -17568,7 +17855,7 @@ type CMsgClientToGCRequestPlusWeeklyChallengeResultResponse struct {
 
 func (x *CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) Reset() {
 	*x = CMsgClientToGCRequestPlusWeeklyChallengeResultResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[202]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[203]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17580,7 +17867,7 @@ func (x *CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) String() string
 func (*CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[202]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[203]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17593,7 +17880,7 @@ func (x *CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) ProtoReflect() 
 
 // Deprecated: Use CMsgClientToGCRequestPlusWeeklyChallengeResultResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlusWeeklyChallengeResultResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{202}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{203}
 }
 
 type CMsgProfileRequest struct {
@@ -17605,7 +17892,7 @@ type CMsgProfileRequest struct {
 
 func (x *CMsgProfileRequest) Reset() {
 	*x = CMsgProfileRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[203]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[204]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17617,7 +17904,7 @@ func (x *CMsgProfileRequest) String() string {
 func (*CMsgProfileRequest) ProtoMessage() {}
 
 func (x *CMsgProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[203]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[204]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17630,7 +17917,7 @@ func (x *CMsgProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileRequest.ProtoReflect.Descriptor instead.
 func (*CMsgProfileRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{203}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{204}
 }
 
 func (x *CMsgProfileRequest) GetAccountId() uint32 {
@@ -17660,7 +17947,7 @@ const (
 
 func (x *CMsgProfileResponse) Reset() {
 	*x = CMsgProfileResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[204]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[205]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17672,7 +17959,7 @@ func (x *CMsgProfileResponse) String() string {
 func (*CMsgProfileResponse) ProtoMessage() {}
 
 func (x *CMsgProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[204]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[205]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17685,7 +17972,7 @@ func (x *CMsgProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileResponse.ProtoReflect.Descriptor instead.
 func (*CMsgProfileResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{204}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{205}
 }
 
 func (x *CMsgProfileResponse) GetBackgroundItem() *CSOEconItem {
@@ -17747,7 +18034,7 @@ type CMsgProfileUpdate struct {
 
 func (x *CMsgProfileUpdate) Reset() {
 	*x = CMsgProfileUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[205]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[206]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17759,7 +18046,7 @@ func (x *CMsgProfileUpdate) String() string {
 func (*CMsgProfileUpdate) ProtoMessage() {}
 
 func (x *CMsgProfileUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[205]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[206]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17772,7 +18059,7 @@ func (x *CMsgProfileUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgProfileUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{205}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{206}
 }
 
 func (x *CMsgProfileUpdate) GetBackgroundItemId() uint64 {
@@ -17803,7 +18090,7 @@ const (
 
 func (x *CMsgProfileUpdateResponse) Reset() {
 	*x = CMsgProfileUpdateResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[206]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[207]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17815,7 +18102,7 @@ func (x *CMsgProfileUpdateResponse) String() string {
 func (*CMsgProfileUpdateResponse) ProtoMessage() {}
 
 func (x *CMsgProfileUpdateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[206]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[207]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17828,7 +18115,7 @@ func (x *CMsgProfileUpdateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileUpdateResponse.ProtoReflect.Descriptor instead.
 func (*CMsgProfileUpdateResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{206}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{207}
 }
 
 func (x *CMsgProfileUpdateResponse) GetResult() CMsgProfileUpdateResponse_Result {
@@ -17855,7 +18142,7 @@ const (
 
 func (x *CMsgTalentWinRates) Reset() {
 	*x = CMsgTalentWinRates{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[207]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[208]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17867,7 +18154,7 @@ func (x *CMsgTalentWinRates) String() string {
 func (*CMsgTalentWinRates) ProtoMessage() {}
 
 func (x *CMsgTalentWinRates) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[207]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[208]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17880,7 +18167,7 @@ func (x *CMsgTalentWinRates) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgTalentWinRates.ProtoReflect.Descriptor instead.
 func (*CMsgTalentWinRates) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{207}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{208}
 }
 
 func (x *CMsgTalentWinRates) GetLastRun() uint32 {
@@ -17928,7 +18215,7 @@ type CMsgGlobalHeroAverages struct {
 
 func (x *CMsgGlobalHeroAverages) Reset() {
 	*x = CMsgGlobalHeroAverages{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[208]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[209]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -17940,7 +18227,7 @@ func (x *CMsgGlobalHeroAverages) String() string {
 func (*CMsgGlobalHeroAverages) ProtoMessage() {}
 
 func (x *CMsgGlobalHeroAverages) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[208]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[209]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -17953,7 +18240,7 @@ func (x *CMsgGlobalHeroAverages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGlobalHeroAverages.ProtoReflect.Descriptor instead.
 func (*CMsgGlobalHeroAverages) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{208}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{209}
 }
 
 func (x *CMsgGlobalHeroAverages) GetLastRun() uint32 {
@@ -18028,7 +18315,7 @@ type CMsgHeroGlobalDataRequest struct {
 
 func (x *CMsgHeroGlobalDataRequest) Reset() {
 	*x = CMsgHeroGlobalDataRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[209]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[210]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18040,7 +18327,7 @@ func (x *CMsgHeroGlobalDataRequest) String() string {
 func (*CMsgHeroGlobalDataRequest) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[209]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[210]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18053,7 +18340,7 @@ func (x *CMsgHeroGlobalDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgHeroGlobalDataRequest.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{209}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{210}
 }
 
 func (x *CMsgHeroGlobalDataRequest) GetHeroId() int32 {
@@ -18073,7 +18360,7 @@ type CMsgHeroGlobalDataResponse struct {
 
 func (x *CMsgHeroGlobalDataResponse) Reset() {
 	*x = CMsgHeroGlobalDataResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[210]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[211]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18085,7 +18372,7 @@ func (x *CMsgHeroGlobalDataResponse) String() string {
 func (*CMsgHeroGlobalDataResponse) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[210]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[211]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18098,7 +18385,7 @@ func (x *CMsgHeroGlobalDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgHeroGlobalDataResponse.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{210}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{211}
 }
 
 func (x *CMsgHeroGlobalDataResponse) GetHeroId() int32 {
@@ -18124,7 +18411,7 @@ type CMsgHeroGlobalDataAllHeroes struct {
 
 func (x *CMsgHeroGlobalDataAllHeroes) Reset() {
 	*x = CMsgHeroGlobalDataAllHeroes{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[211]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[212]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18136,7 +18423,7 @@ func (x *CMsgHeroGlobalDataAllHeroes) String() string {
 func (*CMsgHeroGlobalDataAllHeroes) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataAllHeroes) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[211]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[212]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18149,7 +18436,7 @@ func (x *CMsgHeroGlobalDataAllHeroes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgHeroGlobalDataAllHeroes.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataAllHeroes) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{211}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{212}
 }
 
 func (x *CMsgHeroGlobalDataAllHeroes) GetHeroes() []*CMsgHeroGlobalDataResponse {
@@ -18168,7 +18455,7 @@ type CMsgHeroGlobalDataHeroesAlliesAndEnemies struct {
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies) Reset() {
 	*x = CMsgHeroGlobalDataHeroesAlliesAndEnemies{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[212]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[213]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18180,7 +18467,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies) String() string {
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[212]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[213]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18193,7 +18480,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgHeroGlobalDataHeroesAlliesAndEnemies.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{212}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{213}
 }
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies) GetRankedHeroData() []*CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData {
@@ -18212,7 +18499,7 @@ type CMsgPrivateMetadataKeyRequest struct {
 
 func (x *CMsgPrivateMetadataKeyRequest) Reset() {
 	*x = CMsgPrivateMetadataKeyRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[213]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[214]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18224,7 +18511,7 @@ func (x *CMsgPrivateMetadataKeyRequest) String() string {
 func (*CMsgPrivateMetadataKeyRequest) ProtoMessage() {}
 
 func (x *CMsgPrivateMetadataKeyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[213]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[214]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18237,7 +18524,7 @@ func (x *CMsgPrivateMetadataKeyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPrivateMetadataKeyRequest.ProtoReflect.Descriptor instead.
 func (*CMsgPrivateMetadataKeyRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{213}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{214}
 }
 
 func (x *CMsgPrivateMetadataKeyRequest) GetMatchId() uint64 {
@@ -18256,7 +18543,7 @@ type CMsgPrivateMetadataKeyResponse struct {
 
 func (x *CMsgPrivateMetadataKeyResponse) Reset() {
 	*x = CMsgPrivateMetadataKeyResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[214]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[215]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18268,7 +18555,7 @@ func (x *CMsgPrivateMetadataKeyResponse) String() string {
 func (*CMsgPrivateMetadataKeyResponse) ProtoMessage() {}
 
 func (x *CMsgPrivateMetadataKeyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[214]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[215]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18281,7 +18568,7 @@ func (x *CMsgPrivateMetadataKeyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPrivateMetadataKeyResponse.ProtoReflect.Descriptor instead.
 func (*CMsgPrivateMetadataKeyResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{214}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{215}
 }
 
 func (x *CMsgPrivateMetadataKeyResponse) GetPrivateKey() uint32 {
@@ -18305,7 +18592,7 @@ const (
 
 func (x *CMsgActivatePlusFreeTrialResponse) Reset() {
 	*x = CMsgActivatePlusFreeTrialResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[215]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[216]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18317,7 +18604,7 @@ func (x *CMsgActivatePlusFreeTrialResponse) String() string {
 func (*CMsgActivatePlusFreeTrialResponse) ProtoMessage() {}
 
 func (x *CMsgActivatePlusFreeTrialResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[215]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[216]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18330,7 +18617,7 @@ func (x *CMsgActivatePlusFreeTrialResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgActivatePlusFreeTrialResponse.ProtoReflect.Descriptor instead.
 func (*CMsgActivatePlusFreeTrialResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{215}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{216}
 }
 
 func (x *CMsgActivatePlusFreeTrialResponse) GetResult() CMsgActivatePlusFreeTrialResponse_Result {
@@ -18357,7 +18644,7 @@ const (
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted) Reset() {
 	*x = CMsgGCToClientCavernCrawlMapPathCompleted{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[216]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[217]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18369,7 +18656,7 @@ func (x *CMsgGCToClientCavernCrawlMapPathCompleted) String() string {
 func (*CMsgGCToClientCavernCrawlMapPathCompleted) ProtoMessage() {}
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[216]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[217]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18382,7 +18669,7 @@ func (x *CMsgGCToClientCavernCrawlMapPathCompleted) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgGCToClientCavernCrawlMapPathCompleted.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCavernCrawlMapPathCompleted) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{216}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{217}
 }
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted) GetEventId() uint32 {
@@ -18422,7 +18709,7 @@ type CMsgGCToClientCavernCrawlMapUpdated struct {
 
 func (x *CMsgGCToClientCavernCrawlMapUpdated) Reset() {
 	*x = CMsgGCToClientCavernCrawlMapUpdated{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[217]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[218]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18434,7 +18721,7 @@ func (x *CMsgGCToClientCavernCrawlMapUpdated) String() string {
 func (*CMsgGCToClientCavernCrawlMapUpdated) ProtoMessage() {}
 
 func (x *CMsgGCToClientCavernCrawlMapUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[217]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[218]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18447,7 +18734,7 @@ func (x *CMsgGCToClientCavernCrawlMapUpdated) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgGCToClientCavernCrawlMapUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCavernCrawlMapUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{217}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{218}
 }
 
 func (x *CMsgGCToClientCavernCrawlMapUpdated) GetEventId() uint32 {
@@ -18474,7 +18761,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlClaimRoom) Reset() {
 	*x = CMsgClientToGCCavernCrawlClaimRoom{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[218]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[219]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18486,7 +18773,7 @@ func (x *CMsgClientToGCCavernCrawlClaimRoom) String() string {
 func (*CMsgClientToGCCavernCrawlClaimRoom) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlClaimRoom) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[218]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[219]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18499,7 +18786,7 @@ func (x *CMsgClientToGCCavernCrawlClaimRoom) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCCavernCrawlClaimRoom.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlClaimRoom) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{218}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{219}
 }
 
 func (x *CMsgClientToGCCavernCrawlClaimRoom) GetEventId() uint32 {
@@ -18537,7 +18824,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlClaimRoomResponse) Reset() {
 	*x = CMsgClientToGCCavernCrawlClaimRoomResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[219]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[220]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18549,7 +18836,7 @@ func (x *CMsgClientToGCCavernCrawlClaimRoomResponse) String() string {
 func (*CMsgClientToGCCavernCrawlClaimRoomResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlClaimRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[219]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[220]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18562,7 +18849,7 @@ func (x *CMsgClientToGCCavernCrawlClaimRoomResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCCavernCrawlClaimRoomResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlClaimRoomResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{219}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{220}
 }
 
 func (x *CMsgClientToGCCavernCrawlClaimRoomResponse) GetResult() CMsgClientToGCCavernCrawlClaimRoomResponse_Result {
@@ -18590,7 +18877,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoom) Reset() {
 	*x = CMsgClientToGCCavernCrawlUseItemOnRoom{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[220]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[221]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18602,7 +18889,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnRoom) String() string {
 func (*CMsgClientToGCCavernCrawlUseItemOnRoom) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoom) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[220]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[221]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18615,7 +18902,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnRoom) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnRoom.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlUseItemOnRoom) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{220}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{221}
 }
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoom) GetEventId() uint32 {
@@ -18660,7 +18947,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse) Reset() {
 	*x = CMsgClientToGCCavernCrawlUseItemOnRoomResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[221]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[222]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18672,7 +18959,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse) String() string {
 func (*CMsgClientToGCCavernCrawlUseItemOnRoomResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[221]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[222]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18685,7 +18972,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnRoomResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlUseItemOnRoomResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{221}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{222}
 }
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnRoomResponse) GetResult() CMsgClientToGCCavernCrawlUseItemOnRoomResponse_Result {
@@ -18713,7 +19000,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPath) Reset() {
 	*x = CMsgClientToGCCavernCrawlUseItemOnPath{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[222]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[223]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18725,7 +19012,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnPath) String() string {
 func (*CMsgClientToGCCavernCrawlUseItemOnPath) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPath) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[222]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[223]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18738,7 +19025,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnPath) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnPath.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlUseItemOnPath) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{222}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{223}
 }
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPath) GetEventId() uint32 {
@@ -18783,7 +19070,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse) Reset() {
 	*x = CMsgClientToGCCavernCrawlUseItemOnPathResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[223]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[224]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18795,7 +19082,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse) String() string {
 func (*CMsgClientToGCCavernCrawlUseItemOnPathResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[223]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[224]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18808,7 +19095,7 @@ func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCCavernCrawlUseItemOnPathResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlUseItemOnPathResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{223}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{224}
 }
 
 func (x *CMsgClientToGCCavernCrawlUseItemOnPathResponse) GetResult() CMsgClientToGCCavernCrawlUseItemOnPathResponse_Result {
@@ -18827,7 +19114,7 @@ type CMsgClientToGCCavernCrawlRequestMapState struct {
 
 func (x *CMsgClientToGCCavernCrawlRequestMapState) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapState{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[224]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[225]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18839,7 +19126,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapState) String() string {
 func (*CMsgClientToGCCavernCrawlRequestMapState) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapState) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[224]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[225]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18852,7 +19139,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapState) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapState.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapState) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{224}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapState) GetEventId() uint32 {
@@ -18879,7 +19166,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapStateResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[225]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[226]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18891,7 +19178,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse) String() string {
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[225]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[226]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18904,7 +19191,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse) GetResult() CMsgClientToGCCavernCrawlRequestMapStateResponse_Result {
@@ -18944,7 +19231,7 @@ type CMsgClientToGCCavernCrawlGetClaimedRoomCount struct {
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCount) Reset() {
 	*x = CMsgClientToGCCavernCrawlGetClaimedRoomCount{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[226]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[227]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18956,7 +19243,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCount) String() string {
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCount) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCount) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[226]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[227]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18969,7 +19256,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCount) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCCavernCrawlGetClaimedRoomCount.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCount) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{227}
 }
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCount) GetEventId() uint32 {
@@ -18995,7 +19282,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) Reset() {
 	*x = CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[227]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[228]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19007,7 +19294,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) String() string {
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[227]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[228]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19020,7 +19307,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) ProtoReflect() pr
 
 // Deprecated: Use CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{227}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{228}
 }
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse) GetResult() CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_Result {
@@ -19053,7 +19340,7 @@ type CMsgDOTAMutationList struct {
 
 func (x *CMsgDOTAMutationList) Reset() {
 	*x = CMsgDOTAMutationList{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[228]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[229]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19065,7 +19352,7 @@ func (x *CMsgDOTAMutationList) String() string {
 func (*CMsgDOTAMutationList) ProtoMessage() {}
 
 func (x *CMsgDOTAMutationList) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[228]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[229]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19078,7 +19365,7 @@ func (x *CMsgDOTAMutationList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAMutationList.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAMutationList) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{228}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{229}
 }
 
 func (x *CMsgDOTAMutationList) GetMutations() []*CMsgDOTAMutationList_Mutation {
@@ -19103,7 +19390,7 @@ const (
 
 func (x *CMsgEventTipsSummaryRequest) Reset() {
 	*x = CMsgEventTipsSummaryRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[229]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[230]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19115,7 +19402,7 @@ func (x *CMsgEventTipsSummaryRequest) String() string {
 func (*CMsgEventTipsSummaryRequest) ProtoMessage() {}
 
 func (x *CMsgEventTipsSummaryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[229]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[230]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19128,7 +19415,7 @@ func (x *CMsgEventTipsSummaryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgEventTipsSummaryRequest.ProtoReflect.Descriptor instead.
 func (*CMsgEventTipsSummaryRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{229}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{230}
 }
 
 func (x *CMsgEventTipsSummaryRequest) GetEventId() EEvent {
@@ -19155,7 +19442,7 @@ type CMsgEventTipsSummaryResponse struct {
 
 func (x *CMsgEventTipsSummaryResponse) Reset() {
 	*x = CMsgEventTipsSummaryResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[230]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[231]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19167,7 +19454,7 @@ func (x *CMsgEventTipsSummaryResponse) String() string {
 func (*CMsgEventTipsSummaryResponse) ProtoMessage() {}
 
 func (x *CMsgEventTipsSummaryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[230]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[231]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19180,7 +19467,7 @@ func (x *CMsgEventTipsSummaryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgEventTipsSummaryResponse.ProtoReflect.Descriptor instead.
 func (*CMsgEventTipsSummaryResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{230}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{231}
 }
 
 func (x *CMsgEventTipsSummaryResponse) GetResult() bool {
@@ -19207,7 +19494,7 @@ type CMsgSocialFeedRequest struct {
 
 func (x *CMsgSocialFeedRequest) Reset() {
 	*x = CMsgSocialFeedRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[231]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[232]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19219,7 +19506,7 @@ func (x *CMsgSocialFeedRequest) String() string {
 func (*CMsgSocialFeedRequest) ProtoMessage() {}
 
 func (x *CMsgSocialFeedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[231]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[232]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19232,7 +19519,7 @@ func (x *CMsgSocialFeedRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSocialFeedRequest.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{231}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{232}
 }
 
 func (x *CMsgSocialFeedRequest) GetAccountId() uint32 {
@@ -19264,7 +19551,7 @@ const (
 
 func (x *CMsgSocialFeedResponse) Reset() {
 	*x = CMsgSocialFeedResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[232]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[233]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19276,7 +19563,7 @@ func (x *CMsgSocialFeedResponse) String() string {
 func (*CMsgSocialFeedResponse) ProtoMessage() {}
 
 func (x *CMsgSocialFeedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[232]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[233]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19289,7 +19576,7 @@ func (x *CMsgSocialFeedResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSocialFeedResponse.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{232}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{233}
 }
 
 func (x *CMsgSocialFeedResponse) GetResult() CMsgSocialFeedResponse_Result {
@@ -19315,7 +19602,7 @@ type CMsgSocialFeedCommentsRequest struct {
 
 func (x *CMsgSocialFeedCommentsRequest) Reset() {
 	*x = CMsgSocialFeedCommentsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[233]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[234]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19327,7 +19614,7 @@ func (x *CMsgSocialFeedCommentsRequest) String() string {
 func (*CMsgSocialFeedCommentsRequest) ProtoMessage() {}
 
 func (x *CMsgSocialFeedCommentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[233]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[234]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19340,7 +19627,7 @@ func (x *CMsgSocialFeedCommentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSocialFeedCommentsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedCommentsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{233}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{234}
 }
 
 func (x *CMsgSocialFeedCommentsRequest) GetFeedEventId() uint64 {
@@ -19365,7 +19652,7 @@ const (
 
 func (x *CMsgSocialFeedCommentsResponse) Reset() {
 	*x = CMsgSocialFeedCommentsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[234]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[235]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19377,7 +19664,7 @@ func (x *CMsgSocialFeedCommentsResponse) String() string {
 func (*CMsgSocialFeedCommentsResponse) ProtoMessage() {}
 
 func (x *CMsgSocialFeedCommentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[234]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[235]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19390,7 +19677,7 @@ func (x *CMsgSocialFeedCommentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSocialFeedCommentsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedCommentsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{234}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{235}
 }
 
 func (x *CMsgSocialFeedCommentsResponse) GetResult() CMsgSocialFeedCommentsResponse_Result {
@@ -19418,7 +19705,7 @@ type CMsgClientToGCPlayerCardSpecificPurchaseRequest struct {
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseRequest) Reset() {
 	*x = CMsgClientToGCPlayerCardSpecificPurchaseRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[235]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[236]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19430,7 +19717,7 @@ func (x *CMsgClientToGCPlayerCardSpecificPurchaseRequest) String() string {
 func (*CMsgClientToGCPlayerCardSpecificPurchaseRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[235]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[236]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19443,7 +19730,7 @@ func (x *CMsgClientToGCPlayerCardSpecificPurchaseRequest) ProtoReflect() protore
 
 // Deprecated: Use CMsgClientToGCPlayerCardSpecificPurchaseRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlayerCardSpecificPurchaseRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{235}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{236}
 }
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseRequest) GetPlayerAccountId() uint32 {
@@ -19482,7 +19769,7 @@ const (
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse) Reset() {
 	*x = CMsgClientToGCPlayerCardSpecificPurchaseResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[236]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[237]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19494,7 +19781,7 @@ func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse) String() string {
 func (*CMsgClientToGCPlayerCardSpecificPurchaseResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[236]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[237]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19507,7 +19794,7 @@ func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCPlayerCardSpecificPurchaseResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlayerCardSpecificPurchaseResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{236}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{237}
 }
 
 func (x *CMsgClientToGCPlayerCardSpecificPurchaseResponse) GetResult() CMsgClientToGCPlayerCardSpecificPurchaseResponse_Result {
@@ -19533,7 +19820,7 @@ type CMsgClientToGCRequestContestVotes struct {
 
 func (x *CMsgClientToGCRequestContestVotes) Reset() {
 	*x = CMsgClientToGCRequestContestVotes{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[237]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[238]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19545,7 +19832,7 @@ func (x *CMsgClientToGCRequestContestVotes) String() string {
 func (*CMsgClientToGCRequestContestVotes) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestContestVotes) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[237]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[238]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19558,7 +19845,7 @@ func (x *CMsgClientToGCRequestContestVotes) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCRequestContestVotes.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestContestVotes) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{237}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{238}
 }
 
 func (x *CMsgClientToGCRequestContestVotes) GetContestId() uint32 {
@@ -19583,7 +19870,7 @@ const (
 
 func (x *CMsgClientToGCRequestContestVotesResponse) Reset() {
 	*x = CMsgClientToGCRequestContestVotesResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[238]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[239]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19595,7 +19882,7 @@ func (x *CMsgClientToGCRequestContestVotesResponse) String() string {
 func (*CMsgClientToGCRequestContestVotesResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestContestVotesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[238]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[239]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19608,7 +19895,7 @@ func (x *CMsgClientToGCRequestContestVotesResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCRequestContestVotesResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestContestVotesResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{238}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{239}
 }
 
 func (x *CMsgClientToGCRequestContestVotesResponse) GetResult() CMsgClientToGCRequestContestVotesResponse_EResponse {
@@ -19636,7 +19923,7 @@ type CMsgClientToGCRecordContestVote struct {
 
 func (x *CMsgClientToGCRecordContestVote) Reset() {
 	*x = CMsgClientToGCRecordContestVote{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[239]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[240]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19648,7 +19935,7 @@ func (x *CMsgClientToGCRecordContestVote) String() string {
 func (*CMsgClientToGCRecordContestVote) ProtoMessage() {}
 
 func (x *CMsgClientToGCRecordContestVote) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[239]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[240]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19661,7 +19948,7 @@ func (x *CMsgClientToGCRecordContestVote) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRecordContestVote.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRecordContestVote) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{239}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{240}
 }
 
 func (x *CMsgClientToGCRecordContestVote) GetContestId() uint32 {
@@ -19699,7 +19986,7 @@ const (
 
 func (x *CMsgGCToClientRecordContestVoteResponse) Reset() {
 	*x = CMsgGCToClientRecordContestVoteResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[240]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[241]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19711,7 +19998,7 @@ func (x *CMsgGCToClientRecordContestVoteResponse) String() string {
 func (*CMsgGCToClientRecordContestVoteResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientRecordContestVoteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[240]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[241]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19724,7 +20011,7 @@ func (x *CMsgGCToClientRecordContestVoteResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgGCToClientRecordContestVoteResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRecordContestVoteResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{240}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{241}
 }
 
 func (x *CMsgGCToClientRecordContestVoteResponse) GetEresult() CMsgGCToClientRecordContestVoteResponse_EResult {
@@ -19750,7 +20037,7 @@ const (
 
 func (x *CMsgDevGrantEventPoints) Reset() {
 	*x = CMsgDevGrantEventPoints{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[241]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[242]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19762,7 +20049,7 @@ func (x *CMsgDevGrantEventPoints) String() string {
 func (*CMsgDevGrantEventPoints) ProtoMessage() {}
 
 func (x *CMsgDevGrantEventPoints) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[241]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[242]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19775,7 +20062,7 @@ func (x *CMsgDevGrantEventPoints) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevGrantEventPoints.ProtoReflect.Descriptor instead.
 func (*CMsgDevGrantEventPoints) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{241}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{242}
 }
 
 func (x *CMsgDevGrantEventPoints) GetEventId() EEvent {
@@ -19813,7 +20100,7 @@ const (
 
 func (x *CMsgDevGrantEventPointsResponse) Reset() {
 	*x = CMsgDevGrantEventPointsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[242]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[243]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19825,7 +20112,7 @@ func (x *CMsgDevGrantEventPointsResponse) String() string {
 func (*CMsgDevGrantEventPointsResponse) ProtoMessage() {}
 
 func (x *CMsgDevGrantEventPointsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[242]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[243]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19838,7 +20125,7 @@ func (x *CMsgDevGrantEventPointsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevGrantEventPointsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDevGrantEventPointsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{242}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{243}
 }
 
 func (x *CMsgDevGrantEventPointsResponse) GetResult() EDevEventRequestResult {
@@ -19864,7 +20151,7 @@ const (
 
 func (x *CMsgDevGrantEventAction) Reset() {
 	*x = CMsgDevGrantEventAction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[243]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[244]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19876,7 +20163,7 @@ func (x *CMsgDevGrantEventAction) String() string {
 func (*CMsgDevGrantEventAction) ProtoMessage() {}
 
 func (x *CMsgDevGrantEventAction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[243]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[244]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19889,7 +20176,7 @@ func (x *CMsgDevGrantEventAction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevGrantEventAction.ProtoReflect.Descriptor instead.
 func (*CMsgDevGrantEventAction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{243}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{244}
 }
 
 func (x *CMsgDevGrantEventAction) GetEventId() EEvent {
@@ -19927,7 +20214,7 @@ const (
 
 func (x *CMsgDevGrantEventActionResponse) Reset() {
 	*x = CMsgDevGrantEventActionResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[244]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[245]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19939,7 +20226,7 @@ func (x *CMsgDevGrantEventActionResponse) String() string {
 func (*CMsgDevGrantEventActionResponse) ProtoMessage() {}
 
 func (x *CMsgDevGrantEventActionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[244]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[245]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19952,7 +20239,7 @@ func (x *CMsgDevGrantEventActionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevGrantEventActionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDevGrantEventActionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{244}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{245}
 }
 
 func (x *CMsgDevGrantEventActionResponse) GetResult() EDevEventRequestResult {
@@ -19979,7 +20266,7 @@ const (
 
 func (x *CMsgDevDeleteEventActions) Reset() {
 	*x = CMsgDevDeleteEventActions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[245]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[246]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19991,7 +20278,7 @@ func (x *CMsgDevDeleteEventActions) String() string {
 func (*CMsgDevDeleteEventActions) ProtoMessage() {}
 
 func (x *CMsgDevDeleteEventActions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[245]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[246]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20004,7 +20291,7 @@ func (x *CMsgDevDeleteEventActions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevDeleteEventActions.ProtoReflect.Descriptor instead.
 func (*CMsgDevDeleteEventActions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{245}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{246}
 }
 
 func (x *CMsgDevDeleteEventActions) GetEventId() EEvent {
@@ -20049,7 +20336,7 @@ const (
 
 func (x *CMsgDevDeleteEventActionsResponse) Reset() {
 	*x = CMsgDevDeleteEventActionsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[246]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[247]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20061,7 +20348,7 @@ func (x *CMsgDevDeleteEventActionsResponse) String() string {
 func (*CMsgDevDeleteEventActionsResponse) ProtoMessage() {}
 
 func (x *CMsgDevDeleteEventActionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[246]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[247]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20074,7 +20361,7 @@ func (x *CMsgDevDeleteEventActionsResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgDevDeleteEventActionsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDevDeleteEventActionsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{246}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{247}
 }
 
 func (x *CMsgDevDeleteEventActionsResponse) GetResult() EDevEventRequestResult {
@@ -20099,7 +20386,7 @@ const (
 
 func (x *CMsgDevResetEventState) Reset() {
 	*x = CMsgDevResetEventState{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[247]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[248]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20111,7 +20398,7 @@ func (x *CMsgDevResetEventState) String() string {
 func (*CMsgDevResetEventState) ProtoMessage() {}
 
 func (x *CMsgDevResetEventState) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[247]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[248]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20124,7 +20411,7 @@ func (x *CMsgDevResetEventState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevResetEventState.ProtoReflect.Descriptor instead.
 func (*CMsgDevResetEventState) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{247}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{248}
 }
 
 func (x *CMsgDevResetEventState) GetEventId() EEvent {
@@ -20155,7 +20442,7 @@ const (
 
 func (x *CMsgDevResetEventStateResponse) Reset() {
 	*x = CMsgDevResetEventStateResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[248]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[249]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20167,7 +20454,7 @@ func (x *CMsgDevResetEventStateResponse) String() string {
 func (*CMsgDevResetEventStateResponse) ProtoMessage() {}
 
 func (x *CMsgDevResetEventStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[248]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[249]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20180,7 +20467,7 @@ func (x *CMsgDevResetEventStateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDevResetEventStateResponse.ProtoReflect.Descriptor instead.
 func (*CMsgDevResetEventStateResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{248}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{249}
 }
 
 func (x *CMsgDevResetEventStateResponse) GetResult() EDevEventRequestResult {
@@ -20188,6 +20475,91 @@ func (x *CMsgDevResetEventStateResponse) GetResult() EDevEventRequestResult {
 		return *x.Result
 	}
 	return Default_CMsgDevResetEventStateResponse_Result
+}
+
+type CMsgDevReloadAllEvents struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgDevReloadAllEvents) Reset() {
+	*x = CMsgDevReloadAllEvents{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[250]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDevReloadAllEvents) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDevReloadAllEvents) ProtoMessage() {}
+
+func (x *CMsgDevReloadAllEvents) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[250]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDevReloadAllEvents.ProtoReflect.Descriptor instead.
+func (*CMsgDevReloadAllEvents) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{250}
+}
+
+type CMsgDevReloadAllEventsResponse struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Result        *EDevEventRequestResult `protobuf:"varint,1,opt,name=result,enum=protocol.EDevEventRequestResult,def=0" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgDevReloadAllEventsResponse fields.
+const (
+	Default_CMsgDevReloadAllEventsResponse_Result = EDevEventRequestResult_k_EDevEventRequestResult_Success
+)
+
+func (x *CMsgDevReloadAllEventsResponse) Reset() {
+	*x = CMsgDevReloadAllEventsResponse{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[251]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDevReloadAllEventsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDevReloadAllEventsResponse) ProtoMessage() {}
+
+func (x *CMsgDevReloadAllEventsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[251]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDevReloadAllEventsResponse.ProtoReflect.Descriptor instead.
+func (*CMsgDevReloadAllEventsResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{251}
+}
+
+func (x *CMsgDevReloadAllEventsResponse) GetResult() EDevEventRequestResult {
+	if x != nil && x.Result != nil {
+		return *x.Result
+	}
+	return Default_CMsgDevReloadAllEventsResponse_Result
 }
 
 type CMsgConsumeEventSupportGrantItem struct {
@@ -20199,7 +20571,7 @@ type CMsgConsumeEventSupportGrantItem struct {
 
 func (x *CMsgConsumeEventSupportGrantItem) Reset() {
 	*x = CMsgConsumeEventSupportGrantItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[249]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[252]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20211,7 +20583,7 @@ func (x *CMsgConsumeEventSupportGrantItem) String() string {
 func (*CMsgConsumeEventSupportGrantItem) ProtoMessage() {}
 
 func (x *CMsgConsumeEventSupportGrantItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[249]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[252]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20224,7 +20596,7 @@ func (x *CMsgConsumeEventSupportGrantItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgConsumeEventSupportGrantItem.ProtoReflect.Descriptor instead.
 func (*CMsgConsumeEventSupportGrantItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{249}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{252}
 }
 
 func (x *CMsgConsumeEventSupportGrantItem) GetItemId() uint64 {
@@ -20248,7 +20620,7 @@ const (
 
 func (x *CMsgConsumeEventSupportGrantItemResponse) Reset() {
 	*x = CMsgConsumeEventSupportGrantItemResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[250]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[253]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20260,7 +20632,7 @@ func (x *CMsgConsumeEventSupportGrantItemResponse) String() string {
 func (*CMsgConsumeEventSupportGrantItemResponse) ProtoMessage() {}
 
 func (x *CMsgConsumeEventSupportGrantItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[250]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[253]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20273,7 +20645,7 @@ func (x *CMsgConsumeEventSupportGrantItemResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgConsumeEventSupportGrantItemResponse.ProtoReflect.Descriptor instead.
 func (*CMsgConsumeEventSupportGrantItemResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{250}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{253}
 }
 
 func (x *CMsgConsumeEventSupportGrantItemResponse) GetResult() ESupportEventRequestResult {
@@ -20291,7 +20663,7 @@ type CMsgClientToGCGetFilteredPlayers struct {
 
 func (x *CMsgClientToGCGetFilteredPlayers) Reset() {
 	*x = CMsgClientToGCGetFilteredPlayers{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[251]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[254]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20303,7 +20675,7 @@ func (x *CMsgClientToGCGetFilteredPlayers) String() string {
 func (*CMsgClientToGCGetFilteredPlayers) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetFilteredPlayers) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[251]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[254]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20316,7 +20688,7 @@ func (x *CMsgClientToGCGetFilteredPlayers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetFilteredPlayers.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetFilteredPlayers) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{251}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{254}
 }
 
 type CMsgGCToClientGetFilteredPlayersResponse struct {
@@ -20337,7 +20709,7 @@ const (
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse) Reset() {
 	*x = CMsgGCToClientGetFilteredPlayersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[252]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[255]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20349,7 +20721,7 @@ func (x *CMsgGCToClientGetFilteredPlayersResponse) String() string {
 func (*CMsgGCToClientGetFilteredPlayersResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[252]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[255]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20362,7 +20734,7 @@ func (x *CMsgGCToClientGetFilteredPlayersResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgGCToClientGetFilteredPlayersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientGetFilteredPlayersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{252}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{255}
 }
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse) GetResult() CMsgGCToClientGetFilteredPlayersResponse_Result {
@@ -20409,7 +20781,7 @@ type CMsgClientToGCRemoveFilteredPlayer struct {
 
 func (x *CMsgClientToGCRemoveFilteredPlayer) Reset() {
 	*x = CMsgClientToGCRemoveFilteredPlayer{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[253]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[256]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20421,7 +20793,7 @@ func (x *CMsgClientToGCRemoveFilteredPlayer) String() string {
 func (*CMsgClientToGCRemoveFilteredPlayer) ProtoMessage() {}
 
 func (x *CMsgClientToGCRemoveFilteredPlayer) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[253]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[256]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20434,7 +20806,7 @@ func (x *CMsgClientToGCRemoveFilteredPlayer) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCRemoveFilteredPlayer.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRemoveFilteredPlayer) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{253}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{256}
 }
 
 func (x *CMsgClientToGCRemoveFilteredPlayer) GetAccountIdToRemove() uint32 {
@@ -20458,7 +20830,7 @@ const (
 
 func (x *CMsgGCToClientRemoveFilteredPlayerResponse) Reset() {
 	*x = CMsgGCToClientRemoveFilteredPlayerResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[254]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[257]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20470,7 +20842,7 @@ func (x *CMsgGCToClientRemoveFilteredPlayerResponse) String() string {
 func (*CMsgGCToClientRemoveFilteredPlayerResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientRemoveFilteredPlayerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[254]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[257]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20483,7 +20855,7 @@ func (x *CMsgGCToClientRemoveFilteredPlayerResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgGCToClientRemoveFilteredPlayerResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRemoveFilteredPlayerResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{254}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{257}
 }
 
 func (x *CMsgGCToClientRemoveFilteredPlayerResponse) GetResult() CMsgGCToClientRemoveFilteredPlayerResponse_Result {
@@ -20502,7 +20874,7 @@ type CMsgClientToGCPurchaseFilteredPlayerSlot struct {
 
 func (x *CMsgClientToGCPurchaseFilteredPlayerSlot) Reset() {
 	*x = CMsgClientToGCPurchaseFilteredPlayerSlot{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[255]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[258]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20514,7 +20886,7 @@ func (x *CMsgClientToGCPurchaseFilteredPlayerSlot) String() string {
 func (*CMsgClientToGCPurchaseFilteredPlayerSlot) ProtoMessage() {}
 
 func (x *CMsgClientToGCPurchaseFilteredPlayerSlot) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[255]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[258]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20527,7 +20899,7 @@ func (x *CMsgClientToGCPurchaseFilteredPlayerSlot) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCPurchaseFilteredPlayerSlot.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPurchaseFilteredPlayerSlot) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{255}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{258}
 }
 
 func (x *CMsgClientToGCPurchaseFilteredPlayerSlot) GetAdditionalSlotsCurrent() int32 {
@@ -20553,7 +20925,7 @@ const (
 
 func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse) Reset() {
 	*x = CMsgGCToClientPurchaseFilteredPlayerSlotResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[256]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[259]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20565,7 +20937,7 @@ func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse) String() string {
 func (*CMsgGCToClientPurchaseFilteredPlayerSlotResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[256]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[259]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20578,7 +20950,7 @@ func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCToClientPurchaseFilteredPlayerSlotResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPurchaseFilteredPlayerSlotResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{256}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{259}
 }
 
 func (x *CMsgGCToClientPurchaseFilteredPlayerSlotResponse) GetResult() CMsgGCToClientPurchaseFilteredPlayerSlotResponse_Result {
@@ -20612,7 +20984,7 @@ type CMsgClientToGCUpdateFilteredPlayerNote struct {
 
 func (x *CMsgClientToGCUpdateFilteredPlayerNote) Reset() {
 	*x = CMsgClientToGCUpdateFilteredPlayerNote{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[257]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[260]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20624,7 +20996,7 @@ func (x *CMsgClientToGCUpdateFilteredPlayerNote) String() string {
 func (*CMsgClientToGCUpdateFilteredPlayerNote) ProtoMessage() {}
 
 func (x *CMsgClientToGCUpdateFilteredPlayerNote) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[257]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[260]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20637,7 +21009,7 @@ func (x *CMsgClientToGCUpdateFilteredPlayerNote) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCUpdateFilteredPlayerNote.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUpdateFilteredPlayerNote) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{257}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{260}
 }
 
 func (x *CMsgClientToGCUpdateFilteredPlayerNote) GetTargetAccountId() uint32 {
@@ -20668,7 +21040,7 @@ const (
 
 func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse) Reset() {
 	*x = CMsgGCToClientUpdateFilteredPlayerNoteResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[258]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[261]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20680,7 +21052,7 @@ func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse) String() string {
 func (*CMsgGCToClientUpdateFilteredPlayerNoteResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[258]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[261]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20693,7 +21065,7 @@ func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgGCToClientUpdateFilteredPlayerNoteResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientUpdateFilteredPlayerNoteResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{258}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{261}
 }
 
 func (x *CMsgGCToClientUpdateFilteredPlayerNoteResponse) GetResult() CMsgGCToClientUpdateFilteredPlayerNoteResponse_Result {
@@ -20714,7 +21086,7 @@ type CMsgPartySearchPlayer struct {
 
 func (x *CMsgPartySearchPlayer) Reset() {
 	*x = CMsgPartySearchPlayer{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[259]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[262]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20726,7 +21098,7 @@ func (x *CMsgPartySearchPlayer) String() string {
 func (*CMsgPartySearchPlayer) ProtoMessage() {}
 
 func (x *CMsgPartySearchPlayer) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[259]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[262]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20739,7 +21111,7 @@ func (x *CMsgPartySearchPlayer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPartySearchPlayer.ProtoReflect.Descriptor instead.
 func (*CMsgPartySearchPlayer) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{259}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{262}
 }
 
 func (x *CMsgPartySearchPlayer) GetAccountId() uint32 {
@@ -20772,7 +21144,7 @@ type CMsgGCToClientPlayerBeaconState struct {
 
 func (x *CMsgGCToClientPlayerBeaconState) Reset() {
 	*x = CMsgGCToClientPlayerBeaconState{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[260]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[263]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20784,7 +21156,7 @@ func (x *CMsgGCToClientPlayerBeaconState) String() string {
 func (*CMsgGCToClientPlayerBeaconState) ProtoMessage() {}
 
 func (x *CMsgGCToClientPlayerBeaconState) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[260]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[263]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20797,7 +21169,7 @@ func (x *CMsgGCToClientPlayerBeaconState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientPlayerBeaconState.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPlayerBeaconState) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{260}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{263}
 }
 
 func (x *CMsgGCToClientPlayerBeaconState) GetNumActiveBeacons() []int32 {
@@ -20818,7 +21190,7 @@ type CMsgGCToClientPartyBeaconUpdate struct {
 
 func (x *CMsgGCToClientPartyBeaconUpdate) Reset() {
 	*x = CMsgGCToClientPartyBeaconUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[261]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[264]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20830,7 +21202,7 @@ func (x *CMsgGCToClientPartyBeaconUpdate) String() string {
 func (*CMsgGCToClientPartyBeaconUpdate) ProtoMessage() {}
 
 func (x *CMsgGCToClientPartyBeaconUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[261]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[264]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20843,7 +21215,7 @@ func (x *CMsgGCToClientPartyBeaconUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientPartyBeaconUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPartyBeaconUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{261}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{264}
 }
 
 func (x *CMsgGCToClientPartyBeaconUpdate) GetBeaconAdded() bool {
@@ -20881,7 +21253,7 @@ const (
 
 func (x *CMsgClientToGCUpdatePartyBeacon) Reset() {
 	*x = CMsgClientToGCUpdatePartyBeacon{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[262]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[265]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20893,7 +21265,7 @@ func (x *CMsgClientToGCUpdatePartyBeacon) String() string {
 func (*CMsgClientToGCUpdatePartyBeacon) ProtoMessage() {}
 
 func (x *CMsgClientToGCUpdatePartyBeacon) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[262]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[265]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20906,7 +21278,7 @@ func (x *CMsgClientToGCUpdatePartyBeacon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUpdatePartyBeacon.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUpdatePartyBeacon) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{262}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{265}
 }
 
 func (x *CMsgClientToGCUpdatePartyBeacon) GetAction() CMsgClientToGCUpdatePartyBeacon_Action {
@@ -20924,7 +21296,7 @@ type CMsgClientToGCRequestActiveBeaconParties struct {
 
 func (x *CMsgClientToGCRequestActiveBeaconParties) Reset() {
 	*x = CMsgClientToGCRequestActiveBeaconParties{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[263]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[266]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20936,7 +21308,7 @@ func (x *CMsgClientToGCRequestActiveBeaconParties) String() string {
 func (*CMsgClientToGCRequestActiveBeaconParties) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestActiveBeaconParties) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[263]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[266]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20949,7 +21321,7 @@ func (x *CMsgClientToGCRequestActiveBeaconParties) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCRequestActiveBeaconParties.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestActiveBeaconParties) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{263}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{266}
 }
 
 type CMsgGCToClientRequestActiveBeaconPartiesResponse struct {
@@ -20967,7 +21339,7 @@ const (
 
 func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse) Reset() {
 	*x = CMsgGCToClientRequestActiveBeaconPartiesResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[264]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[267]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20979,7 +21351,7 @@ func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse) String() string {
 func (*CMsgGCToClientRequestActiveBeaconPartiesResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[264]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[267]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20992,7 +21364,7 @@ func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCToClientRequestActiveBeaconPartiesResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRequestActiveBeaconPartiesResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{264}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{267}
 }
 
 func (x *CMsgGCToClientRequestActiveBeaconPartiesResponse) GetResponse() CMsgGCToClientRequestActiveBeaconPartiesResponse_EResponse {
@@ -21020,7 +21392,7 @@ type CMsgClientToGCJoinPartyFromBeacon struct {
 
 func (x *CMsgClientToGCJoinPartyFromBeacon) Reset() {
 	*x = CMsgClientToGCJoinPartyFromBeacon{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[265]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[268]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21032,7 +21404,7 @@ func (x *CMsgClientToGCJoinPartyFromBeacon) String() string {
 func (*CMsgClientToGCJoinPartyFromBeacon) ProtoMessage() {}
 
 func (x *CMsgClientToGCJoinPartyFromBeacon) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[265]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[268]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21045,7 +21417,7 @@ func (x *CMsgClientToGCJoinPartyFromBeacon) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCJoinPartyFromBeacon.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCJoinPartyFromBeacon) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{265}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{268}
 }
 
 func (x *CMsgClientToGCJoinPartyFromBeacon) GetPartyId() uint64 {
@@ -21083,7 +21455,7 @@ const (
 
 func (x *CMsgGCToClientJoinPartyFromBeaconResponse) Reset() {
 	*x = CMsgGCToClientJoinPartyFromBeaconResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[266]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[269]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21095,7 +21467,7 @@ func (x *CMsgGCToClientJoinPartyFromBeaconResponse) String() string {
 func (*CMsgGCToClientJoinPartyFromBeaconResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientJoinPartyFromBeaconResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[266]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[269]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21108,7 +21480,7 @@ func (x *CMsgGCToClientJoinPartyFromBeaconResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgGCToClientJoinPartyFromBeaconResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientJoinPartyFromBeaconResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{266}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{269}
 }
 
 func (x *CMsgGCToClientJoinPartyFromBeaconResponse) GetResponse() CMsgGCToClientJoinPartyFromBeaconResponse_EResponse {
@@ -21137,7 +21509,7 @@ const (
 
 func (x *CMsgClientToGCManageFavorites) Reset() {
 	*x = CMsgClientToGCManageFavorites{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[267]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[270]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21149,7 +21521,7 @@ func (x *CMsgClientToGCManageFavorites) String() string {
 func (*CMsgClientToGCManageFavorites) ProtoMessage() {}
 
 func (x *CMsgClientToGCManageFavorites) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[267]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[270]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21162,7 +21534,7 @@ func (x *CMsgClientToGCManageFavorites) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCManageFavorites.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCManageFavorites) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{267}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{270}
 }
 
 func (x *CMsgClientToGCManageFavorites) GetAction() CMsgClientToGCManageFavorites_Action {
@@ -21223,7 +21595,7 @@ const (
 
 func (x *CMsgGCToClientManageFavoritesResponse) Reset() {
 	*x = CMsgGCToClientManageFavoritesResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[268]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[271]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21235,7 +21607,7 @@ func (x *CMsgGCToClientManageFavoritesResponse) String() string {
 func (*CMsgGCToClientManageFavoritesResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientManageFavoritesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[268]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[271]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21248,7 +21620,7 @@ func (x *CMsgGCToClientManageFavoritesResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgGCToClientManageFavoritesResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientManageFavoritesResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{268}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{271}
 }
 
 func (x *CMsgGCToClientManageFavoritesResponse) GetResponse() CMsgGCToClientManageFavoritesResponse_EResponse {
@@ -21282,7 +21654,7 @@ type CMsgClientToGCGetFavoritePlayers struct {
 
 func (x *CMsgClientToGCGetFavoritePlayers) Reset() {
 	*x = CMsgClientToGCGetFavoritePlayers{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[269]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[272]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21294,7 +21666,7 @@ func (x *CMsgClientToGCGetFavoritePlayers) String() string {
 func (*CMsgClientToGCGetFavoritePlayers) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetFavoritePlayers) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[269]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[272]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21307,7 +21679,7 @@ func (x *CMsgClientToGCGetFavoritePlayers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetFavoritePlayers.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetFavoritePlayers) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{269}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{272}
 }
 
 func (x *CMsgClientToGCGetFavoritePlayers) GetPaginationKey() uint64 {
@@ -21340,7 +21712,7 @@ const (
 
 func (x *CMsgGCToClientGetFavoritePlayersResponse) Reset() {
 	*x = CMsgGCToClientGetFavoritePlayersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[270]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[273]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21352,7 +21724,7 @@ func (x *CMsgGCToClientGetFavoritePlayersResponse) String() string {
 func (*CMsgGCToClientGetFavoritePlayersResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientGetFavoritePlayersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[270]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[273]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21365,7 +21737,7 @@ func (x *CMsgGCToClientGetFavoritePlayersResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgGCToClientGetFavoritePlayersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientGetFavoritePlayersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{270}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{273}
 }
 
 func (x *CMsgGCToClientGetFavoritePlayersResponse) GetResponse() CMsgGCToClientGetFavoritePlayersResponse_EResponse {
@@ -21398,7 +21770,7 @@ type CMsgGCToClientPartySearchInvite struct {
 
 func (x *CMsgGCToClientPartySearchInvite) Reset() {
 	*x = CMsgGCToClientPartySearchInvite{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[271]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[274]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21410,7 +21782,7 @@ func (x *CMsgGCToClientPartySearchInvite) String() string {
 func (*CMsgGCToClientPartySearchInvite) ProtoMessage() {}
 
 func (x *CMsgGCToClientPartySearchInvite) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[271]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[274]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21423,7 +21795,7 @@ func (x *CMsgGCToClientPartySearchInvite) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientPartySearchInvite.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientPartySearchInvite) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{271}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{274}
 }
 
 func (x *CMsgGCToClientPartySearchInvite) GetAccountId() uint32 {
@@ -21442,7 +21814,7 @@ type CMsgClientToGCVerifyFavoritePlayers struct {
 
 func (x *CMsgClientToGCVerifyFavoritePlayers) Reset() {
 	*x = CMsgClientToGCVerifyFavoritePlayers{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[272]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[275]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21454,7 +21826,7 @@ func (x *CMsgClientToGCVerifyFavoritePlayers) String() string {
 func (*CMsgClientToGCVerifyFavoritePlayers) ProtoMessage() {}
 
 func (x *CMsgClientToGCVerifyFavoritePlayers) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[272]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[275]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21467,7 +21839,7 @@ func (x *CMsgClientToGCVerifyFavoritePlayers) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCVerifyFavoritePlayers.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCVerifyFavoritePlayers) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{272}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{275}
 }
 
 func (x *CMsgClientToGCVerifyFavoritePlayers) GetAccountIds() []uint32 {
@@ -21486,7 +21858,7 @@ type CMsgGCToClientVerifyFavoritePlayersResponse struct {
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse) Reset() {
 	*x = CMsgGCToClientVerifyFavoritePlayersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[273]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[276]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21498,7 +21870,7 @@ func (x *CMsgGCToClientVerifyFavoritePlayersResponse) String() string {
 func (*CMsgGCToClientVerifyFavoritePlayersResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[273]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[276]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21511,7 +21883,7 @@ func (x *CMsgGCToClientVerifyFavoritePlayersResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgGCToClientVerifyFavoritePlayersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientVerifyFavoritePlayersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{273}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{276}
 }
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse) GetResults() []*CMsgGCToClientVerifyFavoritePlayersResponse_Result {
@@ -21530,7 +21902,7 @@ type CMsgClientToGCRequestPlayerRecentAccomplishments struct {
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishments) Reset() {
 	*x = CMsgClientToGCRequestPlayerRecentAccomplishments{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[274]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[277]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21542,7 +21914,7 @@ func (x *CMsgClientToGCRequestPlayerRecentAccomplishments) String() string {
 func (*CMsgClientToGCRequestPlayerRecentAccomplishments) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishments) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[274]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[277]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21555,7 +21927,7 @@ func (x *CMsgClientToGCRequestPlayerRecentAccomplishments) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCRequestPlayerRecentAccomplishments.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlayerRecentAccomplishments) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{274}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{277}
 }
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishments) GetAccountId() uint32 {
@@ -21580,7 +21952,7 @@ const (
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) Reset() {
 	*x = CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[275]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[278]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21592,7 +21964,7 @@ func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) String() stri
 func (*CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[275]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[278]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21605,7 +21977,7 @@ func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) ProtoReflect(
 
 // Deprecated: Use CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{275}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{278}
 }
 
 func (x *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse) GetResult() CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_EResponse {
@@ -21632,7 +22004,7 @@ type CMsgClientToGCRequestPlayerHeroRecentAccomplishments struct {
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishments) Reset() {
 	*x = CMsgClientToGCRequestPlayerHeroRecentAccomplishments{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[276]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[279]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21644,7 +22016,7 @@ func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishments) String() string {
 func (*CMsgClientToGCRequestPlayerHeroRecentAccomplishments) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishments) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[276]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[279]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21657,7 +22029,7 @@ func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishments) ProtoReflect() pr
 
 // Deprecated: Use CMsgClientToGCRequestPlayerHeroRecentAccomplishments.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlayerHeroRecentAccomplishments) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{276}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{279}
 }
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishments) GetAccountId() uint32 {
@@ -21689,7 +22061,7 @@ const (
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) Reset() {
 	*x = CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[277]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[280]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21701,7 +22073,7 @@ func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) String() 
 func (*CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[277]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[280]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21714,7 +22086,7 @@ func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) ProtoRefl
 
 // Deprecated: Use CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{277}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{280}
 }
 
 func (x *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse) GetResult() CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_EResponse {
@@ -21742,7 +22114,7 @@ type CMsgClientToGCSubmitPlayerMatchSurvey struct {
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurvey) Reset() {
 	*x = CMsgClientToGCSubmitPlayerMatchSurvey{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[278]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[281]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21754,7 +22126,7 @@ func (x *CMsgClientToGCSubmitPlayerMatchSurvey) String() string {
 func (*CMsgClientToGCSubmitPlayerMatchSurvey) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurvey) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[278]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[281]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21767,7 +22139,7 @@ func (x *CMsgClientToGCSubmitPlayerMatchSurvey) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCSubmitPlayerMatchSurvey.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitPlayerMatchSurvey) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{278}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{281}
 }
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurvey) GetMatchId() uint64 {
@@ -21806,7 +22178,7 @@ const (
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse) Reset() {
 	*x = CMsgClientToGCSubmitPlayerMatchSurveyResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[279]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[282]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21818,7 +22190,7 @@ func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse) String() string {
 func (*CMsgClientToGCSubmitPlayerMatchSurveyResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[279]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[282]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21831,7 +22203,7 @@ func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCSubmitPlayerMatchSurveyResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitPlayerMatchSurveyResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{279}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{282}
 }
 
 func (x *CMsgClientToGCSubmitPlayerMatchSurveyResponse) GetEresult() CMsgClientToGCSubmitPlayerMatchSurveyResponse_EResponse {
@@ -21856,7 +22228,7 @@ type CMsgGCToClientVACReminder struct {
 
 func (x *CMsgGCToClientVACReminder) Reset() {
 	*x = CMsgGCToClientVACReminder{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[280]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[283]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21868,7 +22240,7 @@ func (x *CMsgGCToClientVACReminder) String() string {
 func (*CMsgGCToClientVACReminder) ProtoMessage() {}
 
 func (x *CMsgGCToClientVACReminder) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[280]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[283]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21881,7 +22253,7 @@ func (x *CMsgGCToClientVACReminder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientVACReminder.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientVACReminder) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{280}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{283}
 }
 
 type CMsgClientToGCUnderDraftRequest struct {
@@ -21894,7 +22266,7 @@ type CMsgClientToGCUnderDraftRequest struct {
 
 func (x *CMsgClientToGCUnderDraftRequest) Reset() {
 	*x = CMsgClientToGCUnderDraftRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[281]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[284]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21906,7 +22278,7 @@ func (x *CMsgClientToGCUnderDraftRequest) String() string {
 func (*CMsgClientToGCUnderDraftRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[281]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[284]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21919,7 +22291,7 @@ func (x *CMsgClientToGCUnderDraftRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUnderDraftRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{281}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{284}
 }
 
 func (x *CMsgClientToGCUnderDraftRequest) GetAccountId() uint32 {
@@ -21953,7 +22325,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[282]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[285]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21965,7 +22337,7 @@ func (x *CMsgClientToGCUnderDraftResponse) String() string {
 func (*CMsgClientToGCUnderDraftResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[282]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[285]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21978,7 +22350,7 @@ func (x *CMsgClientToGCUnderDraftResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUnderDraftResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{282}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{285}
 }
 
 func (x *CMsgClientToGCUnderDraftResponse) GetResult() EUnderDraftResponse {
@@ -22018,7 +22390,7 @@ type CMsgClientToGCUnderDraftReroll struct {
 
 func (x *CMsgClientToGCUnderDraftReroll) Reset() {
 	*x = CMsgClientToGCUnderDraftReroll{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[283]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[286]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22030,7 +22402,7 @@ func (x *CMsgClientToGCUnderDraftReroll) String() string {
 func (*CMsgClientToGCUnderDraftReroll) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftReroll) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[283]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[286]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22043,7 +22415,7 @@ func (x *CMsgClientToGCUnderDraftReroll) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUnderDraftReroll.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftReroll) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{283}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{286}
 }
 
 func (x *CMsgClientToGCUnderDraftReroll) GetEventId() uint32 {
@@ -22069,7 +22441,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftRerollResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftRerollResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[284]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[287]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22081,7 +22453,7 @@ func (x *CMsgClientToGCUnderDraftRerollResponse) String() string {
 func (*CMsgClientToGCUnderDraftRerollResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRerollResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[284]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[287]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22094,7 +22466,7 @@ func (x *CMsgClientToGCUnderDraftRerollResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCUnderDraftRerollResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRerollResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{284}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{287}
 }
 
 func (x *CMsgClientToGCUnderDraftRerollResponse) GetResult() EUnderDraftResponse {
@@ -22128,7 +22500,7 @@ type CMsgClientToGCUnderDraftBuy struct {
 
 func (x *CMsgClientToGCUnderDraftBuy) Reset() {
 	*x = CMsgClientToGCUnderDraftBuy{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[285]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[288]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22140,7 +22512,7 @@ func (x *CMsgClientToGCUnderDraftBuy) String() string {
 func (*CMsgClientToGCUnderDraftBuy) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftBuy) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[285]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[288]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22153,7 +22525,7 @@ func (x *CMsgClientToGCUnderDraftBuy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUnderDraftBuy.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftBuy) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{285}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{288}
 }
 
 func (x *CMsgClientToGCUnderDraftBuy) GetEventId() uint32 {
@@ -22179,7 +22551,7 @@ type CMsgGCToClientGuildUnderDraftGoldUpdated struct {
 
 func (x *CMsgGCToClientGuildUnderDraftGoldUpdated) Reset() {
 	*x = CMsgGCToClientGuildUnderDraftGoldUpdated{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[286]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[289]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22191,7 +22563,7 @@ func (x *CMsgGCToClientGuildUnderDraftGoldUpdated) String() string {
 func (*CMsgGCToClientGuildUnderDraftGoldUpdated) ProtoMessage() {}
 
 func (x *CMsgGCToClientGuildUnderDraftGoldUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[286]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[289]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22204,7 +22576,7 @@ func (x *CMsgGCToClientGuildUnderDraftGoldUpdated) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgGCToClientGuildUnderDraftGoldUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientGuildUnderDraftGoldUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{286}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{289}
 }
 
 func (x *CMsgGCToClientGuildUnderDraftGoldUpdated) GetEventId() uint32 {
@@ -22231,7 +22603,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftBuyResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftBuyResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[287]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[290]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22243,7 +22615,7 @@ func (x *CMsgClientToGCUnderDraftBuyResponse) String() string {
 func (*CMsgClientToGCUnderDraftBuyResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftBuyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[287]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[290]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22256,7 +22628,7 @@ func (x *CMsgClientToGCUnderDraftBuyResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCUnderDraftBuyResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftBuyResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{287}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{290}
 }
 
 func (x *CMsgClientToGCUnderDraftBuyResponse) GetResult() EUnderDraftResponse {
@@ -22296,7 +22668,7 @@ type CMsgClientToGCUnderDraftRollBackBench struct {
 
 func (x *CMsgClientToGCUnderDraftRollBackBench) Reset() {
 	*x = CMsgClientToGCUnderDraftRollBackBench{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[288]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[291]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22308,7 +22680,7 @@ func (x *CMsgClientToGCUnderDraftRollBackBench) String() string {
 func (*CMsgClientToGCUnderDraftRollBackBench) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRollBackBench) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[288]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[291]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22321,7 +22693,7 @@ func (x *CMsgClientToGCUnderDraftRollBackBench) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCUnderDraftRollBackBench.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRollBackBench) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{288}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{291}
 }
 
 func (x *CMsgClientToGCUnderDraftRollBackBench) GetEventId() uint32 {
@@ -22347,7 +22719,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftRollBackBenchResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftRollBackBenchResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[289]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[292]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22359,7 +22731,7 @@ func (x *CMsgClientToGCUnderDraftRollBackBenchResponse) String() string {
 func (*CMsgClientToGCUnderDraftRollBackBenchResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRollBackBenchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[289]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[292]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22372,7 +22744,7 @@ func (x *CMsgClientToGCUnderDraftRollBackBenchResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCUnderDraftRollBackBenchResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRollBackBenchResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{289}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{292}
 }
 
 func (x *CMsgClientToGCUnderDraftRollBackBenchResponse) GetResult() EUnderDraftResponse {
@@ -22406,7 +22778,7 @@ type CMsgClientToGCUnderDraftSell struct {
 
 func (x *CMsgClientToGCUnderDraftSell) Reset() {
 	*x = CMsgClientToGCUnderDraftSell{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[290]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[293]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22418,7 +22790,7 @@ func (x *CMsgClientToGCUnderDraftSell) String() string {
 func (*CMsgClientToGCUnderDraftSell) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftSell) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[290]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[293]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22431,7 +22803,7 @@ func (x *CMsgClientToGCUnderDraftSell) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUnderDraftSell.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftSell) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{290}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{293}
 }
 
 func (x *CMsgClientToGCUnderDraftSell) GetEventId() uint32 {
@@ -22465,7 +22837,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftSellResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftSellResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[291]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[294]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22477,7 +22849,7 @@ func (x *CMsgClientToGCUnderDraftSellResponse) String() string {
 func (*CMsgClientToGCUnderDraftSellResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftSellResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[291]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[294]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22490,7 +22862,7 @@ func (x *CMsgClientToGCUnderDraftSellResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCUnderDraftSellResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftSellResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{291}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{294}
 }
 
 func (x *CMsgClientToGCUnderDraftSellResponse) GetResult() EUnderDraftResponse {
@@ -22531,7 +22903,7 @@ type CMsgClientToGCUnderDraftRedeemReward struct {
 
 func (x *CMsgClientToGCUnderDraftRedeemReward) Reset() {
 	*x = CMsgClientToGCUnderDraftRedeemReward{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[292]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[295]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22543,7 +22915,7 @@ func (x *CMsgClientToGCUnderDraftRedeemReward) String() string {
 func (*CMsgClientToGCUnderDraftRedeemReward) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRedeemReward) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[292]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[295]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22556,7 +22928,7 @@ func (x *CMsgClientToGCUnderDraftRedeemReward) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCUnderDraftRedeemReward.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRedeemReward) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{292}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{295}
 }
 
 func (x *CMsgClientToGCUnderDraftRedeemReward) GetEventId() uint32 {
@@ -22587,7 +22959,7 @@ const (
 
 func (x *CMsgClientToGCUnderDraftRedeemRewardResponse) Reset() {
 	*x = CMsgClientToGCUnderDraftRedeemRewardResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[293]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[296]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22599,7 +22971,7 @@ func (x *CMsgClientToGCUnderDraftRedeemRewardResponse) String() string {
 func (*CMsgClientToGCUnderDraftRedeemRewardResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCUnderDraftRedeemRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[293]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[296]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22612,7 +22984,7 @@ func (x *CMsgClientToGCUnderDraftRedeemRewardResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCUnderDraftRedeemRewardResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUnderDraftRedeemRewardResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{293}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{296}
 }
 
 func (x *CMsgClientToGCUnderDraftRedeemRewardResponse) GetResult() EUnderDraftResponse {
@@ -22633,7 +23005,7 @@ type CMsgClientToGCSubmitDraftTriviaMatchAnswer struct {
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswer) Reset() {
 	*x = CMsgClientToGCSubmitDraftTriviaMatchAnswer{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[294]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[297]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22645,7 +23017,7 @@ func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswer) String() string {
 func (*CMsgClientToGCSubmitDraftTriviaMatchAnswer) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswer) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[294]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[297]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22658,7 +23030,7 @@ func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswer) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCSubmitDraftTriviaMatchAnswer.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitDraftTriviaMatchAnswer) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{294}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{297}
 }
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswer) GetChoseRadiantAsWinner() bool {
@@ -22696,7 +23068,7 @@ const (
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) Reset() {
 	*x = CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[295]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[298]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22708,7 +23080,7 @@ func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) String() string {
 func (*CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[295]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[298]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22721,7 +23093,7 @@ func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) ProtoReflect() prot
 
 // Deprecated: Use CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{295}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{298}
 }
 
 func (x *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse) GetResult() EDOTADraftTriviaAnswerResult {
@@ -22742,7 +23114,7 @@ type CMsgDraftTriviaVoteCount struct {
 
 func (x *CMsgDraftTriviaVoteCount) Reset() {
 	*x = CMsgDraftTriviaVoteCount{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[296]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[299]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22754,7 +23126,7 @@ func (x *CMsgDraftTriviaVoteCount) String() string {
 func (*CMsgDraftTriviaVoteCount) ProtoMessage() {}
 
 func (x *CMsgDraftTriviaVoteCount) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[296]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[299]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22767,7 +23139,7 @@ func (x *CMsgDraftTriviaVoteCount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDraftTriviaVoteCount.ProtoReflect.Descriptor instead.
 func (*CMsgDraftTriviaVoteCount) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{296}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{299}
 }
 
 func (x *CMsgDraftTriviaVoteCount) GetTotalVotes() uint32 {
@@ -22799,7 +23171,7 @@ type CMsgClientToGCRequestReporterUpdates struct {
 
 func (x *CMsgClientToGCRequestReporterUpdates) Reset() {
 	*x = CMsgClientToGCRequestReporterUpdates{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[297]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[300]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22811,7 +23183,7 @@ func (x *CMsgClientToGCRequestReporterUpdates) String() string {
 func (*CMsgClientToGCRequestReporterUpdates) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestReporterUpdates) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[297]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[300]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22824,7 +23196,7 @@ func (x *CMsgClientToGCRequestReporterUpdates) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCRequestReporterUpdates.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestReporterUpdates) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{297}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{300}
 }
 
 type CMsgClientToGCRequestReporterUpdatesResponse struct {
@@ -22844,7 +23216,7 @@ const (
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse) Reset() {
 	*x = CMsgClientToGCRequestReporterUpdatesResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[298]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[301]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22856,7 +23228,7 @@ func (x *CMsgClientToGCRequestReporterUpdatesResponse) String() string {
 func (*CMsgClientToGCRequestReporterUpdatesResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[298]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[301]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22869,7 +23241,7 @@ func (x *CMsgClientToGCRequestReporterUpdatesResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCRequestReporterUpdatesResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestReporterUpdatesResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{298}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{301}
 }
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse) GetEnumResult() CMsgClientToGCRequestReporterUpdatesResponse_EResponse {
@@ -22909,7 +23281,7 @@ type CMsgClientToGCAcknowledgeReporterUpdates struct {
 
 func (x *CMsgClientToGCAcknowledgeReporterUpdates) Reset() {
 	*x = CMsgClientToGCAcknowledgeReporterUpdates{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[299]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[302]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22921,7 +23293,7 @@ func (x *CMsgClientToGCAcknowledgeReporterUpdates) String() string {
 func (*CMsgClientToGCAcknowledgeReporterUpdates) ProtoMessage() {}
 
 func (x *CMsgClientToGCAcknowledgeReporterUpdates) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[299]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[302]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22934,7 +23306,7 @@ func (x *CMsgClientToGCAcknowledgeReporterUpdates) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCAcknowledgeReporterUpdates.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCAcknowledgeReporterUpdates) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{299}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{302}
 }
 
 func (x *CMsgClientToGCAcknowledgeReporterUpdates) GetMatchIds() []uint64 {
@@ -22952,7 +23324,7 @@ type CMsgClientToGCRecalibrateMMR struct {
 
 func (x *CMsgClientToGCRecalibrateMMR) Reset() {
 	*x = CMsgClientToGCRecalibrateMMR{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[300]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[303]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22964,7 +23336,7 @@ func (x *CMsgClientToGCRecalibrateMMR) String() string {
 func (*CMsgClientToGCRecalibrateMMR) ProtoMessage() {}
 
 func (x *CMsgClientToGCRecalibrateMMR) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[300]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[303]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22977,7 +23349,7 @@ func (x *CMsgClientToGCRecalibrateMMR) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRecalibrateMMR.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRecalibrateMMR) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{300}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{303}
 }
 
 type CMsgClientToGCRecalibrateMMRResponse struct {
@@ -22994,7 +23366,7 @@ const (
 
 func (x *CMsgClientToGCRecalibrateMMRResponse) Reset() {
 	*x = CMsgClientToGCRecalibrateMMRResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[301]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[304]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23006,7 +23378,7 @@ func (x *CMsgClientToGCRecalibrateMMRResponse) String() string {
 func (*CMsgClientToGCRecalibrateMMRResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRecalibrateMMRResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[301]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[304]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23019,7 +23391,7 @@ func (x *CMsgClientToGCRecalibrateMMRResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCRecalibrateMMRResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRecalibrateMMRResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{301}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{304}
 }
 
 func (x *CMsgClientToGCRecalibrateMMRResponse) GetResult() CMsgClientToGCRecalibrateMMRResponse_EResponse {
@@ -23040,7 +23412,7 @@ type CMsgDOTAPostGameItemAwardNotification struct {
 
 func (x *CMsgDOTAPostGameItemAwardNotification) Reset() {
 	*x = CMsgDOTAPostGameItemAwardNotification{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[302]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[305]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23052,7 +23424,7 @@ func (x *CMsgDOTAPostGameItemAwardNotification) String() string {
 func (*CMsgDOTAPostGameItemAwardNotification) ProtoMessage() {}
 
 func (x *CMsgDOTAPostGameItemAwardNotification) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[302]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[305]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23065,7 +23437,7 @@ func (x *CMsgDOTAPostGameItemAwardNotification) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgDOTAPostGameItemAwardNotification.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAPostGameItemAwardNotification) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{302}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{305}
 }
 
 func (x *CMsgDOTAPostGameItemAwardNotification) GetReceiverAccountId() uint32 {
@@ -23097,7 +23469,7 @@ type CMsgClientToGCGetOWMatchDetails struct {
 
 func (x *CMsgClientToGCGetOWMatchDetails) Reset() {
 	*x = CMsgClientToGCGetOWMatchDetails{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[303]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[306]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23109,7 +23481,7 @@ func (x *CMsgClientToGCGetOWMatchDetails) String() string {
 func (*CMsgClientToGCGetOWMatchDetails) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetOWMatchDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[303]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[306]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23122,7 +23494,7 @@ func (x *CMsgClientToGCGetOWMatchDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetOWMatchDetails.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetOWMatchDetails) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{303}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{306}
 }
 
 type CMsgClientToGCGetOWMatchDetailsResponse struct {
@@ -23150,7 +23522,7 @@ const (
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse) Reset() {
 	*x = CMsgClientToGCGetOWMatchDetailsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[304]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[307]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23162,7 +23534,7 @@ func (x *CMsgClientToGCGetOWMatchDetailsResponse) String() string {
 func (*CMsgClientToGCGetOWMatchDetailsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[304]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[307]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23175,7 +23547,7 @@ func (x *CMsgClientToGCGetOWMatchDetailsResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgClientToGCGetOWMatchDetailsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetOWMatchDetailsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{304}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{307}
 }
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse) GetResult() CMsgClientToGCGetOWMatchDetailsResponse_EResponse {
@@ -23273,7 +23645,7 @@ const (
 
 func (x *CMsgClientToGCSubmitOWConviction) Reset() {
 	*x = CMsgClientToGCSubmitOWConviction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[305]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[308]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23285,7 +23657,7 @@ func (x *CMsgClientToGCSubmitOWConviction) String() string {
 func (*CMsgClientToGCSubmitOWConviction) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitOWConviction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[305]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[308]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23298,7 +23670,7 @@ func (x *CMsgClientToGCSubmitOWConviction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCSubmitOWConviction.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitOWConviction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{305}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{308}
 }
 
 func (x *CMsgClientToGCSubmitOWConviction) GetOverwatchReplayId() uint64 {
@@ -23344,7 +23716,7 @@ const (
 
 func (x *CMsgClientToGCSubmitOWConvictionResponse) Reset() {
 	*x = CMsgClientToGCSubmitOWConvictionResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[306]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[309]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23356,7 +23728,7 @@ func (x *CMsgClientToGCSubmitOWConvictionResponse) String() string {
 func (*CMsgClientToGCSubmitOWConvictionResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSubmitOWConvictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[306]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[309]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23369,7 +23741,7 @@ func (x *CMsgClientToGCSubmitOWConvictionResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCSubmitOWConvictionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSubmitOWConvictionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{306}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{309}
 }
 
 func (x *CMsgClientToGCSubmitOWConvictionResponse) GetResult() CMsgClientToGCSubmitOWConvictionResponse_EResponse {
@@ -23394,7 +23766,7 @@ type CMsgClientToGCChinaSSAURLRequest struct {
 
 func (x *CMsgClientToGCChinaSSAURLRequest) Reset() {
 	*x = CMsgClientToGCChinaSSAURLRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[307]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[310]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23406,7 +23778,7 @@ func (x *CMsgClientToGCChinaSSAURLRequest) String() string {
 func (*CMsgClientToGCChinaSSAURLRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCChinaSSAURLRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[307]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[310]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23419,7 +23791,7 @@ func (x *CMsgClientToGCChinaSSAURLRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCChinaSSAURLRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCChinaSSAURLRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{307}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{310}
 }
 
 type CMsgClientToGCChinaSSAURLResponse struct {
@@ -23431,7 +23803,7 @@ type CMsgClientToGCChinaSSAURLResponse struct {
 
 func (x *CMsgClientToGCChinaSSAURLResponse) Reset() {
 	*x = CMsgClientToGCChinaSSAURLResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[308]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[311]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23443,7 +23815,7 @@ func (x *CMsgClientToGCChinaSSAURLResponse) String() string {
 func (*CMsgClientToGCChinaSSAURLResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCChinaSSAURLResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[308]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[311]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23456,7 +23828,7 @@ func (x *CMsgClientToGCChinaSSAURLResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCChinaSSAURLResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCChinaSSAURLResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{308}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{311}
 }
 
 func (x *CMsgClientToGCChinaSSAURLResponse) GetAgreementUrl() string {
@@ -23474,7 +23846,7 @@ type CMsgClientToGCChinaSSAAcceptedRequest struct {
 
 func (x *CMsgClientToGCChinaSSAAcceptedRequest) Reset() {
 	*x = CMsgClientToGCChinaSSAAcceptedRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[309]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[312]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23486,7 +23858,7 @@ func (x *CMsgClientToGCChinaSSAAcceptedRequest) String() string {
 func (*CMsgClientToGCChinaSSAAcceptedRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCChinaSSAAcceptedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[309]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[312]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23499,7 +23871,7 @@ func (x *CMsgClientToGCChinaSSAAcceptedRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCChinaSSAAcceptedRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCChinaSSAAcceptedRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{309}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{312}
 }
 
 type CMsgClientToGCChinaSSAAcceptedResponse struct {
@@ -23511,7 +23883,7 @@ type CMsgClientToGCChinaSSAAcceptedResponse struct {
 
 func (x *CMsgClientToGCChinaSSAAcceptedResponse) Reset() {
 	*x = CMsgClientToGCChinaSSAAcceptedResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[310]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[313]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23523,7 +23895,7 @@ func (x *CMsgClientToGCChinaSSAAcceptedResponse) String() string {
 func (*CMsgClientToGCChinaSSAAcceptedResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCChinaSSAAcceptedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[310]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[313]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23536,7 +23908,7 @@ func (x *CMsgClientToGCChinaSSAAcceptedResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCChinaSSAAcceptedResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCChinaSSAAcceptedResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{310}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{313}
 }
 
 func (x *CMsgClientToGCChinaSSAAcceptedResponse) GetAgreementAccepted() bool {
@@ -23555,7 +23927,7 @@ type CMsgGCToClientOverwatchCasesAvailable struct {
 
 func (x *CMsgGCToClientOverwatchCasesAvailable) Reset() {
 	*x = CMsgGCToClientOverwatchCasesAvailable{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[311]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[314]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23567,7 +23939,7 @@ func (x *CMsgGCToClientOverwatchCasesAvailable) String() string {
 func (*CMsgGCToClientOverwatchCasesAvailable) ProtoMessage() {}
 
 func (x *CMsgGCToClientOverwatchCasesAvailable) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[311]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[314]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23580,7 +23952,7 @@ func (x *CMsgGCToClientOverwatchCasesAvailable) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgGCToClientOverwatchCasesAvailable.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientOverwatchCasesAvailable) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{311}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{314}
 }
 
 func (x *CMsgGCToClientOverwatchCasesAvailable) GetExpireTime() uint32 {
@@ -23600,7 +23972,7 @@ type CMsgClientToGCStartWatchingOverwatch struct {
 
 func (x *CMsgClientToGCStartWatchingOverwatch) Reset() {
 	*x = CMsgClientToGCStartWatchingOverwatch{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[312]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[315]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23612,7 +23984,7 @@ func (x *CMsgClientToGCStartWatchingOverwatch) String() string {
 func (*CMsgClientToGCStartWatchingOverwatch) ProtoMessage() {}
 
 func (x *CMsgClientToGCStartWatchingOverwatch) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[312]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[315]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23625,7 +23997,7 @@ func (x *CMsgClientToGCStartWatchingOverwatch) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCStartWatchingOverwatch.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCStartWatchingOverwatch) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{312}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{315}
 }
 
 func (x *CMsgClientToGCStartWatchingOverwatch) GetOverwatchReplayId() uint64 {
@@ -23652,7 +24024,7 @@ type CMsgClientToGCStopWatchingOverwatch struct {
 
 func (x *CMsgClientToGCStopWatchingOverwatch) Reset() {
 	*x = CMsgClientToGCStopWatchingOverwatch{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[313]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[316]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23664,7 +24036,7 @@ func (x *CMsgClientToGCStopWatchingOverwatch) String() string {
 func (*CMsgClientToGCStopWatchingOverwatch) ProtoMessage() {}
 
 func (x *CMsgClientToGCStopWatchingOverwatch) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[313]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[316]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23677,7 +24049,7 @@ func (x *CMsgClientToGCStopWatchingOverwatch) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCStopWatchingOverwatch.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCStopWatchingOverwatch) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{313}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{316}
 }
 
 func (x *CMsgClientToGCStopWatchingOverwatch) GetOverwatchReplayId() uint64 {
@@ -23703,7 +24075,7 @@ type CMsgClientToGCOverwatchReplayError struct {
 
 func (x *CMsgClientToGCOverwatchReplayError) Reset() {
 	*x = CMsgClientToGCOverwatchReplayError{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[314]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[317]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23715,7 +24087,7 @@ func (x *CMsgClientToGCOverwatchReplayError) String() string {
 func (*CMsgClientToGCOverwatchReplayError) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverwatchReplayError) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[314]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[317]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23728,7 +24100,7 @@ func (x *CMsgClientToGCOverwatchReplayError) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCOverwatchReplayError.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverwatchReplayError) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{314}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{317}
 }
 
 func (x *CMsgClientToGCOverwatchReplayError) GetOverwatchReplayId() uint64 {
@@ -23746,7 +24118,7 @@ type CMsgClientToGCGetDPCFavorites struct {
 
 func (x *CMsgClientToGCGetDPCFavorites) Reset() {
 	*x = CMsgClientToGCGetDPCFavorites{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[315]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[318]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23758,7 +24130,7 @@ func (x *CMsgClientToGCGetDPCFavorites) String() string {
 func (*CMsgClientToGCGetDPCFavorites) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetDPCFavorites) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[315]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[318]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23771,7 +24143,7 @@ func (x *CMsgClientToGCGetDPCFavorites) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetDPCFavorites.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetDPCFavorites) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{315}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{318}
 }
 
 type CMsgClientToGCGetDPCFavoritesResponse struct {
@@ -23789,7 +24161,7 @@ const (
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse) Reset() {
 	*x = CMsgClientToGCGetDPCFavoritesResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[316]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[319]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23801,7 +24173,7 @@ func (x *CMsgClientToGCGetDPCFavoritesResponse) String() string {
 func (*CMsgClientToGCGetDPCFavoritesResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[316]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[319]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23814,7 +24186,7 @@ func (x *CMsgClientToGCGetDPCFavoritesResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCGetDPCFavoritesResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetDPCFavoritesResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{316}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{319}
 }
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse) GetResult() CMsgClientToGCGetDPCFavoritesResponse_EResponse {
@@ -23847,7 +24219,7 @@ const (
 
 func (x *CMsgClientToGCSetDPCFavoriteState) Reset() {
 	*x = CMsgClientToGCSetDPCFavoriteState{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[317]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[320]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23859,7 +24231,7 @@ func (x *CMsgClientToGCSetDPCFavoriteState) String() string {
 func (*CMsgClientToGCSetDPCFavoriteState) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetDPCFavoriteState) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[317]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[320]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23872,7 +24244,7 @@ func (x *CMsgClientToGCSetDPCFavoriteState) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCSetDPCFavoriteState.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetDPCFavoriteState) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{317}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{320}
 }
 
 func (x *CMsgClientToGCSetDPCFavoriteState) GetFavoriteType() EDPCFavoriteType {
@@ -23910,7 +24282,7 @@ const (
 
 func (x *CMsgClientToGCSetDPCFavoriteStateResponse) Reset() {
 	*x = CMsgClientToGCSetDPCFavoriteStateResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[318]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[321]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23922,7 +24294,7 @@ func (x *CMsgClientToGCSetDPCFavoriteStateResponse) String() string {
 func (*CMsgClientToGCSetDPCFavoriteStateResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetDPCFavoriteStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[318]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[321]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23935,7 +24307,7 @@ func (x *CMsgClientToGCSetDPCFavoriteStateResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCSetDPCFavoriteStateResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetDPCFavoriteStateResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{318}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{321}
 }
 
 func (x *CMsgClientToGCSetDPCFavoriteStateResponse) GetResult() CMsgClientToGCSetDPCFavoriteStateResponse_EResponse {
@@ -23955,7 +24327,7 @@ type CMsgClientToGCSetEventActiveSeasonID struct {
 
 func (x *CMsgClientToGCSetEventActiveSeasonID) Reset() {
 	*x = CMsgClientToGCSetEventActiveSeasonID{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[319]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[322]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23967,7 +24339,7 @@ func (x *CMsgClientToGCSetEventActiveSeasonID) String() string {
 func (*CMsgClientToGCSetEventActiveSeasonID) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetEventActiveSeasonID) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[319]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[322]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23980,7 +24352,7 @@ func (x *CMsgClientToGCSetEventActiveSeasonID) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCSetEventActiveSeasonID.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetEventActiveSeasonID) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{319}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{322}
 }
 
 func (x *CMsgClientToGCSetEventActiveSeasonID) GetEventId() uint32 {
@@ -24011,7 +24383,7 @@ const (
 
 func (x *CMsgClientToGCSetEventActiveSeasonIDResponse) Reset() {
 	*x = CMsgClientToGCSetEventActiveSeasonIDResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[320]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[323]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24023,7 +24395,7 @@ func (x *CMsgClientToGCSetEventActiveSeasonIDResponse) String() string {
 func (*CMsgClientToGCSetEventActiveSeasonIDResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetEventActiveSeasonIDResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[320]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[323]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24036,7 +24408,7 @@ func (x *CMsgClientToGCSetEventActiveSeasonIDResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCSetEventActiveSeasonIDResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetEventActiveSeasonIDResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{320}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{323}
 }
 
 func (x *CMsgClientToGCSetEventActiveSeasonIDResponse) GetResult() CMsgClientToGCSetEventActiveSeasonIDResponse_EResponse {
@@ -24063,7 +24435,7 @@ const (
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessings) Reset() {
 	*x = CMsgClientToGCPurchaseLabyrinthBlessings{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[321]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[324]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24075,7 +24447,7 @@ func (x *CMsgClientToGCPurchaseLabyrinthBlessings) String() string {
 func (*CMsgClientToGCPurchaseLabyrinthBlessings) ProtoMessage() {}
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessings) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[321]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[324]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24088,7 +24460,7 @@ func (x *CMsgClientToGCPurchaseLabyrinthBlessings) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCPurchaseLabyrinthBlessings.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPurchaseLabyrinthBlessings) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{321}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{324}
 }
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessings) GetEventId() EEvent {
@@ -24133,7 +24505,7 @@ const (
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse) Reset() {
 	*x = CMsgClientToGCPurchaseLabyrinthBlessingsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[322]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[325]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24145,7 +24517,7 @@ func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse) String() string {
 func (*CMsgClientToGCPurchaseLabyrinthBlessingsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[322]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[325]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24158,7 +24530,7 @@ func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCPurchaseLabyrinthBlessingsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPurchaseLabyrinthBlessingsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{322}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{325}
 }
 
 func (x *CMsgClientToGCPurchaseLabyrinthBlessingsResponse) GetResult() CMsgClientToGCPurchaseLabyrinthBlessingsResponse_EResponse {
@@ -24177,7 +24549,7 @@ type CMsgClientToGCGetStickerbookRequest struct {
 
 func (x *CMsgClientToGCGetStickerbookRequest) Reset() {
 	*x = CMsgClientToGCGetStickerbookRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[323]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[326]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24189,7 +24561,7 @@ func (x *CMsgClientToGCGetStickerbookRequest) String() string {
 func (*CMsgClientToGCGetStickerbookRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetStickerbookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[323]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[326]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24202,7 +24574,7 @@ func (x *CMsgClientToGCGetStickerbookRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCGetStickerbookRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetStickerbookRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{323}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{326}
 }
 
 func (x *CMsgClientToGCGetStickerbookRequest) GetAccountId() uint32 {
@@ -24227,7 +24599,7 @@ const (
 
 func (x *CMsgClientToGCGetStickerbookResponse) Reset() {
 	*x = CMsgClientToGCGetStickerbookResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[324]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[327]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24239,7 +24611,7 @@ func (x *CMsgClientToGCGetStickerbookResponse) String() string {
 func (*CMsgClientToGCGetStickerbookResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetStickerbookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[324]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[327]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24252,7 +24624,7 @@ func (x *CMsgClientToGCGetStickerbookResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCGetStickerbookResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetStickerbookResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{324}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{327}
 }
 
 func (x *CMsgClientToGCGetStickerbookResponse) GetResponse() CMsgClientToGCGetStickerbookResponse_EResponse {
@@ -24286,7 +24658,7 @@ const (
 
 func (x *CMsgClientToGCCreateStickerbookPageRequest) Reset() {
 	*x = CMsgClientToGCCreateStickerbookPageRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[325]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[328]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24298,7 +24670,7 @@ func (x *CMsgClientToGCCreateStickerbookPageRequest) String() string {
 func (*CMsgClientToGCCreateStickerbookPageRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreateStickerbookPageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[325]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[328]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24311,7 +24683,7 @@ func (x *CMsgClientToGCCreateStickerbookPageRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCCreateStickerbookPageRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreateStickerbookPageRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{325}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{328}
 }
 
 func (x *CMsgClientToGCCreateStickerbookPageRequest) GetTeamId() uint32 {
@@ -24350,7 +24722,7 @@ const (
 
 func (x *CMsgClientToGCCreateStickerbookPageResponse) Reset() {
 	*x = CMsgClientToGCCreateStickerbookPageResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[326]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[329]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24362,7 +24734,7 @@ func (x *CMsgClientToGCCreateStickerbookPageResponse) String() string {
 func (*CMsgClientToGCCreateStickerbookPageResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCCreateStickerbookPageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[326]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[329]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24375,7 +24747,7 @@ func (x *CMsgClientToGCCreateStickerbookPageResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCCreateStickerbookPageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCreateStickerbookPageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{326}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{329}
 }
 
 func (x *CMsgClientToGCCreateStickerbookPageResponse) GetResponse() CMsgClientToGCCreateStickerbookPageResponse_EResponse {
@@ -24403,7 +24775,7 @@ type CMsgClientToGCDeleteStickerbookPageRequest struct {
 
 func (x *CMsgClientToGCDeleteStickerbookPageRequest) Reset() {
 	*x = CMsgClientToGCDeleteStickerbookPageRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[327]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[330]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24415,7 +24787,7 @@ func (x *CMsgClientToGCDeleteStickerbookPageRequest) String() string {
 func (*CMsgClientToGCDeleteStickerbookPageRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCDeleteStickerbookPageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[327]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[330]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24428,7 +24800,7 @@ func (x *CMsgClientToGCDeleteStickerbookPageRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCDeleteStickerbookPageRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCDeleteStickerbookPageRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{327}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{330}
 }
 
 func (x *CMsgClientToGCDeleteStickerbookPageRequest) GetPageNum() uint32 {
@@ -24466,7 +24838,7 @@ const (
 
 func (x *CMsgClientToGCDeleteStickerbookPageResponse) Reset() {
 	*x = CMsgClientToGCDeleteStickerbookPageResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[328]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[331]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24478,7 +24850,7 @@ func (x *CMsgClientToGCDeleteStickerbookPageResponse) String() string {
 func (*CMsgClientToGCDeleteStickerbookPageResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCDeleteStickerbookPageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[328]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[331]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24491,7 +24863,7 @@ func (x *CMsgClientToGCDeleteStickerbookPageResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCDeleteStickerbookPageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCDeleteStickerbookPageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{328}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{331}
 }
 
 func (x *CMsgClientToGCDeleteStickerbookPageResponse) GetResponse() CMsgClientToGCDeleteStickerbookPageResponse_EResponse {
@@ -24510,7 +24882,7 @@ type CMsgClientToGCPlaceStickersRequest struct {
 
 func (x *CMsgClientToGCPlaceStickersRequest) Reset() {
 	*x = CMsgClientToGCPlaceStickersRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[329]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[332]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24522,7 +24894,7 @@ func (x *CMsgClientToGCPlaceStickersRequest) String() string {
 func (*CMsgClientToGCPlaceStickersRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceStickersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[329]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[332]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24535,7 +24907,7 @@ func (x *CMsgClientToGCPlaceStickersRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCPlaceStickersRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceStickersRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{329}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{332}
 }
 
 func (x *CMsgClientToGCPlaceStickersRequest) GetStickerItems() []*CMsgClientToGCPlaceStickersRequest_StickerItem {
@@ -24559,7 +24931,7 @@ const (
 
 func (x *CMsgClientToGCPlaceStickersResponse) Reset() {
 	*x = CMsgClientToGCPlaceStickersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[330]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[333]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24571,7 +24943,7 @@ func (x *CMsgClientToGCPlaceStickersResponse) String() string {
 func (*CMsgClientToGCPlaceStickersResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceStickersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[330]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[333]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24584,7 +24956,7 @@ func (x *CMsgClientToGCPlaceStickersResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCPlaceStickersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceStickersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{330}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{333}
 }
 
 func (x *CMsgClientToGCPlaceStickersResponse) GetResponse() CMsgClientToGCPlaceStickersResponse_EResponse {
@@ -24603,7 +24975,7 @@ type CMsgClientToGCPlaceCollectionStickersRequest struct {
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest) Reset() {
 	*x = CMsgClientToGCPlaceCollectionStickersRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[331]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[334]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24615,7 +24987,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersRequest) String() string {
 func (*CMsgClientToGCPlaceCollectionStickersRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[331]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[334]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24628,7 +25000,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersRequest) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCPlaceCollectionStickersRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceCollectionStickersRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{331}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{334}
 }
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest) GetSlots() []*CMsgClientToGCPlaceCollectionStickersRequest_Slot {
@@ -24652,7 +25024,7 @@ const (
 
 func (x *CMsgClientToGCPlaceCollectionStickersResponse) Reset() {
 	*x = CMsgClientToGCPlaceCollectionStickersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[332]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[335]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24664,7 +25036,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersResponse) String() string {
 func (*CMsgClientToGCPlaceCollectionStickersResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceCollectionStickersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[332]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[335]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24677,7 +25049,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCPlaceCollectionStickersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceCollectionStickersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{332}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{335}
 }
 
 func (x *CMsgClientToGCPlaceCollectionStickersResponse) GetResponse() CMsgClientToGCPlaceCollectionStickersResponse_EResponse {
@@ -24696,7 +25068,7 @@ type CMsgClientToGCOrderStickerbookTeamPageRequest struct {
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageRequest) Reset() {
 	*x = CMsgClientToGCOrderStickerbookTeamPageRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[333]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[336]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24708,7 +25080,7 @@ func (x *CMsgClientToGCOrderStickerbookTeamPageRequest) String() string {
 func (*CMsgClientToGCOrderStickerbookTeamPageRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[333]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[336]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24721,7 +25093,7 @@ func (x *CMsgClientToGCOrderStickerbookTeamPageRequest) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCOrderStickerbookTeamPageRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOrderStickerbookTeamPageRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{333}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{336}
 }
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageRequest) GetPageOrderSequence() *CMsgStickerbookTeamPageOrderSequence {
@@ -24745,7 +25117,7 @@ const (
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageResponse) Reset() {
 	*x = CMsgClientToGCOrderStickerbookTeamPageResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[334]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[337]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24757,7 +25129,7 @@ func (x *CMsgClientToGCOrderStickerbookTeamPageResponse) String() string {
 func (*CMsgClientToGCOrderStickerbookTeamPageResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[334]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[337]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24770,7 +25142,7 @@ func (x *CMsgClientToGCOrderStickerbookTeamPageResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCOrderStickerbookTeamPageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOrderStickerbookTeamPageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{334}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{337}
 }
 
 func (x *CMsgClientToGCOrderStickerbookTeamPageResponse) GetResponse() CMsgClientToGCOrderStickerbookTeamPageResponse_EResponse {
@@ -24791,7 +25163,7 @@ type CMsgClientToGCSetHeroSticker struct {
 
 func (x *CMsgClientToGCSetHeroSticker) Reset() {
 	*x = CMsgClientToGCSetHeroSticker{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[335]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[338]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24803,7 +25175,7 @@ func (x *CMsgClientToGCSetHeroSticker) String() string {
 func (*CMsgClientToGCSetHeroSticker) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetHeroSticker) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[335]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[338]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24816,7 +25188,7 @@ func (x *CMsgClientToGCSetHeroSticker) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCSetHeroSticker.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetHeroSticker) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{335}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{338}
 }
 
 func (x *CMsgClientToGCSetHeroSticker) GetHeroId() int32 {
@@ -24854,7 +25226,7 @@ const (
 
 func (x *CMsgClientToGCSetHeroStickerResponse) Reset() {
 	*x = CMsgClientToGCSetHeroStickerResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[336]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[339]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24866,7 +25238,7 @@ func (x *CMsgClientToGCSetHeroStickerResponse) String() string {
 func (*CMsgClientToGCSetHeroStickerResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetHeroStickerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[336]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[339]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24879,7 +25251,7 @@ func (x *CMsgClientToGCSetHeroStickerResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCSetHeroStickerResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetHeroStickerResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{336}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{339}
 }
 
 func (x *CMsgClientToGCSetHeroStickerResponse) GetResponse() CMsgClientToGCSetHeroStickerResponse_EResponse {
@@ -24897,7 +25269,7 @@ type CMsgClientToGCGetHeroStickers struct {
 
 func (x *CMsgClientToGCGetHeroStickers) Reset() {
 	*x = CMsgClientToGCGetHeroStickers{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[337]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[340]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24909,7 +25281,7 @@ func (x *CMsgClientToGCGetHeroStickers) String() string {
 func (*CMsgClientToGCGetHeroStickers) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetHeroStickers) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[337]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[340]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24922,7 +25294,7 @@ func (x *CMsgClientToGCGetHeroStickers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCGetHeroStickers.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetHeroStickers) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{337}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{340}
 }
 
 type CMsgClientToGCGetHeroStickersResponse struct {
@@ -24940,7 +25312,7 @@ const (
 
 func (x *CMsgClientToGCGetHeroStickersResponse) Reset() {
 	*x = CMsgClientToGCGetHeroStickersResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[338]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[341]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24952,7 +25324,7 @@ func (x *CMsgClientToGCGetHeroStickersResponse) String() string {
 func (*CMsgClientToGCGetHeroStickersResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetHeroStickersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[338]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[341]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24965,7 +25337,7 @@ func (x *CMsgClientToGCGetHeroStickersResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCGetHeroStickersResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetHeroStickersResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{338}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{341}
 }
 
 func (x *CMsgClientToGCGetHeroStickersResponse) GetResponse() CMsgClientToGCGetHeroStickersResponse_EResponse {
@@ -24992,7 +25364,7 @@ type CMsgClientToGCSetFavoritePage struct {
 
 func (x *CMsgClientToGCSetFavoritePage) Reset() {
 	*x = CMsgClientToGCSetFavoritePage{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[339]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[342]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25004,7 +25376,7 @@ func (x *CMsgClientToGCSetFavoritePage) String() string {
 func (*CMsgClientToGCSetFavoritePage) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetFavoritePage) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[339]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[342]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25017,7 +25389,7 @@ func (x *CMsgClientToGCSetFavoritePage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCSetFavoritePage.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetFavoritePage) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{339}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{342}
 }
 
 func (x *CMsgClientToGCSetFavoritePage) GetPageNum() uint32 {
@@ -25048,7 +25420,7 @@ const (
 
 func (x *CMsgClientToGCSetFavoritePageResponse) Reset() {
 	*x = CMsgClientToGCSetFavoritePageResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[340]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[343]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25060,7 +25432,7 @@ func (x *CMsgClientToGCSetFavoritePageResponse) String() string {
 func (*CMsgClientToGCSetFavoritePageResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetFavoritePageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[340]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[343]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25073,7 +25445,7 @@ func (x *CMsgClientToGCSetFavoritePageResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCSetFavoritePageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetFavoritePageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{340}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{343}
 }
 
 func (x *CMsgClientToGCSetFavoritePageResponse) GetResponse() CMsgClientToGCSetFavoritePageResponse_EResponse {
@@ -25099,7 +25471,7 @@ const (
 
 func (x *CMsgClientToGCClaimSwag) Reset() {
 	*x = CMsgClientToGCClaimSwag{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[341]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[344]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25111,7 +25483,7 @@ func (x *CMsgClientToGCClaimSwag) String() string {
 func (*CMsgClientToGCClaimSwag) ProtoMessage() {}
 
 func (x *CMsgClientToGCClaimSwag) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[341]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[344]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25124,7 +25496,7 @@ func (x *CMsgClientToGCClaimSwag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCClaimSwag.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCClaimSwag) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{341}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{344}
 }
 
 func (x *CMsgClientToGCClaimSwag) GetEventId() EEvent {
@@ -25162,7 +25534,7 @@ const (
 
 func (x *CMsgClientToGCClaimSwagResponse) Reset() {
 	*x = CMsgClientToGCClaimSwagResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[342]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[345]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25174,7 +25546,7 @@ func (x *CMsgClientToGCClaimSwagResponse) String() string {
 func (*CMsgClientToGCClaimSwagResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCClaimSwagResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[342]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[345]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25187,7 +25559,7 @@ func (x *CMsgClientToGCClaimSwagResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCClaimSwagResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCClaimSwagResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{342}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{345}
 }
 
 func (x *CMsgClientToGCClaimSwagResponse) GetResponse() CMsgClientToGCClaimSwagResponse_EResponse {
@@ -25206,7 +25578,7 @@ type CMsgClientToGCCollectorsCacheAvailableDataRequest struct {
 
 func (x *CMsgClientToGCCollectorsCacheAvailableDataRequest) Reset() {
 	*x = CMsgClientToGCCollectorsCacheAvailableDataRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[343]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[346]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25218,7 +25590,7 @@ func (x *CMsgClientToGCCollectorsCacheAvailableDataRequest) String() string {
 func (*CMsgClientToGCCollectorsCacheAvailableDataRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCCollectorsCacheAvailableDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[343]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[346]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25231,7 +25603,7 @@ func (x *CMsgClientToGCCollectorsCacheAvailableDataRequest) ProtoReflect() proto
 
 // Deprecated: Use CMsgClientToGCCollectorsCacheAvailableDataRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCollectorsCacheAvailableDataRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{343}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{346}
 }
 
 func (x *CMsgClientToGCCollectorsCacheAvailableDataRequest) GetContestId() uint32 {
@@ -25250,7 +25622,7 @@ type CMsgGCToClientCollectorsCacheAvailableDataResponse struct {
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse) Reset() {
 	*x = CMsgGCToClientCollectorsCacheAvailableDataResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[344]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[347]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25262,7 +25634,7 @@ func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse) String() string {
 func (*CMsgGCToClientCollectorsCacheAvailableDataResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[344]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[347]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25275,7 +25647,7 @@ func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse) ProtoReflect() prot
 
 // Deprecated: Use CMsgGCToClientCollectorsCacheAvailableDataResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCollectorsCacheAvailableDataResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{344}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{347}
 }
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse) GetVotes() []*CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote {
@@ -25294,7 +25666,7 @@ type CMsgClientToGCUploadMatchClip struct {
 
 func (x *CMsgClientToGCUploadMatchClip) Reset() {
 	*x = CMsgClientToGCUploadMatchClip{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[345]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[348]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25306,7 +25678,7 @@ func (x *CMsgClientToGCUploadMatchClip) String() string {
 func (*CMsgClientToGCUploadMatchClip) ProtoMessage() {}
 
 func (x *CMsgClientToGCUploadMatchClip) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[345]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[348]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25319,7 +25691,7 @@ func (x *CMsgClientToGCUploadMatchClip) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCUploadMatchClip.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUploadMatchClip) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{345}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{348}
 }
 
 func (x *CMsgClientToGCUploadMatchClip) GetMatchClip() *CMatchClip {
@@ -25343,7 +25715,7 @@ const (
 
 func (x *CMsgGCToClientUploadMatchClipResponse) Reset() {
 	*x = CMsgGCToClientUploadMatchClipResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[346]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[349]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25355,7 +25727,7 @@ func (x *CMsgGCToClientUploadMatchClipResponse) String() string {
 func (*CMsgGCToClientUploadMatchClipResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientUploadMatchClipResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[346]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[349]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25368,7 +25740,7 @@ func (x *CMsgGCToClientUploadMatchClipResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgGCToClientUploadMatchClipResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientUploadMatchClipResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{346}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{349}
 }
 
 func (x *CMsgGCToClientUploadMatchClipResponse) GetResponse() CMsgGCToClientUploadMatchClipResponse_EResponse {
@@ -25386,7 +25758,7 @@ type CMsgClientToGCMapStatsRequest struct {
 
 func (x *CMsgClientToGCMapStatsRequest) Reset() {
 	*x = CMsgClientToGCMapStatsRequest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[347]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[350]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25398,7 +25770,7 @@ func (x *CMsgClientToGCMapStatsRequest) String() string {
 func (*CMsgClientToGCMapStatsRequest) ProtoMessage() {}
 
 func (x *CMsgClientToGCMapStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[347]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[350]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25411,7 +25783,7 @@ func (x *CMsgClientToGCMapStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCMapStatsRequest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCMapStatsRequest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{347}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{350}
 }
 
 type CMsgGCToClientMapStatsResponse struct {
@@ -25430,7 +25802,7 @@ const (
 
 func (x *CMsgGCToClientMapStatsResponse) Reset() {
 	*x = CMsgGCToClientMapStatsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[348]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[351]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25442,7 +25814,7 @@ func (x *CMsgGCToClientMapStatsResponse) String() string {
 func (*CMsgGCToClientMapStatsResponse) ProtoMessage() {}
 
 func (x *CMsgGCToClientMapStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[348]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[351]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25455,7 +25827,7 @@ func (x *CMsgGCToClientMapStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCToClientMapStatsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientMapStatsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{348}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{351}
 }
 
 func (x *CMsgGCToClientMapStatsResponse) GetResponse() CMsgGCToClientMapStatsResponse_EResponse {
@@ -25492,7 +25864,7 @@ type CMsgRoadToTIAssignedQuest struct {
 
 func (x *CMsgRoadToTIAssignedQuest) Reset() {
 	*x = CMsgRoadToTIAssignedQuest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[349]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[352]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25504,7 +25876,7 @@ func (x *CMsgRoadToTIAssignedQuest) String() string {
 func (*CMsgRoadToTIAssignedQuest) ProtoMessage() {}
 
 func (x *CMsgRoadToTIAssignedQuest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[349]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[352]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25517,7 +25889,7 @@ func (x *CMsgRoadToTIAssignedQuest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgRoadToTIAssignedQuest.ProtoReflect.Descriptor instead.
 func (*CMsgRoadToTIAssignedQuest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{349}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{352}
 }
 
 func (x *CMsgRoadToTIAssignedQuest) GetQuestId() uint32 {
@@ -25564,7 +25936,7 @@ type CMsgRoadToTIUserData struct {
 
 func (x *CMsgRoadToTIUserData) Reset() {
 	*x = CMsgRoadToTIUserData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[350]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[353]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25576,7 +25948,7 @@ func (x *CMsgRoadToTIUserData) String() string {
 func (*CMsgRoadToTIUserData) ProtoMessage() {}
 
 func (x *CMsgRoadToTIUserData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[350]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[353]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25589,7 +25961,7 @@ func (x *CMsgRoadToTIUserData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgRoadToTIUserData.ProtoReflect.Descriptor instead.
 func (*CMsgRoadToTIUserData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{350}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{353}
 }
 
 func (x *CMsgRoadToTIUserData) GetQuests() []*CMsgRoadToTIAssignedQuest {
@@ -25608,7 +25980,7 @@ type CMsgClientToGCRoadToTIGetQuests struct {
 
 func (x *CMsgClientToGCRoadToTIGetQuests) Reset() {
 	*x = CMsgClientToGCRoadToTIGetQuests{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[351]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[354]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25620,7 +25992,7 @@ func (x *CMsgClientToGCRoadToTIGetQuests) String() string {
 func (*CMsgClientToGCRoadToTIGetQuests) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIGetQuests) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[351]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[354]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25633,7 +26005,7 @@ func (x *CMsgClientToGCRoadToTIGetQuests) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetQuests.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIGetQuests) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{351}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{354}
 }
 
 func (x *CMsgClientToGCRoadToTIGetQuests) GetEventId() uint32 {
@@ -25658,7 +26030,7 @@ const (
 
 func (x *CMsgClientToGCRoadToTIGetQuestsResponse) Reset() {
 	*x = CMsgClientToGCRoadToTIGetQuestsResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[352]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[355]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25670,7 +26042,7 @@ func (x *CMsgClientToGCRoadToTIGetQuestsResponse) String() string {
 func (*CMsgClientToGCRoadToTIGetQuestsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIGetQuestsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[352]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[355]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25683,7 +26055,7 @@ func (x *CMsgClientToGCRoadToTIGetQuestsResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetQuestsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIGetQuestsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{352}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{355}
 }
 
 func (x *CMsgClientToGCRoadToTIGetQuestsResponse) GetResponse() CMsgClientToGCRoadToTIGetQuestsResponse_EResponse {
@@ -25709,7 +26081,7 @@ type CMsgClientToGCRoadToTIGetActiveQuest struct {
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuest) Reset() {
 	*x = CMsgClientToGCRoadToTIGetActiveQuest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[353]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[356]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25721,7 +26093,7 @@ func (x *CMsgClientToGCRoadToTIGetActiveQuest) String() string {
 func (*CMsgClientToGCRoadToTIGetActiveQuest) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[353]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[356]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25734,7 +26106,7 @@ func (x *CMsgClientToGCRoadToTIGetActiveQuest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetActiveQuest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIGetActiveQuest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{353}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{356}
 }
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuest) GetEventId() uint32 {
@@ -25759,7 +26131,7 @@ const (
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse) Reset() {
 	*x = CMsgClientToGCRoadToTIGetActiveQuestResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[354]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[357]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25771,7 +26143,7 @@ func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse) String() string {
 func (*CMsgClientToGCRoadToTIGetActiveQuestResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[354]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[357]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25784,7 +26156,7 @@ func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCRoadToTIGetActiveQuestResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIGetActiveQuestResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{354}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{357}
 }
 
 func (x *CMsgClientToGCRoadToTIGetActiveQuestResponse) GetResponse() CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse {
@@ -25811,7 +26183,7 @@ type CMsgGCToClientRoadToTIQuestDataUpdated struct {
 
 func (x *CMsgGCToClientRoadToTIQuestDataUpdated) Reset() {
 	*x = CMsgGCToClientRoadToTIQuestDataUpdated{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[355]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[358]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25823,7 +26195,7 @@ func (x *CMsgGCToClientRoadToTIQuestDataUpdated) String() string {
 func (*CMsgGCToClientRoadToTIQuestDataUpdated) ProtoMessage() {}
 
 func (x *CMsgGCToClientRoadToTIQuestDataUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[355]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[358]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25836,7 +26208,7 @@ func (x *CMsgGCToClientRoadToTIQuestDataUpdated) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgGCToClientRoadToTIQuestDataUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientRoadToTIQuestDataUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{355}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{358}
 }
 
 func (x *CMsgGCToClientRoadToTIQuestDataUpdated) GetEventId() uint32 {
@@ -25864,7 +26236,7 @@ type CMsgClientToGCRoadToTIUseItem struct {
 
 func (x *CMsgClientToGCRoadToTIUseItem) Reset() {
 	*x = CMsgClientToGCRoadToTIUseItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[356]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[359]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25876,7 +26248,7 @@ func (x *CMsgClientToGCRoadToTIUseItem) String() string {
 func (*CMsgClientToGCRoadToTIUseItem) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIUseItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[356]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[359]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25889,7 +26261,7 @@ func (x *CMsgClientToGCRoadToTIUseItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCRoadToTIUseItem.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIUseItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{356}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{359}
 }
 
 func (x *CMsgClientToGCRoadToTIUseItem) GetEventId() uint32 {
@@ -25927,7 +26299,7 @@ const (
 
 func (x *CMsgClientToGCRoadToTIUseItemResponse) Reset() {
 	*x = CMsgClientToGCRoadToTIUseItemResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[357]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[360]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25939,7 +26311,7 @@ func (x *CMsgClientToGCRoadToTIUseItemResponse) String() string {
 func (*CMsgClientToGCRoadToTIUseItemResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIUseItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[357]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[360]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25952,7 +26324,7 @@ func (x *CMsgClientToGCRoadToTIUseItemResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCRoadToTIUseItemResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIUseItemResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{357}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{360}
 }
 
 func (x *CMsgClientToGCRoadToTIUseItemResponse) GetResponse() CMsgClientToGCRoadToTIUseItemResponse_EResponse {
@@ -25973,7 +26345,7 @@ type CMsgClientToGCRoadToTIDevForceQuest struct {
 
 func (x *CMsgClientToGCRoadToTIDevForceQuest) Reset() {
 	*x = CMsgClientToGCRoadToTIDevForceQuest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[358]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[361]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25985,7 +26357,7 @@ func (x *CMsgClientToGCRoadToTIDevForceQuest) String() string {
 func (*CMsgClientToGCRoadToTIDevForceQuest) ProtoMessage() {}
 
 func (x *CMsgClientToGCRoadToTIDevForceQuest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[358]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[361]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25998,7 +26370,7 @@ func (x *CMsgClientToGCRoadToTIDevForceQuest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCRoadToTIDevForceQuest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRoadToTIDevForceQuest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{358}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{361}
 }
 
 func (x *CMsgClientToGCRoadToTIDevForceQuest) GetEventId() uint32 {
@@ -26033,7 +26405,7 @@ type CMsgLobbyRoadToTIMatchQuestData struct {
 
 func (x *CMsgLobbyRoadToTIMatchQuestData) Reset() {
 	*x = CMsgLobbyRoadToTIMatchQuestData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[359]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[362]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26045,7 +26417,7 @@ func (x *CMsgLobbyRoadToTIMatchQuestData) String() string {
 func (*CMsgLobbyRoadToTIMatchQuestData) ProtoMessage() {}
 
 func (x *CMsgLobbyRoadToTIMatchQuestData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[359]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[362]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26058,7 +26430,7 @@ func (x *CMsgLobbyRoadToTIMatchQuestData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgLobbyRoadToTIMatchQuestData.ProtoReflect.Descriptor instead.
 func (*CMsgLobbyRoadToTIMatchQuestData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{359}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{362}
 }
 
 func (x *CMsgLobbyRoadToTIMatchQuestData) GetQuestData() *CMsgRoadToTIAssignedQuest {
@@ -26093,7 +26465,7 @@ type CMsgClientToGCNewBloomGift struct {
 
 func (x *CMsgClientToGCNewBloomGift) Reset() {
 	*x = CMsgClientToGCNewBloomGift{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[360]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[363]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26105,7 +26477,7 @@ func (x *CMsgClientToGCNewBloomGift) String() string {
 func (*CMsgClientToGCNewBloomGift) ProtoMessage() {}
 
 func (x *CMsgClientToGCNewBloomGift) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[360]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[363]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26118,7 +26490,7 @@ func (x *CMsgClientToGCNewBloomGift) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCNewBloomGift.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCNewBloomGift) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{360}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{363}
 }
 
 func (x *CMsgClientToGCNewBloomGift) GetDefindex() uint32 {
@@ -26157,7 +26529,7 @@ const (
 
 func (x *CMsgClientToGCNewBloomGiftResponse) Reset() {
 	*x = CMsgClientToGCNewBloomGiftResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[361]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[364]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26169,7 +26541,7 @@ func (x *CMsgClientToGCNewBloomGiftResponse) String() string {
 func (*CMsgClientToGCNewBloomGiftResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCNewBloomGiftResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[361]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[364]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26182,7 +26554,7 @@ func (x *CMsgClientToGCNewBloomGiftResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCNewBloomGiftResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCNewBloomGiftResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{361}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{364}
 }
 
 func (x *CMsgClientToGCNewBloomGiftResponse) GetResult() ENewBloomGiftingResponse {
@@ -26208,7 +26580,7 @@ type CMsgClientToGCSetBannedHeroes struct {
 
 func (x *CMsgClientToGCSetBannedHeroes) Reset() {
 	*x = CMsgClientToGCSetBannedHeroes{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[362]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[365]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26220,7 +26592,7 @@ func (x *CMsgClientToGCSetBannedHeroes) String() string {
 func (*CMsgClientToGCSetBannedHeroes) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetBannedHeroes) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[362]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[365]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26233,7 +26605,7 @@ func (x *CMsgClientToGCSetBannedHeroes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCSetBannedHeroes.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetBannedHeroes) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{362}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{365}
 }
 
 func (x *CMsgClientToGCSetBannedHeroes) GetBannedHeroIds() []int32 {
@@ -26254,7 +26626,7 @@ type CMsgClientToGCUpdateComicBookStats struct {
 
 func (x *CMsgClientToGCUpdateComicBookStats) Reset() {
 	*x = CMsgClientToGCUpdateComicBookStats{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[363]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[366]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26266,7 +26638,7 @@ func (x *CMsgClientToGCUpdateComicBookStats) String() string {
 func (*CMsgClientToGCUpdateComicBookStats) ProtoMessage() {}
 
 func (x *CMsgClientToGCUpdateComicBookStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[363]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[366]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26279,7 +26651,7 @@ func (x *CMsgClientToGCUpdateComicBookStats) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCUpdateComicBookStats.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUpdateComicBookStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{363}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{366}
 }
 
 func (x *CMsgClientToGCUpdateComicBookStats) GetComicId() uint32 {
@@ -26312,7 +26684,7 @@ type CMsgGCRankedPlayerInfoSubmit struct {
 
 func (x *CMsgGCRankedPlayerInfoSubmit) Reset() {
 	*x = CMsgGCRankedPlayerInfoSubmit{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[364]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[367]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26324,7 +26696,7 @@ func (x *CMsgGCRankedPlayerInfoSubmit) String() string {
 func (*CMsgGCRankedPlayerInfoSubmit) ProtoMessage() {}
 
 func (x *CMsgGCRankedPlayerInfoSubmit) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[364]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[367]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26337,7 +26709,7 @@ func (x *CMsgGCRankedPlayerInfoSubmit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgGCRankedPlayerInfoSubmit.ProtoReflect.Descriptor instead.
 func (*CMsgGCRankedPlayerInfoSubmit) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{364}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{367}
 }
 
 func (x *CMsgGCRankedPlayerInfoSubmit) GetName() string {
@@ -26361,7 +26733,7 @@ const (
 
 func (x *CMsgGCRankedPlayerInfoSubmitResponse) Reset() {
 	*x = CMsgGCRankedPlayerInfoSubmitResponse{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[365]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[368]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26373,7 +26745,7 @@ func (x *CMsgGCRankedPlayerInfoSubmitResponse) String() string {
 func (*CMsgGCRankedPlayerInfoSubmitResponse) ProtoMessage() {}
 
 func (x *CMsgGCRankedPlayerInfoSubmitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[365]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[368]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26386,7 +26758,7 @@ func (x *CMsgGCRankedPlayerInfoSubmitResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgGCRankedPlayerInfoSubmitResponse.ProtoReflect.Descriptor instead.
 func (*CMsgGCRankedPlayerInfoSubmitResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{365}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{368}
 }
 
 func (x *CMsgGCRankedPlayerInfoSubmitResponse) GetResult() CMsgGCRankedPlayerInfoSubmitResponse_EResult {
@@ -26394,6 +26766,600 @@ func (x *CMsgGCRankedPlayerInfoSubmitResponse) GetResult() CMsgGCRankedPlayerInf
 		return *x.Result
 	}
 	return Default_CMsgGCRankedPlayerInfoSubmitResponse_Result
+}
+
+type CMsgDOTAClaimGatedEvent struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EventId       *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgDOTAClaimGatedEvent fields.
+const (
+	Default_CMsgDOTAClaimGatedEvent_EventId = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgDOTAClaimGatedEvent) Reset() {
+	*x = CMsgDOTAClaimGatedEvent{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[369]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDOTAClaimGatedEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDOTAClaimGatedEvent) ProtoMessage() {}
+
+func (x *CMsgDOTAClaimGatedEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[369]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDOTAClaimGatedEvent.ProtoReflect.Descriptor instead.
+func (*CMsgDOTAClaimGatedEvent) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{369}
+}
+
+func (x *CMsgDOTAClaimGatedEvent) GetEventId() EEvent {
+	if x != nil && x.EventId != nil {
+		return *x.EventId
+	}
+	return Default_CMsgDOTAClaimGatedEvent_EventId
+}
+
+type CMsgDOTAClaimGatedEventResponse struct {
+	state         protoimpl.MessageState                      `protogen:"open.v1"`
+	Result        *CMsgDOTAClaimGatedEventResponse_ResultCode `protobuf:"varint,1,opt,name=result,enum=protocol.CMsgDOTAClaimGatedEventResponse_ResultCode,def=0" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgDOTAClaimGatedEventResponse fields.
+const (
+	Default_CMsgDOTAClaimGatedEventResponse_Result = CMsgDOTAClaimGatedEventResponse_Success
+)
+
+func (x *CMsgDOTAClaimGatedEventResponse) Reset() {
+	*x = CMsgDOTAClaimGatedEventResponse{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[370]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDOTAClaimGatedEventResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDOTAClaimGatedEventResponse) ProtoMessage() {}
+
+func (x *CMsgDOTAClaimGatedEventResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[370]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDOTAClaimGatedEventResponse.ProtoReflect.Descriptor instead.
+func (*CMsgDOTAClaimGatedEventResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{370}
+}
+
+func (x *CMsgDOTAClaimGatedEventResponse) GetResult() CMsgDOTAClaimGatedEventResponse_ResultCode {
+	if x != nil && x.Result != nil {
+		return *x.Result
+	}
+	return Default_CMsgDOTAClaimGatedEventResponse_Result
+}
+
+type CMsgClientToGCGetEventRanking struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EventId       *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	AccountId     *uint32                `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCGetEventRanking fields.
+const (
+	Default_CMsgClientToGCGetEventRanking_EventId = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgClientToGCGetEventRanking) Reset() {
+	*x = CMsgClientToGCGetEventRanking{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[371]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCGetEventRanking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCGetEventRanking) ProtoMessage() {}
+
+func (x *CMsgClientToGCGetEventRanking) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[371]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCGetEventRanking.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCGetEventRanking) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{371}
+}
+
+func (x *CMsgClientToGCGetEventRanking) GetEventId() EEvent {
+	if x != nil && x.EventId != nil {
+		return *x.EventId
+	}
+	return Default_CMsgClientToGCGetEventRanking_EventId
+}
+
+func (x *CMsgClientToGCGetEventRanking) GetAccountId() uint32 {
+	if x != nil && x.AccountId != nil {
+		return *x.AccountId
+	}
+	return 0
+}
+
+type CMsgClientToGCGetEventRankingResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	EventId         *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	AccountId       *uint32                `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	Score           *float32               `protobuf:"fixed32,3,opt,name=score" json:"score,omitempty"`
+	Percentile      *float32               `protobuf:"fixed32,4,opt,name=percentile" json:"percentile,omitempty"`
+	FinalRankBucket *uint32                `protobuf:"varint,5,opt,name=final_rank_bucket,json=finalRankBucket" json:"final_rank_bucket,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCGetEventRankingResponse fields.
+const (
+	Default_CMsgClientToGCGetEventRankingResponse_EventId = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgClientToGCGetEventRankingResponse) Reset() {
+	*x = CMsgClientToGCGetEventRankingResponse{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[372]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCGetEventRankingResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCGetEventRankingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[372]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCGetEventRankingResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCGetEventRankingResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{372}
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetEventId() EEvent {
+	if x != nil && x.EventId != nil {
+		return *x.EventId
+	}
+	return Default_CMsgClientToGCGetEventRankingResponse_EventId
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetAccountId() uint32 {
+	if x != nil && x.AccountId != nil {
+		return *x.AccountId
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetScore() float32 {
+	if x != nil && x.Score != nil {
+		return *x.Score
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetPercentile() float32 {
+	if x != nil && x.Percentile != nil {
+		return *x.Percentile
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetFinalRankBucket() uint32 {
+	if x != nil && x.FinalRankBucket != nil {
+		return *x.FinalRankBucket
+	}
+	return 0
+}
+
+type CMsgClientToGCGetEventCoupon struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EventId       *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	CouponIds     []uint32               `protobuf:"varint,2,rep,name=coupon_ids,json=couponIds" json:"coupon_ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCGetEventCoupon fields.
+const (
+	Default_CMsgClientToGCGetEventCoupon_EventId = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgClientToGCGetEventCoupon) Reset() {
+	*x = CMsgClientToGCGetEventCoupon{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[373]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCGetEventCoupon) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCGetEventCoupon) ProtoMessage() {}
+
+func (x *CMsgClientToGCGetEventCoupon) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[373]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCGetEventCoupon.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCGetEventCoupon) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{373}
+}
+
+func (x *CMsgClientToGCGetEventCoupon) GetEventId() EEvent {
+	if x != nil && x.EventId != nil {
+		return *x.EventId
+	}
+	return Default_CMsgClientToGCGetEventCoupon_EventId
+}
+
+func (x *CMsgClientToGCGetEventCoupon) GetCouponIds() []uint32 {
+	if x != nil {
+		return x.CouponIds
+	}
+	return nil
+}
+
+type CMsgClientToGCGetEventCouponResponse struct {
+	state         protoimpl.MessageState                           `protogen:"open.v1"`
+	Result        *CMsgClientToGCGetEventCouponResponse_ResultCode `protobuf:"varint,1,opt,name=result,enum=protocol.CMsgClientToGCGetEventCouponResponse_ResultCode,def=0" json:"result,omitempty"`
+	EventId       *EEvent                                          `protobuf:"varint,2,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	Coupons       []*CMsgClientToGCGetEventCouponResponse_Coupon   `protobuf:"bytes,3,rep,name=coupons" json:"coupons,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCGetEventCouponResponse fields.
+const (
+	Default_CMsgClientToGCGetEventCouponResponse_Result  = CMsgClientToGCGetEventCouponResponse_Success
+	Default_CMsgClientToGCGetEventCouponResponse_EventId = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgClientToGCGetEventCouponResponse) Reset() {
+	*x = CMsgClientToGCGetEventCouponResponse{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[374]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCGetEventCouponResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCGetEventCouponResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[374]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCGetEventCouponResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCGetEventCouponResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{374}
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse) GetResult() CMsgClientToGCGetEventCouponResponse_ResultCode {
+	if x != nil && x.Result != nil {
+		return *x.Result
+	}
+	return Default_CMsgClientToGCGetEventCouponResponse_Result
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse) GetEventId() EEvent {
+	if x != nil && x.EventId != nil {
+		return *x.EventId
+	}
+	return Default_CMsgClientToGCGetEventCouponResponse_EventId
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse) GetCoupons() []*CMsgClientToGCGetEventCouponResponse_Coupon {
+	if x != nil {
+		return x.Coupons
+	}
+	return nil
+}
+
+type CMsgClientToGCConvertEventPoints struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	EventIdPointsToBuy   *EEvent                `protobuf:"varint,1,opt,name=event_id_points_to_buy,json=eventIdPointsToBuy,enum=protocol.EEvent,def=0" json:"event_id_points_to_buy,omitempty"`
+	EventIdPointsToSpend *EEvent                `protobuf:"varint,2,opt,name=event_id_points_to_spend,json=eventIdPointsToSpend,enum=protocol.EEvent,def=0" json:"event_id_points_to_spend,omitempty"`
+	NumPointsToBuy       *uint32                `protobuf:"varint,3,opt,name=num_points_to_buy,json=numPointsToBuy" json:"num_points_to_buy,omitempty"`
+	NumPointsToSpend     *uint32                `protobuf:"varint,4,opt,name=num_points_to_spend,json=numPointsToSpend" json:"num_points_to_spend,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCConvertEventPoints fields.
+const (
+	Default_CMsgClientToGCConvertEventPoints_EventIdPointsToBuy   = EEvent_EVENT_ID_NONE
+	Default_CMsgClientToGCConvertEventPoints_EventIdPointsToSpend = EEvent_EVENT_ID_NONE
+)
+
+func (x *CMsgClientToGCConvertEventPoints) Reset() {
+	*x = CMsgClientToGCConvertEventPoints{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[375]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCConvertEventPoints) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCConvertEventPoints) ProtoMessage() {}
+
+func (x *CMsgClientToGCConvertEventPoints) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[375]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCConvertEventPoints.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCConvertEventPoints) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{375}
+}
+
+func (x *CMsgClientToGCConvertEventPoints) GetEventIdPointsToBuy() EEvent {
+	if x != nil && x.EventIdPointsToBuy != nil {
+		return *x.EventIdPointsToBuy
+	}
+	return Default_CMsgClientToGCConvertEventPoints_EventIdPointsToBuy
+}
+
+func (x *CMsgClientToGCConvertEventPoints) GetEventIdPointsToSpend() EEvent {
+	if x != nil && x.EventIdPointsToSpend != nil {
+		return *x.EventIdPointsToSpend
+	}
+	return Default_CMsgClientToGCConvertEventPoints_EventIdPointsToSpend
+}
+
+func (x *CMsgClientToGCConvertEventPoints) GetNumPointsToBuy() uint32 {
+	if x != nil && x.NumPointsToBuy != nil {
+		return *x.NumPointsToBuy
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCConvertEventPoints) GetNumPointsToSpend() uint32 {
+	if x != nil && x.NumPointsToSpend != nil {
+		return *x.NumPointsToSpend
+	}
+	return 0
+}
+
+type CMsgClientToGCConvertEventPointsResponse struct {
+	state         protoimpl.MessageState                               `protogen:"open.v1"`
+	Result        *CMsgClientToGCConvertEventPointsResponse_ResultCode `protobuf:"varint,1,opt,name=result,enum=protocol.CMsgClientToGCConvertEventPointsResponse_ResultCode,def=0" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCConvertEventPointsResponse fields.
+const (
+	Default_CMsgClientToGCConvertEventPointsResponse_Result = CMsgClientToGCConvertEventPointsResponse_Success
+)
+
+func (x *CMsgClientToGCConvertEventPointsResponse) Reset() {
+	*x = CMsgClientToGCConvertEventPointsResponse{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[376]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCConvertEventPointsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCConvertEventPointsResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCConvertEventPointsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[376]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCConvertEventPointsResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCConvertEventPointsResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{376}
+}
+
+func (x *CMsgClientToGCConvertEventPointsResponse) GetResult() CMsgClientToGCConvertEventPointsResponse_ResultCode {
+	if x != nil && x.Result != nil {
+		return *x.Result
+	}
+	return Default_CMsgClientToGCConvertEventPointsResponse_Result
+}
+
+type CMsgClientToGCInviteToDemoMode struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ServerId        *uint64                `protobuf:"fixed64,1,opt,name=server_id,json=serverId" json:"server_id,omitempty"`
+	InvitedPlayerId *uint64                `protobuf:"fixed64,2,opt,name=invited_player_id,json=invitedPlayerId" json:"invited_player_id,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCInviteToDemoMode) Reset() {
+	*x = CMsgClientToGCInviteToDemoMode{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[377]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCInviteToDemoMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCInviteToDemoMode) ProtoMessage() {}
+
+func (x *CMsgClientToGCInviteToDemoMode) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[377]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCInviteToDemoMode.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCInviteToDemoMode) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{377}
+}
+
+func (x *CMsgClientToGCInviteToDemoMode) GetServerId() uint64 {
+	if x != nil && x.ServerId != nil {
+		return *x.ServerId
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCInviteToDemoMode) GetInvitedPlayerId() uint64 {
+	if x != nil && x.InvitedPlayerId != nil {
+		return *x.InvitedPlayerId
+	}
+	return 0
+}
+
+type CMsgGCToClientInviteToDemoMode struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ServerId      *uint64                `protobuf:"fixed64,1,opt,name=server_id,json=serverId" json:"server_id,omitempty"`
+	FromPlayer    *uint64                `protobuf:"fixed64,2,opt,name=from_player,json=fromPlayer" json:"from_player,omitempty"`
+	PartyInvite   *bool                  `protobuf:"varint,3,opt,name=party_invite,json=partyInvite" json:"party_invite,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgGCToClientInviteToDemoMode) Reset() {
+	*x = CMsgGCToClientInviteToDemoMode{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[378]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgGCToClientInviteToDemoMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgGCToClientInviteToDemoMode) ProtoMessage() {}
+
+func (x *CMsgGCToClientInviteToDemoMode) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[378]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgGCToClientInviteToDemoMode.ProtoReflect.Descriptor instead.
+func (*CMsgGCToClientInviteToDemoMode) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{378}
+}
+
+func (x *CMsgGCToClientInviteToDemoMode) GetServerId() uint64 {
+	if x != nil && x.ServerId != nil {
+		return *x.ServerId
+	}
+	return 0
+}
+
+func (x *CMsgGCToClientInviteToDemoMode) GetFromPlayer() uint64 {
+	if x != nil && x.FromPlayer != nil {
+		return *x.FromPlayer
+	}
+	return 0
+}
+
+func (x *CMsgGCToClientInviteToDemoMode) GetPartyInvite() bool {
+	if x != nil && x.PartyInvite != nil {
+		return *x.PartyInvite
+	}
+	return false
 }
 
 type CMsgDOTARequestMatchesResponse_Series struct {
@@ -26407,7 +27373,7 @@ type CMsgDOTARequestMatchesResponse_Series struct {
 
 func (x *CMsgDOTARequestMatchesResponse_Series) Reset() {
 	*x = CMsgDOTARequestMatchesResponse_Series{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[366]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[379]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26419,7 +27385,7 @@ func (x *CMsgDOTARequestMatchesResponse_Series) String() string {
 func (*CMsgDOTARequestMatchesResponse_Series) ProtoMessage() {}
 
 func (x *CMsgDOTARequestMatchesResponse_Series) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[366]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[379]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26466,7 +27432,7 @@ type CMsgDOTAProfileTickets_LeaguePass struct {
 
 func (x *CMsgDOTAProfileTickets_LeaguePass) Reset() {
 	*x = CMsgDOTAProfileTickets_LeaguePass{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[367]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[380]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26478,7 +27444,7 @@ func (x *CMsgDOTAProfileTickets_LeaguePass) String() string {
 func (*CMsgDOTAProfileTickets_LeaguePass) ProtoMessage() {}
 
 func (x *CMsgDOTAProfileTickets_LeaguePass) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[367]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[380]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26518,7 +27484,7 @@ type CMsgDOTAWelcome_CExtraMsg struct {
 
 func (x *CMsgDOTAWelcome_CExtraMsg) Reset() {
 	*x = CMsgDOTAWelcome_CExtraMsg{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[368]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[381]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26530,7 +27496,7 @@ func (x *CMsgDOTAWelcome_CExtraMsg) String() string {
 func (*CMsgDOTAWelcome_CExtraMsg) ProtoMessage() {}
 
 func (x *CMsgDOTAWelcome_CExtraMsg) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[368]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[381]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26570,7 +27536,7 @@ type CMsgDOTAMatchVotes_PlayerVote struct {
 
 func (x *CMsgDOTAMatchVotes_PlayerVote) Reset() {
 	*x = CMsgDOTAMatchVotes_PlayerVote{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[369]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[382]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26582,7 +27548,7 @@ func (x *CMsgDOTAMatchVotes_PlayerVote) String() string {
 func (*CMsgDOTAMatchVotes_PlayerVote) ProtoMessage() {}
 
 func (x *CMsgDOTAMatchVotes_PlayerVote) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[369]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[382]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26647,7 +27613,7 @@ type CMsgGCGetHeroStandingsResponse_Hero struct {
 
 func (x *CMsgGCGetHeroStandingsResponse_Hero) Reset() {
 	*x = CMsgGCGetHeroStandingsResponse_Hero{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[370]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[383]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26659,7 +27625,7 @@ func (x *CMsgGCGetHeroStandingsResponse_Hero) String() string {
 func (*CMsgGCGetHeroStandingsResponse_Hero) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroStandingsResponse_Hero) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[370]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[383]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26672,7 +27638,7 @@ func (x *CMsgGCGetHeroStandingsResponse_Hero) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgGCGetHeroStandingsResponse_Hero.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroStandingsResponse_Hero) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{40, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{41, 0}
 }
 
 func (x *CMsgGCGetHeroStandingsResponse_Hero) GetHeroId() int32 {
@@ -26878,7 +27844,7 @@ type CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer struct {
 
 func (x *CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) Reset() {
 	*x = CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[371]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[384]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26890,7 +27856,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) String() string {
 func (*CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[371]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[384]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26903,7 +27869,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) ProtoReflect() pro
 
 // Deprecated: Use CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{43, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{44, 0}
 }
 
 func (x *CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer) GetTime() uint32 {
@@ -26958,7 +27924,7 @@ type CMsgGCGetHeroTimedStatsResponse_RankChunkedStats struct {
 
 func (x *CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) Reset() {
 	*x = CMsgGCGetHeroTimedStatsResponse_RankChunkedStats{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[372]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[385]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26970,7 +27936,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) String() string {
 func (*CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) ProtoMessage() {}
 
 func (x *CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[372]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[385]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26983,7 +27949,7 @@ func (x *CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCGetHeroTimedStatsResponse_RankChunkedStats.ProtoReflect.Descriptor instead.
 func (*CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{43, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{44, 1}
 }
 
 func (x *CMsgGCGetHeroTimedStatsResponse_RankChunkedStats) GetRankChunk() uint32 {
@@ -27010,7 +27976,7 @@ type CMsgDOTAClaimEventActionData_GrantItemGiftData struct {
 
 func (x *CMsgDOTAClaimEventActionData_GrantItemGiftData) Reset() {
 	*x = CMsgDOTAClaimEventActionData_GrantItemGiftData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[373]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[386]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27022,7 +27988,7 @@ func (x *CMsgDOTAClaimEventActionData_GrantItemGiftData) String() string {
 func (*CMsgDOTAClaimEventActionData_GrantItemGiftData) ProtoMessage() {}
 
 func (x *CMsgDOTAClaimEventActionData_GrantItemGiftData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[373]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[386]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27035,7 +28001,7 @@ func (x *CMsgDOTAClaimEventActionData_GrantItemGiftData) ProtoReflect() protoref
 
 // Deprecated: Use CMsgDOTAClaimEventActionData_GrantItemGiftData.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClaimEventActionData_GrantItemGiftData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{53, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{54, 0}
 }
 
 func (x *CMsgDOTAClaimEventActionData_GrantItemGiftData) GetGiveToAccountId() uint32 {
@@ -27067,7 +28033,7 @@ const (
 
 func (x *CMsgDOTAGetEventPointsResponse_Action) Reset() {
 	*x = CMsgDOTAGetEventPointsResponse_Action{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[374]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[387]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27079,7 +28045,7 @@ func (x *CMsgDOTAGetEventPointsResponse_Action) String() string {
 func (*CMsgDOTAGetEventPointsResponse_Action) ProtoMessage() {}
 
 func (x *CMsgDOTAGetEventPointsResponse_Action) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[374]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[387]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27092,7 +28058,7 @@ func (x *CMsgDOTAGetEventPointsResponse_Action) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgDOTAGetEventPointsResponse_Action.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetEventPointsResponse_Action) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{59, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{60, 0}
 }
 
 func (x *CMsgDOTAGetEventPointsResponse_Action) GetActionId() uint32 {
@@ -27139,7 +28105,7 @@ type CMsgDOTAGetPlayerMatchHistoryResponse_Match struct {
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse_Match) Reset() {
 	*x = CMsgDOTAGetPlayerMatchHistoryResponse_Match{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[375]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[388]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27151,7 +28117,7 @@ func (x *CMsgDOTAGetPlayerMatchHistoryResponse_Match) String() string {
 func (*CMsgDOTAGetPlayerMatchHistoryResponse_Match) ProtoMessage() {}
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse_Match) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[375]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[388]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27164,7 +28130,7 @@ func (x *CMsgDOTAGetPlayerMatchHistoryResponse_Match) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgDOTAGetPlayerMatchHistoryResponse_Match.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAGetPlayerMatchHistoryResponse_Match) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{71, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{72, 0}
 }
 
 func (x *CMsgDOTAGetPlayerMatchHistoryResponse_Match) GetMatchId() uint64 {
@@ -27332,7 +28298,7 @@ type CMsgClientToGCGetTrophyListResponse_Trophy struct {
 
 func (x *CMsgClientToGCGetTrophyListResponse_Trophy) Reset() {
 	*x = CMsgClientToGCGetTrophyListResponse_Trophy{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[376]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[389]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27344,7 +28310,7 @@ func (x *CMsgClientToGCGetTrophyListResponse_Trophy) String() string {
 func (*CMsgClientToGCGetTrophyListResponse_Trophy) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetTrophyListResponse_Trophy) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[376]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[389]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27357,7 +28323,7 @@ func (x *CMsgClientToGCGetTrophyListResponse_Trophy) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCGetTrophyListResponse_Trophy.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetTrophyListResponse_Trophy) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{88, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{89, 0}
 }
 
 func (x *CMsgClientToGCGetTrophyListResponse_Trophy) GetTrophyId() uint32 {
@@ -27397,7 +28363,7 @@ const (
 
 func (x *CMsgClientToGCSetProfileCardSlots_CardSlot) Reset() {
 	*x = CMsgClientToGCSetProfileCardSlots_CardSlot{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[377]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[390]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27409,7 +28375,7 @@ func (x *CMsgClientToGCSetProfileCardSlots_CardSlot) String() string {
 func (*CMsgClientToGCSetProfileCardSlots_CardSlot) ProtoMessage() {}
 
 func (x *CMsgClientToGCSetProfileCardSlots_CardSlot) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[377]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[390]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27422,7 +28388,7 @@ func (x *CMsgClientToGCSetProfileCardSlots_CardSlot) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCSetProfileCardSlots_CardSlot.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSetProfileCardSlots_CardSlot) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{94, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{95, 0}
 }
 
 func (x *CMsgClientToGCSetProfileCardSlots_CardSlot) GetSlotId() uint32 {
@@ -27456,7 +28422,7 @@ type CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame struct {
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) Reset() {
 	*x = CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[378]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[391]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27468,7 +28434,7 @@ func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) String() str
 func (*CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) ProtoMessage() {}
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[378]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[391]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27481,7 +28447,7 @@ func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) ProtoReflect
 
 // Deprecated: Use CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{101, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{102, 0}
 }
 
 func (x *CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame) GetCustomGameId() uint64 {
@@ -27508,7 +28474,7 @@ type CMsgDOTAPartyRichPresence_Member struct {
 
 func (x *CMsgDOTAPartyRichPresence_Member) Reset() {
 	*x = CMsgDOTAPartyRichPresence_Member{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[379]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[392]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27520,7 +28486,7 @@ func (x *CMsgDOTAPartyRichPresence_Member) String() string {
 func (*CMsgDOTAPartyRichPresence_Member) ProtoMessage() {}
 
 func (x *CMsgDOTAPartyRichPresence_Member) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[379]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[392]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27533,7 +28499,7 @@ func (x *CMsgDOTAPartyRichPresence_Member) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAPartyRichPresence_Member.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAPartyRichPresence_Member) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{108, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{109, 0}
 }
 
 func (x *CMsgDOTAPartyRichPresence_Member) GetSteamId() uint64 {
@@ -27570,7 +28536,7 @@ const (
 
 func (x *CMsgDOTAPartyRichPresence_WeekendTourney) Reset() {
 	*x = CMsgDOTAPartyRichPresence_WeekendTourney{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[380]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[393]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27582,7 +28548,7 @@ func (x *CMsgDOTAPartyRichPresence_WeekendTourney) String() string {
 func (*CMsgDOTAPartyRichPresence_WeekendTourney) ProtoMessage() {}
 
 func (x *CMsgDOTAPartyRichPresence_WeekendTourney) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[380]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[393]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27595,7 +28561,7 @@ func (x *CMsgDOTAPartyRichPresence_WeekendTourney) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgDOTAPartyRichPresence_WeekendTourney.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAPartyRichPresence_WeekendTourney) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{108, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{109, 1}
 }
 
 func (x *CMsgDOTAPartyRichPresence_WeekendTourney) GetDivision() uint32 {
@@ -27661,7 +28627,7 @@ type CMsgClientToGCGetQuestProgressResponse_Challenge struct {
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Challenge) Reset() {
 	*x = CMsgClientToGCGetQuestProgressResponse_Challenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[381]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[394]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27673,7 +28639,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse_Challenge) String() string {
 func (*CMsgClientToGCGetQuestProgressResponse_Challenge) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Challenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[381]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[394]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27686,7 +28652,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse_Challenge) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCGetQuestProgressResponse_Challenge.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetQuestProgressResponse_Challenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{115, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{116, 0}
 }
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Challenge) GetChallengeId() uint32 {
@@ -27741,7 +28707,7 @@ type CMsgClientToGCGetQuestProgressResponse_Quest struct {
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Quest) Reset() {
 	*x = CMsgClientToGCGetQuestProgressResponse_Quest{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[382]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[395]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27753,7 +28719,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse_Quest) String() string {
 func (*CMsgClientToGCGetQuestProgressResponse_Quest) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Quest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[382]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[395]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27766,7 +28732,7 @@ func (x *CMsgClientToGCGetQuestProgressResponse_Quest) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCGetQuestProgressResponse_Quest.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetQuestProgressResponse_Quest) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{115, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{116, 1}
 }
 
 func (x *CMsgClientToGCGetQuestProgressResponse_Quest) GetQuestId() uint32 {
@@ -27799,7 +28765,7 @@ const (
 
 func (x *CMsgEventGoals_EventGoal) Reset() {
 	*x = CMsgEventGoals_EventGoal{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[383]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[396]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27811,7 +28777,7 @@ func (x *CMsgEventGoals_EventGoal) String() string {
 func (*CMsgEventGoals_EventGoal) ProtoMessage() {}
 
 func (x *CMsgEventGoals_EventGoal) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[383]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[396]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27824,7 +28790,7 @@ func (x *CMsgEventGoals_EventGoal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgEventGoals_EventGoal.ProtoReflect.Descriptor instead.
 func (*CMsgEventGoals_EventGoal) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{126, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{127, 0}
 }
 
 func (x *CMsgEventGoals_EventGoal) GetEventId() EEvent {
@@ -27860,7 +28826,7 @@ type CMsgPredictionRankings_PredictionLine struct {
 
 func (x *CMsgPredictionRankings_PredictionLine) Reset() {
 	*x = CMsgPredictionRankings_PredictionLine{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[384]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[397]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27872,7 +28838,7 @@ func (x *CMsgPredictionRankings_PredictionLine) String() string {
 func (*CMsgPredictionRankings_PredictionLine) ProtoMessage() {}
 
 func (x *CMsgPredictionRankings_PredictionLine) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[384]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[397]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27885,7 +28851,7 @@ func (x *CMsgPredictionRankings_PredictionLine) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgPredictionRankings_PredictionLine.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionRankings_PredictionLine) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{128, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129, 0}
 }
 
 func (x *CMsgPredictionRankings_PredictionLine) GetAnswerId() uint32 {
@@ -27926,7 +28892,7 @@ type CMsgPredictionRankings_Prediction struct {
 
 func (x *CMsgPredictionRankings_Prediction) Reset() {
 	*x = CMsgPredictionRankings_Prediction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[385]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[398]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27938,7 +28904,7 @@ func (x *CMsgPredictionRankings_Prediction) String() string {
 func (*CMsgPredictionRankings_Prediction) ProtoMessage() {}
 
 func (x *CMsgPredictionRankings_Prediction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[385]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[398]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27951,7 +28917,7 @@ func (x *CMsgPredictionRankings_Prediction) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgPredictionRankings_Prediction.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionRankings_Prediction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{128, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129, 1}
 }
 
 func (x *CMsgPredictionRankings_Prediction) GetSelectionId() uint32 {
@@ -27978,7 +28944,7 @@ type CMsgPredictionResults_ResultBreakdown struct {
 
 func (x *CMsgPredictionResults_ResultBreakdown) Reset() {
 	*x = CMsgPredictionResults_ResultBreakdown{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[386]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[399]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27990,7 +28956,7 @@ func (x *CMsgPredictionResults_ResultBreakdown) String() string {
 func (*CMsgPredictionResults_ResultBreakdown) ProtoMessage() {}
 
 func (x *CMsgPredictionResults_ResultBreakdown) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[386]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[399]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28003,7 +28969,7 @@ func (x *CMsgPredictionResults_ResultBreakdown) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgPredictionResults_ResultBreakdown.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionResults_ResultBreakdown) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{130, 0}
 }
 
 func (x *CMsgPredictionResults_ResultBreakdown) GetAnswerSelection() uint32 {
@@ -28030,7 +28996,7 @@ type CMsgPredictionResults_Result struct {
 
 func (x *CMsgPredictionResults_Result) Reset() {
 	*x = CMsgPredictionResults_Result{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[387]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[400]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28042,7 +29008,7 @@ func (x *CMsgPredictionResults_Result) String() string {
 func (*CMsgPredictionResults_Result) ProtoMessage() {}
 
 func (x *CMsgPredictionResults_Result) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[387]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[400]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28055,7 +29021,7 @@ func (x *CMsgPredictionResults_Result) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgPredictionResults_Result.ProtoReflect.Descriptor instead.
 func (*CMsgPredictionResults_Result) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{129, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{130, 1}
 }
 
 func (x *CMsgPredictionResults_Result) GetSelectionId() uint32 {
@@ -28086,7 +29052,7 @@ type CMsgClientToGCTeammateStatsResponse_TeammateStat struct {
 
 func (x *CMsgClientToGCTeammateStatsResponse_TeammateStat) Reset() {
 	*x = CMsgClientToGCTeammateStatsResponse_TeammateStat{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[388]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[401]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28098,7 +29064,7 @@ func (x *CMsgClientToGCTeammateStatsResponse_TeammateStat) String() string {
 func (*CMsgClientToGCTeammateStatsResponse_TeammateStat) ProtoMessage() {}
 
 func (x *CMsgClientToGCTeammateStatsResponse_TeammateStat) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[388]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[401]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28111,7 +29077,7 @@ func (x *CMsgClientToGCTeammateStatsResponse_TeammateStat) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCTeammateStatsResponse_TeammateStat.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCTeammateStatsResponse_TeammateStat) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{137, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{138, 0}
 }
 
 func (x *CMsgClientToGCTeammateStatsResponse_TeammateStat) GetAccountId() uint32 {
@@ -28168,7 +29134,7 @@ type CMsgClientToGCRequestEventPointLogResponseV2_LogEntry struct {
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) Reset() {
 	*x = CMsgClientToGCRequestEventPointLogResponseV2_LogEntry{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[389]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[402]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28180,7 +29146,7 @@ func (x *CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) String() string 
 func (*CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[389]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[402]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28193,7 +29159,7 @@ func (x *CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) ProtoReflect() p
 
 // Deprecated: Use CMsgClientToGCRequestEventPointLogResponseV2_LogEntry.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{143, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{144, 0}
 }
 
 func (x *CMsgClientToGCRequestEventPointLogResponseV2_LogEntry) GetTimestamp() uint32 {
@@ -28239,7 +29205,7 @@ type CMsgGCToClientQuestProgressUpdated_Challenge struct {
 
 func (x *CMsgGCToClientQuestProgressUpdated_Challenge) Reset() {
 	*x = CMsgGCToClientQuestProgressUpdated_Challenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[390]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[403]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28251,7 +29217,7 @@ func (x *CMsgGCToClientQuestProgressUpdated_Challenge) String() string {
 func (*CMsgGCToClientQuestProgressUpdated_Challenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientQuestProgressUpdated_Challenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[390]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[403]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28264,7 +29230,7 @@ func (x *CMsgGCToClientQuestProgressUpdated_Challenge) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgGCToClientQuestProgressUpdated_Challenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientQuestProgressUpdated_Challenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{147, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{148, 0}
 }
 
 func (x *CMsgGCToClientQuestProgressUpdated_Challenge) GetChallengeId() uint32 {
@@ -28326,7 +29292,7 @@ type CMsgClientToGCSelectCompendiumInGamePrediction_Prediction struct {
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) Reset() {
 	*x = CMsgClientToGCSelectCompendiumInGamePrediction_Prediction{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[391]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[404]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28338,7 +29304,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) String() str
 func (*CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) ProtoMessage() {}
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[391]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[404]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28351,7 +29317,7 @@ func (x *CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) ProtoReflect
 
 // Deprecated: Use CMsgClientToGCSelectCompendiumInGamePrediction_Prediction.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{150, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{151, 0}
 }
 
 func (x *CMsgClientToGCSelectCompendiumInGamePrediction_Prediction) GetPredictionId() uint32 {
@@ -28381,7 +29347,7 @@ type CMsgGCToClientBattlePassRollup_International2016_Questlines struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Questlines) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_Questlines{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[392]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[405]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28393,7 +29359,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Questlines) String() s
 func (*CMsgGCToClientBattlePassRollup_International2016_Questlines) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Questlines) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[392]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[405]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28406,7 +29372,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Questlines) ProtoRefle
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_Questlines.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_Questlines) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Questlines) GetName() string {
@@ -28457,7 +29423,7 @@ type CMsgGCToClientBattlePassRollup_International2016_Wagering struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Wagering) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_Wagering{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[393]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[406]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28469,7 +29435,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Wagering) String() str
 func (*CMsgGCToClientBattlePassRollup_International2016_Wagering) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Wagering) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[393]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[406]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28482,7 +29448,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Wagering) ProtoReflect
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_Wagering.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_Wagering) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 1}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Wagering) GetTotalWagered() uint32 {
@@ -28531,7 +29497,7 @@ type CMsgGCToClientBattlePassRollup_International2016_Achievements struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Achievements) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_Achievements{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[394]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[407]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28543,7 +29509,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Achievements) String()
 func (*CMsgGCToClientBattlePassRollup_International2016_Achievements) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Achievements) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[394]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[407]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28556,7 +29522,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Achievements) ProtoRef
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_Achievements.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_Achievements) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 2}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Achievements) GetCompleted() uint32 {
@@ -28590,7 +29556,7 @@ type CMsgGCToClientBattlePassRollup_International2016_BattleCup struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_BattleCup) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_BattleCup{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[395]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[408]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28602,7 +29568,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_BattleCup) String() st
 func (*CMsgGCToClientBattlePassRollup_International2016_BattleCup) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_BattleCup) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[395]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[408]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28615,7 +29581,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_BattleCup) ProtoReflec
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_BattleCup.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_BattleCup) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 3}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_BattleCup) GetWins() uint32 {
@@ -28643,7 +29609,7 @@ type CMsgGCToClientBattlePassRollup_International2016_Predictions struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Predictions) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_Predictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[396]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[409]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28655,7 +29621,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Predictions) String() 
 func (*CMsgGCToClientBattlePassRollup_International2016_Predictions) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Predictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[396]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[409]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28668,7 +29634,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Predictions) ProtoRefl
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_Predictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_Predictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 4}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 4}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Predictions) GetCorrect() uint32 {
@@ -28702,7 +29668,7 @@ type CMsgGCToClientBattlePassRollup_International2016_Bracket struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Bracket) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_Bracket{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[397]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[410]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28714,7 +29680,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Bracket) String() stri
 func (*CMsgGCToClientBattlePassRollup_International2016_Bracket) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Bracket) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[397]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[410]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28727,7 +29693,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_Bracket) ProtoReflect(
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_Bracket.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_Bracket) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 5}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 5}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_Bracket) GetCorrect() uint32 {
@@ -28754,7 +29720,7 @@ type CMsgGCToClientBattlePassRollup_International2016_PlayerCard struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_PlayerCard) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_PlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[398]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[411]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28766,7 +29732,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_PlayerCard) String() s
 func (*CMsgGCToClientBattlePassRollup_International2016_PlayerCard) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_PlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[398]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[411]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28779,7 +29745,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_PlayerCard) ProtoRefle
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_PlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_PlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 6}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 6}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_PlayerCard) GetAccountId() uint32 {
@@ -28806,7 +29772,7 @@ type CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge struct {
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[399]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[412]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28818,7 +29784,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) Stri
 func (*CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[399]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[412]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28831,7 +29797,7 @@ func (x *CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) Prot
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{160, 7}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 7}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge) GetTotalScore() float32 {
@@ -28861,7 +29827,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_Questlines struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Questlines) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_Questlines{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[400]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[413]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28873,7 +29839,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Questlines) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Questlines) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Questlines) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[400]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[413]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28886,7 +29852,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Questlines) ProtoReflect() prot
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_Questlines.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Questlines) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Questlines) GetName() string {
@@ -28937,7 +29903,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_Wagering struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Wagering) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_Wagering{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[401]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[414]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28949,7 +29915,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Wagering) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Wagering) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Wagering) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[401]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[414]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28962,7 +29928,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Wagering) ProtoReflect() protor
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_Wagering.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Wagering) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 1}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Wagering) GetTotalWagered() uint32 {
@@ -29011,7 +29977,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_Achievements struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Achievements) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_Achievements{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[402]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[415]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29023,7 +29989,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Achievements) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Achievements) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Achievements) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[402]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[415]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29036,7 +30002,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Achievements) ProtoReflect() pr
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_Achievements.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Achievements) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 2}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Achievements) GetCompleted() uint32 {
@@ -29070,7 +30036,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_BattleCup struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_BattleCup{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[403]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[416]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29082,7 +30048,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[403]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[416]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29095,7 +30061,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) ProtoReflect() proto
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_BattleCup.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 3}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_BattleCup) GetWins() uint32 {
@@ -29123,7 +30089,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_Predictions struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Predictions) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_Predictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[404]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[417]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29135,7 +30101,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Predictions) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Predictions) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Predictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[404]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[417]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29148,7 +30114,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Predictions) ProtoReflect() pro
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_Predictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Predictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 4}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 4}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Predictions) GetCorrect() uint32 {
@@ -29182,7 +30148,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_Bracket struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Bracket) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_Bracket{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[405]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[418]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29194,7 +30160,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Bracket) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Bracket) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Bracket) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[405]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[418]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29207,7 +30173,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_Bracket) ProtoReflect() protore
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_Bracket.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_Bracket) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 5}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 5}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_Bracket) GetCorrect() uint32 {
@@ -29234,7 +30200,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[406]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[419]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29246,7 +30212,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) String() string {
 func (*CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[406]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[419]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29259,7 +30225,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) ProtoReflect() prot
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 6}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 6}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard) GetAccountId() uint32 {
@@ -29286,7 +30252,7 @@ type CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[407]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[420]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29298,7 +30264,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) String() stri
 func (*CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[407]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[420]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29311,7 +30277,7 @@ func (x *CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) ProtoReflect(
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{161, 7}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 7}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge) GetTotalScore() float32 {
@@ -29341,7 +30307,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_Questlines struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Questlines) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_Questlines{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[408]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[421]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29353,7 +30319,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Questlines) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Questlines) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Questlines) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[408]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[421]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29366,7 +30332,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Questlines) ProtoReflect() pr
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_Questlines.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Questlines) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Questlines) GetName() string {
@@ -29417,7 +30383,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_Wagering struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Wagering) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_Wagering{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[409]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[422]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29429,7 +30395,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Wagering) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Wagering) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Wagering) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[409]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[422]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29442,7 +30408,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Wagering) ProtoReflect() prot
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_Wagering.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Wagering) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 1}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Wagering) GetTotalWagered() uint32 {
@@ -29491,7 +30457,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_Achievements struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Achievements) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_Achievements{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[410]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[423]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29503,7 +30469,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Achievements) String() string
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Achievements) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Achievements) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[410]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[423]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29516,7 +30482,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Achievements) ProtoReflect() 
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_Achievements.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Achievements) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 2}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Achievements) GetCompleted() uint32 {
@@ -29550,7 +30516,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_BattleCup struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_BattleCup{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[411]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[424]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29562,7 +30528,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[411]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[424]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29575,7 +30541,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) ProtoReflect() pro
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_BattleCup.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 3}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_BattleCup) GetWins() uint32 {
@@ -29603,7 +30569,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_Predictions struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Predictions) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_Predictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[412]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[425]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29615,7 +30581,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Predictions) String() string 
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Predictions) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Predictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[412]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[425]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29628,7 +30594,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Predictions) ProtoReflect() p
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_Predictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Predictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 4}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 4}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Predictions) GetCorrect() uint32 {
@@ -29662,7 +30628,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_Bracket struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Bracket) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_Bracket{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[413]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[426]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29674,7 +30640,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Bracket) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Bracket) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Bracket) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[413]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[426]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29687,7 +30653,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_Bracket) ProtoReflect() proto
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_Bracket.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_Bracket) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 5}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 5}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_Bracket) GetCorrect() uint32 {
@@ -29714,7 +30680,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[414]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[427]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29726,7 +30692,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) String() string {
 func (*CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[414]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[427]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29739,7 +30705,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) ProtoReflect() pr
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 6}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 6}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard) GetAccountId() uint32 {
@@ -29766,7 +30732,7 @@ type CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge struct {
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[415]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[428]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29778,7 +30744,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) String() st
 func (*CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[415]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[428]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29791,7 +30757,7 @@ func (x *CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) ProtoReflec
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{162, 7}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 7}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge) GetTotalScore() float32 {
@@ -29821,7 +30787,7 @@ type CMsgGCToClientBattlePassRollup_TI7_Questlines struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Questlines) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_Questlines{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[416]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[429]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29833,7 +30799,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Questlines) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_Questlines) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Questlines) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[416]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[429]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29846,7 +30812,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Questlines) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_Questlines.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_Questlines) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Questlines) GetName() string {
@@ -29897,7 +30863,7 @@ type CMsgGCToClientBattlePassRollup_TI7_Wagering struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Wagering) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_Wagering{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[417]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[430]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29909,7 +30875,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Wagering) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_Wagering) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Wagering) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[417]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[430]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29922,7 +30888,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Wagering) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_Wagering.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_Wagering) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 1}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Wagering) GetTotalWagered() uint32 {
@@ -29971,7 +30937,7 @@ type CMsgGCToClientBattlePassRollup_TI7_Achievements struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Achievements) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_Achievements{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[418]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[431]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29983,7 +30949,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Achievements) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_Achievements) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Achievements) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[418]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[431]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29996,7 +30962,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Achievements) ProtoReflect() protore
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_Achievements.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_Achievements) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 2}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Achievements) GetCompleted() uint32 {
@@ -30030,7 +30996,7 @@ type CMsgGCToClientBattlePassRollup_TI7_BattleCup struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_BattleCup) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_BattleCup{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[419]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[432]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30042,7 +31008,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_BattleCup) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_BattleCup) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_BattleCup) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[419]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[432]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30055,7 +31021,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_BattleCup) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_BattleCup.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_BattleCup) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 3}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_BattleCup) GetWins() uint32 {
@@ -30083,7 +31049,7 @@ type CMsgGCToClientBattlePassRollup_TI7_Predictions struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Predictions) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_Predictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[420]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[433]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30095,7 +31061,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Predictions) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_Predictions) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Predictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[420]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[433]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30108,7 +31074,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Predictions) ProtoReflect() protoref
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_Predictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_Predictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 4}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 4}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Predictions) GetCorrect() uint32 {
@@ -30142,7 +31108,7 @@ type CMsgGCToClientBattlePassRollup_TI7_Bracket struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Bracket) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_Bracket{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[421]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[434]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30154,7 +31120,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Bracket) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_Bracket) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Bracket) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[421]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[434]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30167,7 +31133,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_Bracket) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_Bracket.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_Bracket) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 5}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 5}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_Bracket) GetCorrect() uint32 {
@@ -30194,7 +31160,7 @@ type CMsgGCToClientBattlePassRollup_TI7_PlayerCard struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_PlayerCard) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_PlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[422]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[435]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30206,7 +31172,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_PlayerCard) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_PlayerCard) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_PlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[422]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[435]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30219,7 +31185,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_PlayerCard) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_PlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_PlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 6}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 6}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_PlayerCard) GetAccountId() uint32 {
@@ -30246,7 +31212,7 @@ type CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[423]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[436]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30258,7 +31224,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[423]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[436]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30271,7 +31237,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) ProtoReflect() pro
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{163, 7}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 7}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge) GetTotalScore() float32 {
@@ -30300,7 +31266,7 @@ type CMsgGCToClientBattlePassRollup_TI8_CavernCrawl struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_CavernCrawl{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[424]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[437]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30312,7 +31278,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[424]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[437]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30325,7 +31291,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) ProtoReflect() protoref
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_CavernCrawl.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_CavernCrawl) GetRoomsCleared() uint32 {
@@ -30369,7 +31335,7 @@ type CMsgGCToClientBattlePassRollup_TI8_Wagering struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Wagering) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_Wagering{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[425]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[438]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30381,7 +31347,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Wagering) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_Wagering) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Wagering) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[425]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[438]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30394,7 +31360,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Wagering) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_Wagering.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_Wagering) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 1}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Wagering) GetTotalWagered() uint32 {
@@ -30443,7 +31409,7 @@ type CMsgGCToClientBattlePassRollup_TI8_Achievements struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Achievements) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_Achievements{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[426]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[439]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30455,7 +31421,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Achievements) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_Achievements) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Achievements) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[426]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[439]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30468,7 +31434,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Achievements) ProtoReflect() protore
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_Achievements.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_Achievements) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 2}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Achievements) GetCompleted() uint32 {
@@ -30503,7 +31469,7 @@ type CMsgGCToClientBattlePassRollup_TI8_Predictions struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Predictions) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_Predictions{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[427]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[440]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30515,7 +31481,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Predictions) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_Predictions) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Predictions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[427]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[440]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30528,7 +31494,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Predictions) ProtoReflect() protoref
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_Predictions.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_Predictions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 3}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Predictions) GetCorrect() uint32 {
@@ -30562,7 +31528,7 @@ type CMsgGCToClientBattlePassRollup_TI8_Bracket struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Bracket) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_Bracket{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[428]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[441]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30574,7 +31540,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Bracket) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_Bracket) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Bracket) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[428]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[441]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30587,7 +31553,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_Bracket) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_Bracket.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_Bracket) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 4}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 4}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_Bracket) GetCorrect() uint32 {
@@ -30614,7 +31580,7 @@ type CMsgGCToClientBattlePassRollup_TI8_PlayerCard struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_PlayerCard) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_PlayerCard{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[429]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[442]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30626,7 +31592,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_PlayerCard) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_PlayerCard) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_PlayerCard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[429]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[442]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30639,7 +31605,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_PlayerCard) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_PlayerCard.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_PlayerCard) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 5}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 5}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_PlayerCard) GetAccountId() uint32 {
@@ -30666,7 +31632,7 @@ type CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge struct {
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) Reset() {
 	*x = CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[430]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[443]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30678,7 +31644,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) String() string {
 func (*CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[430]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[443]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30691,7 +31657,7 @@ func (x *CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) ProtoReflect() pro
 
 // Deprecated: Use CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{164, 6}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{165, 6}
 }
 
 func (x *CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge) GetTotalScore() float32 {
@@ -30718,7 +31684,7 @@ type CMsgGCToClientBattlePassRollupListResponse_EventInfo struct {
 
 func (x *CMsgGCToClientBattlePassRollupListResponse_EventInfo) Reset() {
 	*x = CMsgGCToClientBattlePassRollupListResponse_EventInfo{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[431]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[444]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30730,7 +31696,7 @@ func (x *CMsgGCToClientBattlePassRollupListResponse_EventInfo) String() string {
 func (*CMsgGCToClientBattlePassRollupListResponse_EventInfo) ProtoMessage() {}
 
 func (x *CMsgGCToClientBattlePassRollupListResponse_EventInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[431]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[444]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30743,7 +31709,7 @@ func (x *CMsgGCToClientBattlePassRollupListResponse_EventInfo) ProtoReflect() pr
 
 // Deprecated: Use CMsgGCToClientBattlePassRollupListResponse_EventInfo.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientBattlePassRollupListResponse_EventInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{170, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{171, 0}
 }
 
 func (x *CMsgGCToClientBattlePassRollupListResponse_EventInfo) GetEventId() uint32 {
@@ -30772,7 +31738,7 @@ type CMsgDOTAClientToGCQuickStatsResponse_SimpleStats struct {
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) Reset() {
 	*x = CMsgDOTAClientToGCQuickStatsResponse_SimpleStats{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[432]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[445]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30784,7 +31750,7 @@ func (x *CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) String() string {
 func (*CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) ProtoMessage() {}
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[432]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[445]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30797,7 +31763,7 @@ func (x *CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) ProtoReflect() protor
 
 // Deprecated: Use CMsgDOTAClientToGCQuickStatsResponse_SimpleStats.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{188, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{189, 0}
 }
 
 func (x *CMsgDOTAClientToGCQuickStatsResponse_SimpleStats) GetWinPercent() float32 {
@@ -30841,7 +31807,7 @@ type CMsgProfileResponse_FeaturedHero struct {
 
 func (x *CMsgProfileResponse_FeaturedHero) Reset() {
 	*x = CMsgProfileResponse_FeaturedHero{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[433]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[446]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30853,7 +31819,7 @@ func (x *CMsgProfileResponse_FeaturedHero) String() string {
 func (*CMsgProfileResponse_FeaturedHero) ProtoMessage() {}
 
 func (x *CMsgProfileResponse_FeaturedHero) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[433]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[446]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30866,7 +31832,7 @@ func (x *CMsgProfileResponse_FeaturedHero) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileResponse_FeaturedHero.ProtoReflect.Descriptor instead.
 func (*CMsgProfileResponse_FeaturedHero) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{204, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{205, 0}
 }
 
 func (x *CMsgProfileResponse_FeaturedHero) GetHeroId() int32 {
@@ -30917,7 +31883,7 @@ type CMsgProfileResponse_MatchInfo struct {
 
 func (x *CMsgProfileResponse_MatchInfo) Reset() {
 	*x = CMsgProfileResponse_MatchInfo{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[434]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[447]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30929,7 +31895,7 @@ func (x *CMsgProfileResponse_MatchInfo) String() string {
 func (*CMsgProfileResponse_MatchInfo) ProtoMessage() {}
 
 func (x *CMsgProfileResponse_MatchInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[434]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[447]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30942,7 +31908,7 @@ func (x *CMsgProfileResponse_MatchInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgProfileResponse_MatchInfo.ProtoReflect.Descriptor instead.
 func (*CMsgProfileResponse_MatchInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{204, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{205, 1}
 }
 
 func (x *CMsgProfileResponse_MatchInfo) GetMatchId() uint64 {
@@ -30992,7 +31958,7 @@ type CMsgHeroGlobalDataResponse_GraphData struct {
 
 func (x *CMsgHeroGlobalDataResponse_GraphData) Reset() {
 	*x = CMsgHeroGlobalDataResponse_GraphData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[435]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[448]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31004,7 +31970,7 @@ func (x *CMsgHeroGlobalDataResponse_GraphData) String() string {
 func (*CMsgHeroGlobalDataResponse_GraphData) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataResponse_GraphData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[435]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[448]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31017,7 +31983,7 @@ func (x *CMsgHeroGlobalDataResponse_GraphData) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgHeroGlobalDataResponse_GraphData.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataResponse_GraphData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{210, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{211, 0}
 }
 
 func (x *CMsgHeroGlobalDataResponse_GraphData) GetDay() uint32 {
@@ -31060,7 +32026,7 @@ type CMsgHeroGlobalDataResponse_WeekData struct {
 
 func (x *CMsgHeroGlobalDataResponse_WeekData) Reset() {
 	*x = CMsgHeroGlobalDataResponse_WeekData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[436]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[449]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31072,7 +32038,7 @@ func (x *CMsgHeroGlobalDataResponse_WeekData) String() string {
 func (*CMsgHeroGlobalDataResponse_WeekData) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataResponse_WeekData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[436]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[449]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31085,7 +32051,7 @@ func (x *CMsgHeroGlobalDataResponse_WeekData) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgHeroGlobalDataResponse_WeekData.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataResponse_WeekData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{210, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{211, 1}
 }
 
 func (x *CMsgHeroGlobalDataResponse_WeekData) GetWeek() uint32 {
@@ -31129,7 +32095,7 @@ type CMsgHeroGlobalDataResponse_HeroDataPerRankChunk struct {
 
 func (x *CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) Reset() {
 	*x = CMsgHeroGlobalDataResponse_HeroDataPerRankChunk{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[437]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[450]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31141,7 +32107,7 @@ func (x *CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) String() string {
 func (*CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[437]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[450]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31154,7 +32120,7 @@ func (x *CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) ProtoReflect() protore
 
 // Deprecated: Use CMsgHeroGlobalDataResponse_HeroDataPerRankChunk.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{210, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{211, 2}
 }
 
 func (x *CMsgHeroGlobalDataResponse_HeroDataPerRankChunk) GetRankChunk() uint32 {
@@ -31205,7 +32171,7 @@ type CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData struct {
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) Reset() {
 	*x = CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[438]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[451]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31217,7 +32183,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) String() string {
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[438]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[451]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31230,7 +32196,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) ProtoReflect() proto
 
 // Deprecated: Use CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{212, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{213, 0}
 }
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData) GetHeroId() int32 {
@@ -31278,7 +32244,7 @@ type CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData struct {
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) Reset() {
 	*x = CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[439]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[452]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31290,7 +32256,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) String() strin
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) ProtoMessage() {}
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[439]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[452]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31303,7 +32269,7 @@ func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) ProtoReflect()
 
 // Deprecated: Use CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData.ProtoReflect.Descriptor instead.
 func (*CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{212, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{213, 1}
 }
 
 func (x *CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData) GetRank() uint32 {
@@ -31336,7 +32302,7 @@ const (
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) Reset() {
 	*x = CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[440]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[453]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31348,7 +32314,7 @@ func (x *CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) String() s
 func (*CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) ProtoMessage() {}
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[440]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[453]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31361,7 +32327,7 @@ func (x *CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) ProtoRefle
 
 // Deprecated: Use CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{216, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{217, 0}
 }
 
 func (x *CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo) GetPathIdCompleted() uint32 {
@@ -31401,7 +32367,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[441]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[454]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31413,7 +32379,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) Stri
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[441]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[454]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31426,7 +32392,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) Prot
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226, 0}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge) GetPathId_1() uint32 {
@@ -31453,7 +32419,7 @@ type CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem struct {
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[442]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[455]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31465,7 +32431,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) String(
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[442]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[455]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31478,7 +32444,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) ProtoRe
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226, 1}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem) GetItemType() uint32 {
@@ -31511,7 +32477,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[443]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[456]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31523,7 +32489,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) String() 
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[443]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[456]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31536,7 +32502,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) ProtoRefl
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225, 2}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226, 2}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap) GetMapRoomId() uint32 {
@@ -31583,7 +32549,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) Reset() {
 	*x = CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[444]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[457]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31595,7 +32561,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) String() s
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[444]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[457]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31608,7 +32574,7 @@ func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) ProtoRefle
 
 // Deprecated: Use CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{225, 3}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{226, 3}
 }
 
 func (x *CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant) GetMapVariant() uint32 {
@@ -31738,7 +32704,7 @@ const (
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) Reset() {
 	*x = CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[445]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[458]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31750,7 +32716,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) String
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) ProtoMessage() {}
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[445]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[458]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31763,7 +32729,7 @@ func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) ProtoR
 
 // Deprecated: Use CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{227, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{228, 0}
 }
 
 func (x *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant) GetMapVariant() uint32 {
@@ -31791,7 +32757,7 @@ type CMsgDOTAMutationList_Mutation struct {
 
 func (x *CMsgDOTAMutationList_Mutation) Reset() {
 	*x = CMsgDOTAMutationList_Mutation{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[446]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[459]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31803,7 +32769,7 @@ func (x *CMsgDOTAMutationList_Mutation) String() string {
 func (*CMsgDOTAMutationList_Mutation) ProtoMessage() {}
 
 func (x *CMsgDOTAMutationList_Mutation) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[446]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[459]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31816,7 +32782,7 @@ func (x *CMsgDOTAMutationList_Mutation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgDOTAMutationList_Mutation.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAMutationList_Mutation) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{228, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{229, 0}
 }
 
 func (x *CMsgDOTAMutationList_Mutation) GetId() uint32 {
@@ -31855,7 +32821,7 @@ const (
 
 func (x *CMsgEventTipsSummaryResponse_Tipper) Reset() {
 	*x = CMsgEventTipsSummaryResponse_Tipper{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[447]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[460]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31867,7 +32833,7 @@ func (x *CMsgEventTipsSummaryResponse_Tipper) String() string {
 func (*CMsgEventTipsSummaryResponse_Tipper) ProtoMessage() {}
 
 func (x *CMsgEventTipsSummaryResponse_Tipper) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[447]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[460]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31880,7 +32846,7 @@ func (x *CMsgEventTipsSummaryResponse_Tipper) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgEventTipsSummaryResponse_Tipper.ProtoReflect.Descriptor instead.
 func (*CMsgEventTipsSummaryResponse_Tipper) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{230, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{231, 0}
 }
 
 func (x *CMsgEventTipsSummaryResponse_Tipper) GetTipperAccountId() uint32 {
@@ -31916,7 +32882,7 @@ type CMsgSocialFeedResponse_FeedEvent struct {
 
 func (x *CMsgSocialFeedResponse_FeedEvent) Reset() {
 	*x = CMsgSocialFeedResponse_FeedEvent{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[448]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[461]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31928,7 +32894,7 @@ func (x *CMsgSocialFeedResponse_FeedEvent) String() string {
 func (*CMsgSocialFeedResponse_FeedEvent) ProtoMessage() {}
 
 func (x *CMsgSocialFeedResponse_FeedEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[448]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[461]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31941,7 +32907,7 @@ func (x *CMsgSocialFeedResponse_FeedEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgSocialFeedResponse_FeedEvent.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedResponse_FeedEvent) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{232, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{233, 0}
 }
 
 func (x *CMsgSocialFeedResponse_FeedEvent) GetFeedEventId() uint64 {
@@ -32032,7 +32998,7 @@ type CMsgSocialFeedCommentsResponse_FeedComment struct {
 
 func (x *CMsgSocialFeedCommentsResponse_FeedComment) Reset() {
 	*x = CMsgSocialFeedCommentsResponse_FeedComment{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[449]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[462]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32044,7 +33010,7 @@ func (x *CMsgSocialFeedCommentsResponse_FeedComment) String() string {
 func (*CMsgSocialFeedCommentsResponse_FeedComment) ProtoMessage() {}
 
 func (x *CMsgSocialFeedCommentsResponse_FeedComment) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[449]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[462]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32057,7 +33023,7 @@ func (x *CMsgSocialFeedCommentsResponse_FeedComment) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgSocialFeedCommentsResponse_FeedComment.ProtoReflect.Descriptor instead.
 func (*CMsgSocialFeedCommentsResponse_FeedComment) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{234, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{235, 0}
 }
 
 func (x *CMsgSocialFeedCommentsResponse_FeedComment) GetCommenterAccountId() uint32 {
@@ -32091,7 +33057,7 @@ type CMsgClientToGCRequestContestVotesResponse_ItemVote struct {
 
 func (x *CMsgClientToGCRequestContestVotesResponse_ItemVote) Reset() {
 	*x = CMsgClientToGCRequestContestVotesResponse_ItemVote{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[450]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[463]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32103,7 +33069,7 @@ func (x *CMsgClientToGCRequestContestVotesResponse_ItemVote) String() string {
 func (*CMsgClientToGCRequestContestVotesResponse_ItemVote) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestContestVotesResponse_ItemVote) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[450]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[463]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32116,7 +33082,7 @@ func (x *CMsgClientToGCRequestContestVotesResponse_ItemVote) ProtoReflect() prot
 
 // Deprecated: Use CMsgClientToGCRequestContestVotesResponse_ItemVote.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestContestVotesResponse_ItemVote) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{238, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{239, 0}
 }
 
 func (x *CMsgClientToGCRequestContestVotesResponse_ItemVote) GetContestItemId() uint64 {
@@ -32145,7 +33111,7 @@ type CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry struct {
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) Reset() {
 	*x = CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[451]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[464]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32157,7 +33123,7 @@ func (x *CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) String() string 
 func (*CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) ProtoMessage() {}
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[451]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[464]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32170,7 +33136,7 @@ func (x *CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) ProtoReflect() p
 
 // Deprecated: Use CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{252, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{255, 0}
 }
 
 func (x *CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry) GetAccountId() uint32 {
@@ -32211,7 +33177,7 @@ type CMsgGCToClientVerifyFavoritePlayersResponse_Result struct {
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse_Result) Reset() {
 	*x = CMsgGCToClientVerifyFavoritePlayersResponse_Result{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[452]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[465]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32223,7 +33189,7 @@ func (x *CMsgGCToClientVerifyFavoritePlayersResponse_Result) String() string {
 func (*CMsgGCToClientVerifyFavoritePlayersResponse_Result) ProtoMessage() {}
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse_Result) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[452]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[465]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32236,7 +33202,7 @@ func (x *CMsgGCToClientVerifyFavoritePlayersResponse_Result) ProtoReflect() prot
 
 // Deprecated: Use CMsgGCToClientVerifyFavoritePlayersResponse_Result.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientVerifyFavoritePlayersResponse_Result) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{273, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{276, 0}
 }
 
 func (x *CMsgGCToClientVerifyFavoritePlayersResponse_Result) GetPlayer() *CMsgPartySearchPlayer {
@@ -32265,7 +33231,7 @@ type CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate struct {
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) Reset() {
 	*x = CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[453]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[466]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32277,7 +33243,7 @@ func (x *CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) String() s
 func (*CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) ProtoMessage() {}
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[453]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[466]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32290,7 +33256,7 @@ func (x *CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) ProtoRefle
 
 // Deprecated: Use CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{298, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{301, 0}
 }
 
 func (x *CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate) GetMatchId() uint64 {
@@ -32331,7 +33297,7 @@ type CMsgClientToGCGetOWMatchDetailsResponse_Marker struct {
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse_Marker) Reset() {
 	*x = CMsgClientToGCGetOWMatchDetailsResponse_Marker{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[454]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[467]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32343,7 +33309,7 @@ func (x *CMsgClientToGCGetOWMatchDetailsResponse_Marker) String() string {
 func (*CMsgClientToGCGetOWMatchDetailsResponse_Marker) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse_Marker) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[454]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[467]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32356,7 +33322,7 @@ func (x *CMsgClientToGCGetOWMatchDetailsResponse_Marker) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCGetOWMatchDetailsResponse_Marker.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetOWMatchDetailsResponse_Marker) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{304, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{307, 0}
 }
 
 func (x *CMsgClientToGCGetOWMatchDetailsResponse_Marker) GetStartGameTimeS() uint32 {
@@ -32388,7 +33354,7 @@ const (
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse_Favorite) Reset() {
 	*x = CMsgClientToGCGetDPCFavoritesResponse_Favorite{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[455]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[468]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32400,7 +33366,7 @@ func (x *CMsgClientToGCGetDPCFavoritesResponse_Favorite) String() string {
 func (*CMsgClientToGCGetDPCFavoritesResponse_Favorite) ProtoMessage() {}
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse_Favorite) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[455]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[468]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32413,7 +33379,7 @@ func (x *CMsgClientToGCGetDPCFavoritesResponse_Favorite) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCGetDPCFavoritesResponse_Favorite.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCGetDPCFavoritesResponse_Favorite) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{316, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{319, 0}
 }
 
 func (x *CMsgClientToGCGetDPCFavoritesResponse_Favorite) GetFavoriteType() EDPCFavoriteType {
@@ -32440,7 +33406,7 @@ type CMsgClientToGCPlaceStickersRequest_StickerItem struct {
 
 func (x *CMsgClientToGCPlaceStickersRequest_StickerItem) Reset() {
 	*x = CMsgClientToGCPlaceStickersRequest_StickerItem{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[456]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[469]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32452,7 +33418,7 @@ func (x *CMsgClientToGCPlaceStickersRequest_StickerItem) String() string {
 func (*CMsgClientToGCPlaceStickersRequest_StickerItem) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceStickersRequest_StickerItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[456]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[469]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32465,7 +33431,7 @@ func (x *CMsgClientToGCPlaceStickersRequest_StickerItem) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCPlaceStickersRequest_StickerItem.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceStickersRequest_StickerItem) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{329, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{332, 0}
 }
 
 func (x *CMsgClientToGCPlaceStickersRequest_StickerItem) GetPageNum() uint32 {
@@ -32495,7 +33461,7 @@ type CMsgClientToGCPlaceCollectionStickersRequest_Slot struct {
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest_Slot) Reset() {
 	*x = CMsgClientToGCPlaceCollectionStickersRequest_Slot{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[457]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[470]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32507,7 +33473,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersRequest_Slot) String() string {
 func (*CMsgClientToGCPlaceCollectionStickersRequest_Slot) ProtoMessage() {}
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest_Slot) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[457]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[470]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32520,7 +33486,7 @@ func (x *CMsgClientToGCPlaceCollectionStickersRequest_Slot) ProtoReflect() proto
 
 // Deprecated: Use CMsgClientToGCPlaceCollectionStickersRequest_Slot.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCPlaceCollectionStickersRequest_Slot) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{331, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{334, 0}
 }
 
 func (x *CMsgClientToGCPlaceCollectionStickersRequest_Slot) GetPageNum() uint32 {
@@ -32573,7 +33539,7 @@ const (
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) Reset() {
 	*x = CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[458]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[471]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32585,7 +33551,7 @@ func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) String() strin
 func (*CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) ProtoMessage() {}
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[458]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[471]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32598,7 +33564,7 @@ func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) ProtoReflect()
 
 // Deprecated: Use CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{344, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{347, 0}
 }
 
 func (x *CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote) GetItemDef() uint32 {
@@ -32630,7 +33596,7 @@ const (
 
 func (x *CMsgClientToGCUpdateComicBookStats_SingleStat) Reset() {
 	*x = CMsgClientToGCUpdateComicBookStats_SingleStat{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[459]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[472]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32642,7 +33608,7 @@ func (x *CMsgClientToGCUpdateComicBookStats_SingleStat) String() string {
 func (*CMsgClientToGCUpdateComicBookStats_SingleStat) ProtoMessage() {}
 
 func (x *CMsgClientToGCUpdateComicBookStats_SingleStat) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[459]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[472]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32655,7 +33621,7 @@ func (x *CMsgClientToGCUpdateComicBookStats_SingleStat) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCUpdateComicBookStats_SingleStat.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUpdateComicBookStats_SingleStat) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{363, 0}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{366, 0}
 }
 
 func (x *CMsgClientToGCUpdateComicBookStats_SingleStat) GetStatType() CMsgClientToGCUpdateComicBookStat_Type {
@@ -32683,7 +33649,7 @@ type CMsgClientToGCUpdateComicBookStats_LanguageStats struct {
 
 func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) Reset() {
 	*x = CMsgClientToGCUpdateComicBookStats_LanguageStats{}
-	mi := &file_dota_gcmessages_client_proto_msgTypes[460]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[473]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32695,7 +33661,7 @@ func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) String() string {
 func (*CMsgClientToGCUpdateComicBookStats_LanguageStats) ProtoMessage() {}
 
 func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_proto_msgTypes[460]
+	mi := &file_dota_gcmessages_client_proto_msgTypes[473]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32708,7 +33674,7 @@ func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCUpdateComicBookStats_LanguageStats.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCUpdateComicBookStats_LanguageStats) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{363, 1}
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{366, 1}
 }
 
 func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) GetComicId() uint32 {
@@ -32730,6 +33696,58 @@ func (x *CMsgClientToGCUpdateComicBookStats_LanguageStats) GetClientComicLanguag
 		return *x.ClientComicLanguage
 	}
 	return 0
+}
+
+type CMsgClientToGCGetEventCouponResponse_Coupon struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CouponId      *uint32                `protobuf:"varint,1,opt,name=coupon_id,json=couponId" json:"coupon_id,omitempty"`
+	CouponCode    *string                `protobuf:"bytes,2,opt,name=coupon_code,json=couponCode" json:"coupon_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse_Coupon) Reset() {
+	*x = CMsgClientToGCGetEventCouponResponse_Coupon{}
+	mi := &file_dota_gcmessages_client_proto_msgTypes[474]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse_Coupon) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCGetEventCouponResponse_Coupon) ProtoMessage() {}
+
+func (x *CMsgClientToGCGetEventCouponResponse_Coupon) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_proto_msgTypes[474]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCGetEventCouponResponse_Coupon.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCGetEventCouponResponse_Coupon) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_proto_rawDescGZIP(), []int{374, 0}
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse_Coupon) GetCouponId() uint32 {
+	if x != nil && x.CouponId != nil {
+		return *x.CouponId
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCGetEventCouponResponse_Coupon) GetCouponCode() string {
+	if x != nil && x.CouponCode != nil {
+		return *x.CouponCode
+	}
+	return ""
 }
 
 var File_dota_gcmessages_client_proto protoreflect.FileDescriptor
@@ -32946,7 +33964,7 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\"g\n" +
 	" CMsgGCToClientPartySearchInvites\x12C\n" +
-	"\ainvites\x18\x01 \x03(\v2).protocol.CMsgGCToClientPartySearchInviteR\ainvites\"\xfc\b\n" +
+	"\ainvites\x18\x01 \x03(\v2).protocol.CMsgGCToClientPartySearchInviteR\ainvites\"\xd6\t\n" +
 	"\x0fCMsgDOTAWelcome\x12&\n" +
 	"\x0fstore_item_hash\x18\x05 \x01(\rR\rstoreItemHash\x128\n" +
 	"\x17timeplayedconsecutively\x18\x06 \x01(\rR\x17timeplayedconsecutively\x12@\n" +
@@ -32965,7 +33983,8 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\x1bparty_search_friend_invites\x18\x1f \x01(\v2*.protocol.CMsgGCToClientPartySearchInvitesR\x18partySearchFriendInvites\x121\n" +
 	"\x12remaining_playtime\x18  \x01(\x05:\x02-1R\x11remainingPlaytime\x12;\n" +
 	"\x1adisable_guild_persona_info\x18! \x01(\bR\x17disableGuildPersonaInfo\x12J\n" +
-	"\x14extra_message_blocks\x18\" \x03(\v2\x18.protocol.CExtraMsgBlockR\x12extraMessageBlocks\x1a7\n" +
+	"\x14extra_message_blocks\x18\" \x03(\v2\x18.protocol.CExtraMsgBlockR\x12extraMessageBlocks\x12X\n" +
+	"\x18active_event_for_display\x18# \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x15activeEventForDisplay\x1a7\n" +
 	"\tCExtraMsg\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x1a\n" +
 	"\bcontents\x18\x02 \x01(\fR\bcontents\"^\n" +
@@ -33013,7 +34032,9 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\x1bCMsgGCWatchDownloadedReplay\x12\x19\n" +
 	"\bmatch_id\x18\x01 \x01(\x04R\amatchId\x12W\n" +
 	"\n" +
-	"watch_type\x18\x02 \x01(\x0e2\x1e.protocol.DOTA_WatchReplayType:\x18DOTA_WATCH_REPLAY_NORMALR\twatchType\"\x1f\n" +
+	"watch_type\x18\x02 \x01(\x0e2\x1e.protocol.DOTA_WatchReplayType:\x18DOTA_WATCH_REPLAY_NORMALR\twatchType\"<\n" +
+	"\x1fCMsgClientToGCWatchingBroadcast\x12\x19\n" +
+	"\bmatch_id\x18\x01 \x01(\x04R\amatchId\"\x1f\n" +
 	"\x1dCMsgClientsRejoinChatChannels\"\x18\n" +
 	"\x16CMsgGCGetHeroStandings\"\xf2\a\n" +
 	"\x1eCMsgGCGetHeroStandingsResponse\x12K\n" +
@@ -33125,24 +34146,27 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"channel_id\x18\x01 \x01(\rR\tchannelId\x12!\n" +
 	"\fcountry_code\x18\x02 \x01(\tR\vcountryCode\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12#\n" +
-	"\rlanguage_code\x18\x04 \x01(\tR\flanguageCode\"\xee\x01\n" +
+	"\rlanguage_code\x18\x04 \x01(\tR\flanguageCode\"\xaa\x02\n" +
 	"\x1cCMsgDOTAClaimEventActionData\x12i\n" +
-	"\x14grant_item_gift_data\x18\x04 \x01(\v28.protocol.CMsgDOTAClaimEventActionData.GrantItemGiftDataR\x11grantItemGiftData\x1ac\n" +
+	"\x14grant_item_gift_data\x18\x04 \x01(\v28.protocol.CMsgDOTAClaimEventActionData.GrantItemGiftDataR\x11grantItemGiftData\x12:\n" +
+	"\x1agrant_item_choice_item_def\x18\x05 \x01(\x04R\x16grantItemChoiceItemDef\x1ac\n" +
 	"\x11GrantItemGiftData\x12+\n" +
 	"\x12give_to_account_id\x18\x01 \x01(\rR\x0fgiveToAccountId\x12!\n" +
-	"\fgift_message\x18\x02 \x01(\tR\vgiftMessage\"\x87\x02\n" +
+	"\fgift_message\x18\x02 \x01(\tR\vgiftMessage\"\xb2\x02\n" +
 	"\x18CMsgDOTAClaimEventAction\x12\x19\n" +
 	"\bevent_id\x18\x01 \x01(\rR\aeventId\x12\x1b\n" +
 	"\taction_id\x18\x02 \x01(\rR\bactionId\x12\x1a\n" +
 	"\bquantity\x18\x03 \x01(\rR\bquantity\x12:\n" +
 	"\x04data\x18\x04 \x01(\v2&.protocol.CMsgDOTAClaimEventActionDataR\x04data\x12[\n" +
 	"\n" +
-	"score_mode\x18\x05 \x01(\x0e2\x1f.protocol.EEventActionScoreMode:\x1bk_eEventActionScoreMode_AddR\tscoreMode\"\x96\x01\n" +
+	"score_mode\x18\x05 \x01(\x0e2\x1f.protocol.EEventActionScoreMode:\x1bk_eEventActionScoreMode_AddR\tscoreMode\x12)\n" +
+	"\x10suppress_rewards\x18\x06 \x01(\bR\x0fsuppressRewards\"\xc1\x01\n" +
 	"'CMsgClientToGCClaimEventActionUsingItem\x12\x19\n" +
 	"\bevent_id\x18\x01 \x01(\rR\aeventId\x12\x1b\n" +
 	"\taction_id\x18\x02 \x01(\rR\bactionId\x12\x17\n" +
 	"\aitem_id\x18\x03 \x01(\x04R\x06itemId\x12\x1a\n" +
-	"\bquantity\x18\x04 \x01(\rR\bquantity\"\x84\x01\n" +
+	"\bquantity\x18\x04 \x01(\rR\bquantity\x12)\n" +
+	"\x10suppress_rewards\x18\x05 \x01(\bR\x0fsuppressRewards\"\x84\x01\n" +
 	"/CMsgClientToGCClaimEventActionUsingItemResponse\x12Q\n" +
 	"\x0eaction_results\x18\x01 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\ractionResults\"\x9e\x01\n" +
 	"0CMsgGCToClientClaimEventActionUsingItemCompleted\x12\x17\n" +
@@ -34528,6 +35552,9 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12!\n" +
 	"\fremove_audit\x18\x02 \x01(\bR\vremoveAudit\"|\n" +
 	"\x1eCMsgDevResetEventStateResponse\x12Z\n" +
+	"\x06result\x18\x01 \x01(\x0e2 .protocol.EDevEventRequestResult: k_EDevEventRequestResult_SuccessR\x06result\"\x18\n" +
+	"\x16CMsgDevReloadAllEvents\"|\n" +
+	"\x1eCMsgDevReloadAllEventsResponse\x12Z\n" +
 	"\x06result\x18\x01 \x01(\x0e2 .protocol.EDevEventRequestResult: k_EDevEventRequestResult_SuccessR\x06result\";\n" +
 	" CMsgConsumeEventSupportGrantItem\x12\x17\n" +
 	"\aitem_id\x18\x01 \x01(\x04R\x06itemId\"\x8e\x01\n" +
@@ -35255,7 +36282,77 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\x06result\x18\x01 \x01(\x0e26.protocol.CMsgGCRankedPlayerInfoSubmitResponse.EResult:\aSUCCESSR\x06result\"-\n" +
 	"\aEResult\x12\v\n" +
 	"\aSUCCESS\x10\x00\x12\x15\n" +
-	"\x11ERROR_UNSPECIFIED\x10\x01*\xd8\x01\n" +
+	"\x11ERROR_UNSPECIFIED\x10\x01\"U\n" +
+	"\x17CMsgDOTAClaimGatedEvent\x12:\n" +
+	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\x82\x02\n" +
+	"\x1fCMsgDOTAClaimGatedEventResponse\x12U\n" +
+	"\x06result\x18\x01 \x01(\x0e24.protocol.CMsgDOTAClaimGatedEventResponse.ResultCode:\aSuccessR\x06result\"\x87\x01\n" +
+	"\n" +
+	"ResultCode\x12\v\n" +
+	"\aSuccess\x10\x00\x12\x10\n" +
+	"\fInvalidEvent\x10\x01\x12\x12\n" +
+	"\x0eEventNotActive\x10\x02\x12\x12\n" +
+	"\x0eUserIneligible\x10\x03\x12\x12\n" +
+	"\x0eAlreadyClaimed\x10\x04\x12\x0f\n" +
+	"\vServerError\x10\x05\x12\r\n" +
+	"\tRateLimit\x10\x06\"z\n" +
+	"\x1dCMsgClientToGCGetEventRanking\x12:\n" +
+	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\x02 \x01(\rR\taccountId\"\xe4\x01\n" +
+	"%CMsgClientToGCGetEventRankingResponse\x12:\n" +
+	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\x02 \x01(\rR\taccountId\x12\x14\n" +
+	"\x05score\x18\x03 \x01(\x02R\x05score\x12\x1e\n" +
+	"\n" +
+	"percentile\x18\x04 \x01(\x02R\n" +
+	"percentile\x12*\n" +
+	"\x11final_rank_bucket\x18\x05 \x01(\rR\x0ffinalRankBucket\"y\n" +
+	"\x1cCMsgClientToGCGetEventCoupon\x12:\n" +
+	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1d\n" +
+	"\n" +
+	"coupon_ids\x18\x02 \x03(\rR\tcouponIds\"\xe0\x03\n" +
+	"$CMsgClientToGCGetEventCouponResponse\x12Z\n" +
+	"\x06result\x18\x01 \x01(\x0e29.protocol.CMsgClientToGCGetEventCouponResponse.ResultCode:\aSuccessR\x06result\x12:\n" +
+	"\bevent_id\x18\x02 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12O\n" +
+	"\acoupons\x18\x03 \x03(\v25.protocol.CMsgClientToGCGetEventCouponResponse.CouponR\acoupons\x1aF\n" +
+	"\x06Coupon\x12\x1b\n" +
+	"\tcoupon_id\x18\x01 \x01(\rR\bcouponId\x12\x1f\n" +
+	"\vcoupon_code\x18\x02 \x01(\tR\n" +
+	"couponCode\"\x86\x01\n" +
+	"\n" +
+	"ResultCode\x12\v\n" +
+	"\aSuccess\x10\x00\x12\x10\n" +
+	"\fInvalidEvent\x10\x01\x12\x12\n" +
+	"\x0eEventNotActive\x10\x02\x12\x12\n" +
+	"\x0eUserIneligible\x10\x03\x12\x0f\n" +
+	"\vServerError\x10\x04\x12\v\n" +
+	"\aTimeout\x10\x05\x12\x13\n" +
+	"\x0fMultipleCoupons\x10\x06\"\xaa\x02\n" +
+	" CMsgClientToGCConvertEventPoints\x12S\n" +
+	"\x16event_id_points_to_buy\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x12eventIdPointsToBuy\x12W\n" +
+	"\x18event_id_points_to_spend\x18\x02 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\x14eventIdPointsToSpend\x12)\n" +
+	"\x11num_points_to_buy\x18\x03 \x01(\rR\x0enumPointsToBuy\x12-\n" +
+	"\x13num_points_to_spend\x18\x04 \x01(\rR\x10numPointsToSpend\"\xfd\x01\n" +
+	"(CMsgClientToGCConvertEventPointsResponse\x12^\n" +
+	"\x06result\x18\x01 \x01(\x0e2=.protocol.CMsgClientToGCConvertEventPointsResponse.ResultCode:\aSuccessR\x06result\"q\n" +
+	"\n" +
+	"ResultCode\x12\v\n" +
+	"\aSuccess\x10\x00\x12\x10\n" +
+	"\fInvalidEvent\x10\x01\x12\x12\n" +
+	"\x0eEventNotActive\x10\x02\x12\x12\n" +
+	"\x0eUserIneligible\x10\x03\x12\x0f\n" +
+	"\vServerError\x10\x04\x12\v\n" +
+	"\aTimeout\x10\x05\"i\n" +
+	"\x1eCMsgClientToGCInviteToDemoMode\x12\x1b\n" +
+	"\tserver_id\x18\x01 \x01(\x06R\bserverId\x12*\n" +
+	"\x11invited_player_id\x18\x02 \x01(\x06R\x0finvitedPlayerId\"\x81\x01\n" +
+	"\x1eCMsgGCToClientInviteToDemoMode\x12\x1b\n" +
+	"\tserver_id\x18\x01 \x01(\x06R\bserverId\x12\x1f\n" +
+	"\vfrom_player\x18\x02 \x01(\x06R\n" +
+	"fromPlayer\x12!\n" +
+	"\fparty_invite\x18\x03 \x01(\bR\vpartyInvite*\xd8\x01\n" +
 	"!CMsgDOTARequestMatches_SkillLevel\x12)\n" +
 	"%CMsgDOTARequestMatches_SkillLevel_Any\x10\x00\x12,\n" +
 	"(CMsgDOTARequestMatches_SkillLevel_Normal\x10\x01\x12*\n" +
@@ -35354,8 +36451,8 @@ func file_dota_gcmessages_client_proto_rawDescGZIP() []byte {
 	return file_dota_gcmessages_client_proto_rawDescData
 }
 
-var file_dota_gcmessages_client_proto_enumTypes = make([]protoimpl.EnumInfo, 83)
-var file_dota_gcmessages_client_proto_msgTypes = make([]protoimpl.MessageInfo, 461)
+var file_dota_gcmessages_client_proto_enumTypes = make([]protoimpl.EnumInfo, 86)
+var file_dota_gcmessages_client_proto_msgTypes = make([]protoimpl.MessageInfo, 475)
 var file_dota_gcmessages_client_proto_goTypes = []any{
 	(CMsgDOTARequestMatches_SkillLevel)(0),                                      // 0: protocol.CMsgDOTARequestMatches_SkillLevel
 	(DOTA_WatchReplayType)(0),                                                   // 1: protocol.DOTA_WatchReplayType
@@ -35440,809 +36537,839 @@ var file_dota_gcmessages_client_proto_goTypes = []any{
 	(CMsgClientToGCRoadToTIGetActiveQuestResponse_EResponse)(0),                 // 80: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.EResponse
 	(CMsgClientToGCRoadToTIUseItemResponse_EResponse)(0),                        // 81: protocol.CMsgClientToGCRoadToTIUseItemResponse.EResponse
 	(CMsgGCRankedPlayerInfoSubmitResponse_EResult)(0),                           // 82: protocol.CMsgGCRankedPlayerInfoSubmitResponse.EResult
-	(*CMsgClientSuspended)(nil),                                                 // 83: protocol.CMsgClientSuspended
-	(*CMsgBalancedShuffleLobby)(nil),                                            // 84: protocol.CMsgBalancedShuffleLobby
-	(*CMsgInitialQuestionnaireResponse)(nil),                                    // 85: protocol.CMsgInitialQuestionnaireResponse
-	(*CMsgDOTARequestMatchesResponse)(nil),                                      // 86: protocol.CMsgDOTARequestMatchesResponse
-	(*CMsgDOTAPopup)(nil),                                                       // 87: protocol.CMsgDOTAPopup
-	(*CMsgDOTAReportsRemainingRequest)(nil),                                     // 88: protocol.CMsgDOTAReportsRemainingRequest
-	(*CMsgDOTAReportsRemainingResponse)(nil),                                    // 89: protocol.CMsgDOTAReportsRemainingResponse
-	(*CMsgDOTASubmitPlayerReport)(nil),                                          // 90: protocol.CMsgDOTASubmitPlayerReport
-	(*CMsgDOTASubmitPlayerReportResponse)(nil),                                  // 91: protocol.CMsgDOTASubmitPlayerReportResponse
-	(*CMsgDOTASubmitPlayerAvoidRequest)(nil),                                    // 92: protocol.CMsgDOTASubmitPlayerAvoidRequest
-	(*CMsgDOTASubmitPlayerAvoidRequestResponse)(nil),                            // 93: protocol.CMsgDOTASubmitPlayerAvoidRequestResponse
-	(*CMsgDOTASubmitPlayerReportV2)(nil),                                        // 94: protocol.CMsgDOTASubmitPlayerReportV2
-	(*CMsgDOTASubmitPlayerReportResponseV2)(nil),                                // 95: protocol.CMsgDOTASubmitPlayerReportResponseV2
-	(*CMsgDOTASubmitLobbyMVPVote)(nil),                                          // 96: protocol.CMsgDOTASubmitLobbyMVPVote
-	(*CMsgDOTASubmitLobbyMVPVoteResponse)(nil),                                  // 97: protocol.CMsgDOTASubmitLobbyMVPVoteResponse
-	(*CMsgDOTALobbyMVPAwarded)(nil),                                             // 98: protocol.CMsgDOTALobbyMVPAwarded
-	(*CMsgDOTAKickedFromMatchmakingQueue)(nil),                                  // 99: protocol.CMsgDOTAKickedFromMatchmakingQueue
-	(*CMsgGCMatchDetailsRequest)(nil),                                           // 100: protocol.CMsgGCMatchDetailsRequest
-	(*CMsgGCMatchDetailsResponse)(nil),                                          // 101: protocol.CMsgGCMatchDetailsResponse
-	(*CMsgDOTAProfileTickets)(nil),                                              // 102: protocol.CMsgDOTAProfileTickets
-	(*CMsgClientToGCGetProfileTickets)(nil),                                     // 103: protocol.CMsgClientToGCGetProfileTickets
-	(*CMsgGCToClientPartySearchInvites)(nil),                                    // 104: protocol.CMsgGCToClientPartySearchInvites
-	(*CMsgDOTAWelcome)(nil),                                                     // 105: protocol.CMsgDOTAWelcome
-	(*CSODOTAGameHeroFavorites)(nil),                                            // 106: protocol.CSODOTAGameHeroFavorites
-	(*CMsgDOTAMatchVotes)(nil),                                                  // 107: protocol.CMsgDOTAMatchVotes
-	(*CMsgMatchmakingMatchGroupInfo)(nil),                                       // 108: protocol.CMsgMatchmakingMatchGroupInfo
-	(*CMsgDOTAMatchmakingStatsRequest)(nil),                                     // 109: protocol.CMsgDOTAMatchmakingStatsRequest
-	(*CMsgDOTAMatchmakingStatsResponse)(nil),                                    // 110: protocol.CMsgDOTAMatchmakingStatsResponse
-	(*CMsgDOTAUpdateMatchmakingStats)(nil),                                      // 111: protocol.CMsgDOTAUpdateMatchmakingStats
-	(*CMsgDOTAUpdateMatchManagementStats)(nil),                                  // 112: protocol.CMsgDOTAUpdateMatchManagementStats
-	(*CMsgDOTASetMatchHistoryAccess)(nil),                                       // 113: protocol.CMsgDOTASetMatchHistoryAccess
-	(*CMsgDOTASetMatchHistoryAccessResponse)(nil),                               // 114: protocol.CMsgDOTASetMatchHistoryAccessResponse
-	(*CMsgDOTANotifyAccountFlagsChange)(nil),                                    // 115: protocol.CMsgDOTANotifyAccountFlagsChange
-	(*CMsgDOTASetProfilePrivacy)(nil),                                           // 116: protocol.CMsgDOTASetProfilePrivacy
-	(*CMsgDOTASetProfilePrivacyResponse)(nil),                                   // 117: protocol.CMsgDOTASetProfilePrivacyResponse
-	(*CMsgUpgradeLeagueItem)(nil),                                               // 118: protocol.CMsgUpgradeLeagueItem
-	(*CMsgUpgradeLeagueItemResponse)(nil),                                       // 119: protocol.CMsgUpgradeLeagueItemResponse
-	(*CMsgGCWatchDownloadedReplay)(nil),                                         // 120: protocol.CMsgGCWatchDownloadedReplay
-	(*CMsgClientsRejoinChatChannels)(nil),                                       // 121: protocol.CMsgClientsRejoinChatChannels
-	(*CMsgGCGetHeroStandings)(nil),                                              // 122: protocol.CMsgGCGetHeroStandings
-	(*CMsgGCGetHeroStandingsResponse)(nil),                                      // 123: protocol.CMsgGCGetHeroStandingsResponse
-	(*CMatchPlayerTimedStatAverages)(nil),                                       // 124: protocol.CMatchPlayerTimedStatAverages
-	(*CMatchPlayerTimedStatStdDeviations)(nil),                                  // 125: protocol.CMatchPlayerTimedStatStdDeviations
-	(*CMsgGCGetHeroTimedStatsResponse)(nil),                                     // 126: protocol.CMsgGCGetHeroTimedStatsResponse
-	(*CMsgGCItemEditorReservationsRequest)(nil),                                 // 127: protocol.CMsgGCItemEditorReservationsRequest
-	(*CMsgGCItemEditorReservation)(nil),                                         // 128: protocol.CMsgGCItemEditorReservation
-	(*CMsgGCItemEditorReservationsResponse)(nil),                                // 129: protocol.CMsgGCItemEditorReservationsResponse
-	(*CMsgGCItemEditorReserveItemDef)(nil),                                      // 130: protocol.CMsgGCItemEditorReserveItemDef
-	(*CMsgGCItemEditorReserveItemDefResponse)(nil),                              // 131: protocol.CMsgGCItemEditorReserveItemDefResponse
-	(*CMsgGCItemEditorReleaseReservation)(nil),                                  // 132: protocol.CMsgGCItemEditorReleaseReservation
-	(*CMsgGCItemEditorReleaseReservationResponse)(nil),                          // 133: protocol.CMsgGCItemEditorReleaseReservationResponse
-	(*CMsgFlipLobbyTeams)(nil),                                                  // 134: protocol.CMsgFlipLobbyTeams
-	(*CMsgGCLobbyUpdateBroadcastChannelInfo)(nil),                               // 135: protocol.CMsgGCLobbyUpdateBroadcastChannelInfo
-	(*CMsgDOTAClaimEventActionData)(nil),                                        // 136: protocol.CMsgDOTAClaimEventActionData
-	(*CMsgDOTAClaimEventAction)(nil),                                            // 137: protocol.CMsgDOTAClaimEventAction
-	(*CMsgClientToGCClaimEventActionUsingItem)(nil),                             // 138: protocol.CMsgClientToGCClaimEventActionUsingItem
-	(*CMsgClientToGCClaimEventActionUsingItemResponse)(nil),                     // 139: protocol.CMsgClientToGCClaimEventActionUsingItemResponse
-	(*CMsgGCToClientClaimEventActionUsingItemCompleted)(nil),                    // 140: protocol.CMsgGCToClientClaimEventActionUsingItemCompleted
-	(*CMsgDOTAGetEventPoints)(nil),                                              // 141: protocol.CMsgDOTAGetEventPoints
-	(*CMsgDOTAGetEventPointsResponse)(nil),                                      // 142: protocol.CMsgDOTAGetEventPointsResponse
-	(*CMsgDOTAGetPeriodicResource)(nil),                                         // 143: protocol.CMsgDOTAGetPeriodicResource
-	(*CMsgDOTAGetPeriodicResourceResponse)(nil),                                 // 144: protocol.CMsgDOTAGetPeriodicResourceResponse
-	(*CMsgDOTAPeriodicResourceUpdated)(nil),                                     // 145: protocol.CMsgDOTAPeriodicResourceUpdated
-	(*CMsgDOTACompendiumSelection)(nil),                                         // 146: protocol.CMsgDOTACompendiumSelection
-	(*CMsgDOTACompendiumSelectionResponse)(nil),                                 // 147: protocol.CMsgDOTACompendiumSelectionResponse
-	(*CMsgDOTACompendiumRemoveAllSelections)(nil),                               // 148: protocol.CMsgDOTACompendiumRemoveAllSelections
-	(*CMsgDOTACompendiumRemoveAllSelectionsResponse)(nil),                       // 149: protocol.CMsgDOTACompendiumRemoveAllSelectionsResponse
-	(*CMsgDOTACompendiumData)(nil),                                              // 150: protocol.CMsgDOTACompendiumData
-	(*CMsgDOTACompendiumDataRequest)(nil),                                       // 151: protocol.CMsgDOTACompendiumDataRequest
-	(*CMsgDOTACompendiumDataResponse)(nil),                                      // 152: protocol.CMsgDOTACompendiumDataResponse
-	(*CMsgDOTAGetPlayerMatchHistory)(nil),                                       // 153: protocol.CMsgDOTAGetPlayerMatchHistory
-	(*CMsgDOTAGetPlayerMatchHistoryResponse)(nil),                               // 154: protocol.CMsgDOTAGetPlayerMatchHistoryResponse
-	(*CMsgGCNotificationsRequest)(nil),                                          // 155: protocol.CMsgGCNotificationsRequest
-	(*CMsgGCNotifications_Notification)(nil),                                    // 156: protocol.CMsgGCNotifications_Notification
-	(*CMsgGCNotificationsUpdate)(nil),                                           // 157: protocol.CMsgGCNotificationsUpdate
-	(*CMsgGCNotificationsResponse)(nil),                                         // 158: protocol.CMsgGCNotificationsResponse
-	(*CMsgGCNotificationsMarkReadRequest)(nil),                                  // 159: protocol.CMsgGCNotificationsMarkReadRequest
-	(*CMsgGCPlayerInfoSubmit)(nil),                                              // 160: protocol.CMsgGCPlayerInfoSubmit
-	(*CMsgGCPlayerInfoSubmitResponse)(nil),                                      // 161: protocol.CMsgGCPlayerInfoSubmitResponse
-	(*CMsgDOTAEmoticonAccessSDO)(nil),                                           // 162: protocol.CMsgDOTAEmoticonAccessSDO
-	(*CMsgClientToGCEmoticonDataRequest)(nil),                                   // 163: protocol.CMsgClientToGCEmoticonDataRequest
-	(*CMsgGCToClientEmoticonData)(nil),                                          // 164: protocol.CMsgGCToClientEmoticonData
-	(*CMsgGCToClientTournamentItemDrop)(nil),                                    // 165: protocol.CMsgGCToClientTournamentItemDrop
-	(*CMsgClientToGCGetAllHeroOrder)(nil),                                       // 166: protocol.CMsgClientToGCGetAllHeroOrder
-	(*CMsgClientToGCGetAllHeroOrderResponse)(nil),                               // 167: protocol.CMsgClientToGCGetAllHeroOrderResponse
-	(*CMsgClientToGCGetAllHeroProgress)(nil),                                    // 168: protocol.CMsgClientToGCGetAllHeroProgress
-	(*CMsgClientToGCGetAllHeroProgressResponse)(nil),                            // 169: protocol.CMsgClientToGCGetAllHeroProgressResponse
-	(*CMsgClientToGCGetTrophyList)(nil),                                         // 170: protocol.CMsgClientToGCGetTrophyList
-	(*CMsgClientToGCGetTrophyListResponse)(nil),                                 // 171: protocol.CMsgClientToGCGetTrophyListResponse
-	(*CMsgGCToClientTrophyAwarded)(nil),                                         // 172: protocol.CMsgGCToClientTrophyAwarded
-	(*CMsgClientToGCRankRequest)(nil),                                           // 173: protocol.CMsgClientToGCRankRequest
-	(*CMsgGCToClientRankResponse)(nil),                                          // 174: protocol.CMsgGCToClientRankResponse
-	(*CMsgGCToClientRankUpdate)(nil),                                            // 175: protocol.CMsgGCToClientRankUpdate
-	(*CMsgClientToGCGetProfileCard)(nil),                                        // 176: protocol.CMsgClientToGCGetProfileCard
-	(*CMsgClientToGCSetProfileCardSlots)(nil),                                   // 177: protocol.CMsgClientToGCSetProfileCardSlots
-	(*CMsgClientToGCGetProfileCardStats)(nil),                                   // 178: protocol.CMsgClientToGCGetProfileCardStats
-	(*CMsgClientToGCCreateHeroStatue)(nil),                                      // 179: protocol.CMsgClientToGCCreateHeroStatue
-	(*CMsgGCToClientHeroStatueCreateResult)(nil),                                // 180: protocol.CMsgGCToClientHeroStatueCreateResult
-	(*CMsgClientToGCPlayerStatsRequest)(nil),                                    // 181: protocol.CMsgClientToGCPlayerStatsRequest
-	(*CMsgGCToClientPlayerStatsResponse)(nil),                                   // 182: protocol.CMsgGCToClientPlayerStatsResponse
-	(*CMsgClientToGCCustomGamesFriendsPlayedRequest)(nil),                       // 183: protocol.CMsgClientToGCCustomGamesFriendsPlayedRequest
-	(*CMsgGCToClientCustomGamesFriendsPlayedResponse)(nil),                      // 184: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse
-	(*CMsgClientToGCSocialFeedPostCommentRequest)(nil),                          // 185: protocol.CMsgClientToGCSocialFeedPostCommentRequest
-	(*CMsgGCToClientSocialFeedPostCommentResponse)(nil),                         // 186: protocol.CMsgGCToClientSocialFeedPostCommentResponse
-	(*CMsgClientToGCSocialFeedPostMessageRequest)(nil),                          // 187: protocol.CMsgClientToGCSocialFeedPostMessageRequest
-	(*CMsgGCToClientSocialFeedPostMessageResponse)(nil),                         // 188: protocol.CMsgGCToClientSocialFeedPostMessageResponse
-	(*CMsgClientToGCFriendsPlayedCustomGameRequest)(nil),                        // 189: protocol.CMsgClientToGCFriendsPlayedCustomGameRequest
-	(*CMsgGCToClientFriendsPlayedCustomGameResponse)(nil),                       // 190: protocol.CMsgGCToClientFriendsPlayedCustomGameResponse
-	(*CMsgDOTAPartyRichPresence)(nil),                                           // 191: protocol.CMsgDOTAPartyRichPresence
-	(*CMsgDOTALobbyRichPresence)(nil),                                           // 192: protocol.CMsgDOTALobbyRichPresence
-	(*CMsgDOTACustomGameListenServerStartedLoading)(nil),                        // 193: protocol.CMsgDOTACustomGameListenServerStartedLoading
-	(*CMsgDOTACustomGameClientFinishedLoading)(nil),                             // 194: protocol.CMsgDOTACustomGameClientFinishedLoading
-	(*CMsgClientToGCApplyGemCombiner)(nil),                                      // 195: protocol.CMsgClientToGCApplyGemCombiner
-	(*CMsgClientToGCH264Unsupported)(nil),                                       // 196: protocol.CMsgClientToGCH264Unsupported
-	(*CMsgClientToGCGetQuestProgress)(nil),                                      // 197: protocol.CMsgClientToGCGetQuestProgress
-	(*CMsgClientToGCGetQuestProgressResponse)(nil),                              // 198: protocol.CMsgClientToGCGetQuestProgressResponse
-	(*CMsgGCToClientMatchSignedOut)(nil),                                        // 199: protocol.CMsgGCToClientMatchSignedOut
-	(*CMsgGCGetHeroStatsHistory)(nil),                                           // 200: protocol.CMsgGCGetHeroStatsHistory
-	(*CMsgGCGetHeroStatsHistoryResponse)(nil),                                   // 201: protocol.CMsgGCGetHeroStatsHistoryResponse
-	(*CMsgPlayerConductScorecardRequest)(nil),                                   // 202: protocol.CMsgPlayerConductScorecardRequest
-	(*CMsgPlayerConductScorecard)(nil),                                          // 203: protocol.CMsgPlayerConductScorecard
-	(*CMsgClientToGCWageringRequest)(nil),                                       // 204: protocol.CMsgClientToGCWageringRequest
-	(*CMsgGCToClientWageringResponse)(nil),                                      // 205: protocol.CMsgGCToClientWageringResponse
-	(*CMsgGCToClientWageringUpdate)(nil),                                        // 206: protocol.CMsgGCToClientWageringUpdate
-	(*CMsgGCToClientArcanaVotesUpdate)(nil),                                     // 207: protocol.CMsgGCToClientArcanaVotesUpdate
-	(*CMsgClientToGCGetEventGoals)(nil),                                         // 208: protocol.CMsgClientToGCGetEventGoals
-	(*CMsgEventGoals)(nil),                                                      // 209: protocol.CMsgEventGoals
-	(*CMsgGCToGCLeaguePredictions)(nil),                                         // 210: protocol.CMsgGCToGCLeaguePredictions
-	(*CMsgPredictionRankings)(nil),                                              // 211: protocol.CMsgPredictionRankings
-	(*CMsgPredictionResults)(nil),                                               // 212: protocol.CMsgPredictionResults
-	(*CMsgClientToGCHasPlayerVotedForMVP)(nil),                                  // 213: protocol.CMsgClientToGCHasPlayerVotedForMVP
-	(*CMsgClientToGCHasPlayerVotedForMVPResponse)(nil),                          // 214: protocol.CMsgClientToGCHasPlayerVotedForMVPResponse
-	(*CMsgClientToGCVoteForMVP)(nil),                                            // 215: protocol.CMsgClientToGCVoteForMVP
-	(*CMsgClientToGCVoteForMVPResponse)(nil),                                    // 216: protocol.CMsgClientToGCVoteForMVPResponse
-	(*CMsgClientToGCMVPVoteTimeout)(nil),                                        // 217: protocol.CMsgClientToGCMVPVoteTimeout
-	(*CMsgClientToGCMVPVoteTimeoutResponse)(nil),                                // 218: protocol.CMsgClientToGCMVPVoteTimeoutResponse
-	(*CMsgClientToGCTeammateStatsRequest)(nil),                                  // 219: protocol.CMsgClientToGCTeammateStatsRequest
-	(*CMsgClientToGCTeammateStatsResponse)(nil),                                 // 220: protocol.CMsgClientToGCTeammateStatsResponse
-	(*CMsgClientToGCVoteForArcana)(nil),                                         // 221: protocol.CMsgClientToGCVoteForArcana
-	(*CMsgClientToGCVoteForArcanaResponse)(nil),                                 // 222: protocol.CMsgClientToGCVoteForArcanaResponse
-	(*CMsgClientToGCRequestArcanaVotesRemaining)(nil),                           // 223: protocol.CMsgClientToGCRequestArcanaVotesRemaining
-	(*CMsgClientToGCRequestArcanaVotesRemainingResponse)(nil),                   // 224: protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse
-	(*CMsgClientToGCRequestEventPointLogV2)(nil),                                // 225: protocol.CMsgClientToGCRequestEventPointLogV2
-	(*CMsgClientToGCRequestEventPointLogResponseV2)(nil),                        // 226: protocol.CMsgClientToGCRequestEventPointLogResponseV2
-	(*CMsgClientToGCPublishUserStat)(nil),                                       // 227: protocol.CMsgClientToGCPublishUserStat
-	(*CMsgClientToGCRequestSlarkGameResult)(nil),                                // 228: protocol.CMsgClientToGCRequestSlarkGameResult
-	(*CMsgClientToGCRequestSlarkGameResultResponse)(nil),                        // 229: protocol.CMsgClientToGCRequestSlarkGameResultResponse
-	(*CMsgGCToClientQuestProgressUpdated)(nil),                                  // 230: protocol.CMsgGCToClientQuestProgressUpdated
-	(*CMsgDOTARedeemItem)(nil),                                                  // 231: protocol.CMsgDOTARedeemItem
-	(*CMsgDOTARedeemItemResponse)(nil),                                          // 232: protocol.CMsgDOTARedeemItemResponse
-	(*CMsgClientToGCSelectCompendiumInGamePrediction)(nil),                      // 233: protocol.CMsgClientToGCSelectCompendiumInGamePrediction
-	(*CMsgClientToGCSelectCompendiumInGamePredictionResponse)(nil),              // 234: protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse
-	(*CMsgClientToGCOpenPlayerCardPack)(nil),                                    // 235: protocol.CMsgClientToGCOpenPlayerCardPack
-	(*CMsgClientToGCOpenPlayerCardPackResponse)(nil),                            // 236: protocol.CMsgClientToGCOpenPlayerCardPackResponse
-	(*CMsgClientToGCRecyclePlayerCard)(nil),                                     // 237: protocol.CMsgClientToGCRecyclePlayerCard
-	(*CMsgClientToGCRecyclePlayerCardResponse)(nil),                             // 238: protocol.CMsgClientToGCRecyclePlayerCardResponse
-	(*CMsgClientToGCCreatePlayerCardPack)(nil),                                  // 239: protocol.CMsgClientToGCCreatePlayerCardPack
-	(*CMsgClientToGCCreatePlayerCardPackResponse)(nil),                          // 240: protocol.CMsgClientToGCCreatePlayerCardPackResponse
-	(*CMsgClientToGCCreateTeamPlayerCardPack)(nil),                              // 241: protocol.CMsgClientToGCCreateTeamPlayerCardPack
-	(*CMsgClientToGCCreateTeamPlayerCardPackResponse)(nil),                      // 242: protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse
-	(*CMsgGCToClientBattlePassRollup_International2016)(nil),                    // 243: protocol.CMsgGCToClientBattlePassRollup_International2016
-	(*CMsgGCToClientBattlePassRollup_Fall2016)(nil),                             // 244: protocol.CMsgGCToClientBattlePassRollup_Fall2016
-	(*CMsgGCToClientBattlePassRollup_Winter2017)(nil),                           // 245: protocol.CMsgGCToClientBattlePassRollup_Winter2017
-	(*CMsgGCToClientBattlePassRollup_TI7)(nil),                                  // 246: protocol.CMsgGCToClientBattlePassRollup_TI7
-	(*CMsgGCToClientBattlePassRollup_TI8)(nil),                                  // 247: protocol.CMsgGCToClientBattlePassRollup_TI8
-	(*CMsgGCToClientBattlePassRollup_TI9)(nil),                                  // 248: protocol.CMsgGCToClientBattlePassRollup_TI9
-	(*CMsgGCToClientBattlePassRollup_TI10)(nil),                                 // 249: protocol.CMsgGCToClientBattlePassRollup_TI10
-	(*CMsgGCToClientBattlePassRollupRequest)(nil),                               // 250: protocol.CMsgGCToClientBattlePassRollupRequest
-	(*CMsgGCToClientBattlePassRollupResponse)(nil),                              // 251: protocol.CMsgGCToClientBattlePassRollupResponse
-	(*CMsgGCToClientBattlePassRollupListRequest)(nil),                           // 252: protocol.CMsgGCToClientBattlePassRollupListRequest
-	(*CMsgGCToClientBattlePassRollupListResponse)(nil),                          // 253: protocol.CMsgGCToClientBattlePassRollupListResponse
-	(*CMsgClientToGCTransferSeasonalMMRRequest)(nil),                            // 254: protocol.CMsgClientToGCTransferSeasonalMMRRequest
-	(*CMsgClientToGCTransferSeasonalMMRResponse)(nil),                           // 255: protocol.CMsgClientToGCTransferSeasonalMMRResponse
-	(*CMsgGCToClientPlaytestStatus)(nil),                                        // 256: protocol.CMsgGCToClientPlaytestStatus
-	(*CMsgClientToGCJoinPlaytest)(nil),                                          // 257: protocol.CMsgClientToGCJoinPlaytest
-	(*CMsgClientToGCJoinPlaytestResponse)(nil),                                  // 258: protocol.CMsgClientToGCJoinPlaytestResponse
-	(*CMsgDOTASetFavoriteTeam)(nil),                                             // 259: protocol.CMsgDOTASetFavoriteTeam
-	(*CMsgDOTATriviaCurrentQuestions)(nil),                                      // 260: protocol.CMsgDOTATriviaCurrentQuestions
-	(*CMsgDOTASubmitTriviaQuestionAnswer)(nil),                                  // 261: protocol.CMsgDOTASubmitTriviaQuestionAnswer
-	(*CMsgDOTASubmitTriviaQuestionAnswerResponse)(nil),                          // 262: protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse
-	(*CMsgDOTAStartTriviaSession)(nil),                                          // 263: protocol.CMsgDOTAStartTriviaSession
-	(*CMsgDOTAStartTriviaSessionResponse)(nil),                                  // 264: protocol.CMsgDOTAStartTriviaSessionResponse
-	(*CMsgDOTAAnchorPhoneNumberRequest)(nil),                                    // 265: protocol.CMsgDOTAAnchorPhoneNumberRequest
-	(*CMsgDOTAAnchorPhoneNumberResponse)(nil),                                   // 266: protocol.CMsgDOTAAnchorPhoneNumberResponse
-	(*CMsgDOTAUnanchorPhoneNumberRequest)(nil),                                  // 267: protocol.CMsgDOTAUnanchorPhoneNumberRequest
-	(*CMsgDOTAUnanchorPhoneNumberResponse)(nil),                                 // 268: protocol.CMsgDOTAUnanchorPhoneNumberResponse
-	(*CMsgGCToClientCommendNotification)(nil),                                   // 269: protocol.CMsgGCToClientCommendNotification
-	(*CMsgDOTAClientToGCQuickStatsRequest)(nil),                                 // 270: protocol.CMsgDOTAClientToGCQuickStatsRequest
-	(*CMsgDOTAClientToGCQuickStatsResponse)(nil),                                // 271: protocol.CMsgDOTAClientToGCQuickStatsResponse
-	(*CMsgDOTASelectionPriorityChoiceRequest)(nil),                              // 272: protocol.CMsgDOTASelectionPriorityChoiceRequest
-	(*CMsgDOTASelectionPriorityChoiceResponse)(nil),                             // 273: protocol.CMsgDOTASelectionPriorityChoiceResponse
-	(*CMsgDOTAGameAutographReward)(nil),                                         // 274: protocol.CMsgDOTAGameAutographReward
-	(*CMsgDOTAGameAutographRewardResponse)(nil),                                 // 275: protocol.CMsgDOTAGameAutographRewardResponse
-	(*CMsgDOTADestroyLobbyRequest)(nil),                                         // 276: protocol.CMsgDOTADestroyLobbyRequest
-	(*CMsgDOTADestroyLobbyResponse)(nil),                                        // 277: protocol.CMsgDOTADestroyLobbyResponse
-	(*CMsgDOTAGetRecentPlayTimeFriendsRequest)(nil),                             // 278: protocol.CMsgDOTAGetRecentPlayTimeFriendsRequest
-	(*CMsgDOTAGetRecentPlayTimeFriendsResponse)(nil),                            // 279: protocol.CMsgDOTAGetRecentPlayTimeFriendsResponse
-	(*CMsgPurchaseItemWithEventPoints)(nil),                                     // 280: protocol.CMsgPurchaseItemWithEventPoints
-	(*CMsgPurchaseItemWithEventPointsResponse)(nil),                             // 281: protocol.CMsgPurchaseItemWithEventPointsResponse
-	(*CMsgPurchaseHeroRandomRelic)(nil),                                         // 282: protocol.CMsgPurchaseHeroRandomRelic
-	(*CMsgPurchaseHeroRandomRelicResponse)(nil),                                 // 283: protocol.CMsgPurchaseHeroRandomRelicResponse
-	(*CMsgClientToGCRequestPlusWeeklyChallengeResult)(nil),                      // 284: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResult
-	(*CMsgClientToGCRequestPlusWeeklyChallengeResultResponse)(nil),              // 285: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
-	(*CMsgProfileRequest)(nil),                                                  // 286: protocol.CMsgProfileRequest
-	(*CMsgProfileResponse)(nil),                                                 // 287: protocol.CMsgProfileResponse
-	(*CMsgProfileUpdate)(nil),                                                   // 288: protocol.CMsgProfileUpdate
-	(*CMsgProfileUpdateResponse)(nil),                                           // 289: protocol.CMsgProfileUpdateResponse
-	(*CMsgTalentWinRates)(nil),                                                  // 290: protocol.CMsgTalentWinRates
-	(*CMsgGlobalHeroAverages)(nil),                                              // 291: protocol.CMsgGlobalHeroAverages
-	(*CMsgHeroGlobalDataRequest)(nil),                                           // 292: protocol.CMsgHeroGlobalDataRequest
-	(*CMsgHeroGlobalDataResponse)(nil),                                          // 293: protocol.CMsgHeroGlobalDataResponse
-	(*CMsgHeroGlobalDataAllHeroes)(nil),                                         // 294: protocol.CMsgHeroGlobalDataAllHeroes
-	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies)(nil),                            // 295: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies
-	(*CMsgPrivateMetadataKeyRequest)(nil),                                       // 296: protocol.CMsgPrivateMetadataKeyRequest
-	(*CMsgPrivateMetadataKeyResponse)(nil),                                      // 297: protocol.CMsgPrivateMetadataKeyResponse
-	(*CMsgActivatePlusFreeTrialResponse)(nil),                                   // 298: protocol.CMsgActivatePlusFreeTrialResponse
-	(*CMsgGCToClientCavernCrawlMapPathCompleted)(nil),                           // 299: protocol.CMsgGCToClientCavernCrawlMapPathCompleted
-	(*CMsgGCToClientCavernCrawlMapUpdated)(nil),                                 // 300: protocol.CMsgGCToClientCavernCrawlMapUpdated
-	(*CMsgClientToGCCavernCrawlClaimRoom)(nil),                                  // 301: protocol.CMsgClientToGCCavernCrawlClaimRoom
-	(*CMsgClientToGCCavernCrawlClaimRoomResponse)(nil),                          // 302: protocol.CMsgClientToGCCavernCrawlClaimRoomResponse
-	(*CMsgClientToGCCavernCrawlUseItemOnRoom)(nil),                              // 303: protocol.CMsgClientToGCCavernCrawlUseItemOnRoom
-	(*CMsgClientToGCCavernCrawlUseItemOnRoomResponse)(nil),                      // 304: protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse
-	(*CMsgClientToGCCavernCrawlUseItemOnPath)(nil),                              // 305: protocol.CMsgClientToGCCavernCrawlUseItemOnPath
-	(*CMsgClientToGCCavernCrawlUseItemOnPathResponse)(nil),                      // 306: protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse
-	(*CMsgClientToGCCavernCrawlRequestMapState)(nil),                            // 307: protocol.CMsgClientToGCCavernCrawlRequestMapState
-	(*CMsgClientToGCCavernCrawlRequestMapStateResponse)(nil),                    // 308: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse
-	(*CMsgClientToGCCavernCrawlGetClaimedRoomCount)(nil),                        // 309: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCount
-	(*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse)(nil),                // 310: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
-	(*CMsgDOTAMutationList)(nil),                                                // 311: protocol.CMsgDOTAMutationList
-	(*CMsgEventTipsSummaryRequest)(nil),                                         // 312: protocol.CMsgEventTipsSummaryRequest
-	(*CMsgEventTipsSummaryResponse)(nil),                                        // 313: protocol.CMsgEventTipsSummaryResponse
-	(*CMsgSocialFeedRequest)(nil),                                               // 314: protocol.CMsgSocialFeedRequest
-	(*CMsgSocialFeedResponse)(nil),                                              // 315: protocol.CMsgSocialFeedResponse
-	(*CMsgSocialFeedCommentsRequest)(nil),                                       // 316: protocol.CMsgSocialFeedCommentsRequest
-	(*CMsgSocialFeedCommentsResponse)(nil),                                      // 317: protocol.CMsgSocialFeedCommentsResponse
-	(*CMsgClientToGCPlayerCardSpecificPurchaseRequest)(nil),                     // 318: protocol.CMsgClientToGCPlayerCardSpecificPurchaseRequest
-	(*CMsgClientToGCPlayerCardSpecificPurchaseResponse)(nil),                    // 319: protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse
-	(*CMsgClientToGCRequestContestVotes)(nil),                                   // 320: protocol.CMsgClientToGCRequestContestVotes
-	(*CMsgClientToGCRequestContestVotesResponse)(nil),                           // 321: protocol.CMsgClientToGCRequestContestVotesResponse
-	(*CMsgClientToGCRecordContestVote)(nil),                                     // 322: protocol.CMsgClientToGCRecordContestVote
-	(*CMsgGCToClientRecordContestVoteResponse)(nil),                             // 323: protocol.CMsgGCToClientRecordContestVoteResponse
-	(*CMsgDevGrantEventPoints)(nil),                                             // 324: protocol.CMsgDevGrantEventPoints
-	(*CMsgDevGrantEventPointsResponse)(nil),                                     // 325: protocol.CMsgDevGrantEventPointsResponse
-	(*CMsgDevGrantEventAction)(nil),                                             // 326: protocol.CMsgDevGrantEventAction
-	(*CMsgDevGrantEventActionResponse)(nil),                                     // 327: protocol.CMsgDevGrantEventActionResponse
-	(*CMsgDevDeleteEventActions)(nil),                                           // 328: protocol.CMsgDevDeleteEventActions
-	(*CMsgDevDeleteEventActionsResponse)(nil),                                   // 329: protocol.CMsgDevDeleteEventActionsResponse
-	(*CMsgDevResetEventState)(nil),                                              // 330: protocol.CMsgDevResetEventState
-	(*CMsgDevResetEventStateResponse)(nil),                                      // 331: protocol.CMsgDevResetEventStateResponse
-	(*CMsgConsumeEventSupportGrantItem)(nil),                                    // 332: protocol.CMsgConsumeEventSupportGrantItem
-	(*CMsgConsumeEventSupportGrantItemResponse)(nil),                            // 333: protocol.CMsgConsumeEventSupportGrantItemResponse
-	(*CMsgClientToGCGetFilteredPlayers)(nil),                                    // 334: protocol.CMsgClientToGCGetFilteredPlayers
-	(*CMsgGCToClientGetFilteredPlayersResponse)(nil),                            // 335: protocol.CMsgGCToClientGetFilteredPlayersResponse
-	(*CMsgClientToGCRemoveFilteredPlayer)(nil),                                  // 336: protocol.CMsgClientToGCRemoveFilteredPlayer
-	(*CMsgGCToClientRemoveFilteredPlayerResponse)(nil),                          // 337: protocol.CMsgGCToClientRemoveFilteredPlayerResponse
-	(*CMsgClientToGCPurchaseFilteredPlayerSlot)(nil),                            // 338: protocol.CMsgClientToGCPurchaseFilteredPlayerSlot
-	(*CMsgGCToClientPurchaseFilteredPlayerSlotResponse)(nil),                    // 339: protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse
-	(*CMsgClientToGCUpdateFilteredPlayerNote)(nil),                              // 340: protocol.CMsgClientToGCUpdateFilteredPlayerNote
-	(*CMsgGCToClientUpdateFilteredPlayerNoteResponse)(nil),                      // 341: protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse
-	(*CMsgPartySearchPlayer)(nil),                                               // 342: protocol.CMsgPartySearchPlayer
-	(*CMsgGCToClientPlayerBeaconState)(nil),                                     // 343: protocol.CMsgGCToClientPlayerBeaconState
-	(*CMsgGCToClientPartyBeaconUpdate)(nil),                                     // 344: protocol.CMsgGCToClientPartyBeaconUpdate
-	(*CMsgClientToGCUpdatePartyBeacon)(nil),                                     // 345: protocol.CMsgClientToGCUpdatePartyBeacon
-	(*CMsgClientToGCRequestActiveBeaconParties)(nil),                            // 346: protocol.CMsgClientToGCRequestActiveBeaconParties
-	(*CMsgGCToClientRequestActiveBeaconPartiesResponse)(nil),                    // 347: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse
-	(*CMsgClientToGCJoinPartyFromBeacon)(nil),                                   // 348: protocol.CMsgClientToGCJoinPartyFromBeacon
-	(*CMsgGCToClientJoinPartyFromBeaconResponse)(nil),                           // 349: protocol.CMsgGCToClientJoinPartyFromBeaconResponse
-	(*CMsgClientToGCManageFavorites)(nil),                                       // 350: protocol.CMsgClientToGCManageFavorites
-	(*CMsgGCToClientManageFavoritesResponse)(nil),                               // 351: protocol.CMsgGCToClientManageFavoritesResponse
-	(*CMsgClientToGCGetFavoritePlayers)(nil),                                    // 352: protocol.CMsgClientToGCGetFavoritePlayers
-	(*CMsgGCToClientGetFavoritePlayersResponse)(nil),                            // 353: protocol.CMsgGCToClientGetFavoritePlayersResponse
-	(*CMsgGCToClientPartySearchInvite)(nil),                                     // 354: protocol.CMsgGCToClientPartySearchInvite
-	(*CMsgClientToGCVerifyFavoritePlayers)(nil),                                 // 355: protocol.CMsgClientToGCVerifyFavoritePlayers
-	(*CMsgGCToClientVerifyFavoritePlayersResponse)(nil),                         // 356: protocol.CMsgGCToClientVerifyFavoritePlayersResponse
-	(*CMsgClientToGCRequestPlayerRecentAccomplishments)(nil),                    // 357: protocol.CMsgClientToGCRequestPlayerRecentAccomplishments
-	(*CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse)(nil),            // 358: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
-	(*CMsgClientToGCRequestPlayerHeroRecentAccomplishments)(nil),                // 359: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishments
-	(*CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse)(nil),        // 360: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
-	(*CMsgClientToGCSubmitPlayerMatchSurvey)(nil),                               // 361: protocol.CMsgClientToGCSubmitPlayerMatchSurvey
-	(*CMsgClientToGCSubmitPlayerMatchSurveyResponse)(nil),                       // 362: protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse
-	(*CMsgGCToClientVACReminder)(nil),                                           // 363: protocol.CMsgGCToClientVACReminder
-	(*CMsgClientToGCUnderDraftRequest)(nil),                                     // 364: protocol.CMsgClientToGCUnderDraftRequest
-	(*CMsgClientToGCUnderDraftResponse)(nil),                                    // 365: protocol.CMsgClientToGCUnderDraftResponse
-	(*CMsgClientToGCUnderDraftReroll)(nil),                                      // 366: protocol.CMsgClientToGCUnderDraftReroll
-	(*CMsgClientToGCUnderDraftRerollResponse)(nil),                              // 367: protocol.CMsgClientToGCUnderDraftRerollResponse
-	(*CMsgClientToGCUnderDraftBuy)(nil),                                         // 368: protocol.CMsgClientToGCUnderDraftBuy
-	(*CMsgGCToClientGuildUnderDraftGoldUpdated)(nil),                            // 369: protocol.CMsgGCToClientGuildUnderDraftGoldUpdated
-	(*CMsgClientToGCUnderDraftBuyResponse)(nil),                                 // 370: protocol.CMsgClientToGCUnderDraftBuyResponse
-	(*CMsgClientToGCUnderDraftRollBackBench)(nil),                               // 371: protocol.CMsgClientToGCUnderDraftRollBackBench
-	(*CMsgClientToGCUnderDraftRollBackBenchResponse)(nil),                       // 372: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse
-	(*CMsgClientToGCUnderDraftSell)(nil),                                        // 373: protocol.CMsgClientToGCUnderDraftSell
-	(*CMsgClientToGCUnderDraftSellResponse)(nil),                                // 374: protocol.CMsgClientToGCUnderDraftSellResponse
-	(*CMsgClientToGCUnderDraftRedeemReward)(nil),                                // 375: protocol.CMsgClientToGCUnderDraftRedeemReward
-	(*CMsgClientToGCUnderDraftRedeemRewardResponse)(nil),                        // 376: protocol.CMsgClientToGCUnderDraftRedeemRewardResponse
-	(*CMsgClientToGCSubmitDraftTriviaMatchAnswer)(nil),                          // 377: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswer
-	(*CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse)(nil),                  // 378: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse
-	(*CMsgDraftTriviaVoteCount)(nil),                                            // 379: protocol.CMsgDraftTriviaVoteCount
-	(*CMsgClientToGCRequestReporterUpdates)(nil),                                // 380: protocol.CMsgClientToGCRequestReporterUpdates
-	(*CMsgClientToGCRequestReporterUpdatesResponse)(nil),                        // 381: protocol.CMsgClientToGCRequestReporterUpdatesResponse
-	(*CMsgClientToGCAcknowledgeReporterUpdates)(nil),                            // 382: protocol.CMsgClientToGCAcknowledgeReporterUpdates
-	(*CMsgClientToGCRecalibrateMMR)(nil),                                        // 383: protocol.CMsgClientToGCRecalibrateMMR
-	(*CMsgClientToGCRecalibrateMMRResponse)(nil),                                // 384: protocol.CMsgClientToGCRecalibrateMMRResponse
-	(*CMsgDOTAPostGameItemAwardNotification)(nil),                               // 385: protocol.CMsgDOTAPostGameItemAwardNotification
-	(*CMsgClientToGCGetOWMatchDetails)(nil),                                     // 386: protocol.CMsgClientToGCGetOWMatchDetails
-	(*CMsgClientToGCGetOWMatchDetailsResponse)(nil),                             // 387: protocol.CMsgClientToGCGetOWMatchDetailsResponse
-	(*CMsgClientToGCSubmitOWConviction)(nil),                                    // 388: protocol.CMsgClientToGCSubmitOWConviction
-	(*CMsgClientToGCSubmitOWConvictionResponse)(nil),                            // 389: protocol.CMsgClientToGCSubmitOWConvictionResponse
-	(*CMsgClientToGCChinaSSAURLRequest)(nil),                                    // 390: protocol.CMsgClientToGCChinaSSAURLRequest
-	(*CMsgClientToGCChinaSSAURLResponse)(nil),                                   // 391: protocol.CMsgClientToGCChinaSSAURLResponse
-	(*CMsgClientToGCChinaSSAAcceptedRequest)(nil),                               // 392: protocol.CMsgClientToGCChinaSSAAcceptedRequest
-	(*CMsgClientToGCChinaSSAAcceptedResponse)(nil),                              // 393: protocol.CMsgClientToGCChinaSSAAcceptedResponse
-	(*CMsgGCToClientOverwatchCasesAvailable)(nil),                               // 394: protocol.CMsgGCToClientOverwatchCasesAvailable
-	(*CMsgClientToGCStartWatchingOverwatch)(nil),                                // 395: protocol.CMsgClientToGCStartWatchingOverwatch
-	(*CMsgClientToGCStopWatchingOverwatch)(nil),                                 // 396: protocol.CMsgClientToGCStopWatchingOverwatch
-	(*CMsgClientToGCOverwatchReplayError)(nil),                                  // 397: protocol.CMsgClientToGCOverwatchReplayError
-	(*CMsgClientToGCGetDPCFavorites)(nil),                                       // 398: protocol.CMsgClientToGCGetDPCFavorites
-	(*CMsgClientToGCGetDPCFavoritesResponse)(nil),                               // 399: protocol.CMsgClientToGCGetDPCFavoritesResponse
-	(*CMsgClientToGCSetDPCFavoriteState)(nil),                                   // 400: protocol.CMsgClientToGCSetDPCFavoriteState
-	(*CMsgClientToGCSetDPCFavoriteStateResponse)(nil),                           // 401: protocol.CMsgClientToGCSetDPCFavoriteStateResponse
-	(*CMsgClientToGCSetEventActiveSeasonID)(nil),                                // 402: protocol.CMsgClientToGCSetEventActiveSeasonID
-	(*CMsgClientToGCSetEventActiveSeasonIDResponse)(nil),                        // 403: protocol.CMsgClientToGCSetEventActiveSeasonIDResponse
-	(*CMsgClientToGCPurchaseLabyrinthBlessings)(nil),                            // 404: protocol.CMsgClientToGCPurchaseLabyrinthBlessings
-	(*CMsgClientToGCPurchaseLabyrinthBlessingsResponse)(nil),                    // 405: protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse
-	(*CMsgClientToGCGetStickerbookRequest)(nil),                                 // 406: protocol.CMsgClientToGCGetStickerbookRequest
-	(*CMsgClientToGCGetStickerbookResponse)(nil),                                // 407: protocol.CMsgClientToGCGetStickerbookResponse
-	(*CMsgClientToGCCreateStickerbookPageRequest)(nil),                          // 408: protocol.CMsgClientToGCCreateStickerbookPageRequest
-	(*CMsgClientToGCCreateStickerbookPageResponse)(nil),                         // 409: protocol.CMsgClientToGCCreateStickerbookPageResponse
-	(*CMsgClientToGCDeleteStickerbookPageRequest)(nil),                          // 410: protocol.CMsgClientToGCDeleteStickerbookPageRequest
-	(*CMsgClientToGCDeleteStickerbookPageResponse)(nil),                         // 411: protocol.CMsgClientToGCDeleteStickerbookPageResponse
-	(*CMsgClientToGCPlaceStickersRequest)(nil),                                  // 412: protocol.CMsgClientToGCPlaceStickersRequest
-	(*CMsgClientToGCPlaceStickersResponse)(nil),                                 // 413: protocol.CMsgClientToGCPlaceStickersResponse
-	(*CMsgClientToGCPlaceCollectionStickersRequest)(nil),                        // 414: protocol.CMsgClientToGCPlaceCollectionStickersRequest
-	(*CMsgClientToGCPlaceCollectionStickersResponse)(nil),                       // 415: protocol.CMsgClientToGCPlaceCollectionStickersResponse
-	(*CMsgClientToGCOrderStickerbookTeamPageRequest)(nil),                       // 416: protocol.CMsgClientToGCOrderStickerbookTeamPageRequest
-	(*CMsgClientToGCOrderStickerbookTeamPageResponse)(nil),                      // 417: protocol.CMsgClientToGCOrderStickerbookTeamPageResponse
-	(*CMsgClientToGCSetHeroSticker)(nil),                                        // 418: protocol.CMsgClientToGCSetHeroSticker
-	(*CMsgClientToGCSetHeroStickerResponse)(nil),                                // 419: protocol.CMsgClientToGCSetHeroStickerResponse
-	(*CMsgClientToGCGetHeroStickers)(nil),                                       // 420: protocol.CMsgClientToGCGetHeroStickers
-	(*CMsgClientToGCGetHeroStickersResponse)(nil),                               // 421: protocol.CMsgClientToGCGetHeroStickersResponse
-	(*CMsgClientToGCSetFavoritePage)(nil),                                       // 422: protocol.CMsgClientToGCSetFavoritePage
-	(*CMsgClientToGCSetFavoritePageResponse)(nil),                               // 423: protocol.CMsgClientToGCSetFavoritePageResponse
-	(*CMsgClientToGCClaimSwag)(nil),                                             // 424: protocol.CMsgClientToGCClaimSwag
-	(*CMsgClientToGCClaimSwagResponse)(nil),                                     // 425: protocol.CMsgClientToGCClaimSwagResponse
-	(*CMsgClientToGCCollectorsCacheAvailableDataRequest)(nil),                   // 426: protocol.CMsgClientToGCCollectorsCacheAvailableDataRequest
-	(*CMsgGCToClientCollectorsCacheAvailableDataResponse)(nil),                  // 427: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse
-	(*CMsgClientToGCUploadMatchClip)(nil),                                       // 428: protocol.CMsgClientToGCUploadMatchClip
-	(*CMsgGCToClientUploadMatchClipResponse)(nil),                               // 429: protocol.CMsgGCToClientUploadMatchClipResponse
-	(*CMsgClientToGCMapStatsRequest)(nil),                                       // 430: protocol.CMsgClientToGCMapStatsRequest
-	(*CMsgGCToClientMapStatsResponse)(nil),                                      // 431: protocol.CMsgGCToClientMapStatsResponse
-	(*CMsgRoadToTIAssignedQuest)(nil),                                           // 432: protocol.CMsgRoadToTIAssignedQuest
-	(*CMsgRoadToTIUserData)(nil),                                                // 433: protocol.CMsgRoadToTIUserData
-	(*CMsgClientToGCRoadToTIGetQuests)(nil),                                     // 434: protocol.CMsgClientToGCRoadToTIGetQuests
-	(*CMsgClientToGCRoadToTIGetQuestsResponse)(nil),                             // 435: protocol.CMsgClientToGCRoadToTIGetQuestsResponse
-	(*CMsgClientToGCRoadToTIGetActiveQuest)(nil),                                // 436: protocol.CMsgClientToGCRoadToTIGetActiveQuest
-	(*CMsgClientToGCRoadToTIGetActiveQuestResponse)(nil),                        // 437: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse
-	(*CMsgGCToClientRoadToTIQuestDataUpdated)(nil),                              // 438: protocol.CMsgGCToClientRoadToTIQuestDataUpdated
-	(*CMsgClientToGCRoadToTIUseItem)(nil),                                       // 439: protocol.CMsgClientToGCRoadToTIUseItem
-	(*CMsgClientToGCRoadToTIUseItemResponse)(nil),                               // 440: protocol.CMsgClientToGCRoadToTIUseItemResponse
-	(*CMsgClientToGCRoadToTIDevForceQuest)(nil),                                 // 441: protocol.CMsgClientToGCRoadToTIDevForceQuest
-	(*CMsgLobbyRoadToTIMatchQuestData)(nil),                                     // 442: protocol.CMsgLobbyRoadToTIMatchQuestData
-	(*CMsgClientToGCNewBloomGift)(nil),                                          // 443: protocol.CMsgClientToGCNewBloomGift
-	(*CMsgClientToGCNewBloomGiftResponse)(nil),                                  // 444: protocol.CMsgClientToGCNewBloomGiftResponse
-	(*CMsgClientToGCSetBannedHeroes)(nil),                                       // 445: protocol.CMsgClientToGCSetBannedHeroes
-	(*CMsgClientToGCUpdateComicBookStats)(nil),                                  // 446: protocol.CMsgClientToGCUpdateComicBookStats
-	(*CMsgGCRankedPlayerInfoSubmit)(nil),                                        // 447: protocol.CMsgGCRankedPlayerInfoSubmit
-	(*CMsgGCRankedPlayerInfoSubmitResponse)(nil),                                // 448: protocol.CMsgGCRankedPlayerInfoSubmitResponse
-	(*CMsgDOTARequestMatchesResponse_Series)(nil),                               // 449: protocol.CMsgDOTARequestMatchesResponse.Series
-	(*CMsgDOTAProfileTickets_LeaguePass)(nil),                                   // 450: protocol.CMsgDOTAProfileTickets.LeaguePass
-	(*CMsgDOTAWelcome_CExtraMsg)(nil),                                           // 451: protocol.CMsgDOTAWelcome.CExtraMsg
-	(*CMsgDOTAMatchVotes_PlayerVote)(nil),                                       // 452: protocol.CMsgDOTAMatchVotes.PlayerVote
-	(*CMsgGCGetHeroStandingsResponse_Hero)(nil),                                 // 453: protocol.CMsgGCGetHeroStandingsResponse.Hero
-	(*CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer)(nil),                 // 454: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer
-	(*CMsgGCGetHeroTimedStatsResponse_RankChunkedStats)(nil),                    // 455: protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats
-	(*CMsgDOTAClaimEventActionData_GrantItemGiftData)(nil),                      // 456: protocol.CMsgDOTAClaimEventActionData.GrantItemGiftData
-	(*CMsgDOTAGetEventPointsResponse_Action)(nil),                               // 457: protocol.CMsgDOTAGetEventPointsResponse.Action
-	(*CMsgDOTAGetPlayerMatchHistoryResponse_Match)(nil),                         // 458: protocol.CMsgDOTAGetPlayerMatchHistoryResponse.Match
-	(*CMsgClientToGCGetTrophyListResponse_Trophy)(nil),                          // 459: protocol.CMsgClientToGCGetTrophyListResponse.Trophy
-	(*CMsgClientToGCSetProfileCardSlots_CardSlot)(nil),                          // 460: protocol.CMsgClientToGCSetProfileCardSlots.CardSlot
-	(*CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame)(nil),           // 461: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.CustomGame
-	(*CMsgDOTAPartyRichPresence_Member)(nil),                                    // 462: protocol.CMsgDOTAPartyRichPresence.Member
-	(*CMsgDOTAPartyRichPresence_WeekendTourney)(nil),                            // 463: protocol.CMsgDOTAPartyRichPresence.WeekendTourney
-	(*CMsgClientToGCGetQuestProgressResponse_Challenge)(nil),                    // 464: protocol.CMsgClientToGCGetQuestProgressResponse.Challenge
-	(*CMsgClientToGCGetQuestProgressResponse_Quest)(nil),                        // 465: protocol.CMsgClientToGCGetQuestProgressResponse.Quest
-	(*CMsgEventGoals_EventGoal)(nil),                                            // 466: protocol.CMsgEventGoals.EventGoal
-	(*CMsgPredictionRankings_PredictionLine)(nil),                               // 467: protocol.CMsgPredictionRankings.PredictionLine
-	(*CMsgPredictionRankings_Prediction)(nil),                                   // 468: protocol.CMsgPredictionRankings.Prediction
-	(*CMsgPredictionResults_ResultBreakdown)(nil),                               // 469: protocol.CMsgPredictionResults.ResultBreakdown
-	(*CMsgPredictionResults_Result)(nil),                                        // 470: protocol.CMsgPredictionResults.Result
-	(*CMsgClientToGCTeammateStatsResponse_TeammateStat)(nil),                    // 471: protocol.CMsgClientToGCTeammateStatsResponse.TeammateStat
-	(*CMsgClientToGCRequestEventPointLogResponseV2_LogEntry)(nil),               // 472: protocol.CMsgClientToGCRequestEventPointLogResponseV2.LogEntry
-	(*CMsgGCToClientQuestProgressUpdated_Challenge)(nil),                        // 473: protocol.CMsgGCToClientQuestProgressUpdated.Challenge
-	(*CMsgClientToGCSelectCompendiumInGamePrediction_Prediction)(nil),           // 474: protocol.CMsgClientToGCSelectCompendiumInGamePrediction.Prediction
-	(*CMsgGCToClientBattlePassRollup_International2016_Questlines)(nil),         // 475: protocol.CMsgGCToClientBattlePassRollup_International2016.Questlines
-	(*CMsgGCToClientBattlePassRollup_International2016_Wagering)(nil),           // 476: protocol.CMsgGCToClientBattlePassRollup_International2016.Wagering
-	(*CMsgGCToClientBattlePassRollup_International2016_Achievements)(nil),       // 477: protocol.CMsgGCToClientBattlePassRollup_International2016.Achievements
-	(*CMsgGCToClientBattlePassRollup_International2016_BattleCup)(nil),          // 478: protocol.CMsgGCToClientBattlePassRollup_International2016.BattleCup
-	(*CMsgGCToClientBattlePassRollup_International2016_Predictions)(nil),        // 479: protocol.CMsgGCToClientBattlePassRollup_International2016.Predictions
-	(*CMsgGCToClientBattlePassRollup_International2016_Bracket)(nil),            // 480: protocol.CMsgGCToClientBattlePassRollup_International2016.Bracket
-	(*CMsgGCToClientBattlePassRollup_International2016_PlayerCard)(nil),         // 481: protocol.CMsgGCToClientBattlePassRollup_International2016.PlayerCard
-	(*CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge)(nil),   // 482: protocol.CMsgGCToClientBattlePassRollup_International2016.FantasyChallenge
-	(*CMsgGCToClientBattlePassRollup_Fall2016_Questlines)(nil),                  // 483: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Questlines
-	(*CMsgGCToClientBattlePassRollup_Fall2016_Wagering)(nil),                    // 484: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Wagering
-	(*CMsgGCToClientBattlePassRollup_Fall2016_Achievements)(nil),                // 485: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Achievements
-	(*CMsgGCToClientBattlePassRollup_Fall2016_BattleCup)(nil),                   // 486: protocol.CMsgGCToClientBattlePassRollup_Fall2016.BattleCup
-	(*CMsgGCToClientBattlePassRollup_Fall2016_Predictions)(nil),                 // 487: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Predictions
-	(*CMsgGCToClientBattlePassRollup_Fall2016_Bracket)(nil),                     // 488: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Bracket
-	(*CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard)(nil),                  // 489: protocol.CMsgGCToClientBattlePassRollup_Fall2016.PlayerCard
-	(*CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge)(nil),            // 490: protocol.CMsgGCToClientBattlePassRollup_Fall2016.FantasyChallenge
-	(*CMsgGCToClientBattlePassRollup_Winter2017_Questlines)(nil),                // 491: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Questlines
-	(*CMsgGCToClientBattlePassRollup_Winter2017_Wagering)(nil),                  // 492: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Wagering
-	(*CMsgGCToClientBattlePassRollup_Winter2017_Achievements)(nil),              // 493: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Achievements
-	(*CMsgGCToClientBattlePassRollup_Winter2017_BattleCup)(nil),                 // 494: protocol.CMsgGCToClientBattlePassRollup_Winter2017.BattleCup
-	(*CMsgGCToClientBattlePassRollup_Winter2017_Predictions)(nil),               // 495: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Predictions
-	(*CMsgGCToClientBattlePassRollup_Winter2017_Bracket)(nil),                   // 496: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Bracket
-	(*CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard)(nil),                // 497: protocol.CMsgGCToClientBattlePassRollup_Winter2017.PlayerCard
-	(*CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge)(nil),          // 498: protocol.CMsgGCToClientBattlePassRollup_Winter2017.FantasyChallenge
-	(*CMsgGCToClientBattlePassRollup_TI7_Questlines)(nil),                       // 499: protocol.CMsgGCToClientBattlePassRollup_TI7.Questlines
-	(*CMsgGCToClientBattlePassRollup_TI7_Wagering)(nil),                         // 500: protocol.CMsgGCToClientBattlePassRollup_TI7.Wagering
-	(*CMsgGCToClientBattlePassRollup_TI7_Achievements)(nil),                     // 501: protocol.CMsgGCToClientBattlePassRollup_TI7.Achievements
-	(*CMsgGCToClientBattlePassRollup_TI7_BattleCup)(nil),                        // 502: protocol.CMsgGCToClientBattlePassRollup_TI7.BattleCup
-	(*CMsgGCToClientBattlePassRollup_TI7_Predictions)(nil),                      // 503: protocol.CMsgGCToClientBattlePassRollup_TI7.Predictions
-	(*CMsgGCToClientBattlePassRollup_TI7_Bracket)(nil),                          // 504: protocol.CMsgGCToClientBattlePassRollup_TI7.Bracket
-	(*CMsgGCToClientBattlePassRollup_TI7_PlayerCard)(nil),                       // 505: protocol.CMsgGCToClientBattlePassRollup_TI7.PlayerCard
-	(*CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge)(nil),                 // 506: protocol.CMsgGCToClientBattlePassRollup_TI7.FantasyChallenge
-	(*CMsgGCToClientBattlePassRollup_TI8_CavernCrawl)(nil),                      // 507: protocol.CMsgGCToClientBattlePassRollup_TI8.CavernCrawl
-	(*CMsgGCToClientBattlePassRollup_TI8_Wagering)(nil),                         // 508: protocol.CMsgGCToClientBattlePassRollup_TI8.Wagering
-	(*CMsgGCToClientBattlePassRollup_TI8_Achievements)(nil),                     // 509: protocol.CMsgGCToClientBattlePassRollup_TI8.Achievements
-	(*CMsgGCToClientBattlePassRollup_TI8_Predictions)(nil),                      // 510: protocol.CMsgGCToClientBattlePassRollup_TI8.Predictions
-	(*CMsgGCToClientBattlePassRollup_TI8_Bracket)(nil),                          // 511: protocol.CMsgGCToClientBattlePassRollup_TI8.Bracket
-	(*CMsgGCToClientBattlePassRollup_TI8_PlayerCard)(nil),                       // 512: protocol.CMsgGCToClientBattlePassRollup_TI8.PlayerCard
-	(*CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge)(nil),                 // 513: protocol.CMsgGCToClientBattlePassRollup_TI8.FantasyChallenge
-	(*CMsgGCToClientBattlePassRollupListResponse_EventInfo)(nil),                // 514: protocol.CMsgGCToClientBattlePassRollupListResponse.EventInfo
-	(*CMsgDOTAClientToGCQuickStatsResponse_SimpleStats)(nil),                    // 515: protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	(*CMsgProfileResponse_FeaturedHero)(nil),                                    // 516: protocol.CMsgProfileResponse.FeaturedHero
-	(*CMsgProfileResponse_MatchInfo)(nil),                                       // 517: protocol.CMsgProfileResponse.MatchInfo
-	(*CMsgHeroGlobalDataResponse_GraphData)(nil),                                // 518: protocol.CMsgHeroGlobalDataResponse.GraphData
-	(*CMsgHeroGlobalDataResponse_WeekData)(nil),                                 // 519: protocol.CMsgHeroGlobalDataResponse.WeekData
-	(*CMsgHeroGlobalDataResponse_HeroDataPerRankChunk)(nil),                     // 520: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk
-	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData)(nil),                   // 521: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.HeroData
-	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData)(nil),             // 522: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData
-	(*CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo)(nil),         // 523: protocol.CMsgGCToClientCavernCrawlMapPathCompleted.CompletedPathInfo
-	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge)(nil),   // 524: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.SwappedChallenge
-	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem)(nil),      // 525: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.InventoryItem
-	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap)(nil),        // 526: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.TreasureMap
-	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant)(nil),         // 527: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant
-	(*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant)(nil),     // 528: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.MapVariant
-	(*CMsgDOTAMutationList_Mutation)(nil),                                       // 529: protocol.CMsgDOTAMutationList.Mutation
-	(*CMsgEventTipsSummaryResponse_Tipper)(nil),                                 // 530: protocol.CMsgEventTipsSummaryResponse.Tipper
-	(*CMsgSocialFeedResponse_FeedEvent)(nil),                                    // 531: protocol.CMsgSocialFeedResponse.FeedEvent
-	(*CMsgSocialFeedCommentsResponse_FeedComment)(nil),                          // 532: protocol.CMsgSocialFeedCommentsResponse.FeedComment
-	(*CMsgClientToGCRequestContestVotesResponse_ItemVote)(nil),                  // 533: protocol.CMsgClientToGCRequestContestVotesResponse.ItemVote
-	(*CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry)(nil),               // 534: protocol.CMsgGCToClientGetFilteredPlayersResponse.CFilterEntry
-	(*CMsgGCToClientVerifyFavoritePlayersResponse_Result)(nil),                  // 535: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result
-	(*CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate)(nil),         // 536: protocol.CMsgClientToGCRequestReporterUpdatesResponse.ReporterUpdate
-	(*CMsgClientToGCGetOWMatchDetailsResponse_Marker)(nil),                      // 537: protocol.CMsgClientToGCGetOWMatchDetailsResponse.Marker
-	(*CMsgClientToGCGetDPCFavoritesResponse_Favorite)(nil),                      // 538: protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite
-	(*CMsgClientToGCPlaceStickersRequest_StickerItem)(nil),                      // 539: protocol.CMsgClientToGCPlaceStickersRequest.StickerItem
-	(*CMsgClientToGCPlaceCollectionStickersRequest_Slot)(nil),                   // 540: protocol.CMsgClientToGCPlaceCollectionStickersRequest.Slot
-	(*CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote)(nil),             // 541: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote
-	(*CMsgClientToGCUpdateComicBookStats_SingleStat)(nil),                       // 542: protocol.CMsgClientToGCUpdateComicBookStats.SingleStat
-	(*CMsgClientToGCUpdateComicBookStats_LanguageStats)(nil),                    // 543: protocol.CMsgClientToGCUpdateComicBookStats.LanguageStats
-	(*CMsgDOTAMatch)(nil),                                                       // 544: protocol.CMsgDOTAMatch
-	(MatchType)(0),                                                              // 545: protocol.MatchType
-	(DOTAMatchVote)(0),                                                          // 546: protocol.DOTAMatchVote
-	(EEvent)(0),                                                                 // 547: protocol.EEvent
-	(*CExtraMsgBlock)(nil),                                                      // 548: protocol.CExtraMsgBlock
-	(EMatchGroupServerStatus)(0),                                                // 549: protocol.EMatchGroupServerStatus
-	(EEventActionScoreMode)(0),                                                  // 550: protocol.EEventActionScoreMode
-	(*CMsgDOTAClaimEventActionResponse)(nil),                                    // 551: protocol.CMsgDOTAClaimEventActionResponse
-	(ERankType)(0),                                                              // 552: protocol.ERankType
-	(CSODOTAParty_State)(0),                                                     // 553: protocol.CSODOTAParty.State
-	(CSODOTALobby_State)(0),                                                     // 554: protocol.CSODOTALobby.State
-	(DOTA_GameMode)(0),                                                          // 555: protocol.DOTA_GameMode
-	(*CMsgDOTASDOHeroStatsHistory)(nil),                                         // 556: protocol.CMsgDOTASDOHeroStatsHistory
-	(*CMsgArcanaVoteMatchVotes)(nil),                                            // 557: protocol.CMsgArcanaVoteMatchVotes
-	(ELeagueRegion)(0),                                                          // 558: protocol.ELeagueRegion
-	(*CMsgDOTATriviaQuestion)(nil),                                              // 559: protocol.CMsgDOTATriviaQuestion
-	(DOTASelectionPriorityChoice)(0),                                            // 560: protocol.DOTASelectionPriorityChoice
-	(EHeroRelicRarity)(0),                                                       // 561: protocol.EHeroRelicRarity
-	(*CSOEconItem)(nil),                                                         // 562: protocol.CSOEconItem
-	(*CMsgSuccessfulHero)(nil),                                                  // 563: protocol.CMsgSuccessfulHero
-	(*CMsgRecentMatchInfo)(nil),                                                 // 564: protocol.CMsgRecentMatchInfo
-	(*CMsgStickerbookPage)(nil),                                                 // 565: protocol.CMsgStickerbookPage
-	(*CPartySearchClientParty)(nil),                                             // 566: protocol.CPartySearchClientParty
-	(*CMsgPlayerRecentAccomplishments)(nil),                                     // 567: protocol.CMsgPlayerRecentAccomplishments
-	(*CMsgPlayerHeroRecentAccomplishments)(nil),                                 // 568: protocol.CMsgPlayerHeroRecentAccomplishments
-	(*CMsgUnderDraftData)(nil),                                                  // 569: protocol.CMsgUnderDraftData
-	(EOverwatchReportReason)(0),                                                 // 570: protocol.EOverwatchReportReason
-	(EOverwatchConviction)(0),                                                   // 571: protocol.EOverwatchConviction
-	(EDPCFavoriteType)(0),                                                       // 572: protocol.EDPCFavoriteType
-	(*CMsgStickerbook)(nil),                                                     // 573: protocol.CMsgStickerbook
-	(EStickerbookPageType)(0),                                                   // 574: protocol.EStickerbookPageType
-	(*CMsgStickerbookTeamPageOrderSequence)(nil),                                // 575: protocol.CMsgStickerbookTeamPageOrderSequence
-	(*CMsgStickerHeroes)(nil),                                                   // 576: protocol.CMsgStickerHeroes
-	(*CMatchClip)(nil),                                                          // 577: protocol.CMatchClip
-	(*CMsgMapStatsSnapshot)(nil),                                                // 578: protocol.CMsgMapStatsSnapshot
-	(*CMsgGlobalMapStats)(nil),                                                  // 579: protocol.CMsgGlobalMapStats
-	(ENewBloomGiftingResponse)(0),                                               // 580: protocol.ENewBloomGiftingResponse
-	(EProfileCardSlotType)(0),                                                   // 581: protocol.EProfileCardSlotType
-	(*CMsgStickerbookSticker)(nil),                                              // 582: protocol.CMsgStickerbookSticker
+	(CMsgDOTAClaimGatedEventResponse_ResultCode)(0),                             // 83: protocol.CMsgDOTAClaimGatedEventResponse.ResultCode
+	(CMsgClientToGCGetEventCouponResponse_ResultCode)(0),                        // 84: protocol.CMsgClientToGCGetEventCouponResponse.ResultCode
+	(CMsgClientToGCConvertEventPointsResponse_ResultCode)(0),                    // 85: protocol.CMsgClientToGCConvertEventPointsResponse.ResultCode
+	(*CMsgClientSuspended)(nil),                                                 // 86: protocol.CMsgClientSuspended
+	(*CMsgBalancedShuffleLobby)(nil),                                            // 87: protocol.CMsgBalancedShuffleLobby
+	(*CMsgInitialQuestionnaireResponse)(nil),                                    // 88: protocol.CMsgInitialQuestionnaireResponse
+	(*CMsgDOTARequestMatchesResponse)(nil),                                      // 89: protocol.CMsgDOTARequestMatchesResponse
+	(*CMsgDOTAPopup)(nil),                                                       // 90: protocol.CMsgDOTAPopup
+	(*CMsgDOTAReportsRemainingRequest)(nil),                                     // 91: protocol.CMsgDOTAReportsRemainingRequest
+	(*CMsgDOTAReportsRemainingResponse)(nil),                                    // 92: protocol.CMsgDOTAReportsRemainingResponse
+	(*CMsgDOTASubmitPlayerReport)(nil),                                          // 93: protocol.CMsgDOTASubmitPlayerReport
+	(*CMsgDOTASubmitPlayerReportResponse)(nil),                                  // 94: protocol.CMsgDOTASubmitPlayerReportResponse
+	(*CMsgDOTASubmitPlayerAvoidRequest)(nil),                                    // 95: protocol.CMsgDOTASubmitPlayerAvoidRequest
+	(*CMsgDOTASubmitPlayerAvoidRequestResponse)(nil),                            // 96: protocol.CMsgDOTASubmitPlayerAvoidRequestResponse
+	(*CMsgDOTASubmitPlayerReportV2)(nil),                                        // 97: protocol.CMsgDOTASubmitPlayerReportV2
+	(*CMsgDOTASubmitPlayerReportResponseV2)(nil),                                // 98: protocol.CMsgDOTASubmitPlayerReportResponseV2
+	(*CMsgDOTASubmitLobbyMVPVote)(nil),                                          // 99: protocol.CMsgDOTASubmitLobbyMVPVote
+	(*CMsgDOTASubmitLobbyMVPVoteResponse)(nil),                                  // 100: protocol.CMsgDOTASubmitLobbyMVPVoteResponse
+	(*CMsgDOTALobbyMVPAwarded)(nil),                                             // 101: protocol.CMsgDOTALobbyMVPAwarded
+	(*CMsgDOTAKickedFromMatchmakingQueue)(nil),                                  // 102: protocol.CMsgDOTAKickedFromMatchmakingQueue
+	(*CMsgGCMatchDetailsRequest)(nil),                                           // 103: protocol.CMsgGCMatchDetailsRequest
+	(*CMsgGCMatchDetailsResponse)(nil),                                          // 104: protocol.CMsgGCMatchDetailsResponse
+	(*CMsgDOTAProfileTickets)(nil),                                              // 105: protocol.CMsgDOTAProfileTickets
+	(*CMsgClientToGCGetProfileTickets)(nil),                                     // 106: protocol.CMsgClientToGCGetProfileTickets
+	(*CMsgGCToClientPartySearchInvites)(nil),                                    // 107: protocol.CMsgGCToClientPartySearchInvites
+	(*CMsgDOTAWelcome)(nil),                                                     // 108: protocol.CMsgDOTAWelcome
+	(*CSODOTAGameHeroFavorites)(nil),                                            // 109: protocol.CSODOTAGameHeroFavorites
+	(*CMsgDOTAMatchVotes)(nil),                                                  // 110: protocol.CMsgDOTAMatchVotes
+	(*CMsgMatchmakingMatchGroupInfo)(nil),                                       // 111: protocol.CMsgMatchmakingMatchGroupInfo
+	(*CMsgDOTAMatchmakingStatsRequest)(nil),                                     // 112: protocol.CMsgDOTAMatchmakingStatsRequest
+	(*CMsgDOTAMatchmakingStatsResponse)(nil),                                    // 113: protocol.CMsgDOTAMatchmakingStatsResponse
+	(*CMsgDOTAUpdateMatchmakingStats)(nil),                                      // 114: protocol.CMsgDOTAUpdateMatchmakingStats
+	(*CMsgDOTAUpdateMatchManagementStats)(nil),                                  // 115: protocol.CMsgDOTAUpdateMatchManagementStats
+	(*CMsgDOTASetMatchHistoryAccess)(nil),                                       // 116: protocol.CMsgDOTASetMatchHistoryAccess
+	(*CMsgDOTASetMatchHistoryAccessResponse)(nil),                               // 117: protocol.CMsgDOTASetMatchHistoryAccessResponse
+	(*CMsgDOTANotifyAccountFlagsChange)(nil),                                    // 118: protocol.CMsgDOTANotifyAccountFlagsChange
+	(*CMsgDOTASetProfilePrivacy)(nil),                                           // 119: protocol.CMsgDOTASetProfilePrivacy
+	(*CMsgDOTASetProfilePrivacyResponse)(nil),                                   // 120: protocol.CMsgDOTASetProfilePrivacyResponse
+	(*CMsgUpgradeLeagueItem)(nil),                                               // 121: protocol.CMsgUpgradeLeagueItem
+	(*CMsgUpgradeLeagueItemResponse)(nil),                                       // 122: protocol.CMsgUpgradeLeagueItemResponse
+	(*CMsgGCWatchDownloadedReplay)(nil),                                         // 123: protocol.CMsgGCWatchDownloadedReplay
+	(*CMsgClientToGCWatchingBroadcast)(nil),                                     // 124: protocol.CMsgClientToGCWatchingBroadcast
+	(*CMsgClientsRejoinChatChannels)(nil),                                       // 125: protocol.CMsgClientsRejoinChatChannels
+	(*CMsgGCGetHeroStandings)(nil),                                              // 126: protocol.CMsgGCGetHeroStandings
+	(*CMsgGCGetHeroStandingsResponse)(nil),                                      // 127: protocol.CMsgGCGetHeroStandingsResponse
+	(*CMatchPlayerTimedStatAverages)(nil),                                       // 128: protocol.CMatchPlayerTimedStatAverages
+	(*CMatchPlayerTimedStatStdDeviations)(nil),                                  // 129: protocol.CMatchPlayerTimedStatStdDeviations
+	(*CMsgGCGetHeroTimedStatsResponse)(nil),                                     // 130: protocol.CMsgGCGetHeroTimedStatsResponse
+	(*CMsgGCItemEditorReservationsRequest)(nil),                                 // 131: protocol.CMsgGCItemEditorReservationsRequest
+	(*CMsgGCItemEditorReservation)(nil),                                         // 132: protocol.CMsgGCItemEditorReservation
+	(*CMsgGCItemEditorReservationsResponse)(nil),                                // 133: protocol.CMsgGCItemEditorReservationsResponse
+	(*CMsgGCItemEditorReserveItemDef)(nil),                                      // 134: protocol.CMsgGCItemEditorReserveItemDef
+	(*CMsgGCItemEditorReserveItemDefResponse)(nil),                              // 135: protocol.CMsgGCItemEditorReserveItemDefResponse
+	(*CMsgGCItemEditorReleaseReservation)(nil),                                  // 136: protocol.CMsgGCItemEditorReleaseReservation
+	(*CMsgGCItemEditorReleaseReservationResponse)(nil),                          // 137: protocol.CMsgGCItemEditorReleaseReservationResponse
+	(*CMsgFlipLobbyTeams)(nil),                                                  // 138: protocol.CMsgFlipLobbyTeams
+	(*CMsgGCLobbyUpdateBroadcastChannelInfo)(nil),                               // 139: protocol.CMsgGCLobbyUpdateBroadcastChannelInfo
+	(*CMsgDOTAClaimEventActionData)(nil),                                        // 140: protocol.CMsgDOTAClaimEventActionData
+	(*CMsgDOTAClaimEventAction)(nil),                                            // 141: protocol.CMsgDOTAClaimEventAction
+	(*CMsgClientToGCClaimEventActionUsingItem)(nil),                             // 142: protocol.CMsgClientToGCClaimEventActionUsingItem
+	(*CMsgClientToGCClaimEventActionUsingItemResponse)(nil),                     // 143: protocol.CMsgClientToGCClaimEventActionUsingItemResponse
+	(*CMsgGCToClientClaimEventActionUsingItemCompleted)(nil),                    // 144: protocol.CMsgGCToClientClaimEventActionUsingItemCompleted
+	(*CMsgDOTAGetEventPoints)(nil),                                              // 145: protocol.CMsgDOTAGetEventPoints
+	(*CMsgDOTAGetEventPointsResponse)(nil),                                      // 146: protocol.CMsgDOTAGetEventPointsResponse
+	(*CMsgDOTAGetPeriodicResource)(nil),                                         // 147: protocol.CMsgDOTAGetPeriodicResource
+	(*CMsgDOTAGetPeriodicResourceResponse)(nil),                                 // 148: protocol.CMsgDOTAGetPeriodicResourceResponse
+	(*CMsgDOTAPeriodicResourceUpdated)(nil),                                     // 149: protocol.CMsgDOTAPeriodicResourceUpdated
+	(*CMsgDOTACompendiumSelection)(nil),                                         // 150: protocol.CMsgDOTACompendiumSelection
+	(*CMsgDOTACompendiumSelectionResponse)(nil),                                 // 151: protocol.CMsgDOTACompendiumSelectionResponse
+	(*CMsgDOTACompendiumRemoveAllSelections)(nil),                               // 152: protocol.CMsgDOTACompendiumRemoveAllSelections
+	(*CMsgDOTACompendiumRemoveAllSelectionsResponse)(nil),                       // 153: protocol.CMsgDOTACompendiumRemoveAllSelectionsResponse
+	(*CMsgDOTACompendiumData)(nil),                                              // 154: protocol.CMsgDOTACompendiumData
+	(*CMsgDOTACompendiumDataRequest)(nil),                                       // 155: protocol.CMsgDOTACompendiumDataRequest
+	(*CMsgDOTACompendiumDataResponse)(nil),                                      // 156: protocol.CMsgDOTACompendiumDataResponse
+	(*CMsgDOTAGetPlayerMatchHistory)(nil),                                       // 157: protocol.CMsgDOTAGetPlayerMatchHistory
+	(*CMsgDOTAGetPlayerMatchHistoryResponse)(nil),                               // 158: protocol.CMsgDOTAGetPlayerMatchHistoryResponse
+	(*CMsgGCNotificationsRequest)(nil),                                          // 159: protocol.CMsgGCNotificationsRequest
+	(*CMsgGCNotifications_Notification)(nil),                                    // 160: protocol.CMsgGCNotifications_Notification
+	(*CMsgGCNotificationsUpdate)(nil),                                           // 161: protocol.CMsgGCNotificationsUpdate
+	(*CMsgGCNotificationsResponse)(nil),                                         // 162: protocol.CMsgGCNotificationsResponse
+	(*CMsgGCNotificationsMarkReadRequest)(nil),                                  // 163: protocol.CMsgGCNotificationsMarkReadRequest
+	(*CMsgGCPlayerInfoSubmit)(nil),                                              // 164: protocol.CMsgGCPlayerInfoSubmit
+	(*CMsgGCPlayerInfoSubmitResponse)(nil),                                      // 165: protocol.CMsgGCPlayerInfoSubmitResponse
+	(*CMsgDOTAEmoticonAccessSDO)(nil),                                           // 166: protocol.CMsgDOTAEmoticonAccessSDO
+	(*CMsgClientToGCEmoticonDataRequest)(nil),                                   // 167: protocol.CMsgClientToGCEmoticonDataRequest
+	(*CMsgGCToClientEmoticonData)(nil),                                          // 168: protocol.CMsgGCToClientEmoticonData
+	(*CMsgGCToClientTournamentItemDrop)(nil),                                    // 169: protocol.CMsgGCToClientTournamentItemDrop
+	(*CMsgClientToGCGetAllHeroOrder)(nil),                                       // 170: protocol.CMsgClientToGCGetAllHeroOrder
+	(*CMsgClientToGCGetAllHeroOrderResponse)(nil),                               // 171: protocol.CMsgClientToGCGetAllHeroOrderResponse
+	(*CMsgClientToGCGetAllHeroProgress)(nil),                                    // 172: protocol.CMsgClientToGCGetAllHeroProgress
+	(*CMsgClientToGCGetAllHeroProgressResponse)(nil),                            // 173: protocol.CMsgClientToGCGetAllHeroProgressResponse
+	(*CMsgClientToGCGetTrophyList)(nil),                                         // 174: protocol.CMsgClientToGCGetTrophyList
+	(*CMsgClientToGCGetTrophyListResponse)(nil),                                 // 175: protocol.CMsgClientToGCGetTrophyListResponse
+	(*CMsgGCToClientTrophyAwarded)(nil),                                         // 176: protocol.CMsgGCToClientTrophyAwarded
+	(*CMsgClientToGCRankRequest)(nil),                                           // 177: protocol.CMsgClientToGCRankRequest
+	(*CMsgGCToClientRankResponse)(nil),                                          // 178: protocol.CMsgGCToClientRankResponse
+	(*CMsgGCToClientRankUpdate)(nil),                                            // 179: protocol.CMsgGCToClientRankUpdate
+	(*CMsgClientToGCGetProfileCard)(nil),                                        // 180: protocol.CMsgClientToGCGetProfileCard
+	(*CMsgClientToGCSetProfileCardSlots)(nil),                                   // 181: protocol.CMsgClientToGCSetProfileCardSlots
+	(*CMsgClientToGCGetProfileCardStats)(nil),                                   // 182: protocol.CMsgClientToGCGetProfileCardStats
+	(*CMsgClientToGCCreateHeroStatue)(nil),                                      // 183: protocol.CMsgClientToGCCreateHeroStatue
+	(*CMsgGCToClientHeroStatueCreateResult)(nil),                                // 184: protocol.CMsgGCToClientHeroStatueCreateResult
+	(*CMsgClientToGCPlayerStatsRequest)(nil),                                    // 185: protocol.CMsgClientToGCPlayerStatsRequest
+	(*CMsgGCToClientPlayerStatsResponse)(nil),                                   // 186: protocol.CMsgGCToClientPlayerStatsResponse
+	(*CMsgClientToGCCustomGamesFriendsPlayedRequest)(nil),                       // 187: protocol.CMsgClientToGCCustomGamesFriendsPlayedRequest
+	(*CMsgGCToClientCustomGamesFriendsPlayedResponse)(nil),                      // 188: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse
+	(*CMsgClientToGCSocialFeedPostCommentRequest)(nil),                          // 189: protocol.CMsgClientToGCSocialFeedPostCommentRequest
+	(*CMsgGCToClientSocialFeedPostCommentResponse)(nil),                         // 190: protocol.CMsgGCToClientSocialFeedPostCommentResponse
+	(*CMsgClientToGCSocialFeedPostMessageRequest)(nil),                          // 191: protocol.CMsgClientToGCSocialFeedPostMessageRequest
+	(*CMsgGCToClientSocialFeedPostMessageResponse)(nil),                         // 192: protocol.CMsgGCToClientSocialFeedPostMessageResponse
+	(*CMsgClientToGCFriendsPlayedCustomGameRequest)(nil),                        // 193: protocol.CMsgClientToGCFriendsPlayedCustomGameRequest
+	(*CMsgGCToClientFriendsPlayedCustomGameResponse)(nil),                       // 194: protocol.CMsgGCToClientFriendsPlayedCustomGameResponse
+	(*CMsgDOTAPartyRichPresence)(nil),                                           // 195: protocol.CMsgDOTAPartyRichPresence
+	(*CMsgDOTALobbyRichPresence)(nil),                                           // 196: protocol.CMsgDOTALobbyRichPresence
+	(*CMsgDOTACustomGameListenServerStartedLoading)(nil),                        // 197: protocol.CMsgDOTACustomGameListenServerStartedLoading
+	(*CMsgDOTACustomGameClientFinishedLoading)(nil),                             // 198: protocol.CMsgDOTACustomGameClientFinishedLoading
+	(*CMsgClientToGCApplyGemCombiner)(nil),                                      // 199: protocol.CMsgClientToGCApplyGemCombiner
+	(*CMsgClientToGCH264Unsupported)(nil),                                       // 200: protocol.CMsgClientToGCH264Unsupported
+	(*CMsgClientToGCGetQuestProgress)(nil),                                      // 201: protocol.CMsgClientToGCGetQuestProgress
+	(*CMsgClientToGCGetQuestProgressResponse)(nil),                              // 202: protocol.CMsgClientToGCGetQuestProgressResponse
+	(*CMsgGCToClientMatchSignedOut)(nil),                                        // 203: protocol.CMsgGCToClientMatchSignedOut
+	(*CMsgGCGetHeroStatsHistory)(nil),                                           // 204: protocol.CMsgGCGetHeroStatsHistory
+	(*CMsgGCGetHeroStatsHistoryResponse)(nil),                                   // 205: protocol.CMsgGCGetHeroStatsHistoryResponse
+	(*CMsgPlayerConductScorecardRequest)(nil),                                   // 206: protocol.CMsgPlayerConductScorecardRequest
+	(*CMsgPlayerConductScorecard)(nil),                                          // 207: protocol.CMsgPlayerConductScorecard
+	(*CMsgClientToGCWageringRequest)(nil),                                       // 208: protocol.CMsgClientToGCWageringRequest
+	(*CMsgGCToClientWageringResponse)(nil),                                      // 209: protocol.CMsgGCToClientWageringResponse
+	(*CMsgGCToClientWageringUpdate)(nil),                                        // 210: protocol.CMsgGCToClientWageringUpdate
+	(*CMsgGCToClientArcanaVotesUpdate)(nil),                                     // 211: protocol.CMsgGCToClientArcanaVotesUpdate
+	(*CMsgClientToGCGetEventGoals)(nil),                                         // 212: protocol.CMsgClientToGCGetEventGoals
+	(*CMsgEventGoals)(nil),                                                      // 213: protocol.CMsgEventGoals
+	(*CMsgGCToGCLeaguePredictions)(nil),                                         // 214: protocol.CMsgGCToGCLeaguePredictions
+	(*CMsgPredictionRankings)(nil),                                              // 215: protocol.CMsgPredictionRankings
+	(*CMsgPredictionResults)(nil),                                               // 216: protocol.CMsgPredictionResults
+	(*CMsgClientToGCHasPlayerVotedForMVP)(nil),                                  // 217: protocol.CMsgClientToGCHasPlayerVotedForMVP
+	(*CMsgClientToGCHasPlayerVotedForMVPResponse)(nil),                          // 218: protocol.CMsgClientToGCHasPlayerVotedForMVPResponse
+	(*CMsgClientToGCVoteForMVP)(nil),                                            // 219: protocol.CMsgClientToGCVoteForMVP
+	(*CMsgClientToGCVoteForMVPResponse)(nil),                                    // 220: protocol.CMsgClientToGCVoteForMVPResponse
+	(*CMsgClientToGCMVPVoteTimeout)(nil),                                        // 221: protocol.CMsgClientToGCMVPVoteTimeout
+	(*CMsgClientToGCMVPVoteTimeoutResponse)(nil),                                // 222: protocol.CMsgClientToGCMVPVoteTimeoutResponse
+	(*CMsgClientToGCTeammateStatsRequest)(nil),                                  // 223: protocol.CMsgClientToGCTeammateStatsRequest
+	(*CMsgClientToGCTeammateStatsResponse)(nil),                                 // 224: protocol.CMsgClientToGCTeammateStatsResponse
+	(*CMsgClientToGCVoteForArcana)(nil),                                         // 225: protocol.CMsgClientToGCVoteForArcana
+	(*CMsgClientToGCVoteForArcanaResponse)(nil),                                 // 226: protocol.CMsgClientToGCVoteForArcanaResponse
+	(*CMsgClientToGCRequestArcanaVotesRemaining)(nil),                           // 227: protocol.CMsgClientToGCRequestArcanaVotesRemaining
+	(*CMsgClientToGCRequestArcanaVotesRemainingResponse)(nil),                   // 228: protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse
+	(*CMsgClientToGCRequestEventPointLogV2)(nil),                                // 229: protocol.CMsgClientToGCRequestEventPointLogV2
+	(*CMsgClientToGCRequestEventPointLogResponseV2)(nil),                        // 230: protocol.CMsgClientToGCRequestEventPointLogResponseV2
+	(*CMsgClientToGCPublishUserStat)(nil),                                       // 231: protocol.CMsgClientToGCPublishUserStat
+	(*CMsgClientToGCRequestSlarkGameResult)(nil),                                // 232: protocol.CMsgClientToGCRequestSlarkGameResult
+	(*CMsgClientToGCRequestSlarkGameResultResponse)(nil),                        // 233: protocol.CMsgClientToGCRequestSlarkGameResultResponse
+	(*CMsgGCToClientQuestProgressUpdated)(nil),                                  // 234: protocol.CMsgGCToClientQuestProgressUpdated
+	(*CMsgDOTARedeemItem)(nil),                                                  // 235: protocol.CMsgDOTARedeemItem
+	(*CMsgDOTARedeemItemResponse)(nil),                                          // 236: protocol.CMsgDOTARedeemItemResponse
+	(*CMsgClientToGCSelectCompendiumInGamePrediction)(nil),                      // 237: protocol.CMsgClientToGCSelectCompendiumInGamePrediction
+	(*CMsgClientToGCSelectCompendiumInGamePredictionResponse)(nil),              // 238: protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse
+	(*CMsgClientToGCOpenPlayerCardPack)(nil),                                    // 239: protocol.CMsgClientToGCOpenPlayerCardPack
+	(*CMsgClientToGCOpenPlayerCardPackResponse)(nil),                            // 240: protocol.CMsgClientToGCOpenPlayerCardPackResponse
+	(*CMsgClientToGCRecyclePlayerCard)(nil),                                     // 241: protocol.CMsgClientToGCRecyclePlayerCard
+	(*CMsgClientToGCRecyclePlayerCardResponse)(nil),                             // 242: protocol.CMsgClientToGCRecyclePlayerCardResponse
+	(*CMsgClientToGCCreatePlayerCardPack)(nil),                                  // 243: protocol.CMsgClientToGCCreatePlayerCardPack
+	(*CMsgClientToGCCreatePlayerCardPackResponse)(nil),                          // 244: protocol.CMsgClientToGCCreatePlayerCardPackResponse
+	(*CMsgClientToGCCreateTeamPlayerCardPack)(nil),                              // 245: protocol.CMsgClientToGCCreateTeamPlayerCardPack
+	(*CMsgClientToGCCreateTeamPlayerCardPackResponse)(nil),                      // 246: protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse
+	(*CMsgGCToClientBattlePassRollup_International2016)(nil),                    // 247: protocol.CMsgGCToClientBattlePassRollup_International2016
+	(*CMsgGCToClientBattlePassRollup_Fall2016)(nil),                             // 248: protocol.CMsgGCToClientBattlePassRollup_Fall2016
+	(*CMsgGCToClientBattlePassRollup_Winter2017)(nil),                           // 249: protocol.CMsgGCToClientBattlePassRollup_Winter2017
+	(*CMsgGCToClientBattlePassRollup_TI7)(nil),                                  // 250: protocol.CMsgGCToClientBattlePassRollup_TI7
+	(*CMsgGCToClientBattlePassRollup_TI8)(nil),                                  // 251: protocol.CMsgGCToClientBattlePassRollup_TI8
+	(*CMsgGCToClientBattlePassRollup_TI9)(nil),                                  // 252: protocol.CMsgGCToClientBattlePassRollup_TI9
+	(*CMsgGCToClientBattlePassRollup_TI10)(nil),                                 // 253: protocol.CMsgGCToClientBattlePassRollup_TI10
+	(*CMsgGCToClientBattlePassRollupRequest)(nil),                               // 254: protocol.CMsgGCToClientBattlePassRollupRequest
+	(*CMsgGCToClientBattlePassRollupResponse)(nil),                              // 255: protocol.CMsgGCToClientBattlePassRollupResponse
+	(*CMsgGCToClientBattlePassRollupListRequest)(nil),                           // 256: protocol.CMsgGCToClientBattlePassRollupListRequest
+	(*CMsgGCToClientBattlePassRollupListResponse)(nil),                          // 257: protocol.CMsgGCToClientBattlePassRollupListResponse
+	(*CMsgClientToGCTransferSeasonalMMRRequest)(nil),                            // 258: protocol.CMsgClientToGCTransferSeasonalMMRRequest
+	(*CMsgClientToGCTransferSeasonalMMRResponse)(nil),                           // 259: protocol.CMsgClientToGCTransferSeasonalMMRResponse
+	(*CMsgGCToClientPlaytestStatus)(nil),                                        // 260: protocol.CMsgGCToClientPlaytestStatus
+	(*CMsgClientToGCJoinPlaytest)(nil),                                          // 261: protocol.CMsgClientToGCJoinPlaytest
+	(*CMsgClientToGCJoinPlaytestResponse)(nil),                                  // 262: protocol.CMsgClientToGCJoinPlaytestResponse
+	(*CMsgDOTASetFavoriteTeam)(nil),                                             // 263: protocol.CMsgDOTASetFavoriteTeam
+	(*CMsgDOTATriviaCurrentQuestions)(nil),                                      // 264: protocol.CMsgDOTATriviaCurrentQuestions
+	(*CMsgDOTASubmitTriviaQuestionAnswer)(nil),                                  // 265: protocol.CMsgDOTASubmitTriviaQuestionAnswer
+	(*CMsgDOTASubmitTriviaQuestionAnswerResponse)(nil),                          // 266: protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse
+	(*CMsgDOTAStartTriviaSession)(nil),                                          // 267: protocol.CMsgDOTAStartTriviaSession
+	(*CMsgDOTAStartTriviaSessionResponse)(nil),                                  // 268: protocol.CMsgDOTAStartTriviaSessionResponse
+	(*CMsgDOTAAnchorPhoneNumberRequest)(nil),                                    // 269: protocol.CMsgDOTAAnchorPhoneNumberRequest
+	(*CMsgDOTAAnchorPhoneNumberResponse)(nil),                                   // 270: protocol.CMsgDOTAAnchorPhoneNumberResponse
+	(*CMsgDOTAUnanchorPhoneNumberRequest)(nil),                                  // 271: protocol.CMsgDOTAUnanchorPhoneNumberRequest
+	(*CMsgDOTAUnanchorPhoneNumberResponse)(nil),                                 // 272: protocol.CMsgDOTAUnanchorPhoneNumberResponse
+	(*CMsgGCToClientCommendNotification)(nil),                                   // 273: protocol.CMsgGCToClientCommendNotification
+	(*CMsgDOTAClientToGCQuickStatsRequest)(nil),                                 // 274: protocol.CMsgDOTAClientToGCQuickStatsRequest
+	(*CMsgDOTAClientToGCQuickStatsResponse)(nil),                                // 275: protocol.CMsgDOTAClientToGCQuickStatsResponse
+	(*CMsgDOTASelectionPriorityChoiceRequest)(nil),                              // 276: protocol.CMsgDOTASelectionPriorityChoiceRequest
+	(*CMsgDOTASelectionPriorityChoiceResponse)(nil),                             // 277: protocol.CMsgDOTASelectionPriorityChoiceResponse
+	(*CMsgDOTAGameAutographReward)(nil),                                         // 278: protocol.CMsgDOTAGameAutographReward
+	(*CMsgDOTAGameAutographRewardResponse)(nil),                                 // 279: protocol.CMsgDOTAGameAutographRewardResponse
+	(*CMsgDOTADestroyLobbyRequest)(nil),                                         // 280: protocol.CMsgDOTADestroyLobbyRequest
+	(*CMsgDOTADestroyLobbyResponse)(nil),                                        // 281: protocol.CMsgDOTADestroyLobbyResponse
+	(*CMsgDOTAGetRecentPlayTimeFriendsRequest)(nil),                             // 282: protocol.CMsgDOTAGetRecentPlayTimeFriendsRequest
+	(*CMsgDOTAGetRecentPlayTimeFriendsResponse)(nil),                            // 283: protocol.CMsgDOTAGetRecentPlayTimeFriendsResponse
+	(*CMsgPurchaseItemWithEventPoints)(nil),                                     // 284: protocol.CMsgPurchaseItemWithEventPoints
+	(*CMsgPurchaseItemWithEventPointsResponse)(nil),                             // 285: protocol.CMsgPurchaseItemWithEventPointsResponse
+	(*CMsgPurchaseHeroRandomRelic)(nil),                                         // 286: protocol.CMsgPurchaseHeroRandomRelic
+	(*CMsgPurchaseHeroRandomRelicResponse)(nil),                                 // 287: protocol.CMsgPurchaseHeroRandomRelicResponse
+	(*CMsgClientToGCRequestPlusWeeklyChallengeResult)(nil),                      // 288: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResult
+	(*CMsgClientToGCRequestPlusWeeklyChallengeResultResponse)(nil),              // 289: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
+	(*CMsgProfileRequest)(nil),                                                  // 290: protocol.CMsgProfileRequest
+	(*CMsgProfileResponse)(nil),                                                 // 291: protocol.CMsgProfileResponse
+	(*CMsgProfileUpdate)(nil),                                                   // 292: protocol.CMsgProfileUpdate
+	(*CMsgProfileUpdateResponse)(nil),                                           // 293: protocol.CMsgProfileUpdateResponse
+	(*CMsgTalentWinRates)(nil),                                                  // 294: protocol.CMsgTalentWinRates
+	(*CMsgGlobalHeroAverages)(nil),                                              // 295: protocol.CMsgGlobalHeroAverages
+	(*CMsgHeroGlobalDataRequest)(nil),                                           // 296: protocol.CMsgHeroGlobalDataRequest
+	(*CMsgHeroGlobalDataResponse)(nil),                                          // 297: protocol.CMsgHeroGlobalDataResponse
+	(*CMsgHeroGlobalDataAllHeroes)(nil),                                         // 298: protocol.CMsgHeroGlobalDataAllHeroes
+	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies)(nil),                            // 299: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies
+	(*CMsgPrivateMetadataKeyRequest)(nil),                                       // 300: protocol.CMsgPrivateMetadataKeyRequest
+	(*CMsgPrivateMetadataKeyResponse)(nil),                                      // 301: protocol.CMsgPrivateMetadataKeyResponse
+	(*CMsgActivatePlusFreeTrialResponse)(nil),                                   // 302: protocol.CMsgActivatePlusFreeTrialResponse
+	(*CMsgGCToClientCavernCrawlMapPathCompleted)(nil),                           // 303: protocol.CMsgGCToClientCavernCrawlMapPathCompleted
+	(*CMsgGCToClientCavernCrawlMapUpdated)(nil),                                 // 304: protocol.CMsgGCToClientCavernCrawlMapUpdated
+	(*CMsgClientToGCCavernCrawlClaimRoom)(nil),                                  // 305: protocol.CMsgClientToGCCavernCrawlClaimRoom
+	(*CMsgClientToGCCavernCrawlClaimRoomResponse)(nil),                          // 306: protocol.CMsgClientToGCCavernCrawlClaimRoomResponse
+	(*CMsgClientToGCCavernCrawlUseItemOnRoom)(nil),                              // 307: protocol.CMsgClientToGCCavernCrawlUseItemOnRoom
+	(*CMsgClientToGCCavernCrawlUseItemOnRoomResponse)(nil),                      // 308: protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse
+	(*CMsgClientToGCCavernCrawlUseItemOnPath)(nil),                              // 309: protocol.CMsgClientToGCCavernCrawlUseItemOnPath
+	(*CMsgClientToGCCavernCrawlUseItemOnPathResponse)(nil),                      // 310: protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse
+	(*CMsgClientToGCCavernCrawlRequestMapState)(nil),                            // 311: protocol.CMsgClientToGCCavernCrawlRequestMapState
+	(*CMsgClientToGCCavernCrawlRequestMapStateResponse)(nil),                    // 312: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse
+	(*CMsgClientToGCCavernCrawlGetClaimedRoomCount)(nil),                        // 313: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCount
+	(*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse)(nil),                // 314: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
+	(*CMsgDOTAMutationList)(nil),                                                // 315: protocol.CMsgDOTAMutationList
+	(*CMsgEventTipsSummaryRequest)(nil),                                         // 316: protocol.CMsgEventTipsSummaryRequest
+	(*CMsgEventTipsSummaryResponse)(nil),                                        // 317: protocol.CMsgEventTipsSummaryResponse
+	(*CMsgSocialFeedRequest)(nil),                                               // 318: protocol.CMsgSocialFeedRequest
+	(*CMsgSocialFeedResponse)(nil),                                              // 319: protocol.CMsgSocialFeedResponse
+	(*CMsgSocialFeedCommentsRequest)(nil),                                       // 320: protocol.CMsgSocialFeedCommentsRequest
+	(*CMsgSocialFeedCommentsResponse)(nil),                                      // 321: protocol.CMsgSocialFeedCommentsResponse
+	(*CMsgClientToGCPlayerCardSpecificPurchaseRequest)(nil),                     // 322: protocol.CMsgClientToGCPlayerCardSpecificPurchaseRequest
+	(*CMsgClientToGCPlayerCardSpecificPurchaseResponse)(nil),                    // 323: protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse
+	(*CMsgClientToGCRequestContestVotes)(nil),                                   // 324: protocol.CMsgClientToGCRequestContestVotes
+	(*CMsgClientToGCRequestContestVotesResponse)(nil),                           // 325: protocol.CMsgClientToGCRequestContestVotesResponse
+	(*CMsgClientToGCRecordContestVote)(nil),                                     // 326: protocol.CMsgClientToGCRecordContestVote
+	(*CMsgGCToClientRecordContestVoteResponse)(nil),                             // 327: protocol.CMsgGCToClientRecordContestVoteResponse
+	(*CMsgDevGrantEventPoints)(nil),                                             // 328: protocol.CMsgDevGrantEventPoints
+	(*CMsgDevGrantEventPointsResponse)(nil),                                     // 329: protocol.CMsgDevGrantEventPointsResponse
+	(*CMsgDevGrantEventAction)(nil),                                             // 330: protocol.CMsgDevGrantEventAction
+	(*CMsgDevGrantEventActionResponse)(nil),                                     // 331: protocol.CMsgDevGrantEventActionResponse
+	(*CMsgDevDeleteEventActions)(nil),                                           // 332: protocol.CMsgDevDeleteEventActions
+	(*CMsgDevDeleteEventActionsResponse)(nil),                                   // 333: protocol.CMsgDevDeleteEventActionsResponse
+	(*CMsgDevResetEventState)(nil),                                              // 334: protocol.CMsgDevResetEventState
+	(*CMsgDevResetEventStateResponse)(nil),                                      // 335: protocol.CMsgDevResetEventStateResponse
+	(*CMsgDevReloadAllEvents)(nil),                                              // 336: protocol.CMsgDevReloadAllEvents
+	(*CMsgDevReloadAllEventsResponse)(nil),                                      // 337: protocol.CMsgDevReloadAllEventsResponse
+	(*CMsgConsumeEventSupportGrantItem)(nil),                                    // 338: protocol.CMsgConsumeEventSupportGrantItem
+	(*CMsgConsumeEventSupportGrantItemResponse)(nil),                            // 339: protocol.CMsgConsumeEventSupportGrantItemResponse
+	(*CMsgClientToGCGetFilteredPlayers)(nil),                                    // 340: protocol.CMsgClientToGCGetFilteredPlayers
+	(*CMsgGCToClientGetFilteredPlayersResponse)(nil),                            // 341: protocol.CMsgGCToClientGetFilteredPlayersResponse
+	(*CMsgClientToGCRemoveFilteredPlayer)(nil),                                  // 342: protocol.CMsgClientToGCRemoveFilteredPlayer
+	(*CMsgGCToClientRemoveFilteredPlayerResponse)(nil),                          // 343: protocol.CMsgGCToClientRemoveFilteredPlayerResponse
+	(*CMsgClientToGCPurchaseFilteredPlayerSlot)(nil),                            // 344: protocol.CMsgClientToGCPurchaseFilteredPlayerSlot
+	(*CMsgGCToClientPurchaseFilteredPlayerSlotResponse)(nil),                    // 345: protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse
+	(*CMsgClientToGCUpdateFilteredPlayerNote)(nil),                              // 346: protocol.CMsgClientToGCUpdateFilteredPlayerNote
+	(*CMsgGCToClientUpdateFilteredPlayerNoteResponse)(nil),                      // 347: protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse
+	(*CMsgPartySearchPlayer)(nil),                                               // 348: protocol.CMsgPartySearchPlayer
+	(*CMsgGCToClientPlayerBeaconState)(nil),                                     // 349: protocol.CMsgGCToClientPlayerBeaconState
+	(*CMsgGCToClientPartyBeaconUpdate)(nil),                                     // 350: protocol.CMsgGCToClientPartyBeaconUpdate
+	(*CMsgClientToGCUpdatePartyBeacon)(nil),                                     // 351: protocol.CMsgClientToGCUpdatePartyBeacon
+	(*CMsgClientToGCRequestActiveBeaconParties)(nil),                            // 352: protocol.CMsgClientToGCRequestActiveBeaconParties
+	(*CMsgGCToClientRequestActiveBeaconPartiesResponse)(nil),                    // 353: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse
+	(*CMsgClientToGCJoinPartyFromBeacon)(nil),                                   // 354: protocol.CMsgClientToGCJoinPartyFromBeacon
+	(*CMsgGCToClientJoinPartyFromBeaconResponse)(nil),                           // 355: protocol.CMsgGCToClientJoinPartyFromBeaconResponse
+	(*CMsgClientToGCManageFavorites)(nil),                                       // 356: protocol.CMsgClientToGCManageFavorites
+	(*CMsgGCToClientManageFavoritesResponse)(nil),                               // 357: protocol.CMsgGCToClientManageFavoritesResponse
+	(*CMsgClientToGCGetFavoritePlayers)(nil),                                    // 358: protocol.CMsgClientToGCGetFavoritePlayers
+	(*CMsgGCToClientGetFavoritePlayersResponse)(nil),                            // 359: protocol.CMsgGCToClientGetFavoritePlayersResponse
+	(*CMsgGCToClientPartySearchInvite)(nil),                                     // 360: protocol.CMsgGCToClientPartySearchInvite
+	(*CMsgClientToGCVerifyFavoritePlayers)(nil),                                 // 361: protocol.CMsgClientToGCVerifyFavoritePlayers
+	(*CMsgGCToClientVerifyFavoritePlayersResponse)(nil),                         // 362: protocol.CMsgGCToClientVerifyFavoritePlayersResponse
+	(*CMsgClientToGCRequestPlayerRecentAccomplishments)(nil),                    // 363: protocol.CMsgClientToGCRequestPlayerRecentAccomplishments
+	(*CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse)(nil),            // 364: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
+	(*CMsgClientToGCRequestPlayerHeroRecentAccomplishments)(nil),                // 365: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishments
+	(*CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse)(nil),        // 366: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
+	(*CMsgClientToGCSubmitPlayerMatchSurvey)(nil),                               // 367: protocol.CMsgClientToGCSubmitPlayerMatchSurvey
+	(*CMsgClientToGCSubmitPlayerMatchSurveyResponse)(nil),                       // 368: protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse
+	(*CMsgGCToClientVACReminder)(nil),                                           // 369: protocol.CMsgGCToClientVACReminder
+	(*CMsgClientToGCUnderDraftRequest)(nil),                                     // 370: protocol.CMsgClientToGCUnderDraftRequest
+	(*CMsgClientToGCUnderDraftResponse)(nil),                                    // 371: protocol.CMsgClientToGCUnderDraftResponse
+	(*CMsgClientToGCUnderDraftReroll)(nil),                                      // 372: protocol.CMsgClientToGCUnderDraftReroll
+	(*CMsgClientToGCUnderDraftRerollResponse)(nil),                              // 373: protocol.CMsgClientToGCUnderDraftRerollResponse
+	(*CMsgClientToGCUnderDraftBuy)(nil),                                         // 374: protocol.CMsgClientToGCUnderDraftBuy
+	(*CMsgGCToClientGuildUnderDraftGoldUpdated)(nil),                            // 375: protocol.CMsgGCToClientGuildUnderDraftGoldUpdated
+	(*CMsgClientToGCUnderDraftBuyResponse)(nil),                                 // 376: protocol.CMsgClientToGCUnderDraftBuyResponse
+	(*CMsgClientToGCUnderDraftRollBackBench)(nil),                               // 377: protocol.CMsgClientToGCUnderDraftRollBackBench
+	(*CMsgClientToGCUnderDraftRollBackBenchResponse)(nil),                       // 378: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse
+	(*CMsgClientToGCUnderDraftSell)(nil),                                        // 379: protocol.CMsgClientToGCUnderDraftSell
+	(*CMsgClientToGCUnderDraftSellResponse)(nil),                                // 380: protocol.CMsgClientToGCUnderDraftSellResponse
+	(*CMsgClientToGCUnderDraftRedeemReward)(nil),                                // 381: protocol.CMsgClientToGCUnderDraftRedeemReward
+	(*CMsgClientToGCUnderDraftRedeemRewardResponse)(nil),                        // 382: protocol.CMsgClientToGCUnderDraftRedeemRewardResponse
+	(*CMsgClientToGCSubmitDraftTriviaMatchAnswer)(nil),                          // 383: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswer
+	(*CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse)(nil),                  // 384: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse
+	(*CMsgDraftTriviaVoteCount)(nil),                                            // 385: protocol.CMsgDraftTriviaVoteCount
+	(*CMsgClientToGCRequestReporterUpdates)(nil),                                // 386: protocol.CMsgClientToGCRequestReporterUpdates
+	(*CMsgClientToGCRequestReporterUpdatesResponse)(nil),                        // 387: protocol.CMsgClientToGCRequestReporterUpdatesResponse
+	(*CMsgClientToGCAcknowledgeReporterUpdates)(nil),                            // 388: protocol.CMsgClientToGCAcknowledgeReporterUpdates
+	(*CMsgClientToGCRecalibrateMMR)(nil),                                        // 389: protocol.CMsgClientToGCRecalibrateMMR
+	(*CMsgClientToGCRecalibrateMMRResponse)(nil),                                // 390: protocol.CMsgClientToGCRecalibrateMMRResponse
+	(*CMsgDOTAPostGameItemAwardNotification)(nil),                               // 391: protocol.CMsgDOTAPostGameItemAwardNotification
+	(*CMsgClientToGCGetOWMatchDetails)(nil),                                     // 392: protocol.CMsgClientToGCGetOWMatchDetails
+	(*CMsgClientToGCGetOWMatchDetailsResponse)(nil),                             // 393: protocol.CMsgClientToGCGetOWMatchDetailsResponse
+	(*CMsgClientToGCSubmitOWConviction)(nil),                                    // 394: protocol.CMsgClientToGCSubmitOWConviction
+	(*CMsgClientToGCSubmitOWConvictionResponse)(nil),                            // 395: protocol.CMsgClientToGCSubmitOWConvictionResponse
+	(*CMsgClientToGCChinaSSAURLRequest)(nil),                                    // 396: protocol.CMsgClientToGCChinaSSAURLRequest
+	(*CMsgClientToGCChinaSSAURLResponse)(nil),                                   // 397: protocol.CMsgClientToGCChinaSSAURLResponse
+	(*CMsgClientToGCChinaSSAAcceptedRequest)(nil),                               // 398: protocol.CMsgClientToGCChinaSSAAcceptedRequest
+	(*CMsgClientToGCChinaSSAAcceptedResponse)(nil),                              // 399: protocol.CMsgClientToGCChinaSSAAcceptedResponse
+	(*CMsgGCToClientOverwatchCasesAvailable)(nil),                               // 400: protocol.CMsgGCToClientOverwatchCasesAvailable
+	(*CMsgClientToGCStartWatchingOverwatch)(nil),                                // 401: protocol.CMsgClientToGCStartWatchingOverwatch
+	(*CMsgClientToGCStopWatchingOverwatch)(nil),                                 // 402: protocol.CMsgClientToGCStopWatchingOverwatch
+	(*CMsgClientToGCOverwatchReplayError)(nil),                                  // 403: protocol.CMsgClientToGCOverwatchReplayError
+	(*CMsgClientToGCGetDPCFavorites)(nil),                                       // 404: protocol.CMsgClientToGCGetDPCFavorites
+	(*CMsgClientToGCGetDPCFavoritesResponse)(nil),                               // 405: protocol.CMsgClientToGCGetDPCFavoritesResponse
+	(*CMsgClientToGCSetDPCFavoriteState)(nil),                                   // 406: protocol.CMsgClientToGCSetDPCFavoriteState
+	(*CMsgClientToGCSetDPCFavoriteStateResponse)(nil),                           // 407: protocol.CMsgClientToGCSetDPCFavoriteStateResponse
+	(*CMsgClientToGCSetEventActiveSeasonID)(nil),                                // 408: protocol.CMsgClientToGCSetEventActiveSeasonID
+	(*CMsgClientToGCSetEventActiveSeasonIDResponse)(nil),                        // 409: protocol.CMsgClientToGCSetEventActiveSeasonIDResponse
+	(*CMsgClientToGCPurchaseLabyrinthBlessings)(nil),                            // 410: protocol.CMsgClientToGCPurchaseLabyrinthBlessings
+	(*CMsgClientToGCPurchaseLabyrinthBlessingsResponse)(nil),                    // 411: protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse
+	(*CMsgClientToGCGetStickerbookRequest)(nil),                                 // 412: protocol.CMsgClientToGCGetStickerbookRequest
+	(*CMsgClientToGCGetStickerbookResponse)(nil),                                // 413: protocol.CMsgClientToGCGetStickerbookResponse
+	(*CMsgClientToGCCreateStickerbookPageRequest)(nil),                          // 414: protocol.CMsgClientToGCCreateStickerbookPageRequest
+	(*CMsgClientToGCCreateStickerbookPageResponse)(nil),                         // 415: protocol.CMsgClientToGCCreateStickerbookPageResponse
+	(*CMsgClientToGCDeleteStickerbookPageRequest)(nil),                          // 416: protocol.CMsgClientToGCDeleteStickerbookPageRequest
+	(*CMsgClientToGCDeleteStickerbookPageResponse)(nil),                         // 417: protocol.CMsgClientToGCDeleteStickerbookPageResponse
+	(*CMsgClientToGCPlaceStickersRequest)(nil),                                  // 418: protocol.CMsgClientToGCPlaceStickersRequest
+	(*CMsgClientToGCPlaceStickersResponse)(nil),                                 // 419: protocol.CMsgClientToGCPlaceStickersResponse
+	(*CMsgClientToGCPlaceCollectionStickersRequest)(nil),                        // 420: protocol.CMsgClientToGCPlaceCollectionStickersRequest
+	(*CMsgClientToGCPlaceCollectionStickersResponse)(nil),                       // 421: protocol.CMsgClientToGCPlaceCollectionStickersResponse
+	(*CMsgClientToGCOrderStickerbookTeamPageRequest)(nil),                       // 422: protocol.CMsgClientToGCOrderStickerbookTeamPageRequest
+	(*CMsgClientToGCOrderStickerbookTeamPageResponse)(nil),                      // 423: protocol.CMsgClientToGCOrderStickerbookTeamPageResponse
+	(*CMsgClientToGCSetHeroSticker)(nil),                                        // 424: protocol.CMsgClientToGCSetHeroSticker
+	(*CMsgClientToGCSetHeroStickerResponse)(nil),                                // 425: protocol.CMsgClientToGCSetHeroStickerResponse
+	(*CMsgClientToGCGetHeroStickers)(nil),                                       // 426: protocol.CMsgClientToGCGetHeroStickers
+	(*CMsgClientToGCGetHeroStickersResponse)(nil),                               // 427: protocol.CMsgClientToGCGetHeroStickersResponse
+	(*CMsgClientToGCSetFavoritePage)(nil),                                       // 428: protocol.CMsgClientToGCSetFavoritePage
+	(*CMsgClientToGCSetFavoritePageResponse)(nil),                               // 429: protocol.CMsgClientToGCSetFavoritePageResponse
+	(*CMsgClientToGCClaimSwag)(nil),                                             // 430: protocol.CMsgClientToGCClaimSwag
+	(*CMsgClientToGCClaimSwagResponse)(nil),                                     // 431: protocol.CMsgClientToGCClaimSwagResponse
+	(*CMsgClientToGCCollectorsCacheAvailableDataRequest)(nil),                   // 432: protocol.CMsgClientToGCCollectorsCacheAvailableDataRequest
+	(*CMsgGCToClientCollectorsCacheAvailableDataResponse)(nil),                  // 433: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse
+	(*CMsgClientToGCUploadMatchClip)(nil),                                       // 434: protocol.CMsgClientToGCUploadMatchClip
+	(*CMsgGCToClientUploadMatchClipResponse)(nil),                               // 435: protocol.CMsgGCToClientUploadMatchClipResponse
+	(*CMsgClientToGCMapStatsRequest)(nil),                                       // 436: protocol.CMsgClientToGCMapStatsRequest
+	(*CMsgGCToClientMapStatsResponse)(nil),                                      // 437: protocol.CMsgGCToClientMapStatsResponse
+	(*CMsgRoadToTIAssignedQuest)(nil),                                           // 438: protocol.CMsgRoadToTIAssignedQuest
+	(*CMsgRoadToTIUserData)(nil),                                                // 439: protocol.CMsgRoadToTIUserData
+	(*CMsgClientToGCRoadToTIGetQuests)(nil),                                     // 440: protocol.CMsgClientToGCRoadToTIGetQuests
+	(*CMsgClientToGCRoadToTIGetQuestsResponse)(nil),                             // 441: protocol.CMsgClientToGCRoadToTIGetQuestsResponse
+	(*CMsgClientToGCRoadToTIGetActiveQuest)(nil),                                // 442: protocol.CMsgClientToGCRoadToTIGetActiveQuest
+	(*CMsgClientToGCRoadToTIGetActiveQuestResponse)(nil),                        // 443: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse
+	(*CMsgGCToClientRoadToTIQuestDataUpdated)(nil),                              // 444: protocol.CMsgGCToClientRoadToTIQuestDataUpdated
+	(*CMsgClientToGCRoadToTIUseItem)(nil),                                       // 445: protocol.CMsgClientToGCRoadToTIUseItem
+	(*CMsgClientToGCRoadToTIUseItemResponse)(nil),                               // 446: protocol.CMsgClientToGCRoadToTIUseItemResponse
+	(*CMsgClientToGCRoadToTIDevForceQuest)(nil),                                 // 447: protocol.CMsgClientToGCRoadToTIDevForceQuest
+	(*CMsgLobbyRoadToTIMatchQuestData)(nil),                                     // 448: protocol.CMsgLobbyRoadToTIMatchQuestData
+	(*CMsgClientToGCNewBloomGift)(nil),                                          // 449: protocol.CMsgClientToGCNewBloomGift
+	(*CMsgClientToGCNewBloomGiftResponse)(nil),                                  // 450: protocol.CMsgClientToGCNewBloomGiftResponse
+	(*CMsgClientToGCSetBannedHeroes)(nil),                                       // 451: protocol.CMsgClientToGCSetBannedHeroes
+	(*CMsgClientToGCUpdateComicBookStats)(nil),                                  // 452: protocol.CMsgClientToGCUpdateComicBookStats
+	(*CMsgGCRankedPlayerInfoSubmit)(nil),                                        // 453: protocol.CMsgGCRankedPlayerInfoSubmit
+	(*CMsgGCRankedPlayerInfoSubmitResponse)(nil),                                // 454: protocol.CMsgGCRankedPlayerInfoSubmitResponse
+	(*CMsgDOTAClaimGatedEvent)(nil),                                             // 455: protocol.CMsgDOTAClaimGatedEvent
+	(*CMsgDOTAClaimGatedEventResponse)(nil),                                     // 456: protocol.CMsgDOTAClaimGatedEventResponse
+	(*CMsgClientToGCGetEventRanking)(nil),                                       // 457: protocol.CMsgClientToGCGetEventRanking
+	(*CMsgClientToGCGetEventRankingResponse)(nil),                               // 458: protocol.CMsgClientToGCGetEventRankingResponse
+	(*CMsgClientToGCGetEventCoupon)(nil),                                        // 459: protocol.CMsgClientToGCGetEventCoupon
+	(*CMsgClientToGCGetEventCouponResponse)(nil),                                // 460: protocol.CMsgClientToGCGetEventCouponResponse
+	(*CMsgClientToGCConvertEventPoints)(nil),                                    // 461: protocol.CMsgClientToGCConvertEventPoints
+	(*CMsgClientToGCConvertEventPointsResponse)(nil),                            // 462: protocol.CMsgClientToGCConvertEventPointsResponse
+	(*CMsgClientToGCInviteToDemoMode)(nil),                                      // 463: protocol.CMsgClientToGCInviteToDemoMode
+	(*CMsgGCToClientInviteToDemoMode)(nil),                                      // 464: protocol.CMsgGCToClientInviteToDemoMode
+	(*CMsgDOTARequestMatchesResponse_Series)(nil),                               // 465: protocol.CMsgDOTARequestMatchesResponse.Series
+	(*CMsgDOTAProfileTickets_LeaguePass)(nil),                                   // 466: protocol.CMsgDOTAProfileTickets.LeaguePass
+	(*CMsgDOTAWelcome_CExtraMsg)(nil),                                           // 467: protocol.CMsgDOTAWelcome.CExtraMsg
+	(*CMsgDOTAMatchVotes_PlayerVote)(nil),                                       // 468: protocol.CMsgDOTAMatchVotes.PlayerVote
+	(*CMsgGCGetHeroStandingsResponse_Hero)(nil),                                 // 469: protocol.CMsgGCGetHeroStandingsResponse.Hero
+	(*CMsgGCGetHeroTimedStatsResponse_TimedStatsContainer)(nil),                 // 470: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer
+	(*CMsgGCGetHeroTimedStatsResponse_RankChunkedStats)(nil),                    // 471: protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats
+	(*CMsgDOTAClaimEventActionData_GrantItemGiftData)(nil),                      // 472: protocol.CMsgDOTAClaimEventActionData.GrantItemGiftData
+	(*CMsgDOTAGetEventPointsResponse_Action)(nil),                               // 473: protocol.CMsgDOTAGetEventPointsResponse.Action
+	(*CMsgDOTAGetPlayerMatchHistoryResponse_Match)(nil),                         // 474: protocol.CMsgDOTAGetPlayerMatchHistoryResponse.Match
+	(*CMsgClientToGCGetTrophyListResponse_Trophy)(nil),                          // 475: protocol.CMsgClientToGCGetTrophyListResponse.Trophy
+	(*CMsgClientToGCSetProfileCardSlots_CardSlot)(nil),                          // 476: protocol.CMsgClientToGCSetProfileCardSlots.CardSlot
+	(*CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame)(nil),           // 477: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.CustomGame
+	(*CMsgDOTAPartyRichPresence_Member)(nil),                                    // 478: protocol.CMsgDOTAPartyRichPresence.Member
+	(*CMsgDOTAPartyRichPresence_WeekendTourney)(nil),                            // 479: protocol.CMsgDOTAPartyRichPresence.WeekendTourney
+	(*CMsgClientToGCGetQuestProgressResponse_Challenge)(nil),                    // 480: protocol.CMsgClientToGCGetQuestProgressResponse.Challenge
+	(*CMsgClientToGCGetQuestProgressResponse_Quest)(nil),                        // 481: protocol.CMsgClientToGCGetQuestProgressResponse.Quest
+	(*CMsgEventGoals_EventGoal)(nil),                                            // 482: protocol.CMsgEventGoals.EventGoal
+	(*CMsgPredictionRankings_PredictionLine)(nil),                               // 483: protocol.CMsgPredictionRankings.PredictionLine
+	(*CMsgPredictionRankings_Prediction)(nil),                                   // 484: protocol.CMsgPredictionRankings.Prediction
+	(*CMsgPredictionResults_ResultBreakdown)(nil),                               // 485: protocol.CMsgPredictionResults.ResultBreakdown
+	(*CMsgPredictionResults_Result)(nil),                                        // 486: protocol.CMsgPredictionResults.Result
+	(*CMsgClientToGCTeammateStatsResponse_TeammateStat)(nil),                    // 487: protocol.CMsgClientToGCTeammateStatsResponse.TeammateStat
+	(*CMsgClientToGCRequestEventPointLogResponseV2_LogEntry)(nil),               // 488: protocol.CMsgClientToGCRequestEventPointLogResponseV2.LogEntry
+	(*CMsgGCToClientQuestProgressUpdated_Challenge)(nil),                        // 489: protocol.CMsgGCToClientQuestProgressUpdated.Challenge
+	(*CMsgClientToGCSelectCompendiumInGamePrediction_Prediction)(nil),           // 490: protocol.CMsgClientToGCSelectCompendiumInGamePrediction.Prediction
+	(*CMsgGCToClientBattlePassRollup_International2016_Questlines)(nil),         // 491: protocol.CMsgGCToClientBattlePassRollup_International2016.Questlines
+	(*CMsgGCToClientBattlePassRollup_International2016_Wagering)(nil),           // 492: protocol.CMsgGCToClientBattlePassRollup_International2016.Wagering
+	(*CMsgGCToClientBattlePassRollup_International2016_Achievements)(nil),       // 493: protocol.CMsgGCToClientBattlePassRollup_International2016.Achievements
+	(*CMsgGCToClientBattlePassRollup_International2016_BattleCup)(nil),          // 494: protocol.CMsgGCToClientBattlePassRollup_International2016.BattleCup
+	(*CMsgGCToClientBattlePassRollup_International2016_Predictions)(nil),        // 495: protocol.CMsgGCToClientBattlePassRollup_International2016.Predictions
+	(*CMsgGCToClientBattlePassRollup_International2016_Bracket)(nil),            // 496: protocol.CMsgGCToClientBattlePassRollup_International2016.Bracket
+	(*CMsgGCToClientBattlePassRollup_International2016_PlayerCard)(nil),         // 497: protocol.CMsgGCToClientBattlePassRollup_International2016.PlayerCard
+	(*CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge)(nil),   // 498: protocol.CMsgGCToClientBattlePassRollup_International2016.FantasyChallenge
+	(*CMsgGCToClientBattlePassRollup_Fall2016_Questlines)(nil),                  // 499: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Questlines
+	(*CMsgGCToClientBattlePassRollup_Fall2016_Wagering)(nil),                    // 500: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Wagering
+	(*CMsgGCToClientBattlePassRollup_Fall2016_Achievements)(nil),                // 501: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Achievements
+	(*CMsgGCToClientBattlePassRollup_Fall2016_BattleCup)(nil),                   // 502: protocol.CMsgGCToClientBattlePassRollup_Fall2016.BattleCup
+	(*CMsgGCToClientBattlePassRollup_Fall2016_Predictions)(nil),                 // 503: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Predictions
+	(*CMsgGCToClientBattlePassRollup_Fall2016_Bracket)(nil),                     // 504: protocol.CMsgGCToClientBattlePassRollup_Fall2016.Bracket
+	(*CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard)(nil),                  // 505: protocol.CMsgGCToClientBattlePassRollup_Fall2016.PlayerCard
+	(*CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge)(nil),            // 506: protocol.CMsgGCToClientBattlePassRollup_Fall2016.FantasyChallenge
+	(*CMsgGCToClientBattlePassRollup_Winter2017_Questlines)(nil),                // 507: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Questlines
+	(*CMsgGCToClientBattlePassRollup_Winter2017_Wagering)(nil),                  // 508: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Wagering
+	(*CMsgGCToClientBattlePassRollup_Winter2017_Achievements)(nil),              // 509: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Achievements
+	(*CMsgGCToClientBattlePassRollup_Winter2017_BattleCup)(nil),                 // 510: protocol.CMsgGCToClientBattlePassRollup_Winter2017.BattleCup
+	(*CMsgGCToClientBattlePassRollup_Winter2017_Predictions)(nil),               // 511: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Predictions
+	(*CMsgGCToClientBattlePassRollup_Winter2017_Bracket)(nil),                   // 512: protocol.CMsgGCToClientBattlePassRollup_Winter2017.Bracket
+	(*CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard)(nil),                // 513: protocol.CMsgGCToClientBattlePassRollup_Winter2017.PlayerCard
+	(*CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge)(nil),          // 514: protocol.CMsgGCToClientBattlePassRollup_Winter2017.FantasyChallenge
+	(*CMsgGCToClientBattlePassRollup_TI7_Questlines)(nil),                       // 515: protocol.CMsgGCToClientBattlePassRollup_TI7.Questlines
+	(*CMsgGCToClientBattlePassRollup_TI7_Wagering)(nil),                         // 516: protocol.CMsgGCToClientBattlePassRollup_TI7.Wagering
+	(*CMsgGCToClientBattlePassRollup_TI7_Achievements)(nil),                     // 517: protocol.CMsgGCToClientBattlePassRollup_TI7.Achievements
+	(*CMsgGCToClientBattlePassRollup_TI7_BattleCup)(nil),                        // 518: protocol.CMsgGCToClientBattlePassRollup_TI7.BattleCup
+	(*CMsgGCToClientBattlePassRollup_TI7_Predictions)(nil),                      // 519: protocol.CMsgGCToClientBattlePassRollup_TI7.Predictions
+	(*CMsgGCToClientBattlePassRollup_TI7_Bracket)(nil),                          // 520: protocol.CMsgGCToClientBattlePassRollup_TI7.Bracket
+	(*CMsgGCToClientBattlePassRollup_TI7_PlayerCard)(nil),                       // 521: protocol.CMsgGCToClientBattlePassRollup_TI7.PlayerCard
+	(*CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge)(nil),                 // 522: protocol.CMsgGCToClientBattlePassRollup_TI7.FantasyChallenge
+	(*CMsgGCToClientBattlePassRollup_TI8_CavernCrawl)(nil),                      // 523: protocol.CMsgGCToClientBattlePassRollup_TI8.CavernCrawl
+	(*CMsgGCToClientBattlePassRollup_TI8_Wagering)(nil),                         // 524: protocol.CMsgGCToClientBattlePassRollup_TI8.Wagering
+	(*CMsgGCToClientBattlePassRollup_TI8_Achievements)(nil),                     // 525: protocol.CMsgGCToClientBattlePassRollup_TI8.Achievements
+	(*CMsgGCToClientBattlePassRollup_TI8_Predictions)(nil),                      // 526: protocol.CMsgGCToClientBattlePassRollup_TI8.Predictions
+	(*CMsgGCToClientBattlePassRollup_TI8_Bracket)(nil),                          // 527: protocol.CMsgGCToClientBattlePassRollup_TI8.Bracket
+	(*CMsgGCToClientBattlePassRollup_TI8_PlayerCard)(nil),                       // 528: protocol.CMsgGCToClientBattlePassRollup_TI8.PlayerCard
+	(*CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge)(nil),                 // 529: protocol.CMsgGCToClientBattlePassRollup_TI8.FantasyChallenge
+	(*CMsgGCToClientBattlePassRollupListResponse_EventInfo)(nil),                // 530: protocol.CMsgGCToClientBattlePassRollupListResponse.EventInfo
+	(*CMsgDOTAClientToGCQuickStatsResponse_SimpleStats)(nil),                    // 531: protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	(*CMsgProfileResponse_FeaturedHero)(nil),                                    // 532: protocol.CMsgProfileResponse.FeaturedHero
+	(*CMsgProfileResponse_MatchInfo)(nil),                                       // 533: protocol.CMsgProfileResponse.MatchInfo
+	(*CMsgHeroGlobalDataResponse_GraphData)(nil),                                // 534: protocol.CMsgHeroGlobalDataResponse.GraphData
+	(*CMsgHeroGlobalDataResponse_WeekData)(nil),                                 // 535: protocol.CMsgHeroGlobalDataResponse.WeekData
+	(*CMsgHeroGlobalDataResponse_HeroDataPerRankChunk)(nil),                     // 536: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk
+	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData)(nil),                   // 537: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.HeroData
+	(*CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData)(nil),             // 538: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData
+	(*CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo)(nil),         // 539: protocol.CMsgGCToClientCavernCrawlMapPathCompleted.CompletedPathInfo
+	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge)(nil),   // 540: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.SwappedChallenge
+	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem)(nil),      // 541: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.InventoryItem
+	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap)(nil),        // 542: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.TreasureMap
+	(*CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant)(nil),         // 543: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant
+	(*CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant)(nil),     // 544: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.MapVariant
+	(*CMsgDOTAMutationList_Mutation)(nil),                                       // 545: protocol.CMsgDOTAMutationList.Mutation
+	(*CMsgEventTipsSummaryResponse_Tipper)(nil),                                 // 546: protocol.CMsgEventTipsSummaryResponse.Tipper
+	(*CMsgSocialFeedResponse_FeedEvent)(nil),                                    // 547: protocol.CMsgSocialFeedResponse.FeedEvent
+	(*CMsgSocialFeedCommentsResponse_FeedComment)(nil),                          // 548: protocol.CMsgSocialFeedCommentsResponse.FeedComment
+	(*CMsgClientToGCRequestContestVotesResponse_ItemVote)(nil),                  // 549: protocol.CMsgClientToGCRequestContestVotesResponse.ItemVote
+	(*CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry)(nil),               // 550: protocol.CMsgGCToClientGetFilteredPlayersResponse.CFilterEntry
+	(*CMsgGCToClientVerifyFavoritePlayersResponse_Result)(nil),                  // 551: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result
+	(*CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate)(nil),         // 552: protocol.CMsgClientToGCRequestReporterUpdatesResponse.ReporterUpdate
+	(*CMsgClientToGCGetOWMatchDetailsResponse_Marker)(nil),                      // 553: protocol.CMsgClientToGCGetOWMatchDetailsResponse.Marker
+	(*CMsgClientToGCGetDPCFavoritesResponse_Favorite)(nil),                      // 554: protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite
+	(*CMsgClientToGCPlaceStickersRequest_StickerItem)(nil),                      // 555: protocol.CMsgClientToGCPlaceStickersRequest.StickerItem
+	(*CMsgClientToGCPlaceCollectionStickersRequest_Slot)(nil),                   // 556: protocol.CMsgClientToGCPlaceCollectionStickersRequest.Slot
+	(*CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote)(nil),             // 557: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote
+	(*CMsgClientToGCUpdateComicBookStats_SingleStat)(nil),                       // 558: protocol.CMsgClientToGCUpdateComicBookStats.SingleStat
+	(*CMsgClientToGCUpdateComicBookStats_LanguageStats)(nil),                    // 559: protocol.CMsgClientToGCUpdateComicBookStats.LanguageStats
+	(*CMsgClientToGCGetEventCouponResponse_Coupon)(nil),                         // 560: protocol.CMsgClientToGCGetEventCouponResponse.Coupon
+	(*CMsgDOTAMatch)(nil),                                                       // 561: protocol.CMsgDOTAMatch
+	(MatchType)(0),                                                              // 562: protocol.MatchType
+	(DOTAMatchVote)(0),                                                          // 563: protocol.DOTAMatchVote
+	(EEvent)(0),                                                                 // 564: protocol.EEvent
+	(*CExtraMsgBlock)(nil),                                                      // 565: protocol.CExtraMsgBlock
+	(EMatchGroupServerStatus)(0),                                                // 566: protocol.EMatchGroupServerStatus
+	(EEventActionScoreMode)(0),                                                  // 567: protocol.EEventActionScoreMode
+	(*CMsgDOTAClaimEventActionResponse)(nil),                                    // 568: protocol.CMsgDOTAClaimEventActionResponse
+	(ERankType)(0),                                                              // 569: protocol.ERankType
+	(CSODOTAParty_State)(0),                                                     // 570: protocol.CSODOTAParty.State
+	(CSODOTALobby_State)(0),                                                     // 571: protocol.CSODOTALobby.State
+	(DOTA_GameMode)(0),                                                          // 572: protocol.DOTA_GameMode
+	(*CMsgDOTASDOHeroStatsHistory)(nil),                                         // 573: protocol.CMsgDOTASDOHeroStatsHistory
+	(*CMsgArcanaVoteMatchVotes)(nil),                                            // 574: protocol.CMsgArcanaVoteMatchVotes
+	(ELeagueRegion)(0),                                                          // 575: protocol.ELeagueRegion
+	(*CMsgDOTATriviaQuestion)(nil),                                              // 576: protocol.CMsgDOTATriviaQuestion
+	(DOTASelectionPriorityChoice)(0),                                            // 577: protocol.DOTASelectionPriorityChoice
+	(EHeroRelicRarity)(0),                                                       // 578: protocol.EHeroRelicRarity
+	(*CSOEconItem)(nil),                                                         // 579: protocol.CSOEconItem
+	(*CMsgSuccessfulHero)(nil),                                                  // 580: protocol.CMsgSuccessfulHero
+	(*CMsgRecentMatchInfo)(nil),                                                 // 581: protocol.CMsgRecentMatchInfo
+	(*CMsgStickerbookPage)(nil),                                                 // 582: protocol.CMsgStickerbookPage
+	(*CPartySearchClientParty)(nil),                                             // 583: protocol.CPartySearchClientParty
+	(*CMsgPlayerRecentAccomplishments)(nil),                                     // 584: protocol.CMsgPlayerRecentAccomplishments
+	(*CMsgPlayerHeroRecentAccomplishments)(nil),                                 // 585: protocol.CMsgPlayerHeroRecentAccomplishments
+	(*CMsgUnderDraftData)(nil),                                                  // 586: protocol.CMsgUnderDraftData
+	(EOverwatchReportReason)(0),                                                 // 587: protocol.EOverwatchReportReason
+	(EOverwatchConviction)(0),                                                   // 588: protocol.EOverwatchConviction
+	(EDPCFavoriteType)(0),                                                       // 589: protocol.EDPCFavoriteType
+	(*CMsgStickerbook)(nil),                                                     // 590: protocol.CMsgStickerbook
+	(EStickerbookPageType)(0),                                                   // 591: protocol.EStickerbookPageType
+	(*CMsgStickerbookTeamPageOrderSequence)(nil),                                // 592: protocol.CMsgStickerbookTeamPageOrderSequence
+	(*CMsgStickerHeroes)(nil),                                                   // 593: protocol.CMsgStickerHeroes
+	(*CMatchClip)(nil),                                                          // 594: protocol.CMatchClip
+	(*CMsgMapStatsSnapshot)(nil),                                                // 595: protocol.CMsgMapStatsSnapshot
+	(*CMsgGlobalMapStats)(nil),                                                  // 596: protocol.CMsgGlobalMapStats
+	(ENewBloomGiftingResponse)(0),                                               // 597: protocol.ENewBloomGiftingResponse
+	(EProfileCardSlotType)(0),                                                   // 598: protocol.EProfileCardSlotType
+	(*CMsgStickerbookSticker)(nil),                                              // 599: protocol.CMsgStickerbookSticker
 }
 var file_dota_gcmessages_client_proto_depIdxs = []int32{
-	544, // 0: protocol.CMsgDOTARequestMatchesResponse.matches:type_name -> protocol.CMsgDOTAMatch
-	449, // 1: protocol.CMsgDOTARequestMatchesResponse.series:type_name -> protocol.CMsgDOTARequestMatchesResponse.Series
+	561, // 0: protocol.CMsgDOTARequestMatchesResponse.matches:type_name -> protocol.CMsgDOTAMatch
+	465, // 1: protocol.CMsgDOTARequestMatchesResponse.series:type_name -> protocol.CMsgDOTARequestMatchesResponse.Series
 	11,  // 2: protocol.CMsgDOTAPopup.id:type_name -> protocol.CMsgDOTAPopup.PopupID
 	12,  // 3: protocol.CMsgDOTASubmitPlayerReportResponse.enum_result:type_name -> protocol.CMsgDOTASubmitPlayerReportResponse.EResult
 	13,  // 4: protocol.CMsgDOTASubmitPlayerReportResponseV2.enum_result:type_name -> protocol.CMsgDOTASubmitPlayerReportResponseV2.EResult
-	545, // 5: protocol.CMsgDOTAKickedFromMatchmakingQueue.match_type:type_name -> protocol.MatchType
-	544, // 6: protocol.CMsgGCMatchDetailsResponse.match:type_name -> protocol.CMsgDOTAMatch
-	546, // 7: protocol.CMsgGCMatchDetailsResponse.vote:type_name -> protocol.DOTAMatchVote
-	450, // 8: protocol.CMsgDOTAProfileTickets.league_passes:type_name -> protocol.CMsgDOTAProfileTickets.LeaguePass
-	354, // 9: protocol.CMsgGCToClientPartySearchInvites.invites:type_name -> protocol.CMsgGCToClientPartySearchInvite
-	451, // 10: protocol.CMsgDOTAWelcome.extra_messages:type_name -> protocol.CMsgDOTAWelcome.CExtraMsg
-	547, // 11: protocol.CMsgDOTAWelcome.active_event:type_name -> protocol.EEvent
-	104, // 12: protocol.CMsgDOTAWelcome.party_search_friend_invites:type_name -> protocol.CMsgGCToClientPartySearchInvites
-	548, // 13: protocol.CMsgDOTAWelcome.extra_message_blocks:type_name -> protocol.CExtraMsgBlock
-	452, // 14: protocol.CMsgDOTAMatchVotes.votes:type_name -> protocol.CMsgDOTAMatchVotes.PlayerVote
-	549, // 15: protocol.CMsgMatchmakingMatchGroupInfo.status:type_name -> protocol.EMatchGroupServerStatus
-	108, // 16: protocol.CMsgDOTAMatchmakingStatsResponse.match_groups:type_name -> protocol.CMsgMatchmakingMatchGroupInfo
-	110, // 17: protocol.CMsgDOTAUpdateMatchmakingStats.stats:type_name -> protocol.CMsgDOTAMatchmakingStatsResponse
-	110, // 18: protocol.CMsgDOTAUpdateMatchManagementStats.stats:type_name -> protocol.CMsgDOTAMatchmakingStatsResponse
-	1,   // 19: protocol.CMsgGCWatchDownloadedReplay.watch_type:type_name -> protocol.DOTA_WatchReplayType
-	453, // 20: protocol.CMsgGCGetHeroStandingsResponse.standings:type_name -> protocol.CMsgGCGetHeroStandingsResponse.Hero
-	455, // 21: protocol.CMsgGCGetHeroTimedStatsResponse.rank_chunked_stats:type_name -> protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats
-	128, // 22: protocol.CMsgGCItemEditorReservationsResponse.reservations:type_name -> protocol.CMsgGCItemEditorReservation
-	456, // 23: protocol.CMsgDOTAClaimEventActionData.grant_item_gift_data:type_name -> protocol.CMsgDOTAClaimEventActionData.GrantItemGiftData
-	136, // 24: protocol.CMsgDOTAClaimEventAction.data:type_name -> protocol.CMsgDOTAClaimEventActionData
-	550, // 25: protocol.CMsgDOTAClaimEventAction.score_mode:type_name -> protocol.EEventActionScoreMode
-	551, // 26: protocol.CMsgClientToGCClaimEventActionUsingItemResponse.action_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse
-	551, // 27: protocol.CMsgGCToClientClaimEventActionUsingItemCompleted.action_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse
-	457, // 28: protocol.CMsgDOTAGetEventPointsResponse.completed_actions:type_name -> protocol.CMsgDOTAGetEventPointsResponse.Action
-	143, // 29: protocol.CMsgDOTAPeriodicResourceUpdated.periodic_resource_key:type_name -> protocol.CMsgDOTAGetPeriodicResource
-	144, // 30: protocol.CMsgDOTAPeriodicResourceUpdated.periodic_resource_value:type_name -> protocol.CMsgDOTAGetPeriodicResourceResponse
-	146, // 31: protocol.CMsgDOTACompendiumData.selections:type_name -> protocol.CMsgDOTACompendiumSelection
-	150, // 32: protocol.CMsgDOTACompendiumDataResponse.compendium_data:type_name -> protocol.CMsgDOTACompendiumData
-	458, // 33: protocol.CMsgDOTAGetPlayerMatchHistoryResponse.matches:type_name -> protocol.CMsgDOTAGetPlayerMatchHistoryResponse.Match
-	14,  // 34: protocol.CMsgGCNotificationsUpdate.result:type_name -> protocol.CMsgGCNotificationsUpdate.EResult
-	156, // 35: protocol.CMsgGCNotificationsUpdate.notifications:type_name -> protocol.CMsgGCNotifications_Notification
-	157, // 36: protocol.CMsgGCNotificationsResponse.update:type_name -> protocol.CMsgGCNotificationsUpdate
-	15,  // 37: protocol.CMsgGCPlayerInfoSubmitResponse.result:type_name -> protocol.CMsgGCPlayerInfoSubmitResponse.EResult
-	162, // 38: protocol.CMsgGCToClientEmoticonData.emoticon_access:type_name -> protocol.CMsgDOTAEmoticonAccessSDO
-	459, // 39: protocol.CMsgClientToGCGetTrophyListResponse.trophies:type_name -> protocol.CMsgClientToGCGetTrophyListResponse.Trophy
-	552, // 40: protocol.CMsgClientToGCRankRequest.rank_type:type_name -> protocol.ERankType
-	16,  // 41: protocol.CMsgGCToClientRankResponse.result:type_name -> protocol.CMsgGCToClientRankResponse.EResultCode
-	552, // 42: protocol.CMsgGCToClientRankUpdate.rank_type:type_name -> protocol.ERankType
-	174, // 43: protocol.CMsgGCToClientRankUpdate.rank_info:type_name -> protocol.CMsgGCToClientRankResponse
-	460, // 44: protocol.CMsgClientToGCSetProfileCardSlots.slots:type_name -> protocol.CMsgClientToGCSetProfileCardSlots.CardSlot
-	461, // 45: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.games:type_name -> protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.CustomGame
-	553, // 46: protocol.CMsgDOTAPartyRichPresence.party_state:type_name -> protocol.CSODOTAParty.State
-	462, // 47: protocol.CMsgDOTAPartyRichPresence.members:type_name -> protocol.CMsgDOTAPartyRichPresence.Member
-	463, // 48: protocol.CMsgDOTAPartyRichPresence.weekend_tourney:type_name -> protocol.CMsgDOTAPartyRichPresence.WeekendTourney
-	554, // 49: protocol.CMsgDOTALobbyRichPresence.lobby_state:type_name -> protocol.CSODOTALobby.State
-	555, // 50: protocol.CMsgDOTALobbyRichPresence.game_mode:type_name -> protocol.DOTA_GameMode
-	465, // 51: protocol.CMsgClientToGCGetQuestProgressResponse.quests:type_name -> protocol.CMsgClientToGCGetQuestProgressResponse.Quest
-	556, // 52: protocol.CMsgGCGetHeroStatsHistoryResponse.records:type_name -> protocol.CMsgDOTASDOHeroStatsHistory
-	17,  // 53: protocol.CMsgGCGetHeroStatsHistoryResponse.result:type_name -> protocol.CMsgGCGetHeroStatsHistoryResponse.EResponse
-	18,  // 54: protocol.CMsgPlayerConductScorecard.behavior_rating:type_name -> protocol.CMsgPlayerConductScorecard.EBehaviorRating
-	205, // 55: protocol.CMsgGCToClientWageringUpdate.wagering_info:type_name -> protocol.CMsgGCToClientWageringResponse
-	224, // 56: protocol.CMsgGCToClientArcanaVotesUpdate.arcana_votes:type_name -> protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse
-	547, // 57: protocol.CMsgClientToGCGetEventGoals.event_ids:type_name -> protocol.EEvent
-	466, // 58: protocol.CMsgEventGoals.event_goals:type_name -> protocol.CMsgEventGoals.EventGoal
-	468, // 59: protocol.CMsgPredictionRankings.predictions:type_name -> protocol.CMsgPredictionRankings.Prediction
-	470, // 60: protocol.CMsgPredictionResults.results:type_name -> protocol.CMsgPredictionResults.Result
-	471, // 61: protocol.CMsgClientToGCTeammateStatsResponse.teammate_stats:type_name -> protocol.CMsgClientToGCTeammateStatsResponse.TeammateStat
-	557, // 62: protocol.CMsgClientToGCVoteForArcana.matches:type_name -> protocol.CMsgArcanaVoteMatchVotes
-	19,  // 63: protocol.CMsgClientToGCVoteForArcanaResponse.result:type_name -> protocol.CMsgClientToGCVoteForArcanaResponse.Result
-	557, // 64: protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse.matches_previously_voted_for:type_name -> protocol.CMsgArcanaVoteMatchVotes
-	547, // 65: protocol.CMsgClientToGCRequestEventPointLogResponseV2.event_id:type_name -> protocol.EEvent
-	472, // 66: protocol.CMsgClientToGCRequestEventPointLogResponseV2.log_entries:type_name -> protocol.CMsgClientToGCRequestEventPointLogResponseV2.LogEntry
-	547, // 67: protocol.CMsgClientToGCRequestSlarkGameResult.event_id:type_name -> protocol.EEvent
-	473, // 68: protocol.CMsgGCToClientQuestProgressUpdated.completed_challenges:type_name -> protocol.CMsgGCToClientQuestProgressUpdated.Challenge
-	20,  // 69: protocol.CMsgDOTARedeemItemResponse.response:type_name -> protocol.CMsgDOTARedeemItemResponse.EResultCode
-	474, // 70: protocol.CMsgClientToGCSelectCompendiumInGamePrediction.predictions:type_name -> protocol.CMsgClientToGCSelectCompendiumInGamePrediction.Prediction
-	21,  // 71: protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse.result:type_name -> protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse.EResult
-	558, // 72: protocol.CMsgClientToGCOpenPlayerCardPack.region:type_name -> protocol.ELeagueRegion
-	22,  // 73: protocol.CMsgClientToGCOpenPlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCOpenPlayerCardPackResponse.Result
-	23,  // 74: protocol.CMsgClientToGCRecyclePlayerCardResponse.result:type_name -> protocol.CMsgClientToGCRecyclePlayerCardResponse.Result
-	24,  // 75: protocol.CMsgClientToGCCreatePlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCCreatePlayerCardPackResponse.Result
-	25,  // 76: protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse.Result
-	475, // 77: protocol.CMsgGCToClientBattlePassRollup_International2016.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Questlines
-	476, // 78: protocol.CMsgGCToClientBattlePassRollup_International2016.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Wagering
-	477, // 79: protocol.CMsgGCToClientBattlePassRollup_International2016.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Achievements
-	478, // 80: protocol.CMsgGCToClientBattlePassRollup_International2016.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.BattleCup
-	479, // 81: protocol.CMsgGCToClientBattlePassRollup_International2016.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Predictions
-	480, // 82: protocol.CMsgGCToClientBattlePassRollup_International2016.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Bracket
-	481, // 83: protocol.CMsgGCToClientBattlePassRollup_International2016.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.PlayerCard
-	482, // 84: protocol.CMsgGCToClientBattlePassRollup_International2016.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.FantasyChallenge
-	483, // 85: protocol.CMsgGCToClientBattlePassRollup_Fall2016.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Questlines
-	484, // 86: protocol.CMsgGCToClientBattlePassRollup_Fall2016.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Wagering
-	485, // 87: protocol.CMsgGCToClientBattlePassRollup_Fall2016.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Achievements
-	486, // 88: protocol.CMsgGCToClientBattlePassRollup_Fall2016.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.BattleCup
-	487, // 89: protocol.CMsgGCToClientBattlePassRollup_Fall2016.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Predictions
-	488, // 90: protocol.CMsgGCToClientBattlePassRollup_Fall2016.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Bracket
-	489, // 91: protocol.CMsgGCToClientBattlePassRollup_Fall2016.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.PlayerCard
-	490, // 92: protocol.CMsgGCToClientBattlePassRollup_Fall2016.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.FantasyChallenge
-	491, // 93: protocol.CMsgGCToClientBattlePassRollup_Winter2017.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Questlines
-	492, // 94: protocol.CMsgGCToClientBattlePassRollup_Winter2017.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Wagering
-	493, // 95: protocol.CMsgGCToClientBattlePassRollup_Winter2017.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Achievements
-	494, // 96: protocol.CMsgGCToClientBattlePassRollup_Winter2017.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.BattleCup
-	495, // 97: protocol.CMsgGCToClientBattlePassRollup_Winter2017.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Predictions
-	496, // 98: protocol.CMsgGCToClientBattlePassRollup_Winter2017.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Bracket
-	497, // 99: protocol.CMsgGCToClientBattlePassRollup_Winter2017.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.PlayerCard
-	498, // 100: protocol.CMsgGCToClientBattlePassRollup_Winter2017.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.FantasyChallenge
-	499, // 101: protocol.CMsgGCToClientBattlePassRollup_TI7.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Questlines
-	500, // 102: protocol.CMsgGCToClientBattlePassRollup_TI7.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Wagering
-	501, // 103: protocol.CMsgGCToClientBattlePassRollup_TI7.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Achievements
-	502, // 104: protocol.CMsgGCToClientBattlePassRollup_TI7.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.BattleCup
-	503, // 105: protocol.CMsgGCToClientBattlePassRollup_TI7.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Predictions
-	504, // 106: protocol.CMsgGCToClientBattlePassRollup_TI7.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Bracket
-	505, // 107: protocol.CMsgGCToClientBattlePassRollup_TI7.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.PlayerCard
-	506, // 108: protocol.CMsgGCToClientBattlePassRollup_TI7.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.FantasyChallenge
-	507, // 109: protocol.CMsgGCToClientBattlePassRollup_TI8.cavern_crawl:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.CavernCrawl
-	508, // 110: protocol.CMsgGCToClientBattlePassRollup_TI8.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Wagering
-	509, // 111: protocol.CMsgGCToClientBattlePassRollup_TI8.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Achievements
-	510, // 112: protocol.CMsgGCToClientBattlePassRollup_TI8.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Predictions
-	511, // 113: protocol.CMsgGCToClientBattlePassRollup_TI8.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Bracket
-	512, // 114: protocol.CMsgGCToClientBattlePassRollup_TI8.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.PlayerCard
-	513, // 115: protocol.CMsgGCToClientBattlePassRollup_TI8.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.FantasyChallenge
-	243, // 116: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti6:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016
-	244, // 117: protocol.CMsgGCToClientBattlePassRollupResponse.event_fall2016:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016
-	245, // 118: protocol.CMsgGCToClientBattlePassRollupResponse.event_winter2017:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017
-	246, // 119: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti7:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7
-	247, // 120: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti8:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8
-	248, // 121: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti9:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI9
-	249, // 122: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti10:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI10
-	514, // 123: protocol.CMsgGCToClientBattlePassRollupListResponse.event_info:type_name -> protocol.CMsgGCToClientBattlePassRollupListResponse.EventInfo
-	559, // 124: protocol.CMsgDOTATriviaCurrentQuestions.questions:type_name -> protocol.CMsgDOTATriviaQuestion
-	4,   // 125: protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse.result:type_name -> protocol.EDOTATriviaAnswerResult
-	26,  // 126: protocol.CMsgDOTAAnchorPhoneNumberResponse.result:type_name -> protocol.CMsgDOTAAnchorPhoneNumberResponse.Result
-	27,  // 127: protocol.CMsgDOTAUnanchorPhoneNumberResponse.result:type_name -> protocol.CMsgDOTAUnanchorPhoneNumberResponse.Result
-	270, // 128: protocol.CMsgDOTAClientToGCQuickStatsResponse.original_request:type_name -> protocol.CMsgDOTAClientToGCQuickStatsRequest
-	515, // 129: protocol.CMsgDOTAClientToGCQuickStatsResponse.hero_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	515, // 130: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	515, // 131: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_hero_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	515, // 132: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_player_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	515, // 133: protocol.CMsgDOTAClientToGCQuickStatsResponse.hero_player_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	515, // 134: protocol.CMsgDOTAClientToGCQuickStatsResponse.full_set_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
-	560, // 135: protocol.CMsgDOTASelectionPriorityChoiceRequest.choice:type_name -> protocol.DOTASelectionPriorityChoice
-	28,  // 136: protocol.CMsgDOTASelectionPriorityChoiceResponse.result:type_name -> protocol.CMsgDOTASelectionPriorityChoiceResponse.Result
-	29,  // 137: protocol.CMsgDOTAGameAutographRewardResponse.result:type_name -> protocol.CMsgDOTAGameAutographRewardResponse.Result
-	30,  // 138: protocol.CMsgDOTADestroyLobbyResponse.result:type_name -> protocol.CMsgDOTADestroyLobbyResponse.Result
-	547, // 139: protocol.CMsgPurchaseItemWithEventPoints.event_id:type_name -> protocol.EEvent
-	31,  // 140: protocol.CMsgPurchaseItemWithEventPointsResponse.result:type_name -> protocol.CMsgPurchaseItemWithEventPointsResponse.Result
-	561, // 141: protocol.CMsgPurchaseHeroRandomRelic.relic_rarity:type_name -> protocol.EHeroRelicRarity
-	5,   // 142: protocol.CMsgPurchaseHeroRandomRelicResponse.result:type_name -> protocol.EPurchaseHeroRelicResult
-	547, // 143: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResult.event_id:type_name -> protocol.EEvent
-	562, // 144: protocol.CMsgProfileResponse.background_item:type_name -> protocol.CSOEconItem
-	516, // 145: protocol.CMsgProfileResponse.featured_heroes:type_name -> protocol.CMsgProfileResponse.FeaturedHero
-	517, // 146: protocol.CMsgProfileResponse.recent_matches:type_name -> protocol.CMsgProfileResponse.MatchInfo
-	563, // 147: protocol.CMsgProfileResponse.successful_heroes:type_name -> protocol.CMsgSuccessfulHero
-	564, // 148: protocol.CMsgProfileResponse.recent_match_details:type_name -> protocol.CMsgRecentMatchInfo
-	32,  // 149: protocol.CMsgProfileResponse.result:type_name -> protocol.CMsgProfileResponse.EResponse
-	565, // 150: protocol.CMsgProfileResponse.stickerbook_page:type_name -> protocol.CMsgStickerbookPage
-	33,  // 151: protocol.CMsgProfileUpdateResponse.result:type_name -> protocol.CMsgProfileUpdateResponse.Result
-	520, // 152: protocol.CMsgHeroGlobalDataResponse.hero_data_per_chunk:type_name -> protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk
-	293, // 153: protocol.CMsgHeroGlobalDataAllHeroes.heroes:type_name -> protocol.CMsgHeroGlobalDataResponse
-	522, // 154: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.ranked_hero_data:type_name -> protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData
-	34,  // 155: protocol.CMsgActivatePlusFreeTrialResponse.result:type_name -> protocol.CMsgActivatePlusFreeTrialResponse.Result
-	523, // 156: protocol.CMsgGCToClientCavernCrawlMapPathCompleted.completed_paths:type_name -> protocol.CMsgGCToClientCavernCrawlMapPathCompleted.CompletedPathInfo
-	35,  // 157: protocol.CMsgClientToGCCavernCrawlClaimRoomResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlClaimRoomResponse.Result
-	36,  // 158: protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse.Result
-	37,  // 159: protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse.Result
-	38,  // 160: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.Result
-	525, // 161: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.inventory_item:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.InventoryItem
-	527, // 162: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.map_variants:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant
-	39,  // 163: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.Result
-	528, // 164: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.map_variants:type_name -> protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.MapVariant
-	529, // 165: protocol.CMsgDOTAMutationList.mutations:type_name -> protocol.CMsgDOTAMutationList.Mutation
-	547, // 166: protocol.CMsgEventTipsSummaryRequest.event_id:type_name -> protocol.EEvent
-	530, // 167: protocol.CMsgEventTipsSummaryResponse.tips_received:type_name -> protocol.CMsgEventTipsSummaryResponse.Tipper
-	40,  // 168: protocol.CMsgSocialFeedResponse.result:type_name -> protocol.CMsgSocialFeedResponse.Result
-	531, // 169: protocol.CMsgSocialFeedResponse.feed_events:type_name -> protocol.CMsgSocialFeedResponse.FeedEvent
-	41,  // 170: protocol.CMsgSocialFeedCommentsResponse.result:type_name -> protocol.CMsgSocialFeedCommentsResponse.Result
-	532, // 171: protocol.CMsgSocialFeedCommentsResponse.feed_comments:type_name -> protocol.CMsgSocialFeedCommentsResponse.FeedComment
-	42,  // 172: protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse.result:type_name -> protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse.Result
-	43,  // 173: protocol.CMsgClientToGCRequestContestVotesResponse.result:type_name -> protocol.CMsgClientToGCRequestContestVotesResponse.EResponse
-	533, // 174: protocol.CMsgClientToGCRequestContestVotesResponse.votes:type_name -> protocol.CMsgClientToGCRequestContestVotesResponse.ItemVote
-	44,  // 175: protocol.CMsgGCToClientRecordContestVoteResponse.eresult:type_name -> protocol.CMsgGCToClientRecordContestVoteResponse.EResult
-	547, // 176: protocol.CMsgDevGrantEventPoints.event_id:type_name -> protocol.EEvent
-	6,   // 177: protocol.CMsgDevGrantEventPointsResponse.result:type_name -> protocol.EDevEventRequestResult
-	547, // 178: protocol.CMsgDevGrantEventAction.event_id:type_name -> protocol.EEvent
-	6,   // 179: protocol.CMsgDevGrantEventActionResponse.result:type_name -> protocol.EDevEventRequestResult
-	547, // 180: protocol.CMsgDevDeleteEventActions.event_id:type_name -> protocol.EEvent
-	6,   // 181: protocol.CMsgDevDeleteEventActionsResponse.result:type_name -> protocol.EDevEventRequestResult
-	547, // 182: protocol.CMsgDevResetEventState.event_id:type_name -> protocol.EEvent
-	6,   // 183: protocol.CMsgDevResetEventStateResponse.result:type_name -> protocol.EDevEventRequestResult
-	7,   // 184: protocol.CMsgConsumeEventSupportGrantItemResponse.result:type_name -> protocol.ESupportEventRequestResult
-	45,  // 185: protocol.CMsgGCToClientGetFilteredPlayersResponse.result:type_name -> protocol.CMsgGCToClientGetFilteredPlayersResponse.Result
-	534, // 186: protocol.CMsgGCToClientGetFilteredPlayersResponse.filtered_players:type_name -> protocol.CMsgGCToClientGetFilteredPlayersResponse.CFilterEntry
-	46,  // 187: protocol.CMsgGCToClientRemoveFilteredPlayerResponse.result:type_name -> protocol.CMsgGCToClientRemoveFilteredPlayerResponse.Result
-	47,  // 188: protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse.result:type_name -> protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse.Result
-	48,  // 189: protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse.result:type_name -> protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse.Result
-	49,  // 190: protocol.CMsgClientToGCUpdatePartyBeacon.action:type_name -> protocol.CMsgClientToGCUpdatePartyBeacon.Action
-	50,  // 191: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.response:type_name -> protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.EResponse
-	566, // 192: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.active_parties:type_name -> protocol.CPartySearchClientParty
-	51,  // 193: protocol.CMsgGCToClientJoinPartyFromBeaconResponse.response:type_name -> protocol.CMsgGCToClientJoinPartyFromBeaconResponse.EResponse
-	52,  // 194: protocol.CMsgClientToGCManageFavorites.action:type_name -> protocol.CMsgClientToGCManageFavorites.Action
-	53,  // 195: protocol.CMsgGCToClientManageFavoritesResponse.response:type_name -> protocol.CMsgGCToClientManageFavoritesResponse.EResponse
-	342, // 196: protocol.CMsgGCToClientManageFavoritesResponse.player:type_name -> protocol.CMsgPartySearchPlayer
-	54,  // 197: protocol.CMsgGCToClientGetFavoritePlayersResponse.response:type_name -> protocol.CMsgGCToClientGetFavoritePlayersResponse.EResponse
-	342, // 198: protocol.CMsgGCToClientGetFavoritePlayersResponse.players:type_name -> protocol.CMsgPartySearchPlayer
-	535, // 199: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.results:type_name -> protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result
-	55,  // 200: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.result:type_name -> protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
-	567, // 201: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.player_accomplishments:type_name -> protocol.CMsgPlayerRecentAccomplishments
-	56,  // 202: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.result:type_name -> protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.EResponse
-	568, // 203: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.hero_accomplishments:type_name -> protocol.CMsgPlayerHeroRecentAccomplishments
-	57,  // 204: protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse.eresult:type_name -> protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse.EResponse
-	8,   // 205: protocol.CMsgClientToGCUnderDraftResponse.result:type_name -> protocol.EUnderDraftResponse
-	569, // 206: protocol.CMsgClientToGCUnderDraftResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
-	8,   // 207: protocol.CMsgClientToGCUnderDraftRerollResponse.result:type_name -> protocol.EUnderDraftResponse
-	569, // 208: protocol.CMsgClientToGCUnderDraftRerollResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
-	8,   // 209: protocol.CMsgClientToGCUnderDraftBuyResponse.result:type_name -> protocol.EUnderDraftResponse
-	569, // 210: protocol.CMsgClientToGCUnderDraftBuyResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
-	8,   // 211: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse.result:type_name -> protocol.EUnderDraftResponse
-	569, // 212: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
-	8,   // 213: protocol.CMsgClientToGCUnderDraftSellResponse.result:type_name -> protocol.EUnderDraftResponse
-	569, // 214: protocol.CMsgClientToGCUnderDraftSellResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
-	8,   // 215: protocol.CMsgClientToGCUnderDraftRedeemRewardResponse.result:type_name -> protocol.EUnderDraftResponse
-	9,   // 216: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse.result:type_name -> protocol.EDOTADraftTriviaAnswerResult
-	58,  // 217: protocol.CMsgClientToGCRequestReporterUpdatesResponse.enum_result:type_name -> protocol.CMsgClientToGCRequestReporterUpdatesResponse.EResponse
-	536, // 218: protocol.CMsgClientToGCRequestReporterUpdatesResponse.updates:type_name -> protocol.CMsgClientToGCRequestReporterUpdatesResponse.ReporterUpdate
-	59,  // 219: protocol.CMsgClientToGCRecalibrateMMRResponse.result:type_name -> protocol.CMsgClientToGCRecalibrateMMRResponse.EResponse
-	60,  // 220: protocol.CMsgClientToGCGetOWMatchDetailsResponse.result:type_name -> protocol.CMsgClientToGCGetOWMatchDetailsResponse.EResponse
-	537, // 221: protocol.CMsgClientToGCGetOWMatchDetailsResponse.markers:type_name -> protocol.CMsgClientToGCGetOWMatchDetailsResponse.Marker
-	570, // 222: protocol.CMsgClientToGCGetOWMatchDetailsResponse.report_reason:type_name -> protocol.EOverwatchReportReason
-	571, // 223: protocol.CMsgClientToGCSubmitOWConviction.cheating_conviction:type_name -> protocol.EOverwatchConviction
-	571, // 224: protocol.CMsgClientToGCSubmitOWConviction.griefing_conviction:type_name -> protocol.EOverwatchConviction
-	61,  // 225: protocol.CMsgClientToGCSubmitOWConvictionResponse.result:type_name -> protocol.CMsgClientToGCSubmitOWConvictionResponse.EResponse
-	62,  // 226: protocol.CMsgClientToGCGetDPCFavoritesResponse.result:type_name -> protocol.CMsgClientToGCGetDPCFavoritesResponse.EResponse
-	538, // 227: protocol.CMsgClientToGCGetDPCFavoritesResponse.favorites:type_name -> protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite
-	572, // 228: protocol.CMsgClientToGCSetDPCFavoriteState.favorite_type:type_name -> protocol.EDPCFavoriteType
-	63,  // 229: protocol.CMsgClientToGCSetDPCFavoriteStateResponse.result:type_name -> protocol.CMsgClientToGCSetDPCFavoriteStateResponse.EResponse
-	64,  // 230: protocol.CMsgClientToGCSetEventActiveSeasonIDResponse.result:type_name -> protocol.CMsgClientToGCSetEventActiveSeasonIDResponse.EResponse
-	547, // 231: protocol.CMsgClientToGCPurchaseLabyrinthBlessings.event_id:type_name -> protocol.EEvent
-	65,  // 232: protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse.result:type_name -> protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse.EResponse
-	66,  // 233: protocol.CMsgClientToGCGetStickerbookResponse.response:type_name -> protocol.CMsgClientToGCGetStickerbookResponse.EResponse
-	573, // 234: protocol.CMsgClientToGCGetStickerbookResponse.stickerbook:type_name -> protocol.CMsgStickerbook
-	547, // 235: protocol.CMsgClientToGCCreateStickerbookPageRequest.event_id:type_name -> protocol.EEvent
-	574, // 236: protocol.CMsgClientToGCCreateStickerbookPageRequest.page_type:type_name -> protocol.EStickerbookPageType
-	67,  // 237: protocol.CMsgClientToGCCreateStickerbookPageResponse.response:type_name -> protocol.CMsgClientToGCCreateStickerbookPageResponse.EResponse
-	68,  // 238: protocol.CMsgClientToGCDeleteStickerbookPageResponse.response:type_name -> protocol.CMsgClientToGCDeleteStickerbookPageResponse.EResponse
-	539, // 239: protocol.CMsgClientToGCPlaceStickersRequest.sticker_items:type_name -> protocol.CMsgClientToGCPlaceStickersRequest.StickerItem
-	69,  // 240: protocol.CMsgClientToGCPlaceStickersResponse.response:type_name -> protocol.CMsgClientToGCPlaceStickersResponse.EResponse
-	540, // 241: protocol.CMsgClientToGCPlaceCollectionStickersRequest.slots:type_name -> protocol.CMsgClientToGCPlaceCollectionStickersRequest.Slot
-	70,  // 242: protocol.CMsgClientToGCPlaceCollectionStickersResponse.response:type_name -> protocol.CMsgClientToGCPlaceCollectionStickersResponse.EResponse
-	575, // 243: protocol.CMsgClientToGCOrderStickerbookTeamPageRequest.page_order_sequence:type_name -> protocol.CMsgStickerbookTeamPageOrderSequence
-	71,  // 244: protocol.CMsgClientToGCOrderStickerbookTeamPageResponse.response:type_name -> protocol.CMsgClientToGCOrderStickerbookTeamPageResponse.EResponse
-	72,  // 245: protocol.CMsgClientToGCSetHeroStickerResponse.response:type_name -> protocol.CMsgClientToGCSetHeroStickerResponse.EResponse
-	73,  // 246: protocol.CMsgClientToGCGetHeroStickersResponse.response:type_name -> protocol.CMsgClientToGCGetHeroStickersResponse.EResponse
-	576, // 247: protocol.CMsgClientToGCGetHeroStickersResponse.sticker_heroes:type_name -> protocol.CMsgStickerHeroes
-	74,  // 248: protocol.CMsgClientToGCSetFavoritePageResponse.response:type_name -> protocol.CMsgClientToGCSetFavoritePageResponse.EResponse
-	547, // 249: protocol.CMsgClientToGCClaimSwag.event_id:type_name -> protocol.EEvent
-	75,  // 250: protocol.CMsgClientToGCClaimSwagResponse.response:type_name -> protocol.CMsgClientToGCClaimSwagResponse.EResponse
-	541, // 251: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.votes:type_name -> protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote
-	577, // 252: protocol.CMsgClientToGCUploadMatchClip.match_clip:type_name -> protocol.CMatchClip
-	77,  // 253: protocol.CMsgGCToClientUploadMatchClipResponse.response:type_name -> protocol.CMsgGCToClientUploadMatchClipResponse.EResponse
-	78,  // 254: protocol.CMsgGCToClientMapStatsResponse.response:type_name -> protocol.CMsgGCToClientMapStatsResponse.EResponse
-	578, // 255: protocol.CMsgGCToClientMapStatsResponse.personal_stats:type_name -> protocol.CMsgMapStatsSnapshot
-	579, // 256: protocol.CMsgGCToClientMapStatsResponse.global_stats:type_name -> protocol.CMsgGlobalMapStats
-	432, // 257: protocol.CMsgRoadToTIUserData.quests:type_name -> protocol.CMsgRoadToTIAssignedQuest
-	79,  // 258: protocol.CMsgClientToGCRoadToTIGetQuestsResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIGetQuestsResponse.EResponse
-	433, // 259: protocol.CMsgClientToGCRoadToTIGetQuestsResponse.quest_data:type_name -> protocol.CMsgRoadToTIUserData
-	80,  // 260: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.EResponse
-	432, // 261: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.quest_data:type_name -> protocol.CMsgRoadToTIAssignedQuest
-	433, // 262: protocol.CMsgGCToClientRoadToTIQuestDataUpdated.quest_data:type_name -> protocol.CMsgRoadToTIUserData
-	81,  // 263: protocol.CMsgClientToGCRoadToTIUseItemResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIUseItemResponse.EResponse
-	432, // 264: protocol.CMsgLobbyRoadToTIMatchQuestData.quest_data:type_name -> protocol.CMsgRoadToTIAssignedQuest
-	580, // 265: protocol.CMsgClientToGCNewBloomGiftResponse.result:type_name -> protocol.ENewBloomGiftingResponse
-	542, // 266: protocol.CMsgClientToGCUpdateComicBookStats.stats:type_name -> protocol.CMsgClientToGCUpdateComicBookStats.SingleStat
-	543, // 267: protocol.CMsgClientToGCUpdateComicBookStats.language_stats:type_name -> protocol.CMsgClientToGCUpdateComicBookStats.LanguageStats
-	82,  // 268: protocol.CMsgGCRankedPlayerInfoSubmitResponse.result:type_name -> protocol.CMsgGCRankedPlayerInfoSubmitResponse.EResult
-	544, // 269: protocol.CMsgDOTARequestMatchesResponse.Series.matches:type_name -> protocol.CMsgDOTAMatch
-	124, // 270: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.all_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
-	124, // 271: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.winning_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
-	124, // 272: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.losing_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
-	125, // 273: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.winning_stddevs:type_name -> protocol.CMatchPlayerTimedStatStdDeviations
-	125, // 274: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.losing_stddevs:type_name -> protocol.CMatchPlayerTimedStatStdDeviations
-	454, // 275: protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats.timed_stats:type_name -> protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer
-	581, // 276: protocol.CMsgClientToGCSetProfileCardSlots.CardSlot.slot_type:type_name -> protocol.EProfileCardSlotType
-	3,   // 277: protocol.CMsgDOTAPartyRichPresence.WeekendTourney.event:type_name -> protocol.EWeekendTourneyRichPresenceEvent
-	464, // 278: protocol.CMsgClientToGCGetQuestProgressResponse.Quest.completed_challenges:type_name -> protocol.CMsgClientToGCGetQuestProgressResponse.Challenge
-	547, // 279: protocol.CMsgEventGoals.EventGoal.event_id:type_name -> protocol.EEvent
-	467, // 280: protocol.CMsgPredictionRankings.Prediction.prediction_lines:type_name -> protocol.CMsgPredictionRankings.PredictionLine
-	469, // 281: protocol.CMsgPredictionResults.Result.result_breakdown:type_name -> protocol.CMsgPredictionResults.ResultBreakdown
-	562, // 282: protocol.CMsgProfileResponse.FeaturedHero.equipped_econ_items:type_name -> protocol.CSOEconItem
-	562, // 283: protocol.CMsgProfileResponse.FeaturedHero.plus_hero_relics_item:type_name -> protocol.CSOEconItem
-	290, // 284: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.talent_win_rates:type_name -> protocol.CMsgTalentWinRates
-	291, // 285: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.hero_averages:type_name -> protocol.CMsgGlobalHeroAverages
-	518, // 286: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.graph_data:type_name -> protocol.CMsgHeroGlobalDataResponse.GraphData
-	519, // 287: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.week_data:type_name -> protocol.CMsgHeroGlobalDataResponse.WeekData
-	521, // 288: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData.hero_data:type_name -> protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.HeroData
-	524, // 289: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant.swapped_challenge:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.SwappedChallenge
-	526, // 290: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant.treasure_map:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.TreasureMap
-	342, // 291: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result.player:type_name -> protocol.CMsgPartySearchPlayer
-	572, // 292: protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite.favorite_type:type_name -> protocol.EDPCFavoriteType
-	582, // 293: protocol.CMsgClientToGCPlaceStickersRequest.StickerItem.sticker:type_name -> protocol.CMsgStickerbookSticker
-	76,  // 294: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.vote_type:type_name -> protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.EVoteType
-	10,  // 295: protocol.CMsgClientToGCUpdateComicBookStats.SingleStat.stat_type:type_name -> protocol.CMsgClientToGCUpdateComicBookStat_Type
-	296, // [296:296] is the sub-list for method output_type
-	296, // [296:296] is the sub-list for method input_type
-	296, // [296:296] is the sub-list for extension type_name
-	296, // [296:296] is the sub-list for extension extendee
-	0,   // [0:296] is the sub-list for field type_name
+	562, // 5: protocol.CMsgDOTAKickedFromMatchmakingQueue.match_type:type_name -> protocol.MatchType
+	561, // 6: protocol.CMsgGCMatchDetailsResponse.match:type_name -> protocol.CMsgDOTAMatch
+	563, // 7: protocol.CMsgGCMatchDetailsResponse.vote:type_name -> protocol.DOTAMatchVote
+	466, // 8: protocol.CMsgDOTAProfileTickets.league_passes:type_name -> protocol.CMsgDOTAProfileTickets.LeaguePass
+	360, // 9: protocol.CMsgGCToClientPartySearchInvites.invites:type_name -> protocol.CMsgGCToClientPartySearchInvite
+	467, // 10: protocol.CMsgDOTAWelcome.extra_messages:type_name -> protocol.CMsgDOTAWelcome.CExtraMsg
+	564, // 11: protocol.CMsgDOTAWelcome.active_event:type_name -> protocol.EEvent
+	107, // 12: protocol.CMsgDOTAWelcome.party_search_friend_invites:type_name -> protocol.CMsgGCToClientPartySearchInvites
+	565, // 13: protocol.CMsgDOTAWelcome.extra_message_blocks:type_name -> protocol.CExtraMsgBlock
+	564, // 14: protocol.CMsgDOTAWelcome.active_event_for_display:type_name -> protocol.EEvent
+	468, // 15: protocol.CMsgDOTAMatchVotes.votes:type_name -> protocol.CMsgDOTAMatchVotes.PlayerVote
+	566, // 16: protocol.CMsgMatchmakingMatchGroupInfo.status:type_name -> protocol.EMatchGroupServerStatus
+	111, // 17: protocol.CMsgDOTAMatchmakingStatsResponse.match_groups:type_name -> protocol.CMsgMatchmakingMatchGroupInfo
+	113, // 18: protocol.CMsgDOTAUpdateMatchmakingStats.stats:type_name -> protocol.CMsgDOTAMatchmakingStatsResponse
+	113, // 19: protocol.CMsgDOTAUpdateMatchManagementStats.stats:type_name -> protocol.CMsgDOTAMatchmakingStatsResponse
+	1,   // 20: protocol.CMsgGCWatchDownloadedReplay.watch_type:type_name -> protocol.DOTA_WatchReplayType
+	469, // 21: protocol.CMsgGCGetHeroStandingsResponse.standings:type_name -> protocol.CMsgGCGetHeroStandingsResponse.Hero
+	471, // 22: protocol.CMsgGCGetHeroTimedStatsResponse.rank_chunked_stats:type_name -> protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats
+	132, // 23: protocol.CMsgGCItemEditorReservationsResponse.reservations:type_name -> protocol.CMsgGCItemEditorReservation
+	472, // 24: protocol.CMsgDOTAClaimEventActionData.grant_item_gift_data:type_name -> protocol.CMsgDOTAClaimEventActionData.GrantItemGiftData
+	140, // 25: protocol.CMsgDOTAClaimEventAction.data:type_name -> protocol.CMsgDOTAClaimEventActionData
+	567, // 26: protocol.CMsgDOTAClaimEventAction.score_mode:type_name -> protocol.EEventActionScoreMode
+	568, // 27: protocol.CMsgClientToGCClaimEventActionUsingItemResponse.action_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	568, // 28: protocol.CMsgGCToClientClaimEventActionUsingItemCompleted.action_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	473, // 29: protocol.CMsgDOTAGetEventPointsResponse.completed_actions:type_name -> protocol.CMsgDOTAGetEventPointsResponse.Action
+	147, // 30: protocol.CMsgDOTAPeriodicResourceUpdated.periodic_resource_key:type_name -> protocol.CMsgDOTAGetPeriodicResource
+	148, // 31: protocol.CMsgDOTAPeriodicResourceUpdated.periodic_resource_value:type_name -> protocol.CMsgDOTAGetPeriodicResourceResponse
+	150, // 32: protocol.CMsgDOTACompendiumData.selections:type_name -> protocol.CMsgDOTACompendiumSelection
+	154, // 33: protocol.CMsgDOTACompendiumDataResponse.compendium_data:type_name -> protocol.CMsgDOTACompendiumData
+	474, // 34: protocol.CMsgDOTAGetPlayerMatchHistoryResponse.matches:type_name -> protocol.CMsgDOTAGetPlayerMatchHistoryResponse.Match
+	14,  // 35: protocol.CMsgGCNotificationsUpdate.result:type_name -> protocol.CMsgGCNotificationsUpdate.EResult
+	160, // 36: protocol.CMsgGCNotificationsUpdate.notifications:type_name -> protocol.CMsgGCNotifications_Notification
+	161, // 37: protocol.CMsgGCNotificationsResponse.update:type_name -> protocol.CMsgGCNotificationsUpdate
+	15,  // 38: protocol.CMsgGCPlayerInfoSubmitResponse.result:type_name -> protocol.CMsgGCPlayerInfoSubmitResponse.EResult
+	166, // 39: protocol.CMsgGCToClientEmoticonData.emoticon_access:type_name -> protocol.CMsgDOTAEmoticonAccessSDO
+	475, // 40: protocol.CMsgClientToGCGetTrophyListResponse.trophies:type_name -> protocol.CMsgClientToGCGetTrophyListResponse.Trophy
+	569, // 41: protocol.CMsgClientToGCRankRequest.rank_type:type_name -> protocol.ERankType
+	16,  // 42: protocol.CMsgGCToClientRankResponse.result:type_name -> protocol.CMsgGCToClientRankResponse.EResultCode
+	569, // 43: protocol.CMsgGCToClientRankUpdate.rank_type:type_name -> protocol.ERankType
+	178, // 44: protocol.CMsgGCToClientRankUpdate.rank_info:type_name -> protocol.CMsgGCToClientRankResponse
+	476, // 45: protocol.CMsgClientToGCSetProfileCardSlots.slots:type_name -> protocol.CMsgClientToGCSetProfileCardSlots.CardSlot
+	477, // 46: protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.games:type_name -> protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse.CustomGame
+	570, // 47: protocol.CMsgDOTAPartyRichPresence.party_state:type_name -> protocol.CSODOTAParty.State
+	478, // 48: protocol.CMsgDOTAPartyRichPresence.members:type_name -> protocol.CMsgDOTAPartyRichPresence.Member
+	479, // 49: protocol.CMsgDOTAPartyRichPresence.weekend_tourney:type_name -> protocol.CMsgDOTAPartyRichPresence.WeekendTourney
+	571, // 50: protocol.CMsgDOTALobbyRichPresence.lobby_state:type_name -> protocol.CSODOTALobby.State
+	572, // 51: protocol.CMsgDOTALobbyRichPresence.game_mode:type_name -> protocol.DOTA_GameMode
+	481, // 52: protocol.CMsgClientToGCGetQuestProgressResponse.quests:type_name -> protocol.CMsgClientToGCGetQuestProgressResponse.Quest
+	573, // 53: protocol.CMsgGCGetHeroStatsHistoryResponse.records:type_name -> protocol.CMsgDOTASDOHeroStatsHistory
+	17,  // 54: protocol.CMsgGCGetHeroStatsHistoryResponse.result:type_name -> protocol.CMsgGCGetHeroStatsHistoryResponse.EResponse
+	18,  // 55: protocol.CMsgPlayerConductScorecard.behavior_rating:type_name -> protocol.CMsgPlayerConductScorecard.EBehaviorRating
+	209, // 56: protocol.CMsgGCToClientWageringUpdate.wagering_info:type_name -> protocol.CMsgGCToClientWageringResponse
+	228, // 57: protocol.CMsgGCToClientArcanaVotesUpdate.arcana_votes:type_name -> protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse
+	564, // 58: protocol.CMsgClientToGCGetEventGoals.event_ids:type_name -> protocol.EEvent
+	482, // 59: protocol.CMsgEventGoals.event_goals:type_name -> protocol.CMsgEventGoals.EventGoal
+	484, // 60: protocol.CMsgPredictionRankings.predictions:type_name -> protocol.CMsgPredictionRankings.Prediction
+	486, // 61: protocol.CMsgPredictionResults.results:type_name -> protocol.CMsgPredictionResults.Result
+	487, // 62: protocol.CMsgClientToGCTeammateStatsResponse.teammate_stats:type_name -> protocol.CMsgClientToGCTeammateStatsResponse.TeammateStat
+	574, // 63: protocol.CMsgClientToGCVoteForArcana.matches:type_name -> protocol.CMsgArcanaVoteMatchVotes
+	19,  // 64: protocol.CMsgClientToGCVoteForArcanaResponse.result:type_name -> protocol.CMsgClientToGCVoteForArcanaResponse.Result
+	574, // 65: protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse.matches_previously_voted_for:type_name -> protocol.CMsgArcanaVoteMatchVotes
+	564, // 66: protocol.CMsgClientToGCRequestEventPointLogResponseV2.event_id:type_name -> protocol.EEvent
+	488, // 67: protocol.CMsgClientToGCRequestEventPointLogResponseV2.log_entries:type_name -> protocol.CMsgClientToGCRequestEventPointLogResponseV2.LogEntry
+	564, // 68: protocol.CMsgClientToGCRequestSlarkGameResult.event_id:type_name -> protocol.EEvent
+	489, // 69: protocol.CMsgGCToClientQuestProgressUpdated.completed_challenges:type_name -> protocol.CMsgGCToClientQuestProgressUpdated.Challenge
+	20,  // 70: protocol.CMsgDOTARedeemItemResponse.response:type_name -> protocol.CMsgDOTARedeemItemResponse.EResultCode
+	490, // 71: protocol.CMsgClientToGCSelectCompendiumInGamePrediction.predictions:type_name -> protocol.CMsgClientToGCSelectCompendiumInGamePrediction.Prediction
+	21,  // 72: protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse.result:type_name -> protocol.CMsgClientToGCSelectCompendiumInGamePredictionResponse.EResult
+	575, // 73: protocol.CMsgClientToGCOpenPlayerCardPack.region:type_name -> protocol.ELeagueRegion
+	22,  // 74: protocol.CMsgClientToGCOpenPlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCOpenPlayerCardPackResponse.Result
+	23,  // 75: protocol.CMsgClientToGCRecyclePlayerCardResponse.result:type_name -> protocol.CMsgClientToGCRecyclePlayerCardResponse.Result
+	24,  // 76: protocol.CMsgClientToGCCreatePlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCCreatePlayerCardPackResponse.Result
+	25,  // 77: protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse.result:type_name -> protocol.CMsgClientToGCCreateTeamPlayerCardPackResponse.Result
+	491, // 78: protocol.CMsgGCToClientBattlePassRollup_International2016.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Questlines
+	492, // 79: protocol.CMsgGCToClientBattlePassRollup_International2016.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Wagering
+	493, // 80: protocol.CMsgGCToClientBattlePassRollup_International2016.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Achievements
+	494, // 81: protocol.CMsgGCToClientBattlePassRollup_International2016.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.BattleCup
+	495, // 82: protocol.CMsgGCToClientBattlePassRollup_International2016.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Predictions
+	496, // 83: protocol.CMsgGCToClientBattlePassRollup_International2016.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.Bracket
+	497, // 84: protocol.CMsgGCToClientBattlePassRollup_International2016.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.PlayerCard
+	498, // 85: protocol.CMsgGCToClientBattlePassRollup_International2016.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016.FantasyChallenge
+	499, // 86: protocol.CMsgGCToClientBattlePassRollup_Fall2016.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Questlines
+	500, // 87: protocol.CMsgGCToClientBattlePassRollup_Fall2016.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Wagering
+	501, // 88: protocol.CMsgGCToClientBattlePassRollup_Fall2016.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Achievements
+	502, // 89: protocol.CMsgGCToClientBattlePassRollup_Fall2016.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.BattleCup
+	503, // 90: protocol.CMsgGCToClientBattlePassRollup_Fall2016.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Predictions
+	504, // 91: protocol.CMsgGCToClientBattlePassRollup_Fall2016.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.Bracket
+	505, // 92: protocol.CMsgGCToClientBattlePassRollup_Fall2016.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.PlayerCard
+	506, // 93: protocol.CMsgGCToClientBattlePassRollup_Fall2016.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016.FantasyChallenge
+	507, // 94: protocol.CMsgGCToClientBattlePassRollup_Winter2017.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Questlines
+	508, // 95: protocol.CMsgGCToClientBattlePassRollup_Winter2017.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Wagering
+	509, // 96: protocol.CMsgGCToClientBattlePassRollup_Winter2017.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Achievements
+	510, // 97: protocol.CMsgGCToClientBattlePassRollup_Winter2017.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.BattleCup
+	511, // 98: protocol.CMsgGCToClientBattlePassRollup_Winter2017.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Predictions
+	512, // 99: protocol.CMsgGCToClientBattlePassRollup_Winter2017.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.Bracket
+	513, // 100: protocol.CMsgGCToClientBattlePassRollup_Winter2017.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.PlayerCard
+	514, // 101: protocol.CMsgGCToClientBattlePassRollup_Winter2017.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017.FantasyChallenge
+	515, // 102: protocol.CMsgGCToClientBattlePassRollup_TI7.questlines:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Questlines
+	516, // 103: protocol.CMsgGCToClientBattlePassRollup_TI7.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Wagering
+	517, // 104: protocol.CMsgGCToClientBattlePassRollup_TI7.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Achievements
+	518, // 105: protocol.CMsgGCToClientBattlePassRollup_TI7.battle_cup:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.BattleCup
+	519, // 106: protocol.CMsgGCToClientBattlePassRollup_TI7.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Predictions
+	520, // 107: protocol.CMsgGCToClientBattlePassRollup_TI7.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.Bracket
+	521, // 108: protocol.CMsgGCToClientBattlePassRollup_TI7.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.PlayerCard
+	522, // 109: protocol.CMsgGCToClientBattlePassRollup_TI7.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7.FantasyChallenge
+	523, // 110: protocol.CMsgGCToClientBattlePassRollup_TI8.cavern_crawl:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.CavernCrawl
+	524, // 111: protocol.CMsgGCToClientBattlePassRollup_TI8.wagering:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Wagering
+	525, // 112: protocol.CMsgGCToClientBattlePassRollup_TI8.achievements:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Achievements
+	526, // 113: protocol.CMsgGCToClientBattlePassRollup_TI8.predictions:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Predictions
+	527, // 114: protocol.CMsgGCToClientBattlePassRollup_TI8.bracket:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.Bracket
+	528, // 115: protocol.CMsgGCToClientBattlePassRollup_TI8.player_cards:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.PlayerCard
+	529, // 116: protocol.CMsgGCToClientBattlePassRollup_TI8.fantasy_challenge:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8.FantasyChallenge
+	247, // 117: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti6:type_name -> protocol.CMsgGCToClientBattlePassRollup_International2016
+	248, // 118: protocol.CMsgGCToClientBattlePassRollupResponse.event_fall2016:type_name -> protocol.CMsgGCToClientBattlePassRollup_Fall2016
+	249, // 119: protocol.CMsgGCToClientBattlePassRollupResponse.event_winter2017:type_name -> protocol.CMsgGCToClientBattlePassRollup_Winter2017
+	250, // 120: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti7:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI7
+	251, // 121: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti8:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI8
+	252, // 122: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti9:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI9
+	253, // 123: protocol.CMsgGCToClientBattlePassRollupResponse.event_ti10:type_name -> protocol.CMsgGCToClientBattlePassRollup_TI10
+	530, // 124: protocol.CMsgGCToClientBattlePassRollupListResponse.event_info:type_name -> protocol.CMsgGCToClientBattlePassRollupListResponse.EventInfo
+	576, // 125: protocol.CMsgDOTATriviaCurrentQuestions.questions:type_name -> protocol.CMsgDOTATriviaQuestion
+	4,   // 126: protocol.CMsgDOTASubmitTriviaQuestionAnswerResponse.result:type_name -> protocol.EDOTATriviaAnswerResult
+	26,  // 127: protocol.CMsgDOTAAnchorPhoneNumberResponse.result:type_name -> protocol.CMsgDOTAAnchorPhoneNumberResponse.Result
+	27,  // 128: protocol.CMsgDOTAUnanchorPhoneNumberResponse.result:type_name -> protocol.CMsgDOTAUnanchorPhoneNumberResponse.Result
+	274, // 129: protocol.CMsgDOTAClientToGCQuickStatsResponse.original_request:type_name -> protocol.CMsgDOTAClientToGCQuickStatsRequest
+	531, // 130: protocol.CMsgDOTAClientToGCQuickStatsResponse.hero_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	531, // 131: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	531, // 132: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_hero_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	531, // 133: protocol.CMsgDOTAClientToGCQuickStatsResponse.item_player_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	531, // 134: protocol.CMsgDOTAClientToGCQuickStatsResponse.hero_player_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	531, // 135: protocol.CMsgDOTAClientToGCQuickStatsResponse.full_set_stats:type_name -> protocol.CMsgDOTAClientToGCQuickStatsResponse.SimpleStats
+	577, // 136: protocol.CMsgDOTASelectionPriorityChoiceRequest.choice:type_name -> protocol.DOTASelectionPriorityChoice
+	28,  // 137: protocol.CMsgDOTASelectionPriorityChoiceResponse.result:type_name -> protocol.CMsgDOTASelectionPriorityChoiceResponse.Result
+	29,  // 138: protocol.CMsgDOTAGameAutographRewardResponse.result:type_name -> protocol.CMsgDOTAGameAutographRewardResponse.Result
+	30,  // 139: protocol.CMsgDOTADestroyLobbyResponse.result:type_name -> protocol.CMsgDOTADestroyLobbyResponse.Result
+	564, // 140: protocol.CMsgPurchaseItemWithEventPoints.event_id:type_name -> protocol.EEvent
+	31,  // 141: protocol.CMsgPurchaseItemWithEventPointsResponse.result:type_name -> protocol.CMsgPurchaseItemWithEventPointsResponse.Result
+	578, // 142: protocol.CMsgPurchaseHeroRandomRelic.relic_rarity:type_name -> protocol.EHeroRelicRarity
+	5,   // 143: protocol.CMsgPurchaseHeroRandomRelicResponse.result:type_name -> protocol.EPurchaseHeroRelicResult
+	564, // 144: protocol.CMsgClientToGCRequestPlusWeeklyChallengeResult.event_id:type_name -> protocol.EEvent
+	579, // 145: protocol.CMsgProfileResponse.background_item:type_name -> protocol.CSOEconItem
+	532, // 146: protocol.CMsgProfileResponse.featured_heroes:type_name -> protocol.CMsgProfileResponse.FeaturedHero
+	533, // 147: protocol.CMsgProfileResponse.recent_matches:type_name -> protocol.CMsgProfileResponse.MatchInfo
+	580, // 148: protocol.CMsgProfileResponse.successful_heroes:type_name -> protocol.CMsgSuccessfulHero
+	581, // 149: protocol.CMsgProfileResponse.recent_match_details:type_name -> protocol.CMsgRecentMatchInfo
+	32,  // 150: protocol.CMsgProfileResponse.result:type_name -> protocol.CMsgProfileResponse.EResponse
+	582, // 151: protocol.CMsgProfileResponse.stickerbook_page:type_name -> protocol.CMsgStickerbookPage
+	33,  // 152: protocol.CMsgProfileUpdateResponse.result:type_name -> protocol.CMsgProfileUpdateResponse.Result
+	536, // 153: protocol.CMsgHeroGlobalDataResponse.hero_data_per_chunk:type_name -> protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk
+	297, // 154: protocol.CMsgHeroGlobalDataAllHeroes.heroes:type_name -> protocol.CMsgHeroGlobalDataResponse
+	538, // 155: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.ranked_hero_data:type_name -> protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData
+	34,  // 156: protocol.CMsgActivatePlusFreeTrialResponse.result:type_name -> protocol.CMsgActivatePlusFreeTrialResponse.Result
+	539, // 157: protocol.CMsgGCToClientCavernCrawlMapPathCompleted.completed_paths:type_name -> protocol.CMsgGCToClientCavernCrawlMapPathCompleted.CompletedPathInfo
+	35,  // 158: protocol.CMsgClientToGCCavernCrawlClaimRoomResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlClaimRoomResponse.Result
+	36,  // 159: protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlUseItemOnRoomResponse.Result
+	37,  // 160: protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlUseItemOnPathResponse.Result
+	38,  // 161: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.Result
+	541, // 162: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.inventory_item:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.InventoryItem
+	543, // 163: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.map_variants:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant
+	39,  // 164: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.result:type_name -> protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.Result
+	544, // 165: protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.map_variants:type_name -> protocol.CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.MapVariant
+	545, // 166: protocol.CMsgDOTAMutationList.mutations:type_name -> protocol.CMsgDOTAMutationList.Mutation
+	564, // 167: protocol.CMsgEventTipsSummaryRequest.event_id:type_name -> protocol.EEvent
+	546, // 168: protocol.CMsgEventTipsSummaryResponse.tips_received:type_name -> protocol.CMsgEventTipsSummaryResponse.Tipper
+	40,  // 169: protocol.CMsgSocialFeedResponse.result:type_name -> protocol.CMsgSocialFeedResponse.Result
+	547, // 170: protocol.CMsgSocialFeedResponse.feed_events:type_name -> protocol.CMsgSocialFeedResponse.FeedEvent
+	41,  // 171: protocol.CMsgSocialFeedCommentsResponse.result:type_name -> protocol.CMsgSocialFeedCommentsResponse.Result
+	548, // 172: protocol.CMsgSocialFeedCommentsResponse.feed_comments:type_name -> protocol.CMsgSocialFeedCommentsResponse.FeedComment
+	42,  // 173: protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse.result:type_name -> protocol.CMsgClientToGCPlayerCardSpecificPurchaseResponse.Result
+	43,  // 174: protocol.CMsgClientToGCRequestContestVotesResponse.result:type_name -> protocol.CMsgClientToGCRequestContestVotesResponse.EResponse
+	549, // 175: protocol.CMsgClientToGCRequestContestVotesResponse.votes:type_name -> protocol.CMsgClientToGCRequestContestVotesResponse.ItemVote
+	44,  // 176: protocol.CMsgGCToClientRecordContestVoteResponse.eresult:type_name -> protocol.CMsgGCToClientRecordContestVoteResponse.EResult
+	564, // 177: protocol.CMsgDevGrantEventPoints.event_id:type_name -> protocol.EEvent
+	6,   // 178: protocol.CMsgDevGrantEventPointsResponse.result:type_name -> protocol.EDevEventRequestResult
+	564, // 179: protocol.CMsgDevGrantEventAction.event_id:type_name -> protocol.EEvent
+	6,   // 180: protocol.CMsgDevGrantEventActionResponse.result:type_name -> protocol.EDevEventRequestResult
+	564, // 181: protocol.CMsgDevDeleteEventActions.event_id:type_name -> protocol.EEvent
+	6,   // 182: protocol.CMsgDevDeleteEventActionsResponse.result:type_name -> protocol.EDevEventRequestResult
+	564, // 183: protocol.CMsgDevResetEventState.event_id:type_name -> protocol.EEvent
+	6,   // 184: protocol.CMsgDevResetEventStateResponse.result:type_name -> protocol.EDevEventRequestResult
+	6,   // 185: protocol.CMsgDevReloadAllEventsResponse.result:type_name -> protocol.EDevEventRequestResult
+	7,   // 186: protocol.CMsgConsumeEventSupportGrantItemResponse.result:type_name -> protocol.ESupportEventRequestResult
+	45,  // 187: protocol.CMsgGCToClientGetFilteredPlayersResponse.result:type_name -> protocol.CMsgGCToClientGetFilteredPlayersResponse.Result
+	550, // 188: protocol.CMsgGCToClientGetFilteredPlayersResponse.filtered_players:type_name -> protocol.CMsgGCToClientGetFilteredPlayersResponse.CFilterEntry
+	46,  // 189: protocol.CMsgGCToClientRemoveFilteredPlayerResponse.result:type_name -> protocol.CMsgGCToClientRemoveFilteredPlayerResponse.Result
+	47,  // 190: protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse.result:type_name -> protocol.CMsgGCToClientPurchaseFilteredPlayerSlotResponse.Result
+	48,  // 191: protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse.result:type_name -> protocol.CMsgGCToClientUpdateFilteredPlayerNoteResponse.Result
+	49,  // 192: protocol.CMsgClientToGCUpdatePartyBeacon.action:type_name -> protocol.CMsgClientToGCUpdatePartyBeacon.Action
+	50,  // 193: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.response:type_name -> protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.EResponse
+	583, // 194: protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse.active_parties:type_name -> protocol.CPartySearchClientParty
+	51,  // 195: protocol.CMsgGCToClientJoinPartyFromBeaconResponse.response:type_name -> protocol.CMsgGCToClientJoinPartyFromBeaconResponse.EResponse
+	52,  // 196: protocol.CMsgClientToGCManageFavorites.action:type_name -> protocol.CMsgClientToGCManageFavorites.Action
+	53,  // 197: protocol.CMsgGCToClientManageFavoritesResponse.response:type_name -> protocol.CMsgGCToClientManageFavoritesResponse.EResponse
+	348, // 198: protocol.CMsgGCToClientManageFavoritesResponse.player:type_name -> protocol.CMsgPartySearchPlayer
+	54,  // 199: protocol.CMsgGCToClientGetFavoritePlayersResponse.response:type_name -> protocol.CMsgGCToClientGetFavoritePlayersResponse.EResponse
+	348, // 200: protocol.CMsgGCToClientGetFavoritePlayersResponse.players:type_name -> protocol.CMsgPartySearchPlayer
+	551, // 201: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.results:type_name -> protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result
+	55,  // 202: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.result:type_name -> protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
+	584, // 203: protocol.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.player_accomplishments:type_name -> protocol.CMsgPlayerRecentAccomplishments
+	56,  // 204: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.result:type_name -> protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.EResponse
+	585, // 205: protocol.CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.hero_accomplishments:type_name -> protocol.CMsgPlayerHeroRecentAccomplishments
+	57,  // 206: protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse.eresult:type_name -> protocol.CMsgClientToGCSubmitPlayerMatchSurveyResponse.EResponse
+	8,   // 207: protocol.CMsgClientToGCUnderDraftResponse.result:type_name -> protocol.EUnderDraftResponse
+	586, // 208: protocol.CMsgClientToGCUnderDraftResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
+	8,   // 209: protocol.CMsgClientToGCUnderDraftRerollResponse.result:type_name -> protocol.EUnderDraftResponse
+	586, // 210: protocol.CMsgClientToGCUnderDraftRerollResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
+	8,   // 211: protocol.CMsgClientToGCUnderDraftBuyResponse.result:type_name -> protocol.EUnderDraftResponse
+	586, // 212: protocol.CMsgClientToGCUnderDraftBuyResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
+	8,   // 213: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse.result:type_name -> protocol.EUnderDraftResponse
+	586, // 214: protocol.CMsgClientToGCUnderDraftRollBackBenchResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
+	8,   // 215: protocol.CMsgClientToGCUnderDraftSellResponse.result:type_name -> protocol.EUnderDraftResponse
+	586, // 216: protocol.CMsgClientToGCUnderDraftSellResponse.draft_data:type_name -> protocol.CMsgUnderDraftData
+	8,   // 217: protocol.CMsgClientToGCUnderDraftRedeemRewardResponse.result:type_name -> protocol.EUnderDraftResponse
+	9,   // 218: protocol.CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse.result:type_name -> protocol.EDOTADraftTriviaAnswerResult
+	58,  // 219: protocol.CMsgClientToGCRequestReporterUpdatesResponse.enum_result:type_name -> protocol.CMsgClientToGCRequestReporterUpdatesResponse.EResponse
+	552, // 220: protocol.CMsgClientToGCRequestReporterUpdatesResponse.updates:type_name -> protocol.CMsgClientToGCRequestReporterUpdatesResponse.ReporterUpdate
+	59,  // 221: protocol.CMsgClientToGCRecalibrateMMRResponse.result:type_name -> protocol.CMsgClientToGCRecalibrateMMRResponse.EResponse
+	60,  // 222: protocol.CMsgClientToGCGetOWMatchDetailsResponse.result:type_name -> protocol.CMsgClientToGCGetOWMatchDetailsResponse.EResponse
+	553, // 223: protocol.CMsgClientToGCGetOWMatchDetailsResponse.markers:type_name -> protocol.CMsgClientToGCGetOWMatchDetailsResponse.Marker
+	587, // 224: protocol.CMsgClientToGCGetOWMatchDetailsResponse.report_reason:type_name -> protocol.EOverwatchReportReason
+	588, // 225: protocol.CMsgClientToGCSubmitOWConviction.cheating_conviction:type_name -> protocol.EOverwatchConviction
+	588, // 226: protocol.CMsgClientToGCSubmitOWConviction.griefing_conviction:type_name -> protocol.EOverwatchConviction
+	61,  // 227: protocol.CMsgClientToGCSubmitOWConvictionResponse.result:type_name -> protocol.CMsgClientToGCSubmitOWConvictionResponse.EResponse
+	62,  // 228: protocol.CMsgClientToGCGetDPCFavoritesResponse.result:type_name -> protocol.CMsgClientToGCGetDPCFavoritesResponse.EResponse
+	554, // 229: protocol.CMsgClientToGCGetDPCFavoritesResponse.favorites:type_name -> protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite
+	589, // 230: protocol.CMsgClientToGCSetDPCFavoriteState.favorite_type:type_name -> protocol.EDPCFavoriteType
+	63,  // 231: protocol.CMsgClientToGCSetDPCFavoriteStateResponse.result:type_name -> protocol.CMsgClientToGCSetDPCFavoriteStateResponse.EResponse
+	64,  // 232: protocol.CMsgClientToGCSetEventActiveSeasonIDResponse.result:type_name -> protocol.CMsgClientToGCSetEventActiveSeasonIDResponse.EResponse
+	564, // 233: protocol.CMsgClientToGCPurchaseLabyrinthBlessings.event_id:type_name -> protocol.EEvent
+	65,  // 234: protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse.result:type_name -> protocol.CMsgClientToGCPurchaseLabyrinthBlessingsResponse.EResponse
+	66,  // 235: protocol.CMsgClientToGCGetStickerbookResponse.response:type_name -> protocol.CMsgClientToGCGetStickerbookResponse.EResponse
+	590, // 236: protocol.CMsgClientToGCGetStickerbookResponse.stickerbook:type_name -> protocol.CMsgStickerbook
+	564, // 237: protocol.CMsgClientToGCCreateStickerbookPageRequest.event_id:type_name -> protocol.EEvent
+	591, // 238: protocol.CMsgClientToGCCreateStickerbookPageRequest.page_type:type_name -> protocol.EStickerbookPageType
+	67,  // 239: protocol.CMsgClientToGCCreateStickerbookPageResponse.response:type_name -> protocol.CMsgClientToGCCreateStickerbookPageResponse.EResponse
+	68,  // 240: protocol.CMsgClientToGCDeleteStickerbookPageResponse.response:type_name -> protocol.CMsgClientToGCDeleteStickerbookPageResponse.EResponse
+	555, // 241: protocol.CMsgClientToGCPlaceStickersRequest.sticker_items:type_name -> protocol.CMsgClientToGCPlaceStickersRequest.StickerItem
+	69,  // 242: protocol.CMsgClientToGCPlaceStickersResponse.response:type_name -> protocol.CMsgClientToGCPlaceStickersResponse.EResponse
+	556, // 243: protocol.CMsgClientToGCPlaceCollectionStickersRequest.slots:type_name -> protocol.CMsgClientToGCPlaceCollectionStickersRequest.Slot
+	70,  // 244: protocol.CMsgClientToGCPlaceCollectionStickersResponse.response:type_name -> protocol.CMsgClientToGCPlaceCollectionStickersResponse.EResponse
+	592, // 245: protocol.CMsgClientToGCOrderStickerbookTeamPageRequest.page_order_sequence:type_name -> protocol.CMsgStickerbookTeamPageOrderSequence
+	71,  // 246: protocol.CMsgClientToGCOrderStickerbookTeamPageResponse.response:type_name -> protocol.CMsgClientToGCOrderStickerbookTeamPageResponse.EResponse
+	72,  // 247: protocol.CMsgClientToGCSetHeroStickerResponse.response:type_name -> protocol.CMsgClientToGCSetHeroStickerResponse.EResponse
+	73,  // 248: protocol.CMsgClientToGCGetHeroStickersResponse.response:type_name -> protocol.CMsgClientToGCGetHeroStickersResponse.EResponse
+	593, // 249: protocol.CMsgClientToGCGetHeroStickersResponse.sticker_heroes:type_name -> protocol.CMsgStickerHeroes
+	74,  // 250: protocol.CMsgClientToGCSetFavoritePageResponse.response:type_name -> protocol.CMsgClientToGCSetFavoritePageResponse.EResponse
+	564, // 251: protocol.CMsgClientToGCClaimSwag.event_id:type_name -> protocol.EEvent
+	75,  // 252: protocol.CMsgClientToGCClaimSwagResponse.response:type_name -> protocol.CMsgClientToGCClaimSwagResponse.EResponse
+	557, // 253: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.votes:type_name -> protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote
+	594, // 254: protocol.CMsgClientToGCUploadMatchClip.match_clip:type_name -> protocol.CMatchClip
+	77,  // 255: protocol.CMsgGCToClientUploadMatchClipResponse.response:type_name -> protocol.CMsgGCToClientUploadMatchClipResponse.EResponse
+	78,  // 256: protocol.CMsgGCToClientMapStatsResponse.response:type_name -> protocol.CMsgGCToClientMapStatsResponse.EResponse
+	595, // 257: protocol.CMsgGCToClientMapStatsResponse.personal_stats:type_name -> protocol.CMsgMapStatsSnapshot
+	596, // 258: protocol.CMsgGCToClientMapStatsResponse.global_stats:type_name -> protocol.CMsgGlobalMapStats
+	438, // 259: protocol.CMsgRoadToTIUserData.quests:type_name -> protocol.CMsgRoadToTIAssignedQuest
+	79,  // 260: protocol.CMsgClientToGCRoadToTIGetQuestsResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIGetQuestsResponse.EResponse
+	439, // 261: protocol.CMsgClientToGCRoadToTIGetQuestsResponse.quest_data:type_name -> protocol.CMsgRoadToTIUserData
+	80,  // 262: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.EResponse
+	438, // 263: protocol.CMsgClientToGCRoadToTIGetActiveQuestResponse.quest_data:type_name -> protocol.CMsgRoadToTIAssignedQuest
+	439, // 264: protocol.CMsgGCToClientRoadToTIQuestDataUpdated.quest_data:type_name -> protocol.CMsgRoadToTIUserData
+	81,  // 265: protocol.CMsgClientToGCRoadToTIUseItemResponse.response:type_name -> protocol.CMsgClientToGCRoadToTIUseItemResponse.EResponse
+	438, // 266: protocol.CMsgLobbyRoadToTIMatchQuestData.quest_data:type_name -> protocol.CMsgRoadToTIAssignedQuest
+	597, // 267: protocol.CMsgClientToGCNewBloomGiftResponse.result:type_name -> protocol.ENewBloomGiftingResponse
+	558, // 268: protocol.CMsgClientToGCUpdateComicBookStats.stats:type_name -> protocol.CMsgClientToGCUpdateComicBookStats.SingleStat
+	559, // 269: protocol.CMsgClientToGCUpdateComicBookStats.language_stats:type_name -> protocol.CMsgClientToGCUpdateComicBookStats.LanguageStats
+	82,  // 270: protocol.CMsgGCRankedPlayerInfoSubmitResponse.result:type_name -> protocol.CMsgGCRankedPlayerInfoSubmitResponse.EResult
+	564, // 271: protocol.CMsgDOTAClaimGatedEvent.event_id:type_name -> protocol.EEvent
+	83,  // 272: protocol.CMsgDOTAClaimGatedEventResponse.result:type_name -> protocol.CMsgDOTAClaimGatedEventResponse.ResultCode
+	564, // 273: protocol.CMsgClientToGCGetEventRanking.event_id:type_name -> protocol.EEvent
+	564, // 274: protocol.CMsgClientToGCGetEventRankingResponse.event_id:type_name -> protocol.EEvent
+	564, // 275: protocol.CMsgClientToGCGetEventCoupon.event_id:type_name -> protocol.EEvent
+	84,  // 276: protocol.CMsgClientToGCGetEventCouponResponse.result:type_name -> protocol.CMsgClientToGCGetEventCouponResponse.ResultCode
+	564, // 277: protocol.CMsgClientToGCGetEventCouponResponse.event_id:type_name -> protocol.EEvent
+	560, // 278: protocol.CMsgClientToGCGetEventCouponResponse.coupons:type_name -> protocol.CMsgClientToGCGetEventCouponResponse.Coupon
+	564, // 279: protocol.CMsgClientToGCConvertEventPoints.event_id_points_to_buy:type_name -> protocol.EEvent
+	564, // 280: protocol.CMsgClientToGCConvertEventPoints.event_id_points_to_spend:type_name -> protocol.EEvent
+	85,  // 281: protocol.CMsgClientToGCConvertEventPointsResponse.result:type_name -> protocol.CMsgClientToGCConvertEventPointsResponse.ResultCode
+	561, // 282: protocol.CMsgDOTARequestMatchesResponse.Series.matches:type_name -> protocol.CMsgDOTAMatch
+	128, // 283: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.all_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
+	128, // 284: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.winning_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
+	128, // 285: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.losing_stats:type_name -> protocol.CMatchPlayerTimedStatAverages
+	129, // 286: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.winning_stddevs:type_name -> protocol.CMatchPlayerTimedStatStdDeviations
+	129, // 287: protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer.losing_stddevs:type_name -> protocol.CMatchPlayerTimedStatStdDeviations
+	470, // 288: protocol.CMsgGCGetHeroTimedStatsResponse.RankChunkedStats.timed_stats:type_name -> protocol.CMsgGCGetHeroTimedStatsResponse.TimedStatsContainer
+	598, // 289: protocol.CMsgClientToGCSetProfileCardSlots.CardSlot.slot_type:type_name -> protocol.EProfileCardSlotType
+	3,   // 290: protocol.CMsgDOTAPartyRichPresence.WeekendTourney.event:type_name -> protocol.EWeekendTourneyRichPresenceEvent
+	480, // 291: protocol.CMsgClientToGCGetQuestProgressResponse.Quest.completed_challenges:type_name -> protocol.CMsgClientToGCGetQuestProgressResponse.Challenge
+	564, // 292: protocol.CMsgEventGoals.EventGoal.event_id:type_name -> protocol.EEvent
+	483, // 293: protocol.CMsgPredictionRankings.Prediction.prediction_lines:type_name -> protocol.CMsgPredictionRankings.PredictionLine
+	485, // 294: protocol.CMsgPredictionResults.Result.result_breakdown:type_name -> protocol.CMsgPredictionResults.ResultBreakdown
+	579, // 295: protocol.CMsgProfileResponse.FeaturedHero.equipped_econ_items:type_name -> protocol.CSOEconItem
+	579, // 296: protocol.CMsgProfileResponse.FeaturedHero.plus_hero_relics_item:type_name -> protocol.CSOEconItem
+	294, // 297: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.talent_win_rates:type_name -> protocol.CMsgTalentWinRates
+	295, // 298: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.hero_averages:type_name -> protocol.CMsgGlobalHeroAverages
+	534, // 299: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.graph_data:type_name -> protocol.CMsgHeroGlobalDataResponse.GraphData
+	535, // 300: protocol.CMsgHeroGlobalDataResponse.HeroDataPerRankChunk.week_data:type_name -> protocol.CMsgHeroGlobalDataResponse.WeekData
+	537, // 301: protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.RankedHeroData.hero_data:type_name -> protocol.CMsgHeroGlobalDataHeroesAlliesAndEnemies.HeroData
+	540, // 302: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant.swapped_challenge:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.SwappedChallenge
+	542, // 303: protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.MapVariant.treasure_map:type_name -> protocol.CMsgClientToGCCavernCrawlRequestMapStateResponse.TreasureMap
+	348, // 304: protocol.CMsgGCToClientVerifyFavoritePlayersResponse.Result.player:type_name -> protocol.CMsgPartySearchPlayer
+	589, // 305: protocol.CMsgClientToGCGetDPCFavoritesResponse.Favorite.favorite_type:type_name -> protocol.EDPCFavoriteType
+	599, // 306: protocol.CMsgClientToGCPlaceStickersRequest.StickerItem.sticker:type_name -> protocol.CMsgStickerbookSticker
+	76,  // 307: protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.vote_type:type_name -> protocol.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.EVoteType
+	10,  // 308: protocol.CMsgClientToGCUpdateComicBookStats.SingleStat.stat_type:type_name -> protocol.CMsgClientToGCUpdateComicBookStat_Type
+	309, // [309:309] is the sub-list for method output_type
+	309, // [309:309] is the sub-list for method input_type
+	309, // [309:309] is the sub-list for extension type_name
+	309, // [309:309] is the sub-list for extension extendee
+	0,   // [0:309] is the sub-list for field type_name
 }
 
 func init() { file_dota_gcmessages_client_proto_init() }
@@ -36265,8 +37392,8 @@ func file_dota_gcmessages_client_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_client_proto_rawDesc), len(file_dota_gcmessages_client_proto_rawDesc)),
-			NumEnums:      83,
-			NumMessages:   461,
+			NumEnums:      86,
+			NumMessages:   475,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

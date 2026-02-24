@@ -93,20 +93,24 @@ const (
 	ETeamFanContentAssetType_k_eFanContentAssetType_Emoticons    ETeamFanContentAssetType = 7
 	ETeamFanContentAssetType_k_eFanContentAssetType_VoiceLines   ETeamFanContentAssetType = 8
 	ETeamFanContentAssetType_k_eFanContentAssetType_Localization ETeamFanContentAssetType = 9
+	ETeamFanContentAssetType_k_eFanContentAssetType_Banner       ETeamFanContentAssetType = 10
+	ETeamFanContentAssetType_k_eFanContentAssetType_BaseLogo     ETeamFanContentAssetType = 11
 )
 
 // Enum value maps for ETeamFanContentAssetType.
 var (
 	ETeamFanContentAssetType_name = map[int32]string{
-		1: "k_eFanContentAssetType_LogoPNG",
-		2: "k_eFanContentAssetType_LogoSVG",
-		3: "k_eFanContentAssetType_Logo3D",
-		4: "k_eFanContentAssetType_Players",
-		5: "k_eFanContentAssetType_Sprays",
-		6: "k_eFanContentAssetType_Wallpapers",
-		7: "k_eFanContentAssetType_Emoticons",
-		8: "k_eFanContentAssetType_VoiceLines",
-		9: "k_eFanContentAssetType_Localization",
+		1:  "k_eFanContentAssetType_LogoPNG",
+		2:  "k_eFanContentAssetType_LogoSVG",
+		3:  "k_eFanContentAssetType_Logo3D",
+		4:  "k_eFanContentAssetType_Players",
+		5:  "k_eFanContentAssetType_Sprays",
+		6:  "k_eFanContentAssetType_Wallpapers",
+		7:  "k_eFanContentAssetType_Emoticons",
+		8:  "k_eFanContentAssetType_VoiceLines",
+		9:  "k_eFanContentAssetType_Localization",
+		10: "k_eFanContentAssetType_Banner",
+		11: "k_eFanContentAssetType_BaseLogo",
 	}
 	ETeamFanContentAssetType_value = map[string]int32{
 		"k_eFanContentAssetType_LogoPNG":      1,
@@ -118,6 +122,8 @@ var (
 		"k_eFanContentAssetType_Emoticons":    7,
 		"k_eFanContentAssetType_VoiceLines":   8,
 		"k_eFanContentAssetType_Localization": 9,
+		"k_eFanContentAssetType_Banner":       10,
+		"k_eFanContentAssetType_BaseLogo":     11,
 	}
 )
 
@@ -4175,7 +4181,7 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"\x15ETeamFanContentStatus\x12#\n" +
 	"\x1fTEAM_FAN_CONTENT_STATUS_INVALID\x10\x00\x12#\n" +
 	"\x1fTEAM_FAN_CONTENT_STATUS_PENDING\x10\x01\x12%\n" +
-	"!TEAM_FAN_CONTENT_STATUS_EVALUATED\x10\x02*\xe9\x02\n" +
+	"!TEAM_FAN_CONTENT_STATUS_EVALUATED\x10\x02*\xb1\x03\n" +
 	"\x18ETeamFanContentAssetType\x12\"\n" +
 	"\x1ek_eFanContentAssetType_LogoPNG\x10\x01\x12\"\n" +
 	"\x1ek_eFanContentAssetType_LogoSVG\x10\x02\x12!\n" +
@@ -4185,7 +4191,10 @@ const file_dota_gcmessages_webapi_proto_rawDesc = "" +
 	"!k_eFanContentAssetType_Wallpapers\x10\x06\x12$\n" +
 	" k_eFanContentAssetType_Emoticons\x10\a\x12%\n" +
 	"!k_eFanContentAssetType_VoiceLines\x10\b\x12'\n" +
-	"#k_eFanContentAssetType_Localization\x10\t*\x8d\x01\n" +
+	"#k_eFanContentAssetType_Localization\x10\t\x12!\n" +
+	"\x1dk_eFanContentAssetType_Banner\x10\n" +
+	"\x12#\n" +
+	"\x1fk_eFanContentAssetType_BaseLogo\x10\v*\x8d\x01\n" +
 	"\x1aETeamFanContentAssetStatus\x12!\n" +
 	"\x1dk_eFanContentAssetStatus_None\x10\x00\x12%\n" +
 	"!k_eFanContentAssetStatus_Approved\x10\x01\x12%\n" +

@@ -230,7 +230,8 @@ var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
 }
 
 var msgArgAsParameterOverrides = map[dm.EDOTAGCMsg]bool{
-	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails: true,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails:            true,
+	dm.EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimReward:   true,
 }
 
 var msgEventNameOverrides = map[dm.EDOTAGCMsg]string{

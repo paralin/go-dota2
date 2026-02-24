@@ -90,15 +90,16 @@ func (ELaneSelection) EnumDescriptor() ([]byte, []int) {
 type ELaneSelectionFlags int32
 
 const (
-	ELaneSelectionFlags_k_ELaneSelectionFlags_SAFELANE    ELaneSelectionFlags = 1
-	ELaneSelectionFlags_k_ELaneSelectionFlags_OFFLANE     ELaneSelectionFlags = 2
-	ELaneSelectionFlags_k_ELaneSelectionFlags_MIDLANE     ELaneSelectionFlags = 4
-	ELaneSelectionFlags_k_ELaneSelectionFlags_SUPPORT     ELaneSelectionFlags = 8
-	ELaneSelectionFlags_k_ELaneSelectionFlags_HARDSUPPORT ELaneSelectionFlags = 16
-	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_None    ELaneSelectionFlags = 0
-	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_CORE    ELaneSelectionFlags = 7
-	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_SUPPORT ELaneSelectionFlags = 24
-	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_ALL     ELaneSelectionFlags = 31
+	ELaneSelectionFlags_k_ELaneSelectionFlags_SAFELANE       ELaneSelectionFlags = 1
+	ELaneSelectionFlags_k_ELaneSelectionFlags_OFFLANE        ELaneSelectionFlags = 2
+	ELaneSelectionFlags_k_ELaneSelectionFlags_MIDLANE        ELaneSelectionFlags = 4
+	ELaneSelectionFlags_k_ELaneSelectionFlags_SUPPORT        ELaneSelectionFlags = 8
+	ELaneSelectionFlags_k_ELaneSelectionFlags_HARDSUPPORT    ELaneSelectionFlags = 16
+	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_None       ELaneSelectionFlags = 0
+	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_CORE       ELaneSelectionFlags = 7
+	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_SUPPORT    ELaneSelectionFlags = 24
+	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_ALL        ELaneSelectionFlags = 31
+	ELaneSelectionFlags_k_ELaneSelectionFlagGroup_HIGHDEMAND ELaneSelectionFlags = 18
 )
 
 // Enum value maps for ELaneSelectionFlags.
@@ -113,17 +114,19 @@ var (
 		7:  "k_ELaneSelectionFlagGroup_CORE",
 		24: "k_ELaneSelectionFlagGroup_SUPPORT",
 		31: "k_ELaneSelectionFlagGroup_ALL",
+		18: "k_ELaneSelectionFlagGroup_HIGHDEMAND",
 	}
 	ELaneSelectionFlags_value = map[string]int32{
-		"k_ELaneSelectionFlags_SAFELANE":    1,
-		"k_ELaneSelectionFlags_OFFLANE":     2,
-		"k_ELaneSelectionFlags_MIDLANE":     4,
-		"k_ELaneSelectionFlags_SUPPORT":     8,
-		"k_ELaneSelectionFlags_HARDSUPPORT": 16,
-		"k_ELaneSelectionFlagGroup_None":    0,
-		"k_ELaneSelectionFlagGroup_CORE":    7,
-		"k_ELaneSelectionFlagGroup_SUPPORT": 24,
-		"k_ELaneSelectionFlagGroup_ALL":     31,
+		"k_ELaneSelectionFlags_SAFELANE":       1,
+		"k_ELaneSelectionFlags_OFFLANE":        2,
+		"k_ELaneSelectionFlags_MIDLANE":        4,
+		"k_ELaneSelectionFlags_SUPPORT":        8,
+		"k_ELaneSelectionFlags_HARDSUPPORT":    16,
+		"k_ELaneSelectionFlagGroup_None":       0,
+		"k_ELaneSelectionFlagGroup_CORE":       7,
+		"k_ELaneSelectionFlagGroup_SUPPORT":    24,
+		"k_ELaneSelectionFlagGroup_ALL":        31,
+		"k_ELaneSelectionFlagGroup_HIGHDEMAND": 18,
 	}
 )
 
@@ -826,6 +829,8 @@ const (
 	CMvpData_MvpDatum_MvpAccolade_kKillEaterEventType_Kez_KillsDuringFalconRush                  CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType = 285
 	CMvpData_MvpDatum_MvpAccolade_kKillEaterEventType_Seasonal_PartyHatsStolen                   CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType = 286
 	CMvpData_MvpDatum_MvpAccolade_kKillEaterEventType_Seasonal_TallestHat                        CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType = 287
+	CMvpData_MvpDatum_MvpAccolade_kKillEaterEventType_Largo_MultiHeroFrogstomp                   CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType = 288
+	CMvpData_MvpDatum_MvpAccolade_kKillEaterEventType_Largo_AmphibianRhapsodyKillsAndAssists     CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType = 289
 )
 
 // Enum value maps for CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType.
@@ -1112,6 +1117,8 @@ var (
 		285: "kKillEaterEventType_Kez_KillsDuringFalconRush",
 		286: "kKillEaterEventType_Seasonal_PartyHatsStolen",
 		287: "kKillEaterEventType_Seasonal_TallestHat",
+		288: "kKillEaterEventType_Largo_MultiHeroFrogstomp",
+		289: "kKillEaterEventType_Largo_AmphibianRhapsodyKillsAndAssists",
 	}
 	CMvpData_MvpDatum_MvpAccolade_MvpAccoladeType_value = map[string]int32{
 		"kills":                            1,
@@ -1395,6 +1402,8 @@ var (
 		"kKillEaterEventType_Kez_KillsDuringFalconRush":                  285,
 		"kKillEaterEventType_Seasonal_PartyHatsStolen":                   286,
 		"kKillEaterEventType_Seasonal_TallestHat":                        287,
+		"kKillEaterEventType_Largo_MultiHeroFrogstomp":                   288,
+		"kKillEaterEventType_Largo_AmphibianRhapsodyKillsAndAssists":     289,
 	}
 )
 
@@ -1648,6 +1657,7 @@ type CSODOTAParty struct {
 	RestrictedFromRankedAccountId   *uint32                     `protobuf:"varint,75,opt,name=restricted_from_ranked_account_id,json=restrictedFromRankedAccountId" json:"restricted_from_ranked_account_id,omitempty"`
 	RankSpreadLikertScale           *uint32                     `protobuf:"varint,76,opt,name=rank_spread_likert_scale,json=rankSpreadLikertScale" json:"rank_spread_likert_scale,omitempty"`
 	BehaviorScoreLikertScale        *uint32                     `protobuf:"varint,77,opt,name=behavior_score_likert_scale,json=behaviorScoreLikertScale" json:"behavior_score_likert_scale,omitempty"`
+	ContainsRequiredPlaytester      *bool                       `protobuf:"varint,78,opt,name=contains_required_playtester,json=containsRequiredPlaytester" json:"contains_required_playtester,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
 	sizeCache                       protoimpl.SizeCache
 }
@@ -2073,6 +2083,13 @@ func (x *CSODOTAParty) GetBehaviorScoreLikertScale() uint32 {
 		return *x.BehaviorScoreLikertScale
 	}
 	return 0
+}
+
+func (x *CSODOTAParty) GetContainsRequiredPlaytester() bool {
+	if x != nil && x.ContainsRequiredPlaytester != nil {
+		return *x.ContainsRequiredPlaytester
+	}
+	return false
 }
 
 type CSODOTAPartyInvite struct {
@@ -2874,7 +2891,7 @@ const file_dota_gcmessages_common_match_management_proto_rawDesc = "" +
 	"\x0fhas_hp_resource\x18\x0f \x01(\bR\rhasHpResource\x126\n" +
 	"\x17joined_from_partyfinder\x18\f \x01(\bR\x15joinedFromPartyfinder\x12$\n" +
 	"\x0eis_steam_china\x18\x10 \x01(\bR\fisSteamChina\x12&\n" +
-	"\x0fbanned_hero_ids\x18\x11 \x03(\x05R\rbannedHeroIds\"\xef\x17\n" +
+	"\x0fbanned_hero_ids\x18\x11 \x03(\x05R\rbannedHeroIds\"\xb1\x18\n" +
 	"\fCSODOTAParty\x12\x1f\n" +
 	"\bparty_id\x18\x01 \x01(\x04B\x04\x80\xa6\x1d\x01R\apartyId\x12\x1b\n" +
 	"\tleader_id\x18\x02 \x01(\x06R\bleaderId\x12\x1d\n" +
@@ -2937,7 +2954,8 @@ const file_dota_gcmessages_common_match_management_proto_rawDesc = "" +
 	"\x16restricted_from_ranked\x18J \x01(\bR\x14restrictedFromRanked\x12H\n" +
 	"!restricted_from_ranked_account_id\x18K \x01(\rR\x1drestrictedFromRankedAccountId\x127\n" +
 	"\x18rank_spread_likert_scale\x18L \x01(\rR\x15rankSpreadLikertScale\x12=\n" +
-	"\x1bbehavior_score_likert_scale\x18M \x01(\rR\x18behaviorScoreLikertScale\"0\n" +
+	"\x1bbehavior_score_likert_scale\x18M \x01(\rR\x18behaviorScoreLikertScale\x12@\n" +
+	"\x1ccontains_required_playtester\x18N \x01(\bR\x1acontainsRequiredPlaytester\"0\n" +
 	"\x05State\x12\x06\n" +
 	"\x02UI\x10\x00\x12\x11\n" +
 	"\rFINDING_MATCH\x10\x01\x12\f\n" +
@@ -2985,18 +3003,18 @@ const file_dota_gcmessages_common_match_management_proto_rawDesc = "" +
 	"\x19CMsgMatchMatchmakingStats\x12,\n" +
 	"\x12average_queue_time\x18\x01 \x01(\rR\x10averageQueueTime\x12,\n" +
 	"\x12maximum_queue_time\x18\x02 \x01(\rR\x10maximumQueueTime\x12\x84\x01\n" +
-	"\x17behavior_score_variance\x18\x03 \x01(\x0e2%.protocol.EMatchBehaviorScoreVariance:%k_EMatchBehaviorScoreVariance_InvalidR\x15behaviorScoreVariance\"\xbao\n" +
+	"\x17behavior_score_variance\x18\x03 \x01(\x0e2%.protocol.EMatchBehaviorScoreVariance:%k_EMatchBehaviorScoreVariance_InvalidR\x15behaviorScoreVariance\"\xaep\n" +
 	"\bCMvpData\x12/\n" +
 	"\x04mvps\x18\x01 \x03(\v2\x1b.protocol.CMvpData.MvpDatumR\x04mvps\x12:\n" +
 	"\n" +
-	"event_mvps\x18\x02 \x03(\v2\x1b.protocol.CMvpData.MvpDatumR\teventMvps\x1a\xc0n\n" +
+	"event_mvps\x18\x02 \x03(\v2\x1b.protocol.CMvpData.MvpDatumR\teventMvps\x1a\xb4o\n" +
 	"\bMvpDatum\x12\x1f\n" +
 	"\vplayer_slot\x18\x01 \x01(\rR\n" +
 	"playerSlot\x12E\n" +
-	"\taccolades\x18\x02 \x03(\v2'.protocol.CMvpData.MvpDatum.MvpAccoladeR\taccolades\x1a\xcbm\n" +
+	"\taccolades\x18\x02 \x03(\v2'.protocol.CMvpData.MvpDatum.MvpAccoladeR\taccolades\x1a\xbfn\n" +
 	"\vMvpAccolade\x12R\n" +
 	"\x04type\x18\x01 \x01(\x0e27.protocol.CMvpData.MvpDatum.MvpAccolade.MvpAccoladeType:\x05killsR\x04type\x12!\n" +
-	"\fdetail_value\x18\x02 \x01(\x02R\vdetailValue\"\xc4l\n" +
+	"\fdetail_value\x18\x02 \x01(\x02R\vdetailValue\"\xb8m\n" +
 	"\x0fMvpAccoladeType\x12\t\n" +
 	"\x05kills\x10\x01\x12\n" +
 	"\n" +
@@ -3282,13 +3300,15 @@ const file_dota_gcmessages_common_match_management_proto_rawDesc = "" +
 	"*kKillEaterEventType_Kez_RaptorDanceHealing\x10\x9c\x02\x122\n" +
 	"-kKillEaterEventType_Kez_KillsDuringFalconRush\x10\x9d\x02\x121\n" +
 	",kKillEaterEventType_Seasonal_PartyHatsStolen\x10\x9e\x02\x12,\n" +
-	"'kKillEaterEventType_Seasonal_TallestHat\x10\x9f\x02*\xab\x01\n" +
+	"'kKillEaterEventType_Seasonal_TallestHat\x10\x9f\x02\x121\n" +
+	",kKillEaterEventType_Largo_MultiHeroFrogstomp\x10\xa0\x02\x12?\n" +
+	":kKillEaterEventType_Largo_AmphibianRhapsodyKillsAndAssists\x10\xa1\x02*\xab\x01\n" +
 	"\x0eELaneSelection\x12\x1d\n" +
 	"\x19k_ELaneSelection_SAFELANE\x10\x00\x12\x1c\n" +
 	"\x18k_ELaneSelection_OFFLANE\x10\x01\x12\x1c\n" +
 	"\x18k_ELaneSelection_MIDLANE\x10\x02\x12\x1c\n" +
 	"\x18k_ELaneSelection_SUPPORT\x10\x03\x12 \n" +
-	"\x1ck_ELaneSelection_HARDSUPPORT\x10\x04*\xdb\x02\n" +
+	"\x1ck_ELaneSelection_HARDSUPPORT\x10\x04*\x85\x03\n" +
 	"\x13ELaneSelectionFlags\x12\"\n" +
 	"\x1ek_ELaneSelectionFlags_SAFELANE\x10\x01\x12!\n" +
 	"\x1dk_ELaneSelectionFlags_OFFLANE\x10\x02\x12!\n" +
@@ -3298,7 +3318,8 @@ const file_dota_gcmessages_common_match_management_proto_rawDesc = "" +
 	"\x1ek_ELaneSelectionFlagGroup_None\x10\x00\x12\"\n" +
 	"\x1ek_ELaneSelectionFlagGroup_CORE\x10\a\x12%\n" +
 	"!k_ELaneSelectionFlagGroup_SUPPORT\x10\x18\x12!\n" +
-	"\x1dk_ELaneSelectionFlagGroup_ALL\x10\x1f*i\n" +
+	"\x1dk_ELaneSelectionFlagGroup_ALL\x10\x1f\x12(\n" +
+	"$k_ELaneSelectionFlagGroup_HIGHDEMAND\x10\x12*i\n" +
 	"\x16EPartyMatchmakingFlags\x12!\n" +
 	"\x1dk_EPartyMatchmakingFlags_None\x10\x00\x12,\n" +
 	"(k_EPartyMatchmakingFlags_LargeRankSpread\x10\x01*\xdc\x02\n" +

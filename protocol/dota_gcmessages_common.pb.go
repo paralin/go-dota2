@@ -5873,12 +5873,12 @@ type CMsgDOTAFantasyPlayerStats struct {
 	FirstBlood             *uint32                `protobuf:"varint,20,opt,name=first_blood,json=firstBlood" json:"first_blood,omitempty"`
 	Stuns                  *float32               `protobuf:"fixed32,21,opt,name=stuns" json:"stuns,omitempty"`
 	Smokes                 *uint32                `protobuf:"varint,22,opt,name=smokes" json:"smokes,omitempty"`
-	NeutralTokens          *uint32                `protobuf:"varint,23,opt,name=neutral_tokens,json=neutralTokens" json:"neutral_tokens,omitempty"`
 	Watchers               *uint32                `protobuf:"varint,24,opt,name=watchers" json:"watchers,omitempty"`
 	Lotuses                *uint32                `protobuf:"varint,25,opt,name=lotuses" json:"lotuses,omitempty"`
 	Tormentors             *uint32                `protobuf:"varint,26,opt,name=tormentors" json:"tormentors,omitempty"`
 	CourierKills           *uint32                `protobuf:"varint,27,opt,name=courier_kills,json=courierKills" json:"courier_kills,omitempty"`
 	TitleStats             *uint64                `protobuf:"fixed64,28,opt,name=title_stats,json=titleStats" json:"title_stats,omitempty"`
+	Madstone               *uint32                `protobuf:"varint,29,opt,name=madstone" json:"madstone,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -6060,13 +6060,6 @@ func (x *CMsgDOTAFantasyPlayerStats) GetSmokes() uint32 {
 	return 0
 }
 
-func (x *CMsgDOTAFantasyPlayerStats) GetNeutralTokens() uint32 {
-	if x != nil && x.NeutralTokens != nil {
-		return *x.NeutralTokens
-	}
-	return 0
-}
-
 func (x *CMsgDOTAFantasyPlayerStats) GetWatchers() uint32 {
 	if x != nil && x.Watchers != nil {
 		return *x.Watchers
@@ -6098,6 +6091,13 @@ func (x *CMsgDOTAFantasyPlayerStats) GetCourierKills() uint32 {
 func (x *CMsgDOTAFantasyPlayerStats) GetTitleStats() uint64 {
 	if x != nil && x.TitleStats != nil {
 		return *x.TitleStats
+	}
+	return 0
+}
+
+func (x *CMsgDOTAFantasyPlayerStats) GetMadstone() uint32 {
+	if x != nil && x.Madstone != nil {
+		return *x.Madstone
 	}
 	return 0
 }
@@ -13271,6 +13271,7 @@ type CMsgDOTASeasonPredictions_Prediction struct {
 	Phases               []ELeaguePhase                                        `protobuf:"varint,18,rep,name=phases,enum=protocol.ELeaguePhase" json:"phases,omitempty"`
 	RewardEvent          *EEvent                                               `protobuf:"varint,19,opt,name=reward_event,json=rewardEvent,enum=protocol.EEvent,def=0" json:"reward_event,omitempty"`
 	LeagueNodeId         *uint32                                               `protobuf:"varint,20,opt,name=league_node_id,json=leagueNodeId" json:"league_node_id,omitempty"`
+	RewardEventAction    *string                                               `protobuf:"bytes,21,opt,name=reward_event_action,json=rewardEventAction" json:"reward_event_action,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -13444,6 +13445,13 @@ func (x *CMsgDOTASeasonPredictions_Prediction) GetLeagueNodeId() uint32 {
 		return *x.LeagueNodeId
 	}
 	return 0
+}
+
+func (x *CMsgDOTASeasonPredictions_Prediction) GetRewardEventAction() string {
+	if x != nil && x.RewardEventAction != nil {
+		return *x.RewardEventAction
+	}
+	return ""
 }
 
 type CMsgDOTASeasonPredictions_Prediction_Answers struct {
@@ -13681,6 +13689,7 @@ type CMsgDOTAMatch_Player struct {
 	HeroDamage                *uint32                                    `protobuf:"varint,24,opt,name=hero_damage,json=heroDamage" json:"hero_damage,omitempty"`
 	TowerDamage               *uint32                                    `protobuf:"varint,25,opt,name=tower_damage,json=towerDamage" json:"tower_damage,omitempty"`
 	HeroHealing               *uint32                                    `protobuf:"varint,26,opt,name=hero_healing,json=heroHealing" json:"hero_healing,omitempty"`
+	DisableDuration           *uint32                                    `protobuf:"varint,85,opt,name=disable_duration,json=disableDuration" json:"disable_duration,omitempty"`
 	Level                     *uint32                                    `protobuf:"varint,27,opt,name=level" json:"level,omitempty"`
 	TimeLastSeen              *uint32                                    `protobuf:"varint,28,opt,name=time_last_seen,json=timeLastSeen" json:"time_last_seen,omitempty"`
 	PlayerName                *string                                    `protobuf:"bytes,29,opt,name=player_name,json=playerName" json:"player_name,omitempty"`
@@ -14001,6 +14010,13 @@ func (x *CMsgDOTAMatch_Player) GetTowerDamage() uint32 {
 func (x *CMsgDOTAMatch_Player) GetHeroHealing() uint32 {
 	if x != nil && x.HeroHealing != nil {
 		return *x.HeroHealing
+	}
+	return 0
+}
+
+func (x *CMsgDOTAMatch_Player) GetDisableDuration() uint32 {
+	if x != nil && x.DisableDuration != nil {
+		return *x.DisableDuration
 	}
 	return 0
 }
@@ -16393,6 +16409,50 @@ func (x *CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData) GetTokens() 
 	return nil
 }
 
+type CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData struct {
+	state         protoimpl.MessageState                                                               `protogen:"open.v1"`
+	Materials     []*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity `protobuf:"bytes,1,rep,name=materials" json:"materials,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) Reset() {
+	*x = CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData{}
+	mi := &file_dota_gcmessages_common_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) ProtoMessage() {}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData.ProtoReflect.Descriptor instead.
+func (*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_proto_rawDescGZIP(), []int{96, 4}
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData) GetMaterials() []*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity {
+	if x != nil {
+		return x.Materials
+	}
+	return nil
+}
+
 type CMsgDOTAClaimEventActionResponse_GrantedRewardData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	GrantIndex    *uint32                `protobuf:"varint,1,opt,name=grant_index,json=grantIndex" json:"grant_index,omitempty"`
@@ -16406,7 +16466,7 @@ type CMsgDOTAClaimEventActionResponse_GrantedRewardData struct {
 
 func (x *CMsgDOTAClaimEventActionResponse_GrantedRewardData) Reset() {
 	*x = CMsgDOTAClaimEventActionResponse_GrantedRewardData{}
-	mi := &file_dota_gcmessages_common_proto_msgTypes[166]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[167]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16418,7 +16478,7 @@ func (x *CMsgDOTAClaimEventActionResponse_GrantedRewardData) String() string {
 func (*CMsgDOTAClaimEventActionResponse_GrantedRewardData) ProtoMessage() {}
 
 func (x *CMsgDOTAClaimEventActionResponse_GrantedRewardData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_proto_msgTypes[166]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[167]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16431,7 +16491,7 @@ func (x *CMsgDOTAClaimEventActionResponse_GrantedRewardData) ProtoReflect() prot
 
 // Deprecated: Use CMsgDOTAClaimEventActionResponse_GrantedRewardData.ProtoReflect.Descriptor instead.
 func (*CMsgDOTAClaimEventActionResponse_GrantedRewardData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_proto_rawDescGZIP(), []int{96, 4}
+	return file_dota_gcmessages_common_proto_rawDescGZIP(), []int{96, 5}
 }
 
 func (x *CMsgDOTAClaimEventActionResponse_GrantedRewardData) GetGrantIndex() uint32 {
@@ -16479,7 +16539,7 @@ type CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity str
 
 func (x *CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity) Reset() {
 	*x = CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity{}
-	mi := &file_dota_gcmessages_common_proto_msgTypes[167]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[168]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16491,7 +16551,7 @@ func (x *CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity
 func (*CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity) ProtoMessage() {}
 
 func (x *CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_proto_msgTypes[167]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[168]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16521,6 +16581,59 @@ func (x *CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity
 	return 0
 }
 
+type CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MaterialId    *uint32                `protobuf:"varint,1,opt,name=material_id,json=materialId" json:"material_id,omitempty"`
+	MaterialCount *uint32                `protobuf:"varint,2,opt,name=material_count,json=materialCount" json:"material_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) Reset() {
+	*x = CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity{}
+	mi := &file_dota_gcmessages_common_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) ProtoMessage() {
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity.ProtoReflect.Descriptor instead.
+func (*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_proto_rawDescGZIP(), []int{96, 4, 0}
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) GetMaterialId() uint32 {
+	if x != nil && x.MaterialId != nil {
+		return *x.MaterialId
+	}
+	return 0
+}
+
+func (x *CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity) GetMaterialCount() uint32 {
+	if x != nil && x.MaterialCount != nil {
+		return *x.MaterialCount
+	}
+	return 0
+}
+
 type CDotaMsg_PredictionResult_Prediction struct {
 	state           protoimpl.MessageState                        `protogen:"open.v1"`
 	ItemDef         *uint32                                       `protobuf:"varint,1,opt,name=item_def,json=itemDef" json:"item_def,omitempty"`
@@ -16539,7 +16652,7 @@ const (
 
 func (x *CDotaMsg_PredictionResult_Prediction) Reset() {
 	*x = CDotaMsg_PredictionResult_Prediction{}
-	mi := &file_dota_gcmessages_common_proto_msgTypes[168]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[170]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -16551,7 +16664,7 @@ func (x *CDotaMsg_PredictionResult_Prediction) String() string {
 func (*CDotaMsg_PredictionResult_Prediction) ProtoMessage() {}
 
 func (x *CDotaMsg_PredictionResult_Prediction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_proto_msgTypes[168]
+	mi := &file_dota_gcmessages_common_proto_msgTypes[170]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -16606,7 +16719,7 @@ var File_dota_gcmessages_common_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\n" +
-	"\x1cdota_gcmessages_common.proto\x12\bprotocol\x1a\x13steammessages.proto\x1a\x16gcsdk_gcmessages.proto\x1a\x17dota_shared_enums.proto\"\xd0\x17\n" +
+	"\x1cdota_gcmessages_common.proto\x12\bprotocol\x1a\x13steammessages.proto\x1a\x16gcsdk_gcmessages.proto\x1a\x17dota_shared_enums.proto\x1a\x16networkbasetypes.proto\"\xd0\x17\n" +
 	"\x18CSODOTAGameAccountClient\x12#\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rB\x04\x80\xa6\x1d\x01R\taccountId\x12\x12\n" +
@@ -17254,12 +17367,12 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\tEarlyGame\x10\x00\x12\v\n" +
 	"\aMidGame\x10\x01\x12\f\n" +
 	"\bLateGame\x10\x02\x12\t\n" +
-	"\x05Count\x10\x03\"\xfa\f\n" +
+	"\x05Count\x10\x03\"\xaa\r\n" +
 	"\x19CMsgDOTASeasonPredictions\x12P\n" +
 	"\vpredictions\x18\x01 \x03(\v2..protocol.CMsgDOTASeasonPredictions.PredictionR\vpredictions\x12N\n" +
 	"\x13in_game_predictions\x18\x02 \x03(\v2\x1e.protocol.CMsgInGamePredictionR\x11inGamePredictions\x12G\n" +
 	"!in_game_prediction_count_per_game\x18\x03 \x01(\rR\x1cinGamePredictionCountPerGame\x12U\n" +
-	"(in_game_prediction_voting_period_minutes\x18\x04 \x01(\rR#inGamePredictionVotingPeriodMinutes\x1a\x9a\n" +
+	"(in_game_prediction_voting_period_minutes\x18\x04 \x01(\rR#inGamePredictionVotingPeriodMinutes\x1a\xca\n" +
 	"\n" +
 	"\n" +
 	"Prediction\x12[\n" +
@@ -17285,7 +17398,8 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\x06region\x18\x11 \x01(\x0e2\x17.protocol.ELeagueRegion:\x13LEAGUE_REGION_UNSETR\x06region\x12.\n" +
 	"\x06phases\x18\x12 \x03(\x0e2\x16.protocol.ELeaguePhaseR\x06phases\x12B\n" +
 	"\freward_event\x18\x13 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\vrewardEvent\x12$\n" +
-	"\x0eleague_node_id\x18\x14 \x01(\rR\fleagueNodeId\x1a&\n" +
+	"\x0eleague_node_id\x18\x14 \x01(\rR\fleagueNodeId\x12.\n" +
+	"\x13reward_event_action\x18\x15 \x01(\tR\x11rewardEventAction\x1a&\n" +
 	"\aAnswers\x12\x1b\n" +
 	"\tanswer_id\x18\x01 \x01(\rR\banswerId\"~\n" +
 	"\x0fEPredictionType\x12\v\n" +
@@ -17321,7 +17435,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\x04game\x18\x02 \x03(\rR\x04game\x1af\n" +
 	"\x06League\x12\x1b\n" +
 	"\tleague_id\x18\x01 \x01(\rR\bleagueId\x12?\n" +
-	"\x06series\x18\x02 \x03(\v2'.protocol.CMsgLeagueWatchedGames.SeriesR\x06series\"\xd30\n" +
+	"\x06series\x18\x02 \x03(\v2'.protocol.CMsgLeagueWatchedGames.SeriesR\x06series\"\x851\n" +
 	"\rCMsgDOTAMatch\x12\x1a\n" +
 	"\bduration\x18\x03 \x01(\rR\bduration\x12\x1c\n" +
 	"\tstarttime\x18\x04 \x01(\aR\tstarttime\x128\n" +
@@ -17378,7 +17492,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\rtournament_id\x183 \x01(\rR\ftournamentId\x12)\n" +
 	"\x10tournament_round\x184 \x01(\rR\x0ftournamentRound\x12*\n" +
 	"\x11pre_game_duration\x185 \x01(\rR\x0fpreGameDuration\x127\n" +
-	"\acoaches\x189 \x03(\v2\x1d.protocol.CMsgDOTAMatch.CoachR\acoaches\x1a\xef\x1a\n" +
+	"\acoaches\x189 \x03(\v2\x1d.protocol.CMsgDOTAMatch.CoachR\acoaches\x1a\x9a\x1b\n" +
 	"\x06Player\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x1f\n" +
@@ -17420,7 +17534,8 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\vhero_damage\x18\x18 \x01(\rR\n" +
 	"heroDamage\x12!\n" +
 	"\ftower_damage\x18\x19 \x01(\rR\vtowerDamage\x12!\n" +
-	"\fhero_healing\x18\x1a \x01(\rR\vheroHealing\x12\x14\n" +
+	"\fhero_healing\x18\x1a \x01(\rR\vheroHealing\x12)\n" +
+	"\x10disable_duration\x18U \x01(\rR\x0fdisableDuration\x12\x14\n" +
 	"\x05level\x18\x1b \x01(\rR\x05level\x12$\n" +
 	"\x0etime_last_seen\x18\x1c \x01(\rR\ftimeLastSeen\x12\x1f\n" +
 	"\vplayer_name\x18\x1d \x01(\tR\n" +
@@ -17504,14 +17619,14 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\vReplayState\x12\x14\n" +
 	"\x10REPLAY_AVAILABLE\x10\x00\x12\x17\n" +
 	"\x13REPLAY_NOT_RECORDED\x10\x01\x12\x12\n" +
-	"\x0eREPLAY_EXPIRED\x10\x02\"\xb5\x01\n" +
+	"\x0eREPLAY_EXPIRED\x10\x02:\x05\x80\xb5\x18\x80 \"\xb5\x01\n" +
 	"\x0eCMsgPlayerCard\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12J\n" +
 	"\rstat_modifier\x18\x02 \x03(\v2%.protocol.CMsgPlayerCard.StatModifierR\fstatModifier\x1a8\n" +
 	"\fStatModifier\x12\x12\n" +
 	"\x04stat\x18\x01 \x01(\rR\x04stat\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\rR\x05value\"\xe2\x06\n" +
+	"\x05value\x18\x02 \x01(\rR\x05value\"\xd7\x06\n" +
 	"\x1aCMsgDOTAFantasyPlayerStats\x12*\n" +
 	"\x11player_account_id\x18\x01 \x01(\rR\x0fplayerAccountId\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x01(\x04R\amatchId\x12'\n" +
@@ -17537,8 +17652,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\vfirst_blood\x18\x14 \x01(\rR\n" +
 	"firstBlood\x12\x14\n" +
 	"\x05stuns\x18\x15 \x01(\x02R\x05stuns\x12\x16\n" +
-	"\x06smokes\x18\x16 \x01(\rR\x06smokes\x12%\n" +
-	"\x0eneutral_tokens\x18\x17 \x01(\rR\rneutralTokens\x12\x1a\n" +
+	"\x06smokes\x18\x16 \x01(\rR\x06smokes\x12\x1a\n" +
 	"\bwatchers\x18\x18 \x01(\rR\bwatchers\x12\x18\n" +
 	"\alotuses\x18\x19 \x01(\rR\alotuses\x12\x1e\n" +
 	"\n" +
@@ -17546,7 +17660,8 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"tormentors\x12#\n" +
 	"\rcourier_kills\x18\x1b \x01(\rR\fcourierKills\x12\x1f\n" +
 	"\vtitle_stats\x18\x1c \x01(\x06R\n" +
-	"titleStats\"a\n" +
+	"titleStats\x12\x1a\n" +
+	"\bmadstone\x18\x1d \x01(\rR\bmadstone\"a\n" +
 	"\x1fCMsgDOTAFantasyPlayerMatchStats\x12>\n" +
 	"\amatches\x18\x01 \x03(\v2$.protocol.CMsgDOTAFantasyPlayerStatsR\amatches\"\xf3\n" +
 	"\n" +
@@ -18076,7 +18191,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"window_end\x18\x03 \x01(\v2\x1e.protocol.CMsgMapStatsSnapshotR\twindowEnd\"g\n" +
 	"\x0fCMsgTrackedStat\x12&\n" +
 	"\x0ftracked_stat_id\x18\x01 \x01(\rR\rtrackedStatId\x12,\n" +
-	"\x12tracked_stat_value\x18\x02 \x01(\x05R\x10trackedStatValue\"\xa8\t\n" +
+	"\x12tracked_stat_value\x18\x02 \x01(\x05R\x10trackedStatValue\"\xa3\v\n" +
 	" CMsgDOTAClaimEventActionResponse\x12V\n" +
 	"\x06result\x18\x01 \x01(\x0e25.protocol.CMsgDOTAClaimEventActionResponse.ResultCode:\aSuccessR\x06result\x12c\n" +
 	"\x0ereward_results\x18\x02 \x03(\v2<.protocol.CMsgDOTAClaimEventActionResponse.GrantedRewardDataR\rrewardResults\x12\x1b\n" +
@@ -18094,7 +18209,13 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\rTokenQuantity\x12\x19\n" +
 	"\btoken_id\x18\x01 \x01(\rR\atokenId\x12\x1f\n" +
 	"\vtoken_count\x18\x02 \x01(\rR\n" +
-	"tokenCount\x1a\xb6\x01\n" +
+	"tokenCount\x1a\xf8\x01\n" +
+	"\x1fMonsterHunterMaterialRewardData\x12y\n" +
+	"\tmaterials\x18\x01 \x03(\v2[.protocol.CMsgDOTAClaimEventActionResponse.MonsterHunterMaterialRewardData.MaterialQuantityR\tmaterials\x1aZ\n" +
+	"\x10MaterialQuantity\x12\x1f\n" +
+	"\vmaterial_id\x18\x01 \x01(\rR\n" +
+	"materialId\x12%\n" +
+	"\x0ematerial_count\x18\x02 \x01(\rR\rmaterialCount\x1a\xb6\x01\n" +
 	"\x11GrantedRewardData\x12\x1f\n" +
 	"\vgrant_index\x18\x01 \x01(\rR\n" +
 	"grantIndex\x12\x1f\n" +
@@ -18274,212 +18395,214 @@ func file_dota_gcmessages_common_proto_rawDescGZIP() []byte {
 }
 
 var file_dota_gcmessages_common_proto_enumTypes = make([]protoimpl.EnumInfo, 28)
-var file_dota_gcmessages_common_proto_msgTypes = make([]protoimpl.MessageInfo, 169)
+var file_dota_gcmessages_common_proto_msgTypes = make([]protoimpl.MessageInfo, 171)
 var file_dota_gcmessages_common_proto_goTypes = []any{
-	(ESpecialPingValue)(0),                                                          // 0: protocol.ESpecialPingValue
-	(EDOTAGCSessionNeed)(0),                                                         // 1: protocol.EDOTAGCSessionNeed
-	(EDOTAMatchPlayerTimeCustomStat)(0),                                             // 2: protocol.EDOTAMatchPlayerTimeCustomStat
-	(DOTA_TournamentEvents)(0),                                                      // 3: protocol.DOTA_TournamentEvents
-	(EBroadcastTimelineEvent)(0),                                                    // 4: protocol.EBroadcastTimelineEvent
-	(ECustomGameWhitelistState)(0),                                                  // 5: protocol.ECustomGameWhitelistState
-	(EDOTATriviaQuestionCategory)(0),                                                // 6: protocol.EDOTATriviaQuestionCategory
-	(EOverwatchConviction)(0),                                                       // 7: protocol.EOverwatchConviction
-	(EHeroRelicRarity)(0),                                                           // 8: protocol.EHeroRelicRarity
-	(EStickerbookAuditAction)(0),                                                    // 9: protocol.EStickerbookAuditAction
-	(EStickerbookPageType)(0),                                                       // 10: protocol.EStickerbookPageType
-	(ENewBloomGiftingResponse)(0),                                                   // 11: protocol.ENewBloomGiftingResponse
-	(CMsgDOTAProfileCard_EStatID)(0),                                                // 12: protocol.CMsgDOTAProfileCard.EStatID
-	(CMsgGCRerollPlayerChallengeResponse_EResult)(0),                                // 13: protocol.CMsgGCRerollPlayerChallengeResponse.EResult
-	(CMsgDOTARealtimeGameStats_GraphDataEStat)(0),                                   // 14: protocol.CMsgDOTARealtimeGameStats.GraphData.eStat
-	(CMsgDOTARealtimeGameStats_GraphDataELocation)(0),                               // 15: protocol.CMsgDOTARealtimeGameStats.GraphData.eLocation
-	(CMsgInGamePrediction_ERawValueTypeT)(0),                                        // 16: protocol.CMsgInGamePrediction.ERawValueType_t
-	(CMsgInGamePrediction_EPredictionType)(0),                                       // 17: protocol.CMsgInGamePrediction.EPredictionType
-	(CMsgInGamePrediction_EResolutionTypeT)(0),                                      // 18: protocol.CMsgInGamePrediction.EResolutionType_t
-	(CMsgInGamePrediction_ERandomSelectionGroupT)(0),                                // 19: protocol.CMsgInGamePrediction.ERandomSelectionGroup_t
-	(CMsgDOTASeasonPredictions_Prediction_EPredictionType)(0),                       // 20: protocol.CMsgDOTASeasonPredictions.Prediction.EPredictionType
-	(CMsgDOTASeasonPredictions_Prediction_EAnswerType)(0),                           // 21: protocol.CMsgDOTASeasonPredictions.Prediction.EAnswerType
-	(CMsgDOTAMatch_ReplayState)(0),                                                  // 22: protocol.CMsgDOTAMatch.ReplayState
-	(CMsgDOTAMatch_Player_HeroDamageType)(0),                                        // 23: protocol.CMsgDOTAMatch.Player.HeroDamageType
-	(CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse)(0),         // 24: protocol.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
-	(CMsgDOTAClaimEventActionResponse_ResultCode)(0),                                // 25: protocol.CMsgDOTAClaimEventActionResponse.ResultCode
-	(CMsgClientToGCDotaLabsFeedbackResponse_EResponse)(0),                           // 26: protocol.CMsgClientToGCDotaLabsFeedbackResponse.EResponse
-	(CDotaMsg_PredictionResult_Prediction_EResult)(0),                               // 27: protocol.CDotaMsg_PredictionResult.Prediction.EResult
-	(*CSODOTAGameAccountClient)(nil),                                                // 28: protocol.CSODOTAGameAccountClient
-	(*CSODOTAGameAccountPlus)(nil),                                                  // 29: protocol.CSODOTAGameAccountPlus
-	(*CSODOTAChatWheel)(nil),                                                        // 30: protocol.CSODOTAChatWheel
-	(*CMsgLobbyFeaturedGamemodeProgress)(nil),                                       // 31: protocol.CMsgLobbyFeaturedGamemodeProgress
-	(*CMsgBattleCupVictory)(nil),                                                    // 32: protocol.CMsgBattleCupVictory
-	(*CMsgLobbyBattleCupVictoryList)(nil),                                           // 33: protocol.CMsgLobbyBattleCupVictoryList
-	(*CMsgDOTABroadcastNotification)(nil),                                           // 34: protocol.CMsgDOTABroadcastNotification
-	(*CProtoItemHeroStatue)(nil),                                                    // 35: protocol.CProtoItemHeroStatue
-	(*CMatchPlayerAbilityUpgrade)(nil),                                              // 36: protocol.CMatchPlayerAbilityUpgrade
-	(*CMatchPlayerTimedCustomStat)(nil),                                             // 37: protocol.CMatchPlayerTimedCustomStat
-	(*CMatchPlayerTimedStats)(nil),                                                  // 38: protocol.CMatchPlayerTimedStats
-	(*CMatchTeamTimedStats)(nil),                                                    // 39: protocol.CMatchTeamTimedStats
-	(*CMatchAdditionalUnitInventory)(nil),                                           // 40: protocol.CMatchAdditionalUnitInventory
-	(*CMatchPlayerPermanentBuff)(nil),                                               // 41: protocol.CMatchPlayerPermanentBuff
-	(*CMatchHeroSelectEvent)(nil),                                                   // 42: protocol.CMatchHeroSelectEvent
-	(*CMatchClip)(nil),                                                              // 43: protocol.CMatchClip
-	(*CPartySearchClientParty)(nil),                                                 // 44: protocol.CPartySearchClientParty
-	(*CMsgDOTAHasItemQuery)(nil),                                                    // 45: protocol.CMsgDOTAHasItemQuery
-	(*CMsgDOTAHasItemResponse)(nil),                                                 // 46: protocol.CMsgDOTAHasItemResponse
-	(*CMsgGCGetPlayerCardItemInfo)(nil),                                             // 47: protocol.CMsgGCGetPlayerCardItemInfo
-	(*CMsgGCGetPlayerCardItemInfoResponse)(nil),                                     // 48: protocol.CMsgGCGetPlayerCardItemInfoResponse
-	(*CSODOTAMapLocationState)(nil),                                                 // 49: protocol.CSODOTAMapLocationState
-	(*CMsgLeagueAdminList)(nil),                                                     // 50: protocol.CMsgLeagueAdminList
-	(*CMsgDOTAProfileCard)(nil),                                                     // 51: protocol.CMsgDOTAProfileCard
-	(*CSODOTAPlayerChallenge)(nil),                                                  // 52: protocol.CSODOTAPlayerChallenge
-	(*CMsgClientToGCRerollPlayerChallenge)(nil),                                     // 53: protocol.CMsgClientToGCRerollPlayerChallenge
-	(*CMsgGCRerollPlayerChallengeResponse)(nil),                                     // 54: protocol.CMsgGCRerollPlayerChallengeResponse
-	(*CMsgGCTopCustomGamesList)(nil),                                                // 55: protocol.CMsgGCTopCustomGamesList
-	(*CMsgDOTARealtimeGameStats)(nil),                                               // 56: protocol.CMsgDOTARealtimeGameStats
-	(*CMsgDOTARealtimeGameStatsTerse)(nil),                                          // 57: protocol.CMsgDOTARealtimeGameStatsTerse
-	(*CMsgDOTABroadcastTimelineEvent)(nil),                                          // 58: protocol.CMsgDOTABroadcastTimelineEvent
-	(*CMsgGCToClientMatchGroupsVersion)(nil),                                        // 59: protocol.CMsgGCToClientMatchGroupsVersion
-	(*CMsgDOTASDOHeroStatsHistory)(nil),                                             // 60: protocol.CMsgDOTASDOHeroStatsHistory
-	(*CMsgPredictionChoice)(nil),                                                    // 61: protocol.CMsgPredictionChoice
-	(*CMsgInGamePrediction)(nil),                                                    // 62: protocol.CMsgInGamePrediction
-	(*CMsgDOTASeasonPredictions)(nil),                                               // 63: protocol.CMsgDOTASeasonPredictions
-	(*CMsgAvailablePredictions)(nil),                                                // 64: protocol.CMsgAvailablePredictions
-	(*CMsgLeagueWatchedGames)(nil),                                                  // 65: protocol.CMsgLeagueWatchedGames
-	(*CMsgDOTAMatch)(nil),                                                           // 66: protocol.CMsgDOTAMatch
-	(*CMsgPlayerCard)(nil),                                                          // 67: protocol.CMsgPlayerCard
-	(*CMsgDOTAFantasyPlayerStats)(nil),                                              // 68: protocol.CMsgDOTAFantasyPlayerStats
-	(*CMsgDOTAFantasyPlayerMatchStats)(nil),                                         // 69: protocol.CMsgDOTAFantasyPlayerMatchStats
-	(*CMsgDOTABotDebugInfo)(nil),                                                    // 70: protocol.CMsgDOTABotDebugInfo
-	(*CMsgSuccessfulHero)(nil),                                                      // 71: protocol.CMsgSuccessfulHero
-	(*CMsgRecentMatchInfo)(nil),                                                     // 72: protocol.CMsgRecentMatchInfo
-	(*CMsgMatchTips)(nil),                                                           // 73: protocol.CMsgMatchTips
-	(*CMsgDOTAMatchMinimal)(nil),                                                    // 74: protocol.CMsgDOTAMatchMinimal
-	(*CMsgConsumableUsage)(nil),                                                     // 75: protocol.CMsgConsumableUsage
-	(*CMsgMatchConsumableUsage)(nil),                                                // 76: protocol.CMsgMatchConsumableUsage
-	(*CMsgMatchEventActionGrants)(nil),                                              // 77: protocol.CMsgMatchEventActionGrants
-	(*CMsgCustomGameWhitelist)(nil),                                                 // 78: protocol.CMsgCustomGameWhitelist
-	(*CMsgCustomGameWhitelistForEdit)(nil),                                          // 79: protocol.CMsgCustomGameWhitelistForEdit
-	(*CMsgPlayerRecentMatchInfo)(nil),                                               // 80: protocol.CMsgPlayerRecentMatchInfo
-	(*CMsgPlayerMatchRecord)(nil),                                                   // 81: protocol.CMsgPlayerMatchRecord
-	(*CMsgPlayerRecentMatchOutcomes)(nil),                                           // 82: protocol.CMsgPlayerRecentMatchOutcomes
-	(*CMsgPlayerRecentCommends)(nil),                                                // 83: protocol.CMsgPlayerRecentCommends
-	(*CMsgPlayerRecentAccomplishments)(nil),                                         // 84: protocol.CMsgPlayerRecentAccomplishments
-	(*CMsgPlayerHeroRecentAccomplishments)(nil),                                     // 85: protocol.CMsgPlayerHeroRecentAccomplishments
-	(*CMsgRecentAccomplishments)(nil),                                               // 86: protocol.CMsgRecentAccomplishments
-	(*CMsgServerToGCRequestPlayerRecentAccomplishments)(nil),                        // 87: protocol.CMsgServerToGCRequestPlayerRecentAccomplishments
-	(*CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse)(nil),                // 88: protocol.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse
-	(*CMsgArcanaVoteMatchVotes)(nil),                                                // 89: protocol.CMsgArcanaVoteMatchVotes
-	(*CMsgGCtoGCAssociatedExploiterAccountInfo)(nil),                                // 90: protocol.CMsgGCtoGCAssociatedExploiterAccountInfo
-	(*CMsgGCtoGCAssociatedExploiterAccountInfoResponse)(nil),                        // 91: protocol.CMsgGCtoGCAssociatedExploiterAccountInfoResponse
-	(*CMsgPullTabsData)(nil),                                                        // 92: protocol.CMsgPullTabsData
-	(*CMsgUnderDraftData)(nil),                                                      // 93: protocol.CMsgUnderDraftData
-	(*CMsgPlayerTitleData)(nil),                                                     // 94: protocol.CMsgPlayerTitleData
-	(*CMsgDOTATriviaQuestion)(nil),                                                  // 95: protocol.CMsgDOTATriviaQuestion
-	(*CMsgDOTATriviaQuestionAnswersSummary)(nil),                                    // 96: protocol.CMsgDOTATriviaQuestionAnswersSummary
-	(*CMsgGameDataSpecialValueBonus)(nil),                                           // 97: protocol.CMsgGameDataSpecialValueBonus
-	(*CMsgGameDataSpecialValues)(nil),                                               // 98: protocol.CMsgGameDataSpecialValues
-	(*CMsgGameDataFacetAbilityBonus)(nil),                                           // 99: protocol.CMsgGameDataFacetAbilityBonus
-	(*CMsgGameDataAbilityOrItem)(nil),                                               // 100: protocol.CMsgGameDataAbilityOrItem
-	(*CMsgGameDataAbilityOrItemList)(nil),                                           // 101: protocol.CMsgGameDataAbilityOrItemList
-	(*CMsgGameDataHero)(nil),                                                        // 102: protocol.CMsgGameDataHero
-	(*CMsgGameDataAbilities)(nil),                                                   // 103: protocol.CMsgGameDataAbilities
-	(*CMsgGameDataItems)(nil),                                                       // 104: protocol.CMsgGameDataItems
-	(*CMsgGameDataHeroes)(nil),                                                      // 105: protocol.CMsgGameDataHeroes
-	(*CMsgGameDataHeroList)(nil),                                                    // 106: protocol.CMsgGameDataHeroList
-	(*CMsgGameDataItemAbilityList)(nil),                                             // 107: protocol.CMsgGameDataItemAbilityList
-	(*CMsgLobbyAbilityDraftData)(nil),                                               // 108: protocol.CMsgLobbyAbilityDraftData
-	(*CSOEconItemDropRateBonus)(nil),                                                // 109: protocol.CSOEconItemDropRateBonus
-	(*CSOEconItemTournamentPassport)(nil),                                           // 110: protocol.CSOEconItemTournamentPassport
-	(*CMsgStickerbookSticker)(nil),                                                  // 111: protocol.CMsgStickerbookSticker
-	(*CMsgStickerbookPage)(nil),                                                     // 112: protocol.CMsgStickerbookPage
-	(*CMsgStickerbookTeamPageOrderSequence)(nil),                                    // 113: protocol.CMsgStickerbookTeamPageOrderSequence
-	(*CMsgStickerbook)(nil),                                                         // 114: protocol.CMsgStickerbook
-	(*CMsgStickerHero)(nil),                                                         // 115: protocol.CMsgStickerHero
-	(*CMsgStickerHeroes)(nil),                                                       // 116: protocol.CMsgStickerHeroes
-	(*CMsgHeroRoleStats)(nil),                                                       // 117: protocol.CMsgHeroRoleStats
-	(*CMsgHeroRoleHeroStats)(nil),                                                   // 118: protocol.CMsgHeroRoleHeroStats
-	(*CMsgHeroRoleRankStats)(nil),                                                   // 119: protocol.CMsgHeroRoleRankStats
-	(*CMsgHeroRoleAllRanksStats)(nil),                                               // 120: protocol.CMsgHeroRoleAllRanksStats
-	(*CMsgMapStatsSnapshot)(nil),                                                    // 121: protocol.CMsgMapStatsSnapshot
-	(*CMsgGlobalMapStats)(nil),                                                      // 122: protocol.CMsgGlobalMapStats
-	(*CMsgTrackedStat)(nil),                                                         // 123: protocol.CMsgTrackedStat
-	(*CMsgDOTAClaimEventActionResponse)(nil),                                        // 124: protocol.CMsgDOTAClaimEventActionResponse
-	(*CMsgClientToGCDotaLabsFeedback)(nil),                                          // 125: protocol.CMsgClientToGCDotaLabsFeedback
-	(*CMsgClientToGCDotaLabsFeedbackResponse)(nil),                                  // 126: protocol.CMsgClientToGCDotaLabsFeedbackResponse
-	(*CDotaMsg_PredictionResult)(nil),                                               // 127: protocol.CDotaMsg_PredictionResult
-	(*CSODOTAGameAccountClient_RoleHandicap)(nil),                                   // 128: protocol.CSODOTAGameAccountClient.RoleHandicap
-	(*CMsgLobbyFeaturedGamemodeProgress_AccountProgress)(nil),                       // 129: protocol.CMsgLobbyFeaturedGamemodeProgress.AccountProgress
-	(*CMsgGCGetPlayerCardItemInfoResponse_PlayerCardInfo)(nil),                      // 130: protocol.CMsgGCGetPlayerCardItemInfoResponse.PlayerCardInfo
-	(*CMsgDOTAProfileCard_Slot)(nil),                                                // 131: protocol.CMsgDOTAProfileCard.Slot
-	(*CMsgDOTAProfileCard_Slot_Trophy)(nil),                                         // 132: protocol.CMsgDOTAProfileCard.Slot.Trophy
-	(*CMsgDOTAProfileCard_Slot_Stat)(nil),                                           // 133: protocol.CMsgDOTAProfileCard.Slot.Stat
-	(*CMsgDOTAProfileCard_Slot_Item)(nil),                                           // 134: protocol.CMsgDOTAProfileCard.Slot.Item
-	(*CMsgDOTAProfileCard_Slot_Hero)(nil),                                           // 135: protocol.CMsgDOTAProfileCard.Slot.Hero
-	(*CMsgDOTAProfileCard_Slot_Emoticon)(nil),                                       // 136: protocol.CMsgDOTAProfileCard.Slot.Emoticon
-	(*CMsgDOTAProfileCard_Slot_Team)(nil),                                           // 137: protocol.CMsgDOTAProfileCard.Slot.Team
-	(*CMsgDOTARealtimeGameStats_TeamDetails)(nil),                                   // 138: protocol.CMsgDOTARealtimeGameStats.TeamDetails
-	(*CMsgDOTARealtimeGameStats_ItemDetails)(nil),                                   // 139: protocol.CMsgDOTARealtimeGameStats.ItemDetails
-	(*CMsgDOTARealtimeGameStats_AbilityDetails)(nil),                                // 140: protocol.CMsgDOTARealtimeGameStats.AbilityDetails
-	(*CMsgDOTARealtimeGameStats_HeroToHeroStats)(nil),                               // 141: protocol.CMsgDOTARealtimeGameStats.HeroToHeroStats
-	(*CMsgDOTARealtimeGameStats_AbilityList)(nil),                                   // 142: protocol.CMsgDOTARealtimeGameStats.AbilityList
-	(*CMsgDOTARealtimeGameStats_PlayerDetails)(nil),                                 // 143: protocol.CMsgDOTARealtimeGameStats.PlayerDetails
-	(*CMsgDOTARealtimeGameStats_BuildingDetails)(nil),                               // 144: protocol.CMsgDOTARealtimeGameStats.BuildingDetails
-	(*CMsgDOTARealtimeGameStats_KillDetails)(nil),                                   // 145: protocol.CMsgDOTARealtimeGameStats.KillDetails
-	(*CMsgDOTARealtimeGameStats_BroadcasterDetails)(nil),                            // 146: protocol.CMsgDOTARealtimeGameStats.BroadcasterDetails
-	(*CMsgDOTARealtimeGameStats_PickBanDetails)(nil),                                // 147: protocol.CMsgDOTARealtimeGameStats.PickBanDetails
-	(*CMsgDOTARealtimeGameStats_MatchDetails)(nil),                                  // 148: protocol.CMsgDOTARealtimeGameStats.MatchDetails
-	(*CMsgDOTARealtimeGameStats_GraphData)(nil),                                     // 149: protocol.CMsgDOTARealtimeGameStats.GraphData
-	(*CMsgDOTARealtimeGameStats_GraphData_LocationStats)(nil),                       // 150: protocol.CMsgDOTARealtimeGameStats.GraphData.LocationStats
-	(*CMsgDOTARealtimeGameStats_GraphData_TeamLocationStats)(nil),                   // 151: protocol.CMsgDOTARealtimeGameStats.GraphData.TeamLocationStats
-	(*CMsgDOTARealtimeGameStatsTerse_TeamDetails)(nil),                              // 152: protocol.CMsgDOTARealtimeGameStatsTerse.TeamDetails
-	(*CMsgDOTARealtimeGameStatsTerse_PlayerDetails)(nil),                            // 153: protocol.CMsgDOTARealtimeGameStatsTerse.PlayerDetails
-	(*CMsgDOTARealtimeGameStatsTerse_BuildingDetails)(nil),                          // 154: protocol.CMsgDOTARealtimeGameStatsTerse.BuildingDetails
-	(*CMsgDOTARealtimeGameStatsTerse_PickBanDetails)(nil),                           // 155: protocol.CMsgDOTARealtimeGameStatsTerse.PickBanDetails
-	(*CMsgDOTARealtimeGameStatsTerse_MatchDetails)(nil),                             // 156: protocol.CMsgDOTARealtimeGameStatsTerse.MatchDetails
-	(*CMsgDOTARealtimeGameStatsTerse_GraphData)(nil),                                // 157: protocol.CMsgDOTARealtimeGameStatsTerse.GraphData
-	(*CMsgInGamePrediction_QueryKeyValues)(nil),                                     // 158: protocol.CMsgInGamePrediction.QueryKeyValues
-	(*CMsgDOTASeasonPredictions_Prediction)(nil),                                    // 159: protocol.CMsgDOTASeasonPredictions.Prediction
-	(*CMsgDOTASeasonPredictions_Prediction_Answers)(nil),                            // 160: protocol.CMsgDOTASeasonPredictions.Prediction.Answers
-	(*CMsgAvailablePredictions_MatchPrediction)(nil),                                // 161: protocol.CMsgAvailablePredictions.MatchPrediction
-	(*CMsgLeagueWatchedGames_Series)(nil),                                           // 162: protocol.CMsgLeagueWatchedGames.Series
-	(*CMsgLeagueWatchedGames_League)(nil),                                           // 163: protocol.CMsgLeagueWatchedGames.League
-	(*CMsgDOTAMatch_Player)(nil),                                                    // 164: protocol.CMsgDOTAMatch.Player
-	(*CMsgDOTAMatch_BroadcasterInfo)(nil),                                           // 165: protocol.CMsgDOTAMatch.BroadcasterInfo
-	(*CMsgDOTAMatch_BroadcasterChannel)(nil),                                        // 166: protocol.CMsgDOTAMatch.BroadcasterChannel
-	(*CMsgDOTAMatch_Coach)(nil),                                                     // 167: protocol.CMsgDOTAMatch.Coach
-	(*CMsgDOTAMatch_CustomGameData)(nil),                                            // 168: protocol.CMsgDOTAMatch.CustomGameData
-	(*CMsgDOTAMatch_Player_CustomGameData)(nil),                                     // 169: protocol.CMsgDOTAMatch.Player.CustomGameData
-	(*CMsgDOTAMatch_Player_HeroDamageReceived)(nil),                                 // 170: protocol.CMsgDOTAMatch.Player.HeroDamageReceived
-	(*CMsgPlayerCard_StatModifier)(nil),                                             // 171: protocol.CMsgPlayerCard.StatModifier
-	(*CMsgDOTABotDebugInfo_Bot)(nil),                                                // 172: protocol.CMsgDOTABotDebugInfo.Bot
-	(*CMsgDOTABotDebugInfo_Bot_Mode)(nil),                                           // 173: protocol.CMsgDOTABotDebugInfo.Bot.Mode
-	(*CMsgDOTABotDebugInfo_Bot_Action)(nil),                                         // 174: protocol.CMsgDOTABotDebugInfo.Bot.Action
-	(*CMsgMatchTips_SingleTip)(nil),                                                 // 175: protocol.CMsgMatchTips.SingleTip
-	(*CMsgDOTAMatchMinimal_Player)(nil),                                             // 176: protocol.CMsgDOTAMatchMinimal.Player
-	(*CMsgDOTAMatchMinimal_Tourney)(nil),                                            // 177: protocol.CMsgDOTAMatchMinimal.Tourney
-	(*CMsgMatchConsumableUsage_PlayerUsage)(nil),                                    // 178: protocol.CMsgMatchConsumableUsage.PlayerUsage
-	(*CMsgMatchEventActionGrants_PlayerGrants)(nil),                                 // 179: protocol.CMsgMatchEventActionGrants.PlayerGrants
-	(*CMsgCustomGameWhitelistForEdit_WhitelistEntry)(nil),                           // 180: protocol.CMsgCustomGameWhitelistForEdit.WhitelistEntry
-	(*CMsgGCtoGCAssociatedExploiterAccountInfoResponse_Account)(nil),                // 181: protocol.CMsgGCtoGCAssociatedExploiterAccountInfoResponse.Account
-	(*CMsgPullTabsData_Slot)(nil),                                                   // 182: protocol.CMsgPullTabsData.Slot
-	(*CMsgPullTabsData_Jackpot)(nil),                                                // 183: protocol.CMsgPullTabsData.Jackpot
-	(*CMsgUnderDraftData_BenchSlot)(nil),                                            // 184: protocol.CMsgUnderDraftData.BenchSlot
-	(*CMsgUnderDraftData_ShopSlot)(nil),                                             // 185: protocol.CMsgUnderDraftData.ShopSlot
-	(*CMsgGameDataHero_Facet)(nil),                                                  // 186: protocol.CMsgGameDataHero.Facet
-	(*CMsgGameDataHeroList_HeroInfo)(nil),                                           // 187: protocol.CMsgGameDataHeroList.HeroInfo
-	(*CMsgGameDataItemAbilityList_ItemAbilityInfo)(nil),                             // 188: protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo
-	(*CMsgGameDataItemAbilityList_ItemAbilityInfo_Recipe)(nil),                      // 189: protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.Recipe
-	(*CMsgDOTAClaimEventActionResponse_MysteryItemRewardData)(nil),                  // 190: protocol.CMsgDOTAClaimEventActionResponse.MysteryItemRewardData
-	(*CMsgDOTAClaimEventActionResponse_LootListRewardData)(nil),                     // 191: protocol.CMsgDOTAClaimEventActionResponse.LootListRewardData
-	(*CMsgDOTAClaimEventActionResponse_ActionListRewardData)(nil),                   // 192: protocol.CMsgDOTAClaimEventActionResponse.ActionListRewardData
-	(*CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData)(nil),               // 193: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData
-	(*CMsgDOTAClaimEventActionResponse_GrantedRewardData)(nil),                      // 194: protocol.CMsgDOTAClaimEventActionResponse.GrantedRewardData
-	(*CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity)(nil), // 195: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.TokenQuantity
-	(*CDotaMsg_PredictionResult_Prediction)(nil),                                    // 196: protocol.CDotaMsg_PredictionResult.Prediction
-	(EEvent)(0),                   // 197: protocol.EEvent
-	(DOTA_GameMode)(0),            // 198: protocol.DOTA_GameMode
-	(EMatchOutcome)(0),            // 199: protocol.EMatchOutcome
-	(ELeagueRegion)(0),            // 200: protocol.ELeagueRegion
-	(ELeaguePhase)(0),             // 201: protocol.ELeaguePhase
-	(DOTA_GC_TEAM)(0),             // 202: protocol.DOTA_GC_TEAM
-	(*CMsgPendingEventAward)(nil), // 203: protocol.CMsgPendingEventAward
+	(ESpecialPingValue)(0),                                                                    // 0: protocol.ESpecialPingValue
+	(EDOTAGCSessionNeed)(0),                                                                   // 1: protocol.EDOTAGCSessionNeed
+	(EDOTAMatchPlayerTimeCustomStat)(0),                                                       // 2: protocol.EDOTAMatchPlayerTimeCustomStat
+	(DOTA_TournamentEvents)(0),                                                                // 3: protocol.DOTA_TournamentEvents
+	(EBroadcastTimelineEvent)(0),                                                              // 4: protocol.EBroadcastTimelineEvent
+	(ECustomGameWhitelistState)(0),                                                            // 5: protocol.ECustomGameWhitelistState
+	(EDOTATriviaQuestionCategory)(0),                                                          // 6: protocol.EDOTATriviaQuestionCategory
+	(EOverwatchConviction)(0),                                                                 // 7: protocol.EOverwatchConviction
+	(EHeroRelicRarity)(0),                                                                     // 8: protocol.EHeroRelicRarity
+	(EStickerbookAuditAction)(0),                                                              // 9: protocol.EStickerbookAuditAction
+	(EStickerbookPageType)(0),                                                                 // 10: protocol.EStickerbookPageType
+	(ENewBloomGiftingResponse)(0),                                                             // 11: protocol.ENewBloomGiftingResponse
+	(CMsgDOTAProfileCard_EStatID)(0),                                                          // 12: protocol.CMsgDOTAProfileCard.EStatID
+	(CMsgGCRerollPlayerChallengeResponse_EResult)(0),                                          // 13: protocol.CMsgGCRerollPlayerChallengeResponse.EResult
+	(CMsgDOTARealtimeGameStats_GraphDataEStat)(0),                                             // 14: protocol.CMsgDOTARealtimeGameStats.GraphData.eStat
+	(CMsgDOTARealtimeGameStats_GraphDataELocation)(0),                                         // 15: protocol.CMsgDOTARealtimeGameStats.GraphData.eLocation
+	(CMsgInGamePrediction_ERawValueTypeT)(0),                                                  // 16: protocol.CMsgInGamePrediction.ERawValueType_t
+	(CMsgInGamePrediction_EPredictionType)(0),                                                 // 17: protocol.CMsgInGamePrediction.EPredictionType
+	(CMsgInGamePrediction_EResolutionTypeT)(0),                                                // 18: protocol.CMsgInGamePrediction.EResolutionType_t
+	(CMsgInGamePrediction_ERandomSelectionGroupT)(0),                                          // 19: protocol.CMsgInGamePrediction.ERandomSelectionGroup_t
+	(CMsgDOTASeasonPredictions_Prediction_EPredictionType)(0),                                 // 20: protocol.CMsgDOTASeasonPredictions.Prediction.EPredictionType
+	(CMsgDOTASeasonPredictions_Prediction_EAnswerType)(0),                                     // 21: protocol.CMsgDOTASeasonPredictions.Prediction.EAnswerType
+	(CMsgDOTAMatch_ReplayState)(0),                                                            // 22: protocol.CMsgDOTAMatch.ReplayState
+	(CMsgDOTAMatch_Player_HeroDamageType)(0),                                                  // 23: protocol.CMsgDOTAMatch.Player.HeroDamageType
+	(CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse)(0),                   // 24: protocol.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
+	(CMsgDOTAClaimEventActionResponse_ResultCode)(0),                                          // 25: protocol.CMsgDOTAClaimEventActionResponse.ResultCode
+	(CMsgClientToGCDotaLabsFeedbackResponse_EResponse)(0),                                     // 26: protocol.CMsgClientToGCDotaLabsFeedbackResponse.EResponse
+	(CDotaMsg_PredictionResult_Prediction_EResult)(0),                                         // 27: protocol.CDotaMsg_PredictionResult.Prediction.EResult
+	(*CSODOTAGameAccountClient)(nil),                                                          // 28: protocol.CSODOTAGameAccountClient
+	(*CSODOTAGameAccountPlus)(nil),                                                            // 29: protocol.CSODOTAGameAccountPlus
+	(*CSODOTAChatWheel)(nil),                                                                  // 30: protocol.CSODOTAChatWheel
+	(*CMsgLobbyFeaturedGamemodeProgress)(nil),                                                 // 31: protocol.CMsgLobbyFeaturedGamemodeProgress
+	(*CMsgBattleCupVictory)(nil),                                                              // 32: protocol.CMsgBattleCupVictory
+	(*CMsgLobbyBattleCupVictoryList)(nil),                                                     // 33: protocol.CMsgLobbyBattleCupVictoryList
+	(*CMsgDOTABroadcastNotification)(nil),                                                     // 34: protocol.CMsgDOTABroadcastNotification
+	(*CProtoItemHeroStatue)(nil),                                                              // 35: protocol.CProtoItemHeroStatue
+	(*CMatchPlayerAbilityUpgrade)(nil),                                                        // 36: protocol.CMatchPlayerAbilityUpgrade
+	(*CMatchPlayerTimedCustomStat)(nil),                                                       // 37: protocol.CMatchPlayerTimedCustomStat
+	(*CMatchPlayerTimedStats)(nil),                                                            // 38: protocol.CMatchPlayerTimedStats
+	(*CMatchTeamTimedStats)(nil),                                                              // 39: protocol.CMatchTeamTimedStats
+	(*CMatchAdditionalUnitInventory)(nil),                                                     // 40: protocol.CMatchAdditionalUnitInventory
+	(*CMatchPlayerPermanentBuff)(nil),                                                         // 41: protocol.CMatchPlayerPermanentBuff
+	(*CMatchHeroSelectEvent)(nil),                                                             // 42: protocol.CMatchHeroSelectEvent
+	(*CMatchClip)(nil),                                                                        // 43: protocol.CMatchClip
+	(*CPartySearchClientParty)(nil),                                                           // 44: protocol.CPartySearchClientParty
+	(*CMsgDOTAHasItemQuery)(nil),                                                              // 45: protocol.CMsgDOTAHasItemQuery
+	(*CMsgDOTAHasItemResponse)(nil),                                                           // 46: protocol.CMsgDOTAHasItemResponse
+	(*CMsgGCGetPlayerCardItemInfo)(nil),                                                       // 47: protocol.CMsgGCGetPlayerCardItemInfo
+	(*CMsgGCGetPlayerCardItemInfoResponse)(nil),                                               // 48: protocol.CMsgGCGetPlayerCardItemInfoResponse
+	(*CSODOTAMapLocationState)(nil),                                                           // 49: protocol.CSODOTAMapLocationState
+	(*CMsgLeagueAdminList)(nil),                                                               // 50: protocol.CMsgLeagueAdminList
+	(*CMsgDOTAProfileCard)(nil),                                                               // 51: protocol.CMsgDOTAProfileCard
+	(*CSODOTAPlayerChallenge)(nil),                                                            // 52: protocol.CSODOTAPlayerChallenge
+	(*CMsgClientToGCRerollPlayerChallenge)(nil),                                               // 53: protocol.CMsgClientToGCRerollPlayerChallenge
+	(*CMsgGCRerollPlayerChallengeResponse)(nil),                                               // 54: protocol.CMsgGCRerollPlayerChallengeResponse
+	(*CMsgGCTopCustomGamesList)(nil),                                                          // 55: protocol.CMsgGCTopCustomGamesList
+	(*CMsgDOTARealtimeGameStats)(nil),                                                         // 56: protocol.CMsgDOTARealtimeGameStats
+	(*CMsgDOTARealtimeGameStatsTerse)(nil),                                                    // 57: protocol.CMsgDOTARealtimeGameStatsTerse
+	(*CMsgDOTABroadcastTimelineEvent)(nil),                                                    // 58: protocol.CMsgDOTABroadcastTimelineEvent
+	(*CMsgGCToClientMatchGroupsVersion)(nil),                                                  // 59: protocol.CMsgGCToClientMatchGroupsVersion
+	(*CMsgDOTASDOHeroStatsHistory)(nil),                                                       // 60: protocol.CMsgDOTASDOHeroStatsHistory
+	(*CMsgPredictionChoice)(nil),                                                              // 61: protocol.CMsgPredictionChoice
+	(*CMsgInGamePrediction)(nil),                                                              // 62: protocol.CMsgInGamePrediction
+	(*CMsgDOTASeasonPredictions)(nil),                                                         // 63: protocol.CMsgDOTASeasonPredictions
+	(*CMsgAvailablePredictions)(nil),                                                          // 64: protocol.CMsgAvailablePredictions
+	(*CMsgLeagueWatchedGames)(nil),                                                            // 65: protocol.CMsgLeagueWatchedGames
+	(*CMsgDOTAMatch)(nil),                                                                     // 66: protocol.CMsgDOTAMatch
+	(*CMsgPlayerCard)(nil),                                                                    // 67: protocol.CMsgPlayerCard
+	(*CMsgDOTAFantasyPlayerStats)(nil),                                                        // 68: protocol.CMsgDOTAFantasyPlayerStats
+	(*CMsgDOTAFantasyPlayerMatchStats)(nil),                                                   // 69: protocol.CMsgDOTAFantasyPlayerMatchStats
+	(*CMsgDOTABotDebugInfo)(nil),                                                              // 70: protocol.CMsgDOTABotDebugInfo
+	(*CMsgSuccessfulHero)(nil),                                                                // 71: protocol.CMsgSuccessfulHero
+	(*CMsgRecentMatchInfo)(nil),                                                               // 72: protocol.CMsgRecentMatchInfo
+	(*CMsgMatchTips)(nil),                                                                     // 73: protocol.CMsgMatchTips
+	(*CMsgDOTAMatchMinimal)(nil),                                                              // 74: protocol.CMsgDOTAMatchMinimal
+	(*CMsgConsumableUsage)(nil),                                                               // 75: protocol.CMsgConsumableUsage
+	(*CMsgMatchConsumableUsage)(nil),                                                          // 76: protocol.CMsgMatchConsumableUsage
+	(*CMsgMatchEventActionGrants)(nil),                                                        // 77: protocol.CMsgMatchEventActionGrants
+	(*CMsgCustomGameWhitelist)(nil),                                                           // 78: protocol.CMsgCustomGameWhitelist
+	(*CMsgCustomGameWhitelistForEdit)(nil),                                                    // 79: protocol.CMsgCustomGameWhitelistForEdit
+	(*CMsgPlayerRecentMatchInfo)(nil),                                                         // 80: protocol.CMsgPlayerRecentMatchInfo
+	(*CMsgPlayerMatchRecord)(nil),                                                             // 81: protocol.CMsgPlayerMatchRecord
+	(*CMsgPlayerRecentMatchOutcomes)(nil),                                                     // 82: protocol.CMsgPlayerRecentMatchOutcomes
+	(*CMsgPlayerRecentCommends)(nil),                                                          // 83: protocol.CMsgPlayerRecentCommends
+	(*CMsgPlayerRecentAccomplishments)(nil),                                                   // 84: protocol.CMsgPlayerRecentAccomplishments
+	(*CMsgPlayerHeroRecentAccomplishments)(nil),                                               // 85: protocol.CMsgPlayerHeroRecentAccomplishments
+	(*CMsgRecentAccomplishments)(nil),                                                         // 86: protocol.CMsgRecentAccomplishments
+	(*CMsgServerToGCRequestPlayerRecentAccomplishments)(nil),                                  // 87: protocol.CMsgServerToGCRequestPlayerRecentAccomplishments
+	(*CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse)(nil),                          // 88: protocol.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse
+	(*CMsgArcanaVoteMatchVotes)(nil),                                                          // 89: protocol.CMsgArcanaVoteMatchVotes
+	(*CMsgGCtoGCAssociatedExploiterAccountInfo)(nil),                                          // 90: protocol.CMsgGCtoGCAssociatedExploiterAccountInfo
+	(*CMsgGCtoGCAssociatedExploiterAccountInfoResponse)(nil),                                  // 91: protocol.CMsgGCtoGCAssociatedExploiterAccountInfoResponse
+	(*CMsgPullTabsData)(nil),                                                                  // 92: protocol.CMsgPullTabsData
+	(*CMsgUnderDraftData)(nil),                                                                // 93: protocol.CMsgUnderDraftData
+	(*CMsgPlayerTitleData)(nil),                                                               // 94: protocol.CMsgPlayerTitleData
+	(*CMsgDOTATriviaQuestion)(nil),                                                            // 95: protocol.CMsgDOTATriviaQuestion
+	(*CMsgDOTATriviaQuestionAnswersSummary)(nil),                                              // 96: protocol.CMsgDOTATriviaQuestionAnswersSummary
+	(*CMsgGameDataSpecialValueBonus)(nil),                                                     // 97: protocol.CMsgGameDataSpecialValueBonus
+	(*CMsgGameDataSpecialValues)(nil),                                                         // 98: protocol.CMsgGameDataSpecialValues
+	(*CMsgGameDataFacetAbilityBonus)(nil),                                                     // 99: protocol.CMsgGameDataFacetAbilityBonus
+	(*CMsgGameDataAbilityOrItem)(nil),                                                         // 100: protocol.CMsgGameDataAbilityOrItem
+	(*CMsgGameDataAbilityOrItemList)(nil),                                                     // 101: protocol.CMsgGameDataAbilityOrItemList
+	(*CMsgGameDataHero)(nil),                                                                  // 102: protocol.CMsgGameDataHero
+	(*CMsgGameDataAbilities)(nil),                                                             // 103: protocol.CMsgGameDataAbilities
+	(*CMsgGameDataItems)(nil),                                                                 // 104: protocol.CMsgGameDataItems
+	(*CMsgGameDataHeroes)(nil),                                                                // 105: protocol.CMsgGameDataHeroes
+	(*CMsgGameDataHeroList)(nil),                                                              // 106: protocol.CMsgGameDataHeroList
+	(*CMsgGameDataItemAbilityList)(nil),                                                       // 107: protocol.CMsgGameDataItemAbilityList
+	(*CMsgLobbyAbilityDraftData)(nil),                                                         // 108: protocol.CMsgLobbyAbilityDraftData
+	(*CSOEconItemDropRateBonus)(nil),                                                          // 109: protocol.CSOEconItemDropRateBonus
+	(*CSOEconItemTournamentPassport)(nil),                                                     // 110: protocol.CSOEconItemTournamentPassport
+	(*CMsgStickerbookSticker)(nil),                                                            // 111: protocol.CMsgStickerbookSticker
+	(*CMsgStickerbookPage)(nil),                                                               // 112: protocol.CMsgStickerbookPage
+	(*CMsgStickerbookTeamPageOrderSequence)(nil),                                              // 113: protocol.CMsgStickerbookTeamPageOrderSequence
+	(*CMsgStickerbook)(nil),                                                                   // 114: protocol.CMsgStickerbook
+	(*CMsgStickerHero)(nil),                                                                   // 115: protocol.CMsgStickerHero
+	(*CMsgStickerHeroes)(nil),                                                                 // 116: protocol.CMsgStickerHeroes
+	(*CMsgHeroRoleStats)(nil),                                                                 // 117: protocol.CMsgHeroRoleStats
+	(*CMsgHeroRoleHeroStats)(nil),                                                             // 118: protocol.CMsgHeroRoleHeroStats
+	(*CMsgHeroRoleRankStats)(nil),                                                             // 119: protocol.CMsgHeroRoleRankStats
+	(*CMsgHeroRoleAllRanksStats)(nil),                                                         // 120: protocol.CMsgHeroRoleAllRanksStats
+	(*CMsgMapStatsSnapshot)(nil),                                                              // 121: protocol.CMsgMapStatsSnapshot
+	(*CMsgGlobalMapStats)(nil),                                                                // 122: protocol.CMsgGlobalMapStats
+	(*CMsgTrackedStat)(nil),                                                                   // 123: protocol.CMsgTrackedStat
+	(*CMsgDOTAClaimEventActionResponse)(nil),                                                  // 124: protocol.CMsgDOTAClaimEventActionResponse
+	(*CMsgClientToGCDotaLabsFeedback)(nil),                                                    // 125: protocol.CMsgClientToGCDotaLabsFeedback
+	(*CMsgClientToGCDotaLabsFeedbackResponse)(nil),                                            // 126: protocol.CMsgClientToGCDotaLabsFeedbackResponse
+	(*CDotaMsg_PredictionResult)(nil),                                                         // 127: protocol.CDotaMsg_PredictionResult
+	(*CSODOTAGameAccountClient_RoleHandicap)(nil),                                             // 128: protocol.CSODOTAGameAccountClient.RoleHandicap
+	(*CMsgLobbyFeaturedGamemodeProgress_AccountProgress)(nil),                                 // 129: protocol.CMsgLobbyFeaturedGamemodeProgress.AccountProgress
+	(*CMsgGCGetPlayerCardItemInfoResponse_PlayerCardInfo)(nil),                                // 130: protocol.CMsgGCGetPlayerCardItemInfoResponse.PlayerCardInfo
+	(*CMsgDOTAProfileCard_Slot)(nil),                                                          // 131: protocol.CMsgDOTAProfileCard.Slot
+	(*CMsgDOTAProfileCard_Slot_Trophy)(nil),                                                   // 132: protocol.CMsgDOTAProfileCard.Slot.Trophy
+	(*CMsgDOTAProfileCard_Slot_Stat)(nil),                                                     // 133: protocol.CMsgDOTAProfileCard.Slot.Stat
+	(*CMsgDOTAProfileCard_Slot_Item)(nil),                                                     // 134: protocol.CMsgDOTAProfileCard.Slot.Item
+	(*CMsgDOTAProfileCard_Slot_Hero)(nil),                                                     // 135: protocol.CMsgDOTAProfileCard.Slot.Hero
+	(*CMsgDOTAProfileCard_Slot_Emoticon)(nil),                                                 // 136: protocol.CMsgDOTAProfileCard.Slot.Emoticon
+	(*CMsgDOTAProfileCard_Slot_Team)(nil),                                                     // 137: protocol.CMsgDOTAProfileCard.Slot.Team
+	(*CMsgDOTARealtimeGameStats_TeamDetails)(nil),                                             // 138: protocol.CMsgDOTARealtimeGameStats.TeamDetails
+	(*CMsgDOTARealtimeGameStats_ItemDetails)(nil),                                             // 139: protocol.CMsgDOTARealtimeGameStats.ItemDetails
+	(*CMsgDOTARealtimeGameStats_AbilityDetails)(nil),                                          // 140: protocol.CMsgDOTARealtimeGameStats.AbilityDetails
+	(*CMsgDOTARealtimeGameStats_HeroToHeroStats)(nil),                                         // 141: protocol.CMsgDOTARealtimeGameStats.HeroToHeroStats
+	(*CMsgDOTARealtimeGameStats_AbilityList)(nil),                                             // 142: protocol.CMsgDOTARealtimeGameStats.AbilityList
+	(*CMsgDOTARealtimeGameStats_PlayerDetails)(nil),                                           // 143: protocol.CMsgDOTARealtimeGameStats.PlayerDetails
+	(*CMsgDOTARealtimeGameStats_BuildingDetails)(nil),                                         // 144: protocol.CMsgDOTARealtimeGameStats.BuildingDetails
+	(*CMsgDOTARealtimeGameStats_KillDetails)(nil),                                             // 145: protocol.CMsgDOTARealtimeGameStats.KillDetails
+	(*CMsgDOTARealtimeGameStats_BroadcasterDetails)(nil),                                      // 146: protocol.CMsgDOTARealtimeGameStats.BroadcasterDetails
+	(*CMsgDOTARealtimeGameStats_PickBanDetails)(nil),                                          // 147: protocol.CMsgDOTARealtimeGameStats.PickBanDetails
+	(*CMsgDOTARealtimeGameStats_MatchDetails)(nil),                                            // 148: protocol.CMsgDOTARealtimeGameStats.MatchDetails
+	(*CMsgDOTARealtimeGameStats_GraphData)(nil),                                               // 149: protocol.CMsgDOTARealtimeGameStats.GraphData
+	(*CMsgDOTARealtimeGameStats_GraphData_LocationStats)(nil),                                 // 150: protocol.CMsgDOTARealtimeGameStats.GraphData.LocationStats
+	(*CMsgDOTARealtimeGameStats_GraphData_TeamLocationStats)(nil),                             // 151: protocol.CMsgDOTARealtimeGameStats.GraphData.TeamLocationStats
+	(*CMsgDOTARealtimeGameStatsTerse_TeamDetails)(nil),                                        // 152: protocol.CMsgDOTARealtimeGameStatsTerse.TeamDetails
+	(*CMsgDOTARealtimeGameStatsTerse_PlayerDetails)(nil),                                      // 153: protocol.CMsgDOTARealtimeGameStatsTerse.PlayerDetails
+	(*CMsgDOTARealtimeGameStatsTerse_BuildingDetails)(nil),                                    // 154: protocol.CMsgDOTARealtimeGameStatsTerse.BuildingDetails
+	(*CMsgDOTARealtimeGameStatsTerse_PickBanDetails)(nil),                                     // 155: protocol.CMsgDOTARealtimeGameStatsTerse.PickBanDetails
+	(*CMsgDOTARealtimeGameStatsTerse_MatchDetails)(nil),                                       // 156: protocol.CMsgDOTARealtimeGameStatsTerse.MatchDetails
+	(*CMsgDOTARealtimeGameStatsTerse_GraphData)(nil),                                          // 157: protocol.CMsgDOTARealtimeGameStatsTerse.GraphData
+	(*CMsgInGamePrediction_QueryKeyValues)(nil),                                               // 158: protocol.CMsgInGamePrediction.QueryKeyValues
+	(*CMsgDOTASeasonPredictions_Prediction)(nil),                                              // 159: protocol.CMsgDOTASeasonPredictions.Prediction
+	(*CMsgDOTASeasonPredictions_Prediction_Answers)(nil),                                      // 160: protocol.CMsgDOTASeasonPredictions.Prediction.Answers
+	(*CMsgAvailablePredictions_MatchPrediction)(nil),                                          // 161: protocol.CMsgAvailablePredictions.MatchPrediction
+	(*CMsgLeagueWatchedGames_Series)(nil),                                                     // 162: protocol.CMsgLeagueWatchedGames.Series
+	(*CMsgLeagueWatchedGames_League)(nil),                                                     // 163: protocol.CMsgLeagueWatchedGames.League
+	(*CMsgDOTAMatch_Player)(nil),                                                              // 164: protocol.CMsgDOTAMatch.Player
+	(*CMsgDOTAMatch_BroadcasterInfo)(nil),                                                     // 165: protocol.CMsgDOTAMatch.BroadcasterInfo
+	(*CMsgDOTAMatch_BroadcasterChannel)(nil),                                                  // 166: protocol.CMsgDOTAMatch.BroadcasterChannel
+	(*CMsgDOTAMatch_Coach)(nil),                                                               // 167: protocol.CMsgDOTAMatch.Coach
+	(*CMsgDOTAMatch_CustomGameData)(nil),                                                      // 168: protocol.CMsgDOTAMatch.CustomGameData
+	(*CMsgDOTAMatch_Player_CustomGameData)(nil),                                               // 169: protocol.CMsgDOTAMatch.Player.CustomGameData
+	(*CMsgDOTAMatch_Player_HeroDamageReceived)(nil),                                           // 170: protocol.CMsgDOTAMatch.Player.HeroDamageReceived
+	(*CMsgPlayerCard_StatModifier)(nil),                                                       // 171: protocol.CMsgPlayerCard.StatModifier
+	(*CMsgDOTABotDebugInfo_Bot)(nil),                                                          // 172: protocol.CMsgDOTABotDebugInfo.Bot
+	(*CMsgDOTABotDebugInfo_Bot_Mode)(nil),                                                     // 173: protocol.CMsgDOTABotDebugInfo.Bot.Mode
+	(*CMsgDOTABotDebugInfo_Bot_Action)(nil),                                                   // 174: protocol.CMsgDOTABotDebugInfo.Bot.Action
+	(*CMsgMatchTips_SingleTip)(nil),                                                           // 175: protocol.CMsgMatchTips.SingleTip
+	(*CMsgDOTAMatchMinimal_Player)(nil),                                                       // 176: protocol.CMsgDOTAMatchMinimal.Player
+	(*CMsgDOTAMatchMinimal_Tourney)(nil),                                                      // 177: protocol.CMsgDOTAMatchMinimal.Tourney
+	(*CMsgMatchConsumableUsage_PlayerUsage)(nil),                                              // 178: protocol.CMsgMatchConsumableUsage.PlayerUsage
+	(*CMsgMatchEventActionGrants_PlayerGrants)(nil),                                           // 179: protocol.CMsgMatchEventActionGrants.PlayerGrants
+	(*CMsgCustomGameWhitelistForEdit_WhitelistEntry)(nil),                                     // 180: protocol.CMsgCustomGameWhitelistForEdit.WhitelistEntry
+	(*CMsgGCtoGCAssociatedExploiterAccountInfoResponse_Account)(nil),                          // 181: protocol.CMsgGCtoGCAssociatedExploiterAccountInfoResponse.Account
+	(*CMsgPullTabsData_Slot)(nil),                                                             // 182: protocol.CMsgPullTabsData.Slot
+	(*CMsgPullTabsData_Jackpot)(nil),                                                          // 183: protocol.CMsgPullTabsData.Jackpot
+	(*CMsgUnderDraftData_BenchSlot)(nil),                                                      // 184: protocol.CMsgUnderDraftData.BenchSlot
+	(*CMsgUnderDraftData_ShopSlot)(nil),                                                       // 185: protocol.CMsgUnderDraftData.ShopSlot
+	(*CMsgGameDataHero_Facet)(nil),                                                            // 186: protocol.CMsgGameDataHero.Facet
+	(*CMsgGameDataHeroList_HeroInfo)(nil),                                                     // 187: protocol.CMsgGameDataHeroList.HeroInfo
+	(*CMsgGameDataItemAbilityList_ItemAbilityInfo)(nil),                                       // 188: protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo
+	(*CMsgGameDataItemAbilityList_ItemAbilityInfo_Recipe)(nil),                                // 189: protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.Recipe
+	(*CMsgDOTAClaimEventActionResponse_MysteryItemRewardData)(nil),                            // 190: protocol.CMsgDOTAClaimEventActionResponse.MysteryItemRewardData
+	(*CMsgDOTAClaimEventActionResponse_LootListRewardData)(nil),                               // 191: protocol.CMsgDOTAClaimEventActionResponse.LootListRewardData
+	(*CMsgDOTAClaimEventActionResponse_ActionListRewardData)(nil),                             // 192: protocol.CMsgDOTAClaimEventActionResponse.ActionListRewardData
+	(*CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData)(nil),                         // 193: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData
+	(*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData)(nil),                  // 194: protocol.CMsgDOTAClaimEventActionResponse.MonsterHunterMaterialRewardData
+	(*CMsgDOTAClaimEventActionResponse_GrantedRewardData)(nil),                                // 195: protocol.CMsgDOTAClaimEventActionResponse.GrantedRewardData
+	(*CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity)(nil),           // 196: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.TokenQuantity
+	(*CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity)(nil), // 197: protocol.CMsgDOTAClaimEventActionResponse.MonsterHunterMaterialRewardData.MaterialQuantity
+	(*CDotaMsg_PredictionResult_Prediction)(nil),                                              // 198: protocol.CDotaMsg_PredictionResult.Prediction
+	(EEvent)(0),                   // 199: protocol.EEvent
+	(DOTA_GameMode)(0),            // 200: protocol.DOTA_GameMode
+	(EMatchOutcome)(0),            // 201: protocol.EMatchOutcome
+	(ELeagueRegion)(0),            // 202: protocol.ELeagueRegion
+	(ELeaguePhase)(0),             // 203: protocol.ELeaguePhase
+	(DOTA_GC_TEAM)(0),             // 204: protocol.DOTA_GC_TEAM
+	(*CMsgPendingEventAward)(nil), // 205: protocol.CMsgPendingEventAward
 }
 var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	128, // 0: protocol.CSODOTAGameAccountClient.role_handicaps:type_name -> protocol.CSODOTAGameAccountClient.RoleHandicap
@@ -18490,7 +18613,7 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	130, // 5: protocol.CMsgGCGetPlayerCardItemInfoResponse.player_card_infos:type_name -> protocol.CMsgGCGetPlayerCardItemInfoResponse.PlayerCardInfo
 	131, // 6: protocol.CMsgDOTAProfileCard.slots:type_name -> protocol.CMsgDOTAProfileCard.Slot
 	32,  // 7: protocol.CMsgDOTAProfileCard.recent_battle_cup_victory:type_name -> protocol.CMsgBattleCupVictory
-	197, // 8: protocol.CMsgClientToGCRerollPlayerChallenge.event_id:type_name -> protocol.EEvent
+	199, // 8: protocol.CMsgClientToGCRerollPlayerChallenge.event_id:type_name -> protocol.EEvent
 	13,  // 9: protocol.CMsgGCRerollPlayerChallengeResponse.result:type_name -> protocol.CMsgGCRerollPlayerChallengeResponse.EResult
 	148, // 10: protocol.CMsgDOTARealtimeGameStats.match:type_name -> protocol.CMsgDOTARealtimeGameStats.MatchDetails
 	138, // 11: protocol.CMsgDOTARealtimeGameStats.teams:type_name -> protocol.CMsgDOTARealtimeGameStats.TeamDetails
@@ -18512,23 +18635,23 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	161, // 27: protocol.CMsgAvailablePredictions.match_predictions:type_name -> protocol.CMsgAvailablePredictions.MatchPrediction
 	163, // 28: protocol.CMsgLeagueWatchedGames.leagues:type_name -> protocol.CMsgLeagueWatchedGames.League
 	164, // 29: protocol.CMsgDOTAMatch.players:type_name -> protocol.CMsgDOTAMatch.Player
-	198, // 30: protocol.CMsgDOTAMatch.game_mode:type_name -> protocol.DOTA_GameMode
+	200, // 30: protocol.CMsgDOTAMatch.game_mode:type_name -> protocol.DOTA_GameMode
 	42,  // 31: protocol.CMsgDOTAMatch.picks_bans:type_name -> protocol.CMatchHeroSelectEvent
 	22,  // 32: protocol.CMsgDOTAMatch.replay_state:type_name -> protocol.CMsgDOTAMatch.ReplayState
 	166, // 33: protocol.CMsgDOTAMatch.broadcaster_channels:type_name -> protocol.CMsgDOTAMatch.BroadcasterChannel
 	168, // 34: protocol.CMsgDOTAMatch.custom_game_data:type_name -> protocol.CMsgDOTAMatch.CustomGameData
-	199, // 35: protocol.CMsgDOTAMatch.match_outcome:type_name -> protocol.EMatchOutcome
+	201, // 35: protocol.CMsgDOTAMatch.match_outcome:type_name -> protocol.EMatchOutcome
 	167, // 36: protocol.CMsgDOTAMatch.coaches:type_name -> protocol.CMsgDOTAMatch.Coach
 	171, // 37: protocol.CMsgPlayerCard.stat_modifier:type_name -> protocol.CMsgPlayerCard.StatModifier
 	68,  // 38: protocol.CMsgDOTAFantasyPlayerMatchStats.matches:type_name -> protocol.CMsgDOTAFantasyPlayerStats
 	172, // 39: protocol.CMsgDOTABotDebugInfo.bots:type_name -> protocol.CMsgDOTABotDebugInfo.Bot
-	198, // 40: protocol.CMsgRecentMatchInfo.game_mode:type_name -> protocol.DOTA_GameMode
-	199, // 41: protocol.CMsgRecentMatchInfo.match_outcome:type_name -> protocol.EMatchOutcome
+	200, // 40: protocol.CMsgRecentMatchInfo.game_mode:type_name -> protocol.DOTA_GameMode
+	201, // 41: protocol.CMsgRecentMatchInfo.match_outcome:type_name -> protocol.EMatchOutcome
 	175, // 42: protocol.CMsgMatchTips.tips:type_name -> protocol.CMsgMatchTips.SingleTip
-	198, // 43: protocol.CMsgDOTAMatchMinimal.game_mode:type_name -> protocol.DOTA_GameMode
+	200, // 43: protocol.CMsgDOTAMatchMinimal.game_mode:type_name -> protocol.DOTA_GameMode
 	176, // 44: protocol.CMsgDOTAMatchMinimal.players:type_name -> protocol.CMsgDOTAMatchMinimal.Player
 	177, // 45: protocol.CMsgDOTAMatchMinimal.tourney:type_name -> protocol.CMsgDOTAMatchMinimal.Tourney
-	199, // 46: protocol.CMsgDOTAMatchMinimal.match_outcome:type_name -> protocol.EMatchOutcome
+	201, // 46: protocol.CMsgDOTAMatchMinimal.match_outcome:type_name -> protocol.EMatchOutcome
 	178, // 47: protocol.CMsgMatchConsumableUsage.player_consumables_used:type_name -> protocol.CMsgMatchConsumableUsage.PlayerUsage
 	179, // 48: protocol.CMsgMatchEventActionGrants.player_grants:type_name -> protocol.CMsgMatchEventActionGrants.PlayerGrants
 	180, // 49: protocol.CMsgCustomGameWhitelistForEdit.whitelist_entries:type_name -> protocol.CMsgCustomGameWhitelistForEdit.WhitelistEntry
@@ -18563,7 +18686,7 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	102, // 78: protocol.CMsgGameDataHeroes.heroes:type_name -> protocol.CMsgGameDataHero
 	187, // 79: protocol.CMsgGameDataHeroList.heroes:type_name -> protocol.CMsgGameDataHeroList.HeroInfo
 	188, // 80: protocol.CMsgGameDataItemAbilityList.itemabilities:type_name -> protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo
-	197, // 81: protocol.CMsgStickerbookPage.event_id:type_name -> protocol.EEvent
+	199, // 81: protocol.CMsgStickerbookPage.event_id:type_name -> protocol.EEvent
 	111, // 82: protocol.CMsgStickerbookPage.stickers:type_name -> protocol.CMsgStickerbookSticker
 	10,  // 83: protocol.CMsgStickerbookPage.page_type:type_name -> protocol.EStickerbookPageType
 	112, // 84: protocol.CMsgStickerbook.pages:type_name -> protocol.CMsgStickerbookPage
@@ -18576,9 +18699,9 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	121, // 91: protocol.CMsgGlobalMapStats.window_start:type_name -> protocol.CMsgMapStatsSnapshot
 	121, // 92: protocol.CMsgGlobalMapStats.window_end:type_name -> protocol.CMsgMapStatsSnapshot
 	25,  // 93: protocol.CMsgDOTAClaimEventActionResponse.result:type_name -> protocol.CMsgDOTAClaimEventActionResponse.ResultCode
-	194, // 94: protocol.CMsgDOTAClaimEventActionResponse.reward_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse.GrantedRewardData
+	195, // 94: protocol.CMsgDOTAClaimEventActionResponse.reward_results:type_name -> protocol.CMsgDOTAClaimEventActionResponse.GrantedRewardData
 	26,  // 95: protocol.CMsgClientToGCDotaLabsFeedbackResponse.response:type_name -> protocol.CMsgClientToGCDotaLabsFeedbackResponse.EResponse
-	196, // 96: protocol.CDotaMsg_PredictionResult.predictions:type_name -> protocol.CDotaMsg_PredictionResult.Prediction
+	198, // 96: protocol.CDotaMsg_PredictionResult.predictions:type_name -> protocol.CDotaMsg_PredictionResult.Prediction
 	132, // 97: protocol.CMsgDOTAProfileCard.Slot.trophy:type_name -> protocol.CMsgDOTAProfileCard.Slot.Trophy
 	133, // 98: protocol.CMsgDOTAProfileCard.Slot.stat:type_name -> protocol.CMsgDOTAProfileCard.Slot.Stat
 	134, // 99: protocol.CMsgDOTAProfileCard.Slot.item:type_name -> protocol.CMsgDOTAProfileCard.Slot.Item
@@ -18606,9 +18729,9 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	61,  // 121: protocol.CMsgDOTASeasonPredictions.Prediction.choices:type_name -> protocol.CMsgPredictionChoice
 	21,  // 122: protocol.CMsgDOTASeasonPredictions.Prediction.answer_type:type_name -> protocol.CMsgDOTASeasonPredictions.Prediction.EAnswerType
 	160, // 123: protocol.CMsgDOTASeasonPredictions.Prediction.answers:type_name -> protocol.CMsgDOTASeasonPredictions.Prediction.Answers
-	200, // 124: protocol.CMsgDOTASeasonPredictions.Prediction.region:type_name -> protocol.ELeagueRegion
-	201, // 125: protocol.CMsgDOTASeasonPredictions.Prediction.phases:type_name -> protocol.ELeaguePhase
-	197, // 126: protocol.CMsgDOTASeasonPredictions.Prediction.reward_event:type_name -> protocol.EEvent
+	202, // 124: protocol.CMsgDOTASeasonPredictions.Prediction.region:type_name -> protocol.ELeagueRegion
+	203, // 125: protocol.CMsgDOTASeasonPredictions.Prediction.phases:type_name -> protocol.ELeaguePhase
+	199, // 126: protocol.CMsgDOTASeasonPredictions.Prediction.reward_event:type_name -> protocol.EEvent
 	62,  // 127: protocol.CMsgAvailablePredictions.MatchPrediction.predictions:type_name -> protocol.CMsgInGamePrediction
 	162, // 128: protocol.CMsgLeagueWatchedGames.League.series:type_name -> protocol.CMsgLeagueWatchedGames.Series
 	36,  // 129: protocol.CMsgDOTAMatch.Player.ability_upgrades:type_name -> protocol.CMatchPlayerAbilityUpgrade
@@ -18617,24 +18740,25 @@ var file_dota_gcmessages_common_proto_depIdxs = []int32{
 	169, // 132: protocol.CMsgDOTAMatch.Player.custom_game_data:type_name -> protocol.CMsgDOTAMatch.Player.CustomGameData
 	170, // 133: protocol.CMsgDOTAMatch.Player.hero_damage_received:type_name -> protocol.CMsgDOTAMatch.Player.HeroDamageReceived
 	170, // 134: protocol.CMsgDOTAMatch.Player.hero_damage_dealt:type_name -> protocol.CMsgDOTAMatch.Player.HeroDamageReceived
-	202, // 135: protocol.CMsgDOTAMatch.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
+	204, // 135: protocol.CMsgDOTAMatch.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
 	165, // 136: protocol.CMsgDOTAMatch.BroadcasterChannel.broadcaster_infos:type_name -> protocol.CMsgDOTAMatch.BroadcasterInfo
 	23,  // 137: protocol.CMsgDOTAMatch.Player.HeroDamageReceived.damage_type:type_name -> protocol.CMsgDOTAMatch.Player.HeroDamageType
 	173, // 138: protocol.CMsgDOTABotDebugInfo.Bot.modes:type_name -> protocol.CMsgDOTABotDebugInfo.Bot.Mode
 	174, // 139: protocol.CMsgDOTABotDebugInfo.Bot.action:type_name -> protocol.CMsgDOTABotDebugInfo.Bot.Action
-	197, // 140: protocol.CMsgMatchTips.SingleTip.event_id:type_name -> protocol.EEvent
-	202, // 141: protocol.CMsgDOTAMatchMinimal.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
+	199, // 140: protocol.CMsgMatchTips.SingleTip.event_id:type_name -> protocol.EEvent
+	204, // 141: protocol.CMsgDOTAMatchMinimal.Player.team_number:type_name -> protocol.DOTA_GC_TEAM
 	75,  // 142: protocol.CMsgMatchConsumableUsage.PlayerUsage.consumables_used:type_name -> protocol.CMsgConsumableUsage
-	203, // 143: protocol.CMsgMatchEventActionGrants.PlayerGrants.actions_granted:type_name -> protocol.CMsgPendingEventAward
+	205, // 143: protocol.CMsgMatchEventActionGrants.PlayerGrants.actions_granted:type_name -> protocol.CMsgPendingEventAward
 	5,   // 144: protocol.CMsgCustomGameWhitelistForEdit.WhitelistEntry.whitelist_state:type_name -> protocol.ECustomGameWhitelistState
 	189, // 145: protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.recipes:type_name -> protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.Recipe
-	195, // 146: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.tokens:type_name -> protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.TokenQuantity
-	27,  // 147: protocol.CDotaMsg_PredictionResult.Prediction.result:type_name -> protocol.CDotaMsg_PredictionResult.Prediction.EResult
-	148, // [148:148] is the sub-list for method output_type
-	148, // [148:148] is the sub-list for method input_type
-	148, // [148:148] is the sub-list for extension type_name
-	148, // [148:148] is the sub-list for extension extendee
-	0,   // [0:148] is the sub-list for field type_name
+	196, // 146: protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.tokens:type_name -> protocol.CMsgDOTAClaimEventActionResponse.OverworldTokenRewardData.TokenQuantity
+	197, // 147: protocol.CMsgDOTAClaimEventActionResponse.MonsterHunterMaterialRewardData.materials:type_name -> protocol.CMsgDOTAClaimEventActionResponse.MonsterHunterMaterialRewardData.MaterialQuantity
+	27,  // 148: protocol.CDotaMsg_PredictionResult.Prediction.result:type_name -> protocol.CDotaMsg_PredictionResult.Prediction.EResult
+	149, // [149:149] is the sub-list for method output_type
+	149, // [149:149] is the sub-list for method input_type
+	149, // [149:149] is the sub-list for extension type_name
+	149, // [149:149] is the sub-list for extension extendee
+	0,   // [0:149] is the sub-list for field type_name
 }
 
 func init() { file_dota_gcmessages_common_proto_init() }
@@ -18645,13 +18769,14 @@ func file_dota_gcmessages_common_proto_init() {
 	file_steammessages_proto_init()
 	file_gcsdk_gcmessages_proto_init()
 	file_dota_shared_enums_proto_init()
+	file_networkbasetypes_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_common_proto_rawDesc), len(file_dota_gcmessages_common_proto_rawDesc)),
 			NumEnums:      28,
-			NumMessages:   169,
+			NumMessages:   171,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
