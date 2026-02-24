@@ -79,7 +79,8 @@ apigen:
 	cd ./apigen && bash apigen.bash
 
 .PHONY: gen
-gen: updateproto genproto apigen
+gen:
+	cd cmd/generate && go run .
 
 .PHONY: outdated
 outdated: $(GO_MOD_OUTDATED)
