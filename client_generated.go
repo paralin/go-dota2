@@ -2793,10 +2793,12 @@ func (d *Dota2) RedeemItem(
 	ctx context.Context,
 	currencyID uint64,
 	purchaseDef uint32,
+	claimAsPoints bool,
 ) (*protocol.CMsgDOTARedeemItemResponse, error) {
 	req := &protocol.CMsgDOTARedeemItem{
-		CurrencyId:  &currencyID,
-		PurchaseDef: &purchaseDef,
+		CurrencyId:    &currencyID,
+		PurchaseDef:   &purchaseDef,
+		ClaimAsPoints: &claimAsPoints,
 	}
 	resp := &protocol.CMsgDOTARedeemItemResponse{}
 
