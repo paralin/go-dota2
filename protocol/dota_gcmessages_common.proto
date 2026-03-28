@@ -1360,6 +1360,7 @@ message CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse {
 		k_eSuccess = 1;
 		k_eTooBusy = 2;
 		k_eDisabled = 3;
+		k_eForbidden = 4;
 	}
 
 	optional CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse result = 1 [default = k_eInternalError];
@@ -1613,6 +1614,7 @@ message CMsgGameDataItemAbilityList {
 		optional bool is_earlygame_suggested = 7;
 		optional bool is_lategame_suggested = 8;
 		repeated CMsgGameDataItemAbilityList.ItemAbilityInfo.Recipe recipes = 9;
+		optional bool is_innate = 10;
 	}
 
 	repeated CMsgGameDataItemAbilityList.ItemAbilityInfo itemabilities = 1;

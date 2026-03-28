@@ -1691,6 +1691,7 @@ const (
 	CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_k_eSuccess       CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse = 1
 	CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_k_eTooBusy       CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse = 2
 	CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_k_eDisabled      CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse = 3
+	CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_k_eForbidden     CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse = 4
 )
 
 // Enum value maps for CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse.
@@ -1700,12 +1701,14 @@ var (
 		1: "k_eSuccess",
 		2: "k_eTooBusy",
 		3: "k_eDisabled",
+		4: "k_eForbidden",
 	}
 	CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse_value = map[string]int32{
 		"k_eInternalError": 0,
 		"k_eSuccess":       1,
 		"k_eTooBusy":       2,
 		"k_eDisabled":      3,
+		"k_eForbidden":     4,
 	}
 )
 
@@ -16071,6 +16074,7 @@ type CMsgGameDataItemAbilityList_ItemAbilityInfo struct {
 	IsEarlygameSuggested *bool                                                 `protobuf:"varint,7,opt,name=is_earlygame_suggested,json=isEarlygameSuggested" json:"is_earlygame_suggested,omitempty"`
 	IsLategameSuggested  *bool                                                 `protobuf:"varint,8,opt,name=is_lategame_suggested,json=isLategameSuggested" json:"is_lategame_suggested,omitempty"`
 	Recipes              []*CMsgGameDataItemAbilityList_ItemAbilityInfo_Recipe `protobuf:"bytes,9,rep,name=recipes" json:"recipes,omitempty"`
+	IsInnate             *bool                                                 `protobuf:"varint,10,opt,name=is_innate,json=isInnate" json:"is_innate,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -16171,6 +16175,13 @@ func (x *CMsgGameDataItemAbilityList_ItemAbilityInfo) GetRecipes() []*CMsgGameDa
 		return x.Recipes
 	}
 	return nil
+}
+
+func (x *CMsgGameDataItemAbilityList_ItemAbilityInfo) GetIsInnate() bool {
+	if x != nil && x.IsInnate != nil {
+		return *x.IsInnate
+	}
+	return false
 }
 
 type CMsgGameDataItemAbilityList_ItemAbilityInfo_Recipe struct {
@@ -17853,17 +17864,18 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"0CMsgServerToGCRequestPlayerRecentAccomplishments\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12\x17\n" +
-	"\ahero_id\x18\x02 \x01(\x05R\x06heroId\"\xe2\x02\n" +
+	"\ahero_id\x18\x02 \x01(\x05R\x06heroId\"\xf4\x02\n" +
 	"8CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse\x12v\n" +
 	"\x06result\x18\x01 \x01(\x0e2L.protocol.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse:\x10k_eInternalErrorR\x06result\x12Z\n" +
-	"\x16player_accomplishments\x18\x02 \x01(\v2#.protocol.CMsgRecentAccomplishmentsR\x15playerAccomplishments\"R\n" +
+	"\x16player_accomplishments\x18\x02 \x01(\v2#.protocol.CMsgRecentAccomplishmentsR\x15playerAccomplishments\"d\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
 	"\n" +
 	"k_eSuccess\x10\x01\x12\x0e\n" +
 	"\n" +
 	"k_eTooBusy\x10\x02\x12\x0f\n" +
-	"\vk_eDisabled\x10\x03\"m\n" +
+	"\vk_eDisabled\x10\x03\x12\x10\n" +
+	"\fk_eForbidden\x10\x04\"m\n" +
 	"\x18CMsgArcanaVoteMatchVotes\x12\x19\n" +
 	"\bmatch_id\x18\x01 \x01(\rR\amatchId\x12\x17\n" +
 	"\ahero_id\x18\x02 \x01(\x05R\x06heroId\x12\x1d\n" +
@@ -18080,9 +18092,9 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\fprimary_attr\x18\x05 \x01(\rR\vprimaryAttr\x12\x1e\n" +
 	"\n" +
 	"complexity\x18\x06 \x01(\rR\n" +
-	"complexity\"\xbb\x04\n" +
+	"complexity\"\xd8\x04\n" +
 	"\x1bCMsgGameDataItemAbilityList\x12[\n" +
-	"\ritemabilities\x18\x01 \x03(\v25.protocol.CMsgGameDataItemAbilityList.ItemAbilityInfoR\ritemabilities\x1a\xbe\x03\n" +
+	"\ritemabilities\x18\x01 \x03(\v25.protocol.CMsgGameDataItemAbilityList.ItemAbilityInfoR\ritemabilities\x1a\xdb\x03\n" +
 	"\x0fItemAbilityInfo\x12\x12\n" +
 	"\x02id\x18\x01 \x01(\x05:\x02-1R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n" +
@@ -18092,7 +18104,9 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\x14is_pregame_suggested\x18\x06 \x01(\bR\x12isPregameSuggested\x124\n" +
 	"\x16is_earlygame_suggested\x18\a \x01(\bR\x14isEarlygameSuggested\x122\n" +
 	"\x15is_lategame_suggested\x18\b \x01(\bR\x13isLategameSuggested\x12V\n" +
-	"\arecipes\x18\t \x03(\v2<.protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.RecipeR\arecipes\x1a\x1e\n" +
+	"\arecipes\x18\t \x03(\v2<.protocol.CMsgGameDataItemAbilityList.ItemAbilityInfo.RecipeR\arecipes\x12\x1b\n" +
+	"\tis_innate\x18\n" +
+	" \x01(\bR\bisInnate\x1a\x1e\n" +
 	"\x06Recipe\x12\x14\n" +
 	"\x05items\x18\x01 \x03(\x05R\x05items\"K\n" +
 	"\x19CMsgLobbyAbilityDraftData\x12.\n" +

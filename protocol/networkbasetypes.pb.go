@@ -2348,11 +2348,11 @@ const file_networkbasetypes_proto_rawDesc = "" +
 	"\x10savegamefilename\x18\x11 \x01(\tR\x10savegamefilename\x126\n" +
 	"\x16spawngroupparenthandle\x18\x12 \x01(\rR\x16spawngroupparenthandle\x12(\n" +
 	"\x0fleveltransition\x18\x13 \x01(\bR\x0fleveltransition\x12&\n" +
-	"\x0eworldgroupname\x18\x14 \x01(\tR\x0eworldgroupname:\x06\x80\xb5\x18\x80\x80\b\"\xaf\x01\n" +
+	"\x0eworldgroupname\x18\x14 \x01(\tR\x0eworldgroupname:\x06\x80\xb5\x18\x80\x80\b\"\xb6\x01\n" +
 	"!CNETMsg_SpawnGroup_ManifestUpdate\x12*\n" +
 	"\x10spawngrouphandle\x18\x01 \x01(\rR\x10spawngrouphandle\x12.\n" +
 	"\x12spawngroupmanifest\x18\x02 \x01(\fR\x12spawngroupmanifest\x12.\n" +
-	"\x12manifestincomplete\x18\x03 \x01(\bR\x12manifestincomplete\"\x9a\x01\n" +
+	"\x12manifestincomplete\x18\x03 \x01(\bR\x12manifestincomplete:\x05\x80\xb5\x18\x80\x10\"\x9a\x01\n" +
 	"\"CNETMsg_SpawnGroup_SetCreationTick\x12*\n" +
 	"\x10spawngrouphandle\x18\x01 \x01(\rR\x10spawngrouphandle\x12\x1c\n" +
 	"\ttickcount\x18\x02 \x01(\x05R\ttickcount\x12*\n" +

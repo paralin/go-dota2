@@ -2557,8 +2557,8 @@ func (x *CMsgBattleReport_HighlightGeneral) GetHighlightScore() float32 {
 
 type CMsgBattleReport_Highlight struct {
 	state                protoimpl.MessageState              `protogen:"open.v1"`
-	HighlightId          *uint32                             `protobuf:"varint,1,req,name=highlight_id,json=highlightId" json:"highlight_id,omitempty"`
-	Category             *CMsgBattleReport_HighlightCategory `protobuf:"varint,2,req,name=category,enum=protocol.CMsgBattleReport_HighlightCategory,def=0" json:"category,omitempty"`
+	HighlightId          *uint32                             `protobuf:"varint,1,opt,name=highlight_id,json=highlightId" json:"highlight_id,omitempty"`
+	Category             *CMsgBattleReport_HighlightCategory `protobuf:"varint,2,opt,name=category,enum=protocol.CMsgBattleReport_HighlightCategory,def=0" json:"category,omitempty"`
 	Tier                 *CMsgBattleReport_HighlightTier     `protobuf:"varint,3,opt,name=tier,enum=protocol.CMsgBattleReport_HighlightTier,def=-1" json:"tier,omitempty"`
 	Rarity               *CMsgBattleReport_HighlightRarity   `protobuf:"varint,4,opt,name=rarity,enum=protocol.CMsgBattleReport_HighlightRarity,def=0" json:"rarity,omitempty"`
 	Score                *float32                            `protobuf:"fixed32,5,opt,name=score" json:"score,omitempty"`
@@ -3152,8 +3152,8 @@ const file_dota_gcmessages_common_battle_report_proto_rawDesc = "" +
 	"\tmmr_delta\x18\x03 \x01(\x05R\bmmrDelta\x12'\n" +
 	"\x0fhighlight_score\x18\x04 \x01(\x02R\x0ehighlightScore\x1a\xe1\x04\n" +
 	"\tHighlight\x12!\n" +
-	"\fhighlight_id\x18\x01 \x02(\rR\vhighlightId\x12]\n" +
-	"\bcategory\x18\x02 \x02(\x0e2,.protocol.CMsgBattleReport_HighlightCategory:\x13k_eHighlightGeneralR\bcategory\x12Q\n" +
+	"\fhighlight_id\x18\x01 \x01(\rR\vhighlightId\x12]\n" +
+	"\bcategory\x18\x02 \x01(\x0e2,.protocol.CMsgBattleReport_HighlightCategory:\x13k_eHighlightGeneralR\bcategory\x12Q\n" +
 	"\x04tier\x18\x03 \x01(\x0e2(.protocol.CMsgBattleReport_HighlightTier:\x13k_eHighlightTierLowR\x04tier\x12V\n" +
 	"\x06rarity\x18\x04 \x01(\x0e2*.protocol.CMsgBattleReport_HighlightRarity:\x12k_eHighlightCommonR\x06rarity\x12\x14\n" +
 	"\x05score\x18\x05 \x01(\x02R\x05score\x12\x1e\n" +

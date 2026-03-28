@@ -656,6 +656,27 @@ func (e *InviteToDemoMode) GetEventName() string {
 	return "InviteToDemoMode"
 }
 
+// ItemBattlerUserDataUpdated event.
+// MessageID: k_EMsgGCToClientItemBattlerUserDataUpdated
+type ItemBattlerUserDataUpdated struct {
+	protocol.CMsgGCToClientItemBattlerUserDataUpdated
+}
+
+// GetDotaEventMsgID returns the dota message ID of the event.
+func (e *ItemBattlerUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
+	return protocol.EDOTAGCMsg_k_EMsgGCToClientItemBattlerUserDataUpdated
+}
+
+// GetEventBody returns the event body.
+func (e *ItemBattlerUserDataUpdated) GetEventBody() proto.Message {
+	return &e.CMsgGCToClientItemBattlerUserDataUpdated
+}
+
+// GetEventName returns the event name.
+func (e *ItemBattlerUserDataUpdated) GetEventName() string {
+	return "ItemBattlerUserDataUpdated"
+}
+
 // KickedFromMatchmakingQueue event.
 // MessageID: k_EMsgGCKickedFromMatchmakingQueue
 type KickedFromMatchmakingQueue struct {
