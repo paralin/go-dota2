@@ -29,7 +29,10 @@ jobs:
           go-version: '1.26'
 
       - name: Generate protobufs
-        run: cd cmd/generate && go run . --skip-submodule
+        run: make gen
+
+      - name: Tidy modules
+        run: go mod tidy
 
       - name: Check for changes
         id: changes
