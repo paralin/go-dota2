@@ -3,7 +3,7 @@ module github.com/paralin/go-dota2/cmd/generate
 go 1.24.0
 
 require (
-	github.com/aperturerobotics/go-protoc-wasi v0.0.0-20260219012250-c573f70e4509
+	github.com/aperturerobotics/go-protoc-wasi v0.0.0-20260329113540-600516012db3
 	github.com/tetratelabs/wazero v1.11.0
 )
 

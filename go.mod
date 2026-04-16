@@ -5,7 +5,7 @@ go 1.25
 require (
 	github.com/fatih/camelcase v1.0.0
 	github.com/golang/protobuf v1.5.4
-	github.com/paralin/go-steam v0.0.0-20260413221134-7cfe88a3c529
+	github.com/paralin/go-steam v0.0.0-20260416001652-4b80b1117268
 	github.com/pkg/errors v0.9.1
 	github.com/serenize/snaker v0.0.0-20201027110005-a7ad2135616e
 	github.com/sirupsen/logrus v1.9.4
