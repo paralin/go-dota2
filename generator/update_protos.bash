@@ -64,6 +64,18 @@ sed -i -e "s/(.CMsgSteamLearn/(CMsgSteamLearn/g" ${WORK_DIR}/protos/steammessage
 # Remove the problematic CDotaMsgStructuredTooltipProperties message block
 sed -i -e '/^message CDotaMsgStructuredTooltipProperties {/,/^}$/d' ${WORK_DIR}/protos/dota_gcmessages_common.proto
 
+# Keep Dota-specific custom options out of go-steam's legacy extension range.
+sed -i -e "s/maximum_size_bytes = 50000/maximum_size_bytes = 60002/g" \
+    ${WORK_DIR}/protos/networkbasetypes.proto
+sed -i \
+    -e "s/service_description = 50000/service_description = 60011/g" \
+    -e "s/service_execution_site = 50008/service_execution_site = 60018/g" \
+    -e "s/method_description = 50000/method_description = 60012/g" \
+    -e "s/enum_description = 50000/enum_description = 60013/g" \
+    -e "s/enum_value_description = 50000/enum_value_description = 60014/g" \
+    -e "s/description = 50000/description = 60010/g" \
+    ${WORK_DIR}/protos/steammessages_unified_base.steamworkssdk.proto
+
 # Move final files out.
 rsync -rv --delete $(pwd)/protos/ ${REPO_ROOT}/protocol/
 echo "package protocol" > ${REPO_ROOT}/protocol/protocol.go

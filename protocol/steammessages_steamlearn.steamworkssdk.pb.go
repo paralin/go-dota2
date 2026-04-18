@@ -4123,13 +4123,13 @@ const file_steammessages_steamlearn_steamworkssdk_proto_rawDesc = "" +
 	"5STEAMLEARN_INFERENCE_METADATA_ERROR_NO_FETCH_ID_FOUND\x10\a2\x92\v\n" +
 	"\n" +
 	"SteamLearn\x12\xcd\x01\n" +
-	"\x12RegisterDataSource\x123.protocol.CMsgSteamLearn_RegisterDataSource_Request\x1a4.protocol.CMsgSteamLearn_RegisterDataSource_Response\"L\x82\xb5\x18HRegisters a data desc (or finds a data desc if it's already registered).\x12\x86\x01\n" +
-	"\tCacheData\x12*.protocol.CMsgSteamLearn_CacheData_Request\x1a+.protocol.CMsgSteamLearn_CacheData_Response\" \x82\xb5\x18\x1cUpdates a cached data entry.\x12\xa5\x01\n" +
-	"\x0fSnapshotProject\x120.protocol.CMsgSteamLearn_SnapshotProject_Request\x1a1.protocol.CMsgSteamLearn_SnapshotProject_Response\"-\x82\xb5\x18)Snapshots the current data for a project.\x12\xcc\x01\n" +
-	"\x0eBatchOperation\x12/.protocol.CMsgSteamLearn_BatchOperation_Request\x1a0.protocol.CMsgSteamLearn_BatchOperation_Response\"W\x82\xb5\x18SBatches multiple data updates, snapshots, and inference requests into a single call\x12\xea\x01\n" +
-	"\x0fGetAccessTokens\x120.protocol.CMsgSteamLearn_GetAccessTokens_Request\x1a1.protocol.CMsgSteamLearn_GetAccessTokens_Response\"r\x82\xb5\x18nGets the access tokens needed for registering data sources, submitting data to them, and snapshotting projects\x12\xb4\x01\n" +
-	"\tInference\x12*.protocol.CMsgSteamLearn_Inference_Request\x1a+.protocol.CMsgSteamLearn_Inference_Response\"N\x82\xb5\x18JInferences using supplied data, or data associated with the specified key.\x12\xc2\x01\n" +
-	"\x11InferenceMetadata\x122.protocol.CMsgSteamLearn_InferenceMetadata_Request\x1a3.protocol.CMsgSteamLearn_InferenceMetadata_Response\"D\x82\xb5\x18@Requests the metadata that was generated from a specified fetch.\x1aK\x82\xb5\x18GService for submitting data, training, and inferencing with SteamLearn."
+	"\x12RegisterDataSource\x123.protocol.CMsgSteamLearn_RegisterDataSource_Request\x1a4.protocol.CMsgSteamLearn_RegisterDataSource_Response\"L\xe2\xa6\x1dHRegisters a data desc (or finds a data desc if it's already registered).\x12\x86\x01\n" +
+	"\tCacheData\x12*.protocol.CMsgSteamLearn_CacheData_Request\x1a+.protocol.CMsgSteamLearn_CacheData_Response\" \xe2\xa6\x1d\x1cUpdates a cached data entry.\x12\xa5\x01\n" +
+	"\x0fSnapshotProject\x120.protocol.CMsgSteamLearn_SnapshotProject_Request\x1a1.protocol.CMsgSteamLearn_SnapshotProject_Response\"-\xe2\xa6\x1d)Snapshots the current data for a project.\x12\xcc\x01\n" +
+	"\x0eBatchOperation\x12/.protocol.CMsgSteamLearn_BatchOperation_Request\x1a0.protocol.CMsgSteamLearn_BatchOperation_Response\"W\xe2\xa6\x1dSBatches multiple data updates, snapshots, and inference requests into a single call\x12\xea\x01\n" +
+	"\x0fGetAccessTokens\x120.protocol.CMsgSteamLearn_GetAccessTokens_Request\x1a1.protocol.CMsgSteamLearn_GetAccessTokens_Response\"r\xe2\xa6\x1dnGets the access tokens needed for registering data sources, submitting data to them, and snapshotting projects\x12\xb4\x01\n" +
+	"\tInference\x12*.protocol.CMsgSteamLearn_Inference_Request\x1a+.protocol.CMsgSteamLearn_Inference_Response\"N\xe2\xa6\x1dJInferences using supplied data, or data associated with the specified key.\x12\xc2\x01\n" +
+	"\x11InferenceMetadata\x122.protocol.CMsgSteamLearn_InferenceMetadata_Request\x1a3.protocol.CMsgSteamLearn_InferenceMetadata_Response\"D\xe2\xa6\x1d@Requests the metadata that was generated from a specified fetch.\x1aKڦ\x1dGService for submitting data, training, and inferencing with SteamLearn."
 
 var (
 	file_steammessages_steamlearn_steamworkssdk_proto_rawDescOnce sync.Once

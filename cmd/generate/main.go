@@ -199,6 +199,19 @@ func preprocessProtos(submoduleDir, protocolDir string, verbose bool) error {
 			content = removeMessageBlock(content, "CDotaMsgStructuredTooltipProperties")
 		}
 
+		// Keep Dota-specific custom options out of go-steam's legacy extension range.
+		switch fname {
+		case "networkbasetypes.proto":
+			content = strings.ReplaceAll(content, "maximum_size_bytes = 50000", "maximum_size_bytes = 60002")
+		case "steammessages_unified_base.steamworkssdk.proto":
+			content = strings.ReplaceAll(content, "service_description = 50000", "service_description = 60011")
+			content = strings.ReplaceAll(content, "service_execution_site = 50008", "service_execution_site = 60018")
+			content = strings.ReplaceAll(content, "method_description = 50000", "method_description = 60012")
+			content = strings.ReplaceAll(content, "enum_description = 50000", "enum_description = 60013")
+			content = strings.ReplaceAll(content, "enum_value_description = 50000", "enum_value_description = 60014")
+			content = strings.ReplaceAll(content, "description = 50000", "description = 60010")
+		}
+
 		dst := filepath.Join(protocolDir, fname)
 		if err := os.WriteFile(dst, []byte(content), 0o644); err != nil {
 			return fmt.Errorf("write %s: %w", dst, err)

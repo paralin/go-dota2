@@ -17630,7 +17630,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\vReplayState\x12\x14\n" +
 	"\x10REPLAY_AVAILABLE\x10\x00\x12\x17\n" +
 	"\x13REPLAY_NOT_RECORDED\x10\x01\x12\x12\n" +
-	"\x0eREPLAY_EXPIRED\x10\x02:\x05\x80\xb5\x18\x80 \"\xb5\x01\n" +
+	"\x0eREPLAY_EXPIRED\x10\x02:\x05\x90\xa6\x1d\x80 \"\xb5\x01\n" +
 	"\x0eCMsgPlayerCard\x12\x1d\n" +
 	"\n" +
 	"account_id\x18\x01 \x01(\rR\taccountId\x12J\n" +

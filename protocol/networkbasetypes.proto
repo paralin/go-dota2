@@ -5,7 +5,7 @@ import "google/protobuf/descriptor.proto";
 import "network_connection.proto";
 
 extend .google.protobuf.MessageOptions {
-	optional int32 maximum_size_bytes = 50000;
+	optional int32 maximum_size_bytes = 60002;
 }
 
 enum SignonState_t {

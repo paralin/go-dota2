@@ -83,82 +83,82 @@ var file_steammessages_unified_base_steamworkssdk_proto_extTypes = []protoimpl.E
 	{
 		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 		ExtensionType: (*string)(nil),
-		Field:         50000,
+		Field:         60010,
 		Name:          "protocol.description",
-		Tag:           "bytes,50000,opt,name=description",
+		Tag:           "bytes,60010,opt,name=description",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.ServiceOptions)(nil),
 		ExtensionType: (*string)(nil),
-		Field:         50000,
+		Field:         60011,
 		Name:          "protocol.service_description",
-		Tag:           "bytes,50000,opt,name=service_description",
+		Tag:           "bytes,60011,opt,name=service_description",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.ServiceOptions)(nil),
 		ExtensionType: (*EProtoExecutionSite)(nil),
-		Field:         50008,
+		Field:         60018,
 		Name:          "protocol.service_execution_site",
-		Tag:           "varint,50008,opt,name=service_execution_site,enum=protocol.EProtoExecutionSite,def=0",
+		Tag:           "varint,60018,opt,name=service_execution_site,enum=protocol.EProtoExecutionSite,def=0",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.MethodOptions)(nil),
 		ExtensionType: (*string)(nil),
-		Field:         50000,
+		Field:         60012,
 		Name:          "protocol.method_description",
-		Tag:           "bytes,50000,opt,name=method_description",
+		Tag:           "bytes,60012,opt,name=method_description",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.EnumOptions)(nil),
 		ExtensionType: (*string)(nil),
-		Field:         50000,
+		Field:         60013,
 		Name:          "protocol.enum_description",
-		Tag:           "bytes,50000,opt,name=enum_description",
+		Tag:           "bytes,60013,opt,name=enum_description",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
 		ExtensionType: (*string)(nil),
-		Field:         50000,
+		Field:         60014,
 		Name:          "protocol.enum_value_description",
-		Tag:           "bytes,50000,opt,name=enum_value_description",
+		Tag:           "bytes,60014,opt,name=enum_value_description",
 		Filename:      "steammessages_unified_base.steamworkssdk.proto",
 	},
 }
 
 // Extension fields to descriptorpb.FieldOptions.
 var (
-	// optional string description = 50000;
+	// optional string description = 60010;
 	E_Description = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[0]
 )
 
 // Extension fields to descriptorpb.ServiceOptions.
 var (
-	// optional string service_description = 50000;
+	// optional string service_description = 60011;
 	E_ServiceDescription = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[1]
-	// optional protocol.EProtoExecutionSite service_execution_site = 50008;
+	// optional protocol.EProtoExecutionSite service_execution_site = 60018;
 	E_ServiceExecutionSite = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[2]
 )
 
 // Extension fields to descriptorpb.MethodOptions.
 var (
-	// optional string method_description = 50000;
+	// optional string method_description = 60012;
 	E_MethodDescription = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[3]
 )
 
 // Extension fields to descriptorpb.EnumOptions.
 var (
-	// optional string enum_description = 50000;
+	// optional string enum_description = 60013;
 	E_EnumDescription = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[4]
 )
 
 // Extension fields to descriptorpb.EnumValueOptions.
 var (
-	// optional string enum_value_description = 50000;
+	// optional string enum_value_description = 60014;
 	E_EnumValueDescription = &file_steammessages_unified_base_steamworkssdk_proto_extTypes[5]
 )
 
@@ -170,12 +170,12 @@ const file_steammessages_unified_base_steamworkssdk_proto_rawDesc = "" +
 	"\x13EProtoExecutionSite\x12 \n" +
 	"\x1ck_EProtoExecutionSiteUnknown\x10\x00\x12$\n" +
 	" k_EProtoExecutionSiteSteamClient\x10\x03:A\n" +
-	"\vdescription\x12\x1d.google.protobuf.FieldOptions\x18І\x03 \x01(\tR\vdescription:R\n" +
-	"\x13service_description\x12\x1f.google.protobuf.ServiceOptions\x18І\x03 \x01(\tR\x12serviceDescription:\x94\x01\n" +
-	"\x16service_execution_site\x12\x1f.google.protobuf.ServiceOptions\x18؆\x03 \x01(\x0e2\x1d.protocol.EProtoExecutionSite:\x1ck_EProtoExecutionSiteUnknownR\x14serviceExecutionSite:O\n" +
-	"\x12method_description\x12\x1e.google.protobuf.MethodOptions\x18І\x03 \x01(\tR\x11methodDescription:I\n" +
-	"\x10enum_description\x12\x1c.google.protobuf.EnumOptions\x18І\x03 \x01(\tR\x0fenumDescription:Y\n" +
-	"\x16enum_value_description\x12!.google.protobuf.EnumValueOptions\x18І\x03 \x01(\tR\x14enumValueDescriptionB\x05H\x01\x80\x01\x00"
+	"\vdescription\x12\x1d.google.protobuf.FieldOptions\x18\xea\xd4\x03 \x01(\tR\vdescription:R\n" +
+	"\x13service_description\x12\x1f.google.protobuf.ServiceOptions\x18\xeb\xd4\x03 \x01(\tR\x12serviceDescription:\x94\x01\n" +
+	"\x16service_execution_site\x12\x1f.google.protobuf.ServiceOptions\x18\xf2\xd4\x03 \x01(\x0e2\x1d.protocol.EProtoExecutionSite:\x1ck_EProtoExecutionSiteUnknownR\x14serviceExecutionSite:O\n" +
+	"\x12method_description\x12\x1e.google.protobuf.MethodOptions\x18\xec\xd4\x03 \x01(\tR\x11methodDescription:I\n" +
+	"\x10enum_description\x12\x1c.google.protobuf.EnumOptions\x18\xed\xd4\x03 \x01(\tR\x0fenumDescription:Y\n" +
+	"\x16enum_value_description\x12!.google.protobuf.EnumValueOptions\x18\xee\xd4\x03 \x01(\tR\x14enumValueDescriptionB\x05H\x01\x80\x01\x00"
 
 var (
 	file_steammessages_unified_base_steamworkssdk_proto_rawDescOnce sync.Once

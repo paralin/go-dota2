@@ -2214,16 +2214,16 @@ var file_networkbasetypes_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.MessageOptions)(nil),
 		ExtensionType: (*int32)(nil),
-		Field:         50000,
+		Field:         60002,
 		Name:          "protocol.maximum_size_bytes",
-		Tag:           "varint,50000,opt,name=maximum_size_bytes",
+		Tag:           "varint,60002,opt,name=maximum_size_bytes",
 		Filename:      "networkbasetypes.proto",
 	},
 }
 
 // Extension fields to descriptorpb.MessageOptions.
 var (
-	// optional int32 maximum_size_bytes = 50000;
+	// optional int32 maximum_size_bytes = 60002;
 	E_MaximumSizeBytes = &file_networkbasetypes_proto_extTypes[0]
 )
 
@@ -2297,7 +2297,7 @@ const file_networkbasetypes_proto_rawDesc = "" +
 	"\acommand\x18\x01 \x01(\tR\acommand\x12'\n" +
 	"\x0fprediction_sync\x18\x02 \x01(\rR\x0epredictionSync\"J\n" +
 	"\x11CNETMsg_SetConVar\x12.\n" +
-	"\aconvars\x18\x01 \x01(\v2\x14.protocol.CMsg_CVarsR\aconvars:\x05\x80\xb5\x18\x80 \"\x94\x02\n" +
+	"\aconvars\x18\x01 \x01(\v2\x14.protocol.CMsg_CVarsR\aconvars:\x05\x90\xa6\x1d\x80 \"\x94\x02\n" +
 	"\x13CNETMsg_SignonState\x12L\n" +
 	"\fsignon_state\x18\x01 \x01(\x0e2\x17.protocol.SignonState_t:\x10SIGNONSTATE_NONER\vsignonState\x12\x1f\n" +
 	"\vspawn_count\x18\x02 \x01(\rR\n" +
@@ -2348,11 +2348,11 @@ const file_networkbasetypes_proto_rawDesc = "" +
 	"\x10savegamefilename\x18\x11 \x01(\tR\x10savegamefilename\x126\n" +
 	"\x16spawngroupparenthandle\x18\x12 \x01(\rR\x16spawngroupparenthandle\x12(\n" +
 	"\x0fleveltransition\x18\x13 \x01(\bR\x0fleveltransition\x12&\n" +
-	"\x0eworldgroupname\x18\x14 \x01(\tR\x0eworldgroupname:\x06\x80\xb5\x18\x80\x80\b\"\xb6\x01\n" +
+	"\x0eworldgroupname\x18\x14 \x01(\tR\x0eworldgroupname:\x06\x90\xa6\x1d\x80\x80\b\"\xb6\x01\n" +
 	"!CNETMsg_SpawnGroup_ManifestUpdate\x12*\n" +
 	"\x10spawngrouphandle\x18\x01 \x01(\rR\x10spawngrouphandle\x12.\n" +
 	"\x12spawngroupmanifest\x18\x02 \x01(\fR\x12spawngroupmanifest\x12.\n" +
-	"\x12manifestincomplete\x18\x03 \x01(\bR\x12manifestincomplete:\x05\x80\xb5\x18\x80\x10\"\x9a\x01\n" +
+	"\x12manifestincomplete\x18\x03 \x01(\bR\x12manifestincomplete:\x05\x90\xa6\x1d\x80\x10\"\x9a\x01\n" +
 	"\"CNETMsg_SpawnGroup_SetCreationTick\x12*\n" +
 	"\x10spawngrouphandle\x18\x01 \x01(\rR\x10spawngrouphandle\x12\x1c\n" +
 	"\ttickcount\x18\x02 \x01(\x05R\ttickcount\x12*\n" +
@@ -2430,7 +2430,7 @@ const file_networkbasetypes_proto_rawDesc = "" +
 	"\x1eSPAWN_GROUP_BLOCK_UNTIL_LOADED\x10@\x12$\n" +
 	"\x1fSPAWN_GROUP_LOAD_STREAMING_DATA\x10\x80\x01\x12'\n" +
 	"\"SPAWN_GROUP_CREATE_NEW_SCENE_WORLD\x10\x80\x02:O\n" +
-	"\x12maximum_size_bytes\x12\x1f.google.protobuf.MessageOptions\x18І\x03 \x01(\x05R\x10maximumSizeBytes"
+	"\x12maximum_size_bytes\x12\x1f.google.protobuf.MessageOptions\x18\xe2\xd4\x03 \x01(\x05R\x10maximumSizeBytes"
 
 var (
 	file_networkbasetypes_proto_rawDescOnce sync.Once

@@ -4238,7 +4238,7 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\x05R\aversion\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x01(\x04R\amatchId\x128\n" +
 	"\bmetadata\x18\x03 \x01(\v2\x1c.protocol.CDOTAMatchMetadataR\bmetadata\x12)\n" +
-	"\x10private_metadata\x18\x05 \x01(\fR\x0fprivateMetadata:\x06\x80\xb5\x18\xc0\x84=\"\xc6J\n" +
+	"\x10private_metadata\x18\x05 \x01(\fR\x0fprivateMetadata:\x06\x90\xa6\x1d\xc0\x84=\"\xc6J\n" +
 	"\x12CDOTAMatchMetadata\x127\n" +
 	"\x05teams\x18\x01 \x03(\v2!.protocol.CDOTAMatchMetadata.TeamR\x05teams\x12\x19\n" +
 	"\blobby_id\x18\x03 \x01(\x06R\alobbyId\x12*\n" +

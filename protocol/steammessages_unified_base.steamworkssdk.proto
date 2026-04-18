@@ -7,24 +7,24 @@ option optimize_for = SPEED;
 option cc_generic_services = false;
 
 extend .google.protobuf.FieldOptions {
-	optional string description = 50000;
+	optional string description = 60010;
 }
 
 extend .google.protobuf.ServiceOptions {
-	optional string service_description = 50000;
-	optional EProtoExecutionSite service_execution_site = 50008 [default = k_EProtoExecutionSiteUnknown];
+	optional string service_description = 60011;
+	optional EProtoExecutionSite service_execution_site = 60018 [default = k_EProtoExecutionSiteUnknown];
 }
 
 extend .google.protobuf.MethodOptions {
-	optional string method_description = 50000;
+	optional string method_description = 60012;
 }
 
 extend .google.protobuf.EnumOptions {
-	optional string enum_description = 50000;
+	optional string enum_description = 60013;
 }
 
 extend .google.protobuf.EnumValueOptions {
-	optional string enum_value_description = 50000;
+	optional string enum_value_description = 60014;
 }
 
 enum EProtoExecutionSite {
