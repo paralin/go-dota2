@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/aperturerobotics/goprotowrap v0.4.1
 
 require (
-	github.com/aperturerobotics/protobuf-go-lite v0.12.2
+	github.com/aperturerobotics/protobuf-go-lite v0.13.0
 	github.com/golangci/golangci-lint/v2 v2.11.4
 	github.com/psampaz/go-mod-outdated v0.9.0
 	golang.org/x/tools v0.44.0
