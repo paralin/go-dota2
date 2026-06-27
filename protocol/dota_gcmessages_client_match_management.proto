@@ -1,11 +1,11 @@
 syntax = "proto2";
 package protocol;
 
-import "steammessages.proto";
-import "dota_shared_enums.proto";
-import "dota_client_enums.proto";
-import "base_gcmessages.proto";
-import "dota_gcmessages_common_lobby.proto";
+import "github.com/paralin/go-dota2/protocol/steammessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_shared_enums.proto";
+import "github.com/paralin/go-dota2/protocol/dota_client_enums.proto";
+import "github.com/paralin/go-dota2/protocol/base_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_common_lobby.proto";
 
 enum EStartFindingMatchResult {
 	k_EStartFindingMatchResult_Invalid = 0;

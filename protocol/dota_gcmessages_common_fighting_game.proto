@@ -1,10 +1,10 @@
 syntax = "proto2";
 package protocol;
 
-import "steammessages.proto";
-import "dota_shared_enums.proto";
-import "dota_gcmessages_common.proto";
-import "gcsdk_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/steammessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_shared_enums.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_common.proto";
+import "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages.proto";
 
 message CMsgClientToGCFightingGameChallengeFriend {
 	optional uint32 friend_account_id = 1;

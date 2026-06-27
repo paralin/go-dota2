@@ -1,9 +1,9 @@
 syntax = "proto2";
 package protocol;
 
-import "steammessages.proto";
-import "dota_shared_enums.proto";
-import "gcsdk_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/steammessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_shared_enums.proto";
+import "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages.proto";
 
 enum ECraftworksAuditAction {
 	k_eInvalid = 0;

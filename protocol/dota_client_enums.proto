@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import "dota_shared_enums.proto";
+import "github.com/paralin/go-dota2/protocol/dota_shared_enums.proto";
 
 enum ETournamentTemplate {
 	k_ETournamentTemplate_None = 0;

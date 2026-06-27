@@ -1,15 +1,15 @@
 syntax = "proto2";
 package protocol;
 
-import "steammessages.proto";
-import "dota_shared_enums.proto";
-import "dota_gcmessages_common.proto";
-import "dota_gcmessages_webapi.proto";
-import "gcsdk_gcmessages.proto";
-import "base_gcmessages.proto";
-import "econ_gcmessages.proto";
-import "dota_gcmessages_client.proto";
-import "valveextensions.proto";
+import "github.com/paralin/go-dota2/protocol/steammessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_shared_enums.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_common.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_webapi.proto";
+import "github.com/paralin/go-dota2/protocol/gcsdk_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/base_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/econ_gcmessages.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_client.proto";
+import "github.com/paralin/go-dota2/protocol/valveextensions.proto";
 
 enum EShowcaseHeroPlusFlag {
 	k_eShowcaseHeroPlusFlag_None = 0;

@@ -1,9 +1,9 @@
 syntax = "proto2";
 package protocol;
 
-import "valveextensions.proto";
+import "github.com/paralin/go-dota2/protocol/valveextensions.proto";
 import "google/protobuf/descriptor.proto";
-import "network_connection.proto";
+import "github.com/paralin/go-dota2/protocol/network_connection.proto";
 
 extend .google.protobuf.MessageOptions {
 	optional int32 maximum_size_bytes = 60002;

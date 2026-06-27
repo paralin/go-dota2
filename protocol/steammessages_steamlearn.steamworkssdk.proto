@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import "steammessages_unified_base.steamworkssdk.proto";
+import "github.com/paralin/go-dota2/protocol/steammessages_unified_base.steamworkssdk.proto";
 
 enum ESteamLearnDataType {
 	STEAMLEARN_DATATYPE_INVALID = 0;

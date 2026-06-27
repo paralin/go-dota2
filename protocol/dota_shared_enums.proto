@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import public "events.proto";
+import public "github.com/paralin/go-dota2/protocol/events.proto";
 
 enum DOTA_GameMode {
 	DOTA_GAMEMODE_NONE = 0;

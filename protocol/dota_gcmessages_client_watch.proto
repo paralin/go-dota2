@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import "dota_gcmessages_common.proto";
+import "github.com/paralin/go-dota2/protocol/dota_gcmessages_common.proto";
 
 message CSourceTVGameSmall {
 	message Player {

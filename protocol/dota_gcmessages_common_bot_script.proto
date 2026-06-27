@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import "valveextensions.proto";
+import "github.com/paralin/go-dota2/protocol/valveextensions.proto";
 
 message CMsgBotWorldState {
 	message Vector {

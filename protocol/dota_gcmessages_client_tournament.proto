@@ -1,7 +1,7 @@
 syntax = "proto2";
 package protocol;
 
-import "dota_client_enums.proto";
+import "github.com/paralin/go-dota2/protocol/dota_client_enums.proto";
 
 enum ETournamentEvent {
 	k_ETournamentEvent_None = 0;

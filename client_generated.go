@@ -226,8 +226,21 @@ func (d *Dota2) ClaimCrawlCavernRoom(
 // Response type: CMsgDOTAClaimEventActionResponse
 func (d *Dota2) ClaimEventAction(
 	ctx context.Context,
-	req *protocol.CMsgDOTAClaimEventAction,
+	eventID uint32,
+	actionID uint32,
+	quantity uint32,
+	data protocol.CMsgDOTAClaimEventActionData,
+	scoreMode protocol.EEventActionScoreMode,
+	suppressRewards bool,
 ) (*protocol.CMsgDOTAClaimEventActionResponse, error) {
+	req := &protocol.CMsgDOTAClaimEventAction{
+		EventId:         &eventID,
+		ActionId:        &actionID,
+		Quantity:        &quantity,
+		Data:            &data,
+		ScoreMode:       &scoreMode,
+		SuppressRewards: &suppressRewards,
+	}
 	resp := &protocol.CMsgDOTAClaimEventActionResponse{}
 
 	return resp, d.MakeRequest(
@@ -547,8 +560,19 @@ func (d *Dota2) CloseLobbyBroadcastChannel(
 // Request ID: k_EMsgGCBotGameCreate
 // Request type: CMsgBotGameCreate
 func (d *Dota2) CreateBotGame(
-	req *protocol.CMsgBotGameCreate,
+	searchKey string,
+	difficultyRadiant protocol.DOTABotDifficulty,
+	team protocol.DOTA_GC_TEAM,
+	gameMode uint32,
+	difficultyDire protocol.DOTABotDifficulty,
 ) {
+	req := &protocol.CMsgBotGameCreate{
+		SearchKey:         &searchKey,
+		DifficultyRadiant: &difficultyRadiant,
+		Team:              &team,
+		GameMode:          &gameMode,
+		DifficultyDire:    &difficultyDire,
+	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBotGameCreate), req)
 }
 
@@ -735,8 +759,21 @@ func (d *Dota2) EditTeamDetails(
 // Response type: CMsgGCToClientFindTopSourceTVGamesResponse
 func (d *Dota2) FindTopSourceTVGames(
 	ctx context.Context,
-	req *protocol.CMsgClientToGCFindTopSourceTVGames,
+	searchKey string,
+	leagueID uint32,
+	heroID int32,
+	startGame uint32,
+	gameListIndex uint32,
+	lobbyIDs []uint64,
 ) (*protocol.CMsgGCToClientFindTopSourceTVGamesResponse, error) {
+	req := &protocol.CMsgClientToGCFindTopSourceTVGames{
+		SearchKey:     &searchKey,
+		LeagueId:      &leagueID,
+		HeroId:        &heroID,
+		StartGame:     &startGame,
+		GameListIndex: &gameListIndex,
+		LobbyIds:      lobbyIDs,
+	}
 	resp := &protocol.CMsgGCToClientFindTopSourceTVGamesResponse{}
 
 	return resp, d.MakeRequest(
@@ -2260,8 +2297,21 @@ func (d *Dota2) JoinPrivateCoachingSessionLobby(
 // Response type: CMsgQuickJoinCustomLobbyResponse
 func (d *Dota2) JoinQuickCustomLobby(
 	ctx context.Context,
-	req *protocol.CMsgQuickJoinCustomLobby,
+	legacyServerRegion uint32,
+	customGameID uint64,
+	createLobbyDetails protocol.CMsgPracticeLobbySetDetails,
+	allowAnyMap bool,
+	legacyRegionPings []*protocol.CMsgQuickJoinCustomLobby_LegacyRegionPing,
+	pingData protocol.CMsgClientPingData,
 ) (*protocol.CMsgQuickJoinCustomLobbyResponse, error) {
+	req := &protocol.CMsgQuickJoinCustomLobby{
+		LegacyServerRegion: &legacyServerRegion,
+		CustomGameId:       &customGameID,
+		CreateLobbyDetails: &createLobbyDetails,
+		AllowAnyMap:        &allowAnyMap,
+		LegacyRegionPings:  legacyRegionPings,
+		PingData:           &pingData,
+	}
 	resp := &protocol.CMsgQuickJoinCustomLobbyResponse{}
 
 	return resp, d.MakeRequest(
@@ -4516,8 +4566,21 @@ func (d *Dota2) RequestSelectionPriorityChoice(
 // Response type: CMsgClientToGCSetPlayerCardRosterResponse
 func (d *Dota2) RequestSetPlayerCardRoster(
 	ctx context.Context,
-	req *protocol.CMsgClientToGCSetPlayerCardRosterRequest,
+	leagueID uint32,
+	deprecatedTimestamp uint32,
+	slot uint32,
+	playerCardItemID uint64,
+	eventID uint32,
+	fantasyPeriod uint32,
 ) (*protocol.CMsgClientToGCSetPlayerCardRosterResponse, error) {
+	req := &protocol.CMsgClientToGCSetPlayerCardRosterRequest{
+		LeagueId:            &leagueID,
+		DeprecatedTimestamp: &deprecatedTimestamp,
+		Slot:                &slot,
+		PlayerCardItemId:    &playerCardItemID,
+		EventId:             &eventID,
+		FantasyPeriod:       &fantasyPeriod,
+	}
 	resp := &protocol.CMsgClientToGCSetPlayerCardRosterResponse{}
 
 	return resp, d.MakeRequest(
@@ -5653,8 +5716,21 @@ func (d *Dota2) SendCraftworksDevModifyComponents(
 // Request ID: k_EMsgCustomGameClientFinishedLoading
 // Request type: CMsgDOTACustomGameClientFinishedLoading
 func (d *Dota2) SendCustomGameClientFinishedLoading(
-	req *protocol.CMsgDOTACustomGameClientFinishedLoading,
+	lobbyID uint64,
+	loadingDuration uint32,
+	resultCode int32,
+	resultString string,
+	signonStates uint32,
+	comment string,
 ) {
+	req := &protocol.CMsgDOTACustomGameClientFinishedLoading{
+		LobbyId:         &lobbyID,
+		LoadingDuration: &loadingDuration,
+		ResultCode:      &resultCode,
+		ResultString:    &resultString,
+		SignonStates:    &signonStates,
+		Comment:         &comment,
+	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgCustomGameClientFinishedLoading), req)
 }
 
@@ -6024,8 +6100,21 @@ func (d *Dota2) SendInviteToGuild(
 // Response type: CMsgClientToGCItemBattlerGameActionResponse
 func (d *Dota2) SendItemBattlerGameAction(
 	ctx context.Context,
-	req *protocol.CMsgClientToGCItemBattlerGameAction,
+	action protocol.CMsgClientToGCItemBattlerGameAction_EAction,
+	choiceIndex uint32,
+	itemInstanceID uint32,
+	itemContainerID uint32,
+	itemPositionX uint32,
+	itemPositionY uint32,
 ) (*protocol.CMsgClientToGCItemBattlerGameActionResponse, error) {
+	req := &protocol.CMsgClientToGCItemBattlerGameAction{
+		Action:          &action,
+		ChoiceIndex:     &choiceIndex,
+		ItemInstanceId:  &itemInstanceID,
+		ItemContainerId: &itemContainerID,
+		ItemPositionX:   &itemPositionX,
+		ItemPositionY:   &itemPositionY,
+	}
 	resp := &protocol.CMsgClientToGCItemBattlerGameActionResponse{}
 
 	return resp, d.MakeRequest(
@@ -6168,8 +6257,21 @@ func (d *Dota2) SendMMInfo(
 // Response type: CMsgGCToClientManageFavoritesResponse
 func (d *Dota2) SendManageFavorites(
 	ctx context.Context,
-	req *protocol.CMsgClientToGCManageFavorites,
+	action protocol.CMsgClientToGCManageFavorites_Action,
+	accountID uint32,
+	favoriteName string,
+	inviteResponse bool,
+	fromFriendlist bool,
+	lobbyID uint64,
 ) (*protocol.CMsgGCToClientManageFavoritesResponse, error) {
+	req := &protocol.CMsgClientToGCManageFavorites{
+		Action:         &action,
+		AccountId:      &accountID,
+		FavoriteName:   &favoriteName,
+		InviteResponse: &inviteResponse,
+		FromFriendlist: &fromFriendlist,
+		LobbyId:        &lobbyID,
+	}
 	resp := &protocol.CMsgGCToClientManageFavoritesResponse{}
 
 	return resp, d.MakeRequest(
@@ -6667,8 +6769,21 @@ func (d *Dota2) SendOverworldGiftTokens(
 // Response type: CMsgClientToGCOverworldMinigameActionResponse
 func (d *Dota2) SendOverworldMinigameAction(
 	ctx context.Context,
-	req *protocol.CMsgClientToGCOverworldMinigameAction,
+	overworldID uint32,
+	nodeID uint32,
+	action protocol.EOverworldMinigameAction,
+	selection uint32,
+	optionValue uint32,
+	currencyAmount uint32,
 ) (*protocol.CMsgClientToGCOverworldMinigameActionResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldMinigameAction{
+		OverworldId:    &overworldID,
+		NodeId:         &nodeID,
+		Action:         &action,
+		Selection:      &selection,
+		OptionValue:    &optionValue,
+		CurrencyAmount: &currencyAmount,
+	}
 	resp := &protocol.CMsgClientToGCOverworldMinigameActionResponse{}
 
 	return resp, d.MakeRequest(
@@ -8086,8 +8201,21 @@ func (d *Dota2) SubmitPlayerReportResponseV2(
 // Request ID: k_EMsgGCSubmitPlayerReportV2
 // Request type: CMsgDOTASubmitPlayerReportV2
 func (d *Dota2) SubmitPlayerReportV2(
-	req *protocol.CMsgDOTASubmitPlayerReportV2,
+	targetAccountID uint32,
+	reportReason []uint32,
+	lobbyID uint64,
+	gameTime float32,
+	debugSlot uint32,
+	debugMatchID uint64,
 ) {
+	req := &protocol.CMsgDOTASubmitPlayerReportV2{
+		TargetAccountId: &targetAccountID,
+		ReportReason:    reportReason,
+		LobbyId:         &lobbyID,
+		GameTime:        &gameTime,
+		DebugSlot:       &debugSlot,
+		DebugMatchId:    &debugMatchID,
+	}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCSubmitPlayerReportV2), req)
 }
 
