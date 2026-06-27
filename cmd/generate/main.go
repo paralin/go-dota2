@@ -161,7 +161,7 @@ func preprocessProtos(submoduleDir, protocolDir string, verbose bool) error {
 		name := filepath.Base(src)
 		content := normalizeProto(name, string(data))
 		dst := filepath.Join(protocolDir, name)
-		if err := os.WriteFile(dst, []byte(content), 0o644); err != nil {
+		if err := os.WriteFile(dst, []byte(content), 0o644); err != nil { //nolint:gosec
 			return fmt.Errorf("write %s: %w", dst, err)
 		}
 		writtenProtos[name] = true
@@ -215,11 +215,11 @@ func copyDir(src, dst string) error {
 		if d.IsDir() {
 			return os.MkdirAll(target, 0o755)
 		}
-		data, err := os.ReadFile(path)
+		data, err := os.ReadFile(path) //nolint:gosec
 		if err != nil {
 			return err
 		}
-		return os.WriteFile(target, data, 0o644)
+		return os.WriteFile(target, data, 0o644) //nolint:gosec
 	})
 }
 
@@ -334,7 +334,7 @@ func runApigen(ctx context.Context, repoRoot string, verbose bool) error {
 	for _, cmdSpec := range cmds {
 		label := cmdSpec.args[len(cmdSpec.args)-1]
 		log.Printf("  apigen %s...", label)
-		cmd := exec.CommandContext(ctx, cmdSpec.args[0], cmdSpec.args[1:]...)
+		cmd := exec.CommandContext(ctx, cmdSpec.args[0], cmdSpec.args[1:]...) //nolint:gosec
 		cmd.Dir = apigenDir
 		cmd.Env = append(os.Environ(), "GO111MODULE=on")
 
