@@ -776,6 +776,80 @@ func (CMsgRedeemCodeResponse_EResultCode) EnumDescriptor() ([]byte, []int) {
 	return file_econ_gcmessages_proto_rawDescGZIP(), []int{35, 0}
 }
 
+type CMsgDevNewItemRequestResponse_EResponse int32
+
+const (
+	CMsgDevNewItemRequestResponse_k_eInternalError     CMsgDevNewItemRequestResponse_EResponse = 0
+	CMsgDevNewItemRequestResponse_k_eSuccess           CMsgDevNewItemRequestResponse_EResponse = 1
+	CMsgDevNewItemRequestResponse_k_eTooBusy           CMsgDevNewItemRequestResponse_EResponse = 2
+	CMsgDevNewItemRequestResponse_k_eDisabled          CMsgDevNewItemRequestResponse_EResponse = 3
+	CMsgDevNewItemRequestResponse_k_eTimeout           CMsgDevNewItemRequestResponse_EResponse = 4
+	CMsgDevNewItemRequestResponse_k_eNotAllowed        CMsgDevNewItemRequestResponse_EResponse = 5
+	CMsgDevNewItemRequestResponse_k_eUnknownItemDef    CMsgDevNewItemRequestResponse_EResponse = 6
+	CMsgDevNewItemRequestResponse_k_eItemDefNotAllowed CMsgDevNewItemRequestResponse_EResponse = 7
+)
+
+// Enum value maps for CMsgDevNewItemRequestResponse_EResponse.
+var (
+	CMsgDevNewItemRequestResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eNotAllowed",
+		6: "k_eUnknownItemDef",
+		7: "k_eItemDefNotAllowed",
+	}
+	CMsgDevNewItemRequestResponse_EResponse_value = map[string]int32{
+		"k_eInternalError":     0,
+		"k_eSuccess":           1,
+		"k_eTooBusy":           2,
+		"k_eDisabled":          3,
+		"k_eTimeout":           4,
+		"k_eNotAllowed":        5,
+		"k_eUnknownItemDef":    6,
+		"k_eItemDefNotAllowed": 7,
+	}
+)
+
+func (x CMsgDevNewItemRequestResponse_EResponse) Enum() *CMsgDevNewItemRequestResponse_EResponse {
+	p := new(CMsgDevNewItemRequestResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgDevNewItemRequestResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgDevNewItemRequestResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_econ_gcmessages_proto_enumTypes[5].Descriptor()
+}
+
+func (CMsgDevNewItemRequestResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_econ_gcmessages_proto_enumTypes[5]
+}
+
+func (x CMsgDevNewItemRequestResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgDevNewItemRequestResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgDevNewItemRequestResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgDevNewItemRequestResponse_EResponse.Descriptor instead.
+func (CMsgDevNewItemRequestResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_econ_gcmessages_proto_rawDescGZIP(), []int{37, 0}
+}
+
 type CMsgClientToGCUnpackBundleResponse_EUnpackBundle int32
 
 const (
@@ -821,11 +895,11 @@ func (x CMsgClientToGCUnpackBundleResponse_EUnpackBundle) String() string {
 }
 
 func (CMsgClientToGCUnpackBundleResponse_EUnpackBundle) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[5].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[6].Descriptor()
 }
 
 func (CMsgClientToGCUnpackBundleResponse_EUnpackBundle) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[5]
+	return &file_econ_gcmessages_proto_enumTypes[6]
 }
 
 func (x CMsgClientToGCUnpackBundleResponse_EUnpackBundle) Number() protoreflect.EnumNumber {
@@ -916,11 +990,11 @@ func (x CMsgClientToGCPackBundleResponse_EPackBundle) String() string {
 }
 
 func (CMsgClientToGCPackBundleResponse_EPackBundle) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[6].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[7].Descriptor()
 }
 
 func (CMsgClientToGCPackBundleResponse_EPackBundle) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[6]
+	return &file_econ_gcmessages_proto_enumTypes[7]
 }
 
 func (x CMsgClientToGCPackBundleResponse_EPackBundle) Number() protoreflect.EnumNumber {
@@ -975,11 +1049,11 @@ func (x CMsgClientToGCSetItemStyleResponse_ESetStyle) String() string {
 }
 
 func (CMsgClientToGCSetItemStyleResponse_ESetStyle) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[7].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[8].Descriptor()
 }
 
 func (CMsgClientToGCSetItemStyleResponse_ESetStyle) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[7]
+	return &file_econ_gcmessages_proto_enumTypes[8]
 }
 
 func (x CMsgClientToGCSetItemStyleResponse_ESetStyle) Number() protoreflect.EnumNumber {
@@ -1061,11 +1135,11 @@ func (x CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle) String() string {
 }
 
 func (CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[8].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[9].Descriptor()
 }
 
 func (CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[8]
+	return &file_econ_gcmessages_proto_enumTypes[9]
 }
 
 func (x CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle) Number() protoreflect.EnumNumber {
@@ -1126,11 +1200,11 @@ func (x CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute) String()
 }
 
 func (CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[9].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[10].Descriptor()
 }
 
 func (CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[9]
+	return &file_econ_gcmessages_proto_enumTypes[10]
 }
 
 func (x CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute) Number() protoreflect.EnumNumber {
@@ -1191,11 +1265,11 @@ func (x CMsgClientToGCNameItemResponse_ENameItem) String() string {
 }
 
 func (CMsgClientToGCNameItemResponse_ENameItem) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[10].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[11].Descriptor()
 }
 
 func (CMsgClientToGCNameItemResponse_ENameItem) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[10]
+	return &file_econ_gcmessages_proto_enumTypes[11]
 }
 
 func (x CMsgClientToGCNameItemResponse_ENameItem) Number() protoreflect.EnumNumber {
@@ -1259,11 +1333,11 @@ func (x CMsgClientToGCCreateStaticRecipeResponse_EResponse) String() string {
 }
 
 func (CMsgClientToGCCreateStaticRecipeResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[11].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[12].Descriptor()
 }
 
 func (CMsgClientToGCCreateStaticRecipeResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[11]
+	return &file_econ_gcmessages_proto_enumTypes[12]
 }
 
 func (x CMsgClientToGCCreateStaticRecipeResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1330,11 +1404,11 @@ func (x CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse) String()
 }
 
 func (CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[12].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[13].Descriptor()
 }
 
 func (CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[12]
+	return &file_econ_gcmessages_proto_enumTypes[13]
 }
 
 func (x CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1398,11 +1472,11 @@ func (x CMsgClientToGCGetInFlightItemChargesResponse_EResponse) String() string 
 }
 
 func (CMsgClientToGCGetInFlightItemChargesResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[13].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[14].Descriptor()
 }
 
 func (CMsgClientToGCGetInFlightItemChargesResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[13]
+	return &file_econ_gcmessages_proto_enumTypes[14]
 }
 
 func (x CMsgClientToGCGetInFlightItemChargesResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1478,11 +1552,11 @@ func (x CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse) String() string
 }
 
 func (CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_econ_gcmessages_proto_enumTypes[14].Descriptor()
+	return file_econ_gcmessages_proto_enumTypes[15].Descriptor()
 }
 
 func (CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_econ_gcmessages_proto_enumTypes[14]
+	return &file_econ_gcmessages_proto_enumTypes[15]
 }
 
 func (x CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -3634,11 +3708,16 @@ func (x *CMsgDevNewItemRequest) GetItemQuality() uint32 {
 }
 
 type CMsgDevNewItemRequestResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       *bool                  `protobuf:"varint,1,opt,name=success" json:"success,omitempty"`
+	state         protoimpl.MessageState                   `protogen:"open.v1"`
+	Result        *CMsgDevNewItemRequestResponse_EResponse `protobuf:"varint,1,opt,name=result,enum=protocol.CMsgDevNewItemRequestResponse_EResponse,def=0" json:"result,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
+
+// Default values for CMsgDevNewItemRequestResponse fields.
+const (
+	Default_CMsgDevNewItemRequestResponse_Result = CMsgDevNewItemRequestResponse_k_eInternalError
+)
 
 func (x *CMsgDevNewItemRequestResponse) Reset() {
 	*x = CMsgDevNewItemRequestResponse{}
@@ -3670,11 +3749,11 @@ func (*CMsgDevNewItemRequestResponse) Descriptor() ([]byte, []int) {
 	return file_econ_gcmessages_proto_rawDescGZIP(), []int{37}
 }
 
-func (x *CMsgDevNewItemRequestResponse) GetSuccess() bool {
-	if x != nil && x.Success != nil {
-		return *x.Success
+func (x *CMsgDevNewItemRequestResponse) GetResult() CMsgDevNewItemRequestResponse_EResponse {
+	if x != nil && x.Result != nil {
+		return *x.Result
 	}
-	return false
+	return Default_CMsgDevNewItemRequestResponse_Result
 }
 
 type CMsgDevUnlockAllItemStyles struct {
@@ -9997,9 +10076,21 @@ const file_econ_gcmessages_proto_rawDesc = "" +
 	"\rattr_def_name\x18\x05 \x03(\tR\vattrDefName\x12\x1d\n" +
 	"\n" +
 	"attr_value\x18\x06 \x03(\tR\tattrValue\x12!\n" +
-	"\fitem_quality\x18\a \x01(\rR\vitemQuality\"9\n" +
-	"\x1dCMsgDevNewItemRequestResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"5\n" +
+	"\fitem_quality\x18\a \x01(\rR\vitemQuality\"\xa5\x02\n" +
+	"\x1dCMsgDevNewItemRequestResponse\x12[\n" +
+	"\x06result\x18\x01 \x01(\x0e21.protocol.CMsgDevNewItemRequestResponse.EResponse:\x10k_eInternalErrorR\x06result\"\xa6\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x11\n" +
+	"\rk_eNotAllowed\x10\x05\x12\x15\n" +
+	"\x11k_eUnknownItemDef\x10\x06\x12\x18\n" +
+	"\x14k_eItemDefNotAllowed\x10\a\"5\n" +
 	"\x1aCMsgDevUnlockAllItemStyles\x12\x17\n" +
 	"\aitem_id\x18\x01 \x01(\x04R\x06itemId\">\n" +
 	"\"CMsgDevUnlockAllItemStylesResponse\x12\x18\n" +
@@ -10674,7 +10765,7 @@ func file_econ_gcmessages_proto_rawDescGZIP() []byte {
 	return file_econ_gcmessages_proto_rawDescData
 }
 
-var file_econ_gcmessages_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
+var file_econ_gcmessages_proto_enumTypes = make([]protoimpl.EnumInfo, 16)
 var file_econ_gcmessages_proto_msgTypes = make([]protoimpl.MessageInfo, 143)
 var file_econ_gcmessages_proto_goTypes = []any{
 	(EGCItemMsg)(0),                                                       // 0: protocol.EGCItemMsg
@@ -10682,225 +10773,227 @@ var file_econ_gcmessages_proto_goTypes = []any{
 	(CMsgRequestCrateItemsResponse_EResult)(0),                            // 2: protocol.CMsgRequestCrateItemsResponse.EResult
 	(CMsgRequestCrateEscalationLevelResponse_EResult)(0),                  // 3: protocol.CMsgRequestCrateEscalationLevelResponse.EResult
 	(CMsgRedeemCodeResponse_EResultCode)(0),                               // 4: protocol.CMsgRedeemCodeResponse.EResultCode
-	(CMsgClientToGCUnpackBundleResponse_EUnpackBundle)(0),                 // 5: protocol.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
-	(CMsgClientToGCPackBundleResponse_EPackBundle)(0),                     // 6: protocol.CMsgClientToGCPackBundleResponse.EPackBundle
-	(CMsgClientToGCSetItemStyleResponse_ESetStyle)(0),                     // 7: protocol.CMsgClientToGCSetItemStyleResponse.ESetStyle
-	(CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle)(0),               // 8: protocol.CMsgClientToGCUnlockItemStyleResponse.EUnlockStyle
-	(CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute)(0),   // 9: protocol.CMsgClientToGCRemoveItemAttributeResponse.ERemoveItemAttribute
-	(CMsgClientToGCNameItemResponse_ENameItem)(0),                         // 10: protocol.CMsgClientToGCNameItemResponse.ENameItem
-	(CMsgClientToGCCreateStaticRecipeResponse_EResponse)(0),               // 11: protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
-	(CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse)(0),   // 12: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.EResponse
-	(CMsgClientToGCGetInFlightItemChargesResponse_EResponse)(0),           // 13: protocol.CMsgClientToGCGetInFlightItemChargesResponse.EResponse
-	(CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse)(0),          // 14: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
-	(*CMsgApplyAutograph)(nil),                                            // 15: protocol.CMsgApplyAutograph
-	(*CMsgAdjustItemEquippedState)(nil),                                   // 16: protocol.CMsgAdjustItemEquippedState
-	(*CMsgEconPlayerStrangeCountAdjustment)(nil),                          // 17: protocol.CMsgEconPlayerStrangeCountAdjustment
-	(*CMsgCraftingResponse)(nil),                                          // 18: protocol.CMsgCraftingResponse
-	(*CMsgGCRequestStoreSalesData)(nil),                                   // 19: protocol.CMsgGCRequestStoreSalesData
-	(*CMsgGCRequestStoreSalesDataResponse)(nil),                           // 20: protocol.CMsgGCRequestStoreSalesDataResponse
-	(*CMsgGCRequestStoreSalesDataUpToDateResponse)(nil),                   // 21: protocol.CMsgGCRequestStoreSalesDataUpToDateResponse
-	(*CMsgGCToGCPingRequest)(nil),                                         // 22: protocol.CMsgGCToGCPingRequest
-	(*CMsgGCToGCPingResponse)(nil),                                        // 23: protocol.CMsgGCToGCPingResponse
-	(*CMsgGCToGCGetUserSessionServer)(nil),                                // 24: protocol.CMsgGCToGCGetUserSessionServer
-	(*CMsgGCToGCGetUserSessionServerResponse)(nil),                        // 25: protocol.CMsgGCToGCGetUserSessionServerResponse
-	(*CMsgGCToGCGetUserServerMembers)(nil),                                // 26: protocol.CMsgGCToGCGetUserServerMembers
-	(*CMsgGCToGCGetUserServerMembersResponse)(nil),                        // 27: protocol.CMsgGCToGCGetUserServerMembersResponse
-	(*CMsgLookupMultipleAccountNames)(nil),                                // 28: protocol.CMsgLookupMultipleAccountNames
-	(*CMsgLookupMultipleAccountNamesResponse)(nil),                        // 29: protocol.CMsgLookupMultipleAccountNamesResponse
-	(*CMsgRequestCrateItems)(nil),                                         // 30: protocol.CMsgRequestCrateItems
-	(*CMsgRequestCrateItemsResponse)(nil),                                 // 31: protocol.CMsgRequestCrateItemsResponse
-	(*CMsgRequestCrateEscalationLevel)(nil),                               // 32: protocol.CMsgRequestCrateEscalationLevel
-	(*CMsgRequestCrateEscalationLevelResponse)(nil),                       // 33: protocol.CMsgRequestCrateEscalationLevelResponse
-	(*CMsgGCToGCCanUseDropRateBonus)(nil),                                 // 34: protocol.CMsgGCToGCCanUseDropRateBonus
-	(*CMsgSQLAddDropRateBonus)(nil),                                       // 35: protocol.CMsgSQLAddDropRateBonus
-	(*CMsgSQLUpgradeBattleBooster)(nil),                                   // 36: protocol.CMsgSQLUpgradeBattleBooster
-	(*CMsgGCToGCRefreshSOCache)(nil),                                      // 37: protocol.CMsgGCToGCRefreshSOCache
-	(*CMsgGCToGCAddSubscriptionTime)(nil),                                 // 38: protocol.CMsgGCToGCAddSubscriptionTime
-	(*CMsgGCToGCGrantAccountRolledItems)(nil),                             // 39: protocol.CMsgGCToGCGrantAccountRolledItems
-	(*CMsgGCToGCBetaDeleteItems)(nil),                                     // 40: protocol.CMsgGCToGCBetaDeleteItems
-	(*CMsgGCToGCGrantSelfMadeItemToAccount)(nil),                          // 41: protocol.CMsgGCToGCGrantSelfMadeItemToAccount
-	(*CMsgGCToGCUnlockCrate)(nil),                                         // 42: protocol.CMsgGCToGCUnlockCrate
-	(*CMsgUseItem)(nil),                                                   // 43: protocol.CMsgUseItem
-	(*CMsgServerUseItem)(nil),                                             // 44: protocol.CMsgServerUseItem
-	(*CMsgUseMultipleItems)(nil),                                          // 45: protocol.CMsgUseMultipleItems
-	(*CGCStoreRechargeRedirect_LineItem)(nil),                             // 46: protocol.CGCStoreRechargeRedirect_LineItem
-	(*CMsgGCEconSQLWorkItemEmbeddedRollbackData)(nil),                     // 47: protocol.CMsgGCEconSQLWorkItemEmbeddedRollbackData
-	(*CMsgCraftStatue)(nil),                                               // 48: protocol.CMsgCraftStatue
-	(*CMsgRedeemCode)(nil),                                                // 49: protocol.CMsgRedeemCode
-	(*CMsgRedeemCodeResponse)(nil),                                        // 50: protocol.CMsgRedeemCodeResponse
-	(*CMsgDevNewItemRequest)(nil),                                         // 51: protocol.CMsgDevNewItemRequest
-	(*CMsgDevNewItemRequestResponse)(nil),                                 // 52: protocol.CMsgDevNewItemRequestResponse
-	(*CMsgDevUnlockAllItemStyles)(nil),                                    // 53: protocol.CMsgDevUnlockAllItemStyles
-	(*CMsgDevUnlockAllItemStylesResponse)(nil),                            // 54: protocol.CMsgDevUnlockAllItemStylesResponse
-	(*CMsgGCGetAccountSubscriptionItem)(nil),                              // 55: protocol.CMsgGCGetAccountSubscriptionItem
-	(*CMsgGCGetAccountSubscriptionItemResponse)(nil),                      // 56: protocol.CMsgGCGetAccountSubscriptionItemResponse
-	(*CMsgGCAddGiftItem)(nil),                                             // 57: protocol.CMsgGCAddGiftItem
-	(*CMsgClientToGCWrapAndDeliverGift)(nil),                              // 58: protocol.CMsgClientToGCWrapAndDeliverGift
-	(*CMsgSQLGCToGCRevokeUntrustedGift)(nil),                              // 59: protocol.CMsgSQLGCToGCRevokeUntrustedGift
-	(*CMsgClientToGCWrapAndDeliverGiftResponse)(nil),                      // 60: protocol.CMsgClientToGCWrapAndDeliverGiftResponse
-	(*CMsgClientToGCUnwrapGift)(nil),                                      // 61: protocol.CMsgClientToGCUnwrapGift
-	(*CMsgClientToGCGetGiftPermissions)(nil),                              // 62: protocol.CMsgClientToGCGetGiftPermissions
-	(*CMsgClientToGCGetGiftPermissionsResponse)(nil),                      // 63: protocol.CMsgClientToGCGetGiftPermissionsResponse
-	(*CMsgClientToGCUnpackBundle)(nil),                                    // 64: protocol.CMsgClientToGCUnpackBundle
-	(*CMsgClientToGCUnpackBundleResponse)(nil),                            // 65: protocol.CMsgClientToGCUnpackBundleResponse
-	(*CMsgClientToGCPackBundle)(nil),                                      // 66: protocol.CMsgClientToGCPackBundle
-	(*CMsgClientToGCPackBundleResponse)(nil),                              // 67: protocol.CMsgClientToGCPackBundleResponse
-	(*CMsgGCToClientStoreTransactionCompleted)(nil),                       // 68: protocol.CMsgGCToClientStoreTransactionCompleted
-	(*CMsgClientToGCEquipItems)(nil),                                      // 69: protocol.CMsgClientToGCEquipItems
-	(*CMsgClientToGCEquipItemsResponse)(nil),                              // 70: protocol.CMsgClientToGCEquipItemsResponse
-	(*CMsgClientToGCSetItemStyle)(nil),                                    // 71: protocol.CMsgClientToGCSetItemStyle
-	(*CMsgClientToGCSetItemStyleResponse)(nil),                            // 72: protocol.CMsgClientToGCSetItemStyleResponse
-	(*CMsgClientToGCUnlockItemStyle)(nil),                                 // 73: protocol.CMsgClientToGCUnlockItemStyle
-	(*CMsgClientToGCUnlockItemStyleResponse)(nil),                         // 74: protocol.CMsgClientToGCUnlockItemStyleResponse
-	(*CMsgClientToGCSetItemInventoryCategory)(nil),                        // 75: protocol.CMsgClientToGCSetItemInventoryCategory
-	(*CMsgClientToGCUnlockCrate)(nil),                                     // 76: protocol.CMsgClientToGCUnlockCrate
-	(*CMsgClientToGCUnlockCrateResponse)(nil),                             // 77: protocol.CMsgClientToGCUnlockCrateResponse
-	(*CMsgClientToGCRemoveItemAttribute)(nil),                             // 78: protocol.CMsgClientToGCRemoveItemAttribute
-	(*CMsgClientToGCRemoveItemAttributeResponse)(nil),                     // 79: protocol.CMsgClientToGCRemoveItemAttributeResponse
-	(*CMsgClientToGCNameItem)(nil),                                        // 80: protocol.CMsgClientToGCNameItem
-	(*CMsgClientToGCNameItemResponse)(nil),                                // 81: protocol.CMsgClientToGCNameItemResponse
-	(*CMsgGCSetItemPosition)(nil),                                         // 82: protocol.CMsgGCSetItemPosition
-	(*CAttribute_ItemDynamicRecipeComponent)(nil),                         // 83: protocol.CAttribute_ItemDynamicRecipeComponent
-	(*CProtoItemSocket)(nil),                                              // 84: protocol.CProtoItemSocket
-	(*CProtoItemSocket_Empty)(nil),                                        // 85: protocol.CProtoItemSocket_Empty
-	(*CProtoItemSocket_Effect)(nil),                                       // 86: protocol.CProtoItemSocket_Effect
-	(*CProtoItemSocket_Color)(nil),                                        // 87: protocol.CProtoItemSocket_Color
-	(*CProtoItemSocket_Strange)(nil),                                      // 88: protocol.CProtoItemSocket_Strange
-	(*CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY)(nil),         // 89: protocol.CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY
-	(*CProtoItemSocket_Spectator)(nil),                                    // 90: protocol.CProtoItemSocket_Spectator
-	(*CProtoItemSocket_AssetModifier)(nil),                                // 91: protocol.CProtoItemSocket_AssetModifier
-	(*CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY)(nil),   // 92: protocol.CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY
-	(*CProtoItemSocket_Autograph)(nil),                                    // 93: protocol.CProtoItemSocket_Autograph
-	(*CProtoItemSocket_StaticVisuals)(nil),                                // 94: protocol.CProtoItemSocket_StaticVisuals
-	(*CAttribute_String)(nil),                                             // 95: protocol.CAttribute_String
-	(*CWorkshop_GetItemDailyRevenue_Request)(nil),                         // 96: protocol.CWorkshop_GetItemDailyRevenue_Request
-	(*CWorkshop_GetItemDailyRevenue_Response)(nil),                        // 97: protocol.CWorkshop_GetItemDailyRevenue_Response
-	(*CWorkshop_GetPackageDailyRevenue_Request)(nil),                      // 98: protocol.CWorkshop_GetPackageDailyRevenue_Request
-	(*CWorkshop_GetPackageDailyRevenue_Response)(nil),                     // 99: protocol.CWorkshop_GetPackageDailyRevenue_Response
-	(*CMsgSQLGCToGCGrantBackpackSlots)(nil),                               // 100: protocol.CMsgSQLGCToGCGrantBackpackSlots
-	(*CMsgClientToGCLookupAccountName)(nil),                               // 101: protocol.CMsgClientToGCLookupAccountName
-	(*CMsgClientToGCLookupAccountNameResponse)(nil),                       // 102: protocol.CMsgClientToGCLookupAccountNameResponse
-	(*CMsgClientToGCCreateStaticRecipe)(nil),                              // 103: protocol.CMsgClientToGCCreateStaticRecipe
-	(*CMsgClientToGCCreateStaticRecipeResponse)(nil),                      // 104: protocol.CMsgClientToGCCreateStaticRecipeResponse
-	(*CMsgProcessTransactionOrder)(nil),                                   // 105: protocol.CMsgProcessTransactionOrder
-	(*CMsgGCToGCStoreProcessCDKeyTransaction)(nil),                        // 106: protocol.CMsgGCToGCStoreProcessCDKeyTransaction
-	(*CMsgGCToGCStoreProcessCDKeyTransactionResponse)(nil),                // 107: protocol.CMsgGCToGCStoreProcessCDKeyTransactionResponse
-	(*CMsgGCToGCStoreProcessSettlement)(nil),                              // 108: protocol.CMsgGCToGCStoreProcessSettlement
-	(*CMsgGCToGCStoreProcessSettlementResponse)(nil),                      // 109: protocol.CMsgGCToGCStoreProcessSettlementResponse
-	(*CMsgGCToGCBroadcastConsoleCommand)(nil),                             // 110: protocol.CMsgGCToGCBroadcastConsoleCommand
-	(*CMsgGCToGCConsoleOutput)(nil),                                       // 111: protocol.CMsgGCToGCConsoleOutput
-	(*CMsgItemAges)(nil),                                                  // 112: protocol.CMsgItemAges
-	(*CMsgGCToGCInternalTestMsg)(nil),                                     // 113: protocol.CMsgGCToGCInternalTestMsg
-	(*CMsgGCToGCClientServerVersionsUpdated)(nil),                         // 114: protocol.CMsgGCToGCClientServerVersionsUpdated
-	(*CMsgGCToGCBroadcastMessageFromSub)(nil),                             // 115: protocol.CMsgGCToGCBroadcastMessageFromSub
-	(*CMsgGCToClientCurrencyPricePoints)(nil),                             // 116: protocol.CMsgGCToClientCurrencyPricePoints
-	(*CMsgBannedWordList)(nil),                                            // 117: protocol.CMsgBannedWordList
-	(*CMsgGCToGCFlushSteamInventoryCache)(nil),                            // 118: protocol.CMsgGCToGCFlushSteamInventoryCache
-	(*CMsgGCToGCUpdateSubscriptionItems)(nil),                             // 119: protocol.CMsgGCToGCUpdateSubscriptionItems
-	(*CMsgGCToGCSelfPing)(nil),                                            // 120: protocol.CMsgGCToGCSelfPing
-	(*CMsgGCToGCGetInfuxIntervalStats)(nil),                               // 121: protocol.CMsgGCToGCGetInfuxIntervalStats
-	(*CMsgGCToGCGetInfuxIntervalStatsResponse)(nil),                       // 122: protocol.CMsgGCToGCGetInfuxIntervalStatsResponse
-	(*CMsgGCToGCPurchaseSucceeded)(nil),                                   // 123: protocol.CMsgGCToGCPurchaseSucceeded
-	(*CMsgClientToGCGetLimitedItemPurchaseQuantity)(nil),                  // 124: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantity
-	(*CMsgClientToGCGetLimitedItemPurchaseQuantityResponse)(nil),          // 125: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse
-	(*CMsgClientToGCGetInFlightItemCharges)(nil),                          // 126: protocol.CMsgClientToGCGetInFlightItemCharges
-	(*CMsgClientToGCGetInFlightItemChargesResponse)(nil),                  // 127: protocol.CMsgClientToGCGetInFlightItemChargesResponse
-	(*CMsgClientToGCPurchaseChargeCostItems)(nil),                         // 128: protocol.CMsgClientToGCPurchaseChargeCostItems
-	(*CMsgClientToGCPurchaseChargeCostItemsResponse)(nil),                 // 129: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse
-	(*CMsgGCToClientInFlightChargesUpdated)(nil),                          // 130: protocol.CMsgGCToClientInFlightChargesUpdated
-	(*CMsgClientToGCCancelUnfinalizedTransactions)(nil),                   // 131: protocol.CMsgClientToGCCancelUnfinalizedTransactions
-	(*CMsgClientToGCCancelUnfinalizedTransactionsResponse)(nil),           // 132: protocol.CMsgClientToGCCancelUnfinalizedTransactionsResponse
-	(*CMsgGCToGCUpdateWelcomeMsg)(nil),                                    // 133: protocol.CMsgGCToGCUpdateWelcomeMsg
-	(*CMsgClientToGCRecycleMultipleItems)(nil),                            // 134: protocol.CMsgClientToGCRecycleMultipleItems
-	(*CMsgClientToGCRecycleMultipleItemsResponse)(nil),                    // 135: protocol.CMsgClientToGCRecycleMultipleItemsResponse
-	(*CMsgEconPlayerStrangeCountAdjustment_CStrangeCountAdjustment)(nil),  // 136: protocol.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
-	(*CMsgGCRequestStoreSalesDataResponse_Price)(nil),                     // 137: protocol.CMsgGCRequestStoreSalesDataResponse.Price
-	(*CMsgLookupMultipleAccountNamesResponse_Account)(nil),                // 138: protocol.CMsgLookupMultipleAccountNamesResponse.Account
-	(*CMsgGCToGCGrantAccountRolledItems_Item)(nil),                        // 139: protocol.CMsgGCToGCGrantAccountRolledItems.Item
-	(*CMsgGCToGCGrantAccountRolledItems_Item_DynamicAttribute)(nil),       // 140: protocol.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
-	(*CMsgGCToGCGrantAccountRolledItems_Item_AdditionalAuditEntry)(nil),   // 141: protocol.CMsgGCToGCGrantAccountRolledItems.Item.AdditionalAuditEntry
-	(*CMsgClientToGCGetGiftPermissionsResponse_FriendPermission)(nil),     // 142: protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
-	(*CMsgClientToGCUnlockCrateResponse_Item)(nil),                        // 143: protocol.CMsgClientToGCUnlockCrateResponse.Item
-	(*CWorkshop_GetItemDailyRevenue_Response_CountryDailyRevenue)(nil),    // 144: protocol.CWorkshop_GetItemDailyRevenue_Response.CountryDailyRevenue
-	(*CWorkshop_GetPackageDailyRevenue_Response_CountryDailyRevenue)(nil), // 145: protocol.CWorkshop_GetPackageDailyRevenue_Response.CountryDailyRevenue
-	(*CMsgClientToGCCreateStaticRecipe_Item)(nil),                         // 146: protocol.CMsgClientToGCCreateStaticRecipe.Item
-	(*CMsgClientToGCCreateStaticRecipeResponse_OutputItem)(nil),           // 147: protocol.CMsgClientToGCCreateStaticRecipeResponse.OutputItem
-	(*CMsgClientToGCCreateStaticRecipeResponse_InputError)(nil),           // 148: protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError
-	(*CMsgClientToGCCreateStaticRecipeResponse_AdditionalOutput)(nil),     // 149: protocol.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
-	(*CMsgProcessTransactionOrder_Item)(nil),                              // 150: protocol.CMsgProcessTransactionOrder.Item
-	(*CMsgGCToGCConsoleOutput_OutputLine)(nil),                            // 151: protocol.CMsgGCToGCConsoleOutput.OutputLine
-	(*CMsgItemAges_MaxItemIDTimestamp)(nil),                               // 152: protocol.CMsgItemAges.MaxItemIDTimestamp
-	(*CMsgGCToClientCurrencyPricePoints_Currency)(nil),                    // 153: protocol.CMsgGCToClientCurrencyPricePoints.Currency
-	(*CMsgGCToGCFlushSteamInventoryCache_Key)(nil),                        // 154: protocol.CMsgGCToGCFlushSteamInventoryCache.Key
-	(*CMsgClientToGCPurchaseChargeCostItems_Item)(nil),                    // 155: protocol.CMsgClientToGCPurchaseChargeCostItems.Item
-	(*CMsgGCToClientInFlightChargesUpdated_ItemCharges)(nil),              // 156: protocol.CMsgGCToClientInFlightChargesUpdated.ItemCharges
-	(*CMsgClientToGCRecycleMultipleItems_Item)(nil),                       // 157: protocol.CMsgClientToGCRecycleMultipleItems.Item
-	(*CSOEconItem)(nil),                                                   // 158: protocol.CSOEconItem
-	(EGCMsgResponse)(0),                                                   // 159: protocol.EGCMsgResponse
-	(*CExtraMsgBlock)(nil),                                                // 160: protocol.CExtraMsgBlock
+	(CMsgDevNewItemRequestResponse_EResponse)(0),                          // 5: protocol.CMsgDevNewItemRequestResponse.EResponse
+	(CMsgClientToGCUnpackBundleResponse_EUnpackBundle)(0),                 // 6: protocol.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
+	(CMsgClientToGCPackBundleResponse_EPackBundle)(0),                     // 7: protocol.CMsgClientToGCPackBundleResponse.EPackBundle
+	(CMsgClientToGCSetItemStyleResponse_ESetStyle)(0),                     // 8: protocol.CMsgClientToGCSetItemStyleResponse.ESetStyle
+	(CMsgClientToGCUnlockItemStyleResponse_EUnlockStyle)(0),               // 9: protocol.CMsgClientToGCUnlockItemStyleResponse.EUnlockStyle
+	(CMsgClientToGCRemoveItemAttributeResponse_ERemoveItemAttribute)(0),   // 10: protocol.CMsgClientToGCRemoveItemAttributeResponse.ERemoveItemAttribute
+	(CMsgClientToGCNameItemResponse_ENameItem)(0),                         // 11: protocol.CMsgClientToGCNameItemResponse.ENameItem
+	(CMsgClientToGCCreateStaticRecipeResponse_EResponse)(0),               // 12: protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
+	(CMsgClientToGCGetLimitedItemPurchaseQuantityResponse_EResponse)(0),   // 13: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.EResponse
+	(CMsgClientToGCGetInFlightItemChargesResponse_EResponse)(0),           // 14: protocol.CMsgClientToGCGetInFlightItemChargesResponse.EResponse
+	(CMsgClientToGCPurchaseChargeCostItemsResponse_EResponse)(0),          // 15: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
+	(*CMsgApplyAutograph)(nil),                                            // 16: protocol.CMsgApplyAutograph
+	(*CMsgAdjustItemEquippedState)(nil),                                   // 17: protocol.CMsgAdjustItemEquippedState
+	(*CMsgEconPlayerStrangeCountAdjustment)(nil),                          // 18: protocol.CMsgEconPlayerStrangeCountAdjustment
+	(*CMsgCraftingResponse)(nil),                                          // 19: protocol.CMsgCraftingResponse
+	(*CMsgGCRequestStoreSalesData)(nil),                                   // 20: protocol.CMsgGCRequestStoreSalesData
+	(*CMsgGCRequestStoreSalesDataResponse)(nil),                           // 21: protocol.CMsgGCRequestStoreSalesDataResponse
+	(*CMsgGCRequestStoreSalesDataUpToDateResponse)(nil),                   // 22: protocol.CMsgGCRequestStoreSalesDataUpToDateResponse
+	(*CMsgGCToGCPingRequest)(nil),                                         // 23: protocol.CMsgGCToGCPingRequest
+	(*CMsgGCToGCPingResponse)(nil),                                        // 24: protocol.CMsgGCToGCPingResponse
+	(*CMsgGCToGCGetUserSessionServer)(nil),                                // 25: protocol.CMsgGCToGCGetUserSessionServer
+	(*CMsgGCToGCGetUserSessionServerResponse)(nil),                        // 26: protocol.CMsgGCToGCGetUserSessionServerResponse
+	(*CMsgGCToGCGetUserServerMembers)(nil),                                // 27: protocol.CMsgGCToGCGetUserServerMembers
+	(*CMsgGCToGCGetUserServerMembersResponse)(nil),                        // 28: protocol.CMsgGCToGCGetUserServerMembersResponse
+	(*CMsgLookupMultipleAccountNames)(nil),                                // 29: protocol.CMsgLookupMultipleAccountNames
+	(*CMsgLookupMultipleAccountNamesResponse)(nil),                        // 30: protocol.CMsgLookupMultipleAccountNamesResponse
+	(*CMsgRequestCrateItems)(nil),                                         // 31: protocol.CMsgRequestCrateItems
+	(*CMsgRequestCrateItemsResponse)(nil),                                 // 32: protocol.CMsgRequestCrateItemsResponse
+	(*CMsgRequestCrateEscalationLevel)(nil),                               // 33: protocol.CMsgRequestCrateEscalationLevel
+	(*CMsgRequestCrateEscalationLevelResponse)(nil),                       // 34: protocol.CMsgRequestCrateEscalationLevelResponse
+	(*CMsgGCToGCCanUseDropRateBonus)(nil),                                 // 35: protocol.CMsgGCToGCCanUseDropRateBonus
+	(*CMsgSQLAddDropRateBonus)(nil),                                       // 36: protocol.CMsgSQLAddDropRateBonus
+	(*CMsgSQLUpgradeBattleBooster)(nil),                                   // 37: protocol.CMsgSQLUpgradeBattleBooster
+	(*CMsgGCToGCRefreshSOCache)(nil),                                      // 38: protocol.CMsgGCToGCRefreshSOCache
+	(*CMsgGCToGCAddSubscriptionTime)(nil),                                 // 39: protocol.CMsgGCToGCAddSubscriptionTime
+	(*CMsgGCToGCGrantAccountRolledItems)(nil),                             // 40: protocol.CMsgGCToGCGrantAccountRolledItems
+	(*CMsgGCToGCBetaDeleteItems)(nil),                                     // 41: protocol.CMsgGCToGCBetaDeleteItems
+	(*CMsgGCToGCGrantSelfMadeItemToAccount)(nil),                          // 42: protocol.CMsgGCToGCGrantSelfMadeItemToAccount
+	(*CMsgGCToGCUnlockCrate)(nil),                                         // 43: protocol.CMsgGCToGCUnlockCrate
+	(*CMsgUseItem)(nil),                                                   // 44: protocol.CMsgUseItem
+	(*CMsgServerUseItem)(nil),                                             // 45: protocol.CMsgServerUseItem
+	(*CMsgUseMultipleItems)(nil),                                          // 46: protocol.CMsgUseMultipleItems
+	(*CGCStoreRechargeRedirect_LineItem)(nil),                             // 47: protocol.CGCStoreRechargeRedirect_LineItem
+	(*CMsgGCEconSQLWorkItemEmbeddedRollbackData)(nil),                     // 48: protocol.CMsgGCEconSQLWorkItemEmbeddedRollbackData
+	(*CMsgCraftStatue)(nil),                                               // 49: protocol.CMsgCraftStatue
+	(*CMsgRedeemCode)(nil),                                                // 50: protocol.CMsgRedeemCode
+	(*CMsgRedeemCodeResponse)(nil),                                        // 51: protocol.CMsgRedeemCodeResponse
+	(*CMsgDevNewItemRequest)(nil),                                         // 52: protocol.CMsgDevNewItemRequest
+	(*CMsgDevNewItemRequestResponse)(nil),                                 // 53: protocol.CMsgDevNewItemRequestResponse
+	(*CMsgDevUnlockAllItemStyles)(nil),                                    // 54: protocol.CMsgDevUnlockAllItemStyles
+	(*CMsgDevUnlockAllItemStylesResponse)(nil),                            // 55: protocol.CMsgDevUnlockAllItemStylesResponse
+	(*CMsgGCGetAccountSubscriptionItem)(nil),                              // 56: protocol.CMsgGCGetAccountSubscriptionItem
+	(*CMsgGCGetAccountSubscriptionItemResponse)(nil),                      // 57: protocol.CMsgGCGetAccountSubscriptionItemResponse
+	(*CMsgGCAddGiftItem)(nil),                                             // 58: protocol.CMsgGCAddGiftItem
+	(*CMsgClientToGCWrapAndDeliverGift)(nil),                              // 59: protocol.CMsgClientToGCWrapAndDeliverGift
+	(*CMsgSQLGCToGCRevokeUntrustedGift)(nil),                              // 60: protocol.CMsgSQLGCToGCRevokeUntrustedGift
+	(*CMsgClientToGCWrapAndDeliverGiftResponse)(nil),                      // 61: protocol.CMsgClientToGCWrapAndDeliverGiftResponse
+	(*CMsgClientToGCUnwrapGift)(nil),                                      // 62: protocol.CMsgClientToGCUnwrapGift
+	(*CMsgClientToGCGetGiftPermissions)(nil),                              // 63: protocol.CMsgClientToGCGetGiftPermissions
+	(*CMsgClientToGCGetGiftPermissionsResponse)(nil),                      // 64: protocol.CMsgClientToGCGetGiftPermissionsResponse
+	(*CMsgClientToGCUnpackBundle)(nil),                                    // 65: protocol.CMsgClientToGCUnpackBundle
+	(*CMsgClientToGCUnpackBundleResponse)(nil),                            // 66: protocol.CMsgClientToGCUnpackBundleResponse
+	(*CMsgClientToGCPackBundle)(nil),                                      // 67: protocol.CMsgClientToGCPackBundle
+	(*CMsgClientToGCPackBundleResponse)(nil),                              // 68: protocol.CMsgClientToGCPackBundleResponse
+	(*CMsgGCToClientStoreTransactionCompleted)(nil),                       // 69: protocol.CMsgGCToClientStoreTransactionCompleted
+	(*CMsgClientToGCEquipItems)(nil),                                      // 70: protocol.CMsgClientToGCEquipItems
+	(*CMsgClientToGCEquipItemsResponse)(nil),                              // 71: protocol.CMsgClientToGCEquipItemsResponse
+	(*CMsgClientToGCSetItemStyle)(nil),                                    // 72: protocol.CMsgClientToGCSetItemStyle
+	(*CMsgClientToGCSetItemStyleResponse)(nil),                            // 73: protocol.CMsgClientToGCSetItemStyleResponse
+	(*CMsgClientToGCUnlockItemStyle)(nil),                                 // 74: protocol.CMsgClientToGCUnlockItemStyle
+	(*CMsgClientToGCUnlockItemStyleResponse)(nil),                         // 75: protocol.CMsgClientToGCUnlockItemStyleResponse
+	(*CMsgClientToGCSetItemInventoryCategory)(nil),                        // 76: protocol.CMsgClientToGCSetItemInventoryCategory
+	(*CMsgClientToGCUnlockCrate)(nil),                                     // 77: protocol.CMsgClientToGCUnlockCrate
+	(*CMsgClientToGCUnlockCrateResponse)(nil),                             // 78: protocol.CMsgClientToGCUnlockCrateResponse
+	(*CMsgClientToGCRemoveItemAttribute)(nil),                             // 79: protocol.CMsgClientToGCRemoveItemAttribute
+	(*CMsgClientToGCRemoveItemAttributeResponse)(nil),                     // 80: protocol.CMsgClientToGCRemoveItemAttributeResponse
+	(*CMsgClientToGCNameItem)(nil),                                        // 81: protocol.CMsgClientToGCNameItem
+	(*CMsgClientToGCNameItemResponse)(nil),                                // 82: protocol.CMsgClientToGCNameItemResponse
+	(*CMsgGCSetItemPosition)(nil),                                         // 83: protocol.CMsgGCSetItemPosition
+	(*CAttribute_ItemDynamicRecipeComponent)(nil),                         // 84: protocol.CAttribute_ItemDynamicRecipeComponent
+	(*CProtoItemSocket)(nil),                                              // 85: protocol.CProtoItemSocket
+	(*CProtoItemSocket_Empty)(nil),                                        // 86: protocol.CProtoItemSocket_Empty
+	(*CProtoItemSocket_Effect)(nil),                                       // 87: protocol.CProtoItemSocket_Effect
+	(*CProtoItemSocket_Color)(nil),                                        // 88: protocol.CProtoItemSocket_Color
+	(*CProtoItemSocket_Strange)(nil),                                      // 89: protocol.CProtoItemSocket_Strange
+	(*CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY)(nil),         // 90: protocol.CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY
+	(*CProtoItemSocket_Spectator)(nil),                                    // 91: protocol.CProtoItemSocket_Spectator
+	(*CProtoItemSocket_AssetModifier)(nil),                                // 92: protocol.CProtoItemSocket_AssetModifier
+	(*CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY)(nil),   // 93: protocol.CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY
+	(*CProtoItemSocket_Autograph)(nil),                                    // 94: protocol.CProtoItemSocket_Autograph
+	(*CProtoItemSocket_StaticVisuals)(nil),                                // 95: protocol.CProtoItemSocket_StaticVisuals
+	(*CAttribute_String)(nil),                                             // 96: protocol.CAttribute_String
+	(*CWorkshop_GetItemDailyRevenue_Request)(nil),                         // 97: protocol.CWorkshop_GetItemDailyRevenue_Request
+	(*CWorkshop_GetItemDailyRevenue_Response)(nil),                        // 98: protocol.CWorkshop_GetItemDailyRevenue_Response
+	(*CWorkshop_GetPackageDailyRevenue_Request)(nil),                      // 99: protocol.CWorkshop_GetPackageDailyRevenue_Request
+	(*CWorkshop_GetPackageDailyRevenue_Response)(nil),                     // 100: protocol.CWorkshop_GetPackageDailyRevenue_Response
+	(*CMsgSQLGCToGCGrantBackpackSlots)(nil),                               // 101: protocol.CMsgSQLGCToGCGrantBackpackSlots
+	(*CMsgClientToGCLookupAccountName)(nil),                               // 102: protocol.CMsgClientToGCLookupAccountName
+	(*CMsgClientToGCLookupAccountNameResponse)(nil),                       // 103: protocol.CMsgClientToGCLookupAccountNameResponse
+	(*CMsgClientToGCCreateStaticRecipe)(nil),                              // 104: protocol.CMsgClientToGCCreateStaticRecipe
+	(*CMsgClientToGCCreateStaticRecipeResponse)(nil),                      // 105: protocol.CMsgClientToGCCreateStaticRecipeResponse
+	(*CMsgProcessTransactionOrder)(nil),                                   // 106: protocol.CMsgProcessTransactionOrder
+	(*CMsgGCToGCStoreProcessCDKeyTransaction)(nil),                        // 107: protocol.CMsgGCToGCStoreProcessCDKeyTransaction
+	(*CMsgGCToGCStoreProcessCDKeyTransactionResponse)(nil),                // 108: protocol.CMsgGCToGCStoreProcessCDKeyTransactionResponse
+	(*CMsgGCToGCStoreProcessSettlement)(nil),                              // 109: protocol.CMsgGCToGCStoreProcessSettlement
+	(*CMsgGCToGCStoreProcessSettlementResponse)(nil),                      // 110: protocol.CMsgGCToGCStoreProcessSettlementResponse
+	(*CMsgGCToGCBroadcastConsoleCommand)(nil),                             // 111: protocol.CMsgGCToGCBroadcastConsoleCommand
+	(*CMsgGCToGCConsoleOutput)(nil),                                       // 112: protocol.CMsgGCToGCConsoleOutput
+	(*CMsgItemAges)(nil),                                                  // 113: protocol.CMsgItemAges
+	(*CMsgGCToGCInternalTestMsg)(nil),                                     // 114: protocol.CMsgGCToGCInternalTestMsg
+	(*CMsgGCToGCClientServerVersionsUpdated)(nil),                         // 115: protocol.CMsgGCToGCClientServerVersionsUpdated
+	(*CMsgGCToGCBroadcastMessageFromSub)(nil),                             // 116: protocol.CMsgGCToGCBroadcastMessageFromSub
+	(*CMsgGCToClientCurrencyPricePoints)(nil),                             // 117: protocol.CMsgGCToClientCurrencyPricePoints
+	(*CMsgBannedWordList)(nil),                                            // 118: protocol.CMsgBannedWordList
+	(*CMsgGCToGCFlushSteamInventoryCache)(nil),                            // 119: protocol.CMsgGCToGCFlushSteamInventoryCache
+	(*CMsgGCToGCUpdateSubscriptionItems)(nil),                             // 120: protocol.CMsgGCToGCUpdateSubscriptionItems
+	(*CMsgGCToGCSelfPing)(nil),                                            // 121: protocol.CMsgGCToGCSelfPing
+	(*CMsgGCToGCGetInfuxIntervalStats)(nil),                               // 122: protocol.CMsgGCToGCGetInfuxIntervalStats
+	(*CMsgGCToGCGetInfuxIntervalStatsResponse)(nil),                       // 123: protocol.CMsgGCToGCGetInfuxIntervalStatsResponse
+	(*CMsgGCToGCPurchaseSucceeded)(nil),                                   // 124: protocol.CMsgGCToGCPurchaseSucceeded
+	(*CMsgClientToGCGetLimitedItemPurchaseQuantity)(nil),                  // 125: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantity
+	(*CMsgClientToGCGetLimitedItemPurchaseQuantityResponse)(nil),          // 126: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse
+	(*CMsgClientToGCGetInFlightItemCharges)(nil),                          // 127: protocol.CMsgClientToGCGetInFlightItemCharges
+	(*CMsgClientToGCGetInFlightItemChargesResponse)(nil),                  // 128: protocol.CMsgClientToGCGetInFlightItemChargesResponse
+	(*CMsgClientToGCPurchaseChargeCostItems)(nil),                         // 129: protocol.CMsgClientToGCPurchaseChargeCostItems
+	(*CMsgClientToGCPurchaseChargeCostItemsResponse)(nil),                 // 130: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse
+	(*CMsgGCToClientInFlightChargesUpdated)(nil),                          // 131: protocol.CMsgGCToClientInFlightChargesUpdated
+	(*CMsgClientToGCCancelUnfinalizedTransactions)(nil),                   // 132: protocol.CMsgClientToGCCancelUnfinalizedTransactions
+	(*CMsgClientToGCCancelUnfinalizedTransactionsResponse)(nil),           // 133: protocol.CMsgClientToGCCancelUnfinalizedTransactionsResponse
+	(*CMsgGCToGCUpdateWelcomeMsg)(nil),                                    // 134: protocol.CMsgGCToGCUpdateWelcomeMsg
+	(*CMsgClientToGCRecycleMultipleItems)(nil),                            // 135: protocol.CMsgClientToGCRecycleMultipleItems
+	(*CMsgClientToGCRecycleMultipleItemsResponse)(nil),                    // 136: protocol.CMsgClientToGCRecycleMultipleItemsResponse
+	(*CMsgEconPlayerStrangeCountAdjustment_CStrangeCountAdjustment)(nil),  // 137: protocol.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
+	(*CMsgGCRequestStoreSalesDataResponse_Price)(nil),                     // 138: protocol.CMsgGCRequestStoreSalesDataResponse.Price
+	(*CMsgLookupMultipleAccountNamesResponse_Account)(nil),                // 139: protocol.CMsgLookupMultipleAccountNamesResponse.Account
+	(*CMsgGCToGCGrantAccountRolledItems_Item)(nil),                        // 140: protocol.CMsgGCToGCGrantAccountRolledItems.Item
+	(*CMsgGCToGCGrantAccountRolledItems_Item_DynamicAttribute)(nil),       // 141: protocol.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
+	(*CMsgGCToGCGrantAccountRolledItems_Item_AdditionalAuditEntry)(nil),   // 142: protocol.CMsgGCToGCGrantAccountRolledItems.Item.AdditionalAuditEntry
+	(*CMsgClientToGCGetGiftPermissionsResponse_FriendPermission)(nil),     // 143: protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
+	(*CMsgClientToGCUnlockCrateResponse_Item)(nil),                        // 144: protocol.CMsgClientToGCUnlockCrateResponse.Item
+	(*CWorkshop_GetItemDailyRevenue_Response_CountryDailyRevenue)(nil),    // 145: protocol.CWorkshop_GetItemDailyRevenue_Response.CountryDailyRevenue
+	(*CWorkshop_GetPackageDailyRevenue_Response_CountryDailyRevenue)(nil), // 146: protocol.CWorkshop_GetPackageDailyRevenue_Response.CountryDailyRevenue
+	(*CMsgClientToGCCreateStaticRecipe_Item)(nil),                         // 147: protocol.CMsgClientToGCCreateStaticRecipe.Item
+	(*CMsgClientToGCCreateStaticRecipeResponse_OutputItem)(nil),           // 148: protocol.CMsgClientToGCCreateStaticRecipeResponse.OutputItem
+	(*CMsgClientToGCCreateStaticRecipeResponse_InputError)(nil),           // 149: protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError
+	(*CMsgClientToGCCreateStaticRecipeResponse_AdditionalOutput)(nil),     // 150: protocol.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
+	(*CMsgProcessTransactionOrder_Item)(nil),                              // 151: protocol.CMsgProcessTransactionOrder.Item
+	(*CMsgGCToGCConsoleOutput_OutputLine)(nil),                            // 152: protocol.CMsgGCToGCConsoleOutput.OutputLine
+	(*CMsgItemAges_MaxItemIDTimestamp)(nil),                               // 153: protocol.CMsgItemAges.MaxItemIDTimestamp
+	(*CMsgGCToClientCurrencyPricePoints_Currency)(nil),                    // 154: protocol.CMsgGCToClientCurrencyPricePoints.Currency
+	(*CMsgGCToGCFlushSteamInventoryCache_Key)(nil),                        // 155: protocol.CMsgGCToGCFlushSteamInventoryCache.Key
+	(*CMsgClientToGCPurchaseChargeCostItems_Item)(nil),                    // 156: protocol.CMsgClientToGCPurchaseChargeCostItems.Item
+	(*CMsgGCToClientInFlightChargesUpdated_ItemCharges)(nil),              // 157: protocol.CMsgGCToClientInFlightChargesUpdated.ItemCharges
+	(*CMsgClientToGCRecycleMultipleItems_Item)(nil),                       // 158: protocol.CMsgClientToGCRecycleMultipleItems.Item
+	(*CSOEconItem)(nil),                                                   // 159: protocol.CSOEconItem
+	(EGCMsgResponse)(0),                                                   // 160: protocol.EGCMsgResponse
+	(*CExtraMsgBlock)(nil),                                                // 161: protocol.CExtraMsgBlock
 }
 var file_econ_gcmessages_proto_depIdxs = []int32{
-	136, // 0: protocol.CMsgEconPlayerStrangeCountAdjustment.strange_count_adjustments:type_name -> protocol.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
-	137, // 1: protocol.CMsgGCRequestStoreSalesDataResponse.sale_price:type_name -> protocol.CMsgGCRequestStoreSalesDataResponse.Price
-	138, // 2: protocol.CMsgLookupMultipleAccountNamesResponse.accounts:type_name -> protocol.CMsgLookupMultipleAccountNamesResponse.Account
-	158, // 3: protocol.CMsgRequestCrateItemsResponse.peek_items:type_name -> protocol.CSOEconItem
-	139, // 4: protocol.CMsgGCToGCGrantAccountRolledItems.items:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item
-	43,  // 5: protocol.CMsgServerUseItem.use_item_msg:type_name -> protocol.CMsgUseItem
-	158, // 6: protocol.CMsgGCAddGiftItem.wrapped_item:type_name -> protocol.CSOEconItem
-	159, // 7: protocol.CMsgClientToGCWrapAndDeliverGiftResponse.response:type_name -> protocol.EGCMsgResponse
-	1,   // 8: protocol.CMsgClientToGCWrapAndDeliverGiftResponse.trade_restriction:type_name -> protocol.EGCMsgInitiateTradeResponse
-	1,   // 9: protocol.CMsgClientToGCGetGiftPermissionsResponse.sender_permission:type_name -> protocol.EGCMsgInitiateTradeResponse
-	142, // 10: protocol.CMsgClientToGCGetGiftPermissionsResponse.friend_permissions:type_name -> protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
-	5,   // 11: protocol.CMsgClientToGCUnpackBundleResponse.response:type_name -> protocol.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
-	6,   // 12: protocol.CMsgClientToGCPackBundleResponse.response:type_name -> protocol.CMsgClientToGCPackBundleResponse.EPackBundle
-	16,  // 13: protocol.CMsgClientToGCEquipItems.equips:type_name -> protocol.CMsgAdjustItemEquippedState
-	7,   // 14: protocol.CMsgClientToGCSetItemStyleResponse.response:type_name -> protocol.CMsgClientToGCSetItemStyleResponse.ESetStyle
-	8,   // 15: protocol.CMsgClientToGCUnlockItemStyleResponse.response:type_name -> protocol.CMsgClientToGCUnlockItemStyleResponse.EUnlockStyle
-	159, // 16: protocol.CMsgClientToGCUnlockCrateResponse.result:type_name -> protocol.EGCMsgResponse
-	143, // 17: protocol.CMsgClientToGCUnlockCrateResponse.granted_items:type_name -> protocol.CMsgClientToGCUnlockCrateResponse.Item
-	9,   // 18: protocol.CMsgClientToGCRemoveItemAttributeResponse.response:type_name -> protocol.CMsgClientToGCRemoveItemAttributeResponse.ERemoveItemAttribute
-	10,  // 19: protocol.CMsgClientToGCNameItemResponse.response:type_name -> protocol.CMsgClientToGCNameItemResponse.ENameItem
-	84,  // 20: protocol.CProtoItemSocket_Empty.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 21: protocol.CProtoItemSocket_Effect.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 22: protocol.CProtoItemSocket_Color.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 23: protocol.CProtoItemSocket_Strange.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 24: protocol.CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 25: protocol.CProtoItemSocket_Spectator.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 26: protocol.CProtoItemSocket_AssetModifier.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 27: protocol.CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 28: protocol.CProtoItemSocket_Autograph.socket:type_name -> protocol.CProtoItemSocket
-	84,  // 29: protocol.CProtoItemSocket_StaticVisuals.socket:type_name -> protocol.CProtoItemSocket
-	144, // 30: protocol.CWorkshop_GetItemDailyRevenue_Response.country_revenue:type_name -> protocol.CWorkshop_GetItemDailyRevenue_Response.CountryDailyRevenue
-	145, // 31: protocol.CWorkshop_GetPackageDailyRevenue_Response.country_revenue:type_name -> protocol.CWorkshop_GetPackageDailyRevenue_Response.CountryDailyRevenue
-	146, // 32: protocol.CMsgClientToGCCreateStaticRecipe.items:type_name -> protocol.CMsgClientToGCCreateStaticRecipe.Item
-	11,  // 33: protocol.CMsgClientToGCCreateStaticRecipeResponse.response:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
-	147, // 34: protocol.CMsgClientToGCCreateStaticRecipeResponse.output_items:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.OutputItem
-	148, // 35: protocol.CMsgClientToGCCreateStaticRecipeResponse.input_errors:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError
-	149, // 36: protocol.CMsgClientToGCCreateStaticRecipeResponse.additional_outputs:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
-	150, // 37: protocol.CMsgProcessTransactionOrder.items:type_name -> protocol.CMsgProcessTransactionOrder.Item
-	105, // 38: protocol.CMsgGCToGCStoreProcessCDKeyTransaction.order:type_name -> protocol.CMsgProcessTransactionOrder
-	105, // 39: protocol.CMsgGCToGCStoreProcessSettlement.order:type_name -> protocol.CMsgProcessTransactionOrder
-	151, // 40: protocol.CMsgGCToGCConsoleOutput.msgs:type_name -> protocol.CMsgGCToGCConsoleOutput.OutputLine
-	152, // 41: protocol.CMsgItemAges.max_item_id_timestamps:type_name -> protocol.CMsgItemAges.MaxItemIDTimestamp
-	153, // 42: protocol.CMsgGCToClientCurrencyPricePoints.currencies:type_name -> protocol.CMsgGCToClientCurrencyPricePoints.Currency
-	154, // 43: protocol.CMsgGCToGCFlushSteamInventoryCache.keys:type_name -> protocol.CMsgGCToGCFlushSteamInventoryCache.Key
-	12,  // 44: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.result:type_name -> protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.EResponse
-	13,  // 45: protocol.CMsgClientToGCGetInFlightItemChargesResponse.result:type_name -> protocol.CMsgClientToGCGetInFlightItemChargesResponse.EResponse
-	155, // 46: protocol.CMsgClientToGCPurchaseChargeCostItems.items:type_name -> protocol.CMsgClientToGCPurchaseChargeCostItems.Item
-	14,  // 47: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.result:type_name -> protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
-	156, // 48: protocol.CMsgGCToClientInFlightChargesUpdated.in_flight_charges:type_name -> protocol.CMsgGCToClientInFlightChargesUpdated.ItemCharges
-	160, // 49: protocol.CMsgGCToGCUpdateWelcomeMsg.new_msg:type_name -> protocol.CExtraMsgBlock
-	157, // 50: protocol.CMsgClientToGCRecycleMultipleItems.items:type_name -> protocol.CMsgClientToGCRecycleMultipleItems.Item
-	104, // 51: protocol.CMsgClientToGCRecycleMultipleItemsResponse.responses:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse
-	140, // 52: protocol.CMsgGCToGCGrantAccountRolledItems.Item.dynamic_attributes:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
-	141, // 53: protocol.CMsgGCToGCGrantAccountRolledItems.Item.additional_audit_entries:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item.AdditionalAuditEntry
-	1,   // 54: protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission.permission:type_name -> protocol.EGCMsgInitiateTradeResponse
-	11,  // 55: protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError.error:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
-	56,  // [56:56] is the sub-list for method output_type
-	56,  // [56:56] is the sub-list for method input_type
-	56,  // [56:56] is the sub-list for extension type_name
-	56,  // [56:56] is the sub-list for extension extendee
-	0,   // [0:56] is the sub-list for field type_name
+	137, // 0: protocol.CMsgEconPlayerStrangeCountAdjustment.strange_count_adjustments:type_name -> protocol.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
+	138, // 1: protocol.CMsgGCRequestStoreSalesDataResponse.sale_price:type_name -> protocol.CMsgGCRequestStoreSalesDataResponse.Price
+	139, // 2: protocol.CMsgLookupMultipleAccountNamesResponse.accounts:type_name -> protocol.CMsgLookupMultipleAccountNamesResponse.Account
+	159, // 3: protocol.CMsgRequestCrateItemsResponse.peek_items:type_name -> protocol.CSOEconItem
+	140, // 4: protocol.CMsgGCToGCGrantAccountRolledItems.items:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item
+	44,  // 5: protocol.CMsgServerUseItem.use_item_msg:type_name -> protocol.CMsgUseItem
+	5,   // 6: protocol.CMsgDevNewItemRequestResponse.result:type_name -> protocol.CMsgDevNewItemRequestResponse.EResponse
+	159, // 7: protocol.CMsgGCAddGiftItem.wrapped_item:type_name -> protocol.CSOEconItem
+	160, // 8: protocol.CMsgClientToGCWrapAndDeliverGiftResponse.response:type_name -> protocol.EGCMsgResponse
+	1,   // 9: protocol.CMsgClientToGCWrapAndDeliverGiftResponse.trade_restriction:type_name -> protocol.EGCMsgInitiateTradeResponse
+	1,   // 10: protocol.CMsgClientToGCGetGiftPermissionsResponse.sender_permission:type_name -> protocol.EGCMsgInitiateTradeResponse
+	143, // 11: protocol.CMsgClientToGCGetGiftPermissionsResponse.friend_permissions:type_name -> protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
+	6,   // 12: protocol.CMsgClientToGCUnpackBundleResponse.response:type_name -> protocol.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
+	7,   // 13: protocol.CMsgClientToGCPackBundleResponse.response:type_name -> protocol.CMsgClientToGCPackBundleResponse.EPackBundle
+	17,  // 14: protocol.CMsgClientToGCEquipItems.equips:type_name -> protocol.CMsgAdjustItemEquippedState
+	8,   // 15: protocol.CMsgClientToGCSetItemStyleResponse.response:type_name -> protocol.CMsgClientToGCSetItemStyleResponse.ESetStyle
+	9,   // 16: protocol.CMsgClientToGCUnlockItemStyleResponse.response:type_name -> protocol.CMsgClientToGCUnlockItemStyleResponse.EUnlockStyle
+	160, // 17: protocol.CMsgClientToGCUnlockCrateResponse.result:type_name -> protocol.EGCMsgResponse
+	144, // 18: protocol.CMsgClientToGCUnlockCrateResponse.granted_items:type_name -> protocol.CMsgClientToGCUnlockCrateResponse.Item
+	10,  // 19: protocol.CMsgClientToGCRemoveItemAttributeResponse.response:type_name -> protocol.CMsgClientToGCRemoveItemAttributeResponse.ERemoveItemAttribute
+	11,  // 20: protocol.CMsgClientToGCNameItemResponse.response:type_name -> protocol.CMsgClientToGCNameItemResponse.ENameItem
+	85,  // 21: protocol.CProtoItemSocket_Empty.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 22: protocol.CProtoItemSocket_Effect.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 23: protocol.CProtoItemSocket_Color.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 24: protocol.CProtoItemSocket_Strange.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 25: protocol.CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 26: protocol.CProtoItemSocket_Spectator.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 27: protocol.CProtoItemSocket_AssetModifier.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 28: protocol.CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 29: protocol.CProtoItemSocket_Autograph.socket:type_name -> protocol.CProtoItemSocket
+	85,  // 30: protocol.CProtoItemSocket_StaticVisuals.socket:type_name -> protocol.CProtoItemSocket
+	145, // 31: protocol.CWorkshop_GetItemDailyRevenue_Response.country_revenue:type_name -> protocol.CWorkshop_GetItemDailyRevenue_Response.CountryDailyRevenue
+	146, // 32: protocol.CWorkshop_GetPackageDailyRevenue_Response.country_revenue:type_name -> protocol.CWorkshop_GetPackageDailyRevenue_Response.CountryDailyRevenue
+	147, // 33: protocol.CMsgClientToGCCreateStaticRecipe.items:type_name -> protocol.CMsgClientToGCCreateStaticRecipe.Item
+	12,  // 34: protocol.CMsgClientToGCCreateStaticRecipeResponse.response:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
+	148, // 35: protocol.CMsgClientToGCCreateStaticRecipeResponse.output_items:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.OutputItem
+	149, // 36: protocol.CMsgClientToGCCreateStaticRecipeResponse.input_errors:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError
+	150, // 37: protocol.CMsgClientToGCCreateStaticRecipeResponse.additional_outputs:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
+	151, // 38: protocol.CMsgProcessTransactionOrder.items:type_name -> protocol.CMsgProcessTransactionOrder.Item
+	106, // 39: protocol.CMsgGCToGCStoreProcessCDKeyTransaction.order:type_name -> protocol.CMsgProcessTransactionOrder
+	106, // 40: protocol.CMsgGCToGCStoreProcessSettlement.order:type_name -> protocol.CMsgProcessTransactionOrder
+	152, // 41: protocol.CMsgGCToGCConsoleOutput.msgs:type_name -> protocol.CMsgGCToGCConsoleOutput.OutputLine
+	153, // 42: protocol.CMsgItemAges.max_item_id_timestamps:type_name -> protocol.CMsgItemAges.MaxItemIDTimestamp
+	154, // 43: protocol.CMsgGCToClientCurrencyPricePoints.currencies:type_name -> protocol.CMsgGCToClientCurrencyPricePoints.Currency
+	155, // 44: protocol.CMsgGCToGCFlushSteamInventoryCache.keys:type_name -> protocol.CMsgGCToGCFlushSteamInventoryCache.Key
+	13,  // 45: protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.result:type_name -> protocol.CMsgClientToGCGetLimitedItemPurchaseQuantityResponse.EResponse
+	14,  // 46: protocol.CMsgClientToGCGetInFlightItemChargesResponse.result:type_name -> protocol.CMsgClientToGCGetInFlightItemChargesResponse.EResponse
+	156, // 47: protocol.CMsgClientToGCPurchaseChargeCostItems.items:type_name -> protocol.CMsgClientToGCPurchaseChargeCostItems.Item
+	15,  // 48: protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.result:type_name -> protocol.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
+	157, // 49: protocol.CMsgGCToClientInFlightChargesUpdated.in_flight_charges:type_name -> protocol.CMsgGCToClientInFlightChargesUpdated.ItemCharges
+	161, // 50: protocol.CMsgGCToGCUpdateWelcomeMsg.new_msg:type_name -> protocol.CExtraMsgBlock
+	158, // 51: protocol.CMsgClientToGCRecycleMultipleItems.items:type_name -> protocol.CMsgClientToGCRecycleMultipleItems.Item
+	105, // 52: protocol.CMsgClientToGCRecycleMultipleItemsResponse.responses:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse
+	141, // 53: protocol.CMsgGCToGCGrantAccountRolledItems.Item.dynamic_attributes:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
+	142, // 54: protocol.CMsgGCToGCGrantAccountRolledItems.Item.additional_audit_entries:type_name -> protocol.CMsgGCToGCGrantAccountRolledItems.Item.AdditionalAuditEntry
+	1,   // 55: protocol.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission.permission:type_name -> protocol.EGCMsgInitiateTradeResponse
+	12,  // 56: protocol.CMsgClientToGCCreateStaticRecipeResponse.InputError.error:type_name -> protocol.CMsgClientToGCCreateStaticRecipeResponse.EResponse
+	57,  // [57:57] is the sub-list for method output_type
+	57,  // [57:57] is the sub-list for method input_type
+	57,  // [57:57] is the sub-list for extension type_name
+	57,  // [57:57] is the sub-list for extension extendee
+	0,   // [0:57] is the sub-list for field type_name
 }
 
 func init() { file_econ_gcmessages_proto_init() }
@@ -10917,7 +11010,7 @@ func file_econ_gcmessages_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_econ_gcmessages_proto_rawDesc), len(file_econ_gcmessages_proto_rawDesc)),
-			NumEnums:      15,
+			NumEnums:      16,
 			NumMessages:   143,
 			NumExtensions: 0,
 			NumServices:   0,

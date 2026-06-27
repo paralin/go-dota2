@@ -282,6 +282,7 @@ message CMsgGameMatchSignOut {
 			optional uint32 selected_facet = 82;
 			optional uint32 enhancement_level = 83;
 			optional uint32 disable_duration = 84;
+			optional uint32 tormentor_kills = 85;
 		}
 
 		repeated CMsgGameMatchSignOut.CTeam.CPlayer players = 1;
@@ -1461,6 +1462,14 @@ message CMsgSteamLearnNeutralItemPurchaseV4 {
 	optional int32 enhancement_id = 5 [default = -1];
 }
 
+message CMsgSteamLearnNeutralItemPurchaseV6 {
+	optional uint32 tier = 1;
+	repeated int32 trinket_options = 2 [(steamlearn_count) = 5];
+	repeated int32 enhancement_options = 3 [(steamlearn_count) = 5];
+	optional int32 trinket_id = 4 [default = -1];
+	optional int32 enhancement_id = 5 [default = -1];
+}
+
 message CMsgSteamLearnAbilitySkill {
 	optional int32 ability_id = 1 [default = -1];
 	repeated int32 skilled_abilities = 2 [(steamlearn_count) = 30];
@@ -1524,6 +1533,7 @@ message CMsgSignOutOverworld {
 		optional uint32 account_id = 1;
 		optional uint32 overworld_id = 2;
 		repeated uint32 desired_token_rewards = 3;
+		optional CMsgOverworldFortune fortune = 4;
 	}
 
 	repeated CMsgSignOutOverworld.Player players = 1;

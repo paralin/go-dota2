@@ -3097,6 +3097,7 @@ type CMatchPlayerTimedStats struct {
 	TripleKills           *uint32                        `protobuf:"varint,40,opt,name=triple_kills,json=tripleKills" json:"triple_kills,omitempty"`
 	Rampages              *uint32                        `protobuf:"varint,41,opt,name=rampages" json:"rampages,omitempty"`
 	CustomStats           []*CMatchPlayerTimedCustomStat `protobuf:"bytes,42,rep,name=custom_stats,json=customStats" json:"custom_stats,omitempty"`
+	SummonKillGold        *uint32                        `protobuf:"varint,43,opt,name=summon_kill_gold,json=summonKillGold" json:"summon_kill_gold,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -3388,6 +3389,13 @@ func (x *CMatchPlayerTimedStats) GetCustomStats() []*CMatchPlayerTimedCustomStat
 		return x.CustomStats
 	}
 	return nil
+}
+
+func (x *CMatchPlayerTimedStats) GetSummonKillGold() uint32 {
+	if x != nil && x.SummonKillGold != nil {
+		return *x.SummonKillGold
+	}
+	return 0
 }
 
 type CMatchTeamTimedStats struct {
@@ -16847,7 +16855,7 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\x04time\x18\x02 \x01(\rR\x04time\"\xa9\x01\n" +
 	"\x1bCMatchPlayerTimedCustomStat\x12t\n" +
 	"\x04stat\x18\x02 \x01(\x0e2(.protocol.EDOTAMatchPlayerTimeCustomStat:6k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1TowersR\x04stat\x12\x14\n" +
-	"\x05value\x18\x03 \x01(\x02R\x05value\"\xbd\v\n" +
+	"\x05value\x18\x03 \x01(\x02R\x05value\"\xe7\v\n" +
 	"\x16CMatchPlayerTimedStats\x12\x12\n" +
 	"\x04time\x18\x01 \x01(\rR\x04time\x12\x14\n" +
 	"\x05kills\x18\x02 \x01(\rR\x05kills\x12\x16\n" +
@@ -16890,7 +16898,8 @@ const file_dota_gcmessages_common_proto_rawDesc = "" +
 	"\fwards_placed\x18' \x01(\rR\vwardsPlaced\x12!\n" +
 	"\ftriple_kills\x18( \x01(\rR\vtripleKills\x12\x1a\n" +
 	"\brampages\x18) \x01(\rR\brampages\x12H\n" +
-	"\fcustom_stats\x18* \x03(\v2%.protocol.CMatchPlayerTimedCustomStatR\vcustomStats\"\xf2\x01\n" +
+	"\fcustom_stats\x18* \x03(\v2%.protocol.CMatchPlayerTimedCustomStatR\vcustomStats\x12(\n" +
+	"\x10summon_kill_gold\x18+ \x01(\rR\x0esummonKillGold\"\xf2\x01\n" +
 	"\x14CMatchTeamTimedStats\x12\x12\n" +
 	"\x04time\x18\x01 \x01(\rR\x04time\x12.\n" +
 	"\x13enemy_towers_killed\x18\x02 \x01(\rR\x11enemyTowersKilled\x122\n" +

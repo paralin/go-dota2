@@ -299,6 +299,7 @@ message CMatchPlayerTimedStats {
 	optional uint32 triple_kills = 40;
 	optional uint32 rampages = 41;
 	repeated CMatchPlayerTimedCustomStat custom_stats = 42;
+	optional uint32 summon_kill_gold = 43;
 }
 
 message CMatchTeamTimedStats {

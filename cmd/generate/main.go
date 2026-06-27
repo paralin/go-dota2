@@ -29,6 +29,7 @@ var sourceProtoGlobs = []string{
 	"econ_*.proto",
 	"dota_match_metadata.proto",
 	"dota_shared_enums.proto",
+	"events.proto",
 	"steammessages.proto",
 	"steammessages_unified_base.steamworkssdk.proto",
 	"steammessages_steamlearn.steamworkssdk.proto",

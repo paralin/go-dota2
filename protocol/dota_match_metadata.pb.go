@@ -3202,6 +3202,7 @@ type CDOTAMatchPrivateMetadata_Team_Player_GoldReceived struct {
 	Abilities     *uint32                `protobuf:"varint,6,opt,name=abilities" json:"abilities,omitempty"`
 	Wards         *uint32                `protobuf:"varint,7,opt,name=wards" json:"wards,omitempty"`
 	Other         *uint32                `protobuf:"varint,8,opt,name=other" json:"other,omitempty"`
+	Summons       *uint32                `protobuf:"varint,9,opt,name=summons" json:"summons,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3292,6 +3293,13 @@ func (x *CDOTAMatchPrivateMetadata_Team_Player_GoldReceived) GetOther() uint32 {
 	return 0
 }
 
+func (x *CDOTAMatchPrivateMetadata_Team_Player_GoldReceived) GetSummons() uint32 {
+	if x != nil && x.Summons != nil {
+		return *x.Summons
+	}
+	return 0
+}
+
 type CDOTAMatchPrivateMetadata_Team_Player_XPReceived struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Creep           *uint32                `protobuf:"varint,1,opt,name=creep" json:"creep,omitempty"`
@@ -3301,6 +3309,7 @@ type CDOTAMatchPrivateMetadata_Team_Player_XPReceived struct {
 	Outpost         *uint32                `protobuf:"varint,5,opt,name=outpost" json:"outpost,omitempty"`
 	Other           *uint32                `protobuf:"varint,6,opt,name=other" json:"other,omitempty"`
 	Abilities       *uint32                `protobuf:"varint,7,opt,name=abilities" json:"abilities,omitempty"`
+	Summons         *uint32                `protobuf:"varint,8,opt,name=summons" json:"summons,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -3380,6 +3389,13 @@ func (x *CDOTAMatchPrivateMetadata_Team_Player_XPReceived) GetOther() uint32 {
 func (x *CDOTAMatchPrivateMetadata_Team_Player_XPReceived) GetAbilities() uint32 {
 	if x != nil && x.Abilities != nil {
 		return *x.Abilities
+	}
+	return 0
+}
+
+func (x *CDOTAMatchPrivateMetadata_Team_Player_XPReceived) GetSummons() uint32 {
+	if x != nil && x.Summons != nil {
+		return *x.Summons
 	}
 	return 0
 }
@@ -4479,7 +4495,7 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x12target_player_slot\x18\x02 \x01(\rR\x10targetPlayerSlot\x12\x1d\n" +
 	"\n" +
 	"tip_amount\x18\x03 \x01(\rR\ttipAmount\x12:\n" +
-	"\bevent_id\x18\x04 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\xb6,\n" +
+	"\bevent_id\x18\x04 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\xea,\n" +
 	"\x19CDOTAMatchPrivateMetadata\x12>\n" +
 	"\x05teams\x18\x01 \x03(\v2(.protocol.CDOTAMatchPrivateMetadata.TeamR\x05teams\x122\n" +
 	"\x15graph_win_probability\x18\x02 \x03(\x02R\x13graphWinProbability\x12Q\n" +
@@ -4488,11 +4504,11 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\n" +
 	"StringName\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x1a\xa9\x16\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x1a\xdd\x16\n" +
 	"\x04Team\x12\x1b\n" +
 	"\tdota_team\x18\x01 \x01(\rR\bdotaTeam\x12I\n" +
 	"\aplayers\x18\x02 \x03(\v2/.protocol.CDOTAMatchPrivateMetadata.Team.PlayerR\aplayers\x12O\n" +
-	"\tbuildings\x18\x03 \x03(\v21.protocol.CDOTAMatchPrivateMetadata.Team.BuildingR\tbuildings\x1a\xca\x13\n" +
+	"\tbuildings\x18\x03 \x03(\v21.protocol.CDOTAMatchPrivateMetadata.Team.BuildingR\tbuildings\x1a\xfe\x13\n" +
 	"\x06Player\x12\x1f\n" +
 	"\vplayer_slot\x18\x02 \x01(\rR\n" +
 	"playerSlot\x12'\n" +
@@ -4542,7 +4558,7 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\ahero_id\x18\x01 \x01(\x05R\x06heroId\x12)\n" +
 	"\x10elapsed_duration\x18\x02 \x01(\x02R\x0felapsedDuration\x12\x1b\n" +
 	"\tis_hidden\x18\x03 \x01(\bR\bisHidden\x12%\n" +
-	"\x0einstance_count\x18\x04 \x01(\x05R\rinstanceCount\x1a\xe1\x01\n" +
+	"\x0einstance_count\x18\x04 \x01(\x05R\rinstanceCount\x1a\xfb\x01\n" +
 	"\fGoldReceived\x12\x14\n" +
 	"\x05creep\x18\x01 \x01(\rR\x05creep\x12\x16\n" +
 	"\x06heroes\x18\x02 \x01(\rR\x06heroes\x12!\n" +
@@ -4551,7 +4567,8 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\tbuildings\x18\x05 \x01(\rR\tbuildings\x12\x1c\n" +
 	"\tabilities\x18\x06 \x01(\rR\tabilities\x12\x14\n" +
 	"\x05wards\x18\a \x01(\rR\x05wards\x12\x14\n" +
-	"\x05other\x18\b \x01(\rR\x05other\x1a\xcc\x01\n" +
+	"\x05other\x18\b \x01(\rR\x05other\x12\x18\n" +
+	"\asummons\x18\t \x01(\rR\asummons\x1a\xe6\x01\n" +
 	"\n" +
 	"XPReceived\x12\x14\n" +
 	"\x05creep\x18\x01 \x01(\rR\x05creep\x12\x16\n" +
@@ -4560,7 +4577,8 @@ const file_dota_match_metadata_proto_rawDesc = "" +
 	"\x11tome_of_knowledge\x18\x04 \x01(\rR\x0ftomeOfKnowledge\x12\x18\n" +
 	"\aoutpost\x18\x05 \x01(\rR\aoutpost\x12\x14\n" +
 	"\x05other\x18\x06 \x01(\rR\x05other\x12\x1c\n" +
-	"\tabilities\x18\a \x01(\rR\tabilities\x1a\x9a\x01\n" +
+	"\tabilities\x18\a \x01(\rR\tabilities\x12\x18\n" +
+	"\asummons\x18\b \x01(\rR\asummons\x1a\x9a\x01\n" +
 	"\bBuilding\x12\x1b\n" +
 	"\tunit_name\x18\x01 \x01(\tR\bunitName\x12(\n" +
 	"\x10position_quant_x\x18\x02 \x01(\rR\x0epositionQuantX\x12(\n" +

@@ -118,7 +118,7 @@ func (d *Dota2) write(messageType uint32, msg proto.Message) {
 }
 
 // emit emits an event.
-func (d *Dota2) emit(event interface{}) {
+func (d *Dota2) emit(event any) {
 	d.client.Emit(event)
 }
 

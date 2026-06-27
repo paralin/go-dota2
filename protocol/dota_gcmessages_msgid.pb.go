@@ -468,6 +468,7 @@ const (
 	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterRequest                          EDOTAGCMsg = 8180
 	EDOTAGCMsg_k_EMsgClientToGCSetPlayerCardRosterResponse                         EDOTAGCMsg = 8181
 	EDOTAGCMsg_k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse       EDOTAGCMsg = 8183
+	EDOTAGCMsg_k_EMsgLobbyOverworldFortuneList                                     EDOTAGCMsg = 8185
 	EDOTAGCMsg_k_EMsgLobbyBattleCupVictory                                         EDOTAGCMsg = 8186
 	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfo                                       EDOTAGCMsg = 8187
 	EDOTAGCMsg_k_EMsgGCGetPlayerCardItemInfoResponse                               EDOTAGCMsg = 8188
@@ -1014,6 +1015,12 @@ const (
 	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse               EDOTAGCMsg = 9048
 	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetReward                         EDOTAGCMsg = 9049
 	EDOTAGCMsg_k_EMsgClientToGCMonsterHunterClaimSetRewardResponse                 EDOTAGCMsg = 9050
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectTeam                           EDOTAGCMsg = 9051
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectTeamResponse                   EDOTAGCMsg = 9052
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix                   EDOTAGCMsg = 9053
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse           EDOTAGCMsg = 9054
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix                   EDOTAGCMsg = 9055
+	EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse           EDOTAGCMsg = 9056
 	EDOTAGCMsg_k_EMsgClientToGCItemBattlerGetUserData                              EDOTAGCMsg = 9100
 	EDOTAGCMsg_k_EMsgClientToGCItemBattlerGetUserDataResponse                      EDOTAGCMsg = 9101
 	EDOTAGCMsg_k_EMsgClientToGCItemBattlerGameAction                               EDOTAGCMsg = 9102
@@ -1037,6 +1044,14 @@ const (
 	EDOTAGCMsg_k_EMsgClientToGCOverworldRequestFortuneResponse                     EDOTAGCMsg = 9120
 	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearFortune                            EDOTAGCMsg = 9121
 	EDOTAGCMsg_k_EMsgClientToGCOverworldDevClearFortuneResponse                    EDOTAGCMsg = 9122
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneReward                         EDOTAGCMsg = 9123
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneRewardResponse                 EDOTAGCMsg = 9124
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin                  EDOTAGCMsg = 9125
+	EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse          EDOTAGCMsg = 9126
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortunePermanentReward                EDOTAGCMsg = 9127
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse        EDOTAGCMsg = 9128
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode                EDOTAGCMsg = 9129
+	EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse        EDOTAGCMsg = 9130
 )
 
 // Enum value maps for EDOTAGCMsg.
@@ -1485,6 +1500,7 @@ var (
 		8180: "k_EMsgClientToGCSetPlayerCardRosterRequest",
 		8181: "k_EMsgClientToGCSetPlayerCardRosterResponse",
 		8183: "k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse",
+		8185: "k_EMsgLobbyOverworldFortuneList",
 		8186: "k_EMsgLobbyBattleCupVictory",
 		8187: "k_EMsgGCGetPlayerCardItemInfo",
 		8188: "k_EMsgGCGetPlayerCardItemInfoResponse",
@@ -2031,6 +2047,12 @@ var (
 		9048: "k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse",
 		9049: "k_EMsgClientToGCMonsterHunterClaimSetReward",
 		9050: "k_EMsgClientToGCMonsterHunterClaimSetRewardResponse",
+		9051: "k_EMsgClientToGCFantasyCraftingSelectTeam",
+		9052: "k_EMsgClientToGCFantasyCraftingSelectTeamResponse",
+		9053: "k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix",
+		9054: "k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse",
+		9055: "k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix",
+		9056: "k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse",
 		9100: "k_EMsgClientToGCItemBattlerGetUserData",
 		9101: "k_EMsgClientToGCItemBattlerGetUserDataResponse",
 		9102: "k_EMsgClientToGCItemBattlerGameAction",
@@ -2054,6 +2076,14 @@ var (
 		9120: "k_EMsgClientToGCOverworldRequestFortuneResponse",
 		9121: "k_EMsgClientToGCOverworldDevClearFortune",
 		9122: "k_EMsgClientToGCOverworldDevClearFortuneResponse",
+		9123: "k_EMsgClientToGCOverworldClaimFortuneReward",
+		9124: "k_EMsgClientToGCOverworldClaimFortuneRewardResponse",
+		9125: "k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin",
+		9126: "k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse",
+		9127: "k_EMsgClientToGCOverworldClaimFortunePermanentReward",
+		9128: "k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse",
+		9129: "k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode",
+		9130: "k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse",
 	}
 	EDOTAGCMsg_value = map[string]int32{
 		"k_EMsgGCDOTABase":                                                    7000,
@@ -2499,6 +2529,7 @@ var (
 		"k_EMsgClientToGCSetPlayerCardRosterRequest":                          8180,
 		"k_EMsgClientToGCSetPlayerCardRosterResponse":                         8181,
 		"k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse":       8183,
+		"k_EMsgLobbyOverworldFortuneList":                                     8185,
 		"k_EMsgLobbyBattleCupVictory":                                         8186,
 		"k_EMsgGCGetPlayerCardItemInfo":                                       8187,
 		"k_EMsgGCGetPlayerCardItemInfoResponse":                               8188,
@@ -3045,6 +3076,12 @@ var (
 		"k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse":               9048,
 		"k_EMsgClientToGCMonsterHunterClaimSetReward":                         9049,
 		"k_EMsgClientToGCMonsterHunterClaimSetRewardResponse":                 9050,
+		"k_EMsgClientToGCFantasyCraftingSelectTeam":                           9051,
+		"k_EMsgClientToGCFantasyCraftingSelectTeamResponse":                   9052,
+		"k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix":                   9053,
+		"k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse":           9054,
+		"k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix":                   9055,
+		"k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse":           9056,
 		"k_EMsgClientToGCItemBattlerGetUserData":                              9100,
 		"k_EMsgClientToGCItemBattlerGetUserDataResponse":                      9101,
 		"k_EMsgClientToGCItemBattlerGameAction":                               9102,
@@ -3068,6 +3105,14 @@ var (
 		"k_EMsgClientToGCOverworldRequestFortuneResponse":                     9120,
 		"k_EMsgClientToGCOverworldDevClearFortune":                            9121,
 		"k_EMsgClientToGCOverworldDevClearFortuneResponse":                    9122,
+		"k_EMsgClientToGCOverworldClaimFortuneReward":                         9123,
+		"k_EMsgClientToGCOverworldClaimFortuneRewardResponse":                 9124,
+		"k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin":                  9125,
+		"k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse":          9126,
+		"k_EMsgClientToGCOverworldClaimFortunePermanentReward":                9127,
+		"k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse":        9128,
+		"k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode":                9129,
+		"k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse":        9130,
 	}
 )
 
@@ -3112,7 +3157,7 @@ var File_dota_gcmessages_msgid_proto protoreflect.FileDescriptor
 
 const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"\n" +
-	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\x91\xdb\x02\n" +
+	"\x1bdota_gcmessages_msgid.proto\x12\bprotocol*\xf1\xe1\x02\n" +
 	"\n" +
 	"EDOTAGCMsg\x12\x15\n" +
 	"\x10k_EMsgGCDOTABase\x10\xd86\x12\x1d\n" +
@@ -3557,7 +3602,8 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"+k_EMsgClientToGCGetPlayerCardRosterResponse\x10\xf3?\x12/\n" +
 	"*k_EMsgClientToGCSetPlayerCardRosterRequest\x10\xf4?\x120\n" +
 	"+k_EMsgClientToGCSetPlayerCardRosterResponse\x10\xf5?\x12B\n" +
-	"=k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse\x10\xf7?\x12 \n" +
+	"=k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse\x10\xf7?\x12$\n" +
+	"\x1fk_EMsgLobbyOverworldFortuneList\x10\xf9?\x12 \n" +
 	"\x1bk_EMsgLobbyBattleCupVictory\x10\xfa?\x12\"\n" +
 	"\x1dk_EMsgGCGetPlayerCardItemInfo\x10\xfb?\x12*\n" +
 	"%k_EMsgGCGetPlayerCardItemInfoResponse\x10\xfc?\x12/\n" +
@@ -4103,7 +4149,13 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"-k_EMsgClientToGCMonsterHunterClaimCodexReward\x10\xd7F\x12:\n" +
 	"5k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse\x10\xd8F\x120\n" +
 	"+k_EMsgClientToGCMonsterHunterClaimSetReward\x10\xd9F\x128\n" +
-	"3k_EMsgClientToGCMonsterHunterClaimSetRewardResponse\x10\xdaF\x12+\n" +
+	"3k_EMsgClientToGCMonsterHunterClaimSetRewardResponse\x10\xdaF\x12.\n" +
+	")k_EMsgClientToGCFantasyCraftingSelectTeam\x10\xdbF\x126\n" +
+	"1k_EMsgClientToGCFantasyCraftingSelectTeamResponse\x10\xdcF\x126\n" +
+	"1k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix\x10\xddF\x12>\n" +
+	"9k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse\x10\xdeF\x126\n" +
+	"1k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix\x10\xdfF\x12>\n" +
+	"9k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse\x10\xe0F\x12+\n" +
 	"&k_EMsgClientToGCItemBattlerGetUserData\x10\x8cG\x123\n" +
 	".k_EMsgClientToGCItemBattlerGetUserDataResponse\x10\x8dG\x12*\n" +
 	"%k_EMsgClientToGCItemBattlerGameAction\x10\x8eG\x122\n" +
@@ -4126,7 +4178,15 @@ const file_dota_gcmessages_msgid_proto_rawDesc = "" +
 	"'k_EMsgClientToGCOverworldRequestFortune\x10\x9fG\x124\n" +
 	"/k_EMsgClientToGCOverworldRequestFortuneResponse\x10\xa0G\x12-\n" +
 	"(k_EMsgClientToGCOverworldDevClearFortune\x10\xa1G\x125\n" +
-	"0k_EMsgClientToGCOverworldDevClearFortuneResponse\x10\xa2G"
+	"0k_EMsgClientToGCOverworldDevClearFortuneResponse\x10\xa2G\x120\n" +
+	"+k_EMsgClientToGCOverworldClaimFortuneReward\x10\xa3G\x128\n" +
+	"3k_EMsgClientToGCOverworldClaimFortuneRewardResponse\x10\xa4G\x127\n" +
+	"2k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin\x10\xa5G\x12?\n" +
+	":k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse\x10\xa6G\x129\n" +
+	"4k_EMsgClientToGCOverworldClaimFortunePermanentReward\x10\xa7G\x12A\n" +
+	"<k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse\x10\xa8G\x129\n" +
+	"4k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode\x10\xa9G\x12A\n" +
+	"<k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse\x10\xaaG"
 
 var (
 	file_dota_gcmessages_msgid_proto_rawDescOnce sync.Once

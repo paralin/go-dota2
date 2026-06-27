@@ -26932,14 +26932,15 @@ func (x *CMsgClientToGCGetEventRanking) GetAccountId() uint32 {
 }
 
 type CMsgClientToGCGetEventRankingResponse struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	EventId         *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
-	AccountId       *uint32                `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
-	Score           *float32               `protobuf:"fixed32,3,opt,name=score" json:"score,omitempty"`
-	Percentile      *float32               `protobuf:"fixed32,4,opt,name=percentile" json:"percentile,omitempty"`
-	FinalRankBucket *uint32                `protobuf:"varint,5,opt,name=final_rank_bucket,json=finalRankBucket" json:"final_rank_bucket,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	EventId          *EEvent                `protobuf:"varint,1,opt,name=event_id,json=eventId,enum=protocol.EEvent,def=0" json:"event_id,omitempty"`
+	AccountId        *uint32                `protobuf:"varint,2,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
+	Score            *float32               `protobuf:"fixed32,3,opt,name=score" json:"score,omitempty"`
+	Percentile       *float32               `protobuf:"fixed32,4,opt,name=percentile" json:"percentile,omitempty"`
+	FinalRankBucket  *uint32                `protobuf:"varint,5,opt,name=final_rank_bucket,json=finalRankBucket" json:"final_rank_bucket,omitempty"`
+	UpdateInProgress *bool                  `protobuf:"varint,6,opt,name=update_in_progress,json=updateInProgress" json:"update_in_progress,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 // Default values for CMsgClientToGCGetEventRankingResponse fields.
@@ -27010,6 +27011,13 @@ func (x *CMsgClientToGCGetEventRankingResponse) GetFinalRankBucket() uint32 {
 		return *x.FinalRankBucket
 	}
 	return 0
+}
+
+func (x *CMsgClientToGCGetEventRankingResponse) GetUpdateInProgress() bool {
+	if x != nil && x.UpdateInProgress != nil {
+		return *x.UpdateInProgress
+	}
+	return false
 }
 
 type CMsgClientToGCGetEventCoupon struct {
@@ -36300,7 +36308,7 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\x1dCMsgClientToGCGetEventRanking\x12:\n" +
 	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1d\n" +
 	"\n" +
-	"account_id\x18\x02 \x01(\rR\taccountId\"\xe4\x01\n" +
+	"account_id\x18\x02 \x01(\rR\taccountId\"\x92\x02\n" +
 	"%CMsgClientToGCGetEventRankingResponse\x12:\n" +
 	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1d\n" +
 	"\n" +
@@ -36309,7 +36317,8 @@ const file_dota_gcmessages_client_proto_rawDesc = "" +
 	"\n" +
 	"percentile\x18\x04 \x01(\x02R\n" +
 	"percentile\x12*\n" +
-	"\x11final_rank_bucket\x18\x05 \x01(\rR\x0ffinalRankBucket\"Z\n" +
+	"\x11final_rank_bucket\x18\x05 \x01(\rR\x0ffinalRankBucket\x12,\n" +
+	"\x12update_in_progress\x18\x06 \x01(\bR\x10updateInProgress\"Z\n" +
 	"\x1cCMsgClientToGCGetEventCoupon\x12:\n" +
 	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\"\xe0\x03\n" +
 	"$CMsgClientToGCGetEventCouponResponse\x12Z\n" +

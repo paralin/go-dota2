@@ -972,6 +972,219 @@ func (CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse) EnumDescripto
 	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{31, 0}
 }
 
+type CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eInternalError CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eSuccess       CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eDisabled      CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eTimeout       CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eInvalidTeam   CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse = 7
+)
+
+// Enum value maps for CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse.
+var (
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eInvalidLeague",
+		7: "k_eInvalidTeam",
+	}
+	CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_value = map[string]int32{
+		"k_eInternalError": 0,
+		"k_eSuccess":       1,
+		"k_eTooBusy":       2,
+		"k_eDisabled":      3,
+		"k_eTimeout":       4,
+		"k_eInvalidLeague": 5,
+		"k_eInvalidTeam":   7,
+	}
+)
+
+func (x CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[10].Descriptor()
+}
+
+func (CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[10]
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{33, 0}
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eInternalError CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eSuccess       CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eDisabled      CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eTimeout       CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eInvalidPrefix CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse = 7
+)
+
+// Enum value maps for CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse.
+var (
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eInvalidLeague",
+		7: "k_eInvalidPrefix",
+	}
+	CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_value = map[string]int32{
+		"k_eInternalError": 0,
+		"k_eSuccess":       1,
+		"k_eTooBusy":       2,
+		"k_eDisabled":      3,
+		"k_eTimeout":       4,
+		"k_eInvalidLeague": 5,
+		"k_eInvalidPrefix": 7,
+	}
+)
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[11].Descriptor()
+}
+
+func (CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[11]
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{35, 0}
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse int32
+
+const (
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eInternalError CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 0
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eSuccess       CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 1
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eTooBusy       CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 2
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eDisabled      CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 3
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eTimeout       CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 4
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 5
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eInvalidSuffix CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse = 7
+)
+
+// Enum value maps for CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse.
+var (
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eInvalidLeague",
+		7: "k_eInvalidSuffix",
+	}
+	CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_value = map[string]int32{
+		"k_eInternalError": 0,
+		"k_eSuccess":       1,
+		"k_eTooBusy":       2,
+		"k_eDisabled":      3,
+		"k_eTimeout":       4,
+		"k_eInvalidLeague": 5,
+		"k_eInvalidSuffix": 7,
+	}
+)
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) Enum() *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse {
+	p := new(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[12].Descriptor()
+}
+
+func (CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[12]
+}
+
+func (x CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{37, 0}
+}
+
 type CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse int32
 
 const (
@@ -982,6 +1195,7 @@ const (
 	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eTimeout       CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 4
 	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInvalidLeague CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 5
 	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInvalidPlayer CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 6
+	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_k_eInvalidTeam   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse = 7
 )
 
 // Enum value maps for CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse.
@@ -994,6 +1208,7 @@ var (
 		4: "k_eTimeout",
 		5: "k_eInvalidLeague",
 		6: "k_eInvalidPlayer",
+		7: "k_eInvalidTeam",
 	}
 	CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_value = map[string]int32{
 		"k_eInternalError": 0,
@@ -1003,6 +1218,7 @@ var (
 		"k_eTimeout":       4,
 		"k_eInvalidLeague": 5,
 		"k_eInvalidPlayer": 6,
+		"k_eInvalidTeam":   7,
 	}
 )
 
@@ -1017,11 +1233,11 @@ func (x CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) String()
 }
 
 func (CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_fantasy_proto_enumTypes[10].Descriptor()
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[13].Descriptor()
 }
 
 func (CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[10]
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[13]
 }
 
 func (x CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1040,7 +1256,7 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) Unmarsh
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{33, 0}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{39, 0}
 }
 
 type CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse int32
@@ -1085,11 +1301,11 @@ func (x CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) String() 
 }
 
 func (CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_fantasy_proto_enumTypes[11].Descriptor()
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[14].Descriptor()
 }
 
 func (CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[11]
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[14]
 }
 
 func (x CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1108,7 +1324,7 @@ func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) Unmarsha
 
 // Deprecated: Use CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{35, 0}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{41, 0}
 }
 
 type CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse int32
@@ -1156,11 +1372,11 @@ func (x CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) String() s
 }
 
 func (CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_client_fantasy_proto_enumTypes[12].Descriptor()
+	return file_dota_gcmessages_client_fantasy_proto_enumTypes[15].Descriptor()
 }
 
 func (CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[12]
+	return &file_dota_gcmessages_client_fantasy_proto_enumTypes[15]
 }
 
 func (x CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1179,7 +1395,7 @@ func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) Unmarshal
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{37, 0}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{43, 0}
 }
 
 type CMsgDOTAPlayerInfo struct {
@@ -1354,6 +1570,7 @@ func (x *CMsgDOTAPlayerInfo) GetHasPlayedInInternational() bool {
 type CMsgDOTAPlayerInfoList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	PlayerInfos   []*CMsgDOTAPlayerInfo  `protobuf:"bytes,1,rep,name=player_infos,json=playerInfos" json:"player_infos,omitempty"`
+	RetryTime     *uint32                `protobuf:"varint,2,opt,name=retry_time,json=retryTime" json:"retry_time,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1393,6 +1610,13 @@ func (x *CMsgDOTAPlayerInfoList) GetPlayerInfos() []*CMsgDOTAPlayerInfo {
 		return x.PlayerInfos
 	}
 	return nil
+}
+
+func (x *CMsgDOTAPlayerInfoList) GetRetryTime() uint32 {
+	if x != nil && x.RetryTime != nil {
+		return *x.RetryTime
+	}
+	return 0
 }
 
 type CMsgDOTATeamRoster struct {
@@ -3186,17 +3410,358 @@ func (x *CMsgClientToGCFantasyCraftingSelectPlayerResponse) GetTabletData() *CMs
 	return nil
 }
 
-type CMsgClientToGCFantasyCraftingGenerateTablets struct {
+type CMsgClientToGCFantasyCraftingSelectTeam struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	FantasyLeague *uint32                `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
-	AccountIds    []uint32               `protobuf:"varint,2,rep,name=account_ids,json=accountIds" json:"account_ids,omitempty"`
+	Role          *Fantasy_Roles         `protobuf:"varint,2,opt,name=role,enum=protocol.Fantasy_Roles,def=0" json:"role,omitempty"`
+	TeamId        *uint32                `protobuf:"varint,3,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCFantasyCraftingSelectTeam fields.
+const (
+	Default_CMsgClientToGCFantasyCraftingSelectTeam_Role = Fantasy_Roles_FANTASY_ROLE_UNDEFINED
+)
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectTeam{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectTeam) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectTeam.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectTeam) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) GetFantasyLeague() uint32 {
+	if x != nil && x.FantasyLeague != nil {
+		return *x.FantasyLeague
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) GetRole() Fantasy_Roles {
+	if x != nil && x.Role != nil {
+		return *x.Role
+	}
+	return Default_CMsgClientToGCFantasyCraftingSelectTeam_Role
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeam) GetTeamId() uint32 {
+	if x != nil && x.TeamId != nil {
+		return *x.TeamId
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingSelectTeamResponse struct {
+	state         protoimpl.MessageState                                     `protogen:"open.v1"`
+	Response      *CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse,def=0" json:"response,omitempty"`
+	TabletData    *CMsgDotaFantasyCraftingTabletData                         `protobuf:"bytes,2,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCFantasyCraftingSelectTeamResponse fields.
+const (
+	Default_CMsgClientToGCFantasyCraftingSelectTeamResponse_Response = CMsgClientToGCFantasyCraftingSelectTeamResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectTeamResponse{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectTeamResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectTeamResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectTeamResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse) GetResponse() CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingSelectTeamResponse_Response
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectTeamResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if x != nil {
+		return x.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalPrefix struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FantasyLeague *uint32                `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	Prefix        *uint32                `protobuf:"varint,2,opt,name=prefix" json:"prefix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefix) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalPrefix{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefix) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectGlobalPrefix) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefix) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalPrefix.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectGlobalPrefix) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefix) GetFantasyLeague() uint32 {
+	if x != nil && x.FantasyLeague != nil {
+		return *x.FantasyLeague
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefix) GetPrefix() uint32 {
+	if x != nil && x.Prefix != nil {
+		return *x.Prefix
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse struct {
+	state         protoimpl.MessageState                                             `protogen:"open.v1"`
+	Response      *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse,def=0" json:"response,omitempty"`
+	TabletData    *CMsgDotaFantasyCraftingTabletData                                 `protobuf:"bytes,2,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse fields.
+const (
+	Default_CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_Response = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) GetResponse() CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_Response
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if x != nil {
+		return x.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalSuffix struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FantasyLeague *uint32                `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	Suffix        *uint32                `protobuf:"varint,2,opt,name=suffix" json:"suffix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffix) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalSuffix{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffix) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectGlobalSuffix) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffix) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalSuffix.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectGlobalSuffix) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffix) GetFantasyLeague() uint32 {
+	if x != nil && x.FantasyLeague != nil {
+		return *x.FantasyLeague
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffix) GetSuffix() uint32 {
+	if x != nil && x.Suffix != nil {
+		return *x.Suffix
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse struct {
+	state         protoimpl.MessageState                                             `protogen:"open.v1"`
+	Response      *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse,def=0" json:"response,omitempty"`
+	TabletData    *CMsgDotaFantasyCraftingTabletData                                 `protobuf:"bytes,2,opt,name=tablet_data,json=tabletData" json:"tablet_data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse fields.
+const (
+	Default_CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_Response = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) Reset() {
+	*x = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) GetResponse() CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_Response
+}
+
+func (x *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) GetTabletData() *CMsgDotaFantasyCraftingTabletData {
+	if x != nil {
+		return x.TabletData
+	}
+	return nil
+}
+
+type CMsgClientToGCFantasyCraftingGenerateTablets struct {
+	state         protoimpl.MessageState                                     `protogen:"open.v1"`
+	FantasyLeague *uint32                                                    `protobuf:"varint,1,opt,name=fantasy_league,json=fantasyLeague" json:"fantasy_league,omitempty"`
+	AccountIds    []uint32                                                   `protobuf:"varint,2,rep,name=account_ids,json=accountIds" json:"account_ids,omitempty"`
+	SelectedTeams []*CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice `protobuf:"bytes,3,rep,name=selected_teams,json=selectedTeams" json:"selected_teams,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTablets) Reset() {
 	*x = CMsgClientToGCFantasyCraftingGenerateTablets{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[32]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3208,7 +3773,7 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTablets) String() string {
 func (*CMsgClientToGCFantasyCraftingGenerateTablets) ProtoMessage() {}
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTablets) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[32]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3221,7 +3786,7 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTablets) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingGenerateTablets.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCFantasyCraftingGenerateTablets) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{32}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTablets) GetFantasyLeague() uint32 {
@@ -3234,6 +3799,13 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTablets) GetFantasyLeague() uint32
 func (x *CMsgClientToGCFantasyCraftingGenerateTablets) GetAccountIds() []uint32 {
 	if x != nil {
 		return x.AccountIds
+	}
+	return nil
+}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets) GetSelectedTeams() []*CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice {
+	if x != nil {
+		return x.SelectedTeams
 	}
 	return nil
 }
@@ -3254,7 +3826,7 @@ const (
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) Reset() {
 	*x = CMsgClientToGCFantasyCraftingGenerateTabletsResponse{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[33]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3266,7 +3838,7 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) String() string {
 func (*CMsgClientToGCFantasyCraftingGenerateTabletsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[33]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3279,7 +3851,7 @@ func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) ProtoReflect() pr
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingGenerateTabletsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCFantasyCraftingGenerateTabletsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{33}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *CMsgClientToGCFantasyCraftingGenerateTabletsResponse) GetResponse() CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse {
@@ -3312,7 +3884,7 @@ type CMsgClientToGcFantasyCraftingUpgradeTablets struct {
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTablets) Reset() {
 	*x = CMsgClientToGcFantasyCraftingUpgradeTablets{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[34]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3324,7 +3896,7 @@ func (x *CMsgClientToGcFantasyCraftingUpgradeTablets) String() string {
 func (*CMsgClientToGcFantasyCraftingUpgradeTablets) ProtoMessage() {}
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTablets) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[34]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3337,7 +3909,7 @@ func (x *CMsgClientToGcFantasyCraftingUpgradeTablets) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGcFantasyCraftingUpgradeTablets.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGcFantasyCraftingUpgradeTablets) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{34}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTablets) GetFantasyLeague() uint32 {
@@ -3362,7 +3934,7 @@ const (
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) Reset() {
 	*x = CMsgClientToGcFantasyCraftingUpgradeTabletsResponse{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[35]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3374,7 +3946,7 @@ func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) String() string {
 func (*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[35]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3387,7 +3959,7 @@ func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) ProtoReflect() pro
 
 // Deprecated: Use CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{35}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse) GetResponse() CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse {
@@ -3413,7 +3985,7 @@ type CMsgClientToGCFantasyCraftingRerollOptions struct {
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptions) Reset() {
 	*x = CMsgClientToGCFantasyCraftingRerollOptions{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[36]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3425,7 +3997,7 @@ func (x *CMsgClientToGCFantasyCraftingRerollOptions) String() string {
 func (*CMsgClientToGCFantasyCraftingRerollOptions) ProtoMessage() {}
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[36]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3438,7 +4010,7 @@ func (x *CMsgClientToGCFantasyCraftingRerollOptions) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingRerollOptions.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCFantasyCraftingRerollOptions) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{36}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptions) GetFantasyLeague() uint32 {
@@ -3463,7 +4035,7 @@ const (
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse) Reset() {
 	*x = CMsgClientToGCFantasyCraftingRerollOptionsResponse{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[37]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3475,7 +4047,7 @@ func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse) String() string {
 func (*CMsgClientToGCFantasyCraftingRerollOptionsResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[37]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3488,7 +4060,7 @@ func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse) ProtoReflect() prot
 
 // Deprecated: Use CMsgClientToGCFantasyCraftingRerollOptionsResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCFantasyCraftingRerollOptionsResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{37}
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *CMsgClientToGCFantasyCraftingRerollOptionsResponse) GetResponse() CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse {
@@ -3516,7 +4088,7 @@ type CMsgDOTAPlayerInfo_Results struct {
 
 func (x *CMsgDOTAPlayerInfo_Results) Reset() {
 	*x = CMsgDOTAPlayerInfo_Results{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3528,7 +4100,7 @@ func (x *CMsgDOTAPlayerInfo_Results) String() string {
 func (*CMsgDOTAPlayerInfo_Results) ProtoMessage() {}
 
 func (x *CMsgDOTAPlayerInfo_Results) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3579,7 +4151,7 @@ type CMsgDOTAPlayerInfo_AuditEntry struct {
 
 func (x *CMsgDOTAPlayerInfo_AuditEntry) Reset() {
 	*x = CMsgDOTAPlayerInfo_AuditEntry{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3591,7 +4163,7 @@ func (x *CMsgDOTAPlayerInfo_AuditEntry) String() string {
 func (*CMsgDOTAPlayerInfo_AuditEntry) ProtoMessage() {}
 
 func (x *CMsgDOTAPlayerInfo_AuditEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3659,7 +4231,7 @@ type CMsgDOTAPlayerInfo_ProRegistration struct {
 
 func (x *CMsgDOTAPlayerInfo_ProRegistration) Reset() {
 	*x = CMsgDOTAPlayerInfo_ProRegistration{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3671,7 +4243,7 @@ func (x *CMsgDOTAPlayerInfo_ProRegistration) String() string {
 func (*CMsgDOTAPlayerInfo_ProRegistration) ProtoMessage() {}
 
 func (x *CMsgDOTAPlayerInfo_ProRegistration) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3711,7 +4283,7 @@ type CMsgDOTADPCProfileInfo_PredictionInfo struct {
 
 func (x *CMsgDOTADPCProfileInfo_PredictionInfo) Reset() {
 	*x = CMsgDOTADPCProfileInfo_PredictionInfo{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3723,7 +4295,7 @@ func (x *CMsgDOTADPCProfileInfo_PredictionInfo) String() string {
 func (*CMsgDOTADPCProfileInfo_PredictionInfo) ProtoMessage() {}
 
 func (x *CMsgDOTADPCProfileInfo_PredictionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3765,7 +4337,7 @@ type CMsgDOTADPCProfileInfo_FantasyInfo struct {
 
 func (x *CMsgDOTADPCProfileInfo_FantasyInfo) Reset() {
 	*x = CMsgDOTADPCProfileInfo_FantasyInfo{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3777,7 +4349,7 @@ func (x *CMsgDOTADPCProfileInfo_FantasyInfo) String() string {
 func (*CMsgDOTADPCProfileInfo_FantasyInfo) ProtoMessage() {}
 
 func (x *CMsgDOTADPCProfileInfo_FantasyInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3831,7 +4403,7 @@ type CMsgDOTALeaderboards_RegionLeaderboard struct {
 
 func (x *CMsgDOTALeaderboards_RegionLeaderboard) Reset() {
 	*x = CMsgDOTALeaderboards_RegionLeaderboard{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3843,7 +4415,7 @@ func (x *CMsgDOTALeaderboards_RegionLeaderboard) String() string {
 func (*CMsgDOTALeaderboards_RegionLeaderboard) ProtoMessage() {}
 
 func (x *CMsgDOTALeaderboards_RegionLeaderboard) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3888,7 +4460,7 @@ const (
 
 func (x *CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp) Reset() {
 	*x = CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3900,7 +4472,7 @@ func (x *CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp) String()
 func (*CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp) ProtoMessage() {}
 
 func (x *CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3952,7 +4524,7 @@ const (
 
 func (x *CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse) Reset() {
 	*x = CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3964,7 +4536,7 @@ func (x *CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse) String()
 func (*CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4055,7 +4627,7 @@ const (
 
 func (x *CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo) Reset() {
 	*x = CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4067,7 +4639,7 @@ func (x *CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo) String() string {
 func (*CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo) ProtoMessage() {}
 
 func (x *CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4136,7 +4708,7 @@ type CMsgDOTADPCSearchResults_Player struct {
 
 func (x *CMsgDOTADPCSearchResults_Player) Reset() {
 	*x = CMsgDOTADPCSearchResults_Player{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4148,7 +4720,7 @@ func (x *CMsgDOTADPCSearchResults_Player) String() string {
 func (*CMsgDOTADPCSearchResults_Player) ProtoMessage() {}
 
 func (x *CMsgDOTADPCSearchResults_Player) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4196,7 +4768,7 @@ type CMsgDOTADPCSearchResults_Team struct {
 
 func (x *CMsgDOTADPCSearchResults_Team) Reset() {
 	*x = CMsgDOTADPCSearchResults_Team{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4208,7 +4780,7 @@ func (x *CMsgDOTADPCSearchResults_Team) String() string {
 func (*CMsgDOTADPCSearchResults_Team) ProtoMessage() {}
 
 func (x *CMsgDOTADPCSearchResults_Team) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4255,7 +4827,7 @@ type CMsgDOTADPCSearchResults_League struct {
 
 func (x *CMsgDOTADPCSearchResults_League) Reset() {
 	*x = CMsgDOTADPCSearchResults_League{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4267,7 +4839,7 @@ func (x *CMsgDOTADPCSearchResults_League) String() string {
 func (*CMsgDOTADPCSearchResults_League) ProtoMessage() {}
 
 func (x *CMsgDOTADPCSearchResults_League) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4307,7 +4879,7 @@ type CMsgDOTADPCTeamFavoriteRankings_Team struct {
 
 func (x *CMsgDOTADPCTeamFavoriteRankings_Team) Reset() {
 	*x = CMsgDOTADPCTeamFavoriteRankings_Team{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4319,7 +4891,7 @@ func (x *CMsgDOTADPCTeamFavoriteRankings_Team) String() string {
 func (*CMsgDOTADPCTeamFavoriteRankings_Team) ProtoMessage() {}
 
 func (x *CMsgDOTADPCTeamFavoriteRankings_Team) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4368,7 +4940,7 @@ const (
 
 func (x *CMsgDotaFantasyCraftingTabletPeriodData_Gem) Reset() {
 	*x = CMsgDotaFantasyCraftingTabletPeriodData_Gem{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4380,7 +4952,7 @@ func (x *CMsgDotaFantasyCraftingTabletPeriodData_Gem) String() string {
 func (*CMsgDotaFantasyCraftingTabletPeriodData_Gem) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingTabletPeriodData_Gem) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4439,6 +5011,7 @@ type CMsgDotaFantasyCraftingTabletPeriodData_Tablet struct {
 	AccountId     *uint32                                        `protobuf:"varint,4,opt,name=account_id,json=accountId" json:"account_id,omitempty"`
 	Prefix        *uint32                                        `protobuf:"varint,5,opt,name=prefix" json:"prefix,omitempty"`
 	Suffix        *uint32                                        `protobuf:"varint,6,opt,name=suffix" json:"suffix,omitempty"`
+	TeamId        *uint32                                        `protobuf:"varint,10,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
 	Gems          []*CMsgDotaFantasyCraftingTabletPeriodData_Gem `protobuf:"bytes,7,rep,name=gems" json:"gems,omitempty"`
 	Score         *float32                                       `protobuf:"fixed32,8,opt,name=score" json:"score,omitempty"`
 	BestSeries    *uint32                                        `protobuf:"varint,9,opt,name=best_series,json=bestSeries" json:"best_series,omitempty"`
@@ -4453,7 +5026,7 @@ const (
 
 func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) Reset() {
 	*x = CMsgDotaFantasyCraftingTabletPeriodData_Tablet{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4465,7 +5038,7 @@ func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) String() string {
 func (*CMsgDotaFantasyCraftingTabletPeriodData_Tablet) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4523,6 +5096,13 @@ func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetSuffix() uint32 {
 	return 0
 }
 
+func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetTeamId() uint32 {
+	if x != nil && x.TeamId != nil {
+		return *x.TeamId
+	}
+	return 0
+}
+
 func (x *CMsgDotaFantasyCraftingTabletPeriodData_Tablet) GetGems() []*CMsgDotaFantasyCraftingTabletPeriodData_Gem {
 	if x != nil {
 		return x.Gems
@@ -4554,7 +5134,7 @@ type CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry struct {
 
 func (x *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) Reset() {
 	*x = CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4566,7 +5146,7 @@ func (x *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) String() strin
 func (*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4606,7 +5186,7 @@ type CMsgDotaFantasyCraftingUserData_PeriodScore struct {
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodScore) Reset() {
 	*x = CMsgDotaFantasyCraftingUserData_PeriodScore{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4618,7 +5198,7 @@ func (x *CMsgDotaFantasyCraftingUserData_PeriodScore) String() string {
 func (*CMsgDotaFantasyCraftingUserData_PeriodScore) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodScore) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4658,7 +5238,7 @@ type CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry struct {
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) Reset() {
 	*x = CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4670,7 +5250,7 @@ func (x *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) String() string 
 func (*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4710,7 +5290,7 @@ type CMsgDotaFantasyCraftingUserData_PeriodScoresEntry struct {
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) Reset() {
 	*x = CMsgDotaFantasyCraftingUserData_PeriodScoresEntry{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4722,7 +5302,7 @@ func (x *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) String() string {
 func (*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingUserData_PeriodScoresEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4763,7 +5343,7 @@ type CMsgDotaFantasyCraftingDataCache_CacheEntry struct {
 
 func (x *CMsgDotaFantasyCraftingDataCache_CacheEntry) Reset() {
 	*x = CMsgDotaFantasyCraftingDataCache_CacheEntry{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4775,7 +5355,7 @@ func (x *CMsgDotaFantasyCraftingDataCache_CacheEntry) String() string {
 func (*CMsgDotaFantasyCraftingDataCache_CacheEntry) ProtoMessage() {}
 
 func (x *CMsgDotaFantasyCraftingDataCache_CacheEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4822,7 +5402,7 @@ type CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice struct {
 
 func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) Reset() {
 	*x = CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice{}
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[58]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4834,7 +5414,7 @@ func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) Stri
 func (*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) ProtoMessage() {}
 
 func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[58]
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4860,6 +5440,63 @@ func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) GetP
 func (x *CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice) GetSuffixChoice() uint32 {
 	if x != nil && x.SuffixChoice != nil {
 		return *x.SuffixChoice
+	}
+	return 0
+}
+
+type CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FantasyRole   *Fantasy_Roles         `protobuf:"varint,1,opt,name=fantasy_role,json=fantasyRole,enum=protocol.Fantasy_Roles,def=0" json:"fantasy_role,omitempty"`
+	TeamId        *uint32                `protobuf:"varint,2,opt,name=team_id,json=teamId" json:"team_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice fields.
+const (
+	Default_CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice_FantasyRole = Fantasy_Roles_FANTASY_ROLE_UNDEFINED
+)
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) Reset() {
+	*x = CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice{}
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) ProtoMessage() {}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_client_fantasy_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_client_fantasy_proto_rawDescGZIP(), []int{38, 0}
+}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) GetFantasyRole() Fantasy_Roles {
+	if x != nil && x.FantasyRole != nil {
+		return *x.FantasyRole
+	}
+	return Default_CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice_FantasyRole
+}
+
+func (x *CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice) GetTeamId() uint32 {
+	if x != nil && x.TeamId != nil {
+		return *x.TeamId
 	}
 	return 0
 }
@@ -4901,9 +5538,11 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\rteam_url_logo\x18\x06 \x01(\tR\vteamUrlLogo\x1a`\n" +
 	"\x0fProRegistration\x12/\n" +
 	"\x13registration_period\x18\x01 \x01(\rR\x12registrationPeriod\x12\x1c\n" +
-	"\ttimestamp\x18\x02 \x01(\rR\ttimestamp\"Y\n" +
+	"\ttimestamp\x18\x02 \x01(\rR\ttimestamp\"x\n" +
 	"\x16CMsgDOTAPlayerInfoList\x12?\n" +
-	"\fplayer_infos\x18\x01 \x03(\v2\x1c.protocol.CMsgDOTAPlayerInfoR\vplayerInfos\"\xa3\x01\n" +
+	"\fplayer_infos\x18\x01 \x03(\v2\x1c.protocol.CMsgDOTAPlayerInfoR\vplayerInfos\x12\x1d\n" +
+	"\n" +
+	"retry_time\x18\x02 \x01(\rR\tretryTime\"\xa3\x01\n" +
 	"\x12CMsgDOTATeamRoster\x12\x1c\n" +
 	"\ttimestamp\x18\x01 \x01(\rR\ttimestamp\x12\x17\n" +
 	"\ateam_id\x18\x02 \x01(\rR\x06teamId\x12,\n" +
@@ -5054,7 +5693,7 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\x05teams\x18\x01 \x03(\v2..protocol.CMsgDOTADPCTeamFavoriteRankings.TeamR\x05teams\x1a=\n" +
 	"\x04Team\x12\x17\n" +
 	"\ateam_id\x18\x01 \x01(\rR\x06teamId\x12\x1c\n" +
-	"\tfavorites\x18\x02 \x01(\rR\tfavorites\"\xf9\x05\n" +
+	"\tfavorites\x18\x02 \x01(\rR\tfavorites\"\x92\x06\n" +
 	"'CMsgDotaFantasyCraftingTabletPeriodData\x121\n" +
 	"\x0efantasy_period\x18\x01 \x01(\r:\n" +
 	"4294967295R\rfantasyPeriod\x12R\n" +
@@ -5064,7 +5703,7 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\x04slot\x18\x02 \x01(\rR\x04slot\x12\x14\n" +
 	"\x05shape\x18\x03 \x01(\rR\x05shape\x12\x18\n" +
 	"\aquality\x18\x04 \x01(\rR\aquality\x12D\n" +
-	"\x04stat\x18\x05 \x01(\x0e2\x19.protocol.Fantasy_Scoring:\x15FANTASY_SCORING_KILLSR\x04stat\x1a\xed\x02\n" +
+	"\x04stat\x18\x05 \x01(\x0e2\x19.protocol.Fantasy_Scoring:\x15FANTASY_SCORING_KILLSR\x04stat\x1a\x86\x03\n" +
 	"\x06Tablet\x12\x1b\n" +
 	"\ttablet_id\x18\x01 \x01(\rR\btabletId\x12!\n" +
 	"\ftablet_level\x18\x02 \x01(\rR\vtabletLevel\x12R\n" +
@@ -5072,7 +5711,9 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\n" +
 	"account_id\x18\x04 \x01(\rR\taccountId\x12\x16\n" +
 	"\x06prefix\x18\x05 \x01(\rR\x06prefix\x12\x16\n" +
-	"\x06suffix\x18\x06 \x01(\rR\x06suffix\x12I\n" +
+	"\x06suffix\x18\x06 \x01(\rR\x06suffix\x12\x17\n" +
+	"\ateam_id\x18\n" +
+	" \x01(\rR\x06teamId\x12I\n" +
 	"\x04gems\x18\a \x03(\v25.protocol.CMsgDotaFantasyCraftingTabletPeriodData.GemR\x04gems\x12\x14\n" +
 	"\x05score\x18\b \x01(\x02R\x05score\x12\x1f\n" +
 	"\vbest_series\x18\t \x01(\rR\n" +
@@ -5203,15 +5844,32 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\n" +
 	"k_eTimeout\x10\x04\x12\x14\n" +
 	"\x10k_eInvalidLeague\x10\x05\x12\x14\n" +
-	"\x10k_eInvalidPlayer\x10\x06\"v\n" +
-	",CMsgClientToGCFantasyCraftingGenerateTablets\x12%\n" +
-	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\x12\x1f\n" +
-	"\vaccount_ids\x18\x02 \x03(\rR\n" +
-	"accountIds\"\xd5\x03\n" +
-	"4CMsgClientToGCFantasyCraftingGenerateTabletsResponse\x12v\n" +
-	"\bresponse\x18\x01 \x01(\x0e2H.protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12F\n" +
-	"\tuser_data\x18\x02 \x01(\v2).protocol.CMsgDotaFantasyCraftingUserDataR\buserData\x12L\n" +
-	"\vtablet_data\x18\x03 \x01(\v2+.protocol.CMsgDotaFantasyCraftingTabletDataR\n" +
+	"\x10k_eInvalidPlayer\x10\x06\"\xae\x01\n" +
+	"'CMsgClientToGCFantasyCraftingSelectTeam\x12%\n" +
+	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\x12C\n" +
+	"\x04role\x18\x02 \x01(\x0e2\x17.protocol.Fantasy_Roles:\x16FANTASY_ROLE_UNDEFINEDR\x04role\x12\x17\n" +
+	"\ateam_id\x18\x03 \x01(\rR\x06teamId\"\x81\x03\n" +
+	"/CMsgClientToGCFantasyCraftingSelectTeamResponse\x12q\n" +
+	"\bresponse\x18\x01 \x01(\x0e2C.protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12L\n" +
+	"\vtablet_data\x18\x02 \x01(\v2+.protocol.CMsgDotaFantasyCraftingTabletDataR\n" +
+	"tabletData\"\x8c\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x14\n" +
+	"\x10k_eInvalidLeague\x10\x05\x12\x12\n" +
+	"\x0ek_eInvalidTeam\x10\a\"p\n" +
+	"/CMsgClientToGCFantasyCraftingSelectGlobalPrefix\x12%\n" +
+	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\x12\x16\n" +
+	"\x06prefix\x18\x02 \x01(\rR\x06prefix\"\x93\x03\n" +
+	"7CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse\x12y\n" +
+	"\bresponse\x18\x01 \x01(\x0e2K.protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12L\n" +
+	"\vtablet_data\x18\x02 \x01(\v2+.protocol.CMsgDotaFantasyCraftingTabletDataR\n" +
 	"tabletData\"\x8e\x01\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
@@ -5223,7 +5881,51 @@ const file_dota_gcmessages_client_fantasy_proto_rawDesc = "" +
 	"\n" +
 	"k_eTimeout\x10\x04\x12\x14\n" +
 	"\x10k_eInvalidLeague\x10\x05\x12\x14\n" +
-	"\x10k_eInvalidPlayer\x10\x06\"T\n" +
+	"\x10k_eInvalidPrefix\x10\a\"p\n" +
+	"/CMsgClientToGCFantasyCraftingSelectGlobalSuffix\x12%\n" +
+	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\x12\x16\n" +
+	"\x06suffix\x18\x02 \x01(\rR\x06suffix\"\x93\x03\n" +
+	"7CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse\x12y\n" +
+	"\bresponse\x18\x01 \x01(\x0e2K.protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12L\n" +
+	"\vtablet_data\x18\x02 \x01(\v2+.protocol.CMsgDotaFantasyCraftingTabletDataR\n" +
+	"tabletData\"\x8e\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x14\n" +
+	"\x10k_eInvalidLeague\x10\x05\x12\x14\n" +
+	"\x10k_eInvalidSuffix\x10\a\"\xdb\x02\n" +
+	",CMsgClientToGCFantasyCraftingGenerateTablets\x12%\n" +
+	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\x12\x1f\n" +
+	"\vaccount_ids\x18\x02 \x03(\rR\n" +
+	"accountIds\x12h\n" +
+	"\x0eselected_teams\x18\x03 \x03(\v2A.protocol.CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoiceR\rselectedTeams\x1ay\n" +
+	"\n" +
+	"TeamChoice\x12R\n" +
+	"\ffantasy_role\x18\x01 \x01(\x0e2\x17.protocol.Fantasy_Roles:\x16FANTASY_ROLE_UNDEFINEDR\vfantasyRole\x12\x17\n" +
+	"\ateam_id\x18\x02 \x01(\rR\x06teamId\"\xe9\x03\n" +
+	"4CMsgClientToGCFantasyCraftingGenerateTabletsResponse\x12v\n" +
+	"\bresponse\x18\x01 \x01(\x0e2H.protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12F\n" +
+	"\tuser_data\x18\x02 \x01(\v2).protocol.CMsgDotaFantasyCraftingUserDataR\buserData\x12L\n" +
+	"\vtablet_data\x18\x03 \x01(\v2+.protocol.CMsgDotaFantasyCraftingTabletDataR\n" +
+	"tabletData\"\xa2\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x14\n" +
+	"\x10k_eInvalidLeague\x10\x05\x12\x14\n" +
+	"\x10k_eInvalidPlayer\x10\x06\x12\x12\n" +
+	"\x0ek_eInvalidTeam\x10\a\"T\n" +
 	"+CMsgClientToGcFantasyCraftingUpgradeTablets\x12%\n" +
 	"\x0efantasy_league\x18\x01 \x01(\rR\rfantasyLeague\"\xf4\x02\n" +
 	"3CMsgClientToGcFantasyCraftingUpgradeTabletsResponse\x12u\n" +
@@ -5367,8 +6069,8 @@ func file_dota_gcmessages_client_fantasy_proto_rawDescGZIP() []byte {
 	return file_dota_gcmessages_client_fantasy_proto_rawDescData
 }
 
-var file_dota_gcmessages_client_fantasy_proto_enumTypes = make([]protoimpl.EnumInfo, 13)
-var file_dota_gcmessages_client_fantasy_proto_msgTypes = make([]protoimpl.MessageInfo, 59)
+var file_dota_gcmessages_client_fantasy_proto_enumTypes = make([]protoimpl.EnumInfo, 16)
+var file_dota_gcmessages_client_fantasy_proto_msgTypes = make([]protoimpl.MessageInfo, 66)
 var file_dota_gcmessages_client_fantasy_proto_goTypes = []any{
 	(DOTA_2013PassportSelectionIndices)(0),                                    // 0: protocol.DOTA_2013PassportSelectionIndices
 	(CMsgClientToGCGetPlayerCardRosterResponse_Result)(0),                     // 1: protocol.CMsgClientToGCGetPlayerCardRosterResponse.Result
@@ -5380,136 +6082,155 @@ var file_dota_gcmessages_client_fantasy_proto_goTypes = []any{
 	(CMsgClientToGCFantasyCraftingPerformOperationResponse_EResponse)(0),      // 7: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.EResponse
 	(CMsgClientToGCFantasyCraftingDevModifyTabletResponse_EResponse)(0),       // 8: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.EResponse
 	(CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse)(0),          // 9: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse.EResponse
-	(CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse)(0),       // 10: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse
-	(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse)(0),        // 11: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.EResponse
-	(CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse)(0),         // 12: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.EResponse
-	(*CMsgDOTAPlayerInfo)(nil),                                                // 13: protocol.CMsgDOTAPlayerInfo
-	(*CMsgDOTAPlayerInfoList)(nil),                                            // 14: protocol.CMsgDOTAPlayerInfoList
-	(*CMsgDOTATeamRoster)(nil),                                                // 15: protocol.CMsgDOTATeamRoster
-	(*CMsgDOTADPCProfileInfo)(nil),                                            // 16: protocol.CMsgDOTADPCProfileInfo
-	(*CMsgDOTALeaderboards)(nil),                                              // 17: protocol.CMsgDOTALeaderboards
-	(*CMsgDOTAPassportVoteTeamGuess)(nil),                                     // 18: protocol.CMsgDOTAPassportVoteTeamGuess
-	(*CMsgDOTAPassportVoteGenericSelection)(nil),                              // 19: protocol.CMsgDOTAPassportVoteGenericSelection
-	(*CMsgDOTAPassportStampedPlayer)(nil),                                     // 20: protocol.CMsgDOTAPassportStampedPlayer
-	(*CMsgDOTAPassportPlayerCardChallenge)(nil),                               // 21: protocol.CMsgDOTAPassportPlayerCardChallenge
-	(*CMsgDOTAPassportVote)(nil),                                              // 22: protocol.CMsgDOTAPassportVote
-	(*CMsgClientToGCGetPlayerCardRosterRequest)(nil),                          // 23: protocol.CMsgClientToGCGetPlayerCardRosterRequest
-	(*CMsgClientToGCGetPlayerCardRosterResponse)(nil),                         // 24: protocol.CMsgClientToGCGetPlayerCardRosterResponse
-	(*CMsgClientToGCBatchGetPlayerCardRosterRequest)(nil),                     // 25: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest
-	(*CMsgClientToGCBatchGetPlayerCardRosterResponse)(nil),                    // 26: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse
-	(*CMsgClientToGCSetPlayerCardRosterRequest)(nil),                          // 27: protocol.CMsgClientToGCSetPlayerCardRosterRequest
-	(*CMsgClientToGCSetPlayerCardRosterResponse)(nil),                         // 28: protocol.CMsgClientToGCSetPlayerCardRosterResponse
-	(*CMsgDOTAFantasyDPCLeagueStatus)(nil),                                    // 29: protocol.CMsgDOTAFantasyDPCLeagueStatus
-	(*CMsgDOTADPCSearchResults)(nil),                                          // 30: protocol.CMsgDOTADPCSearchResults
-	(*CMsgDOTADPCTeamFavoriteRankings)(nil),                                   // 31: protocol.CMsgDOTADPCTeamFavoriteRankings
-	(*CMsgDotaFantasyCraftingTabletPeriodData)(nil),                           // 32: protocol.CMsgDotaFantasyCraftingTabletPeriodData
-	(*CMsgDotaFantasyCraftingTabletData)(nil),                                 // 33: protocol.CMsgDotaFantasyCraftingTabletData
-	(*CMsgDotaFantasyCraftingUserData)(nil),                                   // 34: protocol.CMsgDotaFantasyCraftingUserData
-	(*CMsgDotaFantasyCraftingDataCache)(nil),                                  // 35: protocol.CMsgDotaFantasyCraftingDataCache
-	(*CMsgClientToGCFantasyCraftingGetData)(nil),                              // 36: protocol.CMsgClientToGCFantasyCraftingGetData
-	(*CMsgClientToGCFantasyCraftingGetDataResponse)(nil),                      // 37: protocol.CMsgClientToGCFantasyCraftingGetDataResponse
-	(*CMsgClientToGCFantasyCraftingPerformOperation)(nil),                     // 38: protocol.CMsgClientToGCFantasyCraftingPerformOperation
-	(*CMsgClientToGCFantasyCraftingPerformOperationResponse)(nil),             // 39: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse
-	(*CMsgGCToClientFantasyCraftingDataUpdated)(nil),                          // 40: protocol.CMsgGCToClientFantasyCraftingDataUpdated
-	(*CMsgClientToGCFantasyCraftingDevModifyTablet)(nil),                      // 41: protocol.CMsgClientToGCFantasyCraftingDevModifyTablet
-	(*CMsgClientToGCFantasyCraftingDevModifyTabletResponse)(nil),              // 42: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse
-	(*CMsgClientToGCFantasyCraftingSelectPlayer)(nil),                         // 43: protocol.CMsgClientToGCFantasyCraftingSelectPlayer
-	(*CMsgClientToGCFantasyCraftingSelectPlayerResponse)(nil),                 // 44: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse
-	(*CMsgClientToGCFantasyCraftingGenerateTablets)(nil),                      // 45: protocol.CMsgClientToGCFantasyCraftingGenerateTablets
-	(*CMsgClientToGCFantasyCraftingGenerateTabletsResponse)(nil),              // 46: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse
-	(*CMsgClientToGcFantasyCraftingUpgradeTablets)(nil),                       // 47: protocol.CMsgClientToGcFantasyCraftingUpgradeTablets
-	(*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse)(nil),               // 48: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse
-	(*CMsgClientToGCFantasyCraftingRerollOptions)(nil),                        // 49: protocol.CMsgClientToGCFantasyCraftingRerollOptions
-	(*CMsgClientToGCFantasyCraftingRerollOptionsResponse)(nil),                // 50: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse
-	(*CMsgDOTAPlayerInfo_Results)(nil),                                        // 51: protocol.CMsgDOTAPlayerInfo.Results
-	(*CMsgDOTAPlayerInfo_AuditEntry)(nil),                                     // 52: protocol.CMsgDOTAPlayerInfo.AuditEntry
-	(*CMsgDOTAPlayerInfo_ProRegistration)(nil),                                // 53: protocol.CMsgDOTAPlayerInfo.ProRegistration
-	(*CMsgDOTADPCProfileInfo_PredictionInfo)(nil),                             // 54: protocol.CMsgDOTADPCProfileInfo.PredictionInfo
-	(*CMsgDOTADPCProfileInfo_FantasyInfo)(nil),                                // 55: protocol.CMsgDOTADPCProfileInfo.FantasyInfo
-	(*CMsgDOTALeaderboards_RegionLeaderboard)(nil),                            // 56: protocol.CMsgDOTALeaderboards.RegionLeaderboard
-	(*CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp)(nil),     // 57: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.LeagueTimestamp
-	(*CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse)(nil),     // 58: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse
-	(*CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo)(nil),                         // 59: protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo
-	(*CMsgDOTADPCSearchResults_Player)(nil),                                   // 60: protocol.CMsgDOTADPCSearchResults.Player
-	(*CMsgDOTADPCSearchResults_Team)(nil),                                     // 61: protocol.CMsgDOTADPCSearchResults.Team
-	(*CMsgDOTADPCSearchResults_League)(nil),                                   // 62: protocol.CMsgDOTADPCSearchResults.League
-	(*CMsgDOTADPCTeamFavoriteRankings_Team)(nil),                              // 63: protocol.CMsgDOTADPCTeamFavoriteRankings.Team
-	(*CMsgDotaFantasyCraftingTabletPeriodData_Gem)(nil),                       // 64: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem
-	(*CMsgDotaFantasyCraftingTabletPeriodData_Tablet)(nil),                    // 65: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet
-	(*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry)(nil),           // 66: protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry
-	(*CMsgDotaFantasyCraftingUserData_PeriodScore)(nil),                       // 67: protocol.CMsgDotaFantasyCraftingUserData.PeriodScore
-	(*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry)(nil),             // 68: protocol.CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry
-	(*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry)(nil),                 // 69: protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry
-	(*CMsgDotaFantasyCraftingDataCache_CacheEntry)(nil),                       // 70: protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry
-	(*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice)(nil), // 71: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice
-	(Fantasy_Roles)(0),    // 72: protocol.Fantasy_Roles
-	(Fantasy_Gem_Type)(0), // 73: protocol.Fantasy_Gem_Type
-	(Fantasy_Scoring)(0),  // 74: protocol.Fantasy_Scoring
+	(CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse)(0),            // 10: protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse.EResponse
+	(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse)(0),    // 11: protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.EResponse
+	(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse)(0),    // 12: protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.EResponse
+	(CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse)(0),       // 13: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse
+	(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_EResponse)(0),        // 14: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.EResponse
+	(CMsgClientToGCFantasyCraftingRerollOptionsResponse_EResponse)(0),         // 15: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.EResponse
+	(*CMsgDOTAPlayerInfo)(nil),                                                // 16: protocol.CMsgDOTAPlayerInfo
+	(*CMsgDOTAPlayerInfoList)(nil),                                            // 17: protocol.CMsgDOTAPlayerInfoList
+	(*CMsgDOTATeamRoster)(nil),                                                // 18: protocol.CMsgDOTATeamRoster
+	(*CMsgDOTADPCProfileInfo)(nil),                                            // 19: protocol.CMsgDOTADPCProfileInfo
+	(*CMsgDOTALeaderboards)(nil),                                              // 20: protocol.CMsgDOTALeaderboards
+	(*CMsgDOTAPassportVoteTeamGuess)(nil),                                     // 21: protocol.CMsgDOTAPassportVoteTeamGuess
+	(*CMsgDOTAPassportVoteGenericSelection)(nil),                              // 22: protocol.CMsgDOTAPassportVoteGenericSelection
+	(*CMsgDOTAPassportStampedPlayer)(nil),                                     // 23: protocol.CMsgDOTAPassportStampedPlayer
+	(*CMsgDOTAPassportPlayerCardChallenge)(nil),                               // 24: protocol.CMsgDOTAPassportPlayerCardChallenge
+	(*CMsgDOTAPassportVote)(nil),                                              // 25: protocol.CMsgDOTAPassportVote
+	(*CMsgClientToGCGetPlayerCardRosterRequest)(nil),                          // 26: protocol.CMsgClientToGCGetPlayerCardRosterRequest
+	(*CMsgClientToGCGetPlayerCardRosterResponse)(nil),                         // 27: protocol.CMsgClientToGCGetPlayerCardRosterResponse
+	(*CMsgClientToGCBatchGetPlayerCardRosterRequest)(nil),                     // 28: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest
+	(*CMsgClientToGCBatchGetPlayerCardRosterResponse)(nil),                    // 29: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse
+	(*CMsgClientToGCSetPlayerCardRosterRequest)(nil),                          // 30: protocol.CMsgClientToGCSetPlayerCardRosterRequest
+	(*CMsgClientToGCSetPlayerCardRosterResponse)(nil),                         // 31: protocol.CMsgClientToGCSetPlayerCardRosterResponse
+	(*CMsgDOTAFantasyDPCLeagueStatus)(nil),                                    // 32: protocol.CMsgDOTAFantasyDPCLeagueStatus
+	(*CMsgDOTADPCSearchResults)(nil),                                          // 33: protocol.CMsgDOTADPCSearchResults
+	(*CMsgDOTADPCTeamFavoriteRankings)(nil),                                   // 34: protocol.CMsgDOTADPCTeamFavoriteRankings
+	(*CMsgDotaFantasyCraftingTabletPeriodData)(nil),                           // 35: protocol.CMsgDotaFantasyCraftingTabletPeriodData
+	(*CMsgDotaFantasyCraftingTabletData)(nil),                                 // 36: protocol.CMsgDotaFantasyCraftingTabletData
+	(*CMsgDotaFantasyCraftingUserData)(nil),                                   // 37: protocol.CMsgDotaFantasyCraftingUserData
+	(*CMsgDotaFantasyCraftingDataCache)(nil),                                  // 38: protocol.CMsgDotaFantasyCraftingDataCache
+	(*CMsgClientToGCFantasyCraftingGetData)(nil),                              // 39: protocol.CMsgClientToGCFantasyCraftingGetData
+	(*CMsgClientToGCFantasyCraftingGetDataResponse)(nil),                      // 40: protocol.CMsgClientToGCFantasyCraftingGetDataResponse
+	(*CMsgClientToGCFantasyCraftingPerformOperation)(nil),                     // 41: protocol.CMsgClientToGCFantasyCraftingPerformOperation
+	(*CMsgClientToGCFantasyCraftingPerformOperationResponse)(nil),             // 42: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse
+	(*CMsgGCToClientFantasyCraftingDataUpdated)(nil),                          // 43: protocol.CMsgGCToClientFantasyCraftingDataUpdated
+	(*CMsgClientToGCFantasyCraftingDevModifyTablet)(nil),                      // 44: protocol.CMsgClientToGCFantasyCraftingDevModifyTablet
+	(*CMsgClientToGCFantasyCraftingDevModifyTabletResponse)(nil),              // 45: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse
+	(*CMsgClientToGCFantasyCraftingSelectPlayer)(nil),                         // 46: protocol.CMsgClientToGCFantasyCraftingSelectPlayer
+	(*CMsgClientToGCFantasyCraftingSelectPlayerResponse)(nil),                 // 47: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse
+	(*CMsgClientToGCFantasyCraftingSelectTeam)(nil),                           // 48: protocol.CMsgClientToGCFantasyCraftingSelectTeam
+	(*CMsgClientToGCFantasyCraftingSelectTeamResponse)(nil),                   // 49: protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse
+	(*CMsgClientToGCFantasyCraftingSelectGlobalPrefix)(nil),                   // 50: protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefix
+	(*CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse)(nil),           // 51: protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
+	(*CMsgClientToGCFantasyCraftingSelectGlobalSuffix)(nil),                   // 52: protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffix
+	(*CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse)(nil),           // 53: protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
+	(*CMsgClientToGCFantasyCraftingGenerateTablets)(nil),                      // 54: protocol.CMsgClientToGCFantasyCraftingGenerateTablets
+	(*CMsgClientToGCFantasyCraftingGenerateTabletsResponse)(nil),              // 55: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse
+	(*CMsgClientToGcFantasyCraftingUpgradeTablets)(nil),                       // 56: protocol.CMsgClientToGcFantasyCraftingUpgradeTablets
+	(*CMsgClientToGcFantasyCraftingUpgradeTabletsResponse)(nil),               // 57: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse
+	(*CMsgClientToGCFantasyCraftingRerollOptions)(nil),                        // 58: protocol.CMsgClientToGCFantasyCraftingRerollOptions
+	(*CMsgClientToGCFantasyCraftingRerollOptionsResponse)(nil),                // 59: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse
+	(*CMsgDOTAPlayerInfo_Results)(nil),                                        // 60: protocol.CMsgDOTAPlayerInfo.Results
+	(*CMsgDOTAPlayerInfo_AuditEntry)(nil),                                     // 61: protocol.CMsgDOTAPlayerInfo.AuditEntry
+	(*CMsgDOTAPlayerInfo_ProRegistration)(nil),                                // 62: protocol.CMsgDOTAPlayerInfo.ProRegistration
+	(*CMsgDOTADPCProfileInfo_PredictionInfo)(nil),                             // 63: protocol.CMsgDOTADPCProfileInfo.PredictionInfo
+	(*CMsgDOTADPCProfileInfo_FantasyInfo)(nil),                                // 64: protocol.CMsgDOTADPCProfileInfo.FantasyInfo
+	(*CMsgDOTALeaderboards_RegionLeaderboard)(nil),                            // 65: protocol.CMsgDOTALeaderboards.RegionLeaderboard
+	(*CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp)(nil),     // 66: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.LeagueTimestamp
+	(*CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse)(nil),     // 67: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse
+	(*CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo)(nil),                         // 68: protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo
+	(*CMsgDOTADPCSearchResults_Player)(nil),                                   // 69: protocol.CMsgDOTADPCSearchResults.Player
+	(*CMsgDOTADPCSearchResults_Team)(nil),                                     // 70: protocol.CMsgDOTADPCSearchResults.Team
+	(*CMsgDOTADPCSearchResults_League)(nil),                                   // 71: protocol.CMsgDOTADPCSearchResults.League
+	(*CMsgDOTADPCTeamFavoriteRankings_Team)(nil),                              // 72: protocol.CMsgDOTADPCTeamFavoriteRankings.Team
+	(*CMsgDotaFantasyCraftingTabletPeriodData_Gem)(nil),                       // 73: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem
+	(*CMsgDotaFantasyCraftingTabletPeriodData_Tablet)(nil),                    // 74: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet
+	(*CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry)(nil),           // 75: protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry
+	(*CMsgDotaFantasyCraftingUserData_PeriodScore)(nil),                       // 76: protocol.CMsgDotaFantasyCraftingUserData.PeriodScore
+	(*CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry)(nil),             // 77: protocol.CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry
+	(*CMsgDotaFantasyCraftingUserData_PeriodScoresEntry)(nil),                 // 78: protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry
+	(*CMsgDotaFantasyCraftingDataCache_CacheEntry)(nil),                       // 79: protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry
+	(*CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice)(nil), // 80: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice
+	(*CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice)(nil),           // 81: protocol.CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice
+	(Fantasy_Roles)(0),    // 82: protocol.Fantasy_Roles
+	(Fantasy_Gem_Type)(0), // 83: protocol.Fantasy_Gem_Type
+	(Fantasy_Scoring)(0),  // 84: protocol.Fantasy_Scoring
 }
 var file_dota_gcmessages_client_fantasy_proto_depIdxs = []int32{
-	72, // 0: protocol.CMsgDOTAPlayerInfo.fantasy_role:type_name -> protocol.Fantasy_Roles
-	51, // 1: protocol.CMsgDOTAPlayerInfo.results:type_name -> protocol.CMsgDOTAPlayerInfo.Results
-	52, // 2: protocol.CMsgDOTAPlayerInfo.audit_entries:type_name -> protocol.CMsgDOTAPlayerInfo.AuditEntry
-	53, // 3: protocol.CMsgDOTAPlayerInfo.pro_registration:type_name -> protocol.CMsgDOTAPlayerInfo.ProRegistration
-	13, // 4: protocol.CMsgDOTAPlayerInfoList.player_infos:type_name -> protocol.CMsgDOTAPlayerInfo
-	13, // 5: protocol.CMsgDOTADPCProfileInfo.player_info:type_name -> protocol.CMsgDOTAPlayerInfo
-	54, // 6: protocol.CMsgDOTADPCProfileInfo.prediction_info:type_name -> protocol.CMsgDOTADPCProfileInfo.PredictionInfo
-	55, // 7: protocol.CMsgDOTADPCProfileInfo.fantasy_info:type_name -> protocol.CMsgDOTADPCProfileInfo.FantasyInfo
-	56, // 8: protocol.CMsgDOTALeaderboards.leaderboards:type_name -> protocol.CMsgDOTALeaderboards.RegionLeaderboard
+	82, // 0: protocol.CMsgDOTAPlayerInfo.fantasy_role:type_name -> protocol.Fantasy_Roles
+	60, // 1: protocol.CMsgDOTAPlayerInfo.results:type_name -> protocol.CMsgDOTAPlayerInfo.Results
+	61, // 2: protocol.CMsgDOTAPlayerInfo.audit_entries:type_name -> protocol.CMsgDOTAPlayerInfo.AuditEntry
+	62, // 3: protocol.CMsgDOTAPlayerInfo.pro_registration:type_name -> protocol.CMsgDOTAPlayerInfo.ProRegistration
+	16, // 4: protocol.CMsgDOTAPlayerInfoList.player_infos:type_name -> protocol.CMsgDOTAPlayerInfo
+	16, // 5: protocol.CMsgDOTADPCProfileInfo.player_info:type_name -> protocol.CMsgDOTAPlayerInfo
+	63, // 6: protocol.CMsgDOTADPCProfileInfo.prediction_info:type_name -> protocol.CMsgDOTADPCProfileInfo.PredictionInfo
+	64, // 7: protocol.CMsgDOTADPCProfileInfo.fantasy_info:type_name -> protocol.CMsgDOTADPCProfileInfo.FantasyInfo
+	65, // 8: protocol.CMsgDOTALeaderboards.leaderboards:type_name -> protocol.CMsgDOTALeaderboards.RegionLeaderboard
 	0,  // 9: protocol.CMsgDOTAPassportVoteGenericSelection.selection_index:type_name -> protocol.DOTA_2013PassportSelectionIndices
-	18, // 10: protocol.CMsgDOTAPassportVote.team_votes:type_name -> protocol.CMsgDOTAPassportVoteTeamGuess
-	19, // 11: protocol.CMsgDOTAPassportVote.generic_selections:type_name -> protocol.CMsgDOTAPassportVoteGenericSelection
-	20, // 12: protocol.CMsgDOTAPassportVote.stamped_players:type_name -> protocol.CMsgDOTAPassportStampedPlayer
-	21, // 13: protocol.CMsgDOTAPassportVote.player_card_challenges:type_name -> protocol.CMsgDOTAPassportPlayerCardChallenge
+	21, // 10: protocol.CMsgDOTAPassportVote.team_votes:type_name -> protocol.CMsgDOTAPassportVoteTeamGuess
+	22, // 11: protocol.CMsgDOTAPassportVote.generic_selections:type_name -> protocol.CMsgDOTAPassportVoteGenericSelection
+	23, // 12: protocol.CMsgDOTAPassportVote.stamped_players:type_name -> protocol.CMsgDOTAPassportStampedPlayer
+	24, // 13: protocol.CMsgDOTAPassportVote.player_card_challenges:type_name -> protocol.CMsgDOTAPassportPlayerCardChallenge
 	1,  // 14: protocol.CMsgClientToGCGetPlayerCardRosterResponse.result:type_name -> protocol.CMsgClientToGCGetPlayerCardRosterResponse.Result
-	57, // 15: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.league_timestamps:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.LeagueTimestamp
-	58, // 16: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.responses:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse
+	66, // 15: protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.league_timestamps:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest.LeagueTimestamp
+	67, // 16: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.responses:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse
 	3,  // 17: protocol.CMsgClientToGCSetPlayerCardRosterResponse.result:type_name -> protocol.CMsgClientToGCSetPlayerCardRosterResponse.Result
-	59, // 18: protocol.CMsgDOTAFantasyDPCLeagueStatus.league_infos:type_name -> protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo
-	60, // 19: protocol.CMsgDOTADPCSearchResults.players:type_name -> protocol.CMsgDOTADPCSearchResults.Player
-	61, // 20: protocol.CMsgDOTADPCSearchResults.teams:type_name -> protocol.CMsgDOTADPCSearchResults.Team
-	62, // 21: protocol.CMsgDOTADPCSearchResults.leagues:type_name -> protocol.CMsgDOTADPCSearchResults.League
-	63, // 22: protocol.CMsgDOTADPCTeamFavoriteRankings.teams:type_name -> protocol.CMsgDOTADPCTeamFavoriteRankings.Team
-	65, // 23: protocol.CMsgDotaFantasyCraftingTabletPeriodData.tablets:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet
-	66, // 24: protocol.CMsgDotaFantasyCraftingTabletData.tablet_period_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry
-	68, // 25: protocol.CMsgDotaFantasyCraftingUserData.period_roll_tokens:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry
-	69, // 26: protocol.CMsgDotaFantasyCraftingUserData.period_scores:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry
-	70, // 27: protocol.CMsgDotaFantasyCraftingDataCache.cache_entries:type_name -> protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry
+	68, // 18: protocol.CMsgDOTAFantasyDPCLeagueStatus.league_infos:type_name -> protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo
+	69, // 19: protocol.CMsgDOTADPCSearchResults.players:type_name -> protocol.CMsgDOTADPCSearchResults.Player
+	70, // 20: protocol.CMsgDOTADPCSearchResults.teams:type_name -> protocol.CMsgDOTADPCSearchResults.Team
+	71, // 21: protocol.CMsgDOTADPCSearchResults.leagues:type_name -> protocol.CMsgDOTADPCSearchResults.League
+	72, // 22: protocol.CMsgDOTADPCTeamFavoriteRankings.teams:type_name -> protocol.CMsgDOTADPCTeamFavoriteRankings.Team
+	74, // 23: protocol.CMsgDotaFantasyCraftingTabletPeriodData.tablets:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet
+	75, // 24: protocol.CMsgDotaFantasyCraftingTabletData.tablet_period_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry
+	77, // 25: protocol.CMsgDotaFantasyCraftingUserData.period_roll_tokens:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodRollTokensEntry
+	78, // 26: protocol.CMsgDotaFantasyCraftingUserData.period_scores:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry
+	79, // 27: protocol.CMsgDotaFantasyCraftingDataCache.cache_entries:type_name -> protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry
 	6,  // 28: protocol.CMsgClientToGCFantasyCraftingGetDataResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingGetDataResponse.EResponse
-	34, // 29: protocol.CMsgClientToGCFantasyCraftingGetDataResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	33, // 30: protocol.CMsgClientToGCFantasyCraftingGetDataResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	37, // 29: protocol.CMsgClientToGCFantasyCraftingGetDataResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	36, // 30: protocol.CMsgClientToGCFantasyCraftingGetDataResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
 	7,  // 31: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.EResponse
-	34, // 32: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	33, // 33: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
-	71, // 34: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.title_choices:type_name -> protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice
-	34, // 35: protocol.CMsgGCToClientFantasyCraftingDataUpdated.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	33, // 36: protocol.CMsgGCToClientFantasyCraftingDataUpdated.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	37, // 32: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	36, // 33: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	80, // 34: protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.title_choices:type_name -> protocol.CMsgClientToGCFantasyCraftingPerformOperationResponse.TitleChoice
+	37, // 35: protocol.CMsgGCToClientFantasyCraftingDataUpdated.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	36, // 36: protocol.CMsgGCToClientFantasyCraftingDataUpdated.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
 	8,  // 37: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.EResponse
-	34, // 38: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	33, // 39: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	37, // 38: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	36, // 39: protocol.CMsgClientToGCFantasyCraftingDevModifyTabletResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
 	9,  // 40: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse.EResponse
-	33, // 41: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
-	10, // 42: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse
-	34, // 43: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	33, // 44: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
-	11, // 45: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.response:type_name -> protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.EResponse
-	33, // 46: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
-	12, // 47: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.EResponse
-	34, // 48: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
-	2,  // 49: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse.result:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.Result
-	4,  // 50: protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo.status:type_name -> protocol.CMsgDOTAFantasyDPCLeagueStatus.ERosterStatus
-	73, // 51: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem.type:type_name -> protocol.Fantasy_Gem_Type
-	74, // 52: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem.stat:type_name -> protocol.Fantasy_Scoring
-	72, // 53: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet.fantasy_role:type_name -> protocol.Fantasy_Roles
-	64, // 54: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet.gems:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem
-	32, // 55: protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry.value:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData
-	67, // 56: protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry.value:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodScore
-	40, // 57: protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry.cache_data:type_name -> protocol.CMsgGCToClientFantasyCraftingDataUpdated
-	58, // [58:58] is the sub-list for method output_type
-	58, // [58:58] is the sub-list for method input_type
-	58, // [58:58] is the sub-list for extension type_name
-	58, // [58:58] is the sub-list for extension extendee
-	0,  // [0:58] is the sub-list for field type_name
+	36, // 41: protocol.CMsgClientToGCFantasyCraftingSelectPlayerResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	82, // 42: protocol.CMsgClientToGCFantasyCraftingSelectTeam.role:type_name -> protocol.Fantasy_Roles
+	10, // 43: protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse.EResponse
+	36, // 44: protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	11, // 45: protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.EResponse
+	36, // 46: protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	12, // 47: protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.EResponse
+	36, // 48: protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	81, // 49: protocol.CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams:type_name -> protocol.CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice
+	13, // 50: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.EResponse
+	37, // 51: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	36, // 52: protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	14, // 53: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.response:type_name -> protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.EResponse
+	36, // 54: protocol.CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.tablet_data:type_name -> protocol.CMsgDotaFantasyCraftingTabletData
+	15, // 55: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.response:type_name -> protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.EResponse
+	37, // 56: protocol.CMsgClientToGCFantasyCraftingRerollOptionsResponse.user_data:type_name -> protocol.CMsgDotaFantasyCraftingUserData
+	2,  // 57: protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.RosterResponse.result:type_name -> protocol.CMsgClientToGCBatchGetPlayerCardRosterResponse.Result
+	4,  // 58: protocol.CMsgDOTAFantasyDPCLeagueStatus.LeagueInfo.status:type_name -> protocol.CMsgDOTAFantasyDPCLeagueStatus.ERosterStatus
+	83, // 59: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem.type:type_name -> protocol.Fantasy_Gem_Type
+	84, // 60: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem.stat:type_name -> protocol.Fantasy_Scoring
+	82, // 61: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet.fantasy_role:type_name -> protocol.Fantasy_Roles
+	73, // 62: protocol.CMsgDotaFantasyCraftingTabletPeriodData.Tablet.gems:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData.Gem
+	35, // 63: protocol.CMsgDotaFantasyCraftingTabletData.TabletPeriodDataEntry.value:type_name -> protocol.CMsgDotaFantasyCraftingTabletPeriodData
+	76, // 64: protocol.CMsgDotaFantasyCraftingUserData.PeriodScoresEntry.value:type_name -> protocol.CMsgDotaFantasyCraftingUserData.PeriodScore
+	43, // 65: protocol.CMsgDotaFantasyCraftingDataCache.CacheEntry.cache_data:type_name -> protocol.CMsgGCToClientFantasyCraftingDataUpdated
+	82, // 66: protocol.CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice.fantasy_role:type_name -> protocol.Fantasy_Roles
+	67, // [67:67] is the sub-list for method output_type
+	67, // [67:67] is the sub-list for method input_type
+	67, // [67:67] is the sub-list for extension type_name
+	67, // [67:67] is the sub-list for extension extendee
+	0,  // [0:67] is the sub-list for field type_name
 }
 
 func init() { file_dota_gcmessages_client_fantasy_proto_init() }
@@ -5523,8 +6244,8 @@ func file_dota_gcmessages_client_fantasy_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_client_fantasy_proto_rawDesc), len(file_dota_gcmessages_client_fantasy_proto_rawDesc)),
-			NumEnums:      13,
-			NumMessages:   59,
+			NumEnums:      16,
+			NumMessages:   66,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

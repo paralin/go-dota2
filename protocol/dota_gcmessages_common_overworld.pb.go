@@ -143,26 +143,31 @@ func (EOverworldPathState) EnumDescriptor() ([]byte, []int) {
 type EOverworldAuditAction int32
 
 const (
-	EOverworldAuditAction_k_eOverworldAuditAction_Invalid                    EOverworldAuditAction = 0
-	EOverworldAuditAction_k_eOverworldAuditAction_DevModifyTokens            EOverworldAuditAction = 1
-	EOverworldAuditAction_k_eOverworldAuditAction_DevClearInventory          EOverworldAuditAction = 2
-	EOverworldAuditAction_k_eOverworldAuditAction_DevGrantTokens             EOverworldAuditAction = 3
-	EOverworldAuditAction_k_eOverworldAuditAction_CompletePath               EOverworldAuditAction = 4
-	EOverworldAuditAction_k_eOverworldAuditAction_ClaimEncounterReward       EOverworldAuditAction = 5
-	EOverworldAuditAction_k_eOverworldAuditAction_DevResetNode               EOverworldAuditAction = 6
-	EOverworldAuditAction_k_eOverworldAuditAction_DevResetPath               EOverworldAuditAction = 7
-	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsFull           EOverworldAuditAction = 8
-	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsHalf           EOverworldAuditAction = 9
-	EOverworldAuditAction_k_eOverworldAuditAction_EventActionTokenGrant      EOverworldAuditAction = 10
-	EOverworldAuditAction_k_eOverworldAuditAction_TokenTraderLost            EOverworldAuditAction = 11
-	EOverworldAuditAction_k_eOverworldAuditAction_TokenTraderGained          EOverworldAuditAction = 12
-	EOverworldAuditAction_k_eOverworldAuditAction_EncounterRewardTokenCost   EOverworldAuditAction = 13
-	EOverworldAuditAction_k_eOverworldAuditAction_EncounterRewardTokenReward EOverworldAuditAction = 14
-	EOverworldAuditAction_k_eOverworldAuditAction_SupportGrantTokens         EOverworldAuditAction = 16
-	EOverworldAuditAction_k_eOverworldAuditAction_TokenGiftSent              EOverworldAuditAction = 17
-	EOverworldAuditAction_k_eOverworldAuditAction_DevSetFortune              EOverworldAuditAction = 18
-	EOverworldAuditAction_k_eOverworldAuditAction_DevClearFortune            EOverworldAuditAction = 19
-	EOverworldAuditAction_k_eOverworldAuditAction_RequestFortune             EOverworldAuditAction = 20
+	EOverworldAuditAction_k_eOverworldAuditAction_Invalid                           EOverworldAuditAction = 0
+	EOverworldAuditAction_k_eOverworldAuditAction_DevModifyTokens                   EOverworldAuditAction = 1
+	EOverworldAuditAction_k_eOverworldAuditAction_DevClearInventory                 EOverworldAuditAction = 2
+	EOverworldAuditAction_k_eOverworldAuditAction_DevGrantTokens                    EOverworldAuditAction = 3
+	EOverworldAuditAction_k_eOverworldAuditAction_CompletePath                      EOverworldAuditAction = 4
+	EOverworldAuditAction_k_eOverworldAuditAction_ClaimEncounterReward              EOverworldAuditAction = 5
+	EOverworldAuditAction_k_eOverworldAuditAction_DevResetNode                      EOverworldAuditAction = 6
+	EOverworldAuditAction_k_eOverworldAuditAction_DevResetPath                      EOverworldAuditAction = 7
+	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsFull                  EOverworldAuditAction = 8
+	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsHalf                  EOverworldAuditAction = 9
+	EOverworldAuditAction_k_eOverworldAuditAction_EventActionTokenGrant             EOverworldAuditAction = 10
+	EOverworldAuditAction_k_eOverworldAuditAction_TokenTraderLost                   EOverworldAuditAction = 11
+	EOverworldAuditAction_k_eOverworldAuditAction_TokenTraderGained                 EOverworldAuditAction = 12
+	EOverworldAuditAction_k_eOverworldAuditAction_EncounterRewardTokenCost          EOverworldAuditAction = 13
+	EOverworldAuditAction_k_eOverworldAuditAction_EncounterRewardTokenReward        EOverworldAuditAction = 14
+	EOverworldAuditAction_k_eOverworldAuditAction_SupportGrantTokens                EOverworldAuditAction = 16
+	EOverworldAuditAction_k_eOverworldAuditAction_TokenGiftSent                     EOverworldAuditAction = 17
+	EOverworldAuditAction_k_eOverworldAuditAction_DevSetFortune                     EOverworldAuditAction = 18
+	EOverworldAuditAction_k_eOverworldAuditAction_DevClearFortune                   EOverworldAuditAction = 19
+	EOverworldAuditAction_k_eOverworldAuditAction_RequestFortune                    EOverworldAuditAction = 20
+	EOverworldAuditAction_k_eOverworldAuditAction_ClaimFortuneReward                EOverworldAuditAction = 21
+	EOverworldAuditAction_k_eOverworldAuditAction_DevGrantFortuneTellerCoin         EOverworldAuditAction = 22
+	EOverworldAuditAction_k_eOverworldAuditAction_ClaimFortuneTellerStoryNodeReward EOverworldAuditAction = 23
+	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsAbilityDraft          EOverworldAuditAction = 24
+	EOverworldAuditAction_k_eOverworldAuditAction_MatchRewardsCoopBotMatch          EOverworldAuditAction = 25
 )
 
 // Enum value maps for EOverworldAuditAction.
@@ -188,28 +193,38 @@ var (
 		18: "k_eOverworldAuditAction_DevSetFortune",
 		19: "k_eOverworldAuditAction_DevClearFortune",
 		20: "k_eOverworldAuditAction_RequestFortune",
+		21: "k_eOverworldAuditAction_ClaimFortuneReward",
+		22: "k_eOverworldAuditAction_DevGrantFortuneTellerCoin",
+		23: "k_eOverworldAuditAction_ClaimFortuneTellerStoryNodeReward",
+		24: "k_eOverworldAuditAction_MatchRewardsAbilityDraft",
+		25: "k_eOverworldAuditAction_MatchRewardsCoopBotMatch",
 	}
 	EOverworldAuditAction_value = map[string]int32{
-		"k_eOverworldAuditAction_Invalid":                    0,
-		"k_eOverworldAuditAction_DevModifyTokens":            1,
-		"k_eOverworldAuditAction_DevClearInventory":          2,
-		"k_eOverworldAuditAction_DevGrantTokens":             3,
-		"k_eOverworldAuditAction_CompletePath":               4,
-		"k_eOverworldAuditAction_ClaimEncounterReward":       5,
-		"k_eOverworldAuditAction_DevResetNode":               6,
-		"k_eOverworldAuditAction_DevResetPath":               7,
-		"k_eOverworldAuditAction_MatchRewardsFull":           8,
-		"k_eOverworldAuditAction_MatchRewardsHalf":           9,
-		"k_eOverworldAuditAction_EventActionTokenGrant":      10,
-		"k_eOverworldAuditAction_TokenTraderLost":            11,
-		"k_eOverworldAuditAction_TokenTraderGained":          12,
-		"k_eOverworldAuditAction_EncounterRewardTokenCost":   13,
-		"k_eOverworldAuditAction_EncounterRewardTokenReward": 14,
-		"k_eOverworldAuditAction_SupportGrantTokens":         16,
-		"k_eOverworldAuditAction_TokenGiftSent":              17,
-		"k_eOverworldAuditAction_DevSetFortune":              18,
-		"k_eOverworldAuditAction_DevClearFortune":            19,
-		"k_eOverworldAuditAction_RequestFortune":             20,
+		"k_eOverworldAuditAction_Invalid":                           0,
+		"k_eOverworldAuditAction_DevModifyTokens":                   1,
+		"k_eOverworldAuditAction_DevClearInventory":                 2,
+		"k_eOverworldAuditAction_DevGrantTokens":                    3,
+		"k_eOverworldAuditAction_CompletePath":                      4,
+		"k_eOverworldAuditAction_ClaimEncounterReward":              5,
+		"k_eOverworldAuditAction_DevResetNode":                      6,
+		"k_eOverworldAuditAction_DevResetPath":                      7,
+		"k_eOverworldAuditAction_MatchRewardsFull":                  8,
+		"k_eOverworldAuditAction_MatchRewardsHalf":                  9,
+		"k_eOverworldAuditAction_EventActionTokenGrant":             10,
+		"k_eOverworldAuditAction_TokenTraderLost":                   11,
+		"k_eOverworldAuditAction_TokenTraderGained":                 12,
+		"k_eOverworldAuditAction_EncounterRewardTokenCost":          13,
+		"k_eOverworldAuditAction_EncounterRewardTokenReward":        14,
+		"k_eOverworldAuditAction_SupportGrantTokens":                16,
+		"k_eOverworldAuditAction_TokenGiftSent":                     17,
+		"k_eOverworldAuditAction_DevSetFortune":                     18,
+		"k_eOverworldAuditAction_DevClearFortune":                   19,
+		"k_eOverworldAuditAction_RequestFortune":                    20,
+		"k_eOverworldAuditAction_ClaimFortuneReward":                21,
+		"k_eOverworldAuditAction_DevGrantFortuneTellerCoin":         22,
+		"k_eOverworldAuditAction_ClaimFortuneTellerStoryNodeReward": 23,
+		"k_eOverworldAuditAction_MatchRewardsAbilityDraft":          24,
+		"k_eOverworldAuditAction_MatchRewardsCoopBotMatch":          25,
 	}
 )
 
@@ -386,7 +401,7 @@ func (x *CMsgClientToGCOverworldGetUserDataResponse_EResponse) UnmarshalJSON(b [
 
 // Deprecated: Use CMsgClientToGCOverworldGetUserDataResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldGetUserDataResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{16, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{17, 0}
 }
 
 type CMsgClientToGCOverworldCompletePathResponse_EResponse int32
@@ -403,6 +418,7 @@ const (
 	CMsgClientToGCOverworldCompletePathResponse_k_ePathIsLocked        CMsgClientToGCOverworldCompletePathResponse_EResponse = 8
 	CMsgClientToGCOverworldCompletePathResponse_k_ePathAlreadyUnlocked CMsgClientToGCOverworldCompletePathResponse_EResponse = 9
 	CMsgClientToGCOverworldCompletePathResponse_k_eEventExpired        CMsgClientToGCOverworldCompletePathResponse_EResponse = 10
+	CMsgClientToGCOverworldCompletePathResponse_k_eNodeNotReleased     CMsgClientToGCOverworldCompletePathResponse_EResponse = 11
 )
 
 // Enum value maps for CMsgClientToGCOverworldCompletePathResponse_EResponse.
@@ -419,6 +435,7 @@ var (
 		8:  "k_ePathIsLocked",
 		9:  "k_ePathAlreadyUnlocked",
 		10: "k_eEventExpired",
+		11: "k_eNodeNotReleased",
 	}
 	CMsgClientToGCOverworldCompletePathResponse_EResponse_value = map[string]int32{
 		"k_eInternalError":       0,
@@ -432,6 +449,7 @@ var (
 		"k_ePathIsLocked":        8,
 		"k_ePathAlreadyUnlocked": 9,
 		"k_eEventExpired":        10,
+		"k_eNodeNotReleased":     11,
 	}
 )
 
@@ -469,7 +487,7 @@ func (x *CMsgClientToGCOverworldCompletePathResponse_EResponse) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCOverworldCompletePathResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldCompletePathResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{19, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{20, 0}
 }
 
 type CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse int32
@@ -570,7 +588,7 @@ func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse) Unmarsha
 
 // Deprecated: Use CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{22, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{23, 0}
 }
 
 type CMsgClientToGCOverworldVisitEncounterResponse_EResponse int32
@@ -650,7 +668,7 @@ func (x *CMsgClientToGCOverworldVisitEncounterResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCOverworldVisitEncounterResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldVisitEncounterResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{24, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{25, 0}
 }
 
 type CMsgClientToGCOverworldMoveToNodeResponse_EResponse int32
@@ -724,7 +742,7 @@ func (x *CMsgClientToGCOverworldMoveToNodeResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgClientToGCOverworldMoveToNodeResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldMoveToNodeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{26, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{27, 0}
 }
 
 type CMsgClientToGCOverworldTradeTokensResponse_EResponse int32
@@ -813,7 +831,7 @@ func (x *CMsgClientToGCOverworldTradeTokensResponse_EResponse) UnmarshalJSON(b [
 
 // Deprecated: Use CMsgClientToGCOverworldTradeTokensResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldTradeTokensResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{28, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{29, 0}
 }
 
 type CMsgClientToGCOverworldGiftTokensResponse_EResponse int32
@@ -899,7 +917,7 @@ func (x *CMsgClientToGCOverworldGiftTokensResponse_EResponse) UnmarshalJSON(b []
 
 // Deprecated: Use CMsgClientToGCOverworldGiftTokensResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldGiftTokensResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{30, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{31, 0}
 }
 
 type CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse int32
@@ -979,7 +997,7 @@ func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse) U
 
 // Deprecated: Use CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{32, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{33, 0}
 }
 
 type CMsgClientToGCOverworldDevResetAllResponse_EResponse int32
@@ -1050,7 +1068,7 @@ func (x *CMsgClientToGCOverworldDevResetAllResponse_EResponse) UnmarshalJSON(b [
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetAllResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevResetAllResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{34, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{35, 0}
 }
 
 type CMsgClientToGCOverworldDevResetNodeResponse_EResponse int32
@@ -1124,7 +1142,7 @@ func (x *CMsgClientToGCOverworldDevResetNodeResponse_EResponse) UnmarshalJSON(b 
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetNodeResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevResetNodeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{36, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{37, 0}
 }
 
 type CMsgClientToGCOverworldDevGrantTokensResponse_EResponse int32
@@ -1195,7 +1213,7 @@ func (x *CMsgClientToGCOverworldDevGrantTokensResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCOverworldDevGrantTokensResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevGrantTokensResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{38, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{39, 0}
 }
 
 type CMsgClientToGCOverworldDevClearInventoryResponse_EResponse int32
@@ -1266,7 +1284,7 @@ func (x *CMsgClientToGCOverworldDevClearInventoryResponse_EResponse) UnmarshalJS
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearInventoryResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevClearInventoryResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{40, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{41, 0}
 }
 
 type CMsgClientToGCOverworldDevSetFortuneResponse_EResponse int32
@@ -1337,7 +1355,7 @@ func (x *CMsgClientToGCOverworldDevSetFortuneResponse_EResponse) UnmarshalJSON(b
 
 // Deprecated: Use CMsgClientToGCOverworldDevSetFortuneResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevSetFortuneResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{42, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{43, 0}
 }
 
 type CMsgClientToGCOverworldDevClearFortuneResponse_EResponse int32
@@ -1408,7 +1426,78 @@ func (x *CMsgClientToGCOverworldDevClearFortuneResponse_EResponse) UnmarshalJSON
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearFortuneResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldDevClearFortuneResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{44, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{45, 0}
+}
+
+type CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse int32
+
+const (
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eInternalError    CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 0
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eSuccess          CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 1
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eTooBusy          CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 2
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eDisabled         CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 3
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eTimeout          CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 4
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eNotAllowed       CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 5
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eInvalidOverworld CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse = 6
+)
+
+// Enum value maps for CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse.
+var (
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eNotAllowed",
+		6: "k_eInvalidOverworld",
+	}
+	CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse_value = map[string]int32{
+		"k_eInternalError":    0,
+		"k_eSuccess":          1,
+		"k_eTooBusy":          2,
+		"k_eDisabled":         3,
+		"k_eTimeout":          4,
+		"k_eNotAllowed":       5,
+		"k_eInvalidOverworld": 6,
+	}
+)
+
+func (x CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) Enum() *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse {
+	p := new(CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[18].Descriptor()
+}
+
+func (CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[18]
+}
+
+func (x CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{47, 0}
 }
 
 type CMsgClientToGCOverworldRequestFortuneResponse_EResponse int32
@@ -1456,11 +1545,11 @@ func (x CMsgClientToGCOverworldRequestFortuneResponse_EResponse) String() string
 }
 
 func (CMsgClientToGCOverworldRequestFortuneResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_common_overworld_proto_enumTypes[18].Descriptor()
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[19].Descriptor()
 }
 
 func (CMsgClientToGCOverworldRequestFortuneResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_common_overworld_proto_enumTypes[18]
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[19]
 }
 
 func (x CMsgClientToGCOverworldRequestFortuneResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1479,7 +1568,152 @@ func (x *CMsgClientToGCOverworldRequestFortuneResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCOverworldRequestFortuneResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldRequestFortuneResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{46, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{49, 0}
+}
+
+type CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse int32
+
+const (
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eInternalError    CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 0
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eSuccess          CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 1
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eTooBusy          CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 2
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eDisabled         CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 3
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eTimeout          CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 4
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eNotAllowed       CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 5
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eInvalidOverworld CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse = 6
+)
+
+// Enum value maps for CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse.
+var (
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eNotAllowed",
+		6: "k_eInvalidOverworld",
+	}
+	CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse_value = map[string]int32{
+		"k_eInternalError":    0,
+		"k_eSuccess":          1,
+		"k_eTooBusy":          2,
+		"k_eDisabled":         3,
+		"k_eTimeout":          4,
+		"k_eNotAllowed":       5,
+		"k_eInvalidOverworld": 6,
+	}
+)
+
+func (x CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) Enum() *CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse {
+	p := new(CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[20].Descriptor()
+}
+
+func (CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[20]
+}
+
+func (x CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{51, 0}
+}
+
+type CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse int32
+
+const (
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eInternalError        CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 0
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eSuccess              CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 1
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eTooBusy              CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 2
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eDisabled             CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 3
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eTimeout              CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 4
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eNotAllowed           CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 5
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eInvalidOverworld     CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 6
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eRewardAlreadyClaimed CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse = 7
+)
+
+// Enum value maps for CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse.
+var (
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eNotAllowed",
+		6: "k_eInvalidOverworld",
+		7: "k_eRewardAlreadyClaimed",
+	}
+	CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse_value = map[string]int32{
+		"k_eInternalError":        0,
+		"k_eSuccess":              1,
+		"k_eTooBusy":              2,
+		"k_eDisabled":             3,
+		"k_eTimeout":              4,
+		"k_eNotAllowed":           5,
+		"k_eInvalidOverworld":     6,
+		"k_eRewardAlreadyClaimed": 7,
+	}
+)
+
+func (x CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) Enum() *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse {
+	p := new(CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[21].Descriptor()
+}
+
+func (CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[21]
+}
+
+func (x CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{53, 0}
 }
 
 type CMsgClientToGCOverworldFeedbackResponse_EResponse int32
@@ -1527,11 +1761,11 @@ func (x CMsgClientToGCOverworldFeedbackResponse_EResponse) String() string {
 }
 
 func (CMsgClientToGCOverworldFeedbackResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_common_overworld_proto_enumTypes[19].Descriptor()
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[22].Descriptor()
 }
 
 func (CMsgClientToGCOverworldFeedbackResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_common_overworld_proto_enumTypes[19]
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[22]
 }
 
 func (x CMsgClientToGCOverworldFeedbackResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1550,7 +1784,7 @@ func (x *CMsgClientToGCOverworldFeedbackResponse_EResponse) UnmarshalJSON(b []by
 
 // Deprecated: Use CMsgClientToGCOverworldFeedbackResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldFeedbackResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{48, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{55, 0}
 }
 
 type CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat int32
@@ -1586,11 +1820,11 @@ func (x CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) Stri
 }
 
 func (CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_common_overworld_proto_enumTypes[20].Descriptor()
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[23].Descriptor()
 }
 
 func (CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_common_overworld_proto_enumTypes[20]
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[23]
 }
 
 func (x CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) Number() protoreflect.EnumNumber {
@@ -1609,7 +1843,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) Unm
 
 // Deprecated: Use CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat.Descriptor instead.
 func (CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{50, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{57, 0}
 }
 
 type CMsgClientToGCOverworldMinigameActionResponse_EResponse int32
@@ -1672,11 +1906,11 @@ func (x CMsgClientToGCOverworldMinigameActionResponse_EResponse) String() string
 }
 
 func (CMsgClientToGCOverworldMinigameActionResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_gcmessages_common_overworld_proto_enumTypes[21].Descriptor()
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[24].Descriptor()
 }
 
 func (CMsgClientToGCOverworldMinigameActionResponse_EResponse) Type() protoreflect.EnumType {
-	return &file_dota_gcmessages_common_overworld_proto_enumTypes[21]
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[24]
 }
 
 func (x CMsgClientToGCOverworldMinigameActionResponse_EResponse) Number() protoreflect.EnumNumber {
@@ -1695,7 +1929,84 @@ func (x *CMsgClientToGCOverworldMinigameActionResponse_EResponse) UnmarshalJSON(
 
 // Deprecated: Use CMsgClientToGCOverworldMinigameActionResponse_EResponse.Descriptor instead.
 func (CMsgClientToGCOverworldMinigameActionResponse_EResponse) EnumDescriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{52, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{59, 0}
+}
+
+type CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse int32
+
+const (
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eInternalError            CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 0
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eSuccess                  CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 1
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eTooBusy                  CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 2
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eDisabled                 CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 3
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eTimeout                  CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 4
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eNotAllowed               CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 5
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eInvalidOverworld         CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 6
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eRewardAlreadyClaimed     CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 7
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eInsufficientFortuneCount CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse = 8
+)
+
+// Enum value maps for CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse.
+var (
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse_name = map[int32]string{
+		0: "k_eInternalError",
+		1: "k_eSuccess",
+		2: "k_eTooBusy",
+		3: "k_eDisabled",
+		4: "k_eTimeout",
+		5: "k_eNotAllowed",
+		6: "k_eInvalidOverworld",
+		7: "k_eRewardAlreadyClaimed",
+		8: "k_eInsufficientFortuneCount",
+	}
+	CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse_value = map[string]int32{
+		"k_eInternalError":            0,
+		"k_eSuccess":                  1,
+		"k_eTooBusy":                  2,
+		"k_eDisabled":                 3,
+		"k_eTimeout":                  4,
+		"k_eNotAllowed":               5,
+		"k_eInvalidOverworld":         6,
+		"k_eRewardAlreadyClaimed":     7,
+		"k_eInsufficientFortuneCount": 8,
+	}
+)
+
+func (x CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) Enum() *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse {
+	p := new(CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse)
+	*p = x
+	return p
+}
+
+func (x CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) Descriptor() protoreflect.EnumDescriptor {
+	return file_dota_gcmessages_common_overworld_proto_enumTypes[25].Descriptor()
+}
+
+func (CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) Type() protoreflect.EnumType {
+	return &file_dota_gcmessages_common_overworld_proto_enumTypes[25]
+}
+
+func (x CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse(num)
+	return nil
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse.Descriptor instead.
+func (CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse) EnumDescriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{61, 0}
 }
 
 type CMsgOverworldTokenCount struct {
@@ -2348,13 +2659,15 @@ func (x *CMsgOverworldMinigameUserData) GetCustomData() *CMsgOverworldMinigameCu
 }
 
 type CMsgOverworldFortune struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Fortune1      *uint32                `protobuf:"varint,1,opt,name=fortune1" json:"fortune1,omitempty"`
-	Fortune2      *uint32                `protobuf:"varint,2,opt,name=fortune2" json:"fortune2,omitempty"`
-	Fortune3      *uint32                `protobuf:"varint,3,opt,name=fortune3" json:"fortune3,omitempty"`
-	Timestamp     *uint32                `protobuf:"varint,4,opt,name=timestamp" json:"timestamp,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState                   `protogen:"open.v1"`
+	Fortune        *uint32                                  `protobuf:"varint,1,opt,name=fortune" json:"fortune,omitempty"`
+	Timestamp      *uint32                                  `protobuf:"varint,4,opt,name=timestamp" json:"timestamp,omitempty"`
+	TimesCompleted *uint32                                  `protobuf:"varint,5,opt,name=times_completed,json=timesCompleted" json:"times_completed,omitempty"`
+	RewardClaimed  *bool                                    `protobuf:"varint,7,opt,name=reward_claimed,json=rewardClaimed" json:"reward_claimed,omitempty"`
+	FortuneCount   *uint32                                  `protobuf:"varint,8,opt,name=fortune_count,json=fortuneCount" json:"fortune_count,omitempty"`
+	FortuneCounts  []*CMsgOverworldFortune_CMsgFortuneCount `protobuf:"bytes,9,rep,name=fortune_counts,json=fortuneCounts" json:"fortune_counts,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CMsgOverworldFortune) Reset() {
@@ -2387,23 +2700,9 @@ func (*CMsgOverworldFortune) Descriptor() ([]byte, []int) {
 	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *CMsgOverworldFortune) GetFortune1() uint32 {
-	if x != nil && x.Fortune1 != nil {
-		return *x.Fortune1
-	}
-	return 0
-}
-
-func (x *CMsgOverworldFortune) GetFortune2() uint32 {
-	if x != nil && x.Fortune2 != nil {
-		return *x.Fortune2
-	}
-	return 0
-}
-
-func (x *CMsgOverworldFortune) GetFortune3() uint32 {
-	if x != nil && x.Fortune3 != nil {
-		return *x.Fortune3
+func (x *CMsgOverworldFortune) GetFortune() uint32 {
+	if x != nil && x.Fortune != nil {
+		return *x.Fortune
 	}
 	return 0
 }
@@ -2415,21 +2714,102 @@ func (x *CMsgOverworldFortune) GetTimestamp() uint32 {
 	return 0
 }
 
+func (x *CMsgOverworldFortune) GetTimesCompleted() uint32 {
+	if x != nil && x.TimesCompleted != nil {
+		return *x.TimesCompleted
+	}
+	return 0
+}
+
+func (x *CMsgOverworldFortune) GetRewardClaimed() bool {
+	if x != nil && x.RewardClaimed != nil {
+		return *x.RewardClaimed
+	}
+	return false
+}
+
+func (x *CMsgOverworldFortune) GetFortuneCount() uint32 {
+	if x != nil && x.FortuneCount != nil {
+		return *x.FortuneCount
+	}
+	return 0
+}
+
+func (x *CMsgOverworldFortune) GetFortuneCounts() []*CMsgOverworldFortune_CMsgFortuneCount {
+	if x != nil {
+		return x.FortuneCounts
+	}
+	return nil
+}
+
+type CMsgLobbyOverworldFortuneList struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	AccountId     []uint32                `protobuf:"varint,1,rep,name=account_id,json=accountId" json:"account_id,omitempty"`
+	Fortune       []*CMsgOverworldFortune `protobuf:"bytes,2,rep,name=fortune" json:"fortune,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgLobbyOverworldFortuneList) Reset() {
+	*x = CMsgLobbyOverworldFortuneList{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgLobbyOverworldFortuneList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgLobbyOverworldFortuneList) ProtoMessage() {}
+
+func (x *CMsgLobbyOverworldFortuneList) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgLobbyOverworldFortuneList.ProtoReflect.Descriptor instead.
+func (*CMsgLobbyOverworldFortuneList) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *CMsgLobbyOverworldFortuneList) GetAccountId() []uint32 {
+	if x != nil {
+		return x.AccountId
+	}
+	return nil
+}
+
+func (x *CMsgLobbyOverworldFortuneList) GetFortune() []*CMsgOverworldFortune {
+	if x != nil {
+		return x.Fortune
+	}
+	return nil
+}
+
 type CMsgOverworldUserData struct {
-	state          protoimpl.MessageState                     `protogen:"open.v1"`
-	TokenInventory *CMsgOverworldTokenQuantity                `protobuf:"bytes,1,opt,name=token_inventory,json=tokenInventory" json:"token_inventory,omitempty"`
-	OverworldNodes []*CMsgOverworldNode                       `protobuf:"bytes,2,rep,name=overworld_nodes,json=overworldNodes" json:"overworld_nodes,omitempty"`
-	OverworldPaths []*CMsgOverworldPath                       `protobuf:"bytes,3,rep,name=overworld_paths,json=overworldPaths" json:"overworld_paths,omitempty"`
-	CurrentNodeId  *uint32                                    `protobuf:"varint,4,opt,name=current_node_id,json=currentNodeId" json:"current_node_id,omitempty"`
-	MinigameData   []*CMsgOverworldUserData_MinigameDataEntry `protobuf:"bytes,5,rep,name=minigame_data,json=minigameData" json:"minigame_data,omitempty"`
-	CurrentFortune *CMsgOverworldFortune                      `protobuf:"bytes,6,opt,name=current_fortune,json=currentFortune" json:"current_fortune,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state             protoimpl.MessageState                     `protogen:"open.v1"`
+	TokenInventory    *CMsgOverworldTokenQuantity                `protobuf:"bytes,1,opt,name=token_inventory,json=tokenInventory" json:"token_inventory,omitempty"`
+	OverworldNodes    []*CMsgOverworldNode                       `protobuf:"bytes,2,rep,name=overworld_nodes,json=overworldNodes" json:"overworld_nodes,omitempty"`
+	OverworldPaths    []*CMsgOverworldPath                       `protobuf:"bytes,3,rep,name=overworld_paths,json=overworldPaths" json:"overworld_paths,omitempty"`
+	CurrentNodeId     *uint32                                    `protobuf:"varint,4,opt,name=current_node_id,json=currentNodeId" json:"current_node_id,omitempty"`
+	MinigameData      []*CMsgOverworldUserData_MinigameDataEntry `protobuf:"bytes,5,rep,name=minigame_data,json=minigameData" json:"minigame_data,omitempty"`
+	CurrentFortune    *CMsgOverworldFortune                      `protobuf:"bytes,6,opt,name=current_fortune,json=currentFortune" json:"current_fortune,omitempty"`
+	LastRelatedHeroId *int32                                     `protobuf:"varint,7,opt,name=last_related_hero_id,json=lastRelatedHeroId" json:"last_related_hero_id,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *CMsgOverworldUserData) Reset() {
 	*x = CMsgOverworldUserData{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[13]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2441,7 +2821,7 @@ func (x *CMsgOverworldUserData) String() string {
 func (*CMsgOverworldUserData) ProtoMessage() {}
 
 func (x *CMsgOverworldUserData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[13]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2454,7 +2834,7 @@ func (x *CMsgOverworldUserData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgOverworldUserData.ProtoReflect.Descriptor instead.
 func (*CMsgOverworldUserData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{13}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *CMsgOverworldUserData) GetTokenInventory() *CMsgOverworldTokenQuantity {
@@ -2499,6 +2879,13 @@ func (x *CMsgOverworldUserData) GetCurrentFortune() *CMsgOverworldFortune {
 	return nil
 }
 
+func (x *CMsgOverworldUserData) GetLastRelatedHeroId() int32 {
+	if x != nil && x.LastRelatedHeroId != nil {
+		return *x.LastRelatedHeroId
+	}
+	return 0
+}
+
 type CMsgOverworldMatchRewards struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
 	Players       []*CMsgOverworldMatchRewards_Player `protobuf:"bytes,1,rep,name=players" json:"players,omitempty"`
@@ -2508,7 +2895,7 @@ type CMsgOverworldMatchRewards struct {
 
 func (x *CMsgOverworldMatchRewards) Reset() {
 	*x = CMsgOverworldMatchRewards{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[14]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2520,7 +2907,7 @@ func (x *CMsgOverworldMatchRewards) String() string {
 func (*CMsgOverworldMatchRewards) ProtoMessage() {}
 
 func (x *CMsgOverworldMatchRewards) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[14]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2533,7 +2920,7 @@ func (x *CMsgOverworldMatchRewards) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgOverworldMatchRewards.ProtoReflect.Descriptor instead.
 func (*CMsgOverworldMatchRewards) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{14}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *CMsgOverworldMatchRewards) GetPlayers() []*CMsgOverworldMatchRewards_Player {
@@ -2552,7 +2939,7 @@ type CMsgClientToGCOverworldGetUserData struct {
 
 func (x *CMsgClientToGCOverworldGetUserData) Reset() {
 	*x = CMsgClientToGCOverworldGetUserData{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[15]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2564,7 +2951,7 @@ func (x *CMsgClientToGCOverworldGetUserData) String() string {
 func (*CMsgClientToGCOverworldGetUserData) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGetUserData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[15]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2577,7 +2964,7 @@ func (x *CMsgClientToGCOverworldGetUserData) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCOverworldGetUserData.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGetUserData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{15}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *CMsgClientToGCOverworldGetUserData) GetOverworldId() uint32 {
@@ -2602,7 +2989,7 @@ const (
 
 func (x *CMsgClientToGCOverworldGetUserDataResponse) Reset() {
 	*x = CMsgClientToGCOverworldGetUserDataResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[16]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2614,7 +3001,7 @@ func (x *CMsgClientToGCOverworldGetUserDataResponse) String() string {
 func (*CMsgClientToGCOverworldGetUserDataResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGetUserDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[16]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2627,7 +3014,7 @@ func (x *CMsgClientToGCOverworldGetUserDataResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCOverworldGetUserDataResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGetUserDataResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{16}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *CMsgClientToGCOverworldGetUserDataResponse) GetResponse() CMsgClientToGCOverworldGetUserDataResponse_EResponse {
@@ -2654,7 +3041,7 @@ type CMsgGCToClientOverworldUserDataUpdated struct {
 
 func (x *CMsgGCToClientOverworldUserDataUpdated) Reset() {
 	*x = CMsgGCToClientOverworldUserDataUpdated{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[17]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2666,7 +3053,7 @@ func (x *CMsgGCToClientOverworldUserDataUpdated) String() string {
 func (*CMsgGCToClientOverworldUserDataUpdated) ProtoMessage() {}
 
 func (x *CMsgGCToClientOverworldUserDataUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[17]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2679,7 +3066,7 @@ func (x *CMsgGCToClientOverworldUserDataUpdated) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgGCToClientOverworldUserDataUpdated.ProtoReflect.Descriptor instead.
 func (*CMsgGCToClientOverworldUserDataUpdated) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{17}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *CMsgGCToClientOverworldUserDataUpdated) GetOverworldId() uint32 {
@@ -2697,16 +3084,18 @@ func (x *CMsgGCToClientOverworldUserDataUpdated) GetUserData() *CMsgOverworldUse
 }
 
 type CMsgClientToGCOverworldCompletePath struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	OverworldId   *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
-	PathId        *uint32                `protobuf:"varint,2,opt,name=path_id,json=pathId" json:"path_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	OverworldId              *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
+	PathId                   *uint32                `protobuf:"varint,2,opt,name=path_id,json=pathId" json:"path_id,omitempty"`
+	UsePathUnlocker          *bool                  `protobuf:"varint,3,opt,name=use_path_unlocker,json=usePathUnlocker" json:"use_path_unlocker,omitempty"`
+	DevIgnoreReleaseSchedule *bool                  `protobuf:"varint,4,opt,name=dev_ignore_release_schedule,json=devIgnoreReleaseSchedule" json:"dev_ignore_release_schedule,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *CMsgClientToGCOverworldCompletePath) Reset() {
 	*x = CMsgClientToGCOverworldCompletePath{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[18]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2718,7 +3107,7 @@ func (x *CMsgClientToGCOverworldCompletePath) String() string {
 func (*CMsgClientToGCOverworldCompletePath) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldCompletePath) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[18]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2731,7 +3120,7 @@ func (x *CMsgClientToGCOverworldCompletePath) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCOverworldCompletePath.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldCompletePath) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{18}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CMsgClientToGCOverworldCompletePath) GetOverworldId() uint32 {
@@ -2746,6 +3135,20 @@ func (x *CMsgClientToGCOverworldCompletePath) GetPathId() uint32 {
 		return *x.PathId
 	}
 	return 0
+}
+
+func (x *CMsgClientToGCOverworldCompletePath) GetUsePathUnlocker() bool {
+	if x != nil && x.UsePathUnlocker != nil {
+		return *x.UsePathUnlocker
+	}
+	return false
+}
+
+func (x *CMsgClientToGCOverworldCompletePath) GetDevIgnoreReleaseSchedule() bool {
+	if x != nil && x.DevIgnoreReleaseSchedule != nil {
+		return *x.DevIgnoreReleaseSchedule
+	}
+	return false
 }
 
 type CMsgClientToGCOverworldCompletePathResponse struct {
@@ -2763,7 +3166,7 @@ const (
 
 func (x *CMsgClientToGCOverworldCompletePathResponse) Reset() {
 	*x = CMsgClientToGCOverworldCompletePathResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[19]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2775,7 +3178,7 @@ func (x *CMsgClientToGCOverworldCompletePathResponse) String() string {
 func (*CMsgClientToGCOverworldCompletePathResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldCompletePathResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[19]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2788,7 +3191,7 @@ func (x *CMsgClientToGCOverworldCompletePathResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCOverworldCompletePathResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldCompletePathResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{19}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CMsgClientToGCOverworldCompletePathResponse) GetResponse() CMsgClientToGCOverworldCompletePathResponse_EResponse {
@@ -2815,7 +3218,7 @@ type CMsgOverworldEncounterPitFighterRewardData struct {
 
 func (x *CMsgOverworldEncounterPitFighterRewardData) Reset() {
 	*x = CMsgOverworldEncounterPitFighterRewardData{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[20]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2827,7 +3230,7 @@ func (x *CMsgOverworldEncounterPitFighterRewardData) String() string {
 func (*CMsgOverworldEncounterPitFighterRewardData) ProtoMessage() {}
 
 func (x *CMsgOverworldEncounterPitFighterRewardData) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[20]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2840,7 +3243,7 @@ func (x *CMsgOverworldEncounterPitFighterRewardData) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgOverworldEncounterPitFighterRewardData.ProtoReflect.Descriptor instead.
 func (*CMsgOverworldEncounterPitFighterRewardData) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{20}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *CMsgOverworldEncounterPitFighterRewardData) GetTokenId() uint32 {
@@ -2873,7 +3276,7 @@ type CMsgClientToGCOverworldClaimEncounterReward struct {
 
 func (x *CMsgClientToGCOverworldClaimEncounterReward) Reset() {
 	*x = CMsgClientToGCOverworldClaimEncounterReward{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[21]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2885,7 +3288,7 @@ func (x *CMsgClientToGCOverworldClaimEncounterReward) String() string {
 func (*CMsgClientToGCOverworldClaimEncounterReward) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldClaimEncounterReward) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[21]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2898,7 +3301,7 @@ func (x *CMsgClientToGCOverworldClaimEncounterReward) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCOverworldClaimEncounterReward.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldClaimEncounterReward) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{21}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *CMsgClientToGCOverworldClaimEncounterReward) GetOverworldId() uint32 {
@@ -2973,7 +3376,7 @@ const (
 
 func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse) Reset() {
 	*x = CMsgClientToGCOverworldClaimEncounterRewardResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[22]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2985,7 +3388,7 @@ func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse) String() string {
 func (*CMsgClientToGCOverworldClaimEncounterRewardResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[22]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2998,7 +3401,7 @@ func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse) ProtoReflect() pro
 
 // Deprecated: Use CMsgClientToGCOverworldClaimEncounterRewardResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldClaimEncounterRewardResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{22}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *CMsgClientToGCOverworldClaimEncounterRewardResponse) GetResponse() CMsgClientToGCOverworldClaimEncounterRewardResponse_EResponse {
@@ -3032,7 +3435,7 @@ type CMsgClientToGCOverworldVisitEncounter struct {
 
 func (x *CMsgClientToGCOverworldVisitEncounter) Reset() {
 	*x = CMsgClientToGCOverworldVisitEncounter{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[23]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3044,7 +3447,7 @@ func (x *CMsgClientToGCOverworldVisitEncounter) String() string {
 func (*CMsgClientToGCOverworldVisitEncounter) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldVisitEncounter) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[23]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3057,7 +3460,7 @@ func (x *CMsgClientToGCOverworldVisitEncounter) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCOverworldVisitEncounter.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldVisitEncounter) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{23}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *CMsgClientToGCOverworldVisitEncounter) GetOverworldId() uint32 {
@@ -3088,7 +3491,7 @@ const (
 
 func (x *CMsgClientToGCOverworldVisitEncounterResponse) Reset() {
 	*x = CMsgClientToGCOverworldVisitEncounterResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[24]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3100,7 +3503,7 @@ func (x *CMsgClientToGCOverworldVisitEncounterResponse) String() string {
 func (*CMsgClientToGCOverworldVisitEncounterResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldVisitEncounterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[24]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3113,7 +3516,7 @@ func (x *CMsgClientToGCOverworldVisitEncounterResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCOverworldVisitEncounterResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldVisitEncounterResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{24}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *CMsgClientToGCOverworldVisitEncounterResponse) GetResponse() CMsgClientToGCOverworldVisitEncounterResponse_EResponse {
@@ -3133,7 +3536,7 @@ type CMsgClientToGCOverworldMoveToNode struct {
 
 func (x *CMsgClientToGCOverworldMoveToNode) Reset() {
 	*x = CMsgClientToGCOverworldMoveToNode{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[25]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3145,7 +3548,7 @@ func (x *CMsgClientToGCOverworldMoveToNode) String() string {
 func (*CMsgClientToGCOverworldMoveToNode) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldMoveToNode) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[25]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3158,7 +3561,7 @@ func (x *CMsgClientToGCOverworldMoveToNode) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCOverworldMoveToNode.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldMoveToNode) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{25}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *CMsgClientToGCOverworldMoveToNode) GetOverworldId() uint32 {
@@ -3189,7 +3592,7 @@ const (
 
 func (x *CMsgClientToGCOverworldMoveToNodeResponse) Reset() {
 	*x = CMsgClientToGCOverworldMoveToNodeResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[26]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3201,7 +3604,7 @@ func (x *CMsgClientToGCOverworldMoveToNodeResponse) String() string {
 func (*CMsgClientToGCOverworldMoveToNodeResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldMoveToNodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[26]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3214,7 +3617,7 @@ func (x *CMsgClientToGCOverworldMoveToNodeResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCOverworldMoveToNodeResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldMoveToNodeResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{26}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *CMsgClientToGCOverworldMoveToNodeResponse) GetResponse() CMsgClientToGCOverworldMoveToNodeResponse_EResponse {
@@ -3237,7 +3640,7 @@ type CMsgClientToGCOverworldTradeTokens struct {
 
 func (x *CMsgClientToGCOverworldTradeTokens) Reset() {
 	*x = CMsgClientToGCOverworldTradeTokens{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[27]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3249,7 +3652,7 @@ func (x *CMsgClientToGCOverworldTradeTokens) String() string {
 func (*CMsgClientToGCOverworldTradeTokens) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldTradeTokens) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[27]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3262,7 +3665,7 @@ func (x *CMsgClientToGCOverworldTradeTokens) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCOverworldTradeTokens.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldTradeTokens) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{27}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *CMsgClientToGCOverworldTradeTokens) GetOverworldId() uint32 {
@@ -3315,7 +3718,7 @@ const (
 
 func (x *CMsgClientToGCOverworldTradeTokensResponse) Reset() {
 	*x = CMsgClientToGCOverworldTradeTokensResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[28]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3327,7 +3730,7 @@ func (x *CMsgClientToGCOverworldTradeTokensResponse) String() string {
 func (*CMsgClientToGCOverworldTradeTokensResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldTradeTokensResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[28]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3340,7 +3743,7 @@ func (x *CMsgClientToGCOverworldTradeTokensResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCOverworldTradeTokensResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldTradeTokensResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{28}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *CMsgClientToGCOverworldTradeTokensResponse) GetResponse() CMsgClientToGCOverworldTradeTokensResponse_EResponse {
@@ -3369,7 +3772,7 @@ type CMsgClientToGCOverworldGiftTokens struct {
 
 func (x *CMsgClientToGCOverworldGiftTokens) Reset() {
 	*x = CMsgClientToGCOverworldGiftTokens{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[29]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3381,7 +3784,7 @@ func (x *CMsgClientToGCOverworldGiftTokens) String() string {
 func (*CMsgClientToGCOverworldGiftTokens) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGiftTokens) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[29]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3394,7 +3797,7 @@ func (x *CMsgClientToGCOverworldGiftTokens) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CMsgClientToGCOverworldGiftTokens.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGiftTokens) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{29}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *CMsgClientToGCOverworldGiftTokens) GetOverworldId() uint32 {
@@ -3439,7 +3842,7 @@ const (
 
 func (x *CMsgClientToGCOverworldGiftTokensResponse) Reset() {
 	*x = CMsgClientToGCOverworldGiftTokensResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[30]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3451,7 +3854,7 @@ func (x *CMsgClientToGCOverworldGiftTokensResponse) String() string {
 func (*CMsgClientToGCOverworldGiftTokensResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGiftTokensResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[30]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3464,7 +3867,7 @@ func (x *CMsgClientToGCOverworldGiftTokensResponse) ProtoReflect() protoreflect.
 
 // Deprecated: Use CMsgClientToGCOverworldGiftTokensResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGiftTokensResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{30}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *CMsgClientToGCOverworldGiftTokensResponse) GetResponse() CMsgClientToGCOverworldGiftTokensResponse_EResponse {
@@ -3484,7 +3887,7 @@ type CMsgClientToGCOverworldRequestTokensNeededByFriend struct {
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriend) Reset() {
 	*x = CMsgClientToGCOverworldRequestTokensNeededByFriend{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[31]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3496,7 +3899,7 @@ func (x *CMsgClientToGCOverworldRequestTokensNeededByFriend) String() string {
 func (*CMsgClientToGCOverworldRequestTokensNeededByFriend) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriend) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[31]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3509,7 +3912,7 @@ func (x *CMsgClientToGCOverworldRequestTokensNeededByFriend) ProtoReflect() prot
 
 // Deprecated: Use CMsgClientToGCOverworldRequestTokensNeededByFriend.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldRequestTokensNeededByFriend) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{31}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriend) GetFriendAccountId() uint32 {
@@ -3541,7 +3944,7 @@ const (
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) Reset() {
 	*x = CMsgClientToGCOverworldRequestTokensNeededByFriendResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[32]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3553,7 +3956,7 @@ func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) String() st
 func (*CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[32]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3566,7 +3969,7 @@ func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) ProtoReflec
 
 // Deprecated: Use CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{32}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse) GetResponse() CMsgClientToGCOverworldRequestTokensNeededByFriendResponse_EResponse {
@@ -3592,7 +3995,7 @@ type CMsgClientToGCOverworldDevResetAll struct {
 
 func (x *CMsgClientToGCOverworldDevResetAll) Reset() {
 	*x = CMsgClientToGCOverworldDevResetAll{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[33]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3604,7 +4007,7 @@ func (x *CMsgClientToGCOverworldDevResetAll) String() string {
 func (*CMsgClientToGCOverworldDevResetAll) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevResetAll) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[33]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3617,7 +4020,7 @@ func (x *CMsgClientToGCOverworldDevResetAll) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetAll.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevResetAll) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{33}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *CMsgClientToGCOverworldDevResetAll) GetOverworldId() uint32 {
@@ -3641,7 +4044,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevResetAllResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevResetAllResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[34]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3653,7 +4056,7 @@ func (x *CMsgClientToGCOverworldDevResetAllResponse) String() string {
 func (*CMsgClientToGCOverworldDevResetAllResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevResetAllResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[34]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3666,7 +4069,7 @@ func (x *CMsgClientToGCOverworldDevResetAllResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetAllResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevResetAllResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{34}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *CMsgClientToGCOverworldDevResetAllResponse) GetResponse() CMsgClientToGCOverworldDevResetAllResponse_EResponse {
@@ -3686,7 +4089,7 @@ type CMsgClientToGCOverworldDevResetNode struct {
 
 func (x *CMsgClientToGCOverworldDevResetNode) Reset() {
 	*x = CMsgClientToGCOverworldDevResetNode{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[35]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3698,7 +4101,7 @@ func (x *CMsgClientToGCOverworldDevResetNode) String() string {
 func (*CMsgClientToGCOverworldDevResetNode) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevResetNode) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[35]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3711,7 +4114,7 @@ func (x *CMsgClientToGCOverworldDevResetNode) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetNode.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevResetNode) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{35}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *CMsgClientToGCOverworldDevResetNode) GetOverworldId() uint32 {
@@ -3742,7 +4145,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevResetNodeResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevResetNodeResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[36]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3754,7 +4157,7 @@ func (x *CMsgClientToGCOverworldDevResetNodeResponse) String() string {
 func (*CMsgClientToGCOverworldDevResetNodeResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevResetNodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[36]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3767,7 +4170,7 @@ func (x *CMsgClientToGCOverworldDevResetNodeResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CMsgClientToGCOverworldDevResetNodeResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevResetNodeResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{36}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *CMsgClientToGCOverworldDevResetNodeResponse) GetResponse() CMsgClientToGCOverworldDevResetNodeResponse_EResponse {
@@ -3787,7 +4190,7 @@ type CMsgClientToGCOverworldDevGrantTokens struct {
 
 func (x *CMsgClientToGCOverworldDevGrantTokens) Reset() {
 	*x = CMsgClientToGCOverworldDevGrantTokens{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[37]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3799,7 +4202,7 @@ func (x *CMsgClientToGCOverworldDevGrantTokens) String() string {
 func (*CMsgClientToGCOverworldDevGrantTokens) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevGrantTokens) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[37]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3812,7 +4215,7 @@ func (x *CMsgClientToGCOverworldDevGrantTokens) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCOverworldDevGrantTokens.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevGrantTokens) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{37}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *CMsgClientToGCOverworldDevGrantTokens) GetOverworldId() uint32 {
@@ -3843,7 +4246,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevGrantTokensResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevGrantTokensResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3855,7 +4258,7 @@ func (x *CMsgClientToGCOverworldDevGrantTokensResponse) String() string {
 func (*CMsgClientToGCOverworldDevGrantTokensResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevGrantTokensResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[38]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3868,7 +4271,7 @@ func (x *CMsgClientToGCOverworldDevGrantTokensResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCOverworldDevGrantTokensResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevGrantTokensResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{38}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *CMsgClientToGCOverworldDevGrantTokensResponse) GetResponse() CMsgClientToGCOverworldDevGrantTokensResponse_EResponse {
@@ -3887,7 +4290,7 @@ type CMsgClientToGCOverworldDevClearInventory struct {
 
 func (x *CMsgClientToGCOverworldDevClearInventory) Reset() {
 	*x = CMsgClientToGCOverworldDevClearInventory{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3899,7 +4302,7 @@ func (x *CMsgClientToGCOverworldDevClearInventory) String() string {
 func (*CMsgClientToGCOverworldDevClearInventory) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevClearInventory) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[39]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3912,7 +4315,7 @@ func (x *CMsgClientToGCOverworldDevClearInventory) ProtoReflect() protoreflect.M
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearInventory.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevClearInventory) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{39}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *CMsgClientToGCOverworldDevClearInventory) GetOverworldId() uint32 {
@@ -3936,7 +4339,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevClearInventoryResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevClearInventoryResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3948,7 +4351,7 @@ func (x *CMsgClientToGCOverworldDevClearInventoryResponse) String() string {
 func (*CMsgClientToGCOverworldDevClearInventoryResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevClearInventoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[40]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3961,7 +4364,7 @@ func (x *CMsgClientToGCOverworldDevClearInventoryResponse) ProtoReflect() protor
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearInventoryResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevClearInventoryResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{40}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *CMsgClientToGCOverworldDevClearInventoryResponse) GetResponse() CMsgClientToGCOverworldDevClearInventoryResponse_EResponse {
@@ -3981,7 +4384,7 @@ type CMsgClientToGCOverworldDevSetFortune struct {
 
 func (x *CMsgClientToGCOverworldDevSetFortune) Reset() {
 	*x = CMsgClientToGCOverworldDevSetFortune{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3993,7 +4396,7 @@ func (x *CMsgClientToGCOverworldDevSetFortune) String() string {
 func (*CMsgClientToGCOverworldDevSetFortune) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevSetFortune) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[41]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4006,7 +4409,7 @@ func (x *CMsgClientToGCOverworldDevSetFortune) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use CMsgClientToGCOverworldDevSetFortune.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevSetFortune) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{41}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *CMsgClientToGCOverworldDevSetFortune) GetOverworldId() uint32 {
@@ -4037,7 +4440,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevSetFortuneResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevSetFortuneResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4049,7 +4452,7 @@ func (x *CMsgClientToGCOverworldDevSetFortuneResponse) String() string {
 func (*CMsgClientToGCOverworldDevSetFortuneResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevSetFortuneResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[42]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4062,7 +4465,7 @@ func (x *CMsgClientToGCOverworldDevSetFortuneResponse) ProtoReflect() protorefle
 
 // Deprecated: Use CMsgClientToGCOverworldDevSetFortuneResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevSetFortuneResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{42}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *CMsgClientToGCOverworldDevSetFortuneResponse) GetResponse() CMsgClientToGCOverworldDevSetFortuneResponse_EResponse {
@@ -4082,7 +4485,7 @@ type CMsgClientToGCOverworldDevClearFortune struct {
 
 func (x *CMsgClientToGCOverworldDevClearFortune) Reset() {
 	*x = CMsgClientToGCOverworldDevClearFortune{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4094,7 +4497,7 @@ func (x *CMsgClientToGCOverworldDevClearFortune) String() string {
 func (*CMsgClientToGCOverworldDevClearFortune) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevClearFortune) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[43]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4107,7 +4510,7 @@ func (x *CMsgClientToGCOverworldDevClearFortune) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearFortune.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevClearFortune) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{43}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *CMsgClientToGCOverworldDevClearFortune) GetOverworldId() uint32 {
@@ -4138,7 +4541,7 @@ const (
 
 func (x *CMsgClientToGCOverworldDevClearFortuneResponse) Reset() {
 	*x = CMsgClientToGCOverworldDevClearFortuneResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4150,7 +4553,7 @@ func (x *CMsgClientToGCOverworldDevClearFortuneResponse) String() string {
 func (*CMsgClientToGCOverworldDevClearFortuneResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldDevClearFortuneResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[44]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4163,7 +4566,7 @@ func (x *CMsgClientToGCOverworldDevClearFortuneResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCOverworldDevClearFortuneResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldDevClearFortuneResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{44}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *CMsgClientToGCOverworldDevClearFortuneResponse) GetResponse() CMsgClientToGCOverworldDevClearFortuneResponse_EResponse {
@@ -4171,6 +4574,99 @@ func (x *CMsgClientToGCOverworldDevClearFortuneResponse) GetResponse() CMsgClien
 		return *x.Response
 	}
 	return Default_CMsgClientToGCOverworldDevClearFortuneResponse_Response
+}
+
+type CMsgClientToGCOverworldDevGrantFortuneTellerCoin struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OverworldId   *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoin) Reset() {
+	*x = CMsgClientToGCOverworldDevGrantFortuneTellerCoin{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoin) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldDevGrantFortuneTellerCoin) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoin) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldDevGrantFortuneTellerCoin.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldDevGrantFortuneTellerCoin) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoin) GetOverworldId() uint32 {
+	if x != nil && x.OverworldId != nil {
+		return *x.OverworldId
+	}
+	return 0
+}
+
+type CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse struct {
+	state         protoimpl.MessageState                                              `protogen:"open.v1"`
+	Response      *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse,def=0" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse fields.
+const (
+	Default_CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_Response = CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) Reset() {
+	*x = CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse) GetResponse() CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_Response
 }
 
 type CMsgClientToGCOverworldRequestFortune struct {
@@ -4182,7 +4678,7 @@ type CMsgClientToGCOverworldRequestFortune struct {
 
 func (x *CMsgClientToGCOverworldRequestFortune) Reset() {
 	*x = CMsgClientToGCOverworldRequestFortune{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4194,7 +4690,7 @@ func (x *CMsgClientToGCOverworldRequestFortune) String() string {
 func (*CMsgClientToGCOverworldRequestFortune) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldRequestFortune) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[45]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4207,7 +4703,7 @@ func (x *CMsgClientToGCOverworldRequestFortune) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCOverworldRequestFortune.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldRequestFortune) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{45}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *CMsgClientToGCOverworldRequestFortune) GetOverworldId() uint32 {
@@ -4220,6 +4716,7 @@ func (x *CMsgClientToGCOverworldRequestFortune) GetOverworldId() uint32 {
 type CMsgClientToGCOverworldRequestFortuneResponse struct {
 	state         protoimpl.MessageState                                   `protogen:"open.v1"`
 	Response      *CMsgClientToGCOverworldRequestFortuneResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCOverworldRequestFortuneResponse_EResponse,def=0" json:"response,omitempty"`
+	ClaimResponse *CMsgDOTAClaimEventActionResponse                        `protobuf:"bytes,2,opt,name=claim_response,json=claimResponse" json:"claim_response,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4231,7 +4728,7 @@ const (
 
 func (x *CMsgClientToGCOverworldRequestFortuneResponse) Reset() {
 	*x = CMsgClientToGCOverworldRequestFortuneResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4243,7 +4740,7 @@ func (x *CMsgClientToGCOverworldRequestFortuneResponse) String() string {
 func (*CMsgClientToGCOverworldRequestFortuneResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldRequestFortuneResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[46]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4256,7 +4753,7 @@ func (x *CMsgClientToGCOverworldRequestFortuneResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCOverworldRequestFortuneResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldRequestFortuneResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{46}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *CMsgClientToGCOverworldRequestFortuneResponse) GetResponse() CMsgClientToGCOverworldRequestFortuneResponse_EResponse {
@@ -4264,6 +4761,231 @@ func (x *CMsgClientToGCOverworldRequestFortuneResponse) GetResponse() CMsgClient
 		return *x.Response
 	}
 	return Default_CMsgClientToGCOverworldRequestFortuneResponse_Response
+}
+
+func (x *CMsgClientToGCOverworldRequestFortuneResponse) GetClaimResponse() *CMsgDOTAClaimEventActionResponse {
+	if x != nil {
+		return x.ClaimResponse
+	}
+	return nil
+}
+
+type CMsgClientToGCOverworldClaimFortuneReward struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OverworldId   *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneReward) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortuneReward{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneReward) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortuneReward) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortuneReward) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneReward.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortuneReward) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneReward) GetOverworldId() uint32 {
+	if x != nil && x.OverworldId != nil {
+		return *x.OverworldId
+	}
+	return 0
+}
+
+type CMsgClientToGCOverworldClaimFortuneRewardResponse struct {
+	state         protoimpl.MessageState                                       `protogen:"open.v1"`
+	Response      *CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse,def=0" json:"response,omitempty"`
+	TokenQuantity *CMsgOverworldTokenQuantity                                  `protobuf:"bytes,2,opt,name=token_quantity,json=tokenQuantity" json:"token_quantity,omitempty"`
+	ClaimResponse *CMsgDOTAClaimEventActionResponse                            `protobuf:"bytes,3,opt,name=claim_response,json=claimResponse" json:"claim_response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCOverworldClaimFortuneRewardResponse fields.
+const (
+	Default_CMsgClientToGCOverworldClaimFortuneRewardResponse_Response = CMsgClientToGCOverworldClaimFortuneRewardResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortuneRewardResponse{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortuneRewardResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneRewardResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortuneRewardResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) GetResponse() CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCOverworldClaimFortuneRewardResponse_Response
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) GetTokenQuantity() *CMsgOverworldTokenQuantity {
+	if x != nil {
+		return x.TokenQuantity
+	}
+	return nil
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneRewardResponse) GetClaimResponse() *CMsgDOTAClaimEventActionResponse {
+	if x != nil {
+		return x.ClaimResponse
+	}
+	return nil
+}
+
+type CMsgClientToGCOverworldClaimFortunePermanentReward struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OverworldId   *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
+	FortuneId     *uint32                `protobuf:"varint,2,opt,name=fortune_id,json=fortuneId" json:"fortune_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentReward) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortunePermanentReward{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentReward) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortunePermanentReward) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentReward) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortunePermanentReward.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortunePermanentReward) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentReward) GetOverworldId() uint32 {
+	if x != nil && x.OverworldId != nil {
+		return *x.OverworldId
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentReward) GetFortuneId() uint32 {
+	if x != nil && x.FortuneId != nil {
+		return *x.FortuneId
+	}
+	return 0
+}
+
+type CMsgClientToGCOverworldClaimFortunePermanentRewardResponse struct {
+	state         protoimpl.MessageState                                                `protogen:"open.v1"`
+	Response      *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse,def=0" json:"response,omitempty"`
+	ClaimResponse *CMsgDOTAClaimEventActionResponse                                     `protobuf:"bytes,2,opt,name=claim_response,json=claimResponse" json:"claim_response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCOverworldClaimFortunePermanentRewardResponse fields.
+const (
+	Default_CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_Response = CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortunePermanentRewardResponse{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) GetResponse() CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_Response
+}
+
+func (x *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse) GetClaimResponse() *CMsgDOTAClaimEventActionResponse {
+	if x != nil {
+		return x.ClaimResponse
+	}
+	return nil
 }
 
 type CMsgClientToGCOverworldFeedback struct {
@@ -4277,7 +4999,7 @@ type CMsgClientToGCOverworldFeedback struct {
 
 func (x *CMsgClientToGCOverworldFeedback) Reset() {
 	*x = CMsgClientToGCOverworldFeedback{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4289,7 +5011,7 @@ func (x *CMsgClientToGCOverworldFeedback) String() string {
 func (*CMsgClientToGCOverworldFeedback) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldFeedback) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[47]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4302,7 +5024,7 @@ func (x *CMsgClientToGCOverworldFeedback) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgClientToGCOverworldFeedback.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldFeedback) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{47}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *CMsgClientToGCOverworldFeedback) GetLanguage() uint32 {
@@ -4340,7 +5062,7 @@ const (
 
 func (x *CMsgClientToGCOverworldFeedbackResponse) Reset() {
 	*x = CMsgClientToGCOverworldFeedbackResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4352,7 +5074,7 @@ func (x *CMsgClientToGCOverworldFeedbackResponse) String() string {
 func (*CMsgClientToGCOverworldFeedbackResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldFeedbackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[48]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4365,7 +5087,7 @@ func (x *CMsgClientToGCOverworldFeedbackResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgClientToGCOverworldFeedbackResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldFeedbackResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{48}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *CMsgClientToGCOverworldFeedbackResponse) GetResponse() CMsgClientToGCOverworldFeedbackResponse_EResponse {
@@ -4386,7 +5108,7 @@ type CMsgClientToGCOverworldGetDynamicImage struct {
 
 func (x *CMsgClientToGCOverworldGetDynamicImage) Reset() {
 	*x = CMsgClientToGCOverworldGetDynamicImage{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4398,7 +5120,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImage) String() string {
 func (*CMsgClientToGCOverworldGetDynamicImage) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGetDynamicImage) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[49]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4411,7 +5133,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImage) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use CMsgClientToGCOverworldGetDynamicImage.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGetDynamicImage) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{49}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *CMsgClientToGCOverworldGetDynamicImage) GetMagic() uint32 {
@@ -4445,7 +5167,7 @@ type CMsgClientToGCOverworldGetDynamicImageResponse struct {
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse) Reset() {
 	*x = CMsgClientToGCOverworldGetDynamicImageResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4457,7 +5179,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImageResponse) String() string {
 func (*CMsgClientToGCOverworldGetDynamicImageResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[50]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4470,7 +5192,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImageResponse) ProtoReflect() protoref
 
 // Deprecated: Use CMsgClientToGCOverworldGetDynamicImageResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGetDynamicImageResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{50}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse) GetImageId() uint32 {
@@ -4506,7 +5228,7 @@ const (
 
 func (x *CMsgClientToGCOverworldMinigameAction) Reset() {
 	*x = CMsgClientToGCOverworldMinigameAction{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4518,7 +5240,7 @@ func (x *CMsgClientToGCOverworldMinigameAction) String() string {
 func (*CMsgClientToGCOverworldMinigameAction) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldMinigameAction) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[51]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4531,7 +5253,7 @@ func (x *CMsgClientToGCOverworldMinigameAction) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use CMsgClientToGCOverworldMinigameAction.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldMinigameAction) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{51}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *CMsgClientToGCOverworldMinigameAction) GetOverworldId() uint32 {
@@ -4590,7 +5312,7 @@ const (
 
 func (x *CMsgClientToGCOverworldMinigameActionResponse) Reset() {
 	*x = CMsgClientToGCOverworldMinigameActionResponse{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4602,7 +5324,7 @@ func (x *CMsgClientToGCOverworldMinigameActionResponse) String() string {
 func (*CMsgClientToGCOverworldMinigameActionResponse) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldMinigameActionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[52]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4615,7 +5337,7 @@ func (x *CMsgClientToGCOverworldMinigameActionResponse) ProtoReflect() protorefl
 
 // Deprecated: Use CMsgClientToGCOverworldMinigameActionResponse.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldMinigameActionResponse) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{52}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *CMsgClientToGCOverworldMinigameActionResponse) GetResponse() CMsgClientToGCOverworldMinigameActionResponse_EResponse {
@@ -4623,6 +5345,115 @@ func (x *CMsgClientToGCOverworldMinigameActionResponse) GetResponse() CMsgClient
 		return *x.Response
 	}
 	return Default_CMsgClientToGCOverworldMinigameActionResponse_Response
+}
+
+type CMsgClientToGCOverworldClaimFortuneTellerStoryNode struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	OverworldId   *uint32                `protobuf:"varint,1,opt,name=overworld_id,json=overworldId" json:"overworld_id,omitempty"`
+	StoryNodeId   *uint32                `protobuf:"varint,2,opt,name=story_node_id,json=storyNodeId" json:"story_node_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNode) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortuneTellerStoryNode{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortuneTellerStoryNode) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNode) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneTellerStoryNode.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortuneTellerStoryNode) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNode) GetOverworldId() uint32 {
+	if x != nil && x.OverworldId != nil {
+		return *x.OverworldId
+	}
+	return 0
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNode) GetStoryNodeId() uint32 {
+	if x != nil && x.StoryNodeId != nil {
+		return *x.StoryNodeId
+	}
+	return 0
+}
+
+type CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse struct {
+	state         protoimpl.MessageState                                                `protogen:"open.v1"`
+	Response      *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse `protobuf:"varint,1,opt,name=response,enum=protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse,def=0" json:"response,omitempty"`
+	ClaimResponse *CMsgDOTAClaimEventActionResponse                                     `protobuf:"bytes,2,opt,name=claim_response,json=claimResponse" json:"claim_response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse fields.
+const (
+	Default_CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_Response = CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_k_eInternalError
+)
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) Reset() {
+	*x = CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) ProtoMessage() {}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.ProtoReflect.Descriptor instead.
+func (*CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) GetResponse() CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse {
+	if x != nil && x.Response != nil {
+		return *x.Response
+	}
+	return Default_CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_Response
+}
+
+func (x *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse) GetClaimResponse() *CMsgDOTAClaimEventActionResponse {
+	if x != nil {
+		return x.ClaimResponse
+	}
+	return nil
 }
 
 type CMsgOverworldEncounterTokenTreasureData_RewardOption struct {
@@ -4636,7 +5467,7 @@ type CMsgOverworldEncounterTokenTreasureData_RewardOption struct {
 
 func (x *CMsgOverworldEncounterTokenTreasureData_RewardOption) Reset() {
 	*x = CMsgOverworldEncounterTokenTreasureData_RewardOption{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4648,7 +5479,7 @@ func (x *CMsgOverworldEncounterTokenTreasureData_RewardOption) String() string {
 func (*CMsgOverworldEncounterTokenTreasureData_RewardOption) ProtoMessage() {}
 
 func (x *CMsgOverworldEncounterTokenTreasureData_RewardOption) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[53]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4696,7 +5527,7 @@ type CMsgOverworldEncounterTokenQuestData_Quest struct {
 
 func (x *CMsgOverworldEncounterTokenQuestData_Quest) Reset() {
 	*x = CMsgOverworldEncounterTokenQuestData_Quest{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4708,7 +5539,7 @@ func (x *CMsgOverworldEncounterTokenQuestData_Quest) String() string {
 func (*CMsgOverworldEncounterTokenQuestData_Quest) ProtoMessage() {}
 
 func (x *CMsgOverworldEncounterTokenQuestData_Quest) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[54]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4745,6 +5576,58 @@ func (x *CMsgOverworldEncounterTokenQuestData_Quest) GetTokenReward() *CMsgOverw
 	return nil
 }
 
+type CMsgOverworldFortune_CMsgFortuneCount struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Fortune       *uint32                `protobuf:"varint,1,opt,name=fortune" json:"fortune,omitempty"`
+	Count         *uint32                `protobuf:"varint,2,opt,name=count" json:"count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CMsgOverworldFortune_CMsgFortuneCount) Reset() {
+	*x = CMsgOverworldFortune_CMsgFortuneCount{}
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CMsgOverworldFortune_CMsgFortuneCount) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CMsgOverworldFortune_CMsgFortuneCount) ProtoMessage() {}
+
+func (x *CMsgOverworldFortune_CMsgFortuneCount) ProtoReflect() protoreflect.Message {
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CMsgOverworldFortune_CMsgFortuneCount.ProtoReflect.Descriptor instead.
+func (*CMsgOverworldFortune_CMsgFortuneCount) Descriptor() ([]byte, []int) {
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{12, 0}
+}
+
+func (x *CMsgOverworldFortune_CMsgFortuneCount) GetFortune() uint32 {
+	if x != nil && x.Fortune != nil {
+		return *x.Fortune
+	}
+	return 0
+}
+
+func (x *CMsgOverworldFortune_CMsgFortuneCount) GetCount() uint32 {
+	if x != nil && x.Count != nil {
+		return *x.Count
+	}
+	return 0
+}
+
 type CMsgOverworldUserData_MinigameDataEntry struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
 	Key           *uint32                        `protobuf:"varint,1,opt,name=key" json:"key,omitempty"`
@@ -4755,7 +5638,7 @@ type CMsgOverworldUserData_MinigameDataEntry struct {
 
 func (x *CMsgOverworldUserData_MinigameDataEntry) Reset() {
 	*x = CMsgOverworldUserData_MinigameDataEntry{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4767,7 +5650,7 @@ func (x *CMsgOverworldUserData_MinigameDataEntry) String() string {
 func (*CMsgOverworldUserData_MinigameDataEntry) ProtoMessage() {}
 
 func (x *CMsgOverworldUserData_MinigameDataEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[55]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4780,7 +5663,7 @@ func (x *CMsgOverworldUserData_MinigameDataEntry) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use CMsgOverworldUserData_MinigameDataEntry.ProtoReflect.Descriptor instead.
 func (*CMsgOverworldUserData_MinigameDataEntry) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{13, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{14, 0}
 }
 
 func (x *CMsgOverworldUserData_MinigameDataEntry) GetKey() uint32 {
@@ -4808,7 +5691,7 @@ type CMsgOverworldMatchRewards_Player struct {
 
 func (x *CMsgOverworldMatchRewards_Player) Reset() {
 	*x = CMsgOverworldMatchRewards_Player{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4820,7 +5703,7 @@ func (x *CMsgOverworldMatchRewards_Player) String() string {
 func (*CMsgOverworldMatchRewards_Player) ProtoMessage() {}
 
 func (x *CMsgOverworldMatchRewards_Player) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[56]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4833,7 +5716,7 @@ func (x *CMsgOverworldMatchRewards_Player) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CMsgOverworldMatchRewards_Player.ProtoReflect.Descriptor instead.
 func (*CMsgOverworldMatchRewards_Player) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{14, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{15, 0}
 }
 
 func (x *CMsgOverworldMatchRewards_Player) GetPlayerSlot() uint32 {
@@ -4874,7 +5757,7 @@ const (
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse_Image) Reset() {
 	*x = CMsgClientToGCOverworldGetDynamicImageResponse_Image{}
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4886,7 +5769,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImageResponse_Image) String() string {
 func (*CMsgClientToGCOverworldGetDynamicImageResponse_Image) ProtoMessage() {}
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse_Image) ProtoReflect() protoreflect.Message {
-	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[57]
+	mi := &file_dota_gcmessages_common_overworld_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4899,7 +5782,7 @@ func (x *CMsgClientToGCOverworldGetDynamicImageResponse_Image) ProtoReflect() pr
 
 // Deprecated: Use CMsgClientToGCOverworldGetDynamicImageResponse_Image.ProtoReflect.Descriptor instead.
 func (*CMsgClientToGCOverworldGetDynamicImageResponse_Image) Descriptor() ([]byte, []int) {
-	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{50, 0}
+	return file_dota_gcmessages_common_overworld_proto_rawDescGZIP(), []int{57, 0}
 }
 
 func (x *CMsgClientToGCOverworldGetDynamicImageResponse_Image) GetWidth() uint32 {
@@ -4986,19 +5869,29 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\anode_id\x18\x01 \x01(\rR\x06nodeId\x12'\n" +
 	"\x0fcurrency_amount\x18\x02 \x01(\rR\x0ecurrencyAmount\x12J\n" +
 	"\vcustom_data\x18\x03 \x01(\v2).protocol.CMsgOverworldMinigameCustomDataR\n" +
-	"customData\"\x88\x01\n" +
-	"\x14CMsgOverworldFortune\x12\x1a\n" +
-	"\bfortune1\x18\x01 \x01(\rR\bfortune1\x12\x1a\n" +
-	"\bfortune2\x18\x02 \x01(\rR\bfortune2\x12\x1a\n" +
-	"\bfortune3\x18\x03 \x01(\rR\bfortune3\x12\x1c\n" +
-	"\ttimestamp\x18\x04 \x01(\rR\ttimestamp\"\xa1\x04\n" +
+	"customData\"\xdf\x02\n" +
+	"\x14CMsgOverworldFortune\x12\x18\n" +
+	"\afortune\x18\x01 \x01(\rR\afortune\x12\x1c\n" +
+	"\ttimestamp\x18\x04 \x01(\rR\ttimestamp\x12'\n" +
+	"\x0ftimes_completed\x18\x05 \x01(\rR\x0etimesCompleted\x12%\n" +
+	"\x0ereward_claimed\x18\a \x01(\bR\rrewardClaimed\x12#\n" +
+	"\rfortune_count\x18\b \x01(\rR\ffortuneCount\x12V\n" +
+	"\x0efortune_counts\x18\t \x03(\v2/.protocol.CMsgOverworldFortune.CMsgFortuneCountR\rfortuneCounts\x1aB\n" +
+	"\x10CMsgFortuneCount\x12\x18\n" +
+	"\afortune\x18\x01 \x01(\rR\afortune\x12\x14\n" +
+	"\x05count\x18\x02 \x01(\rR\x05count\"x\n" +
+	"\x1dCMsgLobbyOverworldFortuneList\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\x01 \x03(\rR\taccountId\x128\n" +
+	"\afortune\x18\x02 \x03(\v2\x1e.protocol.CMsgOverworldFortuneR\afortune\"\xd2\x04\n" +
 	"\x15CMsgOverworldUserData\x12M\n" +
 	"\x0ftoken_inventory\x18\x01 \x01(\v2$.protocol.CMsgOverworldTokenQuantityR\x0etokenInventory\x12D\n" +
 	"\x0foverworld_nodes\x18\x02 \x03(\v2\x1b.protocol.CMsgOverworldNodeR\x0eoverworldNodes\x12D\n" +
 	"\x0foverworld_paths\x18\x03 \x03(\v2\x1b.protocol.CMsgOverworldPathR\x0eoverworldPaths\x12&\n" +
 	"\x0fcurrent_node_id\x18\x04 \x01(\rR\rcurrentNodeId\x12V\n" +
 	"\rminigame_data\x18\x05 \x03(\v21.protocol.CMsgOverworldUserData.MinigameDataEntryR\fminigameData\x12G\n" +
-	"\x0fcurrent_fortune\x18\x06 \x01(\v2\x1e.protocol.CMsgOverworldFortuneR\x0ecurrentFortune\x1ad\n" +
+	"\x0fcurrent_fortune\x18\x06 \x01(\v2\x1e.protocol.CMsgOverworldFortuneR\x0ecurrentFortune\x12/\n" +
+	"\x14last_related_hero_id\x18\a \x01(\x05R\x11lastRelatedHeroId\x1ad\n" +
 	"\x11MinigameDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12=\n" +
 	"\x05value\x18\x02 \x01(\v2'.protocol.CMsgOverworldMinigameUserDataR\x05value\"\xee\x01\n" +
@@ -5026,13 +5919,15 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x13k_eInvalidOverworld\x10\x05\"\x89\x01\n" +
 	"&CMsgGCToClientOverworldUserDataUpdated\x12!\n" +
 	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12<\n" +
-	"\tuser_data\x18\x02 \x01(\v2\x1f.protocol.CMsgOverworldUserDataR\buserData\"a\n" +
+	"\tuser_data\x18\x02 \x01(\v2\x1f.protocol.CMsgOverworldUserDataR\buserData\"\xcc\x01\n" +
 	"#CMsgClientToGCOverworldCompletePath\x12!\n" +
 	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12\x17\n" +
-	"\apath_id\x18\x02 \x01(\rR\x06pathId\"\xdf\x03\n" +
+	"\apath_id\x18\x02 \x01(\rR\x06pathId\x12*\n" +
+	"\x11use_path_unlocker\x18\x03 \x01(\bR\x0fusePathUnlocker\x12=\n" +
+	"\x1bdev_ignore_release_schedule\x18\x04 \x01(\bR\x18devIgnoreReleaseSchedule\"\xf7\x03\n" +
 	"+CMsgClientToGCOverworldCompletePathResponse\x12m\n" +
 	"\bresponse\x18\x01 \x01(\x0e2?.protocol.CMsgClientToGCOverworldCompletePathResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
-	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\xed\x01\n" +
+	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\x85\x02\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -5048,7 +5943,8 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x0fk_ePathIsLocked\x10\b\x12\x1a\n" +
 	"\x16k_ePathAlreadyUnlocked\x10\t\x12\x13\n" +
 	"\x0fk_eEventExpired\x10\n" +
-	"\"_\n" +
+	"\x12\x16\n" +
+	"\x12k_eNodeNotReleased\x10\v\"_\n" +
 	"*CMsgOverworldEncounterPitFighterRewardData\x12\x19\n" +
 	"\btoken_id\x18\x01 \x01(\rR\atokenId\x12\x16\n" +
 	"\x06choice\x18\x02 \x01(\rR\x06choice\"\x96\x03\n" +
@@ -5293,11 +6189,11 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\n" +
 	"k_eTimeout\x10\x04\x12\x11\n" +
 	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
-	"\x13k_eInvalidOverworld\x10\x06\"J\n" +
-	"%CMsgClientToGCOverworldRequestFortune\x12!\n" +
-	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\"\xb1\x02\n" +
-	"-CMsgClientToGCOverworldRequestFortuneResponse\x12o\n" +
-	"\bresponse\x18\x01 \x01(\x0e2A.protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse:\x10k_eInternalErrorR\bresponse\"\x8e\x01\n" +
+	"\x13k_eInvalidOverworld\x10\x06\"U\n" +
+	"0CMsgClientToGCOverworldDevGrantFortuneTellerCoin\x12!\n" +
+	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\"\xc7\x02\n" +
+	"8CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse\x12z\n" +
+	"\bresponse\x18\x01 \x01(\x0e2L.protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.EResponse:\x10k_eInternalErrorR\bresponse\"\x8e\x01\n" +
 	"\tEResponse\x12\x14\n" +
 	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -5308,7 +6204,59 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\n" +
 	"k_eTimeout\x10\x04\x12\x11\n" +
 	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
-	"\x13k_eInvalidOverworld\x10\x06\"|\n" +
+	"\x13k_eInvalidOverworld\x10\x06\"J\n" +
+	"%CMsgClientToGCOverworldRequestFortune\x12!\n" +
+	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\"\x84\x03\n" +
+	"-CMsgClientToGCOverworldRequestFortuneResponse\x12o\n" +
+	"\bresponse\x18\x01 \x01(\x0e2A.protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
+	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\x8e\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x11\n" +
+	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
+	"\x13k_eInvalidOverworld\x10\x06\"N\n" +
+	")CMsgClientToGCOverworldClaimFortuneReward\x12!\n" +
+	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\"\xd9\x03\n" +
+	"1CMsgClientToGCOverworldClaimFortuneRewardResponse\x12s\n" +
+	"\bresponse\x18\x01 \x01(\x0e2E.protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12K\n" +
+	"\x0etoken_quantity\x18\x02 \x01(\v2$.protocol.CMsgOverworldTokenQuantityR\rtokenQuantity\x12Q\n" +
+	"\x0eclaim_response\x18\x03 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\x8e\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x11\n" +
+	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
+	"\x13k_eInvalidOverworld\x10\x06\"v\n" +
+	"2CMsgClientToGCOverworldClaimFortunePermanentReward\x12!\n" +
+	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12\x1d\n" +
+	"\n" +
+	"fortune_id\x18\x02 \x01(\rR\tfortuneId\"\xbb\x03\n" +
+	":CMsgClientToGCOverworldClaimFortunePermanentRewardResponse\x12|\n" +
+	"\bresponse\x18\x01 \x01(\x0e2N.protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
+	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\xab\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x11\n" +
+	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
+	"\x13k_eInvalidOverworld\x10\x06\x12\x1b\n" +
+	"\x17k_eRewardAlreadyClaimed\x10\a\"|\n" +
 	"\x1fCMsgClientToGCOverworldFeedback\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\rR\blanguage\x12!\n" +
 	"\foverworld_id\x18\x02 \x01(\rR\voverworldId\x12\x1a\n" +
@@ -5371,7 +6319,26 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x12k_eNotEnoughTokens\x10\t\x12 \n" +
 	"\x1ck_eNotEnoughMinigameCurrency\x10\n" +
 	"\x12\x11\n" +
-	"\rk_eNotAllowed\x10\v*~\n" +
+	"\rk_eNotAllowed\x10\v\"{\n" +
+	"2CMsgClientToGCOverworldClaimFortuneTellerStoryNode\x12!\n" +
+	"\foverworld_id\x18\x01 \x01(\rR\voverworldId\x12\"\n" +
+	"\rstory_node_id\x18\x02 \x01(\rR\vstoryNodeId\"\xdc\x03\n" +
+	":CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse\x12|\n" +
+	"\bresponse\x18\x01 \x01(\x0e2N.protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.EResponse:\x10k_eInternalErrorR\bresponse\x12Q\n" +
+	"\x0eclaim_response\x18\x02 \x01(\v2*.protocol.CMsgDOTAClaimEventActionResponseR\rclaimResponse\"\xcc\x01\n" +
+	"\tEResponse\x12\x14\n" +
+	"\x10k_eInternalError\x10\x00\x12\x0e\n" +
+	"\n" +
+	"k_eSuccess\x10\x01\x12\x0e\n" +
+	"\n" +
+	"k_eTooBusy\x10\x02\x12\x0f\n" +
+	"\vk_eDisabled\x10\x03\x12\x0e\n" +
+	"\n" +
+	"k_eTimeout\x10\x04\x12\x11\n" +
+	"\rk_eNotAllowed\x10\x05\x12\x17\n" +
+	"\x13k_eInvalidOverworld\x10\x06\x12\x1b\n" +
+	"\x17k_eRewardAlreadyClaimed\x10\a\x12\x1f\n" +
+	"\x1bk_eInsufficientFortuneCount\x10\b*~\n" +
 	"\x13EOverworldNodeState\x12!\n" +
 	"\x1dk_eOverworldNodeState_Invalid\x10\x00\x12 \n" +
 	"\x1ck_eOverworldNodeState_Locked\x10\x01\x12\"\n" +
@@ -5379,7 +6346,7 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"\x13EOverworldPathState\x12!\n" +
 	"\x1dk_eOverworldPathState_Invalid\x10\x00\x12$\n" +
 	" k_eOverworldPathState_Incomplete\x10\x01\x12\"\n" +
-	"\x1ek_eOverworldPathState_Complete\x10\x02*\xac\a\n" +
+	"\x1ek_eOverworldPathState_Complete\x10\x02*\xbe\t\n" +
 	"\x15EOverworldAuditAction\x12#\n" +
 	"\x1fk_eOverworldAuditAction_Invalid\x10\x00\x12+\n" +
 	"'k_eOverworldAuditAction_DevModifyTokens\x10\x01\x12-\n" +
@@ -5401,7 +6368,12 @@ const file_dota_gcmessages_common_overworld_proto_rawDesc = "" +
 	"%k_eOverworldAuditAction_TokenGiftSent\x10\x11\x12)\n" +
 	"%k_eOverworldAuditAction_DevSetFortune\x10\x12\x12+\n" +
 	"'k_eOverworldAuditAction_DevClearFortune\x10\x13\x12*\n" +
-	"&k_eOverworldAuditAction_RequestFortune\x10\x14*\xd4\x02\n" +
+	"&k_eOverworldAuditAction_RequestFortune\x10\x14\x12.\n" +
+	"*k_eOverworldAuditAction_ClaimFortuneReward\x10\x15\x125\n" +
+	"1k_eOverworldAuditAction_DevGrantFortuneTellerCoin\x10\x16\x12=\n" +
+	"9k_eOverworldAuditAction_ClaimFortuneTellerStoryNodeReward\x10\x17\x124\n" +
+	"0k_eOverworldAuditAction_MatchRewardsAbilityDraft\x10\x18\x124\n" +
+	"0k_eOverworldAuditAction_MatchRewardsCoopBotMatch\x10\x19*\xd4\x02\n" +
 	"\x18EOverworldMinigameAction\x12&\n" +
 	"\"k_eOverworldMinigameAction_Invalid\x10\x00\x12'\n" +
 	"#k_eOverworldMinigameAction_DevReset\x10\x01\x12.\n" +
@@ -5423,8 +6395,8 @@ func file_dota_gcmessages_common_overworld_proto_rawDescGZIP() []byte {
 	return file_dota_gcmessages_common_overworld_proto_rawDescData
 }
 
-var file_dota_gcmessages_common_overworld_proto_enumTypes = make([]protoimpl.EnumInfo, 22)
-var file_dota_gcmessages_common_overworld_proto_msgTypes = make([]protoimpl.MessageInfo, 58)
+var file_dota_gcmessages_common_overworld_proto_enumTypes = make([]protoimpl.EnumInfo, 26)
+var file_dota_gcmessages_common_overworld_proto_msgTypes = make([]protoimpl.MessageInfo, 68)
 var file_dota_gcmessages_common_overworld_proto_goTypes = []any{
 	(EOverworldNodeState)(0),                                                  // 0: protocol.EOverworldNodeState
 	(EOverworldPathState)(0),                                                  // 1: protocol.EOverworldPathState
@@ -5444,133 +6416,158 @@ var file_dota_gcmessages_common_overworld_proto_goTypes = []any{
 	(CMsgClientToGCOverworldDevClearInventoryResponse_EResponse)(0),           // 15: protocol.CMsgClientToGCOverworldDevClearInventoryResponse.EResponse
 	(CMsgClientToGCOverworldDevSetFortuneResponse_EResponse)(0),               // 16: protocol.CMsgClientToGCOverworldDevSetFortuneResponse.EResponse
 	(CMsgClientToGCOverworldDevClearFortuneResponse_EResponse)(0),             // 17: protocol.CMsgClientToGCOverworldDevClearFortuneResponse.EResponse
-	(CMsgClientToGCOverworldRequestFortuneResponse_EResponse)(0),              // 18: protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse
-	(CMsgClientToGCOverworldFeedbackResponse_EResponse)(0),                    // 19: protocol.CMsgClientToGCOverworldFeedbackResponse.EResponse
-	(CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat)(0),   // 20: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
-	(CMsgClientToGCOverworldMinigameActionResponse_EResponse)(0),              // 21: protocol.CMsgClientToGCOverworldMinigameActionResponse.EResponse
-	(*CMsgOverworldTokenCount)(nil),                                           // 22: protocol.CMsgOverworldTokenCount
-	(*CMsgOverworldTokenQuantity)(nil),                                        // 23: protocol.CMsgOverworldTokenQuantity
-	(*CMsgOverworldEncounterTokenTreasureData)(nil),                           // 24: protocol.CMsgOverworldEncounterTokenTreasureData
-	(*CMsgOverworldEncounterTokenQuestData)(nil),                              // 25: protocol.CMsgOverworldEncounterTokenQuestData
-	(*CMsgOverworldHeroList)(nil),                                             // 26: protocol.CMsgOverworldHeroList
-	(*CMsgOverworldEncounterChooseHeroData)(nil),                              // 27: protocol.CMsgOverworldEncounterChooseHeroData
-	(*CMsgOverworldEncounterProgressData)(nil),                                // 28: protocol.CMsgOverworldEncounterProgressData
-	(*CMsgOverworldEncounterData)(nil),                                        // 29: protocol.CMsgOverworldEncounterData
-	(*CMsgOverworldNode)(nil),                                                 // 30: protocol.CMsgOverworldNode
-	(*CMsgOverworldPath)(nil),                                                 // 31: protocol.CMsgOverworldPath
-	(*CMsgOverworldMinigameCustomData)(nil),                                   // 32: protocol.CMsgOverworldMinigameCustomData
-	(*CMsgOverworldMinigameUserData)(nil),                                     // 33: protocol.CMsgOverworldMinigameUserData
-	(*CMsgOverworldFortune)(nil),                                              // 34: protocol.CMsgOverworldFortune
-	(*CMsgOverworldUserData)(nil),                                             // 35: protocol.CMsgOverworldUserData
-	(*CMsgOverworldMatchRewards)(nil),                                         // 36: protocol.CMsgOverworldMatchRewards
-	(*CMsgClientToGCOverworldGetUserData)(nil),                                // 37: protocol.CMsgClientToGCOverworldGetUserData
-	(*CMsgClientToGCOverworldGetUserDataResponse)(nil),                        // 38: protocol.CMsgClientToGCOverworldGetUserDataResponse
-	(*CMsgGCToClientOverworldUserDataUpdated)(nil),                            // 39: protocol.CMsgGCToClientOverworldUserDataUpdated
-	(*CMsgClientToGCOverworldCompletePath)(nil),                               // 40: protocol.CMsgClientToGCOverworldCompletePath
-	(*CMsgClientToGCOverworldCompletePathResponse)(nil),                       // 41: protocol.CMsgClientToGCOverworldCompletePathResponse
-	(*CMsgOverworldEncounterPitFighterRewardData)(nil),                        // 42: protocol.CMsgOverworldEncounterPitFighterRewardData
-	(*CMsgClientToGCOverworldClaimEncounterReward)(nil),                       // 43: protocol.CMsgClientToGCOverworldClaimEncounterReward
-	(*CMsgClientToGCOverworldClaimEncounterRewardResponse)(nil),               // 44: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse
-	(*CMsgClientToGCOverworldVisitEncounter)(nil),                             // 45: protocol.CMsgClientToGCOverworldVisitEncounter
-	(*CMsgClientToGCOverworldVisitEncounterResponse)(nil),                     // 46: protocol.CMsgClientToGCOverworldVisitEncounterResponse
-	(*CMsgClientToGCOverworldMoveToNode)(nil),                                 // 47: protocol.CMsgClientToGCOverworldMoveToNode
-	(*CMsgClientToGCOverworldMoveToNodeResponse)(nil),                         // 48: protocol.CMsgClientToGCOverworldMoveToNodeResponse
-	(*CMsgClientToGCOverworldTradeTokens)(nil),                                // 49: protocol.CMsgClientToGCOverworldTradeTokens
-	(*CMsgClientToGCOverworldTradeTokensResponse)(nil),                        // 50: protocol.CMsgClientToGCOverworldTradeTokensResponse
-	(*CMsgClientToGCOverworldGiftTokens)(nil),                                 // 51: protocol.CMsgClientToGCOverworldGiftTokens
-	(*CMsgClientToGCOverworldGiftTokensResponse)(nil),                         // 52: protocol.CMsgClientToGCOverworldGiftTokensResponse
-	(*CMsgClientToGCOverworldRequestTokensNeededByFriend)(nil),                // 53: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriend
-	(*CMsgClientToGCOverworldRequestTokensNeededByFriendResponse)(nil),        // 54: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
-	(*CMsgClientToGCOverworldDevResetAll)(nil),                                // 55: protocol.CMsgClientToGCOverworldDevResetAll
-	(*CMsgClientToGCOverworldDevResetAllResponse)(nil),                        // 56: protocol.CMsgClientToGCOverworldDevResetAllResponse
-	(*CMsgClientToGCOverworldDevResetNode)(nil),                               // 57: protocol.CMsgClientToGCOverworldDevResetNode
-	(*CMsgClientToGCOverworldDevResetNodeResponse)(nil),                       // 58: protocol.CMsgClientToGCOverworldDevResetNodeResponse
-	(*CMsgClientToGCOverworldDevGrantTokens)(nil),                             // 59: protocol.CMsgClientToGCOverworldDevGrantTokens
-	(*CMsgClientToGCOverworldDevGrantTokensResponse)(nil),                     // 60: protocol.CMsgClientToGCOverworldDevGrantTokensResponse
-	(*CMsgClientToGCOverworldDevClearInventory)(nil),                          // 61: protocol.CMsgClientToGCOverworldDevClearInventory
-	(*CMsgClientToGCOverworldDevClearInventoryResponse)(nil),                  // 62: protocol.CMsgClientToGCOverworldDevClearInventoryResponse
-	(*CMsgClientToGCOverworldDevSetFortune)(nil),                              // 63: protocol.CMsgClientToGCOverworldDevSetFortune
-	(*CMsgClientToGCOverworldDevSetFortuneResponse)(nil),                      // 64: protocol.CMsgClientToGCOverworldDevSetFortuneResponse
-	(*CMsgClientToGCOverworldDevClearFortune)(nil),                            // 65: protocol.CMsgClientToGCOverworldDevClearFortune
-	(*CMsgClientToGCOverworldDevClearFortuneResponse)(nil),                    // 66: protocol.CMsgClientToGCOverworldDevClearFortuneResponse
-	(*CMsgClientToGCOverworldRequestFortune)(nil),                             // 67: protocol.CMsgClientToGCOverworldRequestFortune
-	(*CMsgClientToGCOverworldRequestFortuneResponse)(nil),                     // 68: protocol.CMsgClientToGCOverworldRequestFortuneResponse
-	(*CMsgClientToGCOverworldFeedback)(nil),                                   // 69: protocol.CMsgClientToGCOverworldFeedback
-	(*CMsgClientToGCOverworldFeedbackResponse)(nil),                           // 70: protocol.CMsgClientToGCOverworldFeedbackResponse
-	(*CMsgClientToGCOverworldGetDynamicImage)(nil),                            // 71: protocol.CMsgClientToGCOverworldGetDynamicImage
-	(*CMsgClientToGCOverworldGetDynamicImageResponse)(nil),                    // 72: protocol.CMsgClientToGCOverworldGetDynamicImageResponse
-	(*CMsgClientToGCOverworldMinigameAction)(nil),                             // 73: protocol.CMsgClientToGCOverworldMinigameAction
-	(*CMsgClientToGCOverworldMinigameActionResponse)(nil),                     // 74: protocol.CMsgClientToGCOverworldMinigameActionResponse
-	(*CMsgOverworldEncounterTokenTreasureData_RewardOption)(nil),              // 75: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption
-	(*CMsgOverworldEncounterTokenQuestData_Quest)(nil),                        // 76: protocol.CMsgOverworldEncounterTokenQuestData.Quest
-	(*CMsgOverworldUserData_MinigameDataEntry)(nil),                           // 77: protocol.CMsgOverworldUserData.MinigameDataEntry
-	(*CMsgOverworldMatchRewards_Player)(nil),                                  // 78: protocol.CMsgOverworldMatchRewards.Player
-	(*CMsgClientToGCOverworldGetDynamicImageResponse_Image)(nil),              // 79: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image
-	(*CExtraMsgBlock)(nil),                                                    // 80: protocol.CExtraMsgBlock
-	(*CMsgSurvivorsUserData)(nil),                                             // 81: protocol.CMsgSurvivorsUserData
-	(*CMsgDOTAClaimEventActionResponse)(nil),                                  // 82: protocol.CMsgDOTAClaimEventActionResponse
+	(CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse)(0),   // 18: protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.EResponse
+	(CMsgClientToGCOverworldRequestFortuneResponse_EResponse)(0),              // 19: protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse
+	(CMsgClientToGCOverworldClaimFortuneRewardResponse_EResponse)(0),          // 20: protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.EResponse
+	(CMsgClientToGCOverworldClaimFortunePermanentRewardResponse_EResponse)(0), // 21: protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.EResponse
+	(CMsgClientToGCOverworldFeedbackResponse_EResponse)(0),                    // 22: protocol.CMsgClientToGCOverworldFeedbackResponse.EResponse
+	(CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat)(0),   // 23: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
+	(CMsgClientToGCOverworldMinigameActionResponse_EResponse)(0),              // 24: protocol.CMsgClientToGCOverworldMinigameActionResponse.EResponse
+	(CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse_EResponse)(0), // 25: protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.EResponse
+	(*CMsgOverworldTokenCount)(nil),                                           // 26: protocol.CMsgOverworldTokenCount
+	(*CMsgOverworldTokenQuantity)(nil),                                        // 27: protocol.CMsgOverworldTokenQuantity
+	(*CMsgOverworldEncounterTokenTreasureData)(nil),                           // 28: protocol.CMsgOverworldEncounterTokenTreasureData
+	(*CMsgOverworldEncounterTokenQuestData)(nil),                              // 29: protocol.CMsgOverworldEncounterTokenQuestData
+	(*CMsgOverworldHeroList)(nil),                                             // 30: protocol.CMsgOverworldHeroList
+	(*CMsgOverworldEncounterChooseHeroData)(nil),                              // 31: protocol.CMsgOverworldEncounterChooseHeroData
+	(*CMsgOverworldEncounterProgressData)(nil),                                // 32: protocol.CMsgOverworldEncounterProgressData
+	(*CMsgOverworldEncounterData)(nil),                                        // 33: protocol.CMsgOverworldEncounterData
+	(*CMsgOverworldNode)(nil),                                                 // 34: protocol.CMsgOverworldNode
+	(*CMsgOverworldPath)(nil),                                                 // 35: protocol.CMsgOverworldPath
+	(*CMsgOverworldMinigameCustomData)(nil),                                   // 36: protocol.CMsgOverworldMinigameCustomData
+	(*CMsgOverworldMinigameUserData)(nil),                                     // 37: protocol.CMsgOverworldMinigameUserData
+	(*CMsgOverworldFortune)(nil),                                              // 38: protocol.CMsgOverworldFortune
+	(*CMsgLobbyOverworldFortuneList)(nil),                                     // 39: protocol.CMsgLobbyOverworldFortuneList
+	(*CMsgOverworldUserData)(nil),                                             // 40: protocol.CMsgOverworldUserData
+	(*CMsgOverworldMatchRewards)(nil),                                         // 41: protocol.CMsgOverworldMatchRewards
+	(*CMsgClientToGCOverworldGetUserData)(nil),                                // 42: protocol.CMsgClientToGCOverworldGetUserData
+	(*CMsgClientToGCOverworldGetUserDataResponse)(nil),                        // 43: protocol.CMsgClientToGCOverworldGetUserDataResponse
+	(*CMsgGCToClientOverworldUserDataUpdated)(nil),                            // 44: protocol.CMsgGCToClientOverworldUserDataUpdated
+	(*CMsgClientToGCOverworldCompletePath)(nil),                               // 45: protocol.CMsgClientToGCOverworldCompletePath
+	(*CMsgClientToGCOverworldCompletePathResponse)(nil),                       // 46: protocol.CMsgClientToGCOverworldCompletePathResponse
+	(*CMsgOverworldEncounterPitFighterRewardData)(nil),                        // 47: protocol.CMsgOverworldEncounterPitFighterRewardData
+	(*CMsgClientToGCOverworldClaimEncounterReward)(nil),                       // 48: protocol.CMsgClientToGCOverworldClaimEncounterReward
+	(*CMsgClientToGCOverworldClaimEncounterRewardResponse)(nil),               // 49: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse
+	(*CMsgClientToGCOverworldVisitEncounter)(nil),                             // 50: protocol.CMsgClientToGCOverworldVisitEncounter
+	(*CMsgClientToGCOverworldVisitEncounterResponse)(nil),                     // 51: protocol.CMsgClientToGCOverworldVisitEncounterResponse
+	(*CMsgClientToGCOverworldMoveToNode)(nil),                                 // 52: protocol.CMsgClientToGCOverworldMoveToNode
+	(*CMsgClientToGCOverworldMoveToNodeResponse)(nil),                         // 53: protocol.CMsgClientToGCOverworldMoveToNodeResponse
+	(*CMsgClientToGCOverworldTradeTokens)(nil),                                // 54: protocol.CMsgClientToGCOverworldTradeTokens
+	(*CMsgClientToGCOverworldTradeTokensResponse)(nil),                        // 55: protocol.CMsgClientToGCOverworldTradeTokensResponse
+	(*CMsgClientToGCOverworldGiftTokens)(nil),                                 // 56: protocol.CMsgClientToGCOverworldGiftTokens
+	(*CMsgClientToGCOverworldGiftTokensResponse)(nil),                         // 57: protocol.CMsgClientToGCOverworldGiftTokensResponse
+	(*CMsgClientToGCOverworldRequestTokensNeededByFriend)(nil),                // 58: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriend
+	(*CMsgClientToGCOverworldRequestTokensNeededByFriendResponse)(nil),        // 59: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+	(*CMsgClientToGCOverworldDevResetAll)(nil),                                // 60: protocol.CMsgClientToGCOverworldDevResetAll
+	(*CMsgClientToGCOverworldDevResetAllResponse)(nil),                        // 61: protocol.CMsgClientToGCOverworldDevResetAllResponse
+	(*CMsgClientToGCOverworldDevResetNode)(nil),                               // 62: protocol.CMsgClientToGCOverworldDevResetNode
+	(*CMsgClientToGCOverworldDevResetNodeResponse)(nil),                       // 63: protocol.CMsgClientToGCOverworldDevResetNodeResponse
+	(*CMsgClientToGCOverworldDevGrantTokens)(nil),                             // 64: protocol.CMsgClientToGCOverworldDevGrantTokens
+	(*CMsgClientToGCOverworldDevGrantTokensResponse)(nil),                     // 65: protocol.CMsgClientToGCOverworldDevGrantTokensResponse
+	(*CMsgClientToGCOverworldDevClearInventory)(nil),                          // 66: protocol.CMsgClientToGCOverworldDevClearInventory
+	(*CMsgClientToGCOverworldDevClearInventoryResponse)(nil),                  // 67: protocol.CMsgClientToGCOverworldDevClearInventoryResponse
+	(*CMsgClientToGCOverworldDevSetFortune)(nil),                              // 68: protocol.CMsgClientToGCOverworldDevSetFortune
+	(*CMsgClientToGCOverworldDevSetFortuneResponse)(nil),                      // 69: protocol.CMsgClientToGCOverworldDevSetFortuneResponse
+	(*CMsgClientToGCOverworldDevClearFortune)(nil),                            // 70: protocol.CMsgClientToGCOverworldDevClearFortune
+	(*CMsgClientToGCOverworldDevClearFortuneResponse)(nil),                    // 71: protocol.CMsgClientToGCOverworldDevClearFortuneResponse
+	(*CMsgClientToGCOverworldDevGrantFortuneTellerCoin)(nil),                  // 72: protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoin
+	(*CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse)(nil),          // 73: protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse
+	(*CMsgClientToGCOverworldRequestFortune)(nil),                             // 74: protocol.CMsgClientToGCOverworldRequestFortune
+	(*CMsgClientToGCOverworldRequestFortuneResponse)(nil),                     // 75: protocol.CMsgClientToGCOverworldRequestFortuneResponse
+	(*CMsgClientToGCOverworldClaimFortuneReward)(nil),                         // 76: protocol.CMsgClientToGCOverworldClaimFortuneReward
+	(*CMsgClientToGCOverworldClaimFortuneRewardResponse)(nil),                 // 77: protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse
+	(*CMsgClientToGCOverworldClaimFortunePermanentReward)(nil),                // 78: protocol.CMsgClientToGCOverworldClaimFortunePermanentReward
+	(*CMsgClientToGCOverworldClaimFortunePermanentRewardResponse)(nil),        // 79: protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse
+	(*CMsgClientToGCOverworldFeedback)(nil),                                   // 80: protocol.CMsgClientToGCOverworldFeedback
+	(*CMsgClientToGCOverworldFeedbackResponse)(nil),                           // 81: protocol.CMsgClientToGCOverworldFeedbackResponse
+	(*CMsgClientToGCOverworldGetDynamicImage)(nil),                            // 82: protocol.CMsgClientToGCOverworldGetDynamicImage
+	(*CMsgClientToGCOverworldGetDynamicImageResponse)(nil),                    // 83: protocol.CMsgClientToGCOverworldGetDynamicImageResponse
+	(*CMsgClientToGCOverworldMinigameAction)(nil),                             // 84: protocol.CMsgClientToGCOverworldMinigameAction
+	(*CMsgClientToGCOverworldMinigameActionResponse)(nil),                     // 85: protocol.CMsgClientToGCOverworldMinigameActionResponse
+	(*CMsgClientToGCOverworldClaimFortuneTellerStoryNode)(nil),                // 86: protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNode
+	(*CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse)(nil),        // 87: protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse
+	(*CMsgOverworldEncounterTokenTreasureData_RewardOption)(nil),              // 88: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption
+	(*CMsgOverworldEncounterTokenQuestData_Quest)(nil),                        // 89: protocol.CMsgOverworldEncounterTokenQuestData.Quest
+	(*CMsgOverworldFortune_CMsgFortuneCount)(nil),                             // 90: protocol.CMsgOverworldFortune.CMsgFortuneCount
+	(*CMsgOverworldUserData_MinigameDataEntry)(nil),                           // 91: protocol.CMsgOverworldUserData.MinigameDataEntry
+	(*CMsgOverworldMatchRewards_Player)(nil),                                  // 92: protocol.CMsgOverworldMatchRewards.Player
+	(*CMsgClientToGCOverworldGetDynamicImageResponse_Image)(nil),              // 93: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image
+	(*CExtraMsgBlock)(nil),                                                    // 94: protocol.CExtraMsgBlock
+	(*CMsgSurvivorsUserData)(nil),                                             // 95: protocol.CMsgSurvivorsUserData
+	(*CMsgDOTAClaimEventActionResponse)(nil),                                  // 96: protocol.CMsgDOTAClaimEventActionResponse
 }
 var file_dota_gcmessages_common_overworld_proto_depIdxs = []int32{
-	22, // 0: protocol.CMsgOverworldTokenQuantity.token_counts:type_name -> protocol.CMsgOverworldTokenCount
-	75, // 1: protocol.CMsgOverworldEncounterTokenTreasureData.reward_options:type_name -> protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption
-	76, // 2: protocol.CMsgOverworldEncounterTokenQuestData.quests:type_name -> protocol.CMsgOverworldEncounterTokenQuestData.Quest
-	26, // 3: protocol.CMsgOverworldEncounterChooseHeroData.hero_list:type_name -> protocol.CMsgOverworldHeroList
-	80, // 4: protocol.CMsgOverworldEncounterData.extra_encounter_data:type_name -> protocol.CExtraMsgBlock
+	26, // 0: protocol.CMsgOverworldTokenQuantity.token_counts:type_name -> protocol.CMsgOverworldTokenCount
+	88, // 1: protocol.CMsgOverworldEncounterTokenTreasureData.reward_options:type_name -> protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption
+	89, // 2: protocol.CMsgOverworldEncounterTokenQuestData.quests:type_name -> protocol.CMsgOverworldEncounterTokenQuestData.Quest
+	30, // 3: protocol.CMsgOverworldEncounterChooseHeroData.hero_list:type_name -> protocol.CMsgOverworldHeroList
+	94, // 4: protocol.CMsgOverworldEncounterData.extra_encounter_data:type_name -> protocol.CExtraMsgBlock
 	0,  // 5: protocol.CMsgOverworldNode.node_state:type_name -> protocol.EOverworldNodeState
-	29, // 6: protocol.CMsgOverworldNode.node_encounter_data:type_name -> protocol.CMsgOverworldEncounterData
-	23, // 7: protocol.CMsgOverworldPath.path_cost:type_name -> protocol.CMsgOverworldTokenQuantity
+	33, // 6: protocol.CMsgOverworldNode.node_encounter_data:type_name -> protocol.CMsgOverworldEncounterData
+	27, // 7: protocol.CMsgOverworldPath.path_cost:type_name -> protocol.CMsgOverworldTokenQuantity
 	1,  // 8: protocol.CMsgOverworldPath.path_state:type_name -> protocol.EOverworldPathState
-	81, // 9: protocol.CMsgOverworldMinigameCustomData.survivors_data:type_name -> protocol.CMsgSurvivorsUserData
-	32, // 10: protocol.CMsgOverworldMinigameUserData.custom_data:type_name -> protocol.CMsgOverworldMinigameCustomData
-	23, // 11: protocol.CMsgOverworldUserData.token_inventory:type_name -> protocol.CMsgOverworldTokenQuantity
-	30, // 12: protocol.CMsgOverworldUserData.overworld_nodes:type_name -> protocol.CMsgOverworldNode
-	31, // 13: protocol.CMsgOverworldUserData.overworld_paths:type_name -> protocol.CMsgOverworldPath
-	77, // 14: protocol.CMsgOverworldUserData.minigame_data:type_name -> protocol.CMsgOverworldUserData.MinigameDataEntry
-	34, // 15: protocol.CMsgOverworldUserData.current_fortune:type_name -> protocol.CMsgOverworldFortune
-	78, // 16: protocol.CMsgOverworldMatchRewards.players:type_name -> protocol.CMsgOverworldMatchRewards.Player
-	4,  // 17: protocol.CMsgClientToGCOverworldGetUserDataResponse.response:type_name -> protocol.CMsgClientToGCOverworldGetUserDataResponse.EResponse
-	35, // 18: protocol.CMsgClientToGCOverworldGetUserDataResponse.user_data:type_name -> protocol.CMsgOverworldUserData
-	35, // 19: protocol.CMsgGCToClientOverworldUserDataUpdated.user_data:type_name -> protocol.CMsgOverworldUserData
-	5,  // 20: protocol.CMsgClientToGCOverworldCompletePathResponse.response:type_name -> protocol.CMsgClientToGCOverworldCompletePathResponse.EResponse
-	82, // 21: protocol.CMsgClientToGCOverworldCompletePathResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
-	29, // 22: protocol.CMsgClientToGCOverworldClaimEncounterReward.extra_reward_data:type_name -> protocol.CMsgOverworldEncounterData
-	6,  // 23: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.response:type_name -> protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.EResponse
-	82, // 24: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
-	23, // 25: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.tokens_received:type_name -> protocol.CMsgOverworldTokenQuantity
-	7,  // 26: protocol.CMsgClientToGCOverworldVisitEncounterResponse.response:type_name -> protocol.CMsgClientToGCOverworldVisitEncounterResponse.EResponse
-	8,  // 27: protocol.CMsgClientToGCOverworldMoveToNodeResponse.response:type_name -> protocol.CMsgClientToGCOverworldMoveToNodeResponse.EResponse
-	23, // 28: protocol.CMsgClientToGCOverworldTradeTokens.token_offer:type_name -> protocol.CMsgOverworldTokenQuantity
-	23, // 29: protocol.CMsgClientToGCOverworldTradeTokens.token_request:type_name -> protocol.CMsgOverworldTokenQuantity
-	9,  // 30: protocol.CMsgClientToGCOverworldTradeTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldTradeTokensResponse.EResponse
-	23, // 31: protocol.CMsgClientToGCOverworldTradeTokensResponse.tokens_received:type_name -> protocol.CMsgOverworldTokenQuantity
-	22, // 32: protocol.CMsgClientToGCOverworldGiftTokens.token_gift:type_name -> protocol.CMsgOverworldTokenCount
-	10, // 33: protocol.CMsgClientToGCOverworldGiftTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldGiftTokensResponse.EResponse
-	11, // 34: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.response:type_name -> protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.EResponse
-	23, // 35: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.token_quantity:type_name -> protocol.CMsgOverworldTokenQuantity
-	12, // 36: protocol.CMsgClientToGCOverworldDevResetAllResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevResetAllResponse.EResponse
-	13, // 37: protocol.CMsgClientToGCOverworldDevResetNodeResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevResetNodeResponse.EResponse
-	23, // 38: protocol.CMsgClientToGCOverworldDevGrantTokens.token_quantity:type_name -> protocol.CMsgOverworldTokenQuantity
-	14, // 39: protocol.CMsgClientToGCOverworldDevGrantTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevGrantTokensResponse.EResponse
-	15, // 40: protocol.CMsgClientToGCOverworldDevClearInventoryResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevClearInventoryResponse.EResponse
-	16, // 41: protocol.CMsgClientToGCOverworldDevSetFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevSetFortuneResponse.EResponse
-	17, // 42: protocol.CMsgClientToGCOverworldDevClearFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevClearFortuneResponse.EResponse
-	18, // 43: protocol.CMsgClientToGCOverworldRequestFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse
-	19, // 44: protocol.CMsgClientToGCOverworldFeedbackResponse.response:type_name -> protocol.CMsgClientToGCOverworldFeedbackResponse.EResponse
-	79, // 45: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.images:type_name -> protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image
-	3,  // 46: protocol.CMsgClientToGCOverworldMinigameAction.action:type_name -> protocol.EOverworldMinigameAction
-	21, // 47: protocol.CMsgClientToGCOverworldMinigameActionResponse.response:type_name -> protocol.CMsgClientToGCOverworldMinigameActionResponse.EResponse
-	23, // 48: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption.token_cost:type_name -> protocol.CMsgOverworldTokenQuantity
-	23, // 49: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption.token_reward:type_name -> protocol.CMsgOverworldTokenQuantity
-	23, // 50: protocol.CMsgOverworldEncounterTokenQuestData.Quest.token_cost:type_name -> protocol.CMsgOverworldTokenQuantity
-	23, // 51: protocol.CMsgOverworldEncounterTokenQuestData.Quest.token_reward:type_name -> protocol.CMsgOverworldTokenQuantity
-	33, // 52: protocol.CMsgOverworldUserData.MinigameDataEntry.value:type_name -> protocol.CMsgOverworldMinigameUserData
-	23, // 53: protocol.CMsgOverworldMatchRewards.Player.tokens:type_name -> protocol.CMsgOverworldTokenQuantity
-	20, // 54: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image.format:type_name -> protocol.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
-	55, // [55:55] is the sub-list for method output_type
-	55, // [55:55] is the sub-list for method input_type
-	55, // [55:55] is the sub-list for extension type_name
-	55, // [55:55] is the sub-list for extension extendee
-	0,  // [0:55] is the sub-list for field type_name
+	95, // 9: protocol.CMsgOverworldMinigameCustomData.survivors_data:type_name -> protocol.CMsgSurvivorsUserData
+	36, // 10: protocol.CMsgOverworldMinigameUserData.custom_data:type_name -> protocol.CMsgOverworldMinigameCustomData
+	90, // 11: protocol.CMsgOverworldFortune.fortune_counts:type_name -> protocol.CMsgOverworldFortune.CMsgFortuneCount
+	38, // 12: protocol.CMsgLobbyOverworldFortuneList.fortune:type_name -> protocol.CMsgOverworldFortune
+	27, // 13: protocol.CMsgOverworldUserData.token_inventory:type_name -> protocol.CMsgOverworldTokenQuantity
+	34, // 14: protocol.CMsgOverworldUserData.overworld_nodes:type_name -> protocol.CMsgOverworldNode
+	35, // 15: protocol.CMsgOverworldUserData.overworld_paths:type_name -> protocol.CMsgOverworldPath
+	91, // 16: protocol.CMsgOverworldUserData.minigame_data:type_name -> protocol.CMsgOverworldUserData.MinigameDataEntry
+	38, // 17: protocol.CMsgOverworldUserData.current_fortune:type_name -> protocol.CMsgOverworldFortune
+	92, // 18: protocol.CMsgOverworldMatchRewards.players:type_name -> protocol.CMsgOverworldMatchRewards.Player
+	4,  // 19: protocol.CMsgClientToGCOverworldGetUserDataResponse.response:type_name -> protocol.CMsgClientToGCOverworldGetUserDataResponse.EResponse
+	40, // 20: protocol.CMsgClientToGCOverworldGetUserDataResponse.user_data:type_name -> protocol.CMsgOverworldUserData
+	40, // 21: protocol.CMsgGCToClientOverworldUserDataUpdated.user_data:type_name -> protocol.CMsgOverworldUserData
+	5,  // 22: protocol.CMsgClientToGCOverworldCompletePathResponse.response:type_name -> protocol.CMsgClientToGCOverworldCompletePathResponse.EResponse
+	96, // 23: protocol.CMsgClientToGCOverworldCompletePathResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	33, // 24: protocol.CMsgClientToGCOverworldClaimEncounterReward.extra_reward_data:type_name -> protocol.CMsgOverworldEncounterData
+	6,  // 25: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.response:type_name -> protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.EResponse
+	96, // 26: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	27, // 27: protocol.CMsgClientToGCOverworldClaimEncounterRewardResponse.tokens_received:type_name -> protocol.CMsgOverworldTokenQuantity
+	7,  // 28: protocol.CMsgClientToGCOverworldVisitEncounterResponse.response:type_name -> protocol.CMsgClientToGCOverworldVisitEncounterResponse.EResponse
+	8,  // 29: protocol.CMsgClientToGCOverworldMoveToNodeResponse.response:type_name -> protocol.CMsgClientToGCOverworldMoveToNodeResponse.EResponse
+	27, // 30: protocol.CMsgClientToGCOverworldTradeTokens.token_offer:type_name -> protocol.CMsgOverworldTokenQuantity
+	27, // 31: protocol.CMsgClientToGCOverworldTradeTokens.token_request:type_name -> protocol.CMsgOverworldTokenQuantity
+	9,  // 32: protocol.CMsgClientToGCOverworldTradeTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldTradeTokensResponse.EResponse
+	27, // 33: protocol.CMsgClientToGCOverworldTradeTokensResponse.tokens_received:type_name -> protocol.CMsgOverworldTokenQuantity
+	26, // 34: protocol.CMsgClientToGCOverworldGiftTokens.token_gift:type_name -> protocol.CMsgOverworldTokenCount
+	10, // 35: protocol.CMsgClientToGCOverworldGiftTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldGiftTokensResponse.EResponse
+	11, // 36: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.response:type_name -> protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.EResponse
+	27, // 37: protocol.CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.token_quantity:type_name -> protocol.CMsgOverworldTokenQuantity
+	12, // 38: protocol.CMsgClientToGCOverworldDevResetAllResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevResetAllResponse.EResponse
+	13, // 39: protocol.CMsgClientToGCOverworldDevResetNodeResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevResetNodeResponse.EResponse
+	27, // 40: protocol.CMsgClientToGCOverworldDevGrantTokens.token_quantity:type_name -> protocol.CMsgOverworldTokenQuantity
+	14, // 41: protocol.CMsgClientToGCOverworldDevGrantTokensResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevGrantTokensResponse.EResponse
+	15, // 42: protocol.CMsgClientToGCOverworldDevClearInventoryResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevClearInventoryResponse.EResponse
+	16, // 43: protocol.CMsgClientToGCOverworldDevSetFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevSetFortuneResponse.EResponse
+	17, // 44: protocol.CMsgClientToGCOverworldDevClearFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevClearFortuneResponse.EResponse
+	18, // 45: protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.response:type_name -> protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.EResponse
+	19, // 46: protocol.CMsgClientToGCOverworldRequestFortuneResponse.response:type_name -> protocol.CMsgClientToGCOverworldRequestFortuneResponse.EResponse
+	96, // 47: protocol.CMsgClientToGCOverworldRequestFortuneResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	20, // 48: protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.response:type_name -> protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.EResponse
+	27, // 49: protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.token_quantity:type_name -> protocol.CMsgOverworldTokenQuantity
+	96, // 50: protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	21, // 51: protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.response:type_name -> protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.EResponse
+	96, // 52: protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	22, // 53: protocol.CMsgClientToGCOverworldFeedbackResponse.response:type_name -> protocol.CMsgClientToGCOverworldFeedbackResponse.EResponse
+	93, // 54: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.images:type_name -> protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image
+	3,  // 55: protocol.CMsgClientToGCOverworldMinigameAction.action:type_name -> protocol.EOverworldMinigameAction
+	24, // 56: protocol.CMsgClientToGCOverworldMinigameActionResponse.response:type_name -> protocol.CMsgClientToGCOverworldMinigameActionResponse.EResponse
+	25, // 57: protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.response:type_name -> protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.EResponse
+	96, // 58: protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.claim_response:type_name -> protocol.CMsgDOTAClaimEventActionResponse
+	27, // 59: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption.token_cost:type_name -> protocol.CMsgOverworldTokenQuantity
+	27, // 60: protocol.CMsgOverworldEncounterTokenTreasureData.RewardOption.token_reward:type_name -> protocol.CMsgOverworldTokenQuantity
+	27, // 61: protocol.CMsgOverworldEncounterTokenQuestData.Quest.token_cost:type_name -> protocol.CMsgOverworldTokenQuantity
+	27, // 62: protocol.CMsgOverworldEncounterTokenQuestData.Quest.token_reward:type_name -> protocol.CMsgOverworldTokenQuantity
+	37, // 63: protocol.CMsgOverworldUserData.MinigameDataEntry.value:type_name -> protocol.CMsgOverworldMinigameUserData
+	27, // 64: protocol.CMsgOverworldMatchRewards.Player.tokens:type_name -> protocol.CMsgOverworldTokenQuantity
+	23, // 65: protocol.CMsgClientToGCOverworldGetDynamicImageResponse.Image.format:type_name -> protocol.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
+	66, // [66:66] is the sub-list for method output_type
+	66, // [66:66] is the sub-list for method input_type
+	66, // [66:66] is the sub-list for extension type_name
+	66, // [66:66] is the sub-list for extension extendee
+	0,  // [0:66] is the sub-list for field type_name
 }
 
 func init() { file_dota_gcmessages_common_overworld_proto_init() }
@@ -5591,8 +6588,8 @@ func file_dota_gcmessages_common_overworld_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_gcmessages_common_overworld_proto_rawDesc), len(file_dota_gcmessages_common_overworld_proto_rawDesc)),
-			NumEnums:      22,
-			NumMessages:   58,
+			NumEnums:      26,
+			NumMessages:   68,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

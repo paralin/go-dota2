@@ -346,6 +346,7 @@ message CDOTAMatchPrivateMetadata {
 				optional uint32 abilities = 6;
 				optional uint32 wards = 7;
 				optional uint32 other = 8;
+				optional uint32 summons = 9;
 			}
 
 			message XPReceived {
@@ -356,6 +357,7 @@ message CDOTAMatchPrivateMetadata {
 				optional uint32 outpost = 5;
 				optional uint32 other = 6;
 				optional uint32 abilities = 7;
+				optional uint32 summons = 8;
 			}
 
 			optional uint32 player_slot = 2;

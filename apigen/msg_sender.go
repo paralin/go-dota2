@@ -1,6 +1,7 @@
 package main
 
 import (
+	"slices"
 	"strings"
 
 	"github.com/fatih/camelcase"
@@ -66,10 +67,8 @@ func GetMessageSender(msg protocol.EDOTAGCMsg) MsgSender {
 		return MsgSenderGC
 	case strings.HasPrefix(msgName, "GC"):
 		words := camelcase.Split(msgName[2:])
-		for _, w := range words {
-			if IsWordVerb(w) {
-				return MsgSenderClient
-			}
+		if slices.ContainsFunc(words, IsWordVerb) {
+			return MsgSenderClient
 		}
 
 		return MsgSenderGC

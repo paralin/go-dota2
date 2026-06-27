@@ -340,230 +340,6 @@ func (DOTA_GC_TEAM) EnumDescriptor() ([]byte, []int) {
 	return file_dota_shared_enums_proto_rawDescGZIP(), []int{2}
 }
 
-type EEvent int32
-
-const (
-	EEvent_EVENT_ID_NONE                      EEvent = 0
-	EEvent_EVENT_ID_DIRETIDE                  EEvent = 1
-	EEvent_EVENT_ID_SPRING_FESTIVAL           EEvent = 2
-	EEvent_EVENT_ID_FROSTIVUS_2013            EEvent = 3
-	EEvent_EVENT_ID_COMPENDIUM_2014           EEvent = 4
-	EEvent_EVENT_ID_NEXON_PC_BANG             EEvent = 5
-	EEvent_EVENT_ID_PWRD_DAC_2015             EEvent = 6
-	EEvent_EVENT_ID_NEW_BLOOM_2015            EEvent = 7
-	EEvent_EVENT_ID_INTERNATIONAL_2015        EEvent = 8
-	EEvent_EVENT_ID_FALL_MAJOR_2015           EEvent = 9
-	EEvent_EVENT_ID_ORACLE_PA                 EEvent = 10
-	EEvent_EVENT_ID_NEW_BLOOM_2015_PREBEAST   EEvent = 11
-	EEvent_EVENT_ID_FROSTIVUS                 EEvent = 12
-	EEvent_EVENT_ID_WINTER_MAJOR_2016         EEvent = 13
-	EEvent_EVENT_ID_INTERNATIONAL_2016        EEvent = 14
-	EEvent_EVENT_ID_FALL_MAJOR_2016           EEvent = 15
-	EEvent_EVENT_ID_WINTER_MAJOR_2017         EEvent = 16
-	EEvent_EVENT_ID_NEW_BLOOM_2017            EEvent = 17
-	EEvent_EVENT_ID_INTERNATIONAL_2017        EEvent = 18
-	EEvent_EVENT_ID_PLUS_SUBSCRIPTION         EEvent = 19
-	EEvent_EVENT_ID_SINGLES_DAY_2017          EEvent = 20
-	EEvent_EVENT_ID_FROSTIVUS_2017            EEvent = 21
-	EEvent_EVENT_ID_INTERNATIONAL_2018        EEvent = 22
-	EEvent_EVENT_ID_FROSTIVUS_2018            EEvent = 23
-	EEvent_EVENT_ID_NEW_BLOOM_2019            EEvent = 24
-	EEvent_EVENT_ID_INTERNATIONAL_2019        EEvent = 25
-	EEvent_EVENT_ID_NEW_PLAYER_EXPERIENCE     EEvent = 26
-	EEvent_EVENT_ID_FROSTIVUS_2019            EEvent = 27
-	EEvent_EVENT_ID_NEW_BLOOM_2020            EEvent = 28
-	EEvent_EVENT_ID_INTERNATIONAL_2020        EEvent = 29
-	EEvent_EVENT_ID_TEAM_FANDOM               EEvent = 30
-	EEvent_EVENT_ID_DIRETIDE_2020             EEvent = 31
-	EEvent_EVENT_ID_SPRING_2021               EEvent = 32
-	EEvent_EVENT_ID_FALL_2021                 EEvent = 33
-	EEvent_EVENT_ID_TEAM_FANDOM_FALL_2021     EEvent = 34
-	EEvent_EVENT_ID_TEAM_2021_2022_TOUR2      EEvent = 35
-	EEvent_EVENT_ID_INTERNATIONAL_2022        EEvent = 36
-	EEvent_EVENT_ID_TEAM_2021_2022_TOUR3      EEvent = 37
-	EEvent_EVENT_ID_TEAM_INTERNATIONAL_2022   EEvent = 38
-	EEvent_EVENT_ID_PERMANENT_GRANTS          EEvent = 39
-	EEvent_EVENT_ID_MUERTA_RELEASE_SPRING2023 EEvent = 40
-	EEvent_EVENT_ID_TEAM_2023_TOUR1           EEvent = 41
-	EEvent_EVENT_ID_TEAM_2023_TOUR2           EEvent = 42
-	EEvent_EVENT_ID_TEAM_2023_TOUR3           EEvent = 43
-	EEvent_EVENT_ID_INTERNATIONAL_2023        EEvent = 45
-	EEvent_EVENT_ID_10TH_ANNIVERSARY          EEvent = 46
-	EEvent_EVENT_ID_CROWNFALL                 EEvent = 47
-	EEvent_EVENT_ID_FROSTIVUS_2023            EEvent = 48
-	EEvent_EVENT_ID_INTERNATIONAL_2024        EEvent = 49
-	EEvent_EVENT_ID_FROSTIVUS_2024            EEvent = 50
-	EEvent_EVENT_ID_MONSTER_HUNTER            EEvent = 51
-	EEvent_EVENT_ID_INTERNATIONAL_2025        EEvent = 52
-	EEvent_EVENT_ID_FALL_2025                 EEvent = 53
-	EEvent_EVENT_ID_WINTER_2025               EEvent = 55
-	EEvent_EVENT_ID_SPRING_2026               EEvent = 56
-	EEvent_EVENT_ID_SUMMER_2026               EEvent = 57
-	EEvent_EVENT_ID_FALL_2026                 EEvent = 58
-	EEvent_EVENT_ID_WINTER_2026               EEvent = 59
-)
-
-// Enum value maps for EEvent.
-var (
-	EEvent_name = map[int32]string{
-		0:  "EVENT_ID_NONE",
-		1:  "EVENT_ID_DIRETIDE",
-		2:  "EVENT_ID_SPRING_FESTIVAL",
-		3:  "EVENT_ID_FROSTIVUS_2013",
-		4:  "EVENT_ID_COMPENDIUM_2014",
-		5:  "EVENT_ID_NEXON_PC_BANG",
-		6:  "EVENT_ID_PWRD_DAC_2015",
-		7:  "EVENT_ID_NEW_BLOOM_2015",
-		8:  "EVENT_ID_INTERNATIONAL_2015",
-		9:  "EVENT_ID_FALL_MAJOR_2015",
-		10: "EVENT_ID_ORACLE_PA",
-		11: "EVENT_ID_NEW_BLOOM_2015_PREBEAST",
-		12: "EVENT_ID_FROSTIVUS",
-		13: "EVENT_ID_WINTER_MAJOR_2016",
-		14: "EVENT_ID_INTERNATIONAL_2016",
-		15: "EVENT_ID_FALL_MAJOR_2016",
-		16: "EVENT_ID_WINTER_MAJOR_2017",
-		17: "EVENT_ID_NEW_BLOOM_2017",
-		18: "EVENT_ID_INTERNATIONAL_2017",
-		19: "EVENT_ID_PLUS_SUBSCRIPTION",
-		20: "EVENT_ID_SINGLES_DAY_2017",
-		21: "EVENT_ID_FROSTIVUS_2017",
-		22: "EVENT_ID_INTERNATIONAL_2018",
-		23: "EVENT_ID_FROSTIVUS_2018",
-		24: "EVENT_ID_NEW_BLOOM_2019",
-		25: "EVENT_ID_INTERNATIONAL_2019",
-		26: "EVENT_ID_NEW_PLAYER_EXPERIENCE",
-		27: "EVENT_ID_FROSTIVUS_2019",
-		28: "EVENT_ID_NEW_BLOOM_2020",
-		29: "EVENT_ID_INTERNATIONAL_2020",
-		30: "EVENT_ID_TEAM_FANDOM",
-		31: "EVENT_ID_DIRETIDE_2020",
-		32: "EVENT_ID_SPRING_2021",
-		33: "EVENT_ID_FALL_2021",
-		34: "EVENT_ID_TEAM_FANDOM_FALL_2021",
-		35: "EVENT_ID_TEAM_2021_2022_TOUR2",
-		36: "EVENT_ID_INTERNATIONAL_2022",
-		37: "EVENT_ID_TEAM_2021_2022_TOUR3",
-		38: "EVENT_ID_TEAM_INTERNATIONAL_2022",
-		39: "EVENT_ID_PERMANENT_GRANTS",
-		40: "EVENT_ID_MUERTA_RELEASE_SPRING2023",
-		41: "EVENT_ID_TEAM_2023_TOUR1",
-		42: "EVENT_ID_TEAM_2023_TOUR2",
-		43: "EVENT_ID_TEAM_2023_TOUR3",
-		45: "EVENT_ID_INTERNATIONAL_2023",
-		46: "EVENT_ID_10TH_ANNIVERSARY",
-		47: "EVENT_ID_CROWNFALL",
-		48: "EVENT_ID_FROSTIVUS_2023",
-		49: "EVENT_ID_INTERNATIONAL_2024",
-		50: "EVENT_ID_FROSTIVUS_2024",
-		51: "EVENT_ID_MONSTER_HUNTER",
-		52: "EVENT_ID_INTERNATIONAL_2025",
-		53: "EVENT_ID_FALL_2025",
-		55: "EVENT_ID_WINTER_2025",
-		56: "EVENT_ID_SPRING_2026",
-		57: "EVENT_ID_SUMMER_2026",
-		58: "EVENT_ID_FALL_2026",
-		59: "EVENT_ID_WINTER_2026",
-	}
-	EEvent_value = map[string]int32{
-		"EVENT_ID_NONE":                      0,
-		"EVENT_ID_DIRETIDE":                  1,
-		"EVENT_ID_SPRING_FESTIVAL":           2,
-		"EVENT_ID_FROSTIVUS_2013":            3,
-		"EVENT_ID_COMPENDIUM_2014":           4,
-		"EVENT_ID_NEXON_PC_BANG":             5,
-		"EVENT_ID_PWRD_DAC_2015":             6,
-		"EVENT_ID_NEW_BLOOM_2015":            7,
-		"EVENT_ID_INTERNATIONAL_2015":        8,
-		"EVENT_ID_FALL_MAJOR_2015":           9,
-		"EVENT_ID_ORACLE_PA":                 10,
-		"EVENT_ID_NEW_BLOOM_2015_PREBEAST":   11,
-		"EVENT_ID_FROSTIVUS":                 12,
-		"EVENT_ID_WINTER_MAJOR_2016":         13,
-		"EVENT_ID_INTERNATIONAL_2016":        14,
-		"EVENT_ID_FALL_MAJOR_2016":           15,
-		"EVENT_ID_WINTER_MAJOR_2017":         16,
-		"EVENT_ID_NEW_BLOOM_2017":            17,
-		"EVENT_ID_INTERNATIONAL_2017":        18,
-		"EVENT_ID_PLUS_SUBSCRIPTION":         19,
-		"EVENT_ID_SINGLES_DAY_2017":          20,
-		"EVENT_ID_FROSTIVUS_2017":            21,
-		"EVENT_ID_INTERNATIONAL_2018":        22,
-		"EVENT_ID_FROSTIVUS_2018":            23,
-		"EVENT_ID_NEW_BLOOM_2019":            24,
-		"EVENT_ID_INTERNATIONAL_2019":        25,
-		"EVENT_ID_NEW_PLAYER_EXPERIENCE":     26,
-		"EVENT_ID_FROSTIVUS_2019":            27,
-		"EVENT_ID_NEW_BLOOM_2020":            28,
-		"EVENT_ID_INTERNATIONAL_2020":        29,
-		"EVENT_ID_TEAM_FANDOM":               30,
-		"EVENT_ID_DIRETIDE_2020":             31,
-		"EVENT_ID_SPRING_2021":               32,
-		"EVENT_ID_FALL_2021":                 33,
-		"EVENT_ID_TEAM_FANDOM_FALL_2021":     34,
-		"EVENT_ID_TEAM_2021_2022_TOUR2":      35,
-		"EVENT_ID_INTERNATIONAL_2022":        36,
-		"EVENT_ID_TEAM_2021_2022_TOUR3":      37,
-		"EVENT_ID_TEAM_INTERNATIONAL_2022":   38,
-		"EVENT_ID_PERMANENT_GRANTS":          39,
-		"EVENT_ID_MUERTA_RELEASE_SPRING2023": 40,
-		"EVENT_ID_TEAM_2023_TOUR1":           41,
-		"EVENT_ID_TEAM_2023_TOUR2":           42,
-		"EVENT_ID_TEAM_2023_TOUR3":           43,
-		"EVENT_ID_INTERNATIONAL_2023":        45,
-		"EVENT_ID_10TH_ANNIVERSARY":          46,
-		"EVENT_ID_CROWNFALL":                 47,
-		"EVENT_ID_FROSTIVUS_2023":            48,
-		"EVENT_ID_INTERNATIONAL_2024":        49,
-		"EVENT_ID_FROSTIVUS_2024":            50,
-		"EVENT_ID_MONSTER_HUNTER":            51,
-		"EVENT_ID_INTERNATIONAL_2025":        52,
-		"EVENT_ID_FALL_2025":                 53,
-		"EVENT_ID_WINTER_2025":               55,
-		"EVENT_ID_SPRING_2026":               56,
-		"EVENT_ID_SUMMER_2026":               57,
-		"EVENT_ID_FALL_2026":                 58,
-		"EVENT_ID_WINTER_2026":               59,
-	}
-)
-
-func (x EEvent) Enum() *EEvent {
-	p := new(EEvent)
-	*p = x
-	return p
-}
-
-func (x EEvent) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (EEvent) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[3].Descriptor()
-}
-
-func (EEvent) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[3]
-}
-
-func (x EEvent) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *EEvent) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = EEvent(num)
-	return nil
-}
-
-// Deprecated: Use EEvent.Descriptor instead.
-func (EEvent) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{3}
-}
-
 type ERankType int32
 
 const (
@@ -621,11 +397,11 @@ func (x ERankType) String() string {
 }
 
 func (ERankType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[4].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[3].Descriptor()
 }
 
 func (ERankType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[4]
+	return &file_dota_shared_enums_proto_enumTypes[3]
 }
 
 func (x ERankType) Number() protoreflect.EnumNumber {
@@ -644,7 +420,7 @@ func (x *ERankType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ERankType.Descriptor instead.
 func (ERankType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{4}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{3}
 }
 
 type DOTALeaverStatusT int32
@@ -701,11 +477,11 @@ func (x DOTALeaverStatusT) String() string {
 }
 
 func (DOTALeaverStatusT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[5].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[4].Descriptor()
 }
 
 func (DOTALeaverStatusT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[5]
+	return &file_dota_shared_enums_proto_enumTypes[4]
 }
 
 func (x DOTALeaverStatusT) Number() protoreflect.EnumNumber {
@@ -724,7 +500,7 @@ func (x *DOTALeaverStatusT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTALeaverStatusT.Descriptor instead.
 func (DOTALeaverStatusT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{5}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{4}
 }
 
 type DOTAConnectionStateT int32
@@ -772,11 +548,11 @@ func (x DOTAConnectionStateT) String() string {
 }
 
 func (DOTAConnectionStateT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[6].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[5].Descriptor()
 }
 
 func (DOTAConnectionStateT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[6]
+	return &file_dota_shared_enums_proto_enumTypes[5]
 }
 
 func (x DOTAConnectionStateT) Number() protoreflect.EnumNumber {
@@ -795,7 +571,7 @@ func (x *DOTAConnectionStateT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTAConnectionStateT.Descriptor instead.
 func (DOTAConnectionStateT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{6}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{5}
 }
 
 type Fantasy_Roles int32
@@ -837,11 +613,11 @@ func (x Fantasy_Roles) String() string {
 }
 
 func (Fantasy_Roles) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[7].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[6].Descriptor()
 }
 
 func (Fantasy_Roles) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[7]
+	return &file_dota_shared_enums_proto_enumTypes[6]
 }
 
 func (x Fantasy_Roles) Number() protoreflect.EnumNumber {
@@ -860,7 +636,7 @@ func (x *Fantasy_Roles) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Fantasy_Roles.Descriptor instead.
 func (Fantasy_Roles) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{7}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{6}
 }
 
 type Fantasy_Scoring int32
@@ -947,11 +723,11 @@ func (x Fantasy_Scoring) String() string {
 }
 
 func (Fantasy_Scoring) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[8].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[7].Descriptor()
 }
 
 func (Fantasy_Scoring) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[8]
+	return &file_dota_shared_enums_proto_enumTypes[7]
 }
 
 func (x Fantasy_Scoring) Number() protoreflect.EnumNumber {
@@ -970,7 +746,7 @@ func (x *Fantasy_Scoring) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Fantasy_Scoring.Descriptor instead.
 func (Fantasy_Scoring) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{8}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{7}
 }
 
 type Fantasy_Team_Slots int32
@@ -1012,11 +788,11 @@ func (x Fantasy_Team_Slots) String() string {
 }
 
 func (Fantasy_Team_Slots) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[9].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[8].Descriptor()
 }
 
 func (Fantasy_Team_Slots) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[9]
+	return &file_dota_shared_enums_proto_enumTypes[8]
 }
 
 func (x Fantasy_Team_Slots) Number() protoreflect.EnumNumber {
@@ -1035,7 +811,7 @@ func (x *Fantasy_Team_Slots) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Fantasy_Team_Slots.Descriptor instead.
 func (Fantasy_Team_Slots) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{9}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{8}
 }
 
 type Fantasy_Selection_Mode int32
@@ -1092,11 +868,11 @@ func (x Fantasy_Selection_Mode) String() string {
 }
 
 func (Fantasy_Selection_Mode) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[10].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[9].Descriptor()
 }
 
 func (Fantasy_Selection_Mode) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[10]
+	return &file_dota_shared_enums_proto_enumTypes[9]
 }
 
 func (x Fantasy_Selection_Mode) Number() protoreflect.EnumNumber {
@@ -1115,7 +891,7 @@ func (x *Fantasy_Selection_Mode) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Fantasy_Selection_Mode.Descriptor instead.
 func (Fantasy_Selection_Mode) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{10}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{9}
 }
 
 type Fantasy_Gem_Type int32
@@ -1151,11 +927,11 @@ func (x Fantasy_Gem_Type) String() string {
 }
 
 func (Fantasy_Gem_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[11].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[10].Descriptor()
 }
 
 func (Fantasy_Gem_Type) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[11]
+	return &file_dota_shared_enums_proto_enumTypes[10]
 }
 
 func (x Fantasy_Gem_Type) Number() protoreflect.EnumNumber {
@@ -1174,7 +950,7 @@ func (x *Fantasy_Gem_Type) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Fantasy_Gem_Type.Descriptor instead.
 func (Fantasy_Gem_Type) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{11}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{10}
 }
 
 type DOTAChatChannelTypeT int32
@@ -1276,11 +1052,11 @@ func (x DOTAChatChannelTypeT) String() string {
 }
 
 func (DOTAChatChannelTypeT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[12].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[11].Descriptor()
 }
 
 func (DOTAChatChannelTypeT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[12]
+	return &file_dota_shared_enums_proto_enumTypes[11]
 }
 
 func (x DOTAChatChannelTypeT) Number() protoreflect.EnumNumber {
@@ -1299,7 +1075,7 @@ func (x *DOTAChatChannelTypeT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTAChatChannelTypeT.Descriptor instead.
 func (DOTAChatChannelTypeT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{12}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{11}
 }
 
 type EChatSpecialPrivileges int32
@@ -1335,11 +1111,11 @@ func (x EChatSpecialPrivileges) String() string {
 }
 
 func (EChatSpecialPrivileges) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[13].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[12].Descriptor()
 }
 
 func (EChatSpecialPrivileges) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[13]
+	return &file_dota_shared_enums_proto_enumTypes[12]
 }
 
 func (x EChatSpecialPrivileges) Number() protoreflect.EnumNumber {
@@ -1358,7 +1134,7 @@ func (x *EChatSpecialPrivileges) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EChatSpecialPrivileges.Descriptor instead.
 func (EChatSpecialPrivileges) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{13}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{12}
 }
 
 type DOTACommTypeT int32
@@ -1433,11 +1209,11 @@ func (x DOTACommTypeT) String() string {
 }
 
 func (DOTACommTypeT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[14].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[13].Descriptor()
 }
 
 func (DOTACommTypeT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[14]
+	return &file_dota_shared_enums_proto_enumTypes[13]
 }
 
 func (x DOTACommTypeT) Number() protoreflect.EnumNumber {
@@ -1456,7 +1232,7 @@ func (x *DOTACommTypeT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTACommTypeT.Descriptor instead.
 func (DOTACommTypeT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{14}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{13}
 }
 
 type DOTACommLevelT int32
@@ -1507,11 +1283,11 @@ func (x DOTACommLevelT) String() string {
 }
 
 func (DOTACommLevelT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[15].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[14].Descriptor()
 }
 
 func (DOTACommLevelT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[15]
+	return &file_dota_shared_enums_proto_enumTypes[14]
 }
 
 func (x DOTACommLevelT) Number() protoreflect.EnumNumber {
@@ -1530,7 +1306,7 @@ func (x *DOTACommLevelT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTACommLevelT.Descriptor instead.
 func (DOTACommLevelT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{15}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{14}
 }
 
 type DOTABehaviorLevelT int32
@@ -1572,11 +1348,11 @@ func (x DOTABehaviorLevelT) String() string {
 }
 
 func (DOTABehaviorLevelT) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[16].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[15].Descriptor()
 }
 
 func (DOTABehaviorLevelT) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[16]
+	return &file_dota_shared_enums_proto_enumTypes[15]
 }
 
 func (x DOTABehaviorLevelT) Number() protoreflect.EnumNumber {
@@ -1595,7 +1371,7 @@ func (x *DOTABehaviorLevelT) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTABehaviorLevelT.Descriptor instead.
 func (DOTABehaviorLevelT) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{16}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{15}
 }
 
 type EProfileCardSlotType int32
@@ -1643,11 +1419,11 @@ func (x EProfileCardSlotType) String() string {
 }
 
 func (EProfileCardSlotType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[17].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[16].Descriptor()
 }
 
 func (EProfileCardSlotType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[17]
+	return &file_dota_shared_enums_proto_enumTypes[16]
 }
 
 func (x EProfileCardSlotType) Number() protoreflect.EnumNumber {
@@ -1666,7 +1442,7 @@ func (x *EProfileCardSlotType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EProfileCardSlotType.Descriptor instead.
 func (EProfileCardSlotType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{17}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{16}
 }
 
 type EMatchGroupServerStatus int32
@@ -1702,11 +1478,11 @@ func (x EMatchGroupServerStatus) String() string {
 }
 
 func (EMatchGroupServerStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[18].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[17].Descriptor()
 }
 
 func (EMatchGroupServerStatus) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[18]
+	return &file_dota_shared_enums_proto_enumTypes[17]
 }
 
 func (x EMatchGroupServerStatus) Number() protoreflect.EnumNumber {
@@ -1725,7 +1501,7 @@ func (x *EMatchGroupServerStatus) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EMatchGroupServerStatus.Descriptor instead.
 func (EMatchGroupServerStatus) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{18}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{17}
 }
 
 type DOTA_CM_PICK int32
@@ -1761,11 +1537,11 @@ func (x DOTA_CM_PICK) String() string {
 }
 
 func (DOTA_CM_PICK) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[19].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[18].Descriptor()
 }
 
 func (DOTA_CM_PICK) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[19]
+	return &file_dota_shared_enums_proto_enumTypes[18]
 }
 
 func (x DOTA_CM_PICK) Number() protoreflect.EnumNumber {
@@ -1784,7 +1560,7 @@ func (x *DOTA_CM_PICK) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTA_CM_PICK.Descriptor instead.
 func (DOTA_CM_PICK) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{19}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{18}
 }
 
 type DOTALowPriorityBanType int32
@@ -1823,11 +1599,11 @@ func (x DOTALowPriorityBanType) String() string {
 }
 
 func (DOTALowPriorityBanType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[20].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[19].Descriptor()
 }
 
 func (DOTALowPriorityBanType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[20]
+	return &file_dota_shared_enums_proto_enumTypes[19]
 }
 
 func (x DOTALowPriorityBanType) Number() protoreflect.EnumNumber {
@@ -1846,7 +1622,7 @@ func (x *DOTALowPriorityBanType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTALowPriorityBanType.Descriptor instead.
 func (DOTALowPriorityBanType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{20}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{19}
 }
 
 type DOTALobbyReadyState int32
@@ -1885,11 +1661,11 @@ func (x DOTALobbyReadyState) String() string {
 }
 
 func (DOTALobbyReadyState) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[21].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[20].Descriptor()
 }
 
 func (DOTALobbyReadyState) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[21]
+	return &file_dota_shared_enums_proto_enumTypes[20]
 }
 
 func (x DOTALobbyReadyState) Number() protoreflect.EnumNumber {
@@ -1908,7 +1684,7 @@ func (x *DOTALobbyReadyState) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTALobbyReadyState.Descriptor instead.
 func (DOTALobbyReadyState) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{21}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{20}
 }
 
 type DOTAJoinLobbyResult int32
@@ -1980,11 +1756,11 @@ func (x DOTAJoinLobbyResult) String() string {
 }
 
 func (DOTAJoinLobbyResult) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[22].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[21].Descriptor()
 }
 
 func (DOTAJoinLobbyResult) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[22]
+	return &file_dota_shared_enums_proto_enumTypes[21]
 }
 
 func (x DOTAJoinLobbyResult) Number() protoreflect.EnumNumber {
@@ -2003,7 +1779,7 @@ func (x *DOTAJoinLobbyResult) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTAJoinLobbyResult.Descriptor instead.
 func (DOTAJoinLobbyResult) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{22}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{21}
 }
 
 type DOTASelectionPriorityRules int32
@@ -2036,11 +1812,11 @@ func (x DOTASelectionPriorityRules) String() string {
 }
 
 func (DOTASelectionPriorityRules) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[23].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[22].Descriptor()
 }
 
 func (DOTASelectionPriorityRules) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[23]
+	return &file_dota_shared_enums_proto_enumTypes[22]
 }
 
 func (x DOTASelectionPriorityRules) Number() protoreflect.EnumNumber {
@@ -2059,7 +1835,7 @@ func (x *DOTASelectionPriorityRules) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTASelectionPriorityRules.Descriptor instead.
 func (DOTASelectionPriorityRules) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{23}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{22}
 }
 
 type DOTASelectionPriorityChoice int32
@@ -2101,11 +1877,11 @@ func (x DOTASelectionPriorityChoice) String() string {
 }
 
 func (DOTASelectionPriorityChoice) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[24].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[23].Descriptor()
 }
 
 func (DOTASelectionPriorityChoice) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[24]
+	return &file_dota_shared_enums_proto_enumTypes[23]
 }
 
 func (x DOTASelectionPriorityChoice) Number() protoreflect.EnumNumber {
@@ -2124,7 +1900,7 @@ func (x *DOTASelectionPriorityChoice) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTASelectionPriorityChoice.Descriptor instead.
 func (DOTASelectionPriorityChoice) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{24}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{23}
 }
 
 type DOTAMatchVote int32
@@ -2160,11 +1936,11 @@ func (x DOTAMatchVote) String() string {
 }
 
 func (DOTAMatchVote) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[25].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[24].Descriptor()
 }
 
 func (DOTAMatchVote) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[25]
+	return &file_dota_shared_enums_proto_enumTypes[24]
 }
 
 func (x DOTAMatchVote) Number() protoreflect.EnumNumber {
@@ -2183,7 +1959,7 @@ func (x *DOTAMatchVote) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTAMatchVote.Descriptor instead.
 func (DOTAMatchVote) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{25}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{24}
 }
 
 type DOTALobbyVisibility int32
@@ -2219,11 +1995,11 @@ func (x DOTALobbyVisibility) String() string {
 }
 
 func (DOTALobbyVisibility) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[26].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[25].Descriptor()
 }
 
 func (DOTALobbyVisibility) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[26]
+	return &file_dota_shared_enums_proto_enumTypes[25]
 }
 
 func (x DOTALobbyVisibility) Number() protoreflect.EnumNumber {
@@ -2242,7 +2018,7 @@ func (x *DOTALobbyVisibility) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTALobbyVisibility.Descriptor instead.
 func (DOTALobbyVisibility) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{26}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{25}
 }
 
 type EDOTAPlayerMMRType int32
@@ -2278,11 +2054,11 @@ func (x EDOTAPlayerMMRType) String() string {
 }
 
 func (EDOTAPlayerMMRType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[27].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[26].Descriptor()
 }
 
 func (EDOTAPlayerMMRType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[27]
+	return &file_dota_shared_enums_proto_enumTypes[26]
 }
 
 func (x EDOTAPlayerMMRType) Number() protoreflect.EnumNumber {
@@ -2301,7 +2077,7 @@ func (x *EDOTAPlayerMMRType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EDOTAPlayerMMRType.Descriptor instead.
 func (EDOTAPlayerMMRType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{27}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{26}
 }
 
 type EDOTAMMRBoostType int32
@@ -2337,11 +2113,11 @@ func (x EDOTAMMRBoostType) String() string {
 }
 
 func (EDOTAMMRBoostType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[28].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[27].Descriptor()
 }
 
 func (EDOTAMMRBoostType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[28]
+	return &file_dota_shared_enums_proto_enumTypes[27]
 }
 
 func (x EDOTAMMRBoostType) Number() protoreflect.EnumNumber {
@@ -2360,7 +2136,7 @@ func (x *EDOTAMMRBoostType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EDOTAMMRBoostType.Descriptor instead.
 func (EDOTAMMRBoostType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{28}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{27}
 }
 
 type MatchType int32
@@ -2408,11 +2184,11 @@ func (x MatchType) String() string {
 }
 
 func (MatchType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[29].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[28].Descriptor()
 }
 
 func (MatchType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[29]
+	return &file_dota_shared_enums_proto_enumTypes[28]
 }
 
 func (x MatchType) Number() protoreflect.EnumNumber {
@@ -2431,7 +2207,7 @@ func (x *MatchType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use MatchType.Descriptor instead.
 func (MatchType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{29}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{28}
 }
 
 type DOTABotDifficulty int32
@@ -2488,11 +2264,11 @@ func (x DOTABotDifficulty) String() string {
 }
 
 func (DOTABotDifficulty) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[30].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[29].Descriptor()
 }
 
 func (DOTABotDifficulty) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[30]
+	return &file_dota_shared_enums_proto_enumTypes[29]
 }
 
 func (x DOTABotDifficulty) Number() protoreflect.EnumNumber {
@@ -2511,7 +2287,7 @@ func (x *DOTABotDifficulty) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTABotDifficulty.Descriptor instead.
 func (DOTABotDifficulty) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{30}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{29}
 }
 
 type DOTA_BOT_MODE int32
@@ -2548,6 +2324,7 @@ const (
 	DOTA_BOT_MODE_DOTA_BOT_MODE_WATCHER               DOTA_BOT_MODE = 28
 	DOTA_BOT_MODE_DOTA_BOT_MODE_WISDOM_SHRINE         DOTA_BOT_MODE = 29
 	DOTA_BOT_MODE_DOTA_BOT_MODE_LOTUS_POOL            DOTA_BOT_MODE = 30
+	DOTA_BOT_MODE_DOTA_BOT_MODE_DEWARD                DOTA_BOT_MODE = 31
 )
 
 // Enum value maps for DOTA_BOT_MODE.
@@ -2584,6 +2361,7 @@ var (
 		28: "DOTA_BOT_MODE_WATCHER",
 		29: "DOTA_BOT_MODE_WISDOM_SHRINE",
 		30: "DOTA_BOT_MODE_LOTUS_POOL",
+		31: "DOTA_BOT_MODE_DEWARD",
 	}
 	DOTA_BOT_MODE_value = map[string]int32{
 		"DOTA_BOT_MODE_NONE":                  0,
@@ -2617,6 +2395,7 @@ var (
 		"DOTA_BOT_MODE_WATCHER":               28,
 		"DOTA_BOT_MODE_WISDOM_SHRINE":         29,
 		"DOTA_BOT_MODE_LOTUS_POOL":            30,
+		"DOTA_BOT_MODE_DEWARD":                31,
 	}
 )
 
@@ -2631,11 +2410,11 @@ func (x DOTA_BOT_MODE) String() string {
 }
 
 func (DOTA_BOT_MODE) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[31].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[30].Descriptor()
 }
 
 func (DOTA_BOT_MODE) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[31]
+	return &file_dota_shared_enums_proto_enumTypes[30]
 }
 
 func (x DOTA_BOT_MODE) Number() protoreflect.EnumNumber {
@@ -2654,7 +2433,7 @@ func (x *DOTA_BOT_MODE) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTA_BOT_MODE.Descriptor instead.
 func (DOTA_BOT_MODE) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{31}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{30}
 }
 
 type MatchLanguages int32
@@ -2705,11 +2484,11 @@ func (x MatchLanguages) String() string {
 }
 
 func (MatchLanguages) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[32].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[31].Descriptor()
 }
 
 func (MatchLanguages) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[32]
+	return &file_dota_shared_enums_proto_enumTypes[31]
 }
 
 func (x MatchLanguages) Number() protoreflect.EnumNumber {
@@ -2728,7 +2507,7 @@ func (x *MatchLanguages) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use MatchLanguages.Descriptor instead.
 func (MatchLanguages) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{32}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{31}
 }
 
 type ETourneyQueueDeadlineState int32
@@ -2776,11 +2555,11 @@ func (x ETourneyQueueDeadlineState) String() string {
 }
 
 func (ETourneyQueueDeadlineState) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[33].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[32].Descriptor()
 }
 
 func (ETourneyQueueDeadlineState) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[33]
+	return &file_dota_shared_enums_proto_enumTypes[32]
 }
 
 func (x ETourneyQueueDeadlineState) Number() protoreflect.EnumNumber {
@@ -2799,7 +2578,7 @@ func (x *ETourneyQueueDeadlineState) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ETourneyQueueDeadlineState.Descriptor instead.
 func (ETourneyQueueDeadlineState) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{33}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{32}
 }
 
 type EMatchOutcome int32
@@ -2883,11 +2662,11 @@ func (x EMatchOutcome) String() string {
 }
 
 func (EMatchOutcome) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[34].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[33].Descriptor()
 }
 
 func (EMatchOutcome) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[34]
+	return &file_dota_shared_enums_proto_enumTypes[33]
 }
 
 func (x EMatchOutcome) Number() protoreflect.EnumNumber {
@@ -2906,7 +2685,7 @@ func (x *EMatchOutcome) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EMatchOutcome.Descriptor instead.
 func (EMatchOutcome) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{34}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{33}
 }
 
 type ELaneType int32
@@ -2951,11 +2730,11 @@ func (x ELaneType) String() string {
 }
 
 func (ELaneType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[35].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[34].Descriptor()
 }
 
 func (ELaneType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[35]
+	return &file_dota_shared_enums_proto_enumTypes[34]
 }
 
 func (x ELaneType) Number() protoreflect.EnumNumber {
@@ -2974,7 +2753,7 @@ func (x *ELaneType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELaneType.Descriptor instead.
 func (ELaneType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{35}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{34}
 }
 
 type EBadgeType int32
@@ -3007,6 +2786,11 @@ const (
 	EBadgeType_k_EBadgeType_TI14_FinalsDay3    EBadgeType = 24
 	EBadgeType_k_EBadgeType_TI14_FinalsDay4    EBadgeType = 25
 	EBadgeType_k_EBadgeType_TI14_Special       EBadgeType = 26
+	EBadgeType_k_EBadgeType_TI15_FinalsDay1    EBadgeType = 27
+	EBadgeType_k_EBadgeType_TI15_FinalsDay2    EBadgeType = 28
+	EBadgeType_k_EBadgeType_TI15_FinalsDay3    EBadgeType = 29
+	EBadgeType_k_EBadgeType_TI15_FinalsDay4    EBadgeType = 30
+	EBadgeType_k_EBadgeType_TI15_Special       EBadgeType = 31
 )
 
 // Enum value maps for EBadgeType.
@@ -3039,6 +2823,11 @@ var (
 		24: "k_EBadgeType_TI14_FinalsDay3",
 		25: "k_EBadgeType_TI14_FinalsDay4",
 		26: "k_EBadgeType_TI14_Special",
+		27: "k_EBadgeType_TI15_FinalsDay1",
+		28: "k_EBadgeType_TI15_FinalsDay2",
+		29: "k_EBadgeType_TI15_FinalsDay3",
+		30: "k_EBadgeType_TI15_FinalsDay4",
+		31: "k_EBadgeType_TI15_Special",
 	}
 	EBadgeType_value = map[string]int32{
 		"k_EBadgeType_Invalid":            0,
@@ -3068,6 +2857,11 @@ var (
 		"k_EBadgeType_TI14_FinalsDay3":    24,
 		"k_EBadgeType_TI14_FinalsDay4":    25,
 		"k_EBadgeType_TI14_Special":       26,
+		"k_EBadgeType_TI15_FinalsDay1":    27,
+		"k_EBadgeType_TI15_FinalsDay2":    28,
+		"k_EBadgeType_TI15_FinalsDay3":    29,
+		"k_EBadgeType_TI15_FinalsDay4":    30,
+		"k_EBadgeType_TI15_Special":       31,
 	}
 )
 
@@ -3082,11 +2876,11 @@ func (x EBadgeType) String() string {
 }
 
 func (EBadgeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[36].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[35].Descriptor()
 }
 
 func (EBadgeType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[36]
+	return &file_dota_shared_enums_proto_enumTypes[35]
 }
 
 func (x EBadgeType) Number() protoreflect.EnumNumber {
@@ -3105,7 +2899,7 @@ func (x *EBadgeType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EBadgeType.Descriptor instead.
 func (EBadgeType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{36}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{35}
 }
 
 type ELeagueStatus int32
@@ -3153,11 +2947,11 @@ func (x ELeagueStatus) String() string {
 }
 
 func (ELeagueStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[37].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[36].Descriptor()
 }
 
 func (ELeagueStatus) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[37]
+	return &file_dota_shared_enums_proto_enumTypes[36]
 }
 
 func (x ELeagueStatus) Number() protoreflect.EnumNumber {
@@ -3176,7 +2970,7 @@ func (x *ELeagueStatus) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueStatus.Descriptor instead.
 func (ELeagueStatus) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{37}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{36}
 }
 
 type ELeagueRegion int32
@@ -3224,11 +3018,11 @@ func (x ELeagueRegion) String() string {
 }
 
 func (ELeagueRegion) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[38].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[37].Descriptor()
 }
 
 func (ELeagueRegion) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[38]
+	return &file_dota_shared_enums_proto_enumTypes[37]
 }
 
 func (x ELeagueRegion) Number() protoreflect.EnumNumber {
@@ -3247,7 +3041,7 @@ func (x *ELeagueRegion) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueRegion.Descriptor instead.
 func (ELeagueRegion) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{38}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{37}
 }
 
 type ELeagueTier int32
@@ -3304,11 +3098,11 @@ func (x ELeagueTier) String() string {
 }
 
 func (ELeagueTier) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[39].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[38].Descriptor()
 }
 
 func (ELeagueTier) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[39]
+	return &file_dota_shared_enums_proto_enumTypes[38]
 }
 
 func (x ELeagueTier) Number() protoreflect.EnumNumber {
@@ -3327,7 +3121,7 @@ func (x *ELeagueTier) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueTier.Descriptor instead.
 func (ELeagueTier) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{39}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{38}
 }
 
 type ELeagueTierCategory int32
@@ -3363,11 +3157,11 @@ func (x ELeagueTierCategory) String() string {
 }
 
 func (ELeagueTierCategory) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[40].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[39].Descriptor()
 }
 
 func (ELeagueTierCategory) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[40]
+	return &file_dota_shared_enums_proto_enumTypes[39]
 }
 
 func (x ELeagueTierCategory) Number() protoreflect.EnumNumber {
@@ -3386,7 +3180,7 @@ func (x *ELeagueTierCategory) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueTierCategory.Descriptor instead.
 func (ELeagueTierCategory) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{40}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{39}
 }
 
 type ELeagueDivision int32
@@ -3422,11 +3216,11 @@ func (x ELeagueDivision) String() string {
 }
 
 func (ELeagueDivision) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[41].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[40].Descriptor()
 }
 
 func (ELeagueDivision) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[41]
+	return &file_dota_shared_enums_proto_enumTypes[40]
 }
 
 func (x ELeagueDivision) Number() protoreflect.EnumNumber {
@@ -3445,7 +3239,7 @@ func (x *ELeagueDivision) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueDivision.Descriptor instead.
 func (ELeagueDivision) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{41}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{40}
 }
 
 type ELeagueBroadcastProvider int32
@@ -3487,11 +3281,11 @@ func (x ELeagueBroadcastProvider) String() string {
 }
 
 func (ELeagueBroadcastProvider) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[42].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[41].Descriptor()
 }
 
 func (ELeagueBroadcastProvider) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[42]
+	return &file_dota_shared_enums_proto_enumTypes[41]
 }
 
 func (x ELeagueBroadcastProvider) Number() protoreflect.EnumNumber {
@@ -3510,7 +3304,7 @@ func (x *ELeagueBroadcastProvider) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueBroadcastProvider.Descriptor instead.
 func (ELeagueBroadcastProvider) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{42}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{41}
 }
 
 type ELeaguePhase int32
@@ -3549,11 +3343,11 @@ func (x ELeaguePhase) String() string {
 }
 
 func (ELeaguePhase) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[43].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[42].Descriptor()
 }
 
 func (ELeaguePhase) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[43]
+	return &file_dota_shared_enums_proto_enumTypes[42]
 }
 
 func (x ELeaguePhase) Number() protoreflect.EnumNumber {
@@ -3572,7 +3366,7 @@ func (x *ELeaguePhase) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeaguePhase.Descriptor instead.
 func (ELeaguePhase) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{43}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{42}
 }
 
 type ELeagueAuditAction int32
@@ -3725,11 +3519,11 @@ func (x ELeagueAuditAction) String() string {
 }
 
 func (ELeagueAuditAction) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[44].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[43].Descriptor()
 }
 
 func (ELeagueAuditAction) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[44]
+	return &file_dota_shared_enums_proto_enumTypes[43]
 }
 
 func (x ELeagueAuditAction) Number() protoreflect.EnumNumber {
@@ -3748,7 +3542,7 @@ func (x *ELeagueAuditAction) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ELeagueAuditAction.Descriptor instead.
 func (ELeagueAuditAction) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{44}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{43}
 }
 
 type DOTA_COMBATLOG_TYPES int32
@@ -3913,11 +3707,11 @@ func (x DOTA_COMBATLOG_TYPES) String() string {
 }
 
 func (DOTA_COMBATLOG_TYPES) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[45].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[44].Descriptor()
 }
 
 func (DOTA_COMBATLOG_TYPES) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[45]
+	return &file_dota_shared_enums_proto_enumTypes[44]
 }
 
 func (x DOTA_COMBATLOG_TYPES) Number() protoreflect.EnumNumber {
@@ -3936,7 +3730,7 @@ func (x *DOTA_COMBATLOG_TYPES) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use DOTA_COMBATLOG_TYPES.Descriptor instead.
 func (DOTA_COMBATLOG_TYPES) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{45}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{44}
 }
 
 type EDPCFavoriteType int32
@@ -3975,11 +3769,11 @@ func (x EDPCFavoriteType) String() string {
 }
 
 func (EDPCFavoriteType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[46].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[45].Descriptor()
 }
 
 func (EDPCFavoriteType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[46]
+	return &file_dota_shared_enums_proto_enumTypes[45]
 }
 
 func (x EDPCFavoriteType) Number() protoreflect.EnumNumber {
@@ -3998,7 +3792,7 @@ func (x *EDPCFavoriteType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EDPCFavoriteType.Descriptor instead.
 func (EDPCFavoriteType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{46}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{45}
 }
 
 type EDPCPushNotification int32
@@ -4058,11 +3852,11 @@ func (x EDPCPushNotification) String() string {
 }
 
 func (EDPCPushNotification) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[47].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[46].Descriptor()
 }
 
 func (EDPCPushNotification) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[47]
+	return &file_dota_shared_enums_proto_enumTypes[46]
 }
 
 func (x EDPCPushNotification) Number() protoreflect.EnumNumber {
@@ -4081,7 +3875,7 @@ func (x *EDPCPushNotification) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EDPCPushNotification.Descriptor instead.
 func (EDPCPushNotification) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{47}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{46}
 }
 
 type EEventActionScoreMode int32
@@ -4114,11 +3908,11 @@ func (x EEventActionScoreMode) String() string {
 }
 
 func (EEventActionScoreMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[48].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[47].Descriptor()
 }
 
 func (EEventActionScoreMode) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[48]
+	return &file_dota_shared_enums_proto_enumTypes[47]
 }
 
 func (x EEventActionScoreMode) Number() protoreflect.EnumNumber {
@@ -4137,7 +3931,7 @@ func (x *EEventActionScoreMode) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EEventActionScoreMode.Descriptor instead.
 func (EEventActionScoreMode) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{48}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{47}
 }
 
 type EPlayerChallengeHistoryType int32
@@ -4182,11 +3976,11 @@ func (x EPlayerChallengeHistoryType) String() string {
 }
 
 func (EPlayerChallengeHistoryType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[49].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[48].Descriptor()
 }
 
 func (EPlayerChallengeHistoryType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[49]
+	return &file_dota_shared_enums_proto_enumTypes[48]
 }
 
 func (x EPlayerChallengeHistoryType) Number() protoreflect.EnumNumber {
@@ -4205,7 +3999,7 @@ func (x *EPlayerChallengeHistoryType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EPlayerChallengeHistoryType.Descriptor instead.
 func (EPlayerChallengeHistoryType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{49}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{48}
 }
 
 type EOverwatchReportReason int32
@@ -4250,11 +4044,11 @@ func (x EOverwatchReportReason) String() string {
 }
 
 func (EOverwatchReportReason) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[50].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[49].Descriptor()
 }
 
 func (EOverwatchReportReason) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[50]
+	return &file_dota_shared_enums_proto_enumTypes[49]
 }
 
 func (x EOverwatchReportReason) Number() protoreflect.EnumNumber {
@@ -4273,7 +4067,7 @@ func (x *EOverwatchReportReason) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EOverwatchReportReason.Descriptor instead.
 func (EOverwatchReportReason) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{50}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{49}
 }
 
 type ECandyShopUpgrade int32
@@ -4312,11 +4106,11 @@ func (x ECandyShopUpgrade) String() string {
 }
 
 func (ECandyShopUpgrade) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[51].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[50].Descriptor()
 }
 
 func (ECandyShopUpgrade) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[51]
+	return &file_dota_shared_enums_proto_enumTypes[50]
 }
 
 func (x ECandyShopUpgrade) Number() protoreflect.EnumNumber {
@@ -4335,7 +4129,7 @@ func (x *ECandyShopUpgrade) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ECandyShopUpgrade.Descriptor instead.
 func (ECandyShopUpgrade) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{51}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{50}
 }
 
 type EItemSuggestPreference int32
@@ -4371,11 +4165,11 @@ func (x EItemSuggestPreference) String() string {
 }
 
 func (EItemSuggestPreference) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[52].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[51].Descriptor()
 }
 
 func (EItemSuggestPreference) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[52]
+	return &file_dota_shared_enums_proto_enumTypes[51]
 }
 
 func (x EItemSuggestPreference) Number() protoreflect.EnumNumber {
@@ -4394,7 +4188,7 @@ func (x *EItemSuggestPreference) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use EItemSuggestPreference.Descriptor instead.
 func (EItemSuggestPreference) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{52}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{51}
 }
 
 type ETimerAlertType int32
@@ -4436,11 +4230,11 @@ func (x ETimerAlertType) String() string {
 }
 
 func (ETimerAlertType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dota_shared_enums_proto_enumTypes[53].Descriptor()
+	return file_dota_shared_enums_proto_enumTypes[52].Descriptor()
 }
 
 func (ETimerAlertType) Type() protoreflect.EnumType {
-	return &file_dota_shared_enums_proto_enumTypes[53]
+	return &file_dota_shared_enums_proto_enumTypes[52]
 }
 
 func (x ETimerAlertType) Number() protoreflect.EnumNumber {
@@ -4459,7 +4253,7 @@ func (x *ETimerAlertType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use ETimerAlertType.Descriptor instead.
 func (ETimerAlertType) EnumDescriptor() ([]byte, []int) {
-	return file_dota_shared_enums_proto_rawDescGZIP(), []int{53}
+	return file_dota_shared_enums_proto_rawDescGZIP(), []int{52}
 }
 
 type CDOTAClientHardwareSpecs struct {
@@ -4705,6 +4499,7 @@ type CMsgDOTACombatLogEntry struct {
 	UsesCharges              *bool                  `protobuf:"varint,79,opt,name=uses_charges,json=usesCharges" json:"uses_charges,omitempty"`
 	TrackedStatId            *uint32                `protobuf:"varint,80,opt,name=tracked_stat_id,json=trackedStatId" json:"tracked_stat_id,omitempty"`
 	ModifierPurgedDuration   *float32               `protobuf:"fixed32,81,opt,name=modifier_purged_duration,json=modifierPurgedDuration" json:"modifier_purged_duration,omitempty"`
+	HealFromRegen            *bool                  `protobuf:"varint,82,opt,name=heal_from_regen,json=healFromRegen" json:"heal_from_regen,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -5309,6 +5104,13 @@ func (x *CMsgDOTACombatLogEntry) GetModifierPurgedDuration() float32 {
 		return *x.ModifierPurgedDuration
 	}
 	return 0
+}
+
+func (x *CMsgDOTACombatLogEntry) GetHealFromRegen() bool {
+	if x != nil && x.HealFromRegen != nil {
+		return *x.HealFromRegen
+	}
+	return false
 }
 
 type CMsgPendingEventAward struct {
@@ -6018,7 +5820,7 @@ var File_dota_shared_enums_proto protoreflect.FileDescriptor
 
 const file_dota_shared_enums_proto_rawDesc = "" +
 	"\n" +
-	"\x17dota_shared_enums.proto\x12\bprotocol\"\xba\x02\n" +
+	"\x17dota_shared_enums.proto\x12\bprotocol\x1a\fevents.proto\"\xba\x02\n" +
 	"\x18CDOTAClientHardwareSpecs\x12-\n" +
 	"\x12logical_processors\x18\x01 \x01(\rR\x11logicalProcessors\x121\n" +
 	"\x15cpu_cycles_per_second\x18\x02 \x01(\x06R\x12cpuCyclesPerSecond\x122\n" +
@@ -6047,7 +5849,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\tsave_time\x18\a \x01(\rR\bsaveTime\x1a-\n" +
 	"\x0fPlayerPositions\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
-	"\x01y\x18\x02 \x01(\x02R\x01y\"\xaf\x1a\n" +
+	"\x01y\x18\x02 \x01(\x02R\x01y\"\xd7\x1a\n" +
 	"\x16CMsgDOTACombatLogEntry\x12J\n" +
 	"\x04type\x18\x01 \x01(\x0e2\x1e.protocol.DOTA_COMBATLOG_TYPES:\x16DOTA_COMBATLOG_INVALIDR\x04type\x12\x1f\n" +
 	"\vtarget_name\x18\x02 \x01(\rR\n" +
@@ -6138,7 +5940,8 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x10will_reincarnate\x18N \x01(\bR\x0fwillReincarnate\x12!\n" +
 	"\fuses_charges\x18O \x01(\bR\vusesCharges\x12&\n" +
 	"\x0ftracked_stat_id\x18P \x01(\rR\rtrackedStatId\x128\n" +
-	"\x18modifier_purged_duration\x18Q \x01(\x02R\x16modifierPurgedDuration\"\xb1\x02\n" +
+	"\x18modifier_purged_duration\x18Q \x01(\x02R\x16modifierPurgedDuration\x12&\n" +
+	"\x0fheal_from_regen\x18R \x01(\bR\rhealFromRegen\"\xb1\x02\n" +
 	"\x15CMsgPendingEventAward\x12:\n" +
 	"\bevent_id\x18\x01 \x01(\x0e2\x10.protocol.EEvent:\rEVENT_ID_NONER\aeventId\x12\x1b\n" +
 	"\taction_id\x18\x02 \x01(\rR\bactionId\x12 \n" +
@@ -6241,67 +6044,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x15DOTA_GC_TEAM_CUSTOM_6\x10\v\x12\x19\n" +
 	"\x15DOTA_GC_TEAM_CUSTOM_7\x10\f\x12\x19\n" +
 	"\x15DOTA_GC_TEAM_CUSTOM_8\x10\r\x12\x19\n" +
-	"\x15DOTA_GC_TEAM_NEUTRALS\x10\x0e*\xcc\r\n" +
-	"\x06EEvent\x12\x11\n" +
-	"\rEVENT_ID_NONE\x10\x00\x12\x15\n" +
-	"\x11EVENT_ID_DIRETIDE\x10\x01\x12\x1c\n" +
-	"\x18EVENT_ID_SPRING_FESTIVAL\x10\x02\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2013\x10\x03\x12\x1c\n" +
-	"\x18EVENT_ID_COMPENDIUM_2014\x10\x04\x12\x1a\n" +
-	"\x16EVENT_ID_NEXON_PC_BANG\x10\x05\x12\x1a\n" +
-	"\x16EVENT_ID_PWRD_DAC_2015\x10\x06\x12\x1b\n" +
-	"\x17EVENT_ID_NEW_BLOOM_2015\x10\a\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2015\x10\b\x12\x1c\n" +
-	"\x18EVENT_ID_FALL_MAJOR_2015\x10\t\x12\x16\n" +
-	"\x12EVENT_ID_ORACLE_PA\x10\n" +
-	"\x12$\n" +
-	" EVENT_ID_NEW_BLOOM_2015_PREBEAST\x10\v\x12\x16\n" +
-	"\x12EVENT_ID_FROSTIVUS\x10\f\x12\x1e\n" +
-	"\x1aEVENT_ID_WINTER_MAJOR_2016\x10\r\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2016\x10\x0e\x12\x1c\n" +
-	"\x18EVENT_ID_FALL_MAJOR_2016\x10\x0f\x12\x1e\n" +
-	"\x1aEVENT_ID_WINTER_MAJOR_2017\x10\x10\x12\x1b\n" +
-	"\x17EVENT_ID_NEW_BLOOM_2017\x10\x11\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2017\x10\x12\x12\x1e\n" +
-	"\x1aEVENT_ID_PLUS_SUBSCRIPTION\x10\x13\x12\x1d\n" +
-	"\x19EVENT_ID_SINGLES_DAY_2017\x10\x14\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2017\x10\x15\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2018\x10\x16\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2018\x10\x17\x12\x1b\n" +
-	"\x17EVENT_ID_NEW_BLOOM_2019\x10\x18\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2019\x10\x19\x12\"\n" +
-	"\x1eEVENT_ID_NEW_PLAYER_EXPERIENCE\x10\x1a\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2019\x10\x1b\x12\x1b\n" +
-	"\x17EVENT_ID_NEW_BLOOM_2020\x10\x1c\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2020\x10\x1d\x12\x18\n" +
-	"\x14EVENT_ID_TEAM_FANDOM\x10\x1e\x12\x1a\n" +
-	"\x16EVENT_ID_DIRETIDE_2020\x10\x1f\x12\x18\n" +
-	"\x14EVENT_ID_SPRING_2021\x10 \x12\x16\n" +
-	"\x12EVENT_ID_FALL_2021\x10!\x12\"\n" +
-	"\x1eEVENT_ID_TEAM_FANDOM_FALL_2021\x10\"\x12!\n" +
-	"\x1dEVENT_ID_TEAM_2021_2022_TOUR2\x10#\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2022\x10$\x12!\n" +
-	"\x1dEVENT_ID_TEAM_2021_2022_TOUR3\x10%\x12$\n" +
-	" EVENT_ID_TEAM_INTERNATIONAL_2022\x10&\x12\x1d\n" +
-	"\x19EVENT_ID_PERMANENT_GRANTS\x10'\x12&\n" +
-	"\"EVENT_ID_MUERTA_RELEASE_SPRING2023\x10(\x12\x1c\n" +
-	"\x18EVENT_ID_TEAM_2023_TOUR1\x10)\x12\x1c\n" +
-	"\x18EVENT_ID_TEAM_2023_TOUR2\x10*\x12\x1c\n" +
-	"\x18EVENT_ID_TEAM_2023_TOUR3\x10+\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2023\x10-\x12\x1d\n" +
-	"\x19EVENT_ID_10TH_ANNIVERSARY\x10.\x12\x16\n" +
-	"\x12EVENT_ID_CROWNFALL\x10/\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2023\x100\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2024\x101\x12\x1b\n" +
-	"\x17EVENT_ID_FROSTIVUS_2024\x102\x12\x1b\n" +
-	"\x17EVENT_ID_MONSTER_HUNTER\x103\x12\x1f\n" +
-	"\x1bEVENT_ID_INTERNATIONAL_2025\x104\x12\x16\n" +
-	"\x12EVENT_ID_FALL_2025\x105\x12\x18\n" +
-	"\x14EVENT_ID_WINTER_2025\x107\x12\x18\n" +
-	"\x14EVENT_ID_SPRING_2026\x108\x12\x18\n" +
-	"\x14EVENT_ID_SUMMER_2026\x109\x12\x16\n" +
-	"\x12EVENT_ID_FALL_2026\x10:\x12\x18\n" +
-	"\x14EVENT_ID_WINTER_2026\x10;*\xbb\x02\n" +
+	"\x15DOTA_GC_TEAM_NEUTRALS\x10\x0e*\xbb\x02\n" +
 	"\tERankType\x12\x17\n" +
 	"\x13k_ERankType_Invalid\x10\x00\x12\x16\n" +
 	"\x12k_ERankType_Casual\x10\x01\x12\x16\n" +
@@ -6532,7 +6275,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x15BOT_DIFFICULTY_EXTRA1\x10\x06\x12\x19\n" +
 	"\x15BOT_DIFFICULTY_EXTRA2\x10\a\x12\x19\n" +
 	"\x15BOT_DIFFICULTY_EXTRA3\x10\b\x12\x16\n" +
-	"\x12BOT_DIFFICULTY_NPX\x10\t*\xb1\a\n" +
+	"\x12BOT_DIFFICULTY_NPX\x10\t*\xcb\a\n" +
 	"\rDOTA_BOT_MODE\x12\x16\n" +
 	"\x12DOTA_BOT_MODE_NONE\x10\x00\x12\x18\n" +
 	"\x14DOTA_BOT_MODE_LANING\x10\x01\x12\x18\n" +
@@ -6565,7 +6308,8 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"#DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME\x10\x1b\x12\x19\n" +
 	"\x15DOTA_BOT_MODE_WATCHER\x10\x1c\x12\x1f\n" +
 	"\x1bDOTA_BOT_MODE_WISDOM_SHRINE\x10\x1d\x12\x1c\n" +
-	"\x18DOTA_BOT_MODE_LOTUS_POOL\x10\x1e*\xf3\x01\n" +
+	"\x18DOTA_BOT_MODE_LOTUS_POOL\x10\x1e\x12\x18\n" +
+	"\x14DOTA_BOT_MODE_DEWARD\x10\x1f*\xf3\x01\n" +
 	"\x0eMatchLanguages\x12\x1a\n" +
 	"\x16MATCH_LANGUAGE_INVALID\x10\x00\x12\x1a\n" +
 	"\x16MATCH_LANGUAGE_ENGLISH\x10\x01\x12\x1a\n" +
@@ -6610,7 +6354,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\rLANE_TYPE_OFF\x10\x02\x12\x11\n" +
 	"\rLANE_TYPE_MID\x10\x03\x12\x14\n" +
 	"\x10LANE_TYPE_JUNGLE\x10\x04\x12\x12\n" +
-	"\x0eLANE_TYPE_ROAM\x10\x05*\x82\a\n" +
+	"\x0eLANE_TYPE_ROAM\x10\x05*\xa9\b\n" +
 	"\n" +
 	"EBadgeType\x12\x18\n" +
 	"\x14k_EBadgeType_Invalid\x10\x00\x12\x1c\n" +
@@ -6640,7 +6384,12 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x1ck_EBadgeType_TI14_FinalsDay2\x10\x17\x12 \n" +
 	"\x1ck_EBadgeType_TI14_FinalsDay3\x10\x18\x12 \n" +
 	"\x1ck_EBadgeType_TI14_FinalsDay4\x10\x19\x12\x1d\n" +
-	"\x19k_EBadgeType_TI14_Special\x10\x1a*\xd4\x01\n" +
+	"\x19k_EBadgeType_TI14_Special\x10\x1a\x12 \n" +
+	"\x1ck_EBadgeType_TI15_FinalsDay1\x10\x1b\x12 \n" +
+	"\x1ck_EBadgeType_TI15_FinalsDay2\x10\x1c\x12 \n" +
+	"\x1ck_EBadgeType_TI15_FinalsDay3\x10\x1d\x12 \n" +
+	"\x1ck_EBadgeType_TI15_FinalsDay4\x10\x1e\x12\x1d\n" +
+	"\x19k_EBadgeType_TI15_Special\x10\x1f*\xd4\x01\n" +
 	"\rELeagueStatus\x12\x17\n" +
 	"\x13LEAGUE_STATUS_UNSET\x10\x00\x12\x1d\n" +
 	"\x19LEAGUE_STATUS_UNSUBMITTED\x10\x01\x12\x1b\n" +
@@ -6828,7 +6577,7 @@ const file_dota_shared_enums_proto_rawDesc = "" +
 	"\x1bk_TimerAlertType_BountyRune\x10\x02\x12!\n" +
 	"\x1dk_TimerAlertType_WisdomShrine\x10\x03\x12 \n" +
 	"\x1ck_TimerAlertType_JungleCamps\x10\x04\x12\x1e\n" +
-	"\x1ak_TimerAlertType_LotusPool\x10\x05"
+	"\x1ak_TimerAlertType_LotusPool\x10\x05P\x00"
 
 var (
 	file_dota_shared_enums_proto_rawDescOnce sync.Once
@@ -6842,93 +6591,93 @@ func file_dota_shared_enums_proto_rawDescGZIP() []byte {
 	return file_dota_shared_enums_proto_rawDescData
 }
 
-var file_dota_shared_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 54)
+var file_dota_shared_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 53)
 var file_dota_shared_enums_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_dota_shared_enums_proto_goTypes = []any{
 	(DOTA_GameMode)(0),                                 // 0: protocol.DOTA_GameMode
 	(DOTA_GameState)(0),                                // 1: protocol.DOTA_GameState
 	(DOTA_GC_TEAM)(0),                                  // 2: protocol.DOTA_GC_TEAM
-	(EEvent)(0),                                        // 3: protocol.EEvent
-	(ERankType)(0),                                     // 4: protocol.ERankType
-	(DOTALeaverStatusT)(0),                             // 5: protocol.DOTALeaverStatus_t
-	(DOTAConnectionStateT)(0),                          // 6: protocol.DOTAConnectionState_t
-	(Fantasy_Roles)(0),                                 // 7: protocol.Fantasy_Roles
-	(Fantasy_Scoring)(0),                               // 8: protocol.Fantasy_Scoring
-	(Fantasy_Team_Slots)(0),                            // 9: protocol.Fantasy_Team_Slots
-	(Fantasy_Selection_Mode)(0),                        // 10: protocol.Fantasy_Selection_Mode
-	(Fantasy_Gem_Type)(0),                              // 11: protocol.Fantasy_Gem_Type
-	(DOTAChatChannelTypeT)(0),                          // 12: protocol.DOTAChatChannelType_t
-	(EChatSpecialPrivileges)(0),                        // 13: protocol.EChatSpecialPrivileges
-	(DOTACommTypeT)(0),                                 // 14: protocol.DOTACommType_t
-	(DOTACommLevelT)(0),                                // 15: protocol.DOTACommLevel_t
-	(DOTABehaviorLevelT)(0),                            // 16: protocol.DOTABehaviorLevel_t
-	(EProfileCardSlotType)(0),                          // 17: protocol.EProfileCardSlotType
-	(EMatchGroupServerStatus)(0),                       // 18: protocol.EMatchGroupServerStatus
-	(DOTA_CM_PICK)(0),                                  // 19: protocol.DOTA_CM_PICK
-	(DOTALowPriorityBanType)(0),                        // 20: protocol.DOTALowPriorityBanType
-	(DOTALobbyReadyState)(0),                           // 21: protocol.DOTALobbyReadyState
-	(DOTAJoinLobbyResult)(0),                           // 22: protocol.DOTAJoinLobbyResult
-	(DOTASelectionPriorityRules)(0),                    // 23: protocol.DOTASelectionPriorityRules
-	(DOTASelectionPriorityChoice)(0),                   // 24: protocol.DOTASelectionPriorityChoice
-	(DOTAMatchVote)(0),                                 // 25: protocol.DOTAMatchVote
-	(DOTALobbyVisibility)(0),                           // 26: protocol.DOTALobbyVisibility
-	(EDOTAPlayerMMRType)(0),                            // 27: protocol.EDOTAPlayerMMRType
-	(EDOTAMMRBoostType)(0),                             // 28: protocol.EDOTAMMRBoostType
-	(MatchType)(0),                                     // 29: protocol.MatchType
-	(DOTABotDifficulty)(0),                             // 30: protocol.DOTABotDifficulty
-	(DOTA_BOT_MODE)(0),                                 // 31: protocol.DOTA_BOT_MODE
-	(MatchLanguages)(0),                                // 32: protocol.MatchLanguages
-	(ETourneyQueueDeadlineState)(0),                    // 33: protocol.ETourneyQueueDeadlineState
-	(EMatchOutcome)(0),                                 // 34: protocol.EMatchOutcome
-	(ELaneType)(0),                                     // 35: protocol.ELaneType
-	(EBadgeType)(0),                                    // 36: protocol.EBadgeType
-	(ELeagueStatus)(0),                                 // 37: protocol.ELeagueStatus
-	(ELeagueRegion)(0),                                 // 38: protocol.ELeagueRegion
-	(ELeagueTier)(0),                                   // 39: protocol.ELeagueTier
-	(ELeagueTierCategory)(0),                           // 40: protocol.ELeagueTierCategory
-	(ELeagueDivision)(0),                               // 41: protocol.ELeagueDivision
-	(ELeagueBroadcastProvider)(0),                      // 42: protocol.ELeagueBroadcastProvider
-	(ELeaguePhase)(0),                                  // 43: protocol.ELeaguePhase
-	(ELeagueAuditAction)(0),                            // 44: protocol.ELeagueAuditAction
-	(DOTA_COMBATLOG_TYPES)(0),                          // 45: protocol.DOTA_COMBATLOG_TYPES
-	(EDPCFavoriteType)(0),                              // 46: protocol.EDPCFavoriteType
-	(EDPCPushNotification)(0),                          // 47: protocol.EDPCPushNotification
-	(EEventActionScoreMode)(0),                         // 48: protocol.EEventActionScoreMode
-	(EPlayerChallengeHistoryType)(0),                   // 49: protocol.EPlayerChallengeHistoryType
-	(EOverwatchReportReason)(0),                        // 50: protocol.EOverwatchReportReason
-	(ECandyShopUpgrade)(0),                             // 51: protocol.ECandyShopUpgrade
-	(EItemSuggestPreference)(0),                        // 52: protocol.EItemSuggestPreference
-	(ETimerAlertType)(0),                               // 53: protocol.ETimerAlertType
-	(*CDOTAClientHardwareSpecs)(nil),                   // 54: protocol.CDOTAClientHardwareSpecs
-	(*CDOTASaveGame)(nil),                              // 55: protocol.CDOTASaveGame
-	(*CMsgDOTACombatLogEntry)(nil),                     // 56: protocol.CMsgDOTACombatLogEntry
-	(*CMsgPendingEventAward)(nil),                      // 57: protocol.CMsgPendingEventAward
-	(*CMsgMonsterHunterMaterialQuantity)(nil),          // 58: protocol.CMsgMonsterHunterMaterialQuantity
-	(*CMsgMonsterHunterInvestigation)(nil),             // 59: protocol.CMsgMonsterHunterInvestigation
-	(*CMsgMonsterHunterInvestigationGameState)(nil),    // 60: protocol.CMsgMonsterHunterInvestigationGameState
-	(*CMsgMonsterHunterCodexUpdateData)(nil),           // 61: protocol.CMsgMonsterHunterCodexUpdateData
-	(*CDOTASaveGame_Player)(nil),                       // 62: protocol.CDOTASaveGame.Player
-	(*CDOTASaveGame_SaveInstance)(nil),                 // 63: protocol.CDOTASaveGame.SaveInstance
-	(*CDOTASaveGame_SaveInstance_PlayerPositions)(nil), // 64: protocol.CDOTASaveGame.SaveInstance.PlayerPositions
-	(*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry)(nil), // 65: protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
-	(*CMsgMonsterHunterInvestigationGameState_HuntedBy)(nil),      // 66: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
-	(*CMsgMonsterHunterCodexUpdateData_KillInfo)(nil),             // 67: protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
+	(ERankType)(0),                                     // 3: protocol.ERankType
+	(DOTALeaverStatusT)(0),                             // 4: protocol.DOTALeaverStatus_t
+	(DOTAConnectionStateT)(0),                          // 5: protocol.DOTAConnectionState_t
+	(Fantasy_Roles)(0),                                 // 6: protocol.Fantasy_Roles
+	(Fantasy_Scoring)(0),                               // 7: protocol.Fantasy_Scoring
+	(Fantasy_Team_Slots)(0),                            // 8: protocol.Fantasy_Team_Slots
+	(Fantasy_Selection_Mode)(0),                        // 9: protocol.Fantasy_Selection_Mode
+	(Fantasy_Gem_Type)(0),                              // 10: protocol.Fantasy_Gem_Type
+	(DOTAChatChannelTypeT)(0),                          // 11: protocol.DOTAChatChannelType_t
+	(EChatSpecialPrivileges)(0),                        // 12: protocol.EChatSpecialPrivileges
+	(DOTACommTypeT)(0),                                 // 13: protocol.DOTACommType_t
+	(DOTACommLevelT)(0),                                // 14: protocol.DOTACommLevel_t
+	(DOTABehaviorLevelT)(0),                            // 15: protocol.DOTABehaviorLevel_t
+	(EProfileCardSlotType)(0),                          // 16: protocol.EProfileCardSlotType
+	(EMatchGroupServerStatus)(0),                       // 17: protocol.EMatchGroupServerStatus
+	(DOTA_CM_PICK)(0),                                  // 18: protocol.DOTA_CM_PICK
+	(DOTALowPriorityBanType)(0),                        // 19: protocol.DOTALowPriorityBanType
+	(DOTALobbyReadyState)(0),                           // 20: protocol.DOTALobbyReadyState
+	(DOTAJoinLobbyResult)(0),                           // 21: protocol.DOTAJoinLobbyResult
+	(DOTASelectionPriorityRules)(0),                    // 22: protocol.DOTASelectionPriorityRules
+	(DOTASelectionPriorityChoice)(0),                   // 23: protocol.DOTASelectionPriorityChoice
+	(DOTAMatchVote)(0),                                 // 24: protocol.DOTAMatchVote
+	(DOTALobbyVisibility)(0),                           // 25: protocol.DOTALobbyVisibility
+	(EDOTAPlayerMMRType)(0),                            // 26: protocol.EDOTAPlayerMMRType
+	(EDOTAMMRBoostType)(0),                             // 27: protocol.EDOTAMMRBoostType
+	(MatchType)(0),                                     // 28: protocol.MatchType
+	(DOTABotDifficulty)(0),                             // 29: protocol.DOTABotDifficulty
+	(DOTA_BOT_MODE)(0),                                 // 30: protocol.DOTA_BOT_MODE
+	(MatchLanguages)(0),                                // 31: protocol.MatchLanguages
+	(ETourneyQueueDeadlineState)(0),                    // 32: protocol.ETourneyQueueDeadlineState
+	(EMatchOutcome)(0),                                 // 33: protocol.EMatchOutcome
+	(ELaneType)(0),                                     // 34: protocol.ELaneType
+	(EBadgeType)(0),                                    // 35: protocol.EBadgeType
+	(ELeagueStatus)(0),                                 // 36: protocol.ELeagueStatus
+	(ELeagueRegion)(0),                                 // 37: protocol.ELeagueRegion
+	(ELeagueTier)(0),                                   // 38: protocol.ELeagueTier
+	(ELeagueTierCategory)(0),                           // 39: protocol.ELeagueTierCategory
+	(ELeagueDivision)(0),                               // 40: protocol.ELeagueDivision
+	(ELeagueBroadcastProvider)(0),                      // 41: protocol.ELeagueBroadcastProvider
+	(ELeaguePhase)(0),                                  // 42: protocol.ELeaguePhase
+	(ELeagueAuditAction)(0),                            // 43: protocol.ELeagueAuditAction
+	(DOTA_COMBATLOG_TYPES)(0),                          // 44: protocol.DOTA_COMBATLOG_TYPES
+	(EDPCFavoriteType)(0),                              // 45: protocol.EDPCFavoriteType
+	(EDPCPushNotification)(0),                          // 46: protocol.EDPCPushNotification
+	(EEventActionScoreMode)(0),                         // 47: protocol.EEventActionScoreMode
+	(EPlayerChallengeHistoryType)(0),                   // 48: protocol.EPlayerChallengeHistoryType
+	(EOverwatchReportReason)(0),                        // 49: protocol.EOverwatchReportReason
+	(ECandyShopUpgrade)(0),                             // 50: protocol.ECandyShopUpgrade
+	(EItemSuggestPreference)(0),                        // 51: protocol.EItemSuggestPreference
+	(ETimerAlertType)(0),                               // 52: protocol.ETimerAlertType
+	(*CDOTAClientHardwareSpecs)(nil),                   // 53: protocol.CDOTAClientHardwareSpecs
+	(*CDOTASaveGame)(nil),                              // 54: protocol.CDOTASaveGame
+	(*CMsgDOTACombatLogEntry)(nil),                     // 55: protocol.CMsgDOTACombatLogEntry
+	(*CMsgPendingEventAward)(nil),                      // 56: protocol.CMsgPendingEventAward
+	(*CMsgMonsterHunterMaterialQuantity)(nil),          // 57: protocol.CMsgMonsterHunterMaterialQuantity
+	(*CMsgMonsterHunterInvestigation)(nil),             // 58: protocol.CMsgMonsterHunterInvestigation
+	(*CMsgMonsterHunterInvestigationGameState)(nil),    // 59: protocol.CMsgMonsterHunterInvestigationGameState
+	(*CMsgMonsterHunterCodexUpdateData)(nil),           // 60: protocol.CMsgMonsterHunterCodexUpdateData
+	(*CDOTASaveGame_Player)(nil),                       // 61: protocol.CDOTASaveGame.Player
+	(*CDOTASaveGame_SaveInstance)(nil),                 // 62: protocol.CDOTASaveGame.SaveInstance
+	(*CDOTASaveGame_SaveInstance_PlayerPositions)(nil), // 63: protocol.CDOTASaveGame.SaveInstance.PlayerPositions
+	(*CMsgMonsterHunterMaterialQuantity_MaterialCountsEntry)(nil), // 64: protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
+	(*CMsgMonsterHunterInvestigationGameState_HuntedBy)(nil),      // 65: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
+	(*CMsgMonsterHunterCodexUpdateData_KillInfo)(nil),             // 66: protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
+	(EEvent)(0), // 67: protocol.EEvent
 }
 var file_dota_shared_enums_proto_depIdxs = []int32{
-	62, // 0: protocol.CDOTASaveGame.players:type_name -> protocol.CDOTASaveGame.Player
-	63, // 1: protocol.CDOTASaveGame.save_instances:type_name -> protocol.CDOTASaveGame.SaveInstance
-	45, // 2: protocol.CMsgDOTACombatLogEntry.type:type_name -> protocol.DOTA_COMBATLOG_TYPES
-	3,  // 3: protocol.CMsgPendingEventAward.event_id:type_name -> protocol.EEvent
-	48, // 4: protocol.CMsgPendingEventAward.score_mode:type_name -> protocol.EEventActionScoreMode
-	65, // 5: protocol.CMsgMonsterHunterMaterialQuantity.material_counts:type_name -> protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
-	58, // 6: protocol.CMsgMonsterHunterInvestigation.match_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
-	58, // 7: protocol.CMsgMonsterHunterInvestigation.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
-	59, // 8: protocol.CMsgMonsterHunterInvestigationGameState.selected_investigation:type_name -> protocol.CMsgMonsterHunterInvestigation
-	66, // 9: protocol.CMsgMonsterHunterInvestigationGameState.hunted_by:type_name -> protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
-	67, // 10: protocol.CMsgMonsterHunterCodexUpdateData.player_kills:type_name -> protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
+	61, // 0: protocol.CDOTASaveGame.players:type_name -> protocol.CDOTASaveGame.Player
+	62, // 1: protocol.CDOTASaveGame.save_instances:type_name -> protocol.CDOTASaveGame.SaveInstance
+	44, // 2: protocol.CMsgDOTACombatLogEntry.type:type_name -> protocol.DOTA_COMBATLOG_TYPES
+	67, // 3: protocol.CMsgPendingEventAward.event_id:type_name -> protocol.EEvent
+	47, // 4: protocol.CMsgPendingEventAward.score_mode:type_name -> protocol.EEventActionScoreMode
+	64, // 5: protocol.CMsgMonsterHunterMaterialQuantity.material_counts:type_name -> protocol.CMsgMonsterHunterMaterialQuantity.MaterialCountsEntry
+	57, // 6: protocol.CMsgMonsterHunterInvestigation.match_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	57, // 7: protocol.CMsgMonsterHunterInvestigation.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	58, // 8: protocol.CMsgMonsterHunterInvestigationGameState.selected_investigation:type_name -> protocol.CMsgMonsterHunterInvestigation
+	65, // 9: protocol.CMsgMonsterHunterInvestigationGameState.hunted_by:type_name -> protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy
+	66, // 10: protocol.CMsgMonsterHunterCodexUpdateData.player_kills:type_name -> protocol.CMsgMonsterHunterCodexUpdateData.KillInfo
 	2,  // 11: protocol.CDOTASaveGame.Player.team:type_name -> protocol.DOTA_GC_TEAM
-	64, // 12: protocol.CDOTASaveGame.SaveInstance.player_positions:type_name -> protocol.CDOTASaveGame.SaveInstance.PlayerPositions
-	58, // 13: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
+	63, // 12: protocol.CDOTASaveGame.SaveInstance.player_positions:type_name -> protocol.CDOTASaveGame.SaveInstance.PlayerPositions
+	57, // 13: protocol.CMsgMonsterHunterInvestigationGameState.HuntedBy.hunt_rewards:type_name -> protocol.CMsgMonsterHunterMaterialQuantity
 	14, // [14:14] is the sub-list for method output_type
 	14, // [14:14] is the sub-list for method input_type
 	14, // [14:14] is the sub-list for extension type_name
@@ -6941,12 +6690,13 @@ func file_dota_shared_enums_proto_init() {
 	if File_dota_shared_enums_proto != nil {
 		return
 	}
+	file_events_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dota_shared_enums_proto_rawDesc), len(file_dota_shared_enums_proto_rawDesc)),
-			NumEnums:      54,
+			NumEnums:      53,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,

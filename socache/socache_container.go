@@ -55,7 +55,7 @@ func (c *SOCacheContainer) parseObject(obj *gcsdkm.CMsgSOCacheSubscribed_Subscri
 
 // emitEvent emits an event to all listeners.
 func (c *SOCacheContainer) emitEvent(event *CacheEvent) {
-	c.subscriptions.Range(func(key interface{}, value interface{}) bool {
+	c.subscriptions.Range(func(key any, value any) bool {
 		ch := value.(chan *CacheEvent)
 		tries := 0
 	RetryLoop:
@@ -168,7 +168,7 @@ func (c *SOCacheContainer) Get(id uint64) (proto.Message, bool) {
 
 // GetOne returns an object assuming there is only one.
 func (c *SOCacheContainer) GetOne() (obj proto.Message) {
-	c.objects.Range(func(key interface{}, value interface{}) bool {
+	c.objects.Range(func(key any, value any) bool {
 		obj = value.(proto.Message)
 		return false
 	})
@@ -179,7 +179,7 @@ func (c *SOCacheContainer) GetOne() (obj proto.Message) {
 // Range ranges over the objects in the container.
 func (c *SOCacheContainer) Range(cb func(id uint64, obj proto.Message) error) error {
 	var retErr error
-	c.objects.Range(func(key interface{}, value interface{}) bool {
+	c.objects.Range(func(key any, value any) bool {
 		id := key.(uint64)
 		val := value.(proto.Message)
 

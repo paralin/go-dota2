@@ -90,6 +90,14 @@ func (EProtoDebugVisiblity) EnumDescriptor() ([]byte, []int) {
 
 var file_valveextensions_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
+		ExtendedType:  (*descriptorpb.MessageOptions)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         61000,
+		Name:          "protocol.codegen_delta_encoder",
+		Tag:           "varint,61000,opt,name=codegen_delta_encoder,def=0",
+		Filename:      "valveextensions.proto",
+	},
+	{
 		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
 		ExtensionType: (*bool)(nil),
 		Field:         61000,
@@ -119,6 +127,14 @@ var file_valveextensions_proto_extTypes = []protoimpl.ExtensionInfo{
 		Field:         61003,
 		Name:          "protocol.delta_ignore",
 		Tag:           "varint,61003,opt,name=delta_ignore,def=0",
+		Filename:      "valveextensions.proto",
+	},
+	{
+		ExtendedType:  (*descriptorpb.FieldOptions)(nil),
+		ExtensionType: (*int32)(nil),
+		Field:         61008,
+		Name:          "protocol.untrusted_delta_max",
+		Tag:           "varint,61008,opt,name=untrusted_delta_max,def=256",
 		Filename:      "valveextensions.proto",
 	},
 	{
@@ -179,34 +195,42 @@ var file_valveextensions_proto_extTypes = []protoimpl.ExtensionInfo{
 	},
 }
 
+// Extension fields to descriptorpb.MessageOptions.
+var (
+	// optional bool codegen_delta_encoder = 61000;
+	E_CodegenDeltaEncoder = &file_valveextensions_proto_extTypes[0]
+)
+
 // Extension fields to descriptorpb.FieldOptions.
 var (
 	// optional bool valve_map_field = 61000;
-	E_ValveMapField = &file_valveextensions_proto_extTypes[0]
+	E_ValveMapField = &file_valveextensions_proto_extTypes[1]
 	// optional bool valve_map_key = 61001;
-	E_ValveMapKey = &file_valveextensions_proto_extTypes[1]
+	E_ValveMapKey = &file_valveextensions_proto_extTypes[2]
 	// optional int32 diff_encode_field = 61002;
-	E_DiffEncodeField = &file_valveextensions_proto_extTypes[2]
+	E_DiffEncodeField = &file_valveextensions_proto_extTypes[3]
 	// optional bool delta_ignore = 61003;
-	E_DeltaIgnore = &file_valveextensions_proto_extTypes[3]
+	E_DeltaIgnore = &file_valveextensions_proto_extTypes[4]
+	// optional int32 untrusted_delta_max = 61008;
+	E_UntrustedDeltaMax = &file_valveextensions_proto_extTypes[5]
 	// optional uint32 steamml_max_entries = 61004;
-	E_SteammlMaxEntries = &file_valveextensions_proto_extTypes[4]
+	E_SteammlMaxEntries = &file_valveextensions_proto_extTypes[6]
 	// optional bool steamml_is_timestamp = 61005;
-	E_SteammlIsTimestamp = &file_valveextensions_proto_extTypes[5]
+	E_SteammlIsTimestamp = &file_valveextensions_proto_extTypes[7]
 	// optional uint32 steamlearn_count = 61006;
-	E_SteamlearnCount = &file_valveextensions_proto_extTypes[6]
+	E_SteamlearnCount = &file_valveextensions_proto_extTypes[8]
 	// optional protocol.EProtoDebugVisiblity debugprint_visibility = 61007;
-	E_DebugprintVisibility = &file_valveextensions_proto_extTypes[7]
+	E_DebugprintVisibility = &file_valveextensions_proto_extTypes[9]
 )
 
 // Extension fields to descriptorpb.EnumValueOptions.
 var (
 	// optional string schema_friendly_name = 1000;
-	E_SchemaFriendlyName = &file_valveextensions_proto_extTypes[8]
+	E_SchemaFriendlyName = &file_valveextensions_proto_extTypes[10]
 	// optional string schema_description = 1001;
-	E_SchemaDescription = &file_valveextensions_proto_extTypes[9]
+	E_SchemaDescription = &file_valveextensions_proto_extTypes[11]
 	// optional bool schema_suppress_enumerator = 1002;
-	E_SchemaSuppressEnumerator = &file_valveextensions_proto_extTypes[10]
+	E_SchemaSuppressEnumerator = &file_valveextensions_proto_extTypes[12]
 )
 
 var File_valveextensions_proto protoreflect.FileDescriptor
@@ -219,11 +243,13 @@ const file_valveextensions_proto_rawDesc = "" +
 	"\x1ek_EProtoDebugVisibility_Server\x10F\x12'\n" +
 	"#k_EProtoDebugVisibility_ValveServer\x10P\x12\x1e\n" +
 	"\x1ak_EProtoDebugVisibility_GC\x10Z\x12!\n" +
-	"\x1dk_EProtoDebugVisibility_Never\x10d:N\n" +
+	"\x1dk_EProtoDebugVisibility_Never\x10d:\\\n" +
+	"\x15codegen_delta_encoder\x12\x1f.google.protobuf.MessageOptions\x18\xc8\xdc\x03 \x01(\b:\x05falseR\x13codegenDeltaEncoder:N\n" +
 	"\x0fvalve_map_field\x12\x1d.google.protobuf.FieldOptions\x18\xc8\xdc\x03 \x01(\b:\x05falseR\rvalveMapField:J\n" +
 	"\rvalve_map_key\x12\x1d.google.protobuf.FieldOptions\x18\xc9\xdc\x03 \x01(\b:\x05falseR\vvalveMapKey:N\n" +
 	"\x11diff_encode_field\x12\x1d.google.protobuf.FieldOptions\x18\xca\xdc\x03 \x01(\x05:\x010R\x0fdiffEncodeField:I\n" +
-	"\fdelta_ignore\x12\x1d.google.protobuf.FieldOptions\x18\xcb\xdc\x03 \x01(\b:\x05falseR\vdeltaIgnore:R\n" +
+	"\fdelta_ignore\x12\x1d.google.protobuf.FieldOptions\x18\xcb\xdc\x03 \x01(\b:\x05falseR\vdeltaIgnore:T\n" +
+	"\x13untrusted_delta_max\x12\x1d.google.protobuf.FieldOptions\x18\xd0\xdc\x03 \x01(\x05:\x03256R\x11untrustedDeltaMax:R\n" +
 	"\x13steamml_max_entries\x12\x1d.google.protobuf.FieldOptions\x18\xcc\xdc\x03 \x01(\r:\x010R\x11steammlMaxEntries:X\n" +
 	"\x14steamml_is_timestamp\x12\x1d.google.protobuf.FieldOptions\x18\xcd\xdc\x03 \x01(\b:\x05falseR\x12steammlIsTimestamp:M\n" +
 	"\x10steamlearn_count\x12\x1d.google.protobuf.FieldOptions\x18\xce\xdc\x03 \x01(\r:\x010R\x0fsteamlearnCount:\x94\x01\n" +
@@ -247,26 +273,29 @@ func file_valveextensions_proto_rawDescGZIP() []byte {
 var file_valveextensions_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_valveextensions_proto_goTypes = []any{
 	(EProtoDebugVisiblity)(0),             // 0: protocol.EProtoDebugVisiblity
-	(*descriptorpb.FieldOptions)(nil),     // 1: google.protobuf.FieldOptions
-	(*descriptorpb.EnumValueOptions)(nil), // 2: google.protobuf.EnumValueOptions
+	(*descriptorpb.MessageOptions)(nil),   // 1: google.protobuf.MessageOptions
+	(*descriptorpb.FieldOptions)(nil),     // 2: google.protobuf.FieldOptions
+	(*descriptorpb.EnumValueOptions)(nil), // 3: google.protobuf.EnumValueOptions
 }
 var file_valveextensions_proto_depIdxs = []int32{
-	1,  // 0: protocol.valve_map_field:extendee -> google.protobuf.FieldOptions
-	1,  // 1: protocol.valve_map_key:extendee -> google.protobuf.FieldOptions
-	1,  // 2: protocol.diff_encode_field:extendee -> google.protobuf.FieldOptions
-	1,  // 3: protocol.delta_ignore:extendee -> google.protobuf.FieldOptions
-	1,  // 4: protocol.steamml_max_entries:extendee -> google.protobuf.FieldOptions
-	1,  // 5: protocol.steamml_is_timestamp:extendee -> google.protobuf.FieldOptions
-	1,  // 6: protocol.steamlearn_count:extendee -> google.protobuf.FieldOptions
-	1,  // 7: protocol.debugprint_visibility:extendee -> google.protobuf.FieldOptions
-	2,  // 8: protocol.schema_friendly_name:extendee -> google.protobuf.EnumValueOptions
-	2,  // 9: protocol.schema_description:extendee -> google.protobuf.EnumValueOptions
-	2,  // 10: protocol.schema_suppress_enumerator:extendee -> google.protobuf.EnumValueOptions
-	0,  // 11: protocol.debugprint_visibility:type_name -> protocol.EProtoDebugVisiblity
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	11, // [11:12] is the sub-list for extension type_name
-	0,  // [0:11] is the sub-list for extension extendee
+	1,  // 0: protocol.codegen_delta_encoder:extendee -> google.protobuf.MessageOptions
+	2,  // 1: protocol.valve_map_field:extendee -> google.protobuf.FieldOptions
+	2,  // 2: protocol.valve_map_key:extendee -> google.protobuf.FieldOptions
+	2,  // 3: protocol.diff_encode_field:extendee -> google.protobuf.FieldOptions
+	2,  // 4: protocol.delta_ignore:extendee -> google.protobuf.FieldOptions
+	2,  // 5: protocol.untrusted_delta_max:extendee -> google.protobuf.FieldOptions
+	2,  // 6: protocol.steamml_max_entries:extendee -> google.protobuf.FieldOptions
+	2,  // 7: protocol.steamml_is_timestamp:extendee -> google.protobuf.FieldOptions
+	2,  // 8: protocol.steamlearn_count:extendee -> google.protobuf.FieldOptions
+	2,  // 9: protocol.debugprint_visibility:extendee -> google.protobuf.FieldOptions
+	3,  // 10: protocol.schema_friendly_name:extendee -> google.protobuf.EnumValueOptions
+	3,  // 11: protocol.schema_description:extendee -> google.protobuf.EnumValueOptions
+	3,  // 12: protocol.schema_suppress_enumerator:extendee -> google.protobuf.EnumValueOptions
+	0,  // 13: protocol.debugprint_visibility:type_name -> protocol.EProtoDebugVisiblity
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	13, // [13:14] is the sub-list for extension type_name
+	0,  // [0:13] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -282,7 +311,7 @@ func file_valveextensions_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_valveextensions_proto_rawDesc), len(file_valveextensions_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   0,
-			NumExtensions: 11,
+			NumExtensions: 13,
 			NumServices:   0,
 		},
 		GoTypes:           file_valveextensions_proto_goTypes,

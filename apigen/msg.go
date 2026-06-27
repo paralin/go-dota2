@@ -1,7 +1,7 @@
 package main
 
 import (
-	"sort"
+	"slices"
 
 	dota_gcmessages_msgid "github.com/paralin/go-dota2/protocol"
 )
@@ -19,8 +19,6 @@ func getSortedMsgIDs() []dota_gcmessages_msgid.EDOTAGCMsg {
 		msgIds = append(msgIds, msgID)
 	}
 
-	sort.Slice(msgIds, func(i int, j int) bool {
-		return msgIds[i] < msgIds[j]
-	})
+	slices.Sort(msgIds)
 	return msgIds
 }

@@ -114,8 +114,8 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 			}
 			fmt.Fprintf(clientOutput, ",\n")
 		} else {
-			for i := 0; i < reqDs.NumFields(); i++ {
-				reqField := reqDs.Field(i)
+			for reqField := range reqDs.Fields() {
+				reqField := reqField
 				if !reqField.Exported() {
 					continue
 				}

@@ -26,12 +26,10 @@ const (
 type EGCPlatform int32
 
 const (
-	EGCPlatform_k_eGCPlatform_None    EGCPlatform = 0
-	EGCPlatform_k_eGCPlatform_PC      EGCPlatform = 1
-	EGCPlatform_k_eGCPlatform_Mac     EGCPlatform = 2
-	EGCPlatform_k_eGCPlatform_Linux   EGCPlatform = 3
-	EGCPlatform_k_eGCPlatform_Android EGCPlatform = 4
-	EGCPlatform_k_eGCPlatform_iOS     EGCPlatform = 5
+	EGCPlatform_k_eGCPlatform_None  EGCPlatform = 0
+	EGCPlatform_k_eGCPlatform_PC    EGCPlatform = 1
+	EGCPlatform_k_eGCPlatform_Mac   EGCPlatform = 2
+	EGCPlatform_k_eGCPlatform_Linux EGCPlatform = 3
 )
 
 // Enum value maps for EGCPlatform.
@@ -41,16 +39,12 @@ var (
 		1: "k_eGCPlatform_PC",
 		2: "k_eGCPlatform_Mac",
 		3: "k_eGCPlatform_Linux",
-		4: "k_eGCPlatform_Android",
-		5: "k_eGCPlatform_iOS",
 	}
 	EGCPlatform_value = map[string]int32{
-		"k_eGCPlatform_None":    0,
-		"k_eGCPlatform_PC":      1,
-		"k_eGCPlatform_Mac":     2,
-		"k_eGCPlatform_Linux":   3,
-		"k_eGCPlatform_Android": 4,
-		"k_eGCPlatform_iOS":     5,
+		"k_eGCPlatform_None":  0,
+		"k_eGCPlatform_PC":    1,
+		"k_eGCPlatform_Mac":   2,
+		"k_eGCPlatform_Linux": 3,
 	}
 )
 
@@ -915,14 +909,12 @@ const file_steammessages_proto_rawDesc = "" +
 	"\x05state\x18\x05 \x01(\tR\x05state\x12\x12\n" +
 	"\x04city\x18\x06 \x01(\tR\x04city\"N\n" +
 	"\x1bCGCMsgGetIPLocationResponse\x12/\n" +
-	"\x05infos\x18\x01 \x03(\v2\x19.protocol.CIPLocationInfoR\x05infos*\x9d\x01\n" +
+	"\x05infos\x18\x01 \x03(\v2\x19.protocol.CIPLocationInfoR\x05infos*k\n" +
 	"\vEGCPlatform\x12\x16\n" +
 	"\x12k_eGCPlatform_None\x10\x00\x12\x14\n" +
 	"\x10k_eGCPlatform_PC\x10\x01\x12\x15\n" +
 	"\x11k_eGCPlatform_Mac\x10\x02\x12\x17\n" +
-	"\x13k_eGCPlatform_Linux\x10\x03\x12\x19\n" +
-	"\x15k_eGCPlatform_Android\x10\x04\x12\x15\n" +
-	"\x11k_eGCPlatform_iOS\x10\x05*\xdb\x01\n" +
+	"\x13k_eGCPlatform_Linux\x10\x03*\xdb\x01\n" +
 	"\x10GCProtoBufMsgSrc\x12 \n" +
 	"\x1cGCProtoBufMsgSrc_Unspecified\x10\x00\x12\x1f\n" +
 	"\x1bGCProtoBufMsgSrc_FromSystem\x10\x01\x12 \n" +

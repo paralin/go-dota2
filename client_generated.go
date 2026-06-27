@@ -431,6 +431,79 @@ func (d *Dota2) ClaimOverworldEncounterReward(
 	)
 }
 
+// ClaimOverworldFortunePermanentReward claims a overworld fortune permanent reward.
+// Request ID: k_EMsgClientToGCOverworldClaimFortunePermanentReward
+// Response ID: k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse
+// Request type: CMsgClientToGCOverworldClaimFortunePermanentReward
+// Response type: CMsgClientToGCOverworldClaimFortunePermanentRewardResponse
+func (d *Dota2) ClaimOverworldFortunePermanentReward(
+	ctx context.Context,
+	overworldID uint32,
+	fortuneID uint32,
+) (*protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldClaimFortunePermanentReward{
+		OverworldId: &overworldID,
+		FortuneId:   &fortuneID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldClaimFortunePermanentRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortunePermanentReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse),
+		resp,
+	)
+}
+
+// ClaimOverworldFortuneReward claims a overworld fortune reward.
+// Request ID: k_EMsgClientToGCOverworldClaimFortuneReward
+// Response ID: k_EMsgClientToGCOverworldClaimFortuneRewardResponse
+// Request type: CMsgClientToGCOverworldClaimFortuneReward
+// Response type: CMsgClientToGCOverworldClaimFortuneRewardResponse
+func (d *Dota2) ClaimOverworldFortuneReward(
+	ctx context.Context,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldClaimFortuneReward{
+		OverworldId: &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldClaimFortuneRewardResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneReward),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneRewardResponse),
+		resp,
+	)
+}
+
+// ClaimOverworldFortuneTellerStoryNode claims a overworld fortune teller story node.
+// Request ID: k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode
+// Response ID: k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse
+// Request type: CMsgClientToGCOverworldClaimFortuneTellerStoryNode
+// Response type: CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse
+func (d *Dota2) ClaimOverworldFortuneTellerStoryNode(
+	ctx context.Context,
+	overworldID uint32,
+	storyNodeID uint32,
+) (*protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNode{
+		OverworldId: &overworldID,
+		StoryNodeId: &storyNodeID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse),
+		resp,
+	)
+}
+
 // ClaimSwag claims a swag.
 // Request ID: k_EMsgClientToGCClaimSwag
 // Response ID: k_EMsgGCToClientClaimSwagResponse
@@ -1808,6 +1881,29 @@ func (d *Dota2) GrantDevEventPoints(
 	)
 }
 
+// GrantDevOverworldFortuneTellerCoin grants a dev overworld fortune teller coin.
+// Request ID: k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin
+// Response ID: k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse
+// Request type: CMsgClientToGCOverworldDevGrantFortuneTellerCoin
+// Response type: CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse
+func (d *Dota2) GrantDevOverworldFortuneTellerCoin(
+	ctx context.Context,
+	overworldID uint32,
+) (*protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse, error) {
+	req := &protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoin{
+		OverworldId: &overworldID,
+	}
+	resp := &protocol.CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse),
+		resp,
+	)
+}
+
 // GrantDevOverworldTokens grants dev overworld tokens.
 // Request ID: k_EMsgClientToGCOverworldDevGrantTokens
 // Response ID: k_EMsgClientToGCOverworldDevGrantTokensResponse
@@ -2469,6 +2565,20 @@ func (d *Dota2) ListLobbySpectator(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSpectatorLobbyListResponse),
 		resp,
 	)
+}
+
+// ListOverworldFortuneLobby lists a overworld fortune lobby.
+// Request ID: k_EMsgLobbyOverworldFortuneList
+// Request type: CMsgLobbyOverworldFortuneList
+func (d *Dota2) ListOverworldFortuneLobby(
+	accountID []uint32,
+	fortune []*protocol.CMsgOverworldFortune,
+) {
+	req := &protocol.CMsgLobbyOverworldFortuneList{
+		AccountId: accountID,
+		Fortune:   fortune,
+	}
+	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgLobbyOverworldFortuneList), req)
 }
 
 // ListTrophies lists trophies.
@@ -4896,6 +5006,56 @@ func (d *Dota2) SelectCompendiumInGamePrediction(
 	)
 }
 
+// SelectCraftingFantasyGlobalPrefix selects a crafting fantasy global prefix.
+// Request ID: k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix
+// Response ID: k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
+// Request type: CMsgClientToGCFantasyCraftingSelectGlobalPrefix
+// Response type: CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
+func (d *Dota2) SelectCraftingFantasyGlobalPrefix(
+	ctx context.Context,
+	fantasyLeague uint32,
+	prefix uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefix{
+		FantasyLeague: &fantasyLeague,
+		Prefix:        &prefix,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse),
+		resp,
+	)
+}
+
+// SelectCraftingFantasyGlobalSuffix selects a crafting fantasy global suffix.
+// Request ID: k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix
+// Response ID: k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
+// Request type: CMsgClientToGCFantasyCraftingSelectGlobalSuffix
+// Response type: CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
+func (d *Dota2) SelectCraftingFantasyGlobalSuffix(
+	ctx context.Context,
+	fantasyLeague uint32,
+	suffix uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffix{
+		FantasyLeague: &fantasyLeague,
+		Suffix:        &suffix,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse),
+		resp,
+	)
+}
+
 // SelectCraftingFantasyPlayer selects a crafting fantasy player.
 // Request ID: k_EMsgClientToGCFantasyCraftingSelectPlayer
 // Response ID: k_EMsgClientToGCFantasyCraftingSelectPlayerResponse
@@ -4917,6 +5077,33 @@ func (d *Dota2) SelectCraftingFantasyPlayer(
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayer),
 		req,
 		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectPlayerResponse),
+		resp,
+	)
+}
+
+// SelectCraftingFantasyTeam selects a crafting fantasy team.
+// Request ID: k_EMsgClientToGCFantasyCraftingSelectTeam
+// Response ID: k_EMsgClientToGCFantasyCraftingSelectTeamResponse
+// Request type: CMsgClientToGCFantasyCraftingSelectTeam
+// Response type: CMsgClientToGCFantasyCraftingSelectTeamResponse
+func (d *Dota2) SelectCraftingFantasyTeam(
+	ctx context.Context,
+	fantasyLeague uint32,
+	role protocol.Fantasy_Roles,
+	teamID uint32,
+) (*protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse, error) {
+	req := &protocol.CMsgClientToGCFantasyCraftingSelectTeam{
+		FantasyLeague: &fantasyLeague,
+		Role:          &role,
+		TeamId:        &teamID,
+	}
+	resp := &protocol.CMsgClientToGCFantasyCraftingSelectTeamResponse{}
+
+	return resp, d.MakeRequest(
+		ctx,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectTeam),
+		req,
+		uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCFantasyCraftingSelectTeamResponse),
 		resp,
 	)
 }
@@ -5653,10 +5840,12 @@ func (d *Dota2) SendFantasyCraftingGenerateTablets(
 	ctx context.Context,
 	fantasyLeague uint32,
 	accountIDs []uint32,
+	selectedTeams []*protocol.CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice,
 ) (*protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse, error) {
 	req := &protocol.CMsgClientToGCFantasyCraftingGenerateTablets{
 		FantasyLeague: &fantasyLeague,
 		AccountIds:    accountIDs,
+		SelectedTeams: selectedTeams,
 	}
 	resp := &protocol.CMsgClientToGCFantasyCraftingGenerateTabletsResponse{}
 
@@ -6229,10 +6418,14 @@ func (d *Dota2) SendOverworldCompletePath(
 	ctx context.Context,
 	overworldID uint32,
 	pathID uint32,
+	usePathUnlocker bool,
+	devIgnoreReleaseSchedule bool,
 ) (*protocol.CMsgClientToGCOverworldCompletePathResponse, error) {
 	req := &protocol.CMsgClientToGCOverworldCompletePath{
-		OverworldId: &overworldID,
-		PathId:      &pathID,
+		OverworldId:              &overworldID,
+		PathId:                   &pathID,
+		UsePathUnlocker:          &usePathUnlocker,
+		DevIgnoreReleaseSchedule: &devIgnoreReleaseSchedule,
 	}
 	resp := &protocol.CMsgClientToGCOverworldCompletePathResponse{}
 
