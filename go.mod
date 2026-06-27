@@ -2,10 +2,11 @@ module github.com/paralin/go-dota2
 
 go 1.25
 
+require github.com/paralin/go-steam v0.0.0-20260627093619-6b06e91640b1 // master
+
 require (
 	github.com/fatih/camelcase v1.0.0
 	github.com/golang/protobuf v1.5.4
-	github.com/paralin/go-steam v0.0.0-20260416001652-4b80b1117268
 	github.com/pkg/errors v0.9.1
 	github.com/serenize/snaker v0.0.0-20201027110005-a7ad2135616e
 	github.com/sirupsen/logrus v1.9.4
@@ -14,6 +15,7 @@ require (
 )
 
 require (
+	github.com/aperturerobotics/protobuf-go-lite v0.14.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.7 // indirect
 	github.com/onsi/ginkgo v1.16.5 // indirect
 	github.com/onsi/gomega v1.39.1 // indirect
