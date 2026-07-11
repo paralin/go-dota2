@@ -4,7 +4,7 @@
   "toolVersions": "protoc=embedded,protobuf-go-lite=v0.14.0,starpc=v0.49.18",
   "packages": {
     "github.com/paralin/go-dota2/protocol": {
-      "hash": "b834dca9936a138576e5d9041ffd0de8fc319190ecb3b30761e880ddb399a5ba",
+      "hash": "a97777b0c7a05c4c5ccf505b2949cf30991f67c780062a8f8b2af6a7d5dcefa5",
       "generatedFiles": [
         "protocol/base_gcmessages.pb.go",
         "protocol/dota_client_enums.pb.go",

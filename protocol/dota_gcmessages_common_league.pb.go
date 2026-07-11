@@ -972,6 +972,7 @@ type CMsgDOTALeagueNode_MatchDetails struct {
 	unknownFields []byte
 	MatchId       *uint64 `protobuf:"varint,1,opt,name=match_id,json=matchId" json:"matchId,omitempty"`
 	WinningTeamId *uint32 `protobuf:"varint,2,opt,name=winning_team_id,json=winningTeamId" json:"winningTeamId,omitempty"`
+	Duration      *uint32 `protobuf:"varint,3,opt,name=duration" json:"duration,omitempty"`
 }
 
 func (x *CMsgDOTALeagueNode_MatchDetails) Reset() {
@@ -990,6 +991,13 @@ func (x *CMsgDOTALeagueNode_MatchDetails) GetMatchId() uint64 {
 func (x *CMsgDOTALeagueNode_MatchDetails) GetWinningTeamId() uint32 {
 	if x != nil && x.WinningTeamId != nil {
 		return *x.WinningTeamId
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNode_MatchDetails) GetDuration() uint32 {
+	if x != nil && x.Duration != nil {
+		return *x.Duration
 	}
 	return 0
 }
@@ -1045,6 +1053,7 @@ type CMsgDOTALeagueNodeGroup_TeamStanding struct {
 	TiebreakOpponentMatchWins  *uint32 `protobuf:"varint,16,opt,name=tiebreak_opponent_match_wins,json=tiebreakOpponentMatchWins" json:"tiebreakOpponentMatchWins,omitempty"`
 	TiebreakOpponentGameWinPct *uint32 `protobuf:"varint,17,opt,name=tiebreak_opponent_game_win_pct,json=tiebreakOpponentGameWinPct" json:"tiebreakOpponentGameWinPct,omitempty"`
 	TiebreakCoinflip           *uint32 `protobuf:"varint,18,opt,name=tiebreak_coinflip,json=tiebreakCoinflip" json:"tiebreakCoinflip,omitempty"`
+	TiebereakAverageGameLength *uint32 `protobuf:"varint,19,opt,name=tiebereak_average_game_length,json=tiebereakAverageGameLength" json:"tiebereakAverageGameLength,omitempty"`
 }
 
 func (x *CMsgDOTALeagueNodeGroup_TeamStanding) Reset() {
@@ -1154,6 +1163,13 @@ func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakOpponentGameWinPct() u
 func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebreakCoinflip() uint32 {
 	if x != nil && x.TiebreakCoinflip != nil {
 		return *x.TiebreakCoinflip
+	}
+	return 0
+}
+
+func (x *CMsgDOTALeagueNodeGroup_TeamStanding) GetTiebereakAverageGameLength() uint32 {
+	if x != nil && x.TiebereakAverageGameLength != nil {
+		return *x.TiebereakAverageGameLength
 	}
 	return 0
 }
@@ -2300,6 +2316,10 @@ func (m *CMsgDOTALeagueNode_MatchDetails) CloneVT() *CMsgDOTALeagueNode_MatchDet
 		tmpVal := *rhs
 		r.WinningTeamId = &tmpVal
 	}
+	if rhs := m.Duration; rhs != nil {
+		tmpVal := *rhs
+		r.Duration = &tmpVal
+	}
 	if len(m.unknownFields) > 0 {
 		r.unknownFields = slices.Clone(m.unknownFields)
 	}
@@ -2499,6 +2519,10 @@ func (m *CMsgDOTALeagueNodeGroup_TeamStanding) CloneVT() *CMsgDOTALeagueNodeGrou
 	if rhs := m.TiebreakCoinflip; rhs != nil {
 		tmpVal := *rhs
 		r.TiebreakCoinflip = &tmpVal
+	}
+	if rhs := m.TiebereakAverageGameLength; rhs != nil {
+		tmpVal := *rhs
+		r.TiebereakAverageGameLength = &tmpVal
 	}
 	if len(m.unknownFields) > 0 {
 		r.unknownFields = slices.Clone(m.unknownFields)
@@ -3770,6 +3794,9 @@ func (this *CMsgDOTALeagueNode_MatchDetails) EqualVT(that *CMsgDOTALeagueNode_Ma
 	if p, q := this.WinningTeamId, that.WinningTeamId; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
 		return false
 	}
+	if p, q := this.Duration, that.Duration; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
+		return false
+	}
 	return string(this.unknownFields) == string(that.unknownFields)
 }
 
@@ -3967,6 +3994,9 @@ func (this *CMsgDOTALeagueNodeGroup_TeamStanding) EqualVT(that *CMsgDOTALeagueNo
 		return false
 	}
 	if p, q := this.TiebreakCoinflip, that.TiebreakCoinflip; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
+		return false
+	}
+	if p, q := this.TiebereakAverageGameLength, that.TiebereakAverageGameLength; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
 		return false
 	}
 	return string(this.unknownFields) == string(that.unknownFields)
@@ -5485,6 +5515,11 @@ func (m *CMsgDOTALeagueNode_MatchDetails) MarshalToSizedBufferVT(dAtA []byte) (i
 		i -= len(m.unknownFields)
 		copy(dAtA[i:], m.unknownFields)
 	}
+	if m.Duration != nil {
+		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.Duration))
+		i--
+		dAtA[i] = 0x18
+	}
 	if m.WinningTeamId != nil {
 		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.WinningTeamId))
 		i--
@@ -5748,6 +5783,13 @@ func (m *CMsgDOTALeagueNodeGroup_TeamStanding) MarshalToSizedBufferVT(dAtA []byt
 	if m.unknownFields != nil {
 		i -= len(m.unknownFields)
 		copy(dAtA[i:], m.unknownFields)
+	}
+	if m.TiebereakAverageGameLength != nil {
+		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.TiebereakAverageGameLength))
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0x98
 	}
 	if m.TiebreakCoinflip != nil {
 		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.TiebreakCoinflip))
@@ -8155,6 +8197,9 @@ func (m *CMsgDOTALeagueNode_MatchDetails) SizeVT() (n int) {
 	if m.WinningTeamId != nil {
 		n += 1 + protobuf_go_lite.SizeOfVarint(uint64(*m.WinningTeamId))
 	}
+	if m.Duration != nil {
+		n += 1 + protobuf_go_lite.SizeOfVarint(uint64(*m.Duration))
+	}
 	n += len(m.unknownFields)
 	return n
 }
@@ -8312,6 +8357,9 @@ func (m *CMsgDOTALeagueNodeGroup_TeamStanding) SizeVT() (n int) {
 	}
 	if m.TiebreakCoinflip != nil {
 		n += 2 + protobuf_go_lite.SizeOfVarint(uint64(*m.TiebreakCoinflip))
+	}
+	if m.TiebereakAverageGameLength != nil {
+		n += 2 + protobuf_go_lite.SizeOfVarint(uint64(*m.TiebereakAverageGameLength))
 	}
 	n += len(m.unknownFields)
 	return n
@@ -9326,6 +9374,13 @@ func (x *CMsgDOTALeagueNode_MatchDetails) MarshalProtoText() string {
 		sb.WriteString("winning_team_id: ")
 		sb.WriteString(strconv.FormatUint(uint64(*x.WinningTeamId), 10))
 	}
+	if x.Duration != nil {
+		if sb.Len() > 14 {
+			sb.WriteString(" ")
+		}
+		sb.WriteString("duration: ")
+		sb.WriteString(strconv.FormatUint(uint64(*x.Duration), 10))
+	}
 	sb.WriteString("}")
 	return sb.String()
 }
@@ -9652,6 +9707,13 @@ func (x *CMsgDOTALeagueNodeGroup_TeamStanding) MarshalProtoText() string {
 		}
 		sb.WriteString("tiebreak_coinflip: ")
 		sb.WriteString(strconv.FormatUint(uint64(*x.TiebreakCoinflip), 10))
+	}
+	if x.TiebereakAverageGameLength != nil {
+		if sb.Len() > 14 {
+			sb.WriteString(" ")
+		}
+		sb.WriteString("tiebereak_average_game_length: ")
+		sb.WriteString(strconv.FormatUint(uint64(*x.TiebereakAverageGameLength), 10))
 	}
 	sb.WriteString("}")
 	return sb.String()
@@ -11626,6 +11688,16 @@ func (m *CMsgDOTALeagueNode_MatchDetails) UnmarshalVT(dAtA []byte) error {
 				return err
 			}
 			m.WinningTeamId = &v
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Duration", wireType)
+			}
+			var v uint32
+			v, iNdEx, err = protobuf_go_lite.DecodeVarintUint32(dAtA, iNdEx)
+			if err != nil {
+				return err
+			}
+			m.Duration = &v
 		default:
 			iNdEx = preIndex
 			skippy, err := protobuf_go_lite.Skip(dAtA[iNdEx:])
@@ -12294,6 +12366,16 @@ func (m *CMsgDOTALeagueNodeGroup_TeamStanding) UnmarshalVT(dAtA []byte) error {
 				return err
 			}
 			m.TiebreakCoinflip = &v
+		case 19:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TiebereakAverageGameLength", wireType)
+			}
+			var v uint32
+			v, iNdEx, err = protobuf_go_lite.DecodeVarintUint32(dAtA, iNdEx)
+			if err != nil {
+				return err
+			}
+			m.TiebereakAverageGameLength = &v
 		default:
 			iNdEx = preIndex
 			skippy, err := protobuf_go_lite.Skip(dAtA[iNdEx:])

@@ -1059,13 +1059,15 @@ func (x CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse_EResponse) Stri
 type CMsgClientToGCOverworldRequestFortuneResponse_EResponse int32
 
 const (
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eInternalError    CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 0
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eSuccess          CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 1
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eTooBusy          CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 2
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eDisabled         CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 3
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eTimeout          CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 4
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eNotAllowed       CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 5
-	CMsgClientToGCOverworldRequestFortuneResponse_k_eInvalidOverworld CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 6
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eInternalError          CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 0
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eSuccess                CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 1
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eTooBusy                CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 2
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eDisabled               CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 3
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eTimeout                CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 4
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eNotAllowed             CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 5
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eInvalidOverworld       CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 6
+	CMsgClientToGCOverworldRequestFortuneResponse_k_eNotEnoughPoints        CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 7
+	CMsgClientToGCOverworldRequestFortuneResponse_k_ePendingRewardAvailable CMsgClientToGCOverworldRequestFortuneResponse_EResponse = 8
 )
 
 // Enum value maps for CMsgClientToGCOverworldRequestFortuneResponse_EResponse.
@@ -1078,15 +1080,19 @@ var (
 		4: "k_eTimeout",
 		5: "k_eNotAllowed",
 		6: "k_eInvalidOverworld",
+		7: "k_eNotEnoughPoints",
+		8: "k_ePendingRewardAvailable",
 	}
 	CMsgClientToGCOverworldRequestFortuneResponse_EResponse_value = map[string]int32{
-		"k_eInternalError":    0,
-		"k_eSuccess":          1,
-		"k_eTooBusy":          2,
-		"k_eDisabled":         3,
-		"k_eTimeout":          4,
-		"k_eNotAllowed":       5,
-		"k_eInvalidOverworld": 6,
+		"k_eInternalError":          0,
+		"k_eSuccess":                1,
+		"k_eTooBusy":                2,
+		"k_eDisabled":               3,
+		"k_eTimeout":                4,
+		"k_eNotAllowed":             5,
+		"k_eInvalidOverworld":       6,
+		"k_eNotEnoughPoints":        7,
+		"k_ePendingRewardAvailable": 8,
 	}
 )
 
@@ -1832,6 +1838,7 @@ type CMsgOverworldUserData struct {
 	MinigameData      []*CMsgOverworldUserData_MinigameDataEntry `protobuf:"bytes,5,rep,name=minigame_data,json=minigameData" json:"minigameData,omitempty"`
 	CurrentFortune    *CMsgOverworldFortune                      `protobuf:"bytes,6,opt,name=current_fortune,json=currentFortune" json:"currentFortune,omitempty"`
 	LastRelatedHeroId *int32                                     `protobuf:"varint,7,opt,name=last_related_hero_id,json=lastRelatedHeroId" json:"lastRelatedHeroId,omitempty"`
+	OverworldVersion  *uint32                                    `protobuf:"varint,8,opt,name=overworld_version,json=overworldVersion" json:"overworldVersion,omitempty"`
 }
 
 func (x *CMsgOverworldUserData) Reset() {
@@ -1885,6 +1892,13 @@ func (x *CMsgOverworldUserData) GetCurrentFortune() *CMsgOverworldFortune {
 func (x *CMsgOverworldUserData) GetLastRelatedHeroId() int32 {
 	if x != nil && x.LastRelatedHeroId != nil {
 		return *x.LastRelatedHeroId
+	}
+	return 0
+}
+
+func (x *CMsgOverworldUserData) GetOverworldVersion() uint32 {
+	if x != nil && x.OverworldVersion != nil {
+		return *x.OverworldVersion
 	}
 	return 0
 }
@@ -3902,6 +3916,10 @@ func (m *CMsgOverworldUserData) CloneVT() *CMsgOverworldUserData {
 		tmpVal := *rhs
 		r.LastRelatedHeroId = &tmpVal
 	}
+	if rhs := m.OverworldVersion; rhs != nil {
+		tmpVal := *rhs
+		r.OverworldVersion = &tmpVal
+	}
 	if len(m.unknownFields) > 0 {
 		r.unknownFields = slices.Clone(m.unknownFields)
 	}
@@ -5634,6 +5652,9 @@ func (this *CMsgOverworldUserData) EqualVT(that *CMsgOverworldUserData) bool {
 		return false
 	}
 	if p, q := this.LastRelatedHeroId, that.LastRelatedHeroId; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
+		return false
+	}
+	if p, q := this.OverworldVersion, that.OverworldVersion; (p == nil && q != nil) || (p != nil && (q == nil || *p != *q)) {
 		return false
 	}
 	return string(this.unknownFields) == string(that.unknownFields)
@@ -7781,6 +7802,11 @@ func (m *CMsgOverworldUserData) MarshalToSizedBufferVT(dAtA []byte) (int, error)
 	if m.unknownFields != nil {
 		i -= len(m.unknownFields)
 		copy(dAtA[i:], m.unknownFields)
+	}
+	if m.OverworldVersion != nil {
+		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.OverworldVersion))
+		i--
+		dAtA[i] = 0x40
 	}
 	if m.LastRelatedHeroId != nil {
 		i = protobuf_go_lite.EncodeVarint(dAtA, i, uint64(*m.LastRelatedHeroId))
@@ -10493,6 +10519,9 @@ func (m *CMsgOverworldUserData) SizeVT() (n int) {
 	if m.LastRelatedHeroId != nil {
 		n += 1 + protobuf_go_lite.SizeOfVarint(uint64(*m.LastRelatedHeroId))
 	}
+	if m.OverworldVersion != nil {
+		n += 1 + protobuf_go_lite.SizeOfVarint(uint64(*m.OverworldVersion))
+	}
 	n += len(m.unknownFields)
 	return n
 }
@@ -11985,6 +12014,13 @@ func (x *CMsgOverworldUserData) MarshalProtoText() string {
 		}
 		sb.WriteString("last_related_hero_id: ")
 		sb.WriteString(strconv.FormatInt(int64(*x.LastRelatedHeroId), 10))
+	}
+	if x.OverworldVersion != nil {
+		if sb.Len() > 23 {
+			sb.WriteString(" ")
+		}
+		sb.WriteString("overworld_version: ")
+		sb.WriteString(strconv.FormatUint(uint64(*x.OverworldVersion), 10))
 	}
 	sb.WriteString("}")
 	return sb.String()
@@ -15138,6 +15174,16 @@ func (m *CMsgOverworldUserData) UnmarshalVT(dAtA []byte) error {
 				return err
 			}
 			m.LastRelatedHeroId = &v
+		case 8:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field OverworldVersion", wireType)
+			}
+			var v uint32
+			v, iNdEx, err = protobuf_go_lite.DecodeVarintUint32(dAtA, iNdEx)
+			if err != nil {
+				return err
+			}
+			m.OverworldVersion = &v
 		default:
 			iNdEx = preIndex
 			skippy, err := protobuf_go_lite.Skip(dAtA[iNdEx:])

@@ -28,6 +28,7 @@ message CMsgDOTALeagueNode {
 	message MatchDetails {
 		optional uint64 match_id = 1;
 		optional uint32 winning_team_id = 2;
+		optional uint32 duration = 3;
 	}
 
 	message VOD {
@@ -75,6 +76,7 @@ message CMsgDOTALeagueNodeGroup {
 		optional uint32 tiebreak_opponent_match_wins = 16;
 		optional uint32 tiebreak_opponent_game_win_pct = 17;
 		optional uint32 tiebreak_coinflip = 18;
+		optional uint32 tiebereak_average_game_length = 19;
 	}
 
 	optional string name = 1;

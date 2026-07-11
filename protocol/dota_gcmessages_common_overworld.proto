@@ -162,6 +162,7 @@ message CMsgOverworldUserData {
 	repeated CMsgOverworldUserData.MinigameDataEntry minigame_data = 5;
 	optional CMsgOverworldFortune current_fortune = 6;
 	optional int32 last_related_hero_id = 7;
+	optional uint32 overworld_version = 8;
 }
 
 message CMsgOverworldMatchRewards {
@@ -530,6 +531,8 @@ message CMsgClientToGCOverworldRequestFortuneResponse {
 		k_eTimeout = 4;
 		k_eNotAllowed = 5;
 		k_eInvalidOverworld = 6;
+		k_eNotEnoughPoints = 7;
+		k_ePendingRewardAvailable = 8;
 	}
 
 	optional CMsgClientToGCOverworldRequestFortuneResponse.EResponse response = 1 [default = k_eInternalError];
