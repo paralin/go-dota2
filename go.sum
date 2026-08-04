@@ -15,6 +15,8 @@ github.com/aperturerobotics/protobuf-go-lite v0.14.0 h1:6YhovtoUZtXgXLHZ2VV2GCYU
 github.com/aperturerobotics/protobuf-go-lite v0.14.0/go.mod h1:lGH3s5ArCTXKI4wJdlNpaybUtwSjfAG0vdWjxOfMcF8=
 github.com/aperturerobotics/protobuf-go-lite v0.15.0 h1:Ke9pkt5zO5iQf2q7iAYsXHlCDhGeQH0cvhCTIiiWUIg=
 github.com/aperturerobotics/protobuf-go-lite v0.15.0/go.mod h1:3Ay/E7iaw2KWLirK3+dDdNJZHK0hu8Y1/kKeYeUa+8s=
+github.com/aperturerobotics/protobuf-go-lite v0.16.0 h1:McGR0jrc15ZkH8HUpAARDOtazjwqr+uYXVHrrR59K28=
+github.com/aperturerobotics/protobuf-go-lite v0.16.0/go.mod h1:3Ay/E7iaw2KWLirK3+dDdNJZHK0hu8Y1/kKeYeUa+8s=
 github.com/aperturerobotics/starpc v0.49.18/go.mod h1:5SIPOGIoUG7dLpb1NzZG2qK9l1T5oZ2454yzyMukviw=
 github.com/aperturerobotics/util v1.34.5/go.mod h1:mDe7WnncVuV7yjeeVSsagyfrw4xfncu7d+f0+d70niY=
 github.com/cpuguy83/go-md2man/v2 v2.0.7 h1:zbFlGlXEAKlwXpmvle3d8Oe3YnkKIK4xSRTd3sHPnBo=
@@ -64,6 +66,8 @@ github.com/paralin/go-steam v0.0.0-20260627093619-6b06e91640b1 h1:elw8kZSd4aBwhp
 github.com/paralin/go-steam v0.0.0-20260627093619-6b06e91640b1/go.mod h1:KBuqfbUuB30OSp5ZbPDVHR5lKUPQADt9uD9M3LPx+70=
 github.com/paralin/go-steam v0.0.0-20260627095526-9a903700fc88 h1:0cToS3J2EuEH2+w6hW5wZhKTyoGiJzT/t2rRrCSoBkQ=
 github.com/paralin/go-steam v0.0.0-20260627095526-9a903700fc88/go.mod h1:KBuqfbUuB30OSp5ZbPDVHR5lKUPQADt9uD9M3LPx+70=
+github.com/paralin/go-steam v0.0.0-20260803213908-f6a3bac7966c h1:X6mHENc9HcK60g4GMkVhuAmbC8RGJwFQj6OhSDyqJrY=
+github.com/paralin/go-steam v0.0.0-20260803213908-f6a3bac7966c/go.mod h1:dxsizUap1RMk1HAJj0Yd9hhdgKj2R1/aFlqGvd+IQNs=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
