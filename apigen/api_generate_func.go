@@ -72,7 +72,12 @@ func buildGeneratedRequestFunc(
 }
 
 // generateComment generates a comment for the method.
+// A handwritten entry in msgDocOverrides replaces the generated comment.
 func (f *generatedRequestFunc) generateComment() string {
+	if doc, ok := msgDocOverrides[f.reqMsgID]; ok {
+		return strings.ReplaceAll(strings.TrimRight(doc, "\n"), "\n", "\n// ")
+	}
+
 	purpose := "is undocumented."
 
 	words := camelcase.Split(f.methodName)
@@ -115,15 +120,18 @@ func (f *generatedRequestFunc) generateComment() string {
 		)
 	}
 
-	acA := "// Request ID: " + f.reqMsgID.String()
+	var b strings.Builder
+	fmt.Fprintf(&b, "%s %s\n//\n// ", f.methodName, purpose)
 	if f.respMsgID != 0 {
-		acA += "\n// Response ID: " + f.respMsgID.String()
+		fmt.Fprintf(&b,
+			"Sends the GC message %s (%s) and awaits the response %s,\n// delivered as *%s.",
+			f.reqMsgID.String(), f.reqType.Name(), f.respMsgID.String(), f.respType.Name(),
+		)
+	} else {
+		fmt.Fprintf(&b,
+			"Sends the GC message %s (%s). No response is tracked; any result\n// arrives through the client event stream.",
+			f.reqMsgID.String(), f.reqType.Name(),
+		)
 	}
-
-	acB := "// Request type: " + f.reqType.Name()
-	if f.respMsgID != 0 {
-		acB += "\n// Response type: " + f.respType.Name()
-	}
-
-	return fmt.Sprintf("%s %s\n%s\n%s", f.methodName, purpose, acA, acB)
+	return b.String()
 }

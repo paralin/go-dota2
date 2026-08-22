@@ -8,17 +8,14 @@ import (
 	"github.com/paralin/go-steam/steamid"
 )
 
-// AbandonLobby abandons a lobby.
-// Request ID: k_EMsgGCAbandonCurrentGame
-// Request type: CMsgAbandonCurrentGame
+// AbandonLobby abandons the current practice lobby or live game.
 func (d *Dota2) AbandonLobby() {
 	req := &protocol.CMsgAbandonCurrentGame{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame), req)
 }
 
-// AckPartyReadyCheck checks for/from a ack party ready.
-// Request ID: k_EMsgPartyReadyCheckAcknowledge
-// Request type: CMsgPartyReadyCheckAcknowledge
+// AckPartyReadyCheck acknowledges a party-wide ready check on behalf of your
+// account.
 func (d *Dota2) AckPartyReadyCheck(
 	readyStatus protocol.EReadyCheckStatus,
 ) {
@@ -29,8 +26,9 @@ func (d *Dota2) AckPartyReadyCheck(
 }
 
 // ApplyGemCombiner applys a gem combiner.
-// Request ID: k_EMsgClientToGCApplyGemCombiner
-// Request type: CMsgClientToGCApplyGemCombiner
+//
+// Sends the GC message k_EMsgClientToGCApplyGemCombiner (CMsgClientToGCApplyGemCombiner). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ApplyGemCombiner(
 	itemID1 uint64,
 	itemID2 uint64,
@@ -43,10 +41,9 @@ func (d *Dota2) ApplyGemCombiner(
 }
 
 // ApplyModerationShowcaseModeration applys a moderation showcase moderation.
-// Request ID: k_EMsgClientToGCShowcaseModerationApplyModeration
-// Response ID: k_EMsgClientToGCShowcaseModerationApplyModerationResponse
-// Request type: CMsgClientToGCShowcaseModerationApplyModeration
-// Response type: CMsgClientToGCShowcaseModerationApplyModerationResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseModerationApplyModeration (CMsgClientToGCShowcaseModerationApplyModeration) and awaits the response k_EMsgClientToGCShowcaseModerationApplyModerationResponse,
+// delivered as *CMsgClientToGCShowcaseModerationApplyModerationResponse.
 func (d *Dota2) ApplyModerationShowcaseModeration(
 	ctx context.Context,
 	accountID uint32,
@@ -72,8 +69,9 @@ func (d *Dota2) ApplyModerationShowcaseModeration(
 }
 
 // ApplyTeamToLobby applys a team to lobby.
-// Request ID: k_EMsgGCApplyTeamToPracticeLobby
-// Request type: CMsgApplyTeamToPracticeLobby
+//
+// Sends the GC message k_EMsgGCApplyTeamToPracticeLobby (CMsgApplyTeamToPracticeLobby). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ApplyTeamToLobby(
 	teamID uint32,
 ) {
@@ -84,10 +82,9 @@ func (d *Dota2) ApplyTeamToLobby(
 }
 
 // AutographReward autographs a reward.
-// Request ID: k_EMsgGameAutographReward
-// Response ID: k_EMsgGameAutographRewardResponse
-// Request type: CMsgDOTAGameAutographReward
-// Response type: CMsgDOTAGameAutographRewardResponse
+//
+// Sends the GC message k_EMsgGameAutographReward (CMsgDOTAGameAutographReward) and awaits the response k_EMsgGameAutographRewardResponse,
+// delivered as *CMsgDOTAGameAutographRewardResponse.
 func (d *Dota2) AutographReward(
 	ctx context.Context,
 	badgeID string,
@@ -107,8 +104,9 @@ func (d *Dota2) AutographReward(
 }
 
 // CancelGameFightingChallengeFriend cancels a game fighting challenge friend.
-// Request ID: k_EMsgClientToGCFightingGameCancelChallengeFriend
-// Request type: CMsgClientToGCFightingGameCancelChallengeFriend
+//
+// Sends the GC message k_EMsgClientToGCFightingGameCancelChallengeFriend (CMsgClientToGCFightingGameCancelChallengeFriend). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CancelGameFightingChallengeFriend(
 	friendAccountID uint32,
 ) {
@@ -119,10 +117,9 @@ func (d *Dota2) CancelGameFightingChallengeFriend(
 }
 
 // CancelInviteToGuild cancels a invite to guild.
-// Request ID: k_EMsgClientToGCCancelInviteToGuild
-// Response ID: k_EMsgClientToGCCancelInviteToGuildResponse
-// Request type: CMsgClientToGCCancelInviteToGuild
-// Response type: CMsgClientToGCCancelInviteToGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCCancelInviteToGuild (CMsgClientToGCCancelInviteToGuild) and awaits the response k_EMsgClientToGCCancelInviteToGuildResponse,
+// delivered as *CMsgClientToGCCancelInviteToGuildResponse.
 func (d *Dota2) CancelInviteToGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -143,9 +140,8 @@ func (d *Dota2) CancelInviteToGuild(
 	)
 }
 
-// CancelPartyInvites cancels party invites.
-// Request ID: k_EMsgClientToGCCancelPartyInvites
-// Request type: CMsgDOTACancelGroupInvites
+// CancelPartyInvites cancels all outstanding party invites sent by your
+// account.
 func (d *Dota2) CancelPartyInvites(
 	invitedSteamids []uint64,
 	invitedGroupids []uint64,
@@ -158,18 +154,18 @@ func (d *Dota2) CancelPartyInvites(
 }
 
 // CancelWatchGame cancels a watch game.
-// Request ID: k_EMsgGCCancelWatchGame
-// Request type: CMsgCancelWatchGame
+//
+// Sends the GC message k_EMsgGCCancelWatchGame (CMsgCancelWatchGame). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CancelWatchGame() {
 	req := &protocol.CMsgCancelWatchGame{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCCancelWatchGame), req)
 }
 
 // ClaimBingoRow claims a bingo row.
-// Request ID: k_EMsgClientToGCBingoClaimRow
-// Response ID: k_EMsgClientToGCBingoClaimRowResponse
-// Request type: CMsgClientToGCBingoClaimRow
-// Response type: CMsgClientToGCBingoClaimRowResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoClaimRow (CMsgClientToGCBingoClaimRow) and awaits the response k_EMsgClientToGCBingoClaimRowResponse,
+// delivered as *CMsgClientToGCBingoClaimRowResponse.
 func (d *Dota2) ClaimBingoRow(
 	ctx context.Context,
 	leagueID uint32,
@@ -193,10 +189,9 @@ func (d *Dota2) ClaimBingoRow(
 }
 
 // ClaimCrawlCavernRoom claims a crawl cavern room.
-// Request ID: k_EMsgClientToGCCavernCrawlClaimRoom
-// Response ID: k_EMsgClientToGCCavernCrawlClaimRoomResponse
-// Request type: CMsgClientToGCCavernCrawlClaimRoom
-// Response type: CMsgClientToGCCavernCrawlClaimRoomResponse
+//
+// Sends the GC message k_EMsgClientToGCCavernCrawlClaimRoom (CMsgClientToGCCavernCrawlClaimRoom) and awaits the response k_EMsgClientToGCCavernCrawlClaimRoomResponse,
+// delivered as *CMsgClientToGCCavernCrawlClaimRoomResponse.
 func (d *Dota2) ClaimCrawlCavernRoom(
 	ctx context.Context,
 	eventID uint32,
@@ -220,10 +215,9 @@ func (d *Dota2) ClaimCrawlCavernRoom(
 }
 
 // ClaimEventAction claims a event action.
-// Request ID: k_EMsgDOTAClaimEventAction
-// Response ID: k_EMsgDOTAClaimEventActionResponse
-// Request type: CMsgDOTAClaimEventAction
-// Response type: CMsgDOTAClaimEventActionResponse
+//
+// Sends the GC message k_EMsgDOTAClaimEventAction (CMsgDOTAClaimEventAction) and awaits the response k_EMsgDOTAClaimEventActionResponse,
+// delivered as *CMsgDOTAClaimEventActionResponse.
 func (d *Dota2) ClaimEventAction(
 	ctx context.Context,
 	eventID uint32,
@@ -253,10 +247,9 @@ func (d *Dota2) ClaimEventAction(
 }
 
 // ClaimEventActionUsingItem claims a event action using item.
-// Request ID: k_EMsgClientToGCClaimEventActionUsingItem
-// Response ID: k_EMsgClientToGCClaimEventActionUsingItemResponse
-// Request type: CMsgClientToGCClaimEventActionUsingItem
-// Response type: CMsgClientToGCClaimEventActionUsingItemResponse
+//
+// Sends the GC message k_EMsgClientToGCClaimEventActionUsingItem (CMsgClientToGCClaimEventActionUsingItem) and awaits the response k_EMsgClientToGCClaimEventActionUsingItemResponse,
+// delivered as *CMsgClientToGCClaimEventActionUsingItemResponse.
 func (d *Dota2) ClaimEventActionUsingItem(
 	ctx context.Context,
 	eventID uint32,
@@ -284,10 +277,9 @@ func (d *Dota2) ClaimEventActionUsingItem(
 }
 
 // ClaimGatedEvent claims a gated event.
-// Request ID: k_EMsgClientToGCClaimGatedEvent
-// Response ID: k_EMsgClientToGCClaimGatedEventResponse
-// Request type: CMsgDOTAClaimGatedEvent
-// Response type: CMsgDOTAClaimGatedEventResponse
+//
+// Sends the GC message k_EMsgClientToGCClaimGatedEvent (CMsgDOTAClaimGatedEvent) and awaits the response k_EMsgClientToGCClaimGatedEventResponse,
+// delivered as *CMsgDOTAClaimGatedEventResponse.
 func (d *Dota2) ClaimGatedEvent(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -307,10 +299,9 @@ func (d *Dota2) ClaimGatedEvent(
 }
 
 // ClaimHunterDevMonsterInvestigationRewards claims hunter dev monster investigation rewards.
-// Request ID: k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards
-// Response ID: k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse
-// Request type: CMsgClientToGCMonsterHunterDevClaimInvestigationRewards
-// Response type: CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards (CMsgClientToGCMonsterHunterDevClaimInvestigationRewards) and awaits the response k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse,
+// delivered as *CMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse.
 func (d *Dota2) ClaimHunterDevMonsterInvestigationRewards(
 	ctx context.Context,
 	investigationGameState protocol.CMsgMonsterHunterInvestigationGameState,
@@ -332,10 +323,9 @@ func (d *Dota2) ClaimHunterDevMonsterInvestigationRewards(
 }
 
 // ClaimHunterMonsterCodexReward claims a hunter monster codex reward.
-// Request ID: k_EMsgClientToGCMonsterHunterClaimCodexReward
-// Response ID: k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse
-// Request type: CMsgClientToGCMonsterHunterClaimCodexReward
-// Response type: CMsgClientToGCMonsterHunterClaimCodexRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterClaimCodexReward (CMsgClientToGCMonsterHunterClaimCodexReward) and awaits the response k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse,
+// delivered as *CMsgClientToGCMonsterHunterClaimCodexRewardResponse.
 func (d *Dota2) ClaimHunterMonsterCodexReward(
 	ctx context.Context,
 	codexID uint32,
@@ -357,10 +347,9 @@ func (d *Dota2) ClaimHunterMonsterCodexReward(
 }
 
 // ClaimHunterMonsterReward claims a hunter monster reward.
-// Request ID: k_EMsgClientToGCMonsterHunterClaimReward
-// Response ID: k_EMsgClientToGCMonsterHunterClaimRewardResponse
-// Request type: CMsgClientToGCMonsterHunterClaimReward
-// Response type: CMsgClientToGCMonsterHunterClaimRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterClaimReward (CMsgClientToGCMonsterHunterClaimReward) and awaits the response k_EMsgClientToGCMonsterHunterClaimRewardResponse,
+// delivered as *CMsgClientToGCMonsterHunterClaimRewardResponse.
 func (d *Dota2) ClaimHunterMonsterReward(
 	ctx context.Context,
 	req *protocol.CMsgClientToGCMonsterHunterClaimReward,
@@ -377,10 +366,9 @@ func (d *Dota2) ClaimHunterMonsterReward(
 }
 
 // ClaimHunterMonsterSetReward claims a hunter monster set reward.
-// Request ID: k_EMsgClientToGCMonsterHunterClaimSetReward
-// Response ID: k_EMsgClientToGCMonsterHunterClaimSetRewardResponse
-// Request type: CMsgClientToGCMonsterHunterClaimSetReward
-// Response type: CMsgClientToGCMonsterHunterClaimSetRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterClaimSetReward (CMsgClientToGCMonsterHunterClaimSetReward) and awaits the response k_EMsgClientToGCMonsterHunterClaimSetRewardResponse,
+// delivered as *CMsgClientToGCMonsterHunterClaimSetRewardResponse.
 func (d *Dota2) ClaimHunterMonsterSetReward(
 	ctx context.Context,
 	itemSets []*protocol.CMsgMonsterHunterItemSet,
@@ -400,10 +388,9 @@ func (d *Dota2) ClaimHunterMonsterSetReward(
 }
 
 // ClaimLeaderboardRewards claims leaderboard rewards.
-// Request ID: k_EMsgClientToGCClaimLeaderboardRewards
-// Response ID: k_EMsgClientToGCClaimLeaderboardRewardsResponse
-// Request type: CMsgClientToGCClaimLeaderboardRewards
-// Response type: CMsgClientToGCClaimLeaderboardRewardsResponse
+//
+// Sends the GC message k_EMsgClientToGCClaimLeaderboardRewards (CMsgClientToGCClaimLeaderboardRewards) and awaits the response k_EMsgClientToGCClaimLeaderboardRewardsResponse,
+// delivered as *CMsgClientToGCClaimLeaderboardRewardsResponse.
 func (d *Dota2) ClaimLeaderboardRewards(
 	ctx context.Context,
 	guildID uint32,
@@ -425,10 +412,9 @@ func (d *Dota2) ClaimLeaderboardRewards(
 }
 
 // ClaimOverworldEncounterReward claims a overworld encounter reward.
-// Request ID: k_EMsgClientToGCOverworldClaimEncounterReward
-// Response ID: k_EMsgClientToGCOverworldClaimEncounterRewardResponse
-// Request type: CMsgClientToGCOverworldClaimEncounterReward
-// Response type: CMsgClientToGCOverworldClaimEncounterRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldClaimEncounterReward (CMsgClientToGCOverworldClaimEncounterReward) and awaits the response k_EMsgClientToGCOverworldClaimEncounterRewardResponse,
+// delivered as *CMsgClientToGCOverworldClaimEncounterRewardResponse.
 func (d *Dota2) ClaimOverworldEncounterReward(
 	ctx context.Context,
 	req *protocol.CMsgClientToGCOverworldClaimEncounterReward,
@@ -445,10 +431,9 @@ func (d *Dota2) ClaimOverworldEncounterReward(
 }
 
 // ClaimOverworldFortunePermanentReward claims a overworld fortune permanent reward.
-// Request ID: k_EMsgClientToGCOverworldClaimFortunePermanentReward
-// Response ID: k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse
-// Request type: CMsgClientToGCOverworldClaimFortunePermanentReward
-// Response type: CMsgClientToGCOverworldClaimFortunePermanentRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldClaimFortunePermanentReward (CMsgClientToGCOverworldClaimFortunePermanentReward) and awaits the response k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse,
+// delivered as *CMsgClientToGCOverworldClaimFortunePermanentRewardResponse.
 func (d *Dota2) ClaimOverworldFortunePermanentReward(
 	ctx context.Context,
 	overworldID uint32,
@@ -470,10 +455,9 @@ func (d *Dota2) ClaimOverworldFortunePermanentReward(
 }
 
 // ClaimOverworldFortuneReward claims a overworld fortune reward.
-// Request ID: k_EMsgClientToGCOverworldClaimFortuneReward
-// Response ID: k_EMsgClientToGCOverworldClaimFortuneRewardResponse
-// Request type: CMsgClientToGCOverworldClaimFortuneReward
-// Response type: CMsgClientToGCOverworldClaimFortuneRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldClaimFortuneReward (CMsgClientToGCOverworldClaimFortuneReward) and awaits the response k_EMsgClientToGCOverworldClaimFortuneRewardResponse,
+// delivered as *CMsgClientToGCOverworldClaimFortuneRewardResponse.
 func (d *Dota2) ClaimOverworldFortuneReward(
 	ctx context.Context,
 	overworldID uint32,
@@ -493,10 +477,9 @@ func (d *Dota2) ClaimOverworldFortuneReward(
 }
 
 // ClaimOverworldFortuneTellerStoryNode claims a overworld fortune teller story node.
-// Request ID: k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode
-// Response ID: k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse
-// Request type: CMsgClientToGCOverworldClaimFortuneTellerStoryNode
-// Response type: CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode (CMsgClientToGCOverworldClaimFortuneTellerStoryNode) and awaits the response k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse,
+// delivered as *CMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse.
 func (d *Dota2) ClaimOverworldFortuneTellerStoryNode(
 	ctx context.Context,
 	overworldID uint32,
@@ -518,10 +501,9 @@ func (d *Dota2) ClaimOverworldFortuneTellerStoryNode(
 }
 
 // ClaimSwag claims a swag.
-// Request ID: k_EMsgClientToGCClaimSwag
-// Response ID: k_EMsgGCToClientClaimSwagResponse
-// Request type: CMsgClientToGCClaimSwag
-// Response type: CMsgClientToGCClaimSwagResponse
+//
+// Sends the GC message k_EMsgClientToGCClaimSwag (CMsgClientToGCClaimSwag) and awaits the response k_EMsgGCToClientClaimSwagResponse,
+// delivered as *CMsgClientToGCClaimSwagResponse.
 func (d *Dota2) ClaimSwag(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -545,8 +527,9 @@ func (d *Dota2) ClaimSwag(
 }
 
 // CloseLobbyBroadcastChannel closes a lobby broadcast channel.
-// Request ID: k_EMsgGCPracticeLobbyCloseBroadcastChannel
-// Request type: CMsgPracticeLobbyCloseBroadcastChannel
+//
+// Sends the GC message k_EMsgGCPracticeLobbyCloseBroadcastChannel (CMsgPracticeLobbyCloseBroadcastChannel). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CloseLobbyBroadcastChannel(
 	channel uint32,
 ) {
@@ -557,8 +540,9 @@ func (d *Dota2) CloseLobbyBroadcastChannel(
 }
 
 // CreateBotGame creates a bot game.
-// Request ID: k_EMsgGCBotGameCreate
-// Request type: CMsgBotGameCreate
+//
+// Sends the GC message k_EMsgGCBotGameCreate (CMsgBotGameCreate). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CreateBotGame(
 	searchKey string,
 	difficultyRadiant protocol.DOTABotDifficulty,
@@ -577,10 +561,9 @@ func (d *Dota2) CreateBotGame(
 }
 
 // CreateGuild creates a guild.
-// Request ID: k_EMsgClientToGCCreateGuild
-// Response ID: k_EMsgClientToGCCreateGuildResponse
-// Request type: CMsgClientToGCCreateGuild
-// Response type: CMsgClientToGCCreateGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCCreateGuild (CMsgClientToGCCreateGuild) and awaits the response k_EMsgClientToGCCreateGuildResponse,
+// delivered as *CMsgClientToGCCreateGuildResponse.
 func (d *Dota2) CreateGuild(
 	ctx context.Context,
 	guildInfo protocol.CMsgGuildInfo,
@@ -602,8 +585,9 @@ func (d *Dota2) CreateGuild(
 }
 
 // CreateHeroStatue creates a hero statue.
-// Request ID: k_EMsgClientToGCCreateHeroStatue
-// Request type: CMsgClientToGCCreateHeroStatue
+//
+// Sends the GC message k_EMsgClientToGCCreateHeroStatue (CMsgClientToGCCreateHeroStatue). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CreateHeroStatue(
 	req *protocol.CMsgClientToGCCreateHeroStatue,
 ) {
@@ -611,10 +595,9 @@ func (d *Dota2) CreateHeroStatue(
 }
 
 // CreatePlayerCardPack creates a player card pack.
-// Request ID: k_EMsgClientToGCCreatePlayerCardPack
-// Response ID: k_EMsgClientToGCCreatePlayerCardPackResponse
-// Request type: CMsgClientToGCCreatePlayerCardPack
-// Response type: CMsgClientToGCCreatePlayerCardPackResponse
+//
+// Sends the GC message k_EMsgClientToGCCreatePlayerCardPack (CMsgClientToGCCreatePlayerCardPack) and awaits the response k_EMsgClientToGCCreatePlayerCardPackResponse,
+// delivered as *CMsgClientToGCCreatePlayerCardPackResponse.
 func (d *Dota2) CreatePlayerCardPack(
 	ctx context.Context,
 	cardDustItemID uint64,
@@ -638,8 +621,9 @@ func (d *Dota2) CreatePlayerCardPack(
 }
 
 // CreateSpectatorLobby creates a spectator lobby.
-// Request ID: k_EMsgClientToGCCreateSpectatorLobby
-// Request type: CMsgCreateSpectatorLobby
+//
+// Sends the GC message k_EMsgClientToGCCreateSpectatorLobby (CMsgCreateSpectatorLobby). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) CreateSpectatorLobby(
 	details protocol.CMsgSetSpectatorLobbyDetails,
 ) {
@@ -650,10 +634,9 @@ func (d *Dota2) CreateSpectatorLobby(
 }
 
 // CreateTeam creates a team.
-// Request ID: k_EMsgGCCreateTeam
-// Response ID: k_EMsgGCCreateTeamResponse
-// Request type: CMsgDOTACreateTeam
-// Response type: CMsgDOTACreateTeamResponse
+//
+// Sends the GC message k_EMsgGCCreateTeam (CMsgDOTACreateTeam) and awaits the response k_EMsgGCCreateTeamResponse,
+// delivered as *CMsgDOTACreateTeamResponse.
 func (d *Dota2) CreateTeam(
 	ctx context.Context,
 	req *protocol.CMsgDOTACreateTeam,
@@ -670,10 +653,9 @@ func (d *Dota2) CreateTeam(
 }
 
 // CreateTeamPlayerCardPack creates a team player card pack.
-// Request ID: k_EMsgClientToGCCreateTeamPlayerCardPack
-// Response ID: k_EMsgClientToGCCreateTeamPlayerCardPackResponse
-// Request type: CMsgClientToGCCreateTeamPlayerCardPack
-// Response type: CMsgClientToGCCreateTeamPlayerCardPackResponse
+//
+// Sends the GC message k_EMsgClientToGCCreateTeamPlayerCardPack (CMsgClientToGCCreateTeamPlayerCardPack) and awaits the response k_EMsgClientToGCCreateTeamPlayerCardPackResponse,
+// delivered as *CMsgClientToGCCreateTeamPlayerCardPackResponse.
 func (d *Dota2) CreateTeamPlayerCardPack(
 	ctx context.Context,
 	cardDustItemID uint64,
@@ -699,8 +681,9 @@ func (d *Dota2) CreateTeamPlayerCardPack(
 }
 
 // DemotePrivateChatMember demotes a private chat member.
-// Request ID: k_EMsgClientToGCPrivateChatDemote
-// Request type: CMsgClientToGCPrivateChatDemote
+//
+// Sends the GC message k_EMsgClientToGCPrivateChatDemote (CMsgClientToGCPrivateChatDemote). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) DemotePrivateChatMember(
 	privateChatChannelName string,
 	demoteAccountID uint32,
@@ -712,11 +695,8 @@ func (d *Dota2) DemotePrivateChatMember(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatDemote), req)
 }
 
-// DestroyLobby destroys a lobby.
-// Request ID: k_EMsgDestroyLobbyRequest
-// Response ID: k_EMsgDestroyLobbyResponse
-// Request type: CMsgDOTADestroyLobbyRequest
-// Response type: CMsgDOTADestroyLobbyResponse
+// DestroyLobby destroys the practice lobby you lead. Only the lobby leader
+// can destroy it.
 func (d *Dota2) DestroyLobby(
 	ctx context.Context,
 ) (*protocol.CMsgDOTADestroyLobbyResponse, error) {
@@ -733,10 +713,9 @@ func (d *Dota2) DestroyLobby(
 }
 
 // EditTeamDetails edits team details.
-// Request ID: k_EMsgGCEditTeamDetails
-// Response ID: k_EMsgGCEditTeamDetailsResponse
-// Request type: CMsgDOTAEditTeamDetails
-// Response type: CMsgDOTAEditTeamDetailsResponse
+//
+// Sends the GC message k_EMsgGCEditTeamDetails (CMsgDOTAEditTeamDetails) and awaits the response k_EMsgGCEditTeamDetailsResponse,
+// delivered as *CMsgDOTAEditTeamDetailsResponse.
 func (d *Dota2) EditTeamDetails(
 	ctx context.Context,
 	req *protocol.CMsgDOTAEditTeamDetails,
@@ -753,10 +732,9 @@ func (d *Dota2) EditTeamDetails(
 }
 
 // FindTopSourceTVGames finds top source tv games.
-// Request ID: k_EMsgClientToGCFindTopSourceTVGames
-// Response ID: k_EMsgGCToClientFindTopSourceTVGamesResponse
-// Request type: CMsgClientToGCFindTopSourceTVGames
-// Response type: CMsgGCToClientFindTopSourceTVGamesResponse
+//
+// Sends the GC message k_EMsgClientToGCFindTopSourceTVGames (CMsgClientToGCFindTopSourceTVGames) and awaits the response k_EMsgGCToClientFindTopSourceTVGamesResponse,
+// delivered as *CMsgGCToClientFindTopSourceTVGamesResponse.
 func (d *Dota2) FindTopSourceTVGames(
 	ctx context.Context,
 	searchKey string,
@@ -785,19 +763,17 @@ func (d *Dota2) FindTopSourceTVGames(
 	)
 }
 
-// FlipLobbyTeams flips lobby teams.
-// Request ID: k_EMsgGCFlipLobbyTeams
-// Request type: CMsgFlipLobbyTeams
+// FlipLobbyTeams swaps every member of the lobby between the Radiant and
+// Dire teams.
 func (d *Dota2) FlipLobbyTeams() {
 	req := &protocol.CMsgFlipLobbyTeams{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams), req)
 }
 
 // GetAdminShowcaseReportsRollup gets a admin showcase reports rollup.
-// Request ID: k_EMsgClientToGCShowcaseAdminGetReportsRollup
-// Response ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse
-// Request type: CMsgClientToGCShowcaseAdminGetReportsRollup
-// Response type: CMsgClientToGCShowcaseAdminGetReportsRollupResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminGetReportsRollup (CMsgClientToGCShowcaseAdminGetReportsRollup) and awaits the response k_EMsgClientToGCShowcaseAdminGetReportsRollupResponse,
+// delivered as *CMsgClientToGCShowcaseAdminGetReportsRollupResponse.
 func (d *Dota2) GetAdminShowcaseReportsRollup(
 	ctx context.Context,
 	rollupID uint32,
@@ -817,10 +793,9 @@ func (d *Dota2) GetAdminShowcaseReportsRollup(
 }
 
 // GetAdminShowcaseReportsRollupList gets a admin showcase reports rollup list.
-// Request ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupList
-// Response ID: k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse
-// Request type: CMsgClientToGCShowcaseAdminGetReportsRollupList
-// Response type: CMsgClientToGCShowcaseAdminGetReportsRollupListResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminGetReportsRollupList (CMsgClientToGCShowcaseAdminGetReportsRollupList) and awaits the response k_EMsgClientToGCShowcaseAdminGetReportsRollupListResponse,
+// delivered as *CMsgClientToGCShowcaseAdminGetReportsRollupListResponse.
 func (d *Dota2) GetAdminShowcaseReportsRollupList(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCShowcaseAdminGetReportsRollupListResponse, error) {
@@ -837,10 +812,9 @@ func (d *Dota2) GetAdminShowcaseReportsRollupList(
 }
 
 // GetAdminShowcaseUserDetails gets admin showcase user details.
-// Request ID: k_EMsgClientToGCShowcaseAdminGetUserDetails
-// Response ID: k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse
-// Request type: CMsgClientToGCShowcaseAdminGetUserDetails
-// Response type: CMsgClientToGCShowcaseAdminGetUserDetailsResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminGetUserDetails (CMsgClientToGCShowcaseAdminGetUserDetails) and awaits the response k_EMsgClientToGCShowcaseAdminGetUserDetailsResponse,
+// delivered as *CMsgClientToGCShowcaseAdminGetUserDetailsResponse.
 func (d *Dota2) GetAdminShowcaseUserDetails(
 	ctx context.Context,
 	accountID uint32,
@@ -860,10 +834,9 @@ func (d *Dota2) GetAdminShowcaseUserDetails(
 }
 
 // GetAllHeroOrder gets all hero order.
-// Request ID: k_EMsgClientToGCGetAllHeroOrder
-// Response ID: k_EMsgClientToGCGetAllHeroOrderResponse
-// Request type: CMsgClientToGCGetAllHeroOrder
-// Response type: CMsgClientToGCGetAllHeroOrderResponse
+//
+// Sends the GC message k_EMsgClientToGCGetAllHeroOrder (CMsgClientToGCGetAllHeroOrder) and awaits the response k_EMsgClientToGCGetAllHeroOrderResponse,
+// delivered as *CMsgClientToGCGetAllHeroOrderResponse.
 func (d *Dota2) GetAllHeroOrder(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetAllHeroOrderResponse, error) {
@@ -880,10 +853,9 @@ func (d *Dota2) GetAllHeroOrder(
 }
 
 // GetAllHeroProgress gets all hero progress.
-// Request ID: k_EMsgClientToGCGetAllHeroProgress
-// Response ID: k_EMsgClientToGCGetAllHeroProgressResponse
-// Request type: CMsgClientToGCGetAllHeroProgress
-// Response type: CMsgClientToGCGetAllHeroProgressResponse
+//
+// Sends the GC message k_EMsgClientToGCGetAllHeroProgress (CMsgClientToGCGetAllHeroProgress) and awaits the response k_EMsgClientToGCGetAllHeroProgressResponse,
+// delivered as *CMsgClientToGCGetAllHeroProgressResponse.
 func (d *Dota2) GetAllHeroProgress(
 	ctx context.Context,
 	accountID uint32,
@@ -903,10 +875,9 @@ func (d *Dota2) GetAllHeroProgress(
 }
 
 // GetAvailablePrivateCoachingSessions gets available private coaching sessions.
-// Request ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessions
-// Response ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse
-// Request type: CMsgClientToGCGetAvailablePrivateCoachingSessions
-// Response type: CMsgClientToGCGetAvailablePrivateCoachingSessionsResponse
+//
+// Sends the GC message k_EMsgClientToGCGetAvailablePrivateCoachingSessions (CMsgClientToGCGetAvailablePrivateCoachingSessions) and awaits the response k_EMsgClientToGCGetAvailablePrivateCoachingSessionsResponse,
+// delivered as *CMsgClientToGCGetAvailablePrivateCoachingSessionsResponse.
 func (d *Dota2) GetAvailablePrivateCoachingSessions(
 	ctx context.Context,
 	language uint32,
@@ -926,10 +897,9 @@ func (d *Dota2) GetAvailablePrivateCoachingSessions(
 }
 
 // GetAvailablePrivateCoachingSessionsSummary gets a available private coaching sessions summary.
-// Request ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary
-// Response ID: k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse
-// Request type: CMsgClientToGCGetAvailablePrivateCoachingSessionsSummary
-// Response type: CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse
+//
+// Sends the GC message k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummary (CMsgClientToGCGetAvailablePrivateCoachingSessionsSummary) and awaits the response k_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse,
+// delivered as *CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse.
 func (d *Dota2) GetAvailablePrivateCoachingSessionsSummary(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse, error) {
@@ -946,10 +916,9 @@ func (d *Dota2) GetAvailablePrivateCoachingSessionsSummary(
 }
 
 // GetBattleReport gets a battle report.
-// Request ID: k_EMsgClientToGCGetBattleReport
-// Response ID: k_EMsgClientToGCGetBattleReportResponse
-// Request type: CMsgClientToGCGetBattleReport
-// Response type: CMsgClientToGCGetBattleReportResponse
+//
+// Sends the GC message k_EMsgClientToGCGetBattleReport (CMsgClientToGCGetBattleReport) and awaits the response k_EMsgClientToGCGetBattleReportResponse,
+// delivered as *CMsgClientToGCGetBattleReportResponse.
 func (d *Dota2) GetBattleReport(
 	ctx context.Context,
 	accountID uint32,
@@ -973,10 +942,9 @@ func (d *Dota2) GetBattleReport(
 }
 
 // GetBattleReportAggregateStats gets battle report aggregate stats.
-// Request ID: k_EMsgClientToGCGetBattleReportAggregateStats
-// Response ID: k_EMsgClientToGCGetBattleReportAggregateStatsResponse
-// Request type: CMsgClientToGCGetBattleReportAggregateStats
-// Response type: CMsgClientToGCGetBattleReportAggregateStatsResponse
+//
+// Sends the GC message k_EMsgClientToGCGetBattleReportAggregateStats (CMsgClientToGCGetBattleReportAggregateStats) and awaits the response k_EMsgClientToGCGetBattleReportAggregateStatsResponse,
+// delivered as *CMsgClientToGCGetBattleReportAggregateStatsResponse.
 func (d *Dota2) GetBattleReportAggregateStats(
 	ctx context.Context,
 	aggregateKeys []*protocol.CMsgClientToGCGetBattleReportAggregateStats_CMsgBattleReportAggregateKey,
@@ -1002,10 +970,9 @@ func (d *Dota2) GetBattleReportAggregateStats(
 }
 
 // GetBattleReportInfo gets a battle report info.
-// Request ID: k_EMsgClientToGCGetBattleReportInfo
-// Response ID: k_EMsgClientToGCGetBattleReportInfoResponse
-// Request type: CMsgClientToGCGetBattleReportInfo
-// Response type: CMsgClientToGCGetBattleReportInfoResponse
+//
+// Sends the GC message k_EMsgClientToGCGetBattleReportInfo (CMsgClientToGCGetBattleReportInfo) and awaits the response k_EMsgClientToGCGetBattleReportInfoResponse,
+// delivered as *CMsgClientToGCGetBattleReportInfoResponse.
 func (d *Dota2) GetBattleReportInfo(
 	ctx context.Context,
 	accountID uint32,
@@ -1025,10 +992,9 @@ func (d *Dota2) GetBattleReportInfo(
 }
 
 // GetBattleReportMatchHistory gets a battle report match history.
-// Request ID: k_EMsgClientToGCGetBattleReportMatchHistory
-// Response ID: k_EMsgClientToGCGetBattleReportMatchHistoryResponse
-// Request type: CMsgClientToGCGetBattleReportMatchHistory
-// Response type: CMsgClientToGCGetBattleReportMatchHistoryResponse
+//
+// Sends the GC message k_EMsgClientToGCGetBattleReportMatchHistory (CMsgClientToGCGetBattleReportMatchHistory) and awaits the response k_EMsgClientToGCGetBattleReportMatchHistoryResponse,
+// delivered as *CMsgClientToGCGetBattleReportMatchHistoryResponse.
 func (d *Dota2) GetBattleReportMatchHistory(
 	ctx context.Context,
 	accountID uint32,
@@ -1052,10 +1018,9 @@ func (d *Dota2) GetBattleReportMatchHistory(
 }
 
 // GetBattlerItemUserData gets a battler item user data.
-// Request ID: k_EMsgClientToGCItemBattlerGetUserData
-// Response ID: k_EMsgClientToGCItemBattlerGetUserDataResponse
-// Request type: CMsgClientToGCItemBattlerGetUserData
-// Response type: CMsgClientToGCItemBattlerGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCItemBattlerGetUserData (CMsgClientToGCItemBattlerGetUserData) and awaits the response k_EMsgClientToGCItemBattlerGetUserDataResponse,
+// delivered as *CMsgClientToGCItemBattlerGetUserDataResponse.
 func (d *Dota2) GetBattlerItemUserData(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCItemBattlerGetUserDataResponse, error) {
@@ -1072,10 +1037,9 @@ func (d *Dota2) GetBattlerItemUserData(
 }
 
 // GetBingoStatsData gets a bingo stats data.
-// Request ID: k_EMsgClientToGCBingoGetStatsData
-// Response ID: k_EMsgClientToGCBingoGetStatsDataResponse
-// Request type: CMsgClientToGCBingoGetStatsData
-// Response type: CMsgClientToGCBingoGetStatsDataResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoGetStatsData (CMsgClientToGCBingoGetStatsData) and awaits the response k_EMsgClientToGCBingoGetStatsDataResponse,
+// delivered as *CMsgClientToGCBingoGetStatsDataResponse.
 func (d *Dota2) GetBingoStatsData(
 	ctx context.Context,
 	leagueID uint32,
@@ -1097,10 +1061,9 @@ func (d *Dota2) GetBingoStatsData(
 }
 
 // GetBingoUserData gets a bingo user data.
-// Request ID: k_EMsgClientToGCBingoGetUserData
-// Response ID: k_EMsgClientToGCBingoGetUserDataResponse
-// Request type: CMsgClientToGCBingoGetUserData
-// Response type: CMsgClientToGCBingoGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoGetUserData (CMsgClientToGCBingoGetUserData) and awaits the response k_EMsgClientToGCBingoGetUserDataResponse,
+// delivered as *CMsgClientToGCBingoGetUserDataResponse.
 func (d *Dota2) GetBingoUserData(
 	ctx context.Context,
 	leagueID uint32,
@@ -1120,10 +1083,9 @@ func (d *Dota2) GetBingoUserData(
 }
 
 // GetChatMemberCount gets a chat member count.
-// Request ID: k_EMsgDOTAChatGetMemberCount
-// Response ID: k_EMsgDOTAChatGetMemberCountResponse
-// Request type: CMsgDOTAChatGetMemberCount
-// Response type: CMsgDOTAChatGetMemberCountResponse
+//
+// Sends the GC message k_EMsgDOTAChatGetMemberCount (CMsgDOTAChatGetMemberCount) and awaits the response k_EMsgDOTAChatGetMemberCountResponse,
+// delivered as *CMsgDOTAChatGetMemberCountResponse.
 func (d *Dota2) GetChatMemberCount(
 	ctx context.Context,
 	channelName string,
@@ -1145,10 +1107,9 @@ func (d *Dota2) GetChatMemberCount(
 }
 
 // GetCraftingFantasyData gets a crafting fantasy data.
-// Request ID: k_EMsgClientToGCFantasyCraftingGetData
-// Response ID: k_EMsgClientToGCFantasyCraftingGetDataResponse
-// Request type: CMsgClientToGCFantasyCraftingGetData
-// Response type: CMsgClientToGCFantasyCraftingGetDataResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingGetData (CMsgClientToGCFantasyCraftingGetData) and awaits the response k_EMsgClientToGCFantasyCraftingGetDataResponse,
+// delivered as *CMsgClientToGCFantasyCraftingGetDataResponse.
 func (d *Dota2) GetCraftingFantasyData(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -1170,10 +1131,9 @@ func (d *Dota2) GetCraftingFantasyData(
 }
 
 // GetCraftworksUserData gets a craftworks user data.
-// Request ID: k_EMsgClientToGCCraftworksGetUserData
-// Response ID: k_EMsgClientToGCCraftworksGetUserDataResponse
-// Request type: CMsgClientToGCCraftworksGetUserData
-// Response type: CMsgClientToGCCraftworksGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCCraftworksGetUserData (CMsgClientToGCCraftworksGetUserData) and awaits the response k_EMsgClientToGCCraftworksGetUserDataResponse,
+// delivered as *CMsgClientToGCCraftworksGetUserDataResponse.
 func (d *Dota2) GetCraftworksUserData(
 	ctx context.Context,
 	craftworksID uint32,
@@ -1193,10 +1153,9 @@ func (d *Dota2) GetCraftworksUserData(
 }
 
 // GetCrawlCavernClaimedRoomCount gets a crawl cavern claimed room count.
-// Request ID: k_EMsgClientToGCCavernCrawlGetClaimedRoomCount
-// Response ID: k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
-// Request type: CMsgClientToGCCavernCrawlGetClaimedRoomCount
-// Response type: CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse
+//
+// Sends the GC message k_EMsgClientToGCCavernCrawlGetClaimedRoomCount (CMsgClientToGCCavernCrawlGetClaimedRoomCount) and awaits the response k_EMsgClientToGCCavernCrawlGetClaimedRoomCountResponse,
+// delivered as *CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse.
 func (d *Dota2) GetCrawlCavernClaimedRoomCount(
 	ctx context.Context,
 	eventID uint32,
@@ -1216,10 +1175,9 @@ func (d *Dota2) GetCrawlCavernClaimedRoomCount(
 }
 
 // GetCurrentPrivateCoachingSession gets a current private coaching session.
-// Request ID: k_EMsgClientToGCGetCurrentPrivateCoachingSession
-// Response ID: k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse
-// Request type: CMsgClientToGCGetCurrentPrivateCoachingSession
-// Response type: CMsgClientToGCGetCurrentPrivateCoachingSessionResponse
+//
+// Sends the GC message k_EMsgClientToGCGetCurrentPrivateCoachingSession (CMsgClientToGCGetCurrentPrivateCoachingSession) and awaits the response k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse,
+// delivered as *CMsgClientToGCGetCurrentPrivateCoachingSessionResponse.
 func (d *Dota2) GetCurrentPrivateCoachingSession(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetCurrentPrivateCoachingSessionResponse, error) {
@@ -1236,10 +1194,9 @@ func (d *Dota2) GetCurrentPrivateCoachingSession(
 }
 
 // GetDPCFavorites gets dpc favorites.
-// Request ID: k_EMsgClientToGCGetDPCFavorites
-// Response ID: k_EMsgClientToGCGetDPCFavoritesResponse
-// Request type: CMsgClientToGCGetDPCFavorites
-// Response type: CMsgClientToGCGetDPCFavoritesResponse
+//
+// Sends the GC message k_EMsgClientToGCGetDPCFavorites (CMsgClientToGCGetDPCFavorites) and awaits the response k_EMsgClientToGCGetDPCFavoritesResponse,
+// delivered as *CMsgClientToGCGetDPCFavoritesResponse.
 func (d *Dota2) GetDPCFavorites(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetDPCFavoritesResponse, error) {
@@ -1256,10 +1213,9 @@ func (d *Dota2) GetDPCFavorites(
 }
 
 // GetEventCoupon gets a event coupon.
-// Request ID: k_EMsgClientToGCGetEventCoupon
-// Response ID: k_EMsgClientToGCGetEventCouponResponse
-// Request type: CMsgClientToGCGetEventCoupon
-// Response type: CMsgClientToGCGetEventCouponResponse
+//
+// Sends the GC message k_EMsgClientToGCGetEventCoupon (CMsgClientToGCGetEventCoupon) and awaits the response k_EMsgClientToGCGetEventCouponResponse,
+// delivered as *CMsgClientToGCGetEventCouponResponse.
 func (d *Dota2) GetEventCoupon(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -1279,10 +1235,9 @@ func (d *Dota2) GetEventCoupon(
 }
 
 // GetEventPoints gets event points.
-// Request ID: k_EMsgDOTAGetEventPoints
-// Response ID: k_EMsgDOTAGetEventPointsResponse
-// Request type: CMsgDOTAGetEventPoints
-// Response type: CMsgDOTAGetEventPointsResponse
+//
+// Sends the GC message k_EMsgDOTAGetEventPoints (CMsgDOTAGetEventPoints) and awaits the response k_EMsgDOTAGetEventPointsResponse,
+// delivered as *CMsgDOTAGetEventPointsResponse.
 func (d *Dota2) GetEventPoints(
 	ctx context.Context,
 	eventID uint32,
@@ -1304,10 +1259,9 @@ func (d *Dota2) GetEventPoints(
 }
 
 // GetEventRanking gets a event ranking.
-// Request ID: k_EMsgClientToGCGetEventRanking
-// Response ID: k_EMsgClientToGCGetEventRankingResponse
-// Request type: CMsgClientToGCGetEventRanking
-// Response type: CMsgClientToGCGetEventRankingResponse
+//
+// Sends the GC message k_EMsgClientToGCGetEventRanking (CMsgClientToGCGetEventRanking) and awaits the response k_EMsgClientToGCGetEventRankingResponse,
+// delivered as *CMsgClientToGCGetEventRankingResponse.
 func (d *Dota2) GetEventRanking(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -1329,10 +1283,9 @@ func (d *Dota2) GetEventRanking(
 }
 
 // GetFavoritePlayers gets favorite players.
-// Request ID: k_EMsgClientToGCGetFavoritePlayers
-// Response ID: k_EMsgGCToClientGetFavoritePlayersResponse
-// Request type: CMsgClientToGCGetFavoritePlayers
-// Response type: CMsgGCToClientGetFavoritePlayersResponse
+//
+// Sends the GC message k_EMsgClientToGCGetFavoritePlayers (CMsgClientToGCGetFavoritePlayers) and awaits the response k_EMsgGCToClientGetFavoritePlayersResponse,
+// delivered as *CMsgGCToClientGetFavoritePlayersResponse.
 func (d *Dota2) GetFavoritePlayers(
 	ctx context.Context,
 	paginationKey uint64,
@@ -1354,10 +1307,9 @@ func (d *Dota2) GetFavoritePlayers(
 }
 
 // GetFilteredPlayers gets filtered players.
-// Request ID: k_EMsgClientToGCGetFilteredPlayers
-// Response ID: k_EMsgGCToClientGetFilteredPlayersResponse
-// Request type: CMsgClientToGCGetFilteredPlayers
-// Response type: CMsgGCToClientGetFilteredPlayersResponse
+//
+// Sends the GC message k_EMsgClientToGCGetFilteredPlayers (CMsgClientToGCGetFilteredPlayers) and awaits the response k_EMsgGCToClientGetFilteredPlayersResponse,
+// delivered as *CMsgGCToClientGetFilteredPlayersResponse.
 func (d *Dota2) GetFilteredPlayers(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientGetFilteredPlayersResponse, error) {
@@ -1374,10 +1326,9 @@ func (d *Dota2) GetFilteredPlayers(
 }
 
 // GetGiftPermissions gets gift permissions.
-// Request ID: k_EMsgClientToGCGetGiftPermissions
-// Response ID: k_EMsgClientToGCGetGiftPermissionsResponse
-// Request type: CMsgClientToGCGetGiftPermissions
-// Response type: CMsgClientToGCGetGiftPermissionsResponse
+//
+// Sends the GC message k_EMsgClientToGCGetGiftPermissions (CMsgClientToGCGetGiftPermissions) and awaits the response k_EMsgClientToGCGetGiftPermissionsResponse,
+// delivered as *CMsgClientToGCGetGiftPermissionsResponse.
 func (d *Dota2) GetGiftPermissions(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetGiftPermissionsResponse, error) {
@@ -1394,10 +1345,9 @@ func (d *Dota2) GetGiftPermissions(
 }
 
 // GetHeroStandings gets hero standings.
-// Request ID: k_EMsgGCGetHeroStandings
-// Response ID: k_EMsgGCGetHeroStandingsResponse
-// Request type: CMsgGCGetHeroStandings
-// Response type: CMsgGCGetHeroStandingsResponse
+//
+// Sends the GC message k_EMsgGCGetHeroStandings (CMsgGCGetHeroStandings) and awaits the response k_EMsgGCGetHeroStandingsResponse,
+// delivered as *CMsgGCGetHeroStandingsResponse.
 func (d *Dota2) GetHeroStandings(
 	ctx context.Context,
 ) (*protocol.CMsgGCGetHeroStandingsResponse, error) {
@@ -1414,10 +1364,9 @@ func (d *Dota2) GetHeroStandings(
 }
 
 // GetHeroStatsHistory gets a hero stats history.
-// Request ID: k_EMsgGCGetHeroStatsHistory
-// Response ID: k_EMsgGCGetHeroStatsHistoryResponse
-// Request type: CMsgGCGetHeroStatsHistory
-// Response type: CMsgGCGetHeroStatsHistoryResponse
+//
+// Sends the GC message k_EMsgGCGetHeroStatsHistory (CMsgGCGetHeroStatsHistory) and awaits the response k_EMsgGCGetHeroStatsHistoryResponse,
+// delivered as *CMsgGCGetHeroStatsHistoryResponse.
 func (d *Dota2) GetHeroStatsHistory(
 	ctx context.Context,
 	heroID int32,
@@ -1437,10 +1386,9 @@ func (d *Dota2) GetHeroStatsHistory(
 }
 
 // GetHeroStickers gets hero stickers.
-// Request ID: k_EMsgClientToGCGetHeroStickers
-// Response ID: k_EMsgClientToGCGetHeroStickersResponse
-// Request type: CMsgClientToGCGetHeroStickers
-// Response type: CMsgClientToGCGetHeroStickersResponse
+//
+// Sends the GC message k_EMsgClientToGCGetHeroStickers (CMsgClientToGCGetHeroStickers) and awaits the response k_EMsgClientToGCGetHeroStickersResponse,
+// delivered as *CMsgClientToGCGetHeroStickersResponse.
 func (d *Dota2) GetHeroStickers(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetHeroStickersResponse, error) {
@@ -1457,10 +1405,9 @@ func (d *Dota2) GetHeroStickers(
 }
 
 // GetHunterMonsterUserData gets a hunter monster user data.
-// Request ID: k_EMsgClientToGCMonsterHunterGetUserData
-// Response ID: k_EMsgClientToGCMonsterHunterGetUserDataResponse
-// Request type: CMsgClientToGCMonsterHunterGetUserData
-// Response type: CMsgClientToGCMonsterHunterGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterGetUserData (CMsgClientToGCMonsterHunterGetUserData) and awaits the response k_EMsgClientToGCMonsterHunterGetUserDataResponse,
+// delivered as *CMsgClientToGCMonsterHunterGetUserDataResponse.
 func (d *Dota2) GetHunterMonsterUserData(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCMonsterHunterGetUserDataResponse, error) {
@@ -1477,10 +1424,9 @@ func (d *Dota2) GetHunterMonsterUserData(
 }
 
 // GetModerationShowcaseQueue gets a moderation showcase queue.
-// Request ID: k_EMsgClientToGCShowcaseModerationGetQueue
-// Response ID: k_EMsgClientToGCShowcaseModerationGetQueueResponse
-// Request type: CMsgClientToGCShowcaseModerationGetQueue
-// Response type: CMsgClientToGCShowcaseModerationGetQueueResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseModerationGetQueue (CMsgClientToGCShowcaseModerationGetQueue) and awaits the response k_EMsgClientToGCShowcaseModerationGetQueueResponse,
+// delivered as *CMsgClientToGCShowcaseModerationGetQueueResponse.
 func (d *Dota2) GetModerationShowcaseQueue(
 	ctx context.Context,
 	startTimestamp uint32,
@@ -1502,10 +1448,9 @@ func (d *Dota2) GetModerationShowcaseQueue(
 }
 
 // GetOWMatchDetails gets ow match details.
-// Request ID: k_EMsgClientToGCGetOWMatchDetails
-// Response ID: k_EMsgClientToGCGetOWMatchDetailsResponse
-// Request type: CMsgClientToGCGetOWMatchDetails
-// Response type: CMsgClientToGCGetOWMatchDetailsResponse
+//
+// Sends the GC message k_EMsgClientToGCGetOWMatchDetails (CMsgClientToGCGetOWMatchDetails) and awaits the response k_EMsgClientToGCGetOWMatchDetailsResponse,
+// delivered as *CMsgClientToGCGetOWMatchDetailsResponse.
 func (d *Dota2) GetOWMatchDetails(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCGetOWMatchDetailsResponse, error) {
@@ -1522,10 +1467,9 @@ func (d *Dota2) GetOWMatchDetails(
 }
 
 // GetOverworldDynamicImage gets a overworld dynamic image.
-// Request ID: k_EMsgClientToGCOverworldGetDynamicImage
-// Response ID: k_EMsgClientToGCOverworldGetDynamicImageResponse
-// Request type: CMsgClientToGCOverworldGetDynamicImage
-// Response type: CMsgClientToGCOverworldGetDynamicImageResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldGetDynamicImage (CMsgClientToGCOverworldGetDynamicImage) and awaits the response k_EMsgClientToGCOverworldGetDynamicImageResponse,
+// delivered as *CMsgClientToGCOverworldGetDynamicImageResponse.
 func (d *Dota2) GetOverworldDynamicImage(
 	ctx context.Context,
 	magic uint32,
@@ -1549,10 +1493,9 @@ func (d *Dota2) GetOverworldDynamicImage(
 }
 
 // GetOverworldUserData gets a overworld user data.
-// Request ID: k_EMsgClientToGCOverworldGetUserData
-// Response ID: k_EMsgClientToGCOverworldGetUserDataResponse
-// Request type: CMsgClientToGCOverworldGetUserData
-// Response type: CMsgClientToGCOverworldGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldGetUserData (CMsgClientToGCOverworldGetUserData) and awaits the response k_EMsgClientToGCOverworldGetUserDataResponse,
+// delivered as *CMsgClientToGCOverworldGetUserDataResponse.
 func (d *Dota2) GetOverworldUserData(
 	ctx context.Context,
 	overworldID uint32,
@@ -1572,10 +1515,9 @@ func (d *Dota2) GetOverworldUserData(
 }
 
 // GetPeriodicResource gets a periodic resource.
-// Request ID: k_EMsgDOTAGetPeriodicResource
-// Response ID: k_EMsgDOTAGetPeriodicResourceResponse
-// Request type: CMsgDOTAGetPeriodicResource
-// Response type: CMsgDOTAGetPeriodicResourceResponse
+//
+// Sends the GC message k_EMsgDOTAGetPeriodicResource (CMsgDOTAGetPeriodicResource) and awaits the response k_EMsgDOTAGetPeriodicResourceResponse,
+// delivered as *CMsgDOTAGetPeriodicResourceResponse.
 func (d *Dota2) GetPeriodicResource(
 	ctx context.Context,
 	accountID uint32,
@@ -1599,10 +1541,9 @@ func (d *Dota2) GetPeriodicResource(
 }
 
 // GetPlayerCardItemInfo gets a player card item info.
-// Request ID: k_EMsgGCGetPlayerCardItemInfo
-// Response ID: k_EMsgGCGetPlayerCardItemInfoResponse
-// Request type: CMsgGCGetPlayerCardItemInfo
-// Response type: CMsgGCGetPlayerCardItemInfoResponse
+//
+// Sends the GC message k_EMsgGCGetPlayerCardItemInfo (CMsgGCGetPlayerCardItemInfo) and awaits the response k_EMsgGCGetPlayerCardItemInfoResponse,
+// delivered as *CMsgGCGetPlayerCardItemInfoResponse.
 func (d *Dota2) GetPlayerCardItemInfo(
 	ctx context.Context,
 	accountID uint32,
@@ -1625,11 +1566,9 @@ func (d *Dota2) GetPlayerCardItemInfo(
 	)
 }
 
-// GetPlayerMatchHistory gets a player match history.
-// Request ID: k_EMsgDOTAGetPlayerMatchHistory
-// Response ID: k_EMsgDOTAGetPlayerMatchHistoryResponse
-// Request type: CMsgDOTAGetPlayerMatchHistory
-// Response type: CMsgDOTAGetPlayerMatchHistoryResponse
+// GetPlayerMatchHistory returns a page of an account's match history with
+// per-match results. Pass start_at_match_id from the previous response to page
+// through older matches.
 func (d *Dota2) GetPlayerMatchHistory(
 	ctx context.Context,
 	req *protocol.CMsgDOTAGetPlayerMatchHistory,
@@ -1645,11 +1584,10 @@ func (d *Dota2) GetPlayerMatchHistory(
 	)
 }
 
-// GetProfileCard gets a profile card.
-// Request ID: k_EMsgClientToGCGetProfileCard
-// Response ID: k_EMsgClientToGCGetProfileCardResponse
-// Request type: CMsgClientToGCGetProfileCard
-// Response type: CMsgDOTAProfileCard
+// GetProfileCard requests the profile card of an account.
+//
+// The card is not returned directly; watch for a ProfileCardUpdated event after
+// sending this request.
 func (d *Dota2) GetProfileCard(
 	ctx context.Context,
 	accountID uint32,
@@ -1669,10 +1607,9 @@ func (d *Dota2) GetProfileCard(
 }
 
 // GetProfileTickets gets profile tickets.
-// Request ID: k_EMsgClientToGCGetProfileTickets
-// Response ID: k_EMsgClientToGCGetProfileTicketsResponse
-// Request type: CMsgClientToGCGetProfileTickets
-// Response type: CMsgDOTAProfileTickets
+//
+// Sends the GC message k_EMsgClientToGCGetProfileTickets (CMsgClientToGCGetProfileTickets) and awaits the response k_EMsgClientToGCGetProfileTicketsResponse,
+// delivered as *CMsgDOTAProfileTickets.
 func (d *Dota2) GetProfileTickets(
 	ctx context.Context,
 	accountID uint32,
@@ -1692,10 +1629,9 @@ func (d *Dota2) GetProfileTickets(
 }
 
 // GetQuestProgress gets quest progress.
-// Request ID: k_EMsgClientToGCGetQuestProgress
-// Response ID: k_EMsgClientToGCGetQuestProgressResponse
-// Request type: CMsgClientToGCGetQuestProgress
-// Response type: CMsgClientToGCGetQuestProgressResponse
+//
+// Sends the GC message k_EMsgClientToGCGetQuestProgress (CMsgClientToGCGetQuestProgress) and awaits the response k_EMsgClientToGCGetQuestProgressResponse,
+// delivered as *CMsgClientToGCGetQuestProgressResponse.
 func (d *Dota2) GetQuestProgress(
 	ctx context.Context,
 	questIDs []uint32,
@@ -1715,10 +1651,9 @@ func (d *Dota2) GetQuestProgress(
 }
 
 // GetShopCandyUserData gets a shop candy user data.
-// Request ID: k_EMsgClientToGCCandyShopGetUserData
-// Response ID: k_EMsgClientToGCCandyShopGetUserDataResponse
-// Request type: CMsgClientToGCCandyShopGetUserData
-// Response type: CMsgClientToGCCandyShopGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopGetUserData (CMsgClientToGCCandyShopGetUserData) and awaits the response k_EMsgClientToGCCandyShopGetUserDataResponse,
+// delivered as *CMsgClientToGCCandyShopGetUserDataResponse.
 func (d *Dota2) GetShopCandyUserData(
 	ctx context.Context,
 	candyShopID uint32,
@@ -1738,10 +1673,9 @@ func (d *Dota2) GetShopCandyUserData(
 }
 
 // GetShowcaseUserData gets a showcase user data.
-// Request ID: k_EMsgClientToGCShowcaseGetUserData
-// Response ID: k_EMsgClientToGCShowcaseGetUserDataResponse
-// Request type: CMsgClientToGCShowcaseGetUserData
-// Response type: CMsgClientToGCShowcaseGetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseGetUserData (CMsgClientToGCShowcaseGetUserData) and awaits the response k_EMsgClientToGCShowcaseGetUserDataResponse,
+// delivered as *CMsgClientToGCShowcaseGetUserDataResponse.
 func (d *Dota2) GetShowcaseUserData(
 	ctx context.Context,
 	accountID uint32,
@@ -1763,10 +1697,9 @@ func (d *Dota2) GetShowcaseUserData(
 }
 
 // GetToTIRoadActiveQuest gets a to ti road active quest.
-// Request ID: k_EMsgClientToGCRoadToTIGetActiveQuest
-// Response ID: k_EMsgClientToGCRoadToTIGetActiveQuestResponse
-// Request type: CMsgClientToGCRoadToTIGetActiveQuest
-// Response type: CMsgClientToGCRoadToTIGetActiveQuestResponse
+//
+// Sends the GC message k_EMsgClientToGCRoadToTIGetActiveQuest (CMsgClientToGCRoadToTIGetActiveQuest) and awaits the response k_EMsgClientToGCRoadToTIGetActiveQuestResponse,
+// delivered as *CMsgClientToGCRoadToTIGetActiveQuestResponse.
 func (d *Dota2) GetToTIRoadActiveQuest(
 	ctx context.Context,
 	eventID uint32,
@@ -1786,10 +1719,9 @@ func (d *Dota2) GetToTIRoadActiveQuest(
 }
 
 // GetToTIRoadQuests gets to ti road quests.
-// Request ID: k_EMsgClientToGCRoadToTIGetQuests
-// Response ID: k_EMsgClientToGCRoadToTIGetQuestsResponse
-// Request type: CMsgClientToGCRoadToTIGetQuests
-// Response type: CMsgClientToGCRoadToTIGetQuestsResponse
+//
+// Sends the GC message k_EMsgClientToGCRoadToTIGetQuests (CMsgClientToGCRoadToTIGetQuests) and awaits the response k_EMsgClientToGCRoadToTIGetQuestsResponse,
+// delivered as *CMsgClientToGCRoadToTIGetQuestsResponse.
 func (d *Dota2) GetToTIRoadQuests(
 	ctx context.Context,
 	eventID uint32,
@@ -1809,10 +1741,9 @@ func (d *Dota2) GetToTIRoadQuests(
 }
 
 // GetTourneyWeekendPlayerStats gets tourney weekend player stats.
-// Request ID: k_EMsgClientToGCWeekendTourneyGetPlayerStats
-// Response ID: k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse
-// Request type: CMsgDOTAWeekendTourneyPlayerStatsRequest
-// Response type: CMsgDOTAWeekendTourneyPlayerStats
+//
+// Sends the GC message k_EMsgClientToGCWeekendTourneyGetPlayerStats (CMsgDOTAWeekendTourneyPlayerStatsRequest) and awaits the response k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse,
+// delivered as *CMsgDOTAWeekendTourneyPlayerStats.
 func (d *Dota2) GetTourneyWeekendPlayerStats(
 	ctx context.Context,
 	accountID uint32,
@@ -1834,18 +1765,18 @@ func (d *Dota2) GetTourneyWeekendPlayerStats(
 }
 
 // GetWeekendTourneySchedule gets a weekend tourney schedule.
-// Request ID: k_EMsgDOTAGetWeekendTourneySchedule
-// Request type: CMsgRequestWeekendTourneySchedule
+//
+// Sends the GC message k_EMsgDOTAGetWeekendTourneySchedule (CMsgRequestWeekendTourneySchedule). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) GetWeekendTourneySchedule() {
 	req := &protocol.CMsgRequestWeekendTourneySchedule{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgDOTAGetWeekendTourneySchedule), req)
 }
 
 // GrantBattlerDevItemItem grants a battler dev item item.
-// Request ID: k_EMsgClientToGCItemBattlerDevGrantItem
-// Response ID: k_EMsgClientToGCItemBattlerDevGrantItemResponse
-// Request type: CMsgClientToGCItemBattlerDevGrantItem
-// Response type: CMsgClientToGCItemBattlerDevGrantItemResponse
+//
+// Sends the GC message k_EMsgClientToGCItemBattlerDevGrantItem (CMsgClientToGCItemBattlerDevGrantItem) and awaits the response k_EMsgClientToGCItemBattlerDevGrantItemResponse,
+// delivered as *CMsgClientToGCItemBattlerDevGrantItemResponse.
 func (d *Dota2) GrantBattlerDevItemItem(
 	ctx context.Context,
 	itemDefinitionID uint32,
@@ -1865,10 +1796,9 @@ func (d *Dota2) GrantBattlerDevItemItem(
 }
 
 // GrantDevEventAction grants a dev event action.
-// Request ID: k_EMsgDevGrantEventAction
-// Response ID: k_EMsgDevGrantEventActionResponse
-// Request type: CMsgDevGrantEventAction
-// Response type: CMsgDevGrantEventActionResponse
+//
+// Sends the GC message k_EMsgDevGrantEventAction (CMsgDevGrantEventAction) and awaits the response k_EMsgDevGrantEventActionResponse,
+// delivered as *CMsgDevGrantEventActionResponse.
 func (d *Dota2) GrantDevEventAction(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -1892,10 +1822,9 @@ func (d *Dota2) GrantDevEventAction(
 }
 
 // GrantDevEventPoints grants dev event points.
-// Request ID: k_EMsgDevGrantEventPoints
-// Response ID: k_EMsgDevGrantEventPointsResponse
-// Request type: CMsgDevGrantEventPoints
-// Response type: CMsgDevGrantEventPointsResponse
+//
+// Sends the GC message k_EMsgDevGrantEventPoints (CMsgDevGrantEventPoints) and awaits the response k_EMsgDevGrantEventPointsResponse,
+// delivered as *CMsgDevGrantEventPointsResponse.
 func (d *Dota2) GrantDevEventPoints(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -1919,10 +1848,9 @@ func (d *Dota2) GrantDevEventPoints(
 }
 
 // GrantDevOverworldFortuneTellerCoin grants a dev overworld fortune teller coin.
-// Request ID: k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin
-// Response ID: k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse
-// Request type: CMsgClientToGCOverworldDevGrantFortuneTellerCoin
-// Response type: CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin (CMsgClientToGCOverworldDevGrantFortuneTellerCoin) and awaits the response k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse,
+// delivered as *CMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse.
 func (d *Dota2) GrantDevOverworldFortuneTellerCoin(
 	ctx context.Context,
 	overworldID uint32,
@@ -1942,10 +1870,9 @@ func (d *Dota2) GrantDevOverworldFortuneTellerCoin(
 }
 
 // GrantDevOverworldTokens grants dev overworld tokens.
-// Request ID: k_EMsgClientToGCOverworldDevGrantTokens
-// Response ID: k_EMsgClientToGCOverworldDevGrantTokensResponse
-// Request type: CMsgClientToGCOverworldDevGrantTokens
-// Response type: CMsgClientToGCOverworldDevGrantTokensResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevGrantTokens (CMsgClientToGCOverworldDevGrantTokens) and awaits the response k_EMsgClientToGCOverworldDevGrantTokensResponse,
+// delivered as *CMsgClientToGCOverworldDevGrantTokensResponse.
 func (d *Dota2) GrantDevOverworldTokens(
 	ctx context.Context,
 	overworldID uint32,
@@ -1967,10 +1894,9 @@ func (d *Dota2) GrantDevOverworldTokens(
 }
 
 // GrantEventSupportConsumeItem grants a event support consume item.
-// Request ID: k_EMsgConsumeEventSupportGrantItem
-// Response ID: k_EMsgConsumeEventSupportGrantItemResponse
-// Request type: CMsgConsumeEventSupportGrantItem
-// Response type: CMsgConsumeEventSupportGrantItemResponse
+//
+// Sends the GC message k_EMsgConsumeEventSupportGrantItem (CMsgConsumeEventSupportGrantItem) and awaits the response k_EMsgConsumeEventSupportGrantItemResponse,
+// delivered as *CMsgConsumeEventSupportGrantItemResponse.
 func (d *Dota2) GrantEventSupportConsumeItem(
 	ctx context.Context,
 	itemID uint64,
@@ -1990,10 +1916,9 @@ func (d *Dota2) GrantEventSupportConsumeItem(
 }
 
 // GrantHunterDevMonsterMaterials grants hunter dev monster materials.
-// Request ID: k_EMsgClientToGCMonsterHunterDevGrantMaterials
-// Response ID: k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse
-// Request type: CMsgClientToGCMonsterHunterDevGrantMaterials
-// Response type: CMsgClientToGCMonsterHunterDevGrantMaterialsResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterDevGrantMaterials (CMsgClientToGCMonsterHunterDevGrantMaterials) and awaits the response k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse,
+// delivered as *CMsgClientToGCMonsterHunterDevGrantMaterialsResponse.
 func (d *Dota2) GrantHunterDevMonsterMaterials(
 	ctx context.Context,
 	materialQuantity protocol.CMsgMonsterHunterMaterialQuantity,
@@ -2013,10 +1938,9 @@ func (d *Dota2) GrantHunterDevMonsterMaterials(
 }
 
 // GrantShopDevCandyCandy grants a shop dev candy candy.
-// Request ID: k_EMsgClientToGCCandyShopDevGrantCandy
-// Response ID: k_EMsgClientToGCCandyShopDevGrantCandyResponse
-// Request type: CMsgClientToGCCandyShopDevGrantCandy
-// Response type: CMsgClientToGCCandyShopDevGrantCandyResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevGrantCandy (CMsgClientToGCCandyShopDevGrantCandy) and awaits the response k_EMsgClientToGCCandyShopDevGrantCandyResponse,
+// delivered as *CMsgClientToGCCandyShopDevGrantCandyResponse.
 func (d *Dota2) GrantShopDevCandyCandy(
 	ctx context.Context,
 	candyShopID uint32,
@@ -2038,10 +1962,9 @@ func (d *Dota2) GrantShopDevCandyCandy(
 }
 
 // GrantShopDevCandyCandyBags grants shop dev candy candy bags.
-// Request ID: k_EMsgClientToGCCandyShopDevGrantCandyBags
-// Response ID: k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse
-// Request type: CMsgClientToGCCandyShopDevGrantCandyBags
-// Response type: CMsgClientToGCCandyShopDevGrantCandyBagsResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevGrantCandyBags (CMsgClientToGCCandyShopDevGrantCandyBags) and awaits the response k_EMsgClientToGCCandyShopDevGrantCandyBagsResponse,
+// delivered as *CMsgClientToGCCandyShopDevGrantCandyBagsResponse.
 func (d *Dota2) GrantShopDevCandyCandyBags(
 	ctx context.Context,
 	candyShopID uint32,
@@ -2063,10 +1986,9 @@ func (d *Dota2) GrantShopDevCandyCandyBags(
 }
 
 // GrantShopDevCandyRerollCharges grants shop dev candy reroll charges.
-// Request ID: k_EMsgClientToGCCandyShopDevGrantRerollCharges
-// Response ID: k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse
-// Request type: CMsgClientToGCCandyShopDevGrantRerollCharges
-// Response type: CMsgClientToGCCandyShopDevGrantRerollChargesResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevGrantRerollCharges (CMsgClientToGCCandyShopDevGrantRerollCharges) and awaits the response k_EMsgClientToGCCandyShopDevGrantRerollChargesResponse,
+// delivered as *CMsgClientToGCCandyShopDevGrantRerollChargesResponse.
 func (d *Dota2) GrantShopDevCandyRerollCharges(
 	ctx context.Context,
 	candyShopID uint32,
@@ -2088,10 +2010,9 @@ func (d *Dota2) GrantShopDevCandyRerollCharges(
 }
 
 // InvitePlayerToTeam is undocumented.
-// Request ID: k_EMsgGCTeamInvite_InviterToGC
-// Response ID: k_EMsgGCTeamInvite_GCImmediateResponseToInviter
-// Request type: CMsgDOTATeamInvite_InviterToGC
-// Response type: CMsgDOTATeamInvite_GCImmediateResponseToInviter
+//
+// Sends the GC message k_EMsgGCTeamInvite_InviterToGC (CMsgDOTATeamInvite_InviterToGC) and awaits the response k_EMsgGCTeamInvite_GCImmediateResponseToInviter,
+// delivered as *CMsgDOTATeamInvite_GCImmediateResponseToInviter.
 func (d *Dota2) InvitePlayerToTeam(
 	ctx context.Context,
 	accountID uint32,
@@ -2113,8 +2034,9 @@ func (d *Dota2) InvitePlayerToTeam(
 }
 
 // InvitePrivateChatMember is undocumented.
-// Request ID: k_EMsgClientToGCPrivateChatInvite
-// Request type: CMsgClientToGCPrivateChatInvite
+//
+// Sends the GC message k_EMsgClientToGCPrivateChatInvite (CMsgClientToGCPrivateChatInvite). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) InvitePrivateChatMember(
 	privateChatChannelName string,
 	invitedAccountID uint32,
@@ -2126,11 +2048,8 @@ func (d *Dota2) InvitePrivateChatMember(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCPrivateChatInvite), req)
 }
 
-// JoinChatChannel joins a chat channel.
-// Request ID: k_EMsgGCJoinChatChannel
-// Response ID: k_EMsgGCJoinChatChannelResponse
-// Request type: CMsgDOTAJoinChatChannel
-// Response type: CMsgDOTAJoinChatChannelResponse
+// JoinChatChannel joins a chat channel by name and type. The response lists
+// the channel members; other joins and leaves arrive as events.
 func (d *Dota2) JoinChatChannel(
 	ctx context.Context,
 	channelName string,
@@ -2154,10 +2073,9 @@ func (d *Dota2) JoinChatChannel(
 }
 
 // JoinGuild joins a guild.
-// Request ID: k_EMsgClientToGCJoinGuild
-// Response ID: k_EMsgClientToGCJoinGuildResponse
-// Request type: CMsgClientToGCJoinGuild
-// Response type: CMsgClientToGCJoinGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCJoinGuild (CMsgClientToGCJoinGuild) and awaits the response k_EMsgClientToGCJoinGuildResponse,
+// delivered as *CMsgClientToGCJoinGuildResponse.
 func (d *Dota2) JoinGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -2176,11 +2094,7 @@ func (d *Dota2) JoinGuild(
 	)
 }
 
-// JoinLobby joins a lobby.
-// Request ID: k_EMsgGCPracticeLobbyJoin
-// Response ID: k_EMsgGCPracticeLobbyJoinResponse
-// Request type: CMsgPracticeLobbyJoin
-// Response type: CMsgPracticeLobbyJoinResponse
+// JoinLobby joins a practice lobby by ID, optionally with a pass key.
 func (d *Dota2) JoinLobby(
 	ctx context.Context,
 	lobbyID uint64,
@@ -2206,8 +2120,9 @@ func (d *Dota2) JoinLobby(
 }
 
 // JoinLobbyBroadcastChannel joins a lobby broadcast channel.
-// Request ID: k_EMsgGCPracticeLobbyJoinBroadcastChannel
-// Request type: CMsgPracticeLobbyJoinBroadcastChannel
+//
+// Sends the GC message k_EMsgGCPracticeLobbyJoinBroadcastChannel (CMsgPracticeLobbyJoinBroadcastChannel). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) JoinLobbyBroadcastChannel(
 	channel uint32,
 	preferredDescription string,
@@ -2224,10 +2139,9 @@ func (d *Dota2) JoinLobbyBroadcastChannel(
 }
 
 // JoinPartyFromBeacon joins a party from beacon.
-// Request ID: k_EMsgClientToGCJoinPartyFromBeacon
-// Response ID: k_EMsgGCToClientJoinPartyFromBeaconResponse
-// Request type: CMsgClientToGCJoinPartyFromBeacon
-// Response type: CMsgGCToClientJoinPartyFromBeaconResponse
+//
+// Sends the GC message k_EMsgClientToGCJoinPartyFromBeacon (CMsgClientToGCJoinPartyFromBeacon) and awaits the response k_EMsgGCToClientJoinPartyFromBeaconResponse,
+// delivered as *CMsgGCToClientJoinPartyFromBeaconResponse.
 func (d *Dota2) JoinPartyFromBeacon(
 	ctx context.Context,
 	partyID uint64,
@@ -2251,10 +2165,9 @@ func (d *Dota2) JoinPartyFromBeacon(
 }
 
 // JoinPlaytest joins a playtest.
-// Request ID: k_EMsgClientToGCJoinPlaytest
-// Response ID: k_EMsgClientToGCJoinPlaytestResponse
-// Request type: CMsgClientToGCJoinPlaytest
-// Response type: CMsgClientToGCJoinPlaytestResponse
+//
+// Sends the GC message k_EMsgClientToGCJoinPlaytest (CMsgClientToGCJoinPlaytest) and awaits the response k_EMsgClientToGCJoinPlaytestResponse,
+// delivered as *CMsgClientToGCJoinPlaytestResponse.
 func (d *Dota2) JoinPlaytest(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCJoinPlaytestResponse, error) {
@@ -2271,10 +2184,9 @@ func (d *Dota2) JoinPlaytest(
 }
 
 // JoinPrivateCoachingSessionLobby joins a private coaching session lobby.
-// Request ID: k_EMsgClientToGCJoinPrivateCoachingSessionLobby
-// Response ID: k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
-// Request type: CMsgClientToGCJoinPrivateCoachingSessionLobby
-// Response type: CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
+//
+// Sends the GC message k_EMsgClientToGCJoinPrivateCoachingSessionLobby (CMsgClientToGCJoinPrivateCoachingSessionLobby) and awaits the response k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse,
+// delivered as *CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse.
 func (d *Dota2) JoinPrivateCoachingSessionLobby(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCJoinPrivateCoachingSessionLobbyResponse, error) {
@@ -2291,10 +2203,9 @@ func (d *Dota2) JoinPrivateCoachingSessionLobby(
 }
 
 // JoinQuickCustomLobby joins a quick custom lobby.
-// Request ID: k_EMsgGCQuickJoinCustomLobby
-// Response ID: k_EMsgGCQuickJoinCustomLobbyResponse
-// Request type: CMsgQuickJoinCustomLobby
-// Response type: CMsgQuickJoinCustomLobbyResponse
+//
+// Sends the GC message k_EMsgGCQuickJoinCustomLobby (CMsgQuickJoinCustomLobby) and awaits the response k_EMsgGCQuickJoinCustomLobbyResponse,
+// delivered as *CMsgQuickJoinCustomLobbyResponse.
 func (d *Dota2) JoinQuickCustomLobby(
 	ctx context.Context,
 	legacyServerRegion uint32,
@@ -2324,10 +2235,9 @@ func (d *Dota2) JoinQuickCustomLobby(
 }
 
 // KickGuildMember kicks a guild member.
-// Request ID: k_EMsgClientToGCKickGuildMember
-// Response ID: k_EMsgClientToGCKickGuildMemberResponse
-// Request type: CMsgClientToGCKickGuildMember
-// Response type: CMsgClientToGCKickGuildMemberResponse
+//
+// Sends the GC message k_EMsgClientToGCKickGuildMember (CMsgClientToGCKickGuildMember) and awaits the response k_EMsgClientToGCKickGuildMemberResponse,
+// delivered as *CMsgClientToGCKickGuildMemberResponse.
 func (d *Dota2) KickGuildMember(
 	ctx context.Context,
 	guildID uint32,
@@ -2348,9 +2258,8 @@ func (d *Dota2) KickGuildMember(
 	)
 }
 
-// KickLobbyMember kicks a lobby member.
-// Request ID: k_EMsgGCPracticeLobbyKick
-// Request type: CMsgPracticeLobbyKick
+// KickLobbyMember kicks a member from your practice lobby. Lobby leaders
+// only.
 func (d *Dota2) KickLobbyMember(
 	accountID uint32,
 ) {
@@ -2361,8 +2270,9 @@ func (d *Dota2) KickLobbyMember(
 }
 
 // KickLobbyMemberFromTeam kicks a lobby member from team.
-// Request ID: k_EMsgGCPracticeLobbyKickFromTeam
-// Request type: CMsgPracticeLobbyKickFromTeam
+//
+// Sends the GC message k_EMsgGCPracticeLobbyKickFromTeam (CMsgPracticeLobbyKickFromTeam). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) KickLobbyMemberFromTeam(
 	accountID uint32,
 ) {
@@ -2373,8 +2283,9 @@ func (d *Dota2) KickLobbyMemberFromTeam(
 }
 
 // KickPrivateChatMember kicks a private chat member.
-// Request ID: k_EMsgClientToGCPrivateChatKick
-// Request type: CMsgClientToGCPrivateChatKick
+//
+// Sends the GC message k_EMsgClientToGCPrivateChatKick (CMsgClientToGCPrivateChatKick). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) KickPrivateChatMember(
 	privateChatChannelName string,
 	kickAccountID uint32,
@@ -2387,10 +2298,9 @@ func (d *Dota2) KickPrivateChatMember(
 }
 
 // KickTeamMember kicks a team member.
-// Request ID: k_EMsgGCKickTeamMember
-// Response ID: k_EMsgGCKickTeamMemberResponse
-// Request type: CMsgDOTAKickTeamMember
-// Response type: CMsgDOTAKickTeamMemberResponse
+//
+// Sends the GC message k_EMsgGCKickTeamMember (CMsgDOTAKickTeamMember) and awaits the response k_EMsgGCKickTeamMemberResponse,
+// delivered as *CMsgDOTAKickTeamMemberResponse.
 func (d *Dota2) KickTeamMember(
 	ctx context.Context,
 	accountID uint32,
@@ -2411,17 +2321,13 @@ func (d *Dota2) KickTeamMember(
 	)
 }
 
-// LaunchLobby launchs a lobby.
-// Request ID: k_EMsgGCPracticeLobbyLaunch
-// Request type: CMsgPracticeLobbyLaunch
+// LaunchLobby starts the match for the practice lobby you lead.
 func (d *Dota2) LaunchLobby() {
 	req := &protocol.CMsgPracticeLobbyLaunch{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch), req)
 }
 
-// LeaveChatChannel leaves a chat channel.
-// Request ID: k_EMsgGCLeaveChatChannel
-// Request type: CMsgDOTALeaveChatChannel
+// LeaveChatChannel leaves a joined chat channel.
 func (d *Dota2) LeaveChatChannel(
 	channelID uint64,
 ) {
@@ -2432,10 +2338,9 @@ func (d *Dota2) LeaveChatChannel(
 }
 
 // LeaveGuild leaves a guild.
-// Request ID: k_EMsgClientToGCLeaveGuild
-// Response ID: k_EMsgClientToGCLeaveGuildResponse
-// Request type: CMsgClientToGCLeaveGuild
-// Response type: CMsgClientToGCLeaveGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCLeaveGuild (CMsgClientToGCLeaveGuild) and awaits the response k_EMsgClientToGCLeaveGuildResponse,
+// delivered as *CMsgClientToGCLeaveGuildResponse.
 func (d *Dota2) LeaveGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -2454,19 +2359,16 @@ func (d *Dota2) LeaveGuild(
 	)
 }
 
-// LeaveLobby leaves a lobby.
-// Request ID: k_EMsgGCPracticeLobbyLeave
-// Request type: CMsgPracticeLobbyLeave
+// LeaveLobby leaves the current practice lobby without destroying it.
 func (d *Dota2) LeaveLobby() {
 	req := &protocol.CMsgPracticeLobbyLeave{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave), req)
 }
 
 // LeavePrivateCoachingSession leaves a private coaching session.
-// Request ID: k_EMsgClientToGCLeavePrivateCoachingSession
-// Response ID: k_EMsgClientToGCLeavePrivateCoachingSessionResponse
-// Request type: CMsgClientToGCLeavePrivateCoachingSession
-// Response type: CMsgClientToGCLeavePrivateCoachingSessionResponse
+//
+// Sends the GC message k_EMsgClientToGCLeavePrivateCoachingSession (CMsgClientToGCLeavePrivateCoachingSession) and awaits the response k_EMsgClientToGCLeavePrivateCoachingSessionResponse,
+// delivered as *CMsgClientToGCLeavePrivateCoachingSessionResponse.
 func (d *Dota2) LeavePrivateCoachingSession(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCLeavePrivateCoachingSessionResponse, error) {
@@ -2483,10 +2385,9 @@ func (d *Dota2) LeavePrivateCoachingSession(
 }
 
 // LeaveTeam leaves a team.
-// Request ID: k_EMsgGCLeaveTeam
-// Response ID: k_EMsgGCLeaveTeamResponse
-// Request type: CMsgDOTALeaveTeam
-// Response type: CMsgDOTALeaveTeamResponse
+//
+// Sends the GC message k_EMsgGCLeaveTeam (CMsgDOTALeaveTeam) and awaits the response k_EMsgGCLeaveTeamResponse,
+// delivered as *CMsgDOTALeaveTeamResponse.
 func (d *Dota2) LeaveTeam(
 	ctx context.Context,
 	teamID uint32,
@@ -2506,18 +2407,18 @@ func (d *Dota2) LeaveTeam(
 }
 
 // LeaveTourneyWeekend leaves a tourney weekend.
-// Request ID: k_EMsgClientToGCWeekendTourneyLeave
-// Request type: CMsgWeekendTourneyLeave
+//
+// Sends the GC message k_EMsgClientToGCWeekendTourneyLeave (CMsgWeekendTourneyLeave). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) LeaveTourneyWeekend() {
 	req := &protocol.CMsgWeekendTourneyLeave{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCWeekendTourneyLeave), req)
 }
 
 // ListChatChannel lists a chat channel.
-// Request ID: k_EMsgGCRequestChatChannelList
-// Response ID: k_EMsgGCRequestChatChannelListResponse
-// Request type: CMsgDOTARequestChatChannelList
-// Response type: CMsgDOTARequestChatChannelListResponse
+//
+// Sends the GC message k_EMsgGCRequestChatChannelList (CMsgDOTARequestChatChannelList) and awaits the response k_EMsgGCRequestChatChannelListResponse,
+// delivered as *CMsgDOTARequestChatChannelListResponse.
 func (d *Dota2) ListChatChannel(
 	ctx context.Context,
 ) (*protocol.CMsgDOTARequestChatChannelListResponse, error) {
@@ -2534,8 +2435,9 @@ func (d *Dota2) ListChatChannel(
 }
 
 // ListCustomGamesTop lists a custom games top.
-// Request ID: k_EMsgGCTopCustomGamesList
-// Request type: CMsgGCTopCustomGamesList
+//
+// Sends the GC message k_EMsgGCTopCustomGamesList (CMsgGCTopCustomGamesList). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ListCustomGamesTop(
 	topCustomGames []uint64,
 	gameOfTheDay uint64,
@@ -2548,10 +2450,9 @@ func (d *Dota2) ListCustomGamesTop(
 }
 
 // ListFriendLobby lists a friend lobby.
-// Request ID: k_EMsgGCFriendPracticeLobbyListRequest
-// Response ID: k_EMsgGCFriendPracticeLobbyListResponse
-// Request type: CMsgFriendPracticeLobbyListRequest
-// Response type: CMsgFriendPracticeLobbyListResponse
+//
+// Sends the GC message k_EMsgGCFriendPracticeLobbyListRequest (CMsgFriendPracticeLobbyListRequest) and awaits the response k_EMsgGCFriendPracticeLobbyListResponse,
+// delivered as *CMsgFriendPracticeLobbyListResponse.
 func (d *Dota2) ListFriendLobby(
 	ctx context.Context,
 	friends []uint32,
@@ -2571,10 +2472,9 @@ func (d *Dota2) ListFriendLobby(
 }
 
 // ListLobbies lists lobbies.
-// Request ID: k_EMsgGCPracticeLobbyList
-// Response ID: k_EMsgGCPracticeLobbyListResponse
-// Request type: CMsgPracticeLobbyList
-// Response type: CMsgPracticeLobbyListResponse
+//
+// Sends the GC message k_EMsgGCPracticeLobbyList (CMsgPracticeLobbyList) and awaits the response k_EMsgGCPracticeLobbyListResponse,
+// delivered as *CMsgPracticeLobbyListResponse.
 func (d *Dota2) ListLobbies(
 	ctx context.Context,
 	passKey string,
@@ -2598,10 +2498,9 @@ func (d *Dota2) ListLobbies(
 }
 
 // ListLobbySpectator lists a lobby spectator.
-// Request ID: k_EMsgClientToGCSpectatorLobbyList
-// Response ID: k_EMsgClientToGCSpectatorLobbyListResponse
-// Request type: CMsgSpectatorLobbyList
-// Response type: CMsgSpectatorLobbyListResponse
+//
+// Sends the GC message k_EMsgClientToGCSpectatorLobbyList (CMsgSpectatorLobbyList) and awaits the response k_EMsgClientToGCSpectatorLobbyListResponse,
+// delivered as *CMsgSpectatorLobbyListResponse.
 func (d *Dota2) ListLobbySpectator(
 	ctx context.Context,
 ) (*protocol.CMsgSpectatorLobbyListResponse, error) {
@@ -2618,8 +2517,9 @@ func (d *Dota2) ListLobbySpectator(
 }
 
 // ListOverworldFortuneLobby lists a overworld fortune lobby.
-// Request ID: k_EMsgLobbyOverworldFortuneList
-// Request type: CMsgLobbyOverworldFortuneList
+//
+// Sends the GC message k_EMsgLobbyOverworldFortuneList (CMsgLobbyOverworldFortuneList). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ListOverworldFortuneLobby(
 	accountID []uint32,
 	fortune []*protocol.CMsgOverworldFortune,
@@ -2632,10 +2532,9 @@ func (d *Dota2) ListOverworldFortuneLobby(
 }
 
 // ListTrophies lists trophies.
-// Request ID: k_EMsgClientToGCGetTrophyList
-// Response ID: k_EMsgClientToGCGetTrophyListResponse
-// Request type: CMsgClientToGCGetTrophyList
-// Response type: CMsgClientToGCGetTrophyListResponse
+//
+// Sends the GC message k_EMsgClientToGCGetTrophyList (CMsgClientToGCGetTrophyList) and awaits the response k_EMsgClientToGCGetTrophyListResponse,
+// delivered as *CMsgClientToGCGetTrophyListResponse.
 func (d *Dota2) ListTrophies(
 	ctx context.Context,
 	accountID uint32,
@@ -2655,10 +2554,9 @@ func (d *Dota2) ListTrophies(
 }
 
 // OpenPlayerCardPack opens a player card pack.
-// Request ID: k_EMsgClientToGCOpenPlayerCardPack
-// Response ID: k_EMsgClientToGCOpenPlayerCardPackResponse
-// Request type: CMsgClientToGCOpenPlayerCardPack
-// Response type: CMsgClientToGCOpenPlayerCardPackResponse
+//
+// Sends the GC message k_EMsgClientToGCOpenPlayerCardPack (CMsgClientToGCOpenPlayerCardPack) and awaits the response k_EMsgClientToGCOpenPlayerCardPackResponse,
+// delivered as *CMsgClientToGCOpenPlayerCardPackResponse.
 func (d *Dota2) OpenPlayerCardPack(
 	ctx context.Context,
 	playerCardPackItemID uint64,
@@ -2684,10 +2582,9 @@ func (d *Dota2) OpenPlayerCardPack(
 }
 
 // OpenShopCandyBags opens shop candy bags.
-// Request ID: k_EMsgClientToGCCandyShopOpenBags
-// Response ID: k_EMsgClientToGCCandyShopOpenBagsResponse
-// Request type: CMsgClientToGCCandyShopOpenBags
-// Response type: CMsgClientToGCCandyShopOpenBagsResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopOpenBags (CMsgClientToGCCandyShopOpenBags) and awaits the response k_EMsgClientToGCCandyShopOpenBagsResponse,
+// delivered as *CMsgClientToGCCandyShopOpenBagsResponse.
 func (d *Dota2) OpenShopCandyBags(
 	ctx context.Context,
 	candyShopID uint32,
@@ -2709,8 +2606,9 @@ func (d *Dota2) OpenShopCandyBags(
 }
 
 // PromotePrivateChatMember promotes a private chat member.
-// Request ID: k_EMsgClientToGCPrivateChatPromote
-// Request type: CMsgClientToGCPrivateChatPromote
+//
+// Sends the GC message k_EMsgClientToGCPrivateChatPromote (CMsgClientToGCPrivateChatPromote). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) PromotePrivateChatMember(
 	privateChatChannelName string,
 	promoteAccountID uint32,
@@ -2723,8 +2621,9 @@ func (d *Dota2) PromotePrivateChatMember(
 }
 
 // PublishUserStat publishs a user stat.
-// Request ID: k_EMsgClientToGCPublishUserStat
-// Request type: CMsgClientToGCPublishUserStat
+//
+// Sends the GC message k_EMsgClientToGCPublishUserStat (CMsgClientToGCPublishUserStat). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) PublishUserStat(
 	userStatsEvent uint32,
 	referenceData uint64,
@@ -2737,10 +2636,9 @@ func (d *Dota2) PublishUserStat(
 }
 
 // PurchaseFilteredPlayerSlot purchases a filtered player slot.
-// Request ID: k_EMsgClientToGCPurchaseFilteredPlayerSlot
-// Response ID: k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse
-// Request type: CMsgClientToGCPurchaseFilteredPlayerSlot
-// Response type: CMsgGCToClientPurchaseFilteredPlayerSlotResponse
+//
+// Sends the GC message k_EMsgClientToGCPurchaseFilteredPlayerSlot (CMsgClientToGCPurchaseFilteredPlayerSlot) and awaits the response k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse,
+// delivered as *CMsgGCToClientPurchaseFilteredPlayerSlotResponse.
 func (d *Dota2) PurchaseFilteredPlayerSlot(
 	ctx context.Context,
 	additionalSlotsCurrent int32,
@@ -2760,10 +2658,9 @@ func (d *Dota2) PurchaseFilteredPlayerSlot(
 }
 
 // PurchaseHeroRandomRelic purchases a hero random relic.
-// Request ID: k_EMsgPurchaseHeroRandomRelic
-// Response ID: k_EMsgPurchaseHeroRandomRelicResponse
-// Request type: CMsgPurchaseHeroRandomRelic
-// Response type: CMsgPurchaseHeroRandomRelicResponse
+//
+// Sends the GC message k_EMsgPurchaseHeroRandomRelic (CMsgPurchaseHeroRandomRelic) and awaits the response k_EMsgPurchaseHeroRandomRelicResponse,
+// delivered as *CMsgPurchaseHeroRandomRelicResponse.
 func (d *Dota2) PurchaseHeroRandomRelic(
 	ctx context.Context,
 	heroID int32,
@@ -2785,10 +2682,9 @@ func (d *Dota2) PurchaseHeroRandomRelic(
 }
 
 // PurchaseItemWithEventPoints purchases item with event points.
-// Request ID: k_EMsgPurchaseItemWithEventPoints
-// Response ID: k_EMsgPurchaseItemWithEventPointsResponse
-// Request type: CMsgPurchaseItemWithEventPoints
-// Response type: CMsgPurchaseItemWithEventPointsResponse
+//
+// Sends the GC message k_EMsgPurchaseItemWithEventPoints (CMsgPurchaseItemWithEventPoints) and awaits the response k_EMsgPurchaseItemWithEventPointsResponse,
+// delivered as *CMsgPurchaseItemWithEventPointsResponse.
 func (d *Dota2) PurchaseItemWithEventPoints(
 	ctx context.Context,
 	itemDef uint32,
@@ -2814,10 +2710,9 @@ func (d *Dota2) PurchaseItemWithEventPoints(
 }
 
 // PurchaseLabyrinthBlessings purchases labyrinth blessings.
-// Request ID: k_EMsgClientToGCPurchaseLabyrinthBlessings
-// Response ID: k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse
-// Request type: CMsgClientToGCPurchaseLabyrinthBlessings
-// Response type: CMsgClientToGCPurchaseLabyrinthBlessingsResponse
+//
+// Sends the GC message k_EMsgClientToGCPurchaseLabyrinthBlessings (CMsgClientToGCPurchaseLabyrinthBlessings) and awaits the response k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse,
+// delivered as *CMsgClientToGCPurchaseLabyrinthBlessingsResponse.
 func (d *Dota2) PurchaseLabyrinthBlessings(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -2843,10 +2738,9 @@ func (d *Dota2) PurchaseLabyrinthBlessings(
 }
 
 // PurchasePlayerCardSpecific purchases a player card specific.
-// Request ID: k_EMsgClientToGCPlayerCardSpecificPurchaseRequest
-// Response ID: k_EMsgClientToGCPlayerCardSpecificPurchaseResponse
-// Request type: CMsgClientToGCPlayerCardSpecificPurchaseRequest
-// Response type: CMsgClientToGCPlayerCardSpecificPurchaseResponse
+//
+// Sends the GC message k_EMsgClientToGCPlayerCardSpecificPurchaseRequest (CMsgClientToGCPlayerCardSpecificPurchaseRequest) and awaits the response k_EMsgClientToGCPlayerCardSpecificPurchaseResponse,
+// delivered as *CMsgClientToGCPlayerCardSpecificPurchaseResponse.
 func (d *Dota2) PurchasePlayerCardSpecific(
 	ctx context.Context,
 	playerAccountID uint32,
@@ -2870,10 +2764,9 @@ func (d *Dota2) PurchasePlayerCardSpecific(
 }
 
 // PurchaseShopCandyReward purchases a shop candy reward.
-// Request ID: k_EMsgClientToGCCandyShopPurchaseReward
-// Response ID: k_EMsgClientToGCCandyShopPurchaseRewardResponse
-// Request type: CMsgClientToGCCandyShopPurchaseReward
-// Response type: CMsgClientToGCCandyShopPurchaseRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopPurchaseReward (CMsgClientToGCCandyShopPurchaseReward) and awaits the response k_EMsgClientToGCCandyShopPurchaseRewardResponse,
+// delivered as *CMsgClientToGCCandyShopPurchaseRewardResponse.
 func (d *Dota2) PurchaseShopCandyReward(
 	ctx context.Context,
 	candyShopID uint32,
@@ -2895,8 +2788,9 @@ func (d *Dota2) PurchaseShopCandyReward(
 }
 
 // QueryHasItem queries to check if the target has item.
-// Request ID: k_EMsgGCHasItemQuery
-// Request type: CMsgDOTAHasItemQuery
+//
+// Sends the GC message k_EMsgGCHasItemQuery (CMsgDOTAHasItemQuery). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) QueryHasItem(
 	accountID uint32,
 	itemID uint64,
@@ -2909,10 +2803,9 @@ func (d *Dota2) QueryHasItem(
 }
 
 // RecordContestVote records a contest vote.
-// Request ID: k_EMsgClientToGCRecordContestVote
-// Response ID: k_EMsgGCToClientRecordContestVoteResponse
-// Request type: CMsgClientToGCRecordContestVote
-// Response type: CMsgGCToClientRecordContestVoteResponse
+//
+// Sends the GC message k_EMsgClientToGCRecordContestVote (CMsgClientToGCRecordContestVote) and awaits the response k_EMsgGCToClientRecordContestVoteResponse,
+// delivered as *CMsgGCToClientRecordContestVoteResponse.
 func (d *Dota2) RecordContestVote(
 	ctx context.Context,
 	contestID uint32,
@@ -2936,10 +2829,9 @@ func (d *Dota2) RecordContestVote(
 }
 
 // RecyclePlayerCard recycles a player card.
-// Request ID: k_EMsgClientToGCRecyclePlayerCard
-// Response ID: k_EMsgClientToGCRecyclePlayerCardResponse
-// Request type: CMsgClientToGCRecyclePlayerCard
-// Response type: CMsgClientToGCRecyclePlayerCardResponse
+//
+// Sends the GC message k_EMsgClientToGCRecyclePlayerCard (CMsgClientToGCRecyclePlayerCard) and awaits the response k_EMsgClientToGCRecyclePlayerCardResponse,
+// delivered as *CMsgClientToGCRecyclePlayerCardResponse.
 func (d *Dota2) RecyclePlayerCard(
 	ctx context.Context,
 	playerCardItemIDs []uint64,
@@ -2961,10 +2853,9 @@ func (d *Dota2) RecyclePlayerCard(
 }
 
 // RedeemDraftUnderReward redeems a draft under reward.
-// Request ID: k_EMsgClientToGCUnderDraftRedeemReward
-// Response ID: k_EMsgClientToGCUnderDraftRedeemRewardResponse
-// Request type: CMsgClientToGCUnderDraftRedeemReward
-// Response type: CMsgClientToGCUnderDraftRedeemRewardResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftRedeemReward (CMsgClientToGCUnderDraftRedeemReward) and awaits the response k_EMsgClientToGCUnderDraftRedeemRewardResponse,
+// delivered as *CMsgClientToGCUnderDraftRedeemRewardResponse.
 func (d *Dota2) RedeemDraftUnderReward(
 	ctx context.Context,
 	eventID uint32,
@@ -2986,10 +2877,9 @@ func (d *Dota2) RedeemDraftUnderReward(
 }
 
 // RedeemItem redeems a item.
-// Request ID: k_EMsgDOTARedeemItem
-// Response ID: k_EMsgDOTARedeemItemResponse
-// Request type: CMsgDOTARedeemItem
-// Response type: CMsgDOTARedeemItemResponse
+//
+// Sends the GC message k_EMsgDOTARedeemItem (CMsgDOTARedeemItem) and awaits the response k_EMsgDOTARedeemItemResponse,
+// delivered as *CMsgDOTARedeemItemResponse.
 func (d *Dota2) RedeemItem(
 	ctx context.Context,
 	currencyID uint64,
@@ -3013,18 +2903,18 @@ func (d *Dota2) RedeemItem(
 }
 
 // RejoinAllChatChannels is undocumented.
-// Request ID: k_EMsgClientsRejoinChatChannels
-// Request type: CMsgClientsRejoinChatChannels
+//
+// Sends the GC message k_EMsgClientsRejoinChatChannels (CMsgClientsRejoinChatChannels). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RejoinAllChatChannels() {
 	req := &protocol.CMsgClientsRejoinChatChannels{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientsRejoinChatChannels), req)
 }
 
 // ReleaseEditorItemReservation releases a editor item reservation.
-// Request ID: k_EMsgGCItemEditorReleaseReservation
-// Response ID: k_EMsgGCItemEditorReleaseReservationResponse
-// Request type: CMsgGCItemEditorReleaseReservation
-// Response type: CMsgGCItemEditorReleaseReservationResponse
+//
+// Sends the GC message k_EMsgGCItemEditorReleaseReservation (CMsgGCItemEditorReleaseReservation) and awaits the response k_EMsgGCItemEditorReleaseReservationResponse,
+// delivered as *CMsgGCItemEditorReleaseReservationResponse.
 func (d *Dota2) ReleaseEditorItemReservation(
 	ctx context.Context,
 	defIndex uint32,
@@ -3046,10 +2936,9 @@ func (d *Dota2) ReleaseEditorItemReservation(
 }
 
 // ReportBattleAcknowledge reports a battle acknowledge.
-// Request ID: k_EMsgClientToGCAcknowledgeBattleReport
-// Response ID: k_EMsgClientToGCAcknowledgeBattleReportResponse
-// Request type: CMsgClientToGCAcknowledgeBattleReport
-// Response type: CMsgClientToGCAcknowledgeBattleReportResponse
+//
+// Sends the GC message k_EMsgClientToGCAcknowledgeBattleReport (CMsgClientToGCAcknowledgeBattleReport) and awaits the response k_EMsgClientToGCAcknowledgeBattleReportResponse,
+// delivered as *CMsgClientToGCAcknowledgeBattleReportResponse.
 func (d *Dota2) ReportBattleAcknowledge(
 	ctx context.Context,
 	accountID uint32,
@@ -3073,8 +2962,9 @@ func (d *Dota2) ReportBattleAcknowledge(
 }
 
 // ReportChatPublicSpam reports a chat public spam.
-// Request ID: k_EMsgGCChatReportPublicSpam
-// Request type: CMsgGCChatReportPublicSpam
+//
+// Sends the GC message k_EMsgGCChatReportPublicSpam (CMsgGCChatReportPublicSpam). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ReportChatPublicSpam(
 	channelID uint64,
 	channelUserID uint32,
@@ -3087,10 +2977,9 @@ func (d *Dota2) ReportChatPublicSpam(
 }
 
 // ReportGuildContent reports a guild content.
-// Request ID: k_EMsgClientToGCReportGuildContent
-// Response ID: k_EMsgClientToGCReportGuildContentResponse
-// Request type: CMsgClientToGCReportGuildContent
-// Response type: CMsgClientToGCReportGuildContentResponse
+//
+// Sends the GC message k_EMsgClientToGCReportGuildContent (CMsgClientToGCReportGuildContent) and awaits the response k_EMsgClientToGCReportGuildContentResponse,
+// delivered as *CMsgClientToGCReportGuildContentResponse.
 func (d *Dota2) ReportGuildContent(
 	ctx context.Context,
 	guildID uint32,
@@ -3112,10 +3001,9 @@ func (d *Dota2) ReportGuildContent(
 }
 
 // RequestAccountGuildEventData requests a account guild event data.
-// Request ID: k_EMsgClientToGCRequestAccountGuildEventData
-// Response ID: k_EMsgClientToGCRequestAccountGuildEventDataResponse
-// Request type: CMsgClientToGCRequestAccountGuildEventData
-// Response type: CMsgClientToGCRequestAccountGuildEventDataResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestAccountGuildEventData (CMsgClientToGCRequestAccountGuildEventData) and awaits the response k_EMsgClientToGCRequestAccountGuildEventDataResponse,
+// delivered as *CMsgClientToGCRequestAccountGuildEventDataResponse.
 func (d *Dota2) RequestAccountGuildEventData(
 	ctx context.Context,
 	guildID uint32,
@@ -3137,10 +3025,9 @@ func (d *Dota2) RequestAccountGuildEventData(
 }
 
 // RequestAccountGuildPersonaInfo requests a account guild persona info.
-// Request ID: k_EMsgClientToGCRequestAccountGuildPersonaInfo
-// Response ID: k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse
-// Request type: CMsgClientToGCRequestAccountGuildPersonaInfo
-// Response type: CMsgClientToGCRequestAccountGuildPersonaInfoResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestAccountGuildPersonaInfo (CMsgClientToGCRequestAccountGuildPersonaInfo) and awaits the response k_EMsgClientToGCRequestAccountGuildPersonaInfoResponse,
+// delivered as *CMsgClientToGCRequestAccountGuildPersonaInfoResponse.
 func (d *Dota2) RequestAccountGuildPersonaInfo(
 	ctx context.Context,
 	accountID uint32,
@@ -3160,10 +3047,9 @@ func (d *Dota2) RequestAccountGuildPersonaInfo(
 }
 
 // RequestAccountGuildPersonaInfoBatch requests a account guild persona info batch.
-// Request ID: k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch
-// Response ID: k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse
-// Request type: CMsgClientToGCRequestAccountGuildPersonaInfoBatch
-// Response type: CMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch (CMsgClientToGCRequestAccountGuildPersonaInfoBatch) and awaits the response k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse,
+// delivered as *CMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse.
 func (d *Dota2) RequestAccountGuildPersonaInfoBatch(
 	ctx context.Context,
 	accountIDs []uint32,
@@ -3183,10 +3069,9 @@ func (d *Dota2) RequestAccountGuildPersonaInfoBatch(
 }
 
 // RequestActiveBeaconParties requests active beacon parties.
-// Request ID: k_EMsgClientToGCRequestActiveBeaconParties
-// Response ID: k_EMsgGCToClientRequestActiveBeaconPartiesResponse
-// Request type: CMsgClientToGCRequestActiveBeaconParties
-// Response type: CMsgGCToClientRequestActiveBeaconPartiesResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestActiveBeaconParties (CMsgClientToGCRequestActiveBeaconParties) and awaits the response k_EMsgGCToClientRequestActiveBeaconPartiesResponse,
+// delivered as *CMsgGCToClientRequestActiveBeaconPartiesResponse.
 func (d *Dota2) RequestActiveBeaconParties(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientRequestActiveBeaconPartiesResponse, error) {
@@ -3203,10 +3088,9 @@ func (d *Dota2) RequestActiveBeaconParties(
 }
 
 // RequestActiveGuildChallenge requests a active guild challenge.
-// Request ID: k_EMsgClientToGCRequestActiveGuildChallenge
-// Response ID: k_EMsgClientToGCRequestActiveGuildChallengeResponse
-// Request type: CMsgClientToGCRequestActiveGuildChallenge
-// Response type: CMsgClientToGCRequestActiveGuildChallengeResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestActiveGuildChallenge (CMsgClientToGCRequestActiveGuildChallenge) and awaits the response k_EMsgClientToGCRequestActiveGuildChallengeResponse,
+// delivered as *CMsgClientToGCRequestActiveGuildChallengeResponse.
 func (d *Dota2) RequestActiveGuildChallenge(
 	ctx context.Context,
 	guildID uint32,
@@ -3228,10 +3112,9 @@ func (d *Dota2) RequestActiveGuildChallenge(
 }
 
 // RequestActiveGuildContracts requests active guild contracts.
-// Request ID: k_EMsgClientToGCRequestActiveGuildContracts
-// Response ID: k_EMsgClientToGCRequestActiveGuildContractsResponse
-// Request type: CMsgClientToGCRequestActiveGuildContracts
-// Response type: CMsgClientToGCRequestActiveGuildContractsResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestActiveGuildContracts (CMsgClientToGCRequestActiveGuildContracts) and awaits the response k_EMsgClientToGCRequestActiveGuildContractsResponse,
+// delivered as *CMsgClientToGCRequestActiveGuildContractsResponse.
 func (d *Dota2) RequestActiveGuildContracts(
 	ctx context.Context,
 	guildID uint32,
@@ -3253,10 +3136,9 @@ func (d *Dota2) RequestActiveGuildContracts(
 }
 
 // RequestAnchorPhoneNumber requests to check if the target anchor phone number.
-// Request ID: k_EMsgAnchorPhoneNumberRequest
-// Response ID: k_EMsgAnchorPhoneNumberResponse
-// Request type: CMsgDOTAAnchorPhoneNumberRequest
-// Response type: CMsgDOTAAnchorPhoneNumberResponse
+//
+// Sends the GC message k_EMsgAnchorPhoneNumberRequest (CMsgDOTAAnchorPhoneNumberRequest) and awaits the response k_EMsgAnchorPhoneNumberResponse,
+// delivered as *CMsgDOTAAnchorPhoneNumberResponse.
 func (d *Dota2) RequestAnchorPhoneNumber(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAAnchorPhoneNumberResponse, error) {
@@ -3273,10 +3155,9 @@ func (d *Dota2) RequestAnchorPhoneNumber(
 }
 
 // RequestArcanaVotesRemaining requests a arcana votes remaining.
-// Request ID: k_EMsgClientToGCRequestArcanaVotesRemaining
-// Response ID: k_EMsgClientToGCRequestArcanaVotesRemainingResponse
-// Request type: CMsgClientToGCRequestArcanaVotesRemaining
-// Response type: CMsgClientToGCRequestArcanaVotesRemainingResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestArcanaVotesRemaining (CMsgClientToGCRequestArcanaVotesRemaining) and awaits the response k_EMsgClientToGCRequestArcanaVotesRemainingResponse,
+// delivered as *CMsgClientToGCRequestArcanaVotesRemainingResponse.
 func (d *Dota2) RequestArcanaVotesRemaining(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCRequestArcanaVotesRemainingResponse, error) {
@@ -3293,10 +3174,9 @@ func (d *Dota2) RequestArcanaVotesRemaining(
 }
 
 // RequestBatchGetPlayerCardRoster requests a batch get player card roster.
-// Request ID: k_EMsgClientToGCBatchGetPlayerCardRosterRequest
-// Response ID: k_EMsgClientToGCBatchGetPlayerCardRosterResponse
-// Request type: CMsgClientToGCBatchGetPlayerCardRosterRequest
-// Response type: CMsgClientToGCBatchGetPlayerCardRosterResponse
+//
+// Sends the GC message k_EMsgClientToGCBatchGetPlayerCardRosterRequest (CMsgClientToGCBatchGetPlayerCardRosterRequest) and awaits the response k_EMsgClientToGCBatchGetPlayerCardRosterResponse,
+// delivered as *CMsgClientToGCBatchGetPlayerCardRosterResponse.
 func (d *Dota2) RequestBatchGetPlayerCardRoster(
 	ctx context.Context,
 	leagueTimestamps []*protocol.CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp,
@@ -3316,10 +3196,9 @@ func (d *Dota2) RequestBatchGetPlayerCardRoster(
 }
 
 // RequestChinaSSAAccepted requests a china ssa accepted.
-// Request ID: k_EMsgClientToGCChinaSSAAcceptedRequest
-// Response ID: k_EMsgClientToGCChinaSSAAcceptedResponse
-// Request type: CMsgClientToGCChinaSSAAcceptedRequest
-// Response type: CMsgClientToGCChinaSSAAcceptedResponse
+//
+// Sends the GC message k_EMsgClientToGCChinaSSAAcceptedRequest (CMsgClientToGCChinaSSAAcceptedRequest) and awaits the response k_EMsgClientToGCChinaSSAAcceptedResponse,
+// delivered as *CMsgClientToGCChinaSSAAcceptedResponse.
 func (d *Dota2) RequestChinaSSAAccepted(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCChinaSSAAcceptedResponse, error) {
@@ -3336,10 +3215,9 @@ func (d *Dota2) RequestChinaSSAAccepted(
 }
 
 // RequestChinaSSAURL requests a china ssaurl.
-// Request ID: k_EMsgClientToGCChinaSSAURLRequest
-// Response ID: k_EMsgClientToGCChinaSSAURLResponse
-// Request type: CMsgClientToGCChinaSSAURLRequest
-// Response type: CMsgClientToGCChinaSSAURLResponse
+//
+// Sends the GC message k_EMsgClientToGCChinaSSAURLRequest (CMsgClientToGCChinaSSAURLRequest) and awaits the response k_EMsgClientToGCChinaSSAURLResponse,
+// delivered as *CMsgClientToGCChinaSSAURLResponse.
 func (d *Dota2) RequestChinaSSAURL(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCChinaSSAURLResponse, error) {
@@ -3356,10 +3234,9 @@ func (d *Dota2) RequestChinaSSAURL(
 }
 
 // RequestCollectorsCacheAvailableData requests a collectors cache available data.
-// Request ID: k_EMsgClientToGCCollectorsCacheAvailableDataRequest
-// Response ID: k_EMsgGCToClientCollectorsCacheAvailableDataResponse
-// Request type: CMsgClientToGCCollectorsCacheAvailableDataRequest
-// Response type: CMsgGCToClientCollectorsCacheAvailableDataResponse
+//
+// Sends the GC message k_EMsgClientToGCCollectorsCacheAvailableDataRequest (CMsgClientToGCCollectorsCacheAvailableDataRequest) and awaits the response k_EMsgGCToClientCollectorsCacheAvailableDataResponse,
+// delivered as *CMsgGCToClientCollectorsCacheAvailableDataResponse.
 func (d *Dota2) RequestCollectorsCacheAvailableData(
 	ctx context.Context,
 	contestID uint32,
@@ -3379,10 +3256,9 @@ func (d *Dota2) RequestCollectorsCacheAvailableData(
 }
 
 // RequestCompendiumData requests a compendium data.
-// Request ID: k_EMsgGCCompendiumDataRequest
-// Response ID: k_EMsgGCCompendiumDataResponse
-// Request type: CMsgDOTACompendiumDataRequest
-// Response type: CMsgDOTACompendiumDataResponse
+//
+// Sends the GC message k_EMsgGCCompendiumDataRequest (CMsgDOTACompendiumDataRequest) and awaits the response k_EMsgGCCompendiumDataResponse,
+// delivered as *CMsgDOTACompendiumDataResponse.
 func (d *Dota2) RequestCompendiumData(
 	ctx context.Context,
 	accountID uint32,
@@ -3404,10 +3280,9 @@ func (d *Dota2) RequestCompendiumData(
 }
 
 // RequestContestVotes requests contest votes.
-// Request ID: k_EMsgClientToGCRequestContestVotes
-// Response ID: k_EMsgClientToGCRequestContestVotesResponse
-// Request type: CMsgClientToGCRequestContestVotes
-// Response type: CMsgClientToGCRequestContestVotesResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestContestVotes (CMsgClientToGCRequestContestVotes) and awaits the response k_EMsgClientToGCRequestContestVotesResponse,
+// delivered as *CMsgClientToGCRequestContestVotesResponse.
 func (d *Dota2) RequestContestVotes(
 	ctx context.Context,
 	contestID uint32,
@@ -3427,10 +3302,9 @@ func (d *Dota2) RequestContestVotes(
 }
 
 // RequestCrawlCavernMapState requests a crawl cavern map state.
-// Request ID: k_EMsgClientToGCCavernCrawlRequestMapState
-// Response ID: k_EMsgClientToGCCavernCrawlRequestMapStateResponse
-// Request type: CMsgClientToGCCavernCrawlRequestMapState
-// Response type: CMsgClientToGCCavernCrawlRequestMapStateResponse
+//
+// Sends the GC message k_EMsgClientToGCCavernCrawlRequestMapState (CMsgClientToGCCavernCrawlRequestMapState) and awaits the response k_EMsgClientToGCCavernCrawlRequestMapStateResponse,
+// delivered as *CMsgClientToGCCavernCrawlRequestMapStateResponse.
 func (d *Dota2) RequestCrawlCavernMapState(
 	ctx context.Context,
 	eventID uint32,
@@ -3450,10 +3324,9 @@ func (d *Dota2) RequestCrawlCavernMapState(
 }
 
 // RequestCreateStickerbookPage requests to check if the target create stickerbook page.
-// Request ID: k_EMsgClientToGCCreateStickerbookPageRequest
-// Response ID: k_EMsgClientToGCCreateStickerbookPageResponse
-// Request type: CMsgClientToGCCreateStickerbookPageRequest
-// Response type: CMsgClientToGCCreateStickerbookPageResponse
+//
+// Sends the GC message k_EMsgClientToGCCreateStickerbookPageRequest (CMsgClientToGCCreateStickerbookPageRequest) and awaits the response k_EMsgClientToGCCreateStickerbookPageResponse,
+// delivered as *CMsgClientToGCCreateStickerbookPageResponse.
 func (d *Dota2) RequestCreateStickerbookPage(
 	ctx context.Context,
 	teamID uint32,
@@ -3477,10 +3350,9 @@ func (d *Dota2) RequestCreateStickerbookPage(
 }
 
 // RequestCustomGamesFriendsPlayed requests a custom games friends played.
-// Request ID: k_EMsgClientToGCCustomGamesFriendsPlayedRequest
-// Response ID: k_EMsgGCToClientCustomGamesFriendsPlayedResponse
-// Request type: CMsgClientToGCCustomGamesFriendsPlayedRequest
-// Response type: CMsgGCToClientCustomGamesFriendsPlayedResponse
+//
+// Sends the GC message k_EMsgClientToGCCustomGamesFriendsPlayedRequest (CMsgClientToGCCustomGamesFriendsPlayedRequest) and awaits the response k_EMsgGCToClientCustomGamesFriendsPlayedResponse,
+// delivered as *CMsgGCToClientCustomGamesFriendsPlayedResponse.
 func (d *Dota2) RequestCustomGamesFriendsPlayed(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientCustomGamesFriendsPlayedResponse, error) {
@@ -3497,10 +3369,9 @@ func (d *Dota2) RequestCustomGamesFriendsPlayed(
 }
 
 // RequestDeleteStickerbookPage requests a delete stickerbook page.
-// Request ID: k_EMsgClientToGCDeleteStickerbookPageRequest
-// Response ID: k_EMsgClientToGCDeleteStickerbookPageResponse
-// Request type: CMsgClientToGCDeleteStickerbookPageRequest
-// Response type: CMsgClientToGCDeleteStickerbookPageResponse
+//
+// Sends the GC message k_EMsgClientToGCDeleteStickerbookPageRequest (CMsgClientToGCDeleteStickerbookPageRequest) and awaits the response k_EMsgClientToGCDeleteStickerbookPageResponse,
+// delivered as *CMsgClientToGCDeleteStickerbookPageResponse.
 func (d *Dota2) RequestDeleteStickerbookPage(
 	ctx context.Context,
 	pageNum uint32,
@@ -3524,10 +3395,9 @@ func (d *Dota2) RequestDeleteStickerbookPage(
 }
 
 // RequestEmoticonData requests a emoticon data.
-// Request ID: k_EMsgClientToGCEmoticonDataRequest
-// Response ID: k_EMsgGCToClientEmoticonData
-// Request type: CMsgClientToGCEmoticonDataRequest
-// Response type: CMsgGCToClientEmoticonData
+//
+// Sends the GC message k_EMsgClientToGCEmoticonDataRequest (CMsgClientToGCEmoticonDataRequest) and awaits the response k_EMsgGCToClientEmoticonData,
+// delivered as *CMsgGCToClientEmoticonData.
 func (d *Dota2) RequestEmoticonData(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientEmoticonData, error) {
@@ -3544,10 +3414,9 @@ func (d *Dota2) RequestEmoticonData(
 }
 
 // RequestEventGoals requests event goals.
-// Request ID: k_EMsgClientToGCEventGoalsRequest
-// Response ID: k_EMsgClientToGCEventGoalsResponse
-// Request type: CMsgClientToGCGetEventGoals
-// Response type: CMsgEventGoals
+//
+// Sends the GC message k_EMsgClientToGCEventGoalsRequest (CMsgClientToGCGetEventGoals) and awaits the response k_EMsgClientToGCEventGoalsResponse,
+// delivered as *CMsgEventGoals.
 func (d *Dota2) RequestEventGoals(
 	ctx context.Context,
 	eventIDs []protocol.EEvent,
@@ -3567,8 +3436,9 @@ func (d *Dota2) RequestEventGoals(
 }
 
 // RequestEventPointLogResponseV2 requests a event point log response v 2.
-// Request ID: k_EMsgClientToGCRequestEventPointLogResponseV2
-// Request type: CMsgClientToGCRequestEventPointLogResponseV2
+//
+// Sends the GC message k_EMsgClientToGCRequestEventPointLogResponseV2 (CMsgClientToGCRequestEventPointLogResponseV2). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RequestEventPointLogResponseV2(
 	result bool,
 	eventID protocol.EEvent,
@@ -3583,8 +3453,9 @@ func (d *Dota2) RequestEventPointLogResponseV2(
 }
 
 // RequestEventPointLogV2 requests a event point log v 2.
-// Request ID: k_EMsgClientToGCRequestEventPointLogV2
-// Request type: CMsgClientToGCRequestEventPointLogV2
+//
+// Sends the GC message k_EMsgClientToGCRequestEventPointLogV2 (CMsgClientToGCRequestEventPointLogV2). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RequestEventPointLogV2(
 	eventID uint32,
 ) {
@@ -3595,10 +3466,9 @@ func (d *Dota2) RequestEventPointLogV2(
 }
 
 // RequestEventTipsSummary requests a event tips summary.
-// Request ID: k_EMsgClientToGCRequestEventTipsSummary
-// Response ID: k_EMsgClientToGCRequestEventTipsSummaryResponse
-// Request type: CMsgEventTipsSummaryRequest
-// Response type: CMsgEventTipsSummaryResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestEventTipsSummary (CMsgEventTipsSummaryRequest) and awaits the response k_EMsgClientToGCRequestEventTipsSummaryResponse,
+// delivered as *CMsgEventTipsSummaryResponse.
 func (d *Dota2) RequestEventTipsSummary(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -3620,10 +3490,9 @@ func (d *Dota2) RequestEventTipsSummary(
 }
 
 // RequestFriendsPlayedCustomGame requests a friends played custom game.
-// Request ID: k_EMsgClientToGCFriendsPlayedCustomGameRequest
-// Response ID: k_EMsgGCToClientFriendsPlayedCustomGameResponse
-// Request type: CMsgClientToGCFriendsPlayedCustomGameRequest
-// Response type: CMsgGCToClientFriendsPlayedCustomGameResponse
+//
+// Sends the GC message k_EMsgClientToGCFriendsPlayedCustomGameRequest (CMsgClientToGCFriendsPlayedCustomGameRequest) and awaits the response k_EMsgGCToClientFriendsPlayedCustomGameResponse,
+// delivered as *CMsgGCToClientFriendsPlayedCustomGameResponse.
 func (d *Dota2) RequestFriendsPlayedCustomGame(
 	ctx context.Context,
 	customGameID uint64,
@@ -3643,10 +3512,9 @@ func (d *Dota2) RequestFriendsPlayedCustomGame(
 }
 
 // RequestGetPlayerCardRoster requests to check if the target get player card roster.
-// Request ID: k_EMsgClientToGCGetPlayerCardRosterRequest
-// Response ID: k_EMsgClientToGCGetPlayerCardRosterResponse
-// Request type: CMsgClientToGCGetPlayerCardRosterRequest
-// Response type: CMsgClientToGCGetPlayerCardRosterResponse
+//
+// Sends the GC message k_EMsgClientToGCGetPlayerCardRosterRequest (CMsgClientToGCGetPlayerCardRosterRequest) and awaits the response k_EMsgClientToGCGetPlayerCardRosterResponse,
+// delivered as *CMsgClientToGCGetPlayerCardRosterResponse.
 func (d *Dota2) RequestGetPlayerCardRoster(
 	ctx context.Context,
 	leagueID uint32,
@@ -3668,10 +3536,9 @@ func (d *Dota2) RequestGetPlayerCardRoster(
 }
 
 // RequestGetRecentPlayTimeFriends requests to check if the target get recent play time friends.
-// Request ID: k_EMsgGetRecentPlayTimeFriendsRequest
-// Response ID: k_EMsgGetRecentPlayTimeFriendsResponse
-// Request type: CMsgDOTAGetRecentPlayTimeFriendsRequest
-// Response type: CMsgDOTAGetRecentPlayTimeFriendsResponse
+//
+// Sends the GC message k_EMsgGetRecentPlayTimeFriendsRequest (CMsgDOTAGetRecentPlayTimeFriendsRequest) and awaits the response k_EMsgGetRecentPlayTimeFriendsResponse,
+// delivered as *CMsgDOTAGetRecentPlayTimeFriendsResponse.
 func (d *Dota2) RequestGetRecentPlayTimeFriends(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAGetRecentPlayTimeFriendsResponse, error) {
@@ -3688,10 +3555,9 @@ func (d *Dota2) RequestGetRecentPlayTimeFriends(
 }
 
 // RequestGetStickerbook requests to check if the target get stickerbook.
-// Request ID: k_EMsgClientToGCGetStickerbookRequest
-// Response ID: k_EMsgClientToGCGetStickerbookResponse
-// Request type: CMsgClientToGCGetStickerbookRequest
-// Response type: CMsgClientToGCGetStickerbookResponse
+//
+// Sends the GC message k_EMsgClientToGCGetStickerbookRequest (CMsgClientToGCGetStickerbookRequest) and awaits the response k_EMsgClientToGCGetStickerbookResponse,
+// delivered as *CMsgClientToGCGetStickerbookResponse.
 func (d *Dota2) RequestGetStickerbook(
 	ctx context.Context,
 	accountID uint32,
@@ -3711,10 +3577,9 @@ func (d *Dota2) RequestGetStickerbook(
 }
 
 // RequestGuildData requests a guild data.
-// Request ID: k_EMsgClientToGCRequestGuildData
-// Response ID: k_EMsgClientToGCRequestGuildDataResponse
-// Request type: CMsgClientToGCRequestGuildData
-// Response type: CMsgClientToGCRequestGuildDataResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestGuildData (CMsgClientToGCRequestGuildData) and awaits the response k_EMsgClientToGCRequestGuildDataResponse,
+// delivered as *CMsgClientToGCRequestGuildDataResponse.
 func (d *Dota2) RequestGuildData(
 	ctx context.Context,
 	guildID uint32,
@@ -3734,10 +3599,9 @@ func (d *Dota2) RequestGuildData(
 }
 
 // RequestGuildEventMembers requests guild event members.
-// Request ID: k_EMsgClientToGCRequestGuildEventMembers
-// Response ID: k_EMsgClientToGCRequestGuildEventMembersResponse
-// Request type: CMsgClientToGCRequestGuildEventMembers
-// Response type: CMsgClientToGCRequestGuildEventMembersResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestGuildEventMembers (CMsgClientToGCRequestGuildEventMembers) and awaits the response k_EMsgClientToGCRequestGuildEventMembersResponse,
+// delivered as *CMsgClientToGCRequestGuildEventMembersResponse.
 func (d *Dota2) RequestGuildEventMembers(
 	ctx context.Context,
 	guildID uint32,
@@ -3759,10 +3623,9 @@ func (d *Dota2) RequestGuildEventMembers(
 }
 
 // RequestGuildFeed requests a guild feed.
-// Request ID: k_EMsgClientToGCRequestGuildFeed
-// Response ID: k_EMsgClientToGCRequestGuildFeedResponse
-// Request type: CMsgClientToGCGuildFeedRequest
-// Response type: CMsgClientToGCRequestGuildFeedResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestGuildFeed (CMsgClientToGCGuildFeedRequest) and awaits the response k_EMsgClientToGCRequestGuildFeedResponse,
+// delivered as *CMsgClientToGCRequestGuildFeedResponse.
 func (d *Dota2) RequestGuildFeed(
 	ctx context.Context,
 	guildID uint32,
@@ -3784,10 +3647,9 @@ func (d *Dota2) RequestGuildFeed(
 }
 
 // RequestGuildMembership requests a guild membership.
-// Request ID: k_EMsgClientToGCRequestGuildMembership
-// Response ID: k_EMsgClientToGCRequestGuildMembershipResponse
-// Request type: CMsgClientToGCRequestGuildMembership
-// Response type: CMsgClientToGCRequestGuildMembershipResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestGuildMembership (CMsgClientToGCRequestGuildMembership) and awaits the response k_EMsgClientToGCRequestGuildMembershipResponse,
+// delivered as *CMsgClientToGCRequestGuildMembershipResponse.
 func (d *Dota2) RequestGuildMembership(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCRequestGuildMembershipResponse, error) {
@@ -3804,10 +3666,9 @@ func (d *Dota2) RequestGuildMembership(
 }
 
 // RequestHeroGlobalData requests a hero global data.
-// Request ID: k_EMsgHeroGlobalDataRequest
-// Response ID: k_EMsgHeroGlobalDataResponse
-// Request type: CMsgHeroGlobalDataRequest
-// Response type: CMsgHeroGlobalDataResponse
+//
+// Sends the GC message k_EMsgHeroGlobalDataRequest (CMsgHeroGlobalDataRequest) and awaits the response k_EMsgHeroGlobalDataResponse,
+// delivered as *CMsgHeroGlobalDataResponse.
 func (d *Dota2) RequestHeroGlobalData(
 	ctx context.Context,
 	heroID int32,
@@ -3827,10 +3688,9 @@ func (d *Dota2) RequestHeroGlobalData(
 }
 
 // RequestHunterMonsterMaterialsNeededByFriend requests a hunter monster materials needed by friend.
-// Request ID: k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend
-// Response ID: k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse
-// Request type: CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend
-// Response type: CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend (CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend) and awaits the response k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse,
+// delivered as *CMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse.
 func (d *Dota2) RequestHunterMonsterMaterialsNeededByFriend(
 	ctx context.Context,
 	friendAccountID uint32,
@@ -3850,10 +3710,9 @@ func (d *Dota2) RequestHunterMonsterMaterialsNeededByFriend(
 }
 
 // RequestItemEditorReservations requests item editor reservations.
-// Request ID: k_EMsgGCItemEditorReservationsRequest
-// Response ID: k_EMsgGCItemEditorReservationsResponse
-// Request type: CMsgGCItemEditorReservationsRequest
-// Response type: CMsgGCItemEditorReservationsResponse
+//
+// Sends the GC message k_EMsgGCItemEditorReservationsRequest (CMsgGCItemEditorReservationsRequest) and awaits the response k_EMsgGCItemEditorReservationsResponse,
+// delivered as *CMsgGCItemEditorReservationsResponse.
 func (d *Dota2) RequestItemEditorReservations(
 	ctx context.Context,
 ) (*protocol.CMsgGCItemEditorReservationsResponse, error) {
@@ -3870,10 +3729,9 @@ func (d *Dota2) RequestItemEditorReservations(
 }
 
 // RequestJoinableCustomGameModes requests joinable custom game modes.
-// Request ID: k_EMsgGCJoinableCustomGameModesRequest
-// Response ID: k_EMsgGCJoinableCustomGameModesResponse
-// Request type: CMsgJoinableCustomGameModesRequest
-// Response type: CMsgJoinableCustomGameModesResponse
+//
+// Sends the GC message k_EMsgGCJoinableCustomGameModesRequest (CMsgJoinableCustomGameModesRequest) and awaits the response k_EMsgGCJoinableCustomGameModesResponse,
+// delivered as *CMsgJoinableCustomGameModesResponse.
 func (d *Dota2) RequestJoinableCustomGameModes(
 	ctx context.Context,
 	serverRegion uint32,
@@ -3893,10 +3751,9 @@ func (d *Dota2) RequestJoinableCustomGameModes(
 }
 
 // RequestJoinableCustomLobbies requests joinable custom lobbies.
-// Request ID: k_EMsgGCJoinableCustomLobbiesRequest
-// Response ID: k_EMsgGCJoinableCustomLobbiesResponse
-// Request type: CMsgJoinableCustomLobbiesRequest
-// Response type: CMsgJoinableCustomLobbiesResponse
+//
+// Sends the GC message k_EMsgGCJoinableCustomLobbiesRequest (CMsgJoinableCustomLobbiesRequest) and awaits the response k_EMsgGCJoinableCustomLobbiesResponse,
+// delivered as *CMsgJoinableCustomLobbiesResponse.
 func (d *Dota2) RequestJoinableCustomLobbies(
 	ctx context.Context,
 	serverRegion uint32,
@@ -3918,10 +3775,9 @@ func (d *Dota2) RequestJoinableCustomLobbies(
 }
 
 // RequestLatestConductScorecard requests a latest conduct scorecard.
-// Request ID: k_EMsgClientToGCLatestConductScorecardRequest
-// Response ID: k_EMsgClientToGCLatestConductScorecard
-// Request type: CMsgPlayerConductScorecardRequest
-// Response type: CMsgPlayerConductScorecard
+//
+// Sends the GC message k_EMsgClientToGCLatestConductScorecardRequest (CMsgPlayerConductScorecardRequest) and awaits the response k_EMsgClientToGCLatestConductScorecard,
+// delivered as *CMsgPlayerConductScorecard.
 func (d *Dota2) RequestLatestConductScorecard(
 	ctx context.Context,
 ) (*protocol.CMsgPlayerConductScorecard, error) {
@@ -3938,10 +3794,9 @@ func (d *Dota2) RequestLatestConductScorecard(
 }
 
 // RequestLeagueAvailableLobbyNodes requests league available lobby nodes.
-// Request ID: k_EMsgDOTALeagueAvailableLobbyNodesRequest
-// Response ID: k_EMsgDOTALeagueAvailableLobbyNodes
-// Request type: CMsgDOTALeagueAvailableLobbyNodesRequest
-// Response type: CMsgDOTALeagueAvailableLobbyNodes
+//
+// Sends the GC message k_EMsgDOTALeagueAvailableLobbyNodesRequest (CMsgDOTALeagueAvailableLobbyNodesRequest) and awaits the response k_EMsgDOTALeagueAvailableLobbyNodes,
+// delivered as *CMsgDOTALeagueAvailableLobbyNodes.
 func (d *Dota2) RequestLeagueAvailableLobbyNodes(
 	ctx context.Context,
 	leagueID uint32,
@@ -3961,10 +3816,9 @@ func (d *Dota2) RequestLeagueAvailableLobbyNodes(
 }
 
 // RequestMapStats requests map stats.
-// Request ID: k_EMsgClientToGCMapStatsRequest
-// Response ID: k_EMsgGCToClientMapStatsResponse
-// Request type: CMsgClientToGCMapStatsRequest
-// Response type: CMsgGCToClientMapStatsResponse
+//
+// Sends the GC message k_EMsgClientToGCMapStatsRequest (CMsgClientToGCMapStatsRequest) and awaits the response k_EMsgGCToClientMapStatsResponse,
+// delivered as *CMsgGCToClientMapStatsResponse.
 func (d *Dota2) RequestMapStats(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientMapStatsResponse, error) {
@@ -3981,10 +3835,9 @@ func (d *Dota2) RequestMapStats(
 }
 
 // RequestMatchDetails requests match details.
-// Request ID: k_EMsgGCMatchDetailsRequest
-// Response ID: k_EMsgGCMatchDetailsResponse
-// Request type: CMsgGCMatchDetailsRequest
-// Response type: CMsgGCMatchDetailsResponse
+//
+// Sends the GC message k_EMsgGCMatchDetailsRequest (CMsgGCMatchDetailsRequest) and awaits the response k_EMsgGCMatchDetailsResponse,
+// delivered as *CMsgGCMatchDetailsResponse.
 func (d *Dota2) RequestMatchDetails(
 	ctx context.Context,
 	matchID uint64,
@@ -4004,10 +3857,9 @@ func (d *Dota2) RequestMatchDetails(
 }
 
 // RequestMatchesMinimal requests a matches minimal.
-// Request ID: k_EMsgClientToGCMatchesMinimalRequest
-// Response ID: k_EMsgClientToGCMatchesMinimalResponse
-// Request type: CMsgClientToGCMatchesMinimalRequest
-// Response type: CMsgClientToGCMatchesMinimalResponse
+//
+// Sends the GC message k_EMsgClientToGCMatchesMinimalRequest (CMsgClientToGCMatchesMinimalRequest) and awaits the response k_EMsgClientToGCMatchesMinimalResponse,
+// delivered as *CMsgClientToGCMatchesMinimalResponse.
 func (d *Dota2) RequestMatchesMinimal(
 	ctx context.Context,
 	matchIDs []uint64,
@@ -4027,10 +3879,9 @@ func (d *Dota2) RequestMatchesMinimal(
 }
 
 // RequestMatchmakingStats requests matchmaking stats.
-// Request ID: k_EMsgGCMatchmakingStatsRequest
-// Response ID: k_EMsgGCMatchmakingStatsResponse
-// Request type: CMsgDOTAMatchmakingStatsRequest
-// Response type: CMsgDOTAMatchmakingStatsResponse
+//
+// Sends the GC message k_EMsgGCMatchmakingStatsRequest (CMsgDOTAMatchmakingStatsRequest) and awaits the response k_EMsgGCMatchmakingStatsResponse,
+// delivered as *CMsgDOTAMatchmakingStatsResponse.
 func (d *Dota2) RequestMatchmakingStats(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAMatchmakingStatsResponse, error) {
@@ -4047,10 +3898,9 @@ func (d *Dota2) RequestMatchmakingStats(
 }
 
 // RequestMyTeamInfo requests a my team info.
-// Request ID: k_EMsgClientToGCMyTeamInfoRequest
-// Response ID: k_EMsgGCToClientTeamInfo
-// Request type: CMsgDOTAMyTeamInfoRequest
-// Response type: CMsgDOTATeamInfo
+//
+// Sends the GC message k_EMsgClientToGCMyTeamInfoRequest (CMsgDOTAMyTeamInfoRequest) and awaits the response k_EMsgGCToClientTeamInfo,
+// delivered as *CMsgDOTATeamInfo.
 func (d *Dota2) RequestMyTeamInfo(
 	ctx context.Context,
 ) (*protocol.CMsgDOTATeamInfo, error) {
@@ -4067,10 +3917,9 @@ func (d *Dota2) RequestMyTeamInfo(
 }
 
 // RequestNotifications requests notifications.
-// Request ID: k_EMsgGCNotificationsRequest
-// Response ID: k_EMsgGCNotificationsResponse
-// Request type: CMsgGCNotificationsRequest
-// Response type: CMsgGCNotificationsResponse
+//
+// Sends the GC message k_EMsgGCNotificationsRequest (CMsgGCNotificationsRequest) and awaits the response k_EMsgGCNotificationsResponse,
+// delivered as *CMsgGCNotificationsResponse.
 func (d *Dota2) RequestNotifications(
 	ctx context.Context,
 ) (*protocol.CMsgGCNotificationsResponse, error) {
@@ -4087,18 +3936,18 @@ func (d *Dota2) RequestNotifications(
 }
 
 // RequestNotificationsMarkRead requests a notifications mark read.
-// Request ID: k_EMsgGCNotificationsMarkReadRequest
-// Request type: CMsgGCNotificationsMarkReadRequest
+//
+// Sends the GC message k_EMsgGCNotificationsMarkReadRequest (CMsgGCNotificationsMarkReadRequest). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RequestNotificationsMarkRead() {
 	req := &protocol.CMsgGCNotificationsMarkReadRequest{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCNotificationsMarkReadRequest), req)
 }
 
 // RequestOrderStickerbookTeamPage requests a order stickerbook team page.
-// Request ID: k_EMsgClientToGCOrderStickerbookTeamPageRequest
-// Response ID: k_EMsgClientToGCOrderStickerbookTeamPageResponse
-// Request type: CMsgClientToGCOrderStickerbookTeamPageRequest
-// Response type: CMsgClientToGCOrderStickerbookTeamPageResponse
+//
+// Sends the GC message k_EMsgClientToGCOrderStickerbookTeamPageRequest (CMsgClientToGCOrderStickerbookTeamPageRequest) and awaits the response k_EMsgClientToGCOrderStickerbookTeamPageResponse,
+// delivered as *CMsgClientToGCOrderStickerbookTeamPageResponse.
 func (d *Dota2) RequestOrderStickerbookTeamPage(
 	ctx context.Context,
 	pageOrderSequence protocol.CMsgStickerbookTeamPageOrderSequence,
@@ -4118,10 +3967,9 @@ func (d *Dota2) RequestOrderStickerbookTeamPage(
 }
 
 // RequestOverworldFortune requests a overworld fortune.
-// Request ID: k_EMsgClientToGCOverworldRequestFortune
-// Response ID: k_EMsgClientToGCOverworldRequestFortuneResponse
-// Request type: CMsgClientToGCOverworldRequestFortune
-// Response type: CMsgClientToGCOverworldRequestFortuneResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldRequestFortune (CMsgClientToGCOverworldRequestFortune) and awaits the response k_EMsgClientToGCOverworldRequestFortuneResponse,
+// delivered as *CMsgClientToGCOverworldRequestFortuneResponse.
 func (d *Dota2) RequestOverworldFortune(
 	ctx context.Context,
 	overworldID uint32,
@@ -4141,10 +3989,9 @@ func (d *Dota2) RequestOverworldFortune(
 }
 
 // RequestOverworldTokensNeededByFriend requests a overworld tokens needed by friend.
-// Request ID: k_EMsgClientToGCOverworldRequestTokensNeededByFriend
-// Response ID: k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse
-// Request type: CMsgClientToGCOverworldRequestTokensNeededByFriend
-// Response type: CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldRequestTokensNeededByFriend (CMsgClientToGCOverworldRequestTokensNeededByFriend) and awaits the response k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse,
+// delivered as *CMsgClientToGCOverworldRequestTokensNeededByFriendResponse.
 func (d *Dota2) RequestOverworldTokensNeededByFriend(
 	ctx context.Context,
 	friendAccountID uint32,
@@ -4166,10 +4013,9 @@ func (d *Dota2) RequestOverworldTokensNeededByFriend(
 }
 
 // RequestPlaceCollectionStickers requests place collection stickers.
-// Request ID: k_EMsgClientToGCPlaceCollectionStickersRequest
-// Response ID: k_EMsgClientToGCPlaceCollectionStickersResponse
-// Request type: CMsgClientToGCPlaceCollectionStickersRequest
-// Response type: CMsgClientToGCPlaceCollectionStickersResponse
+//
+// Sends the GC message k_EMsgClientToGCPlaceCollectionStickersRequest (CMsgClientToGCPlaceCollectionStickersRequest) and awaits the response k_EMsgClientToGCPlaceCollectionStickersResponse,
+// delivered as *CMsgClientToGCPlaceCollectionStickersResponse.
 func (d *Dota2) RequestPlaceCollectionStickers(
 	ctx context.Context,
 	slots []*protocol.CMsgClientToGCPlaceCollectionStickersRequest_Slot,
@@ -4189,10 +4035,9 @@ func (d *Dota2) RequestPlaceCollectionStickers(
 }
 
 // RequestPlaceStickers requests place stickers.
-// Request ID: k_EMsgClientToGCPlaceStickersRequest
-// Response ID: k_EMsgClientToGCPlaceStickersResponse
-// Request type: CMsgClientToGCPlaceStickersRequest
-// Response type: CMsgClientToGCPlaceStickersResponse
+//
+// Sends the GC message k_EMsgClientToGCPlaceStickersRequest (CMsgClientToGCPlaceStickersRequest) and awaits the response k_EMsgClientToGCPlaceStickersResponse,
+// delivered as *CMsgClientToGCPlaceStickersResponse.
 func (d *Dota2) RequestPlaceStickers(
 	ctx context.Context,
 	stickerItems []*protocol.CMsgClientToGCPlaceStickersRequest_StickerItem,
@@ -4212,10 +4057,9 @@ func (d *Dota2) RequestPlaceStickers(
 }
 
 // RequestPlayerCoachMatch requests a player coach match.
-// Request ID: k_EMsgClientToGCRequestPlayerCoachMatch
-// Response ID: k_EMsgClientToGCRequestPlayerCoachMatchResponse
-// Request type: CMsgClientToGCRequestPlayerCoachMatch
-// Response type: CMsgClientToGCRequestPlayerCoachMatchResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPlayerCoachMatch (CMsgClientToGCRequestPlayerCoachMatch) and awaits the response k_EMsgClientToGCRequestPlayerCoachMatchResponse,
+// delivered as *CMsgClientToGCRequestPlayerCoachMatchResponse.
 func (d *Dota2) RequestPlayerCoachMatch(
 	ctx context.Context,
 	matchID uint64,
@@ -4235,10 +4079,9 @@ func (d *Dota2) RequestPlayerCoachMatch(
 }
 
 // RequestPlayerCoachMatches requests player coach matches.
-// Request ID: k_EMsgClientToGCRequestPlayerCoachMatches
-// Response ID: k_EMsgClientToGCRequestPlayerCoachMatchesResponse
-// Request type: CMsgClientToGCRequestPlayerCoachMatches
-// Response type: CMsgClientToGCRequestPlayerCoachMatchesResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPlayerCoachMatches (CMsgClientToGCRequestPlayerCoachMatches) and awaits the response k_EMsgClientToGCRequestPlayerCoachMatchesResponse,
+// delivered as *CMsgClientToGCRequestPlayerCoachMatchesResponse.
 func (d *Dota2) RequestPlayerCoachMatches(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCRequestPlayerCoachMatchesResponse, error) {
@@ -4255,10 +4098,9 @@ func (d *Dota2) RequestPlayerCoachMatches(
 }
 
 // RequestPlayerHeroRecentAccomplishments requests player hero recent accomplishments.
-// Request ID: k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments
-// Response ID: k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
-// Request type: CMsgClientToGCRequestPlayerHeroRecentAccomplishments
-// Response type: CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPlayerHeroRecentAccomplishments (CMsgClientToGCRequestPlayerHeroRecentAccomplishments) and awaits the response k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse,
+// delivered as *CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse.
 func (d *Dota2) RequestPlayerHeroRecentAccomplishments(
 	ctx context.Context,
 	accountID uint32,
@@ -4280,10 +4122,9 @@ func (d *Dota2) RequestPlayerHeroRecentAccomplishments(
 }
 
 // RequestPlayerRecentAccomplishments requests player recent accomplishments.
-// Request ID: k_EMsgClientToGCRequestPlayerRecentAccomplishments
-// Response ID: k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
-// Request type: CMsgClientToGCRequestPlayerRecentAccomplishments
-// Response type: CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPlayerRecentAccomplishments (CMsgClientToGCRequestPlayerRecentAccomplishments) and awaits the response k_EMsgClientToGCRequestPlayerRecentAccomplishmentsResponse,
+// delivered as *CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.
 func (d *Dota2) RequestPlayerRecentAccomplishments(
 	ctx context.Context,
 	accountID uint32,
@@ -4303,10 +4144,9 @@ func (d *Dota2) RequestPlayerRecentAccomplishments(
 }
 
 // RequestPlayerStats requests player stats.
-// Request ID: k_EMsgClientToGCPlayerStatsRequest
-// Response ID: k_EMsgGCToClientPlayerStatsResponse
-// Request type: CMsgClientToGCPlayerStatsRequest
-// Response type: CMsgGCToClientPlayerStatsResponse
+//
+// Sends the GC message k_EMsgClientToGCPlayerStatsRequest (CMsgClientToGCPlayerStatsRequest) and awaits the response k_EMsgGCToClientPlayerStatsResponse,
+// delivered as *CMsgGCToClientPlayerStatsResponse.
 func (d *Dota2) RequestPlayerStats(
 	ctx context.Context,
 	accountID uint32,
@@ -4326,10 +4166,9 @@ func (d *Dota2) RequestPlayerStats(
 }
 
 // RequestPlusWeeklyChallengeResult requests a plus weekly challenge result.
-// Request ID: k_EMsgClientToGCRequestPlusWeeklyChallengeResult
-// Response ID: k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse
-// Request type: CMsgClientToGCRequestPlusWeeklyChallengeResult
-// Response type: CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPlusWeeklyChallengeResult (CMsgClientToGCRequestPlusWeeklyChallengeResult) and awaits the response k_EMsgClientToGCRequestPlusWeeklyChallengeResultResponse,
+// delivered as *CMsgClientToGCRequestPlusWeeklyChallengeResultResponse.
 func (d *Dota2) RequestPlusWeeklyChallengeResult(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -4351,10 +4190,9 @@ func (d *Dota2) RequestPlusWeeklyChallengeResult(
 }
 
 // RequestPrivateCoachingSession requests a private coaching session.
-// Request ID: k_EMsgClientToGCRequestPrivateCoachingSession
-// Response ID: k_EMsgClientToGCRequestPrivateCoachingSessionResponse
-// Request type: CMsgClientToGCRequestPrivateCoachingSession
-// Response type: CMsgClientToGCRequestPrivateCoachingSessionResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestPrivateCoachingSession (CMsgClientToGCRequestPrivateCoachingSession) and awaits the response k_EMsgClientToGCRequestPrivateCoachingSessionResponse,
+// delivered as *CMsgClientToGCRequestPrivateCoachingSessionResponse.
 func (d *Dota2) RequestPrivateCoachingSession(
 	ctx context.Context,
 	language uint32,
@@ -4374,10 +4212,9 @@ func (d *Dota2) RequestPrivateCoachingSession(
 }
 
 // RequestPrivateMetadataKey requests a private metadata key.
-// Request ID: k_EMsgPrivateMetadataKeyRequest
-// Response ID: k_EMsgPrivateMetadataKeyResponse
-// Request type: CMsgPrivateMetadataKeyRequest
-// Response type: CMsgPrivateMetadataKeyResponse
+//
+// Sends the GC message k_EMsgPrivateMetadataKeyRequest (CMsgPrivateMetadataKeyRequest) and awaits the response k_EMsgPrivateMetadataKeyResponse,
+// delivered as *CMsgPrivateMetadataKeyResponse.
 func (d *Dota2) RequestPrivateMetadataKey(
 	ctx context.Context,
 	matchID uint64,
@@ -4397,10 +4234,9 @@ func (d *Dota2) RequestPrivateMetadataKey(
 }
 
 // RequestProfile requests a profile.
-// Request ID: k_EMsgProfileRequest
-// Response ID: k_EMsgProfileResponse
-// Request type: CMsgProfileRequest
-// Response type: CMsgProfileResponse
+//
+// Sends the GC message k_EMsgProfileRequest (CMsgProfileRequest) and awaits the response k_EMsgProfileResponse,
+// delivered as *CMsgProfileResponse.
 func (d *Dota2) RequestProfile(
 	ctx context.Context,
 	accountID uint32,
@@ -4420,10 +4256,9 @@ func (d *Dota2) RequestProfile(
 }
 
 // RequestQuickStats requests quick stats.
-// Request ID: k_EMsgClientToGCQuickStatsRequest
-// Response ID: k_EMsgClientToGCQuickStatsResponse
-// Request type: CMsgDOTAClientToGCQuickStatsRequest
-// Response type: CMsgDOTAClientToGCQuickStatsResponse
+//
+// Sends the GC message k_EMsgClientToGCQuickStatsRequest (CMsgDOTAClientToGCQuickStatsRequest) and awaits the response k_EMsgClientToGCQuickStatsResponse,
+// delivered as *CMsgDOTAClientToGCQuickStatsResponse.
 func (d *Dota2) RequestQuickStats(
 	ctx context.Context,
 	playerAccountID uint32,
@@ -4449,10 +4284,9 @@ func (d *Dota2) RequestQuickStats(
 }
 
 // RequestRank requests a rank.
-// Request ID: k_EMsgClientToGCRankRequest
-// Response ID: k_EMsgGCToClientRankResponse
-// Request type: CMsgClientToGCRankRequest
-// Response type: CMsgGCToClientRankResponse
+//
+// Sends the GC message k_EMsgClientToGCRankRequest (CMsgClientToGCRankRequest) and awaits the response k_EMsgGCToClientRankResponse,
+// delivered as *CMsgGCToClientRankResponse.
 func (d *Dota2) RequestRank(
 	ctx context.Context,
 	rankType protocol.ERankType,
@@ -4472,10 +4306,9 @@ func (d *Dota2) RequestRank(
 }
 
 // RequestReporterUpdates requests reporter updates.
-// Request ID: k_EMsgClientToGCRequestReporterUpdates
-// Response ID: k_EMsgClientToGCRequestReporterUpdatesResponse
-// Request type: CMsgClientToGCRequestReporterUpdates
-// Response type: CMsgClientToGCRequestReporterUpdatesResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestReporterUpdates (CMsgClientToGCRequestReporterUpdates) and awaits the response k_EMsgClientToGCRequestReporterUpdatesResponse,
+// delivered as *CMsgClientToGCRequestReporterUpdatesResponse.
 func (d *Dota2) RequestReporterUpdates(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCRequestReporterUpdatesResponse, error) {
@@ -4492,10 +4325,9 @@ func (d *Dota2) RequestReporterUpdates(
 }
 
 // RequestReportsRemaining requests a reports remaining.
-// Request ID: k_EMsgGCReportsRemainingRequest
-// Response ID: k_EMsgGCReportsRemainingResponse
-// Request type: CMsgDOTAReportsRemainingRequest
-// Response type: CMsgDOTAReportsRemainingResponse
+//
+// Sends the GC message k_EMsgGCReportsRemainingRequest (CMsgDOTAReportsRemainingRequest) and awaits the response k_EMsgGCReportsRemainingResponse,
+// delivered as *CMsgDOTAReportsRemainingResponse.
 func (d *Dota2) RequestReportsRemaining(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAReportsRemainingResponse, error) {
@@ -4512,10 +4344,9 @@ func (d *Dota2) RequestReportsRemaining(
 }
 
 // RequestRespondToCoachFriend requests a respond to coach friend.
-// Request ID: k_EMsgClientToGCRespondToCoachFriendRequest
-// Response ID: k_EMsgClientToGCRespondToCoachFriendRequestResponse
-// Request type: CMsgClientToGCRespondToCoachFriendRequest
-// Response type: CMsgClientToGCRespondToCoachFriendRequestResponse
+//
+// Sends the GC message k_EMsgClientToGCRespondToCoachFriendRequest (CMsgClientToGCRespondToCoachFriendRequest) and awaits the response k_EMsgClientToGCRespondToCoachFriendRequestResponse,
+// delivered as *CMsgClientToGCRespondToCoachFriendRequestResponse.
 func (d *Dota2) RequestRespondToCoachFriend(
 	ctx context.Context,
 	coachAccountID uint32,
@@ -4537,10 +4368,9 @@ func (d *Dota2) RequestRespondToCoachFriend(
 }
 
 // RequestSelectionPriorityChoice requests a selection priority choice.
-// Request ID: k_EMsgSelectionPriorityChoiceRequest
-// Response ID: k_EMsgSelectionPriorityChoiceResponse
-// Request type: CMsgDOTASelectionPriorityChoiceRequest
-// Response type: CMsgDOTASelectionPriorityChoiceResponse
+//
+// Sends the GC message k_EMsgSelectionPriorityChoiceRequest (CMsgDOTASelectionPriorityChoiceRequest) and awaits the response k_EMsgSelectionPriorityChoiceResponse,
+// delivered as *CMsgDOTASelectionPriorityChoiceResponse.
 func (d *Dota2) RequestSelectionPriorityChoice(
 	ctx context.Context,
 	choice protocol.DOTASelectionPriorityChoice,
@@ -4560,10 +4390,9 @@ func (d *Dota2) RequestSelectionPriorityChoice(
 }
 
 // RequestSetPlayerCardRoster requests to check if the target set player card roster.
-// Request ID: k_EMsgClientToGCSetPlayerCardRosterRequest
-// Response ID: k_EMsgClientToGCSetPlayerCardRosterResponse
-// Request type: CMsgClientToGCSetPlayerCardRosterRequest
-// Response type: CMsgClientToGCSetPlayerCardRosterResponse
+//
+// Sends the GC message k_EMsgClientToGCSetPlayerCardRosterRequest (CMsgClientToGCSetPlayerCardRosterRequest) and awaits the response k_EMsgClientToGCSetPlayerCardRosterResponse,
+// delivered as *CMsgClientToGCSetPlayerCardRosterResponse.
 func (d *Dota2) RequestSetPlayerCardRoster(
 	ctx context.Context,
 	leagueID uint32,
@@ -4593,10 +4422,9 @@ func (d *Dota2) RequestSetPlayerCardRoster(
 }
 
 // RequestSocialFeed requests a social feed.
-// Request ID: k_EMsgClientToGCRequestSocialFeed
-// Response ID: k_EMsgClientToGCRequestSocialFeedResponse
-// Request type: CMsgSocialFeedRequest
-// Response type: CMsgSocialFeedResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestSocialFeed (CMsgSocialFeedRequest) and awaits the response k_EMsgClientToGCRequestSocialFeedResponse,
+// delivered as *CMsgSocialFeedResponse.
 func (d *Dota2) RequestSocialFeed(
 	ctx context.Context,
 	accountID uint32,
@@ -4618,10 +4446,9 @@ func (d *Dota2) RequestSocialFeed(
 }
 
 // RequestSocialFeedComments requests social feed comments.
-// Request ID: k_EMsgClientToGCRequestSocialFeedComments
-// Response ID: k_EMsgClientToGCRequestSocialFeedCommentsResponse
-// Request type: CMsgSocialFeedCommentsRequest
-// Response type: CMsgSocialFeedCommentsResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestSocialFeedComments (CMsgSocialFeedCommentsRequest) and awaits the response k_EMsgClientToGCRequestSocialFeedCommentsResponse,
+// delivered as *CMsgSocialFeedCommentsResponse.
 func (d *Dota2) RequestSocialFeedComments(
 	ctx context.Context,
 	feedEventID uint64,
@@ -4641,10 +4468,9 @@ func (d *Dota2) RequestSocialFeedComments(
 }
 
 // RequestSocialFeedPostComment requests a social feed post comment.
-// Request ID: k_EMsgClientToGCSocialFeedPostCommentRequest
-// Response ID: k_EMsgGCToClientSocialFeedPostCommentResponse
-// Request type: CMsgClientToGCSocialFeedPostCommentRequest
-// Response type: CMsgGCToClientSocialFeedPostCommentResponse
+//
+// Sends the GC message k_EMsgClientToGCSocialFeedPostCommentRequest (CMsgClientToGCSocialFeedPostCommentRequest) and awaits the response k_EMsgGCToClientSocialFeedPostCommentResponse,
+// delivered as *CMsgGCToClientSocialFeedPostCommentResponse.
 func (d *Dota2) RequestSocialFeedPostComment(
 	ctx context.Context,
 	eventID uint64,
@@ -4666,10 +4492,9 @@ func (d *Dota2) RequestSocialFeedPostComment(
 }
 
 // RequestSocialFeedPostMessage requests a social feed post message.
-// Request ID: k_EMsgClientToGCSocialFeedPostMessageRequest
-// Response ID: k_EMsgGCToClientSocialFeedPostMessageResponse
-// Request type: CMsgClientToGCSocialFeedPostMessageRequest
-// Response type: CMsgGCToClientSocialFeedPostMessageResponse
+//
+// Sends the GC message k_EMsgClientToGCSocialFeedPostMessageRequest (CMsgClientToGCSocialFeedPostMessageRequest) and awaits the response k_EMsgGCToClientSocialFeedPostMessageResponse,
+// delivered as *CMsgGCToClientSocialFeedPostMessageResponse.
 func (d *Dota2) RequestSocialFeedPostMessage(
 	ctx context.Context,
 	message string,
@@ -4693,10 +4518,9 @@ func (d *Dota2) RequestSocialFeedPostMessage(
 }
 
 // RequestSteamDatagramTicket requests a steam datagram ticket.
-// Request ID: k_EMsgClientToGCRequestSteamDatagramTicket
-// Response ID: k_EMsgClientToGCRequestSteamDatagramTicketResponse
-// Request type: CMsgClientToGCRequestSteamDatagramTicket
-// Response type: CMsgClientToGCRequestSteamDatagramTicketResponse
+//
+// Sends the GC message k_EMsgClientToGCRequestSteamDatagramTicket (CMsgClientToGCRequestSteamDatagramTicket) and awaits the response k_EMsgClientToGCRequestSteamDatagramTicketResponse,
+// delivered as *CMsgClientToGCRequestSteamDatagramTicketResponse.
 func (d *Dota2) RequestSteamDatagramTicket(
 	ctx context.Context,
 	serverSteamID steamid.SteamId,
@@ -4718,10 +4542,9 @@ func (d *Dota2) RequestSteamDatagramTicket(
 }
 
 // RequestSubmitPlayerAvoid requests to check if the target submit player avoid.
-// Request ID: k_EMsgGCSubmitPlayerAvoidRequest
-// Response ID: k_EMsgGCSubmitPlayerAvoidRequestResponse
-// Request type: CMsgDOTASubmitPlayerAvoidRequest
-// Response type: CMsgDOTASubmitPlayerAvoidRequestResponse
+//
+// Sends the GC message k_EMsgGCSubmitPlayerAvoidRequest (CMsgDOTASubmitPlayerAvoidRequest) and awaits the response k_EMsgGCSubmitPlayerAvoidRequestResponse,
+// delivered as *CMsgDOTASubmitPlayerAvoidRequestResponse.
 func (d *Dota2) RequestSubmitPlayerAvoid(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -4745,10 +4568,9 @@ func (d *Dota2) RequestSubmitPlayerAvoid(
 }
 
 // RequestTeammateStats requests teammate stats.
-// Request ID: k_EMsgClientToGCTeammateStatsRequest
-// Response ID: k_EMsgClientToGCTeammateStatsResponse
-// Request type: CMsgClientToGCTeammateStatsRequest
-// Response type: CMsgClientToGCTeammateStatsResponse
+//
+// Sends the GC message k_EMsgClientToGCTeammateStatsRequest (CMsgClientToGCTeammateStatsRequest) and awaits the response k_EMsgClientToGCTeammateStatsResponse,
+// delivered as *CMsgClientToGCTeammateStatsResponse.
 func (d *Dota2) RequestTeammateStats(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCTeammateStatsResponse, error) {
@@ -4765,10 +4587,9 @@ func (d *Dota2) RequestTeammateStats(
 }
 
 // RequestTopFriendMatches requests top friend matches.
-// Request ID: k_EMsgClientToGCTopFriendMatchesRequest
-// Response ID: k_EMsgGCToClientTopFriendMatchesResponse
-// Request type: CMsgClientToGCTopFriendMatchesRequest
-// Response type: CMsgGCToClientTopFriendMatchesResponse
+//
+// Sends the GC message k_EMsgClientToGCTopFriendMatchesRequest (CMsgClientToGCTopFriendMatchesRequest) and awaits the response k_EMsgGCToClientTopFriendMatchesResponse,
+// delivered as *CMsgGCToClientTopFriendMatchesResponse.
 func (d *Dota2) RequestTopFriendMatches(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientTopFriendMatchesResponse, error) {
@@ -4785,10 +4606,9 @@ func (d *Dota2) RequestTopFriendMatches(
 }
 
 // RequestTopLeagueMatches requests top league matches.
-// Request ID: k_EMsgClientToGCTopLeagueMatchesRequest
-// Response ID: k_EMsgGCToClientTopLeagueMatchesResponse
-// Request type: CMsgClientToGCTopLeagueMatchesRequest
-// Response type: CMsgGCToClientTopLeagueMatchesResponse
+//
+// Sends the GC message k_EMsgClientToGCTopLeagueMatchesRequest (CMsgClientToGCTopLeagueMatchesRequest) and awaits the response k_EMsgGCToClientTopLeagueMatchesResponse,
+// delivered as *CMsgGCToClientTopLeagueMatchesResponse.
 func (d *Dota2) RequestTopLeagueMatches(
 	ctx context.Context,
 ) (*protocol.CMsgGCToClientTopLeagueMatchesResponse, error) {
@@ -4805,10 +4625,9 @@ func (d *Dota2) RequestTopLeagueMatches(
 }
 
 // RequestTransferSeasonalMMR requests to check if the target transfer seasonal mmr.
-// Request ID: k_EMsgClientToGCTransferSeasonalMMRRequest
-// Response ID: k_EMsgClientToGCTransferSeasonalMMRResponse
-// Request type: CMsgClientToGCTransferSeasonalMMRRequest
-// Response type: CMsgClientToGCTransferSeasonalMMRResponse
+//
+// Sends the GC message k_EMsgClientToGCTransferSeasonalMMRRequest (CMsgClientToGCTransferSeasonalMMRRequest) and awaits the response k_EMsgClientToGCTransferSeasonalMMRResponse,
+// delivered as *CMsgClientToGCTransferSeasonalMMRResponse.
 func (d *Dota2) RequestTransferSeasonalMMR(
 	ctx context.Context,
 	isParty bool,
@@ -4828,10 +4647,9 @@ func (d *Dota2) RequestTransferSeasonalMMR(
 }
 
 // RequestUnanchorPhoneNumber requests a unanchor phone number.
-// Request ID: k_EMsgUnanchorPhoneNumberRequest
-// Response ID: k_EMsgUnanchorPhoneNumberResponse
-// Request type: CMsgDOTAUnanchorPhoneNumberRequest
-// Response type: CMsgDOTAUnanchorPhoneNumberResponse
+//
+// Sends the GC message k_EMsgUnanchorPhoneNumberRequest (CMsgDOTAUnanchorPhoneNumberRequest) and awaits the response k_EMsgUnanchorPhoneNumberResponse,
+// delivered as *CMsgDOTAUnanchorPhoneNumberResponse.
 func (d *Dota2) RequestUnanchorPhoneNumber(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAUnanchorPhoneNumberResponse, error) {
@@ -4848,10 +4666,9 @@ func (d *Dota2) RequestUnanchorPhoneNumber(
 }
 
 // RequestUnderDraft requests a under draft.
-// Request ID: k_EMsgClientToGCUnderDraftRequest
-// Response ID: k_EMsgClientToGCUnderDraftResponse
-// Request type: CMsgClientToGCUnderDraftRequest
-// Response type: CMsgClientToGCUnderDraftResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftRequest (CMsgClientToGCUnderDraftRequest) and awaits the response k_EMsgClientToGCUnderDraftResponse,
+// delivered as *CMsgClientToGCUnderDraftResponse.
 func (d *Dota2) RequestUnderDraft(
 	ctx context.Context,
 	accountID uint32,
@@ -4873,10 +4690,9 @@ func (d *Dota2) RequestUnderDraft(
 }
 
 // RequestWagering requests a wagering.
-// Request ID: k_EMsgClientToGCWageringRequest
-// Response ID: k_EMsgGCToClientWageringResponse
-// Request type: CMsgClientToGCWageringRequest
-// Response type: CMsgGCToClientWageringResponse
+//
+// Sends the GC message k_EMsgClientToGCWageringRequest (CMsgClientToGCWageringRequest) and awaits the response k_EMsgGCToClientWageringResponse,
+// delivered as *CMsgGCToClientWageringResponse.
 func (d *Dota2) RequestWagering(
 	ctx context.Context,
 	eventID uint32,
@@ -4896,10 +4712,9 @@ func (d *Dota2) RequestWagering(
 }
 
 // RerollCraftingFantasyOptions rerolls crafting fantasy options.
-// Request ID: k_EMsgClientToGCFantasyCraftingRerollOptions
-// Response ID: k_EMsgClientToGCFantasyCraftingRerollOptionsResponse
-// Request type: CMsgClientToGCFantasyCraftingRerollOptions
-// Response type: CMsgClientToGCFantasyCraftingRerollOptionsResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingRerollOptions (CMsgClientToGCFantasyCraftingRerollOptions) and awaits the response k_EMsgClientToGCFantasyCraftingRerollOptionsResponse,
+// delivered as *CMsgClientToGCFantasyCraftingRerollOptionsResponse.
 func (d *Dota2) RerollCraftingFantasyOptions(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -4919,10 +4734,9 @@ func (d *Dota2) RerollCraftingFantasyOptions(
 }
 
 // RerollDevBingoCard rerolls a dev bingo card.
-// Request ID: k_EMsgClientToGCBingoDevRerollCard
-// Response ID: k_EMsgClientToGCBingoDevRerollCardResponse
-// Request type: CMsgClientToGCBingoDevRerollCard
-// Response type: CMsgClientToGCBingoDevRerollCardResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoDevRerollCard (CMsgClientToGCBingoDevRerollCard) and awaits the response k_EMsgClientToGCBingoDevRerollCardResponse,
+// delivered as *CMsgClientToGCBingoDevRerollCardResponse.
 func (d *Dota2) RerollDevBingoCard(
 	ctx context.Context,
 	leagueID uint32,
@@ -4944,10 +4758,9 @@ func (d *Dota2) RerollDevBingoCard(
 }
 
 // RerollDraftUnder rerolls a draft under.
-// Request ID: k_EMsgClientToGCUnderDraftReroll
-// Response ID: k_EMsgClientToGCUnderDraftRerollResponse
-// Request type: CMsgClientToGCUnderDraftReroll
-// Response type: CMsgClientToGCUnderDraftRerollResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftReroll (CMsgClientToGCUnderDraftReroll) and awaits the response k_EMsgClientToGCUnderDraftRerollResponse,
+// delivered as *CMsgClientToGCUnderDraftRerollResponse.
 func (d *Dota2) RerollDraftUnder(
 	ctx context.Context,
 	eventID uint32,
@@ -4967,8 +4780,9 @@ func (d *Dota2) RerollDraftUnder(
 }
 
 // RerollPlayerChallenge rerolls a player challenge.
-// Request ID: k_EMsgClientToGCRerollPlayerChallenge
-// Request type: CMsgClientToGCRerollPlayerChallenge
+//
+// Sends the GC message k_EMsgClientToGCRerollPlayerChallenge (CMsgClientToGCRerollPlayerChallenge). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RerollPlayerChallenge(
 	eventID protocol.EEvent,
 	sequenceID uint32,
@@ -4983,10 +4797,9 @@ func (d *Dota2) RerollPlayerChallenge(
 }
 
 // RerollShopCandyRewards rerolls shop candy rewards.
-// Request ID: k_EMsgClientToGCCandyShopRerollRewards
-// Response ID: k_EMsgClientToGCCandyShopRerollRewardsResponse
-// Request type: CMsgClientToGCCandyShopRerollRewards
-// Response type: CMsgClientToGCCandyShopRerollRewardsResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopRerollRewards (CMsgClientToGCCandyShopRerollRewards) and awaits the response k_EMsgClientToGCCandyShopRerollRewardsResponse,
+// delivered as *CMsgClientToGCCandyShopRerollRewardsResponse.
 func (d *Dota2) RerollShopCandyRewards(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5006,10 +4819,9 @@ func (d *Dota2) RerollShopCandyRewards(
 }
 
 // ReserveEditorItemItemDef reserves a editor item item def.
-// Request ID: k_EMsgGCItemEditorReserveItemDef
-// Response ID: k_EMsgGCItemEditorReserveItemDefResponse
-// Request type: CMsgGCItemEditorReserveItemDef
-// Response type: CMsgGCItemEditorReserveItemDefResponse
+//
+// Sends the GC message k_EMsgGCItemEditorReserveItemDef (CMsgGCItemEditorReserveItemDef) and awaits the response k_EMsgGCItemEditorReserveItemDefResponse,
+// delivered as *CMsgGCItemEditorReserveItemDefResponse.
 func (d *Dota2) ReserveEditorItemItemDef(
 	ctx context.Context,
 	defIndex uint32,
@@ -5031,8 +4843,9 @@ func (d *Dota2) ReserveEditorItemItemDef(
 }
 
 // RespondToTeamInvite is undocumented.
-// Request ID: k_EMsgGCTeamInvite_InviteeResponseToGC
-// Request type: CMsgDOTATeamInvite_InviteeResponseToGC
+//
+// Sends the GC message k_EMsgGCTeamInvite_InviteeResponseToGC (CMsgDOTATeamInvite_InviteeResponseToGC). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) RespondToTeamInvite(
 	result protocol.ETeamInviteResult,
 ) {
@@ -5043,10 +4856,9 @@ func (d *Dota2) RespondToTeamInvite(
 }
 
 // SelectCompendiumInGamePrediction selects a compendium in game prediction.
-// Request ID: k_EMsgClientToGCSelectCompendiumInGamePrediction
-// Response ID: k_EMsgClientToGCSelectCompendiumInGamePredictionResponse
-// Request type: CMsgClientToGCSelectCompendiumInGamePrediction
-// Response type: CMsgClientToGCSelectCompendiumInGamePredictionResponse
+//
+// Sends the GC message k_EMsgClientToGCSelectCompendiumInGamePrediction (CMsgClientToGCSelectCompendiumInGamePrediction) and awaits the response k_EMsgClientToGCSelectCompendiumInGamePredictionResponse,
+// delivered as *CMsgClientToGCSelectCompendiumInGamePredictionResponse.
 func (d *Dota2) SelectCompendiumInGamePrediction(
 	ctx context.Context,
 	matchID uint64,
@@ -5070,10 +4882,9 @@ func (d *Dota2) SelectCompendiumInGamePrediction(
 }
 
 // SelectCraftingFantasyGlobalPrefix selects a crafting fantasy global prefix.
-// Request ID: k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix
-// Response ID: k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
-// Request type: CMsgClientToGCFantasyCraftingSelectGlobalPrefix
-// Response type: CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix (CMsgClientToGCFantasyCraftingSelectGlobalPrefix) and awaits the response k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse,
+// delivered as *CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.
 func (d *Dota2) SelectCraftingFantasyGlobalPrefix(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5095,10 +4906,9 @@ func (d *Dota2) SelectCraftingFantasyGlobalPrefix(
 }
 
 // SelectCraftingFantasyGlobalSuffix selects a crafting fantasy global suffix.
-// Request ID: k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix
-// Response ID: k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
-// Request type: CMsgClientToGCFantasyCraftingSelectGlobalSuffix
-// Response type: CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix (CMsgClientToGCFantasyCraftingSelectGlobalSuffix) and awaits the response k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse,
+// delivered as *CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.
 func (d *Dota2) SelectCraftingFantasyGlobalSuffix(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5120,10 +4930,9 @@ func (d *Dota2) SelectCraftingFantasyGlobalSuffix(
 }
 
 // SelectCraftingFantasyPlayer selects a crafting fantasy player.
-// Request ID: k_EMsgClientToGCFantasyCraftingSelectPlayer
-// Response ID: k_EMsgClientToGCFantasyCraftingSelectPlayerResponse
-// Request type: CMsgClientToGCFantasyCraftingSelectPlayer
-// Response type: CMsgClientToGCFantasyCraftingSelectPlayerResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingSelectPlayer (CMsgClientToGCFantasyCraftingSelectPlayer) and awaits the response k_EMsgClientToGCFantasyCraftingSelectPlayerResponse,
+// delivered as *CMsgClientToGCFantasyCraftingSelectPlayerResponse.
 func (d *Dota2) SelectCraftingFantasyPlayer(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5145,10 +4954,9 @@ func (d *Dota2) SelectCraftingFantasyPlayer(
 }
 
 // SelectCraftingFantasyTeam selects a crafting fantasy team.
-// Request ID: k_EMsgClientToGCFantasyCraftingSelectTeam
-// Response ID: k_EMsgClientToGCFantasyCraftingSelectTeamResponse
-// Request type: CMsgClientToGCFantasyCraftingSelectTeam
-// Response type: CMsgClientToGCFantasyCraftingSelectTeamResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingSelectTeam (CMsgClientToGCFantasyCraftingSelectTeam) and awaits the response k_EMsgClientToGCFantasyCraftingSelectTeamResponse,
+// delivered as *CMsgClientToGCFantasyCraftingSelectTeamResponse.
 func (d *Dota2) SelectCraftingFantasyTeam(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5172,10 +4980,9 @@ func (d *Dota2) SelectCraftingFantasyTeam(
 }
 
 // SelectGuildContract selects a guild contract.
-// Request ID: k_EMsgClientToGCSelectGuildContract
-// Response ID: k_EMsgClientToGCSelectGuildContractResponse
-// Request type: CMsgClientToGCSelectGuildContract
-// Response type: CMsgClientToGCSelectGuildContractResponse
+//
+// Sends the GC message k_EMsgClientToGCSelectGuildContract (CMsgClientToGCSelectGuildContract) and awaits the response k_EMsgClientToGCSelectGuildContractResponse,
+// delivered as *CMsgClientToGCSelectGuildContractResponse.
 func (d *Dota2) SelectGuildContract(
 	ctx context.Context,
 	guildID uint32,
@@ -5201,10 +5008,9 @@ func (d *Dota2) SelectGuildContract(
 }
 
 // SendAcceptInviteToGuild sends a accept invite to guild.
-// Request ID: k_EMsgClientToGCAcceptInviteToGuild
-// Response ID: k_EMsgClientToGCAcceptInviteToGuildResponse
-// Request type: CMsgClientToGCAcceptInviteToGuild
-// Response type: CMsgClientToGCAcceptInviteToGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCAcceptInviteToGuild (CMsgClientToGCAcceptInviteToGuild) and awaits the response k_EMsgClientToGCAcceptInviteToGuildResponse,
+// delivered as *CMsgClientToGCAcceptInviteToGuildResponse.
 func (d *Dota2) SendAcceptInviteToGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -5224,10 +5030,9 @@ func (d *Dota2) SendAcceptInviteToGuild(
 }
 
 // SendAcceptPrivateCoachingSession sends a accept private coaching session.
-// Request ID: k_EMsgClientToGCAcceptPrivateCoachingSession
-// Response ID: k_EMsgClientToGCAcceptPrivateCoachingSessionResponse
-// Request type: CMsgClientToGCAcceptPrivateCoachingSession
-// Response type: CMsgClientToGCAcceptPrivateCoachingSessionResponse
+//
+// Sends the GC message k_EMsgClientToGCAcceptPrivateCoachingSession (CMsgClientToGCAcceptPrivateCoachingSession) and awaits the response k_EMsgClientToGCAcceptPrivateCoachingSessionResponse,
+// delivered as *CMsgClientToGCAcceptPrivateCoachingSessionResponse.
 func (d *Dota2) SendAcceptPrivateCoachingSession(
 	ctx context.Context,
 	coachingSessionID uint64,
@@ -5247,8 +5052,9 @@ func (d *Dota2) SendAcceptPrivateCoachingSession(
 }
 
 // SendAcknowledgeReporterUpdates sends acknowledge reporter updates.
-// Request ID: k_EMsgClientToGCAcknowledgeReporterUpdates
-// Request type: CMsgClientToGCAcknowledgeReporterUpdates
+//
+// Sends the GC message k_EMsgClientToGCAcknowledgeReporterUpdates (CMsgClientToGCAcknowledgeReporterUpdates). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendAcknowledgeReporterUpdates(
 	matchIDs []uint64,
 ) {
@@ -5259,10 +5065,9 @@ func (d *Dota2) SendAcknowledgeReporterUpdates(
 }
 
 // SendAddGuildRole sends a add guild role.
-// Request ID: k_EMsgClientToGCAddGuildRole
-// Response ID: k_EMsgClientToGCAddGuildRoleResponse
-// Request type: CMsgClientToGCAddGuildRole
-// Response type: CMsgClientToGCAddGuildRoleResponse
+//
+// Sends the GC message k_EMsgClientToGCAddGuildRole (CMsgClientToGCAddGuildRole) and awaits the response k_EMsgClientToGCAddGuildRoleResponse,
+// delivered as *CMsgClientToGCAddGuildRoleResponse.
 func (d *Dota2) SendAddGuildRole(
 	ctx context.Context,
 	guildID uint32,
@@ -5286,10 +5091,9 @@ func (d *Dota2) SendAddGuildRole(
 }
 
 // SendAddPlayerToGuildChat sends a add player to guild chat.
-// Request ID: k_EMsgClientToGCAddPlayerToGuildChat
-// Response ID: k_EMsgClientToGCAddPlayerToGuildChatResponse
-// Request type: CMsgClientToGCAddPlayerToGuildChat
-// Response type: CMsgClientToGCAddPlayerToGuildChatResponse
+//
+// Sends the GC message k_EMsgClientToGCAddPlayerToGuildChat (CMsgClientToGCAddPlayerToGuildChat) and awaits the response k_EMsgClientToGCAddPlayerToGuildChatResponse,
+// delivered as *CMsgClientToGCAddPlayerToGuildChatResponse.
 func (d *Dota2) SendAddPlayerToGuildChat(
 	ctx context.Context,
 	guildID uint32,
@@ -5308,19 +5112,17 @@ func (d *Dota2) SendAddPlayerToGuildChat(
 	)
 }
 
-// SendBalancedShuffleLobby sends a balanced shuffle lobby.
-// Request ID: k_EMsgGCBalancedShuffleLobby
-// Request type: CMsgBalancedShuffleLobby
+// SendBalancedShuffleLobby shuffles the lobby members between teams while
+// keeping the teams balanced by MMR.
 func (d *Dota2) SendBalancedShuffleLobby() {
 	req := &protocol.CMsgBalancedShuffleLobby{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby), req)
 }
 
 // SendBingoDevAddTokens sends bingo dev add tokens.
-// Request ID: k_EMsgClientToGCBingoDevAddTokens
-// Response ID: k_EMsgClientToGCBingoDevAddTokensResponse
-// Request type: CMsgClientToGCBingoDevAddTokens
-// Response type: CMsgClientToGCBingoDevAddTokensResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoDevAddTokens (CMsgClientToGCBingoDevAddTokens) and awaits the response k_EMsgClientToGCBingoDevAddTokensResponse,
+// delivered as *CMsgClientToGCBingoDevAddTokensResponse.
 func (d *Dota2) SendBingoDevAddTokens(
 	ctx context.Context,
 	leagueID uint32,
@@ -5344,10 +5146,9 @@ func (d *Dota2) SendBingoDevAddTokens(
 }
 
 // SendBingoDevClearInventory sends a bingo dev clear inventory.
-// Request ID: k_EMsgClientToGCBingoDevClearInventory
-// Response ID: k_EMsgClientToGCBingoDevClearInventoryResponse
-// Request type: CMsgClientToGCBingoDevClearInventory
-// Response type: CMsgClientToGCBingoDevClearInventoryResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoDevClearInventory (CMsgClientToGCBingoDevClearInventory) and awaits the response k_EMsgClientToGCBingoDevClearInventoryResponse,
+// delivered as *CMsgClientToGCBingoDevClearInventoryResponse.
 func (d *Dota2) SendBingoDevClearInventory(
 	ctx context.Context,
 	leagueID uint32,
@@ -5367,10 +5168,9 @@ func (d *Dota2) SendBingoDevClearInventory(
 }
 
 // SendBingoModifySquare sends a bingo modify square.
-// Request ID: k_EMsgClientToGCBingoModifySquare
-// Response ID: k_EMsgClientToGCBingoModifySquareResponse
-// Request type: CMsgClientToGCBingoModifySquare
-// Response type: CMsgClientToGCBingoModifySquareResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoModifySquare (CMsgClientToGCBingoModifySquare) and awaits the response k_EMsgClientToGCBingoModifySquareResponse,
+// delivered as *CMsgClientToGCBingoModifySquareResponse.
 func (d *Dota2) SendBingoModifySquare(
 	ctx context.Context,
 	leagueID uint32,
@@ -5396,10 +5196,9 @@ func (d *Dota2) SendBingoModifySquare(
 }
 
 // SendBingoShuffleCard sends a bingo shuffle card.
-// Request ID: k_EMsgClientToGCBingoShuffleCard
-// Response ID: k_EMsgClientToGCBingoShuffleCardResponse
-// Request type: CMsgClientToGCBingoShuffleCard
-// Response type: CMsgClientToGCBingoShuffleCardResponse
+//
+// Sends the GC message k_EMsgClientToGCBingoShuffleCard (CMsgClientToGCBingoShuffleCard) and awaits the response k_EMsgClientToGCBingoShuffleCardResponse,
+// delivered as *CMsgClientToGCBingoShuffleCardResponse.
 func (d *Dota2) SendBingoShuffleCard(
 	ctx context.Context,
 	leagueID uint32,
@@ -5421,10 +5220,9 @@ func (d *Dota2) SendBingoShuffleCard(
 }
 
 // SendCandyShopDevClearInventory sends a candy shop dev clear inventory.
-// Request ID: k_EMsgClientToGCCandyShopDevClearInventory
-// Response ID: k_EMsgClientToGCCandyShopDevClearInventoryResponse
-// Request type: CMsgClientToGCCandyShopDevClearInventory
-// Response type: CMsgClientToGCCandyShopDevClearInventoryResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevClearInventory (CMsgClientToGCCandyShopDevClearInventory) and awaits the response k_EMsgClientToGCCandyShopDevClearInventoryResponse,
+// delivered as *CMsgClientToGCCandyShopDevClearInventoryResponse.
 func (d *Dota2) SendCandyShopDevClearInventory(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5444,10 +5242,9 @@ func (d *Dota2) SendCandyShopDevClearInventory(
 }
 
 // SendCandyShopDevResetShop sends a candy shop dev reset shop.
-// Request ID: k_EMsgClientToGCCandyShopDevResetShop
-// Response ID: k_EMsgClientToGCCandyShopDevResetShopResponse
-// Request type: CMsgClientToGCCandyShopDevResetShop
-// Response type: CMsgClientToGCCandyShopDevResetShopResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevResetShop (CMsgClientToGCCandyShopDevResetShop) and awaits the response k_EMsgClientToGCCandyShopDevResetShopResponse,
+// delivered as *CMsgClientToGCCandyShopDevResetShopResponse.
 func (d *Dota2) SendCandyShopDevResetShop(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5467,10 +5264,9 @@ func (d *Dota2) SendCandyShopDevResetShop(
 }
 
 // SendCandyShopDevShuffleExchange sends a candy shop dev shuffle exchange.
-// Request ID: k_EMsgClientToGCCandyShopDevShuffleExchange
-// Response ID: k_EMsgClientToGCCandyShopDevShuffleExchangeResponse
-// Request type: CMsgClientToGCCandyShopDevShuffleExchange
-// Response type: CMsgClientToGCCandyShopDevShuffleExchangeResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDevShuffleExchange (CMsgClientToGCCandyShopDevShuffleExchange) and awaits the response k_EMsgClientToGCCandyShopDevShuffleExchangeResponse,
+// delivered as *CMsgClientToGCCandyShopDevShuffleExchangeResponse.
 func (d *Dota2) SendCandyShopDevShuffleExchange(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5490,10 +5286,9 @@ func (d *Dota2) SendCandyShopDevShuffleExchange(
 }
 
 // SendCandyShopDoExchange sends a candy shop do exchange.
-// Request ID: k_EMsgClientToGCCandyShopDoExchange
-// Response ID: k_EMsgClientToGCCandyShopDoExchangeResponse
-// Request type: CMsgClientToGCCandyShopDoExchange
-// Response type: CMsgClientToGCCandyShopDoExchangeResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDoExchange (CMsgClientToGCCandyShopDoExchange) and awaits the response k_EMsgClientToGCCandyShopDoExchangeResponse,
+// delivered as *CMsgClientToGCCandyShopDoExchangeResponse.
 func (d *Dota2) SendCandyShopDoExchange(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5515,10 +5310,9 @@ func (d *Dota2) SendCandyShopDoExchange(
 }
 
 // SendCandyShopDoVariableExchange sends a candy shop do variable exchange.
-// Request ID: k_EMsgClientToGCCandyShopDoVariableExchange
-// Response ID: k_EMsgClientToGCCandyShopDoVariableExchangeResponse
-// Request type: CMsgClientToGCCandyShopDoVariableExchange
-// Response type: CMsgClientToGCCandyShopDoVariableExchangeResponse
+//
+// Sends the GC message k_EMsgClientToGCCandyShopDoVariableExchange (CMsgClientToGCCandyShopDoVariableExchange) and awaits the response k_EMsgClientToGCCandyShopDoVariableExchangeResponse,
+// delivered as *CMsgClientToGCCandyShopDoVariableExchangeResponse.
 func (d *Dota2) SendCandyShopDoVariableExchange(
 	ctx context.Context,
 	candyShopID uint32,
@@ -5542,10 +5336,9 @@ func (d *Dota2) SendCandyShopDoVariableExchange(
 }
 
 // SendCavernCrawlUseItemOnPath sends a cavern crawl use item on path.
-// Request ID: k_EMsgClientToGCCavernCrawlUseItemOnPath
-// Response ID: k_EMsgClientToGCCavernCrawlUseItemOnPathResponse
-// Request type: CMsgClientToGCCavernCrawlUseItemOnPath
-// Response type: CMsgClientToGCCavernCrawlUseItemOnPathResponse
+//
+// Sends the GC message k_EMsgClientToGCCavernCrawlUseItemOnPath (CMsgClientToGCCavernCrawlUseItemOnPath) and awaits the response k_EMsgClientToGCCavernCrawlUseItemOnPathResponse,
+// delivered as *CMsgClientToGCCavernCrawlUseItemOnPathResponse.
 func (d *Dota2) SendCavernCrawlUseItemOnPath(
 	ctx context.Context,
 	eventID uint32,
@@ -5571,10 +5364,9 @@ func (d *Dota2) SendCavernCrawlUseItemOnPath(
 }
 
 // SendCavernCrawlUseItemOnRoom sends a cavern crawl use item on room.
-// Request ID: k_EMsgClientToGCCavernCrawlUseItemOnRoom
-// Response ID: k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse
-// Request type: CMsgClientToGCCavernCrawlUseItemOnRoom
-// Response type: CMsgClientToGCCavernCrawlUseItemOnRoomResponse
+//
+// Sends the GC message k_EMsgClientToGCCavernCrawlUseItemOnRoom (CMsgClientToGCCavernCrawlUseItemOnRoom) and awaits the response k_EMsgClientToGCCavernCrawlUseItemOnRoomResponse,
+// delivered as *CMsgClientToGCCavernCrawlUseItemOnRoomResponse.
 func (d *Dota2) SendCavernCrawlUseItemOnRoom(
 	ctx context.Context,
 	eventID uint32,
@@ -5599,9 +5391,8 @@ func (d *Dota2) SendCavernCrawlUseItemOnRoom(
 	)
 }
 
-// SendChatMessage sends a chat message.
-// Request ID: k_EMsgGCChatMessage
-// Request type: CMsgDOTAChatMessage
+// SendChatMessage sends a chat message to a joined chat channel or lobby.
+// Use SendChannelMessage for plain text messages.
 func (d *Dota2) SendChatMessage(
 	req *protocol.CMsgDOTAChatMessage,
 ) {
@@ -5609,10 +5400,9 @@ func (d *Dota2) SendChatMessage(
 }
 
 // SendCoachFriend sends a coach friend.
-// Request ID: k_EMsgClientToGCCoachFriend
-// Response ID: k_EMsgClientToGCCoachFriendResponse
-// Request type: CMsgClientToGCCoachFriend
-// Response type: CMsgClientToGCCoachFriendResponse
+//
+// Sends the GC message k_EMsgClientToGCCoachFriend (CMsgClientToGCCoachFriend) and awaits the response k_EMsgClientToGCCoachFriendResponse,
+// delivered as *CMsgClientToGCCoachFriendResponse.
 func (d *Dota2) SendCoachFriend(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -5632,10 +5422,9 @@ func (d *Dota2) SendCoachFriend(
 }
 
 // SendConvertEventPoints sends convert event points.
-// Request ID: k_EMsgClientToGCConvertEventPoints
-// Response ID: k_EMsgClientToGCConvertEventPointsResponse
-// Request type: CMsgClientToGCConvertEventPoints
-// Response type: CMsgClientToGCConvertEventPointsResponse
+//
+// Sends the GC message k_EMsgClientToGCConvertEventPoints (CMsgClientToGCConvertEventPoints) and awaits the response k_EMsgClientToGCConvertEventPointsResponse,
+// delivered as *CMsgClientToGCConvertEventPointsResponse.
 func (d *Dota2) SendConvertEventPoints(
 	ctx context.Context,
 	eventIDPointsToBuy protocol.EEvent,
@@ -5661,10 +5450,9 @@ func (d *Dota2) SendConvertEventPoints(
 }
 
 // SendCraftworksCraftRecipe sends a craftworks craft recipe.
-// Request ID: k_EMsgClientToGCCraftworksCraftRecipe
-// Response ID: k_EMsgClientToGCCraftworksCraftRecipeResponse
-// Request type: CMsgClientToGCCraftworksCraftRecipe
-// Response type: CMsgClientToGCCraftworksCraftRecipeResponse
+//
+// Sends the GC message k_EMsgClientToGCCraftworksCraftRecipe (CMsgClientToGCCraftworksCraftRecipe) and awaits the response k_EMsgClientToGCCraftworksCraftRecipeResponse,
+// delivered as *CMsgClientToGCCraftworksCraftRecipeResponse.
 func (d *Dota2) SendCraftworksCraftRecipe(
 	ctx context.Context,
 	craftworksID uint32,
@@ -5686,10 +5474,9 @@ func (d *Dota2) SendCraftworksCraftRecipe(
 }
 
 // SendCraftworksDevModifyComponents sends craftworks dev modify components.
-// Request ID: k_EMsgClientToGCCraftworksDevModifyComponents
-// Response ID: k_EMsgClientToGCCraftworksDevModifyComponentsResponse
-// Request type: CMsgClientToGCCraftworksDevModifyComponents
-// Response type: CMsgClientToGCCraftworksDevModifyComponentsResponse
+//
+// Sends the GC message k_EMsgClientToGCCraftworksDevModifyComponents (CMsgClientToGCCraftworksDevModifyComponents) and awaits the response k_EMsgClientToGCCraftworksDevModifyComponentsResponse,
+// delivered as *CMsgClientToGCCraftworksDevModifyComponentsResponse.
 func (d *Dota2) SendCraftworksDevModifyComponents(
 	ctx context.Context,
 	craftworksID uint32,
@@ -5713,8 +5500,9 @@ func (d *Dota2) SendCraftworksDevModifyComponents(
 }
 
 // SendCustomGameClientFinishedLoading sends a custom game client finished loading.
-// Request ID: k_EMsgCustomGameClientFinishedLoading
-// Request type: CMsgDOTACustomGameClientFinishedLoading
+//
+// Sends the GC message k_EMsgCustomGameClientFinishedLoading (CMsgDOTACustomGameClientFinishedLoading). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendCustomGameClientFinishedLoading(
 	lobbyID uint64,
 	loadingDuration uint32,
@@ -5735,8 +5523,9 @@ func (d *Dota2) SendCustomGameClientFinishedLoading(
 }
 
 // SendCustomGameListenServerStartedLoading sends a custom game listen server started loading.
-// Request ID: k_EMsgCustomGameListenServerStartedLoading
-// Request type: CMsgDOTACustomGameListenServerStartedLoading
+//
+// Sends the GC message k_EMsgCustomGameListenServerStartedLoading (CMsgDOTACustomGameListenServerStartedLoading). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendCustomGameListenServerStartedLoading(
 	lobbyID uint64,
 	customGameID uint64,
@@ -5753,10 +5542,9 @@ func (d *Dota2) SendCustomGameListenServerStartedLoading(
 }
 
 // SendDeclineInviteToGuild sends a decline invite to guild.
-// Request ID: k_EMsgClientToGCDeclineInviteToGuild
-// Response ID: k_EMsgClientToGCDeclineInviteToGuildResponse
-// Request type: CMsgClientToGCDeclineInviteToGuild
-// Response type: CMsgClientToGCDeclineInviteToGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCDeclineInviteToGuild (CMsgClientToGCDeclineInviteToGuild) and awaits the response k_EMsgClientToGCDeclineInviteToGuildResponse,
+// delivered as *CMsgClientToGCDeclineInviteToGuildResponse.
 func (d *Dota2) SendDeclineInviteToGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -5776,10 +5564,9 @@ func (d *Dota2) SendDeclineInviteToGuild(
 }
 
 // SendDevDeleteEventActions sends dev delete event actions.
-// Request ID: k_EMsgDevDeleteEventActions
-// Response ID: k_EMsgDevDeleteEventActionsResponse
-// Request type: CMsgDevDeleteEventActions
-// Response type: CMsgDevDeleteEventActionsResponse
+//
+// Sends the GC message k_EMsgDevDeleteEventActions (CMsgDevDeleteEventActions) and awaits the response k_EMsgDevDeleteEventActionsResponse,
+// delivered as *CMsgDevDeleteEventActionsResponse.
 func (d *Dota2) SendDevDeleteEventActions(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -5805,10 +5592,9 @@ func (d *Dota2) SendDevDeleteEventActions(
 }
 
 // SendDevReloadAllEvents sends dev reload all events.
-// Request ID: k_EMsgDevReloadAllEvents
-// Response ID: k_EMsgDevReloadAllEventsResponse
-// Request type: CMsgDevReloadAllEvents
-// Response type: CMsgDevReloadAllEventsResponse
+//
+// Sends the GC message k_EMsgDevReloadAllEvents (CMsgDevReloadAllEvents) and awaits the response k_EMsgDevReloadAllEventsResponse,
+// delivered as *CMsgDevReloadAllEventsResponse.
 func (d *Dota2) SendDevReloadAllEvents(
 	ctx context.Context,
 ) (*protocol.CMsgDevReloadAllEventsResponse, error) {
@@ -5825,10 +5611,9 @@ func (d *Dota2) SendDevReloadAllEvents(
 }
 
 // SendDevResetEventState sends a dev reset event state.
-// Request ID: k_EMsgDevResetEventState
-// Response ID: k_EMsgDevResetEventStateResponse
-// Request type: CMsgDevResetEventState
-// Response type: CMsgDevResetEventStateResponse
+//
+// Sends the GC message k_EMsgDevResetEventState (CMsgDevResetEventState) and awaits the response k_EMsgDevResetEventStateResponse,
+// delivered as *CMsgDevResetEventStateResponse.
 func (d *Dota2) SendDevResetEventState(
 	ctx context.Context,
 	eventID protocol.EEvent,
@@ -5850,10 +5635,9 @@ func (d *Dota2) SendDevResetEventState(
 }
 
 // SendDotaLabsFeedback sends a dota labs feedback.
-// Request ID: k_EMsgClientToGCDotaLabsFeedback
-// Response ID: k_EMsgClientToGCDotaLabsFeedbackResponse
-// Request type: CMsgClientToGCDotaLabsFeedback
-// Response type: CMsgClientToGCDotaLabsFeedbackResponse
+//
+// Sends the GC message k_EMsgClientToGCDotaLabsFeedback (CMsgClientToGCDotaLabsFeedback) and awaits the response k_EMsgClientToGCDotaLabsFeedbackResponse,
+// delivered as *CMsgClientToGCDotaLabsFeedbackResponse.
 func (d *Dota2) SendDotaLabsFeedback(
 	ctx context.Context,
 	language uint32,
@@ -5877,10 +5661,9 @@ func (d *Dota2) SendDotaLabsFeedback(
 }
 
 // SendFantasyCraftingDevModifyTablet sends a fantasy crafting dev modify tablet.
-// Request ID: k_EMsgClientToGCFantasyCraftingDevModifyTablet
-// Response ID: k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse
-// Request type: CMsgClientToGCFantasyCraftingDevModifyTablet
-// Response type: CMsgClientToGCFantasyCraftingDevModifyTabletResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingDevModifyTablet (CMsgClientToGCFantasyCraftingDevModifyTablet) and awaits the response k_EMsgClientToGCFantasyCraftingDevModifyTabletResponse,
+// delivered as *CMsgClientToGCFantasyCraftingDevModifyTabletResponse.
 func (d *Dota2) SendFantasyCraftingDevModifyTablet(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5908,10 +5691,9 @@ func (d *Dota2) SendFantasyCraftingDevModifyTablet(
 }
 
 // SendFantasyCraftingGenerateTablets sends fantasy crafting generate tablets.
-// Request ID: k_EMsgClientToGCFantasyCraftingGenerateTablets
-// Response ID: k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse
-// Request type: CMsgClientToGCFantasyCraftingGenerateTablets
-// Response type: CMsgClientToGCFantasyCraftingGenerateTabletsResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingGenerateTablets (CMsgClientToGCFantasyCraftingGenerateTablets) and awaits the response k_EMsgClientToGCFantasyCraftingGenerateTabletsResponse,
+// delivered as *CMsgClientToGCFantasyCraftingGenerateTabletsResponse.
 func (d *Dota2) SendFantasyCraftingGenerateTablets(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5935,10 +5717,9 @@ func (d *Dota2) SendFantasyCraftingGenerateTablets(
 }
 
 // SendFantasyCraftingPerformOperation sends a fantasy crafting perform operation.
-// Request ID: k_EMsgClientToGCFantasyCraftingPerformOperation
-// Response ID: k_EMsgClientToGCFantasyCraftingPerformOperationResponse
-// Request type: CMsgClientToGCFantasyCraftingPerformOperation
-// Response type: CMsgClientToGCFantasyCraftingPerformOperationResponse
+//
+// Sends the GC message k_EMsgClientToGCFantasyCraftingPerformOperation (CMsgClientToGCFantasyCraftingPerformOperation) and awaits the response k_EMsgClientToGCFantasyCraftingPerformOperationResponse,
+// delivered as *CMsgClientToGCFantasyCraftingPerformOperationResponse.
 func (d *Dota2) SendFantasyCraftingPerformOperation(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -5964,10 +5745,9 @@ func (d *Dota2) SendFantasyCraftingPerformOperation(
 }
 
 // SendFightingGameAnswerChallenge sends a fighting game answer challenge.
-// Request ID: k_EMsgClientToGCFightingGameAnswerChallenge
-// Response ID: k_EMsgClientToGCFightingGameAnswerChallengeResponse
-// Request type: CMsgClientToGCFightingGameAnswerChallenge
-// Response type: CMsgClientToGCFightingGameAnswerChallengeResponse
+//
+// Sends the GC message k_EMsgClientToGCFightingGameAnswerChallenge (CMsgClientToGCFightingGameAnswerChallenge) and awaits the response k_EMsgClientToGCFightingGameAnswerChallengeResponse,
+// delivered as *CMsgClientToGCFightingGameAnswerChallengeResponse.
 func (d *Dota2) SendFightingGameAnswerChallenge(
 	ctx context.Context,
 	challengerAccountID uint32,
@@ -5989,10 +5769,9 @@ func (d *Dota2) SendFightingGameAnswerChallenge(
 }
 
 // SendFightingGameChallengeFriend sends a fighting game challenge friend.
-// Request ID: k_EMsgClientToGCFightingGameChallengeFriend
-// Response ID: k_EMsgClientToGCFightingGameChallengeFriendResponse
-// Request type: CMsgClientToGCFightingGameChallengeFriend
-// Response type: CMsgClientToGCFightingGameChallengeFriendResponse
+//
+// Sends the GC message k_EMsgClientToGCFightingGameChallengeFriend (CMsgClientToGCFightingGameChallengeFriend) and awaits the response k_EMsgClientToGCFightingGameChallengeFriendResponse,
+// delivered as *CMsgClientToGCFightingGameChallengeFriendResponse.
 func (d *Dota2) SendFightingGameChallengeFriend(
 	ctx context.Context,
 	friendAccountID uint32,
@@ -6012,18 +5791,18 @@ func (d *Dota2) SendFightingGameChallengeFriend(
 }
 
 // SendH264Unsupported sends a h 264 unsupported.
-// Request ID: k_EMsgClientToGCH264Unsupported
-// Request type: CMsgClientToGCH264Unsupported
+//
+// Sends the GC message k_EMsgClientToGCH264Unsupported (CMsgClientToGCH264Unsupported). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendH264Unsupported() {
 	req := &protocol.CMsgClientToGCH264Unsupported{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCH264Unsupported), req)
 }
 
 // SendHasPlayerVotedForMVP sends a has player voted for mvp.
-// Request ID: k_EMsgClientToGCHasPlayerVotedForMVP
-// Response ID: k_EMsgClientToGCHasPlayerVotedForMVPResponse
-// Request type: CMsgClientToGCHasPlayerVotedForMVP
-// Response type: CMsgClientToGCHasPlayerVotedForMVPResponse
+//
+// Sends the GC message k_EMsgClientToGCHasPlayerVotedForMVP (CMsgClientToGCHasPlayerVotedForMVP) and awaits the response k_EMsgClientToGCHasPlayerVotedForMVPResponse,
+// delivered as *CMsgClientToGCHasPlayerVotedForMVPResponse.
 func (d *Dota2) SendHasPlayerVotedForMVP(
 	ctx context.Context,
 	matchID uint64,
@@ -6043,8 +5822,9 @@ func (d *Dota2) SendHasPlayerVotedForMVP(
 }
 
 // SendInitialQuestionnaireResponse sends a initial questionnaire response.
-// Request ID: k_EMsgGCInitialQuestionnaireResponse
-// Request type: CMsgInitialQuestionnaireResponse
+//
+// Sends the GC message k_EMsgGCInitialQuestionnaireResponse (CMsgInitialQuestionnaireResponse). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendInitialQuestionnaireResponse(
 	initialSkill uint32,
 ) {
@@ -6055,8 +5835,9 @@ func (d *Dota2) SendInitialQuestionnaireResponse(
 }
 
 // SendInviteToDemoMode sends a invite to demo mode.
-// Request ID: k_EMsgClientToGCInviteToDemoMode
-// Request type: CMsgClientToGCInviteToDemoMode
+//
+// Sends the GC message k_EMsgClientToGCInviteToDemoMode (CMsgClientToGCInviteToDemoMode). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendInviteToDemoMode(
 	serverID uint64,
 	invitedPlayerID uint64,
@@ -6069,10 +5850,9 @@ func (d *Dota2) SendInviteToDemoMode(
 }
 
 // SendInviteToGuild sends a invite to guild.
-// Request ID: k_EMsgClientToGCInviteToGuild
-// Response ID: k_EMsgClientToGCInviteToGuildResponse
-// Request type: CMsgClientToGCInviteToGuild
-// Response type: CMsgClientToGCInviteToGuildResponse
+//
+// Sends the GC message k_EMsgClientToGCInviteToGuild (CMsgClientToGCInviteToGuild) and awaits the response k_EMsgClientToGCInviteToGuildResponse,
+// delivered as *CMsgClientToGCInviteToGuildResponse.
 func (d *Dota2) SendInviteToGuild(
 	ctx context.Context,
 	guildID uint32,
@@ -6094,10 +5874,9 @@ func (d *Dota2) SendInviteToGuild(
 }
 
 // SendItemBattlerGameAction sends a item battler game action.
-// Request ID: k_EMsgClientToGCItemBattlerGameAction
-// Response ID: k_EMsgClientToGCItemBattlerGameActionResponse
-// Request type: CMsgClientToGCItemBattlerGameAction
-// Response type: CMsgClientToGCItemBattlerGameActionResponse
+//
+// Sends the GC message k_EMsgClientToGCItemBattlerGameAction (CMsgClientToGCItemBattlerGameAction) and awaits the response k_EMsgClientToGCItemBattlerGameActionResponse,
+// delivered as *CMsgClientToGCItemBattlerGameActionResponse.
 func (d *Dota2) SendItemBattlerGameAction(
 	ctx context.Context,
 	action protocol.CMsgClientToGCItemBattlerGameAction_EAction,
@@ -6127,8 +5906,9 @@ func (d *Dota2) SendItemBattlerGameAction(
 }
 
 // SendLatestConductScorecard sends a latest conduct scorecard.
-// Request ID: k_EMsgClientToGCLatestConductScorecard
-// Request type: CMsgPlayerConductScorecard
+//
+// Sends the GC message k_EMsgClientToGCLatestConductScorecard (CMsgPlayerConductScorecard). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLatestConductScorecard(
 	req *protocol.CMsgPlayerConductScorecard,
 ) {
@@ -6136,8 +5916,9 @@ func (d *Dota2) SendLatestConductScorecard(
 }
 
 // SendLeagueAvailableLobbyNodes sends league available lobby nodes.
-// Request ID: k_EMsgDOTALeagueAvailableLobbyNodes
-// Request type: CMsgDOTALeagueAvailableLobbyNodes
+//
+// Sends the GC message k_EMsgDOTALeagueAvailableLobbyNodes (CMsgDOTALeagueAvailableLobbyNodes). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLeagueAvailableLobbyNodes(
 	nodeInfos []*protocol.CMsgDOTALeagueAvailableLobbyNodes_NodeInfo,
 ) {
@@ -6148,8 +5929,9 @@ func (d *Dota2) SendLeagueAvailableLobbyNodes(
 }
 
 // SendLobbyBattleCupVictory sends a lobby battle cup victory.
-// Request ID: k_EMsgLobbyBattleCupVictory
-// Request type: CMsgBattleCupVictory
+//
+// Sends the GC message k_EMsgLobbyBattleCupVictory (CMsgBattleCupVictory). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyBattleCupVictory(
 	req *protocol.CMsgBattleCupVictory,
 ) {
@@ -6157,8 +5939,9 @@ func (d *Dota2) SendLobbyBattleCupVictory(
 }
 
 // SendLobbyEventGameData sends a lobby event game data.
-// Request ID: k_EMsgLobbyEventGameData
-// Request type: CMsgLobbyEventGameData
+//
+// Sends the GC message k_EMsgLobbyEventGameData (CMsgLobbyEventGameData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyEventGameData(
 	gameSeed uint32,
 	eventWindowStartTime uint32,
@@ -6171,8 +5954,9 @@ func (d *Dota2) SendLobbyEventGameData(
 }
 
 // SendLobbyEventGameDetails sends lobby event game details.
-// Request ID: k_EMsgLobbyEventGameDetails
-// Request type: CMsgLobbyEventGameDetails
+//
+// Sends the GC message k_EMsgLobbyEventGameDetails (CMsgLobbyEventGameDetails). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyEventGameDetails(
 	kvData []byte,
 ) {
@@ -6183,8 +5967,9 @@ func (d *Dota2) SendLobbyEventGameDetails(
 }
 
 // SendLobbyEventPoints sends lobby event points.
-// Request ID: k_EMsgLobbyEventPoints
-// Request type: CMsgLobbyEventPoints
+//
+// Sends the GC message k_EMsgLobbyEventPoints (CMsgLobbyEventPoints). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyEventPoints(
 	eventID uint32,
 	accountPoints []*protocol.CMsgLobbyEventPoints_AccountPoints,
@@ -6197,8 +5982,9 @@ func (d *Dota2) SendLobbyEventPoints(
 }
 
 // SendLobbyFeaturedGamemodeProgress sends lobby featured gamemode progress.
-// Request ID: k_EMsgLobbyFeaturedGamemodeProgress
-// Request type: CMsgLobbyFeaturedGamemodeProgress
+//
+// Sends the GC message k_EMsgLobbyFeaturedGamemodeProgress (CMsgLobbyFeaturedGamemodeProgress). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyFeaturedGamemodeProgress(
 	accounts []*protocol.CMsgLobbyFeaturedGamemodeProgress_AccountProgress,
 ) {
@@ -6209,8 +5995,9 @@ func (d *Dota2) SendLobbyFeaturedGamemodeProgress(
 }
 
 // SendLobbyPlaytestDetails sends lobby playtest details.
-// Request ID: k_EMsgLobbyPlaytestDetails
-// Request type: CMsgLobbyPlaytestDetails
+//
+// Sends the GC message k_EMsgLobbyPlaytestDetails (CMsgLobbyPlaytestDetails). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyPlaytestDetails(
 	jSON string,
 ) {
@@ -6221,8 +6008,9 @@ func (d *Dota2) SendLobbyPlaytestDetails(
 }
 
 // SendLobbyRoadToTIMatchQuestData sends a lobby road to ti match quest data.
-// Request ID: k_EMsgLobbyRoadToTIMatchQuestData
-// Request type: CMsgLobbyRoadToTIMatchQuestData
+//
+// Sends the GC message k_EMsgLobbyRoadToTIMatchQuestData (CMsgLobbyRoadToTIMatchQuestData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendLobbyRoadToTIMatchQuestData(
 	questData protocol.CMsgRoadToTIAssignedQuest,
 	questPeriod uint32,
@@ -6237,8 +6025,9 @@ func (d *Dota2) SendLobbyRoadToTIMatchQuestData(
 }
 
 // SendMMInfo sends a mm info.
-// Request ID: k_EMsgClientToGCMMInfo
-// Request type: CMsgClientToGCMMInfo
+//
+// Sends the GC message k_EMsgClientToGCMMInfo (CMsgClientToGCMMInfo). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendMMInfo(
 	laneSelectionFlags uint32,
 	highPriorityDisabled bool,
@@ -6251,10 +6040,9 @@ func (d *Dota2) SendMMInfo(
 }
 
 // SendManageFavorites sends manage favorites.
-// Request ID: k_EMsgClientToGCManageFavorites
-// Response ID: k_EMsgGCToClientManageFavoritesResponse
-// Request type: CMsgClientToGCManageFavorites
-// Response type: CMsgGCToClientManageFavoritesResponse
+//
+// Sends the GC message k_EMsgClientToGCManageFavorites (CMsgClientToGCManageFavorites) and awaits the response k_EMsgGCToClientManageFavoritesResponse,
+// delivered as *CMsgGCToClientManageFavoritesResponse.
 func (d *Dota2) SendManageFavorites(
 	ctx context.Context,
 	action protocol.CMsgClientToGCManageFavorites_Action,
@@ -6284,8 +6072,9 @@ func (d *Dota2) SendManageFavorites(
 }
 
 // SendMatchMatchmakingStats sends match matchmaking stats.
-// Request ID: k_EMsgMatchMatchmakingStats
-// Request type: CMsgMatchMatchmakingStats
+//
+// Sends the GC message k_EMsgMatchMatchmakingStats (CMsgMatchMatchmakingStats). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendMatchMatchmakingStats(
 	averageQueueTime uint32,
 	maximumQueueTime uint32,
@@ -6300,8 +6089,9 @@ func (d *Dota2) SendMatchMatchmakingStats(
 }
 
 // SendMergePartyInvite sends a merge party invite.
-// Request ID: k_EMsgClientToGCMergePartyInvite
-// Request type: CMsgDOTAGroupMergeInvite
+//
+// Sends the GC message k_EMsgClientToGCMergePartyInvite (CMsgDOTAGroupMergeInvite). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendMergePartyInvite(
 	otherGroupID uint64,
 ) {
@@ -6312,10 +6102,9 @@ func (d *Dota2) SendMergePartyInvite(
 }
 
 // SendModifyGuildRole sends a modify guild role.
-// Request ID: k_EMsgClientToGCModifyGuildRole
-// Response ID: k_EMsgClientToGCModifyGuildRoleResponse
-// Request type: CMsgClientToGCModifyGuildRole
-// Response type: CMsgClientToGCModifyGuildRoleResponse
+//
+// Sends the GC message k_EMsgClientToGCModifyGuildRole (CMsgClientToGCModifyGuildRole) and awaits the response k_EMsgClientToGCModifyGuildRoleResponse,
+// delivered as *CMsgClientToGCModifyGuildRoleResponse.
 func (d *Dota2) SendModifyGuildRole(
 	ctx context.Context,
 	guildID uint32,
@@ -6341,10 +6130,9 @@ func (d *Dota2) SendModifyGuildRole(
 }
 
 // SendMonsterHunterDevClearInventory sends a monster hunter dev clear inventory.
-// Request ID: k_EMsgClientToGCMonsterHunterDevClearInventory
-// Response ID: k_EMsgClientToGCMonsterHunterDevClearInventoryResponse
-// Request type: CMsgClientToGCMonsterHunterDevClearInventory
-// Response type: CMsgClientToGCMonsterHunterDevClearInventoryResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterDevClearInventory (CMsgClientToGCMonsterHunterDevClearInventory) and awaits the response k_EMsgClientToGCMonsterHunterDevClearInventoryResponse,
+// delivered as *CMsgClientToGCMonsterHunterDevClearInventoryResponse.
 func (d *Dota2) SendMonsterHunterDevClearInventory(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCMonsterHunterDevClearInventoryResponse, error) {
@@ -6361,10 +6149,9 @@ func (d *Dota2) SendMonsterHunterDevClearInventory(
 }
 
 // SendMonsterHunterDevModifyHeroCodex sends a monster hunter dev modify hero codex.
-// Request ID: k_EMsgClientToGCMonsterHunterDevModifyHeroCodex
-// Response ID: k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse
-// Request type: CMsgClientToGCMonsterHunterDevModifyHeroCodex
-// Response type: CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterDevModifyHeroCodex (CMsgClientToGCMonsterHunterDevModifyHeroCodex) and awaits the response k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse,
+// delivered as *CMsgClientToGCMonsterHunterDevModifyHeroCodexResponse.
 func (d *Dota2) SendMonsterHunterDevModifyHeroCodex(
 	ctx context.Context,
 	actions []*protocol.CMsgDevModifyCodexAction,
@@ -6384,10 +6171,9 @@ func (d *Dota2) SendMonsterHunterDevModifyHeroCodex(
 }
 
 // SendMonsterHunterDevResetAll sends a monster hunter dev reset all.
-// Request ID: k_EMsgClientToGCMonsterHunterDevResetAll
-// Response ID: k_EMsgClientToGCMonsterHunterDevResetAllResponse
-// Request type: CMsgClientToGCMonsterHunterDevResetAll
-// Response type: CMsgClientToGCMonsterHunterDevResetAllResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterDevResetAll (CMsgClientToGCMonsterHunterDevResetAll) and awaits the response k_EMsgClientToGCMonsterHunterDevResetAllResponse,
+// delivered as *CMsgClientToGCMonsterHunterDevResetAllResponse.
 func (d *Dota2) SendMonsterHunterDevResetAll(
 	ctx context.Context,
 	resetCodexOnly bool,
@@ -6407,10 +6193,9 @@ func (d *Dota2) SendMonsterHunterDevResetAll(
 }
 
 // SendMonsterHunterGiftMaterials sends monster hunter gift materials.
-// Request ID: k_EMsgClientToGCMonsterHunterGiftMaterials
-// Response ID: k_EMsgClientToGCMonsterHunterGiftMaterialsResponse
-// Request type: CMsgClientToGCMonsterHunterGiftMaterials
-// Response type: CMsgClientToGCMonsterHunterGiftMaterialsResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterGiftMaterials (CMsgClientToGCMonsterHunterGiftMaterials) and awaits the response k_EMsgClientToGCMonsterHunterGiftMaterialsResponse,
+// delivered as *CMsgClientToGCMonsterHunterGiftMaterialsResponse.
 func (d *Dota2) SendMonsterHunterGiftMaterials(
 	ctx context.Context,
 	tokenGift protocol.CMsgMonsterHunterMaterialCount,
@@ -6434,10 +6219,9 @@ func (d *Dota2) SendMonsterHunterGiftMaterials(
 }
 
 // SendMonsterHunterTradeMaterials sends monster hunter trade materials.
-// Request ID: k_EMsgClientToGCMonsterHunterTradeMaterials
-// Response ID: k_EMsgClientToGCMonsterHunterTradeMaterialsResponse
-// Request type: CMsgClientToGCMonsterHunterTradeMaterials
-// Response type: CMsgClientToGCMonsterHunterTradeMaterialsResponse
+//
+// Sends the GC message k_EMsgClientToGCMonsterHunterTradeMaterials (CMsgClientToGCMonsterHunterTradeMaterials) and awaits the response k_EMsgClientToGCMonsterHunterTradeMaterialsResponse,
+// delivered as *CMsgClientToGCMonsterHunterTradeMaterialsResponse.
 func (d *Dota2) SendMonsterHunterTradeMaterials(
 	ctx context.Context,
 	materialOffer protocol.CMsgMonsterHunterMaterialQuantity,
@@ -6461,8 +6245,9 @@ func (d *Dota2) SendMonsterHunterTradeMaterials(
 }
 
 // SendNeutralItemStats sends neutral item stats.
-// Request ID: k_EMsgNeutralItemStats
-// Request type: CMsgNeutralItemStats
+//
+// Sends the GC message k_EMsgNeutralItemStats (CMsgNeutralItemStats). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendNeutralItemStats(
 	neutralItems []*protocol.CMsgNeutralItemStats_NeutralItem,
 ) {
@@ -6473,10 +6258,9 @@ func (d *Dota2) SendNeutralItemStats(
 }
 
 // SendNewBloomGift sends a new bloom gift.
-// Request ID: k_EMsgClientToGCNewBloomGift
-// Response ID: k_EMsgClientToGCNewBloomGiftResponse
-// Request type: CMsgClientToGCNewBloomGift
-// Response type: CMsgClientToGCNewBloomGiftResponse
+//
+// Sends the GC message k_EMsgClientToGCNewBloomGift (CMsgClientToGCNewBloomGift) and awaits the response k_EMsgClientToGCNewBloomGiftResponse,
+// delivered as *CMsgClientToGCNewBloomGiftResponse.
 func (d *Dota2) SendNewBloomGift(
 	ctx context.Context,
 	defindex uint32,
@@ -6500,8 +6284,9 @@ func (d *Dota2) SendNewBloomGift(
 }
 
 // SendOverwatchReplayError sends a overwatch replay error.
-// Request ID: k_EMsgClientToGCOverwatchReplayError
-// Request type: CMsgClientToGCOverwatchReplayError
+//
+// Sends the GC message k_EMsgClientToGCOverwatchReplayError (CMsgClientToGCOverwatchReplayError). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverwatchReplayError(
 	overwatchReplayID uint64,
 ) {
@@ -6512,10 +6297,9 @@ func (d *Dota2) SendOverwatchReplayError(
 }
 
 // SendOverworldCompletePath sends a overworld complete path.
-// Request ID: k_EMsgClientToGCOverworldCompletePath
-// Response ID: k_EMsgClientToGCOverworldCompletePathResponse
-// Request type: CMsgClientToGCOverworldCompletePath
-// Response type: CMsgClientToGCOverworldCompletePathResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldCompletePath (CMsgClientToGCOverworldCompletePath) and awaits the response k_EMsgClientToGCOverworldCompletePathResponse,
+// delivered as *CMsgClientToGCOverworldCompletePathResponse.
 func (d *Dota2) SendOverworldCompletePath(
 	ctx context.Context,
 	overworldID uint32,
@@ -6541,10 +6325,9 @@ func (d *Dota2) SendOverworldCompletePath(
 }
 
 // SendOverworldDevClearFortune sends a overworld dev clear fortune.
-// Request ID: k_EMsgClientToGCOverworldDevClearFortune
-// Response ID: k_EMsgClientToGCOverworldDevClearFortuneResponse
-// Request type: CMsgClientToGCOverworldDevClearFortune
-// Response type: CMsgClientToGCOverworldDevClearFortuneResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevClearFortune (CMsgClientToGCOverworldDevClearFortune) and awaits the response k_EMsgClientToGCOverworldDevClearFortuneResponse,
+// delivered as *CMsgClientToGCOverworldDevClearFortuneResponse.
 func (d *Dota2) SendOverworldDevClearFortune(
 	ctx context.Context,
 	overworldID uint32,
@@ -6566,10 +6349,9 @@ func (d *Dota2) SendOverworldDevClearFortune(
 }
 
 // SendOverworldDevClearInventory sends a overworld dev clear inventory.
-// Request ID: k_EMsgClientToGCOverworldDevClearInventory
-// Response ID: k_EMsgClientToGCOverworldDevClearInventoryResponse
-// Request type: CMsgClientToGCOverworldDevClearInventory
-// Response type: CMsgClientToGCOverworldDevClearInventoryResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevClearInventory (CMsgClientToGCOverworldDevClearInventory) and awaits the response k_EMsgClientToGCOverworldDevClearInventoryResponse,
+// delivered as *CMsgClientToGCOverworldDevClearInventoryResponse.
 func (d *Dota2) SendOverworldDevClearInventory(
 	ctx context.Context,
 	overworldID uint32,
@@ -6589,10 +6371,9 @@ func (d *Dota2) SendOverworldDevClearInventory(
 }
 
 // SendOverworldDevResetAll sends a overworld dev reset all.
-// Request ID: k_EMsgClientToGCOverworldDevResetAll
-// Response ID: k_EMsgClientToGCOverworldDevResetAllResponse
-// Request type: CMsgClientToGCOverworldDevResetAll
-// Response type: CMsgClientToGCOverworldDevResetAllResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevResetAll (CMsgClientToGCOverworldDevResetAll) and awaits the response k_EMsgClientToGCOverworldDevResetAllResponse,
+// delivered as *CMsgClientToGCOverworldDevResetAllResponse.
 func (d *Dota2) SendOverworldDevResetAll(
 	ctx context.Context,
 	overworldID uint32,
@@ -6612,10 +6393,9 @@ func (d *Dota2) SendOverworldDevResetAll(
 }
 
 // SendOverworldDevResetNode sends a overworld dev reset node.
-// Request ID: k_EMsgClientToGCOverworldDevResetNode
-// Response ID: k_EMsgClientToGCOverworldDevResetNodeResponse
-// Request type: CMsgClientToGCOverworldDevResetNode
-// Response type: CMsgClientToGCOverworldDevResetNodeResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevResetNode (CMsgClientToGCOverworldDevResetNode) and awaits the response k_EMsgClientToGCOverworldDevResetNodeResponse,
+// delivered as *CMsgClientToGCOverworldDevResetNodeResponse.
 func (d *Dota2) SendOverworldDevResetNode(
 	ctx context.Context,
 	overworldID uint32,
@@ -6637,8 +6417,9 @@ func (d *Dota2) SendOverworldDevResetNode(
 }
 
 // SendOverworldEncounterChooseHeroData sends a overworld encounter choose hero data.
-// Request ID: k_EMsgOverworldEncounterChooseHeroData
-// Request type: CMsgOverworldEncounterChooseHeroData
+//
+// Sends the GC message k_EMsgOverworldEncounterChooseHeroData (CMsgOverworldEncounterChooseHeroData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverworldEncounterChooseHeroData(
 	heroList protocol.CMsgOverworldHeroList,
 	additive bool,
@@ -6651,8 +6432,9 @@ func (d *Dota2) SendOverworldEncounterChooseHeroData(
 }
 
 // SendOverworldEncounterPitFighterRewardData sends a overworld encounter pit fighter reward data.
-// Request ID: k_EMsgOverworldEncounterPitFighterRewardData
-// Request type: CMsgOverworldEncounterPitFighterRewardData
+//
+// Sends the GC message k_EMsgOverworldEncounterPitFighterRewardData (CMsgOverworldEncounterPitFighterRewardData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverworldEncounterPitFighterRewardData(
 	tokenID uint32,
 	choice uint32,
@@ -6665,8 +6447,9 @@ func (d *Dota2) SendOverworldEncounterPitFighterRewardData(
 }
 
 // SendOverworldEncounterProgressData sends a overworld encounter progress data.
-// Request ID: k_EMsgOverworldEncounterProgressData
-// Request type: CMsgOverworldEncounterProgressData
+//
+// Sends the GC message k_EMsgOverworldEncounterProgressData (CMsgOverworldEncounterProgressData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverworldEncounterProgressData(
 	choice int32,
 	progress int32,
@@ -6683,8 +6466,9 @@ func (d *Dota2) SendOverworldEncounterProgressData(
 }
 
 // SendOverworldEncounterTokenQuestData sends a overworld encounter token quest data.
-// Request ID: k_EMsgOverworldEncounterTokenQuestData
-// Request type: CMsgOverworldEncounterTokenQuestData
+//
+// Sends the GC message k_EMsgOverworldEncounterTokenQuestData (CMsgOverworldEncounterTokenQuestData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverworldEncounterTokenQuestData(
 	quests []*protocol.CMsgOverworldEncounterTokenQuestData_Quest,
 ) {
@@ -6695,8 +6479,9 @@ func (d *Dota2) SendOverworldEncounterTokenQuestData(
 }
 
 // SendOverworldEncounterTokenTreasureData sends a overworld encounter token treasure data.
-// Request ID: k_EMsgOverworldEncounterTokenTreasureData
-// Request type: CMsgOverworldEncounterTokenTreasureData
+//
+// Sends the GC message k_EMsgOverworldEncounterTokenTreasureData (CMsgOverworldEncounterTokenTreasureData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendOverworldEncounterTokenTreasureData(
 	rewardOptions []*protocol.CMsgOverworldEncounterTokenTreasureData_RewardOption,
 ) {
@@ -6707,10 +6492,9 @@ func (d *Dota2) SendOverworldEncounterTokenTreasureData(
 }
 
 // SendOverworldFeedback sends a overworld feedback.
-// Request ID: k_EMsgClientToGCOverworldFeedback
-// Response ID: k_EMsgClientToGCOverworldFeedbackResponse
-// Request type: CMsgClientToGCOverworldFeedback
-// Response type: CMsgClientToGCOverworldFeedbackResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldFeedback (CMsgClientToGCOverworldFeedback) and awaits the response k_EMsgClientToGCOverworldFeedbackResponse,
+// delivered as *CMsgClientToGCOverworldFeedbackResponse.
 func (d *Dota2) SendOverworldFeedback(
 	ctx context.Context,
 	language uint32,
@@ -6734,10 +6518,9 @@ func (d *Dota2) SendOverworldFeedback(
 }
 
 // SendOverworldGiftTokens sends overworld gift tokens.
-// Request ID: k_EMsgClientToGCOverworldGiftTokens
-// Response ID: k_EMsgClientToGCOverworldGiftTokensResponse
-// Request type: CMsgClientToGCOverworldGiftTokens
-// Response type: CMsgClientToGCOverworldGiftTokensResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldGiftTokens (CMsgClientToGCOverworldGiftTokens) and awaits the response k_EMsgClientToGCOverworldGiftTokensResponse,
+// delivered as *CMsgClientToGCOverworldGiftTokensResponse.
 func (d *Dota2) SendOverworldGiftTokens(
 	ctx context.Context,
 	overworldID uint32,
@@ -6763,10 +6546,9 @@ func (d *Dota2) SendOverworldGiftTokens(
 }
 
 // SendOverworldMinigameAction sends a overworld minigame action.
-// Request ID: k_EMsgClientToGCOverworldMinigameAction
-// Response ID: k_EMsgClientToGCOverworldMinigameActionResponse
-// Request type: CMsgClientToGCOverworldMinigameAction
-// Response type: CMsgClientToGCOverworldMinigameActionResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldMinigameAction (CMsgClientToGCOverworldMinigameAction) and awaits the response k_EMsgClientToGCOverworldMinigameActionResponse,
+// delivered as *CMsgClientToGCOverworldMinigameActionResponse.
 func (d *Dota2) SendOverworldMinigameAction(
 	ctx context.Context,
 	overworldID uint32,
@@ -6796,10 +6578,9 @@ func (d *Dota2) SendOverworldMinigameAction(
 }
 
 // SendOverworldMoveToNode sends a overworld move to node.
-// Request ID: k_EMsgClientToGCOverworldMoveToNode
-// Response ID: k_EMsgClientToGCOverworldMoveToNodeResponse
-// Request type: CMsgClientToGCOverworldMoveToNode
-// Response type: CMsgClientToGCOverworldMoveToNodeResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldMoveToNode (CMsgClientToGCOverworldMoveToNode) and awaits the response k_EMsgClientToGCOverworldMoveToNodeResponse,
+// delivered as *CMsgClientToGCOverworldMoveToNodeResponse.
 func (d *Dota2) SendOverworldMoveToNode(
 	ctx context.Context,
 	overworldID uint32,
@@ -6821,10 +6602,9 @@ func (d *Dota2) SendOverworldMoveToNode(
 }
 
 // SendOverworldTradeTokens sends overworld trade tokens.
-// Request ID: k_EMsgClientToGCOverworldTradeTokens
-// Response ID: k_EMsgClientToGCOverworldTradeTokensResponse
-// Request type: CMsgClientToGCOverworldTradeTokens
-// Response type: CMsgClientToGCOverworldTradeTokensResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldTradeTokens (CMsgClientToGCOverworldTradeTokens) and awaits the response k_EMsgClientToGCOverworldTradeTokensResponse,
+// delivered as *CMsgClientToGCOverworldTradeTokensResponse.
 func (d *Dota2) SendOverworldTradeTokens(
 	ctx context.Context,
 	overworldID uint32,
@@ -6852,10 +6632,9 @@ func (d *Dota2) SendOverworldTradeTokens(
 }
 
 // SendOverworldVisitEncounter sends a overworld visit encounter.
-// Request ID: k_EMsgClientToGCOverworldVisitEncounter
-// Response ID: k_EMsgClientToGCOverworldVisitEncounterResponse
-// Request type: CMsgClientToGCOverworldVisitEncounter
-// Response type: CMsgClientToGCOverworldVisitEncounterResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldVisitEncounter (CMsgClientToGCOverworldVisitEncounter) and awaits the response k_EMsgClientToGCOverworldVisitEncounterResponse,
+// delivered as *CMsgClientToGCOverworldVisitEncounterResponse.
 func (d *Dota2) SendOverworldVisitEncounter(
 	ctx context.Context,
 	overworldID uint32,
@@ -6876,11 +6655,7 @@ func (d *Dota2) SendOverworldVisitEncounter(
 	)
 }
 
-// SendPartyReadyCheck sends a party ready check.
-// Request ID: k_EMsgPartyReadyCheckRequest
-// Response ID: k_EMsgPartyReadyCheckResponse
-// Request type: CMsgPartyReadyCheckRequest
-// Response type: CMsgPartyReadyCheckResponse
+// SendPartyReadyCheck starts a ready check across the whole party.
 func (d *Dota2) SendPartyReadyCheck(
 	ctx context.Context,
 ) (*protocol.CMsgPartyReadyCheckResponse, error) {
@@ -6897,8 +6672,9 @@ func (d *Dota2) SendPartyReadyCheck(
 }
 
 // SendPeriodicResourceUpdated sends a periodic resource updated.
-// Request ID: k_EMsgDOTAPeriodicResourceUpdated
-// Request type: CMsgDOTAPeriodicResourceUpdated
+//
+// Sends the GC message k_EMsgDOTAPeriodicResourceUpdated (CMsgDOTAPeriodicResourceUpdated). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendPeriodicResourceUpdated(
 	periodicResourceKey protocol.CMsgDOTAGetPeriodicResource,
 	periodicResourceValue protocol.CMsgDOTAGetPeriodicResourceResponse,
@@ -6911,8 +6687,9 @@ func (d *Dota2) SendPeriodicResourceUpdated(
 }
 
 // SendPingData sends a ping data.
-// Request ID: k_EMsgClientToGCPingData
-// Request type: CMsgClientPingData
+//
+// Sends the GC message k_EMsgClientToGCPingData (CMsgClientPingData). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendPingData(
 	relayCodes []uint32,
 	relayPings []uint32,
@@ -6931,10 +6708,9 @@ func (d *Dota2) SendPingData(
 }
 
 // SendProfileUpdate sends a profile update.
-// Request ID: k_EMsgProfileUpdate
-// Response ID: k_EMsgProfileUpdateResponse
-// Request type: CMsgProfileUpdate
-// Response type: CMsgProfileUpdateResponse
+//
+// Sends the GC message k_EMsgProfileUpdate (CMsgProfileUpdate) and awaits the response k_EMsgProfileUpdateResponse,
+// delivered as *CMsgProfileUpdateResponse.
 func (d *Dota2) SendProfileUpdate(
 	ctx context.Context,
 	backgroundItemID uint64,
@@ -6955,9 +6731,10 @@ func (d *Dota2) SendProfileUpdate(
 	)
 }
 
-// SendReadyUp sends a ready up.
-// Request ID: k_EMsgGCReadyUp
-// Request type: CMsgReadyUp
+// SendReadyUp accepts (or declines) an incoming match. The GC assigns teams
+// and broadcasts the game setup state once all players accept.
+//
+// A player who fails to ready up in time causes the match search to restart.
 func (d *Dota2) SendReadyUp(
 	state protocol.DOTALobbyReadyState,
 	readyUpKey uint64,
@@ -6972,10 +6749,9 @@ func (d *Dota2) SendReadyUp(
 }
 
 // SendRecalibrateMMR sends a recalibrate mmr.
-// Request ID: k_EMsgClientToGCRecalibrateMMR
-// Response ID: k_EMsgClientToGCRecalibrateMMRResponse
-// Request type: CMsgClientToGCRecalibrateMMR
-// Response type: CMsgClientToGCRecalibrateMMRResponse
+//
+// Sends the GC message k_EMsgClientToGCRecalibrateMMR (CMsgClientToGCRecalibrateMMR) and awaits the response k_EMsgClientToGCRecalibrateMMRResponse,
+// delivered as *CMsgClientToGCRecalibrateMMRResponse.
 func (d *Dota2) SendRecalibrateMMR(
 	ctx context.Context,
 ) (*protocol.CMsgClientToGCRecalibrateMMRResponse, error) {
@@ -6992,10 +6768,9 @@ func (d *Dota2) SendRecalibrateMMR(
 }
 
 // SendRemoveFilteredPlayer sends a remove filtered player.
-// Request ID: k_EMsgClientToGCRemoveFilteredPlayer
-// Response ID: k_EMsgGCToClientRemoveFilteredPlayerResponse
-// Request type: CMsgClientToGCRemoveFilteredPlayer
-// Response type: CMsgGCToClientRemoveFilteredPlayerResponse
+//
+// Sends the GC message k_EMsgClientToGCRemoveFilteredPlayer (CMsgClientToGCRemoveFilteredPlayer) and awaits the response k_EMsgGCToClientRemoveFilteredPlayerResponse,
+// delivered as *CMsgGCToClientRemoveFilteredPlayerResponse.
 func (d *Dota2) SendRemoveFilteredPlayer(
 	ctx context.Context,
 	accountIDToRemove uint32,
@@ -7015,10 +6790,9 @@ func (d *Dota2) SendRemoveFilteredPlayer(
 }
 
 // SendRemoveGuildRole sends a remove guild role.
-// Request ID: k_EMsgClientToGCRemoveGuildRole
-// Response ID: k_EMsgClientToGCRemoveGuildRoleResponse
-// Request type: CMsgClientToGCRemoveGuildRole
-// Response type: CMsgClientToGCRemoveGuildRoleResponse
+//
+// Sends the GC message k_EMsgClientToGCRemoveGuildRole (CMsgClientToGCRemoveGuildRole) and awaits the response k_EMsgClientToGCRemoveGuildRoleResponse,
+// delivered as *CMsgClientToGCRemoveGuildRoleResponse.
 func (d *Dota2) SendRemoveGuildRole(
 	ctx context.Context,
 	guildID uint32,
@@ -7040,8 +6814,9 @@ func (d *Dota2) SendRemoveGuildRole(
 }
 
 // SendRoadToTIDevForceQuest sends a road to ti dev force quest.
-// Request ID: k_EMsgClientToGCRoadToTIDevForceQuest
-// Request type: CMsgClientToGCRoadToTIDevForceQuest
+//
+// Sends the GC message k_EMsgClientToGCRoadToTIDevForceQuest (CMsgClientToGCRoadToTIDevForceQuest). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendRoadToTIDevForceQuest(
 	eventID uint32,
 	forceMatchType bool,
@@ -7056,10 +6831,9 @@ func (d *Dota2) SendRoadToTIDevForceQuest(
 }
 
 // SendRoadToTIUseItem sends a road to ti use item.
-// Request ID: k_EMsgClientToGCRoadToTIUseItem
-// Response ID: k_EMsgClientToGCRoadToTIUseItemResponse
-// Request type: CMsgClientToGCRoadToTIUseItem
-// Response type: CMsgClientToGCRoadToTIUseItemResponse
+//
+// Sends the GC message k_EMsgClientToGCRoadToTIUseItem (CMsgClientToGCRoadToTIUseItem) and awaits the response k_EMsgClientToGCRoadToTIUseItemResponse,
+// delivered as *CMsgClientToGCRoadToTIUseItemResponse.
 func (d *Dota2) SendRoadToTIUseItem(
 	ctx context.Context,
 	eventID uint32,
@@ -7083,10 +6857,9 @@ func (d *Dota2) SendRoadToTIUseItem(
 }
 
 // SendShowcaseAdminConvict sends a showcase admin convict.
-// Request ID: k_EMsgClientToGCShowcaseAdminConvict
-// Response ID: k_EMsgClientToGCShowcaseAdminConvictResponse
-// Request type: CMsgClientToGCShowcaseAdminConvict
-// Response type: CMsgClientToGCShowcaseAdminConvictResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminConvict (CMsgClientToGCShowcaseAdminConvict) and awaits the response k_EMsgClientToGCShowcaseAdminConvictResponse,
+// delivered as *CMsgClientToGCShowcaseAdminConvictResponse.
 func (d *Dota2) SendShowcaseAdminConvict(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -7108,10 +6881,9 @@ func (d *Dota2) SendShowcaseAdminConvict(
 }
 
 // SendShowcaseAdminExonerate sends a showcase admin exonerate.
-// Request ID: k_EMsgClientToGCShowcaseAdminExonerate
-// Response ID: k_EMsgClientToGCShowcaseAdminExonerateResponse
-// Request type: CMsgClientToGCShowcaseAdminExonerate
-// Response type: CMsgClientToGCShowcaseAdminExonerateResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminExonerate (CMsgClientToGCShowcaseAdminExonerate) and awaits the response k_EMsgClientToGCShowcaseAdminExonerateResponse,
+// delivered as *CMsgClientToGCShowcaseAdminExonerateResponse.
 func (d *Dota2) SendShowcaseAdminExonerate(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -7133,10 +6905,9 @@ func (d *Dota2) SendShowcaseAdminExonerate(
 }
 
 // SendShowcaseAdminLockAccount sends a showcase admin lock account.
-// Request ID: k_EMsgClientToGCShowcaseAdminLockAccount
-// Response ID: k_EMsgClientToGCShowcaseAdminLockAccountResponse
-// Request type: CMsgClientToGCShowcaseAdminLockAccount
-// Response type: CMsgClientToGCShowcaseAdminLockAccountResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminLockAccount (CMsgClientToGCShowcaseAdminLockAccount) and awaits the response k_EMsgClientToGCShowcaseAdminLockAccountResponse,
+// delivered as *CMsgClientToGCShowcaseAdminLockAccountResponse.
 func (d *Dota2) SendShowcaseAdminLockAccount(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -7158,10 +6929,9 @@ func (d *Dota2) SendShowcaseAdminLockAccount(
 }
 
 // SendShowcaseAdminReset sends a showcase admin reset.
-// Request ID: k_EMsgClientToGCShowcaseAdminReset
-// Response ID: k_EMsgClientToGCShowcaseAdminResetResponse
-// Request type: CMsgClientToGCShowcaseAdminReset
-// Response type: CMsgClientToGCShowcaseAdminResetResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseAdminReset (CMsgClientToGCShowcaseAdminReset) and awaits the response k_EMsgClientToGCShowcaseAdminResetResponse,
+// delivered as *CMsgClientToGCShowcaseAdminResetResponse.
 func (d *Dota2) SendShowcaseAdminReset(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -7183,8 +6953,9 @@ func (d *Dota2) SendShowcaseAdminReset(
 }
 
 // SendSpectatorLobbyGameDetails sends spectator lobby game details.
-// Request ID: k_EMsgSpectatorLobbyGameDetails
-// Request type: CMsgSpectatorLobbyGameDetails
+//
+// Sends the GC message k_EMsgSpectatorLobbyGameDetails (CMsgSpectatorLobbyGameDetails). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendSpectatorLobbyGameDetails(
 	req *protocol.CMsgSpectatorLobbyGameDetails,
 ) {
@@ -7192,8 +6963,9 @@ func (d *Dota2) SendSpectatorLobbyGameDetails(
 }
 
 // SendTeamInvite_GCResponseToInvitee sends a team invite _ gc response to invitee.
-// Request ID: k_EMsgGCTeamInvite_GCResponseToInvitee
-// Request type: CMsgDOTATeamInvite_GCResponseToInvitee
+//
+// Sends the GC message k_EMsgGCTeamInvite_GCResponseToInvitee (CMsgDOTATeamInvite_GCResponseToInvitee). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendTeamInvite_GCResponseToInvitee(
 	result protocol.ETeamInviteResult,
 	teamName string,
@@ -7206,10 +6978,9 @@ func (d *Dota2) SendTeamInvite_GCResponseToInvitee(
 }
 
 // SendUnderDraftBuy sends a under draft buy.
-// Request ID: k_EMsgClientToGCUnderDraftBuy
-// Response ID: k_EMsgClientToGCUnderDraftBuyResponse
-// Request type: CMsgClientToGCUnderDraftBuy
-// Response type: CMsgClientToGCUnderDraftBuyResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftBuy (CMsgClientToGCUnderDraftBuy) and awaits the response k_EMsgClientToGCUnderDraftBuyResponse,
+// delivered as *CMsgClientToGCUnderDraftBuyResponse.
 func (d *Dota2) SendUnderDraftBuy(
 	ctx context.Context,
 	eventID uint32,
@@ -7231,10 +7002,9 @@ func (d *Dota2) SendUnderDraftBuy(
 }
 
 // SendUnderDraftRollBackBench sends a under draft roll back bench.
-// Request ID: k_EMsgClientToGCUnderDraftRollBackBench
-// Response ID: k_EMsgClientToGCUnderDraftRollBackBenchResponse
-// Request type: CMsgClientToGCUnderDraftRollBackBench
-// Response type: CMsgClientToGCUnderDraftRollBackBenchResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftRollBackBench (CMsgClientToGCUnderDraftRollBackBench) and awaits the response k_EMsgClientToGCUnderDraftRollBackBenchResponse,
+// delivered as *CMsgClientToGCUnderDraftRollBackBenchResponse.
 func (d *Dota2) SendUnderDraftRollBackBench(
 	ctx context.Context,
 	eventID uint32,
@@ -7254,10 +7024,9 @@ func (d *Dota2) SendUnderDraftRollBackBench(
 }
 
 // SendUnderDraftSell sends a under draft sell.
-// Request ID: k_EMsgClientToGCUnderDraftSell
-// Response ID: k_EMsgClientToGCUnderDraftSellResponse
-// Request type: CMsgClientToGCUnderDraftSell
-// Response type: CMsgClientToGCUnderDraftSellResponse
+//
+// Sends the GC message k_EMsgClientToGCUnderDraftSell (CMsgClientToGCUnderDraftSell) and awaits the response k_EMsgClientToGCUnderDraftSellResponse,
+// delivered as *CMsgClientToGCUnderDraftSellResponse.
 func (d *Dota2) SendUnderDraftSell(
 	ctx context.Context,
 	eventID uint32,
@@ -7279,8 +7048,9 @@ func (d *Dota2) SendUnderDraftSell(
 }
 
 // SendUpdateComicBookStats sends update comic book stats.
-// Request ID: k_EMsgClientToGCUpdateComicBookStats
-// Request type: CMsgClientToGCUpdateComicBookStats
+//
+// Sends the GC message k_EMsgClientToGCUpdateComicBookStats (CMsgClientToGCUpdateComicBookStats). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendUpdateComicBookStats(
 	comicID uint32,
 	stats []*protocol.CMsgClientToGCUpdateComicBookStats_SingleStat,
@@ -7295,10 +7065,9 @@ func (d *Dota2) SendUpdateComicBookStats(
 }
 
 // SendUpdateFilteredPlayerNote sends a update filtered player note.
-// Request ID: k_EMsgClientToGCUpdateFilteredPlayerNote
-// Response ID: k_EMsgGCToClientUpdateFilteredPlayerNoteResponse
-// Request type: CMsgClientToGCUpdateFilteredPlayerNote
-// Response type: CMsgGCToClientUpdateFilteredPlayerNoteResponse
+//
+// Sends the GC message k_EMsgClientToGCUpdateFilteredPlayerNote (CMsgClientToGCUpdateFilteredPlayerNote) and awaits the response k_EMsgGCToClientUpdateFilteredPlayerNoteResponse,
+// delivered as *CMsgGCToClientUpdateFilteredPlayerNoteResponse.
 func (d *Dota2) SendUpdateFilteredPlayerNote(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -7320,8 +7089,9 @@ func (d *Dota2) SendUpdateFilteredPlayerNote(
 }
 
 // SendUpdatePartyBeacon sends a update party beacon.
-// Request ID: k_EMsgClientToGCUpdatePartyBeacon
-// Request type: CMsgClientToGCUpdatePartyBeacon
+//
+// Sends the GC message k_EMsgClientToGCUpdatePartyBeacon (CMsgClientToGCUpdatePartyBeacon). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendUpdatePartyBeacon(
 	action protocol.CMsgClientToGCUpdatePartyBeacon_Action,
 ) {
@@ -7332,10 +7102,9 @@ func (d *Dota2) SendUpdatePartyBeacon(
 }
 
 // SendUploadMatchClip sends a upload match clip.
-// Request ID: k_EMsgClientToGCUploadMatchClip
-// Response ID: k_EMsgGCToClientUploadMatchClipResponse
-// Request type: CMsgClientToGCUploadMatchClip
-// Response type: CMsgGCToClientUploadMatchClipResponse
+//
+// Sends the GC message k_EMsgClientToGCUploadMatchClip (CMsgClientToGCUploadMatchClip) and awaits the response k_EMsgGCToClientUploadMatchClipResponse,
+// delivered as *CMsgGCToClientUploadMatchClipResponse.
 func (d *Dota2) SendUploadMatchClip(
 	ctx context.Context,
 	matchClip protocol.CMatchClip,
@@ -7355,10 +7124,9 @@ func (d *Dota2) SendUploadMatchClip(
 }
 
 // SendVerifyFavoritePlayers sends verify favorite players.
-// Request ID: k_EMsgClientToGCVerifyFavoritePlayers
-// Response ID: k_EMsgGCToClientVerifyFavoritePlayersResponse
-// Request type: CMsgClientToGCVerifyFavoritePlayers
-// Response type: CMsgGCToClientVerifyFavoritePlayersResponse
+//
+// Sends the GC message k_EMsgClientToGCVerifyFavoritePlayers (CMsgClientToGCVerifyFavoritePlayers) and awaits the response k_EMsgGCToClientVerifyFavoritePlayersResponse,
+// delivered as *CMsgGCToClientVerifyFavoritePlayersResponse.
 func (d *Dota2) SendVerifyFavoritePlayers(
 	ctx context.Context,
 	accountIDs []uint32,
@@ -7378,10 +7146,9 @@ func (d *Dota2) SendVerifyFavoritePlayers(
 }
 
 // SendWatchGame sends a watch game.
-// Request ID: k_EMsgGCWatchGame
-// Response ID: k_EMsgGCWatchGameResponse
-// Request type: CMsgWatchGame
-// Response type: CMsgWatchGameResponse
+//
+// Sends the GC message k_EMsgGCWatchGame (CMsgWatchGame) and awaits the response k_EMsgGCWatchGameResponse,
+// delivered as *CMsgWatchGameResponse.
 func (d *Dota2) SendWatchGame(
 	ctx context.Context,
 	serverSteamid steamid.SteamId,
@@ -7411,8 +7178,9 @@ func (d *Dota2) SendWatchGame(
 }
 
 // SendWatchingBroadcast sends a watching broadcast.
-// Request ID: k_EMsgClientToGCWatchingBroadcast
-// Request type: CMsgClientToGCWatchingBroadcast
+//
+// Sends the GC message k_EMsgClientToGCWatchingBroadcast (CMsgClientToGCWatchingBroadcast). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SendWatchingBroadcast(
 	matchID uint64,
 ) {
@@ -7423,8 +7191,9 @@ func (d *Dota2) SendWatchingBroadcast(
 }
 
 // SetBannedHeroes sets banned heroes.
-// Request ID: k_EMsgClientToGCSetBannedHeroes
-// Request type: CMsgClientToGCSetBannedHeroes
+//
+// Sends the GC message k_EMsgClientToGCSetBannedHeroes (CMsgClientToGCSetBannedHeroes). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SetBannedHeroes(
 	bannedHeroIDs []int32,
 ) {
@@ -7435,10 +7204,9 @@ func (d *Dota2) SetBannedHeroes(
 }
 
 // SetCompendiumSelection sets a compendium selection.
-// Request ID: k_EMsgGCCompendiumSetSelection
-// Response ID: k_EMsgGCCompendiumSetSelectionResponse
-// Request type: CMsgDOTACompendiumSelection
-// Response type: CMsgDOTACompendiumSelectionResponse
+//
+// Sends the GC message k_EMsgGCCompendiumSetSelection (CMsgDOTACompendiumSelection) and awaits the response k_EMsgGCCompendiumSetSelectionResponse,
+// delivered as *CMsgDOTACompendiumSelectionResponse.
 func (d *Dota2) SetCompendiumSelection(
 	ctx context.Context,
 	selectionIndex uint32,
@@ -7462,10 +7230,9 @@ func (d *Dota2) SetCompendiumSelection(
 }
 
 // SetDPCFavoriteState sets a dpc favorite state.
-// Request ID: k_EMsgClientToGCSetDPCFavoriteState
-// Response ID: k_EMsgClientToGCSetDPCFavoriteStateResponse
-// Request type: CMsgClientToGCSetDPCFavoriteState
-// Response type: CMsgClientToGCSetDPCFavoriteStateResponse
+//
+// Sends the GC message k_EMsgClientToGCSetDPCFavoriteState (CMsgClientToGCSetDPCFavoriteState) and awaits the response k_EMsgClientToGCSetDPCFavoriteStateResponse,
+// delivered as *CMsgClientToGCSetDPCFavoriteStateResponse.
 func (d *Dota2) SetDPCFavoriteState(
 	ctx context.Context,
 	favoriteType protocol.EDPCFavoriteType,
@@ -7489,10 +7256,9 @@ func (d *Dota2) SetDPCFavoriteState(
 }
 
 // SetDevOverworldFortune sets a dev overworld fortune.
-// Request ID: k_EMsgClientToGCOverworldDevSetFortune
-// Response ID: k_EMsgClientToGCOverworldDevSetFortuneResponse
-// Request type: CMsgClientToGCOverworldDevSetFortune
-// Response type: CMsgClientToGCOverworldDevSetFortuneResponse
+//
+// Sends the GC message k_EMsgClientToGCOverworldDevSetFortune (CMsgClientToGCOverworldDevSetFortune) and awaits the response k_EMsgClientToGCOverworldDevSetFortuneResponse,
+// delivered as *CMsgClientToGCOverworldDevSetFortuneResponse.
 func (d *Dota2) SetDevOverworldFortune(
 	ctx context.Context,
 	overworldID uint32,
@@ -7514,10 +7280,9 @@ func (d *Dota2) SetDevOverworldFortune(
 }
 
 // SetEventActiveSeasonID sets a event active season id.
-// Request ID: k_EMsgClientToGCSetEventActiveSeasonID
-// Response ID: k_EMsgClientToGCSetEventActiveSeasonIDResponse
-// Request type: CMsgClientToGCSetEventActiveSeasonID
-// Response type: CMsgClientToGCSetEventActiveSeasonIDResponse
+//
+// Sends the GC message k_EMsgClientToGCSetEventActiveSeasonID (CMsgClientToGCSetEventActiveSeasonID) and awaits the response k_EMsgClientToGCSetEventActiveSeasonIDResponse,
+// delivered as *CMsgClientToGCSetEventActiveSeasonIDResponse.
 func (d *Dota2) SetEventActiveSeasonID(
 	ctx context.Context,
 	eventID uint32,
@@ -7539,10 +7304,9 @@ func (d *Dota2) SetEventActiveSeasonID(
 }
 
 // SetFavoritePage sets a favorite page.
-// Request ID: k_EMsgClientToGCSetFavoritePage
-// Response ID: k_EMsgClientToGCSetFavoritePageResponse
-// Request type: CMsgClientToGCSetFavoritePage
-// Response type: CMsgClientToGCSetFavoritePageResponse
+//
+// Sends the GC message k_EMsgClientToGCSetFavoritePage (CMsgClientToGCSetFavoritePage) and awaits the response k_EMsgClientToGCSetFavoritePageResponse,
+// delivered as *CMsgClientToGCSetFavoritePageResponse.
 func (d *Dota2) SetFavoritePage(
 	ctx context.Context,
 	pageNum uint32,
@@ -7564,8 +7328,9 @@ func (d *Dota2) SetFavoritePage(
 }
 
 // SetFavoriteTeam sets a favorite team.
-// Request ID: k_EMsgDOTASetFavoriteTeam
-// Request type: CMsgDOTASetFavoriteTeam
+//
+// Sends the GC message k_EMsgDOTASetFavoriteTeam (CMsgDOTASetFavoriteTeam). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SetFavoriteTeam(
 	teamID uint32,
 	eventID uint32,
@@ -7578,10 +7343,9 @@ func (d *Dota2) SetFavoriteTeam(
 }
 
 // SetGuildInfo sets a guild info.
-// Request ID: k_EMsgClientToGCSetGuildInfo
-// Response ID: k_EMsgClientToGCSetGuildInfoResponse
-// Request type: CMsgClientToGCSetGuildInfo
-// Response type: CMsgClientToGCSetGuildInfoResponse
+//
+// Sends the GC message k_EMsgClientToGCSetGuildInfo (CMsgClientToGCSetGuildInfo) and awaits the response k_EMsgClientToGCSetGuildInfoResponse,
+// delivered as *CMsgClientToGCSetGuildInfoResponse.
 func (d *Dota2) SetGuildInfo(
 	ctx context.Context,
 	guildID uint32,
@@ -7605,10 +7369,9 @@ func (d *Dota2) SetGuildInfo(
 }
 
 // SetGuildMemberRole sets a guild member role.
-// Request ID: k_EMsgClientToGCSetGuildMemberRole
-// Response ID: k_EMsgClientToGCSetGuildMemberRoleResponse
-// Request type: CMsgClientToGCSetGuildMemberRole
-// Response type: CMsgClientToGCSetGuildMemberRoleResponse
+//
+// Sends the GC message k_EMsgClientToGCSetGuildMemberRole (CMsgClientToGCSetGuildMemberRole) and awaits the response k_EMsgClientToGCSetGuildMemberRoleResponse,
+// delivered as *CMsgClientToGCSetGuildMemberRoleResponse.
 func (d *Dota2) SetGuildMemberRole(
 	ctx context.Context,
 	guildID uint32,
@@ -7632,10 +7395,9 @@ func (d *Dota2) SetGuildMemberRole(
 }
 
 // SetGuildRoleOrder sets a guild role order.
-// Request ID: k_EMsgClientToGCSetGuildRoleOrder
-// Response ID: k_EMsgClientToGCSetGuildRoleOrderResponse
-// Request type: CMsgClientToGCSetGuildRoleOrder
-// Response type: CMsgClientToGCSetGuildRoleOrderResponse
+//
+// Sends the GC message k_EMsgClientToGCSetGuildRoleOrder (CMsgClientToGCSetGuildRoleOrder) and awaits the response k_EMsgClientToGCSetGuildRoleOrderResponse,
+// delivered as *CMsgClientToGCSetGuildRoleOrderResponse.
 func (d *Dota2) SetGuildRoleOrder(
 	ctx context.Context,
 	guildID uint32,
@@ -7659,10 +7421,9 @@ func (d *Dota2) SetGuildRoleOrder(
 }
 
 // SetHeroSticker sets a hero sticker.
-// Request ID: k_EMsgClientToGCSetHeroSticker
-// Response ID: k_EMsgClientToGCSetHeroStickerResponse
-// Request type: CMsgClientToGCSetHeroSticker
-// Response type: CMsgClientToGCSetHeroStickerResponse
+//
+// Sends the GC message k_EMsgClientToGCSetHeroSticker (CMsgClientToGCSetHeroSticker) and awaits the response k_EMsgClientToGCSetHeroStickerResponse,
+// delivered as *CMsgClientToGCSetHeroStickerResponse.
 func (d *Dota2) SetHeroSticker(
 	ctx context.Context,
 	heroID int32,
@@ -7685,9 +7446,7 @@ func (d *Dota2) SetHeroSticker(
 	)
 }
 
-// SetLobbyCoach sets a lobby coach.
-// Request ID: k_EMsgGCPracticeLobbySetCoach
-// Request type: CMsgPracticeLobbySetCoach
+// SetLobbyCoach requests the coach slot for your team in the lobby.
 func (d *Dota2) SetLobbyCoach(
 	team protocol.DOTA_GC_TEAM,
 ) {
@@ -7697,9 +7456,8 @@ func (d *Dota2) SetLobbyCoach(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach), req)
 }
 
-// SetLobbyDetails sets lobby details.
-// Request ID: k_EMsgGCPracticeLobbySetDetails
-// Request type: CMsgPracticeLobbySetDetails
+// SetLobbyDetails updates the details of the current practice lobby: game
+// mode, map, server region, pass key, spectator policy, and cheat/bot settings.
 func (d *Dota2) SetLobbyDetails(
 	req *protocol.CMsgPracticeLobbySetDetails,
 ) {
@@ -7707,10 +7465,9 @@ func (d *Dota2) SetLobbyDetails(
 }
 
 // SetMatchHistoryAccess sets match history access.
-// Request ID: k_EMsgGCSetMatchHistoryAccess
-// Response ID: k_EMsgGCSetMatchHistoryAccessResponse
-// Request type: CMsgDOTASetMatchHistoryAccess
-// Response type: CMsgDOTASetMatchHistoryAccessResponse
+//
+// Sends the GC message k_EMsgGCSetMatchHistoryAccess (CMsgDOTASetMatchHistoryAccess) and awaits the response k_EMsgGCSetMatchHistoryAccessResponse,
+// delivered as *CMsgDOTASetMatchHistoryAccessResponse.
 func (d *Dota2) SetMatchHistoryAccess(
 	ctx context.Context,
 	allow3RdPartyMatchHistory bool,
@@ -7730,8 +7487,9 @@ func (d *Dota2) SetMatchHistoryAccess(
 }
 
 // SetMemberPartyCoach sets a member party coach.
-// Request ID: k_EMsgGCPartyMemberSetCoach
-// Request type: CMsgDOTAPartyMemberSetCoach
+//
+// Sends the GC message k_EMsgGCPartyMemberSetCoach (CMsgDOTAPartyMemberSetCoach). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SetMemberPartyCoach(
 	wantsCoach bool,
 ) {
@@ -7741,9 +7499,8 @@ func (d *Dota2) SetMemberPartyCoach(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPartyMemberSetCoach), req)
 }
 
-// SetPartyBuilderOptions sets party builder options.
-// Request ID: k_EMsgClientToGCSetPartyBuilderOptions
-// Request type: CMsgPartyBuilderOptions
+// SetPartyBuilderOptions configures how the party enters matchmaking, such
+// as the selected lanes or roles in role-queue modes.
 func (d *Dota2) SetPartyBuilderOptions(
 	additionalSlots uint32,
 	matchType protocol.MatchType,
@@ -7759,9 +7516,7 @@ func (d *Dota2) SetPartyBuilderOptions(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions), req)
 }
 
-// SetPartyLeader sets a party leader.
-// Request ID: k_EMsgClientToGCSetPartyLeader
-// Request type: CMsgDOTASetGroupLeader
+// SetPartyLeader makes the given party member the party leader.
 func (d *Dota2) SetPartyLeader(
 	newLeaderSteamid steamid.SteamId,
 ) {
@@ -7773,9 +7528,7 @@ func (d *Dota2) SetPartyLeader(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader), req)
 }
 
-// SetPartyOpen sets a party open.
-// Request ID: k_EMsgClientToGCSetPartyOpen
-// Request type: CMsgDOTASetGroupOpenStatus
+// SetPartyOpen opens or closes the party so that friends can join freely.
 func (d *Dota2) SetPartyOpen(
 	open bool,
 ) {
@@ -7786,8 +7539,9 @@ func (d *Dota2) SetPartyOpen(
 }
 
 // SetProfileCardSlots sets profile card slots.
-// Request ID: k_EMsgClientToGCSetProfileCardSlots
-// Request type: CMsgClientToGCSetProfileCardSlots
+//
+// Sends the GC message k_EMsgClientToGCSetProfileCardSlots (CMsgClientToGCSetProfileCardSlots). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SetProfileCardSlots(
 	slots []*protocol.CMsgClientToGCSetProfileCardSlots_CardSlot,
 ) {
@@ -7798,10 +7552,9 @@ func (d *Dota2) SetProfileCardSlots(
 }
 
 // SetProfilePrivacy sets a profile privacy.
-// Request ID: k_EMsgGCSetProfilePrivacy
-// Response ID: k_EMsgGCSetProfilePrivacyResponse
-// Request type: CMsgDOTASetProfilePrivacy
-// Response type: CMsgDOTASetProfilePrivacyResponse
+//
+// Sends the GC message k_EMsgGCSetProfilePrivacy (CMsgDOTASetProfilePrivacy) and awaits the response k_EMsgGCSetProfilePrivacyResponse,
+// delivered as *CMsgDOTASetProfilePrivacyResponse.
 func (d *Dota2) SetProfilePrivacy(
 	ctx context.Context,
 	profilePrivate bool,
@@ -7821,10 +7574,9 @@ func (d *Dota2) SetProfilePrivacy(
 }
 
 // SetShowcaseUserData sets a showcase user data.
-// Request ID: k_EMsgClientToGCShowcaseSetUserData
-// Response ID: k_EMsgClientToGCShowcaseSetUserDataResponse
-// Request type: CMsgClientToGCShowcaseSetUserData
-// Response type: CMsgClientToGCShowcaseSetUserDataResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseSetUserData (CMsgClientToGCShowcaseSetUserData) and awaits the response k_EMsgClientToGCShowcaseSetUserDataResponse,
+// delivered as *CMsgClientToGCShowcaseSetUserDataResponse.
 func (d *Dota2) SetShowcaseUserData(
 	ctx context.Context,
 	showcaseType protocol.EShowcaseType,
@@ -7848,8 +7600,9 @@ func (d *Dota2) SetShowcaseUserData(
 }
 
 // SetSpectatorLobbyDetails sets spectator lobby details.
-// Request ID: k_EMsgClientToGCSetSpectatorLobbyDetails
-// Request type: CMsgSetSpectatorLobbyDetails
+//
+// Sends the GC message k_EMsgClientToGCSetSpectatorLobbyDetails (CMsgSetSpectatorLobbyDetails). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SetSpectatorLobbyDetails(
 	lobbyID uint64,
 	lobbyName string,
@@ -7866,10 +7619,9 @@ func (d *Dota2) SetSpectatorLobbyDetails(
 }
 
 // SpectateFriendGame spectates a friend game.
-// Request ID: k_EMsgGCSpectateFriendGame
-// Response ID: k_EMsgGCSpectateFriendGameResponse
-// Request type: CMsgSpectateFriendGame
-// Response type: CMsgSpectateFriendGameResponse
+//
+// Sends the GC message k_EMsgGCSpectateFriendGame (CMsgSpectateFriendGame) and awaits the response k_EMsgGCSpectateFriendGameResponse,
+// delivered as *CMsgSpectateFriendGameResponse.
 func (d *Dota2) SpectateFriendGame(
 	ctx context.Context,
 	steamID steamid.SteamId,
@@ -7892,11 +7644,11 @@ func (d *Dota2) SpectateFriendGame(
 	)
 }
 
-// StartFindingMatch starts a finding match.
-// Request ID: k_EMsgGCStartFindingMatch
-// Response ID: k_EMsgGCStartFindingMatchResponse
-// Request type: CMsgStartFindingMatch
-// Response type: CMsgStartFindingMatchResult
+// StartFindingMatch enters the matchmaking queue with the given options:
+// match mode, map, team desirability, and lobby type.
+//
+// The GC confirms entry through the response and later reports the found match
+// through the ready-up flow; see SendReadyUp.
 func (d *Dota2) StartFindingMatch(
 	ctx context.Context,
 	req *protocol.CMsgStartFindingMatch,
@@ -7913,10 +7665,9 @@ func (d *Dota2) StartFindingMatch(
 }
 
 // StartTriviaSession starts a trivia session.
-// Request ID: k_EMsgStartTriviaSession
-// Response ID: k_EMsgStartTriviaSessionResponse
-// Request type: CMsgDOTAStartTriviaSession
-// Response type: CMsgDOTAStartTriviaSessionResponse
+//
+// Sends the GC message k_EMsgStartTriviaSession (CMsgDOTAStartTriviaSession) and awaits the response k_EMsgStartTriviaSessionResponse,
+// delivered as *CMsgDOTAStartTriviaSessionResponse.
 func (d *Dota2) StartTriviaSession(
 	ctx context.Context,
 ) (*protocol.CMsgDOTAStartTriviaSessionResponse, error) {
@@ -7933,8 +7684,9 @@ func (d *Dota2) StartTriviaSession(
 }
 
 // StartWatchingOverwatch starts a watching overwatch.
-// Request ID: k_EMsgClientToGCStartWatchingOverwatch
-// Request type: CMsgClientToGCStartWatchingOverwatch
+//
+// Sends the GC message k_EMsgClientToGCStartWatchingOverwatch (CMsgClientToGCStartWatchingOverwatch). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) StartWatchingOverwatch(
 	overwatchReplayID uint64,
 	targetPlayerSlot uint32,
@@ -7946,9 +7698,7 @@ func (d *Dota2) StartWatchingOverwatch(
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgClientToGCStartWatchingOverwatch), req)
 }
 
-// StopFindingMatch stops a finding match.
-// Request ID: k_EMsgGCStopFindingMatch
-// Request type: CMsgStopFindingMatch
+// StopFindingMatch leaves the matchmaking queue.
 func (d *Dota2) StopFindingMatch(
 	acceptCooldown bool,
 ) {
@@ -7959,8 +7709,9 @@ func (d *Dota2) StopFindingMatch(
 }
 
 // StopWatchingOverwatch stops a watching overwatch.
-// Request ID: k_EMsgClientToGCStopWatchingOverwatch
-// Request type: CMsgClientToGCStopWatchingOverwatch
+//
+// Sends the GC message k_EMsgClientToGCStopWatchingOverwatch (CMsgClientToGCStopWatchingOverwatch). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) StopWatchingOverwatch(
 	overwatchReplayID uint64,
 	targetPlayerSlot uint32,
@@ -7973,10 +7724,9 @@ func (d *Dota2) StopWatchingOverwatch(
 }
 
 // SubmitCoachTeammateRating submits a coach teammate rating.
-// Request ID: k_EMsgClientToGCSubmitCoachTeammateRating
-// Response ID: k_EMsgClientToGCSubmitCoachTeammateRatingResponse
-// Request type: CMsgClientToGCSubmitCoachTeammateRating
-// Response type: CMsgClientToGCSubmitCoachTeammateRatingResponse
+//
+// Sends the GC message k_EMsgClientToGCSubmitCoachTeammateRating (CMsgClientToGCSubmitCoachTeammateRating) and awaits the response k_EMsgClientToGCSubmitCoachTeammateRatingResponse,
+// delivered as *CMsgClientToGCSubmitCoachTeammateRatingResponse.
 func (d *Dota2) SubmitCoachTeammateRating(
 	ctx context.Context,
 	matchID uint64,
@@ -8002,10 +7752,9 @@ func (d *Dota2) SubmitCoachTeammateRating(
 }
 
 // SubmitDraftTriviaMatchAnswer submits a draft trivia match answer.
-// Request ID: k_EMsgClientToGCSubmitDraftTriviaMatchAnswer
-// Response ID: k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse
-// Request type: CMsgClientToGCSubmitDraftTriviaMatchAnswer
-// Response type: CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse
+//
+// Sends the GC message k_EMsgClientToGCSubmitDraftTriviaMatchAnswer (CMsgClientToGCSubmitDraftTriviaMatchAnswer) and awaits the response k_EMsgClientToGCSubmitDraftTriviaMatchAnswerResponse,
+// delivered as *CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse.
 func (d *Dota2) SubmitDraftTriviaMatchAnswer(
 	ctx context.Context,
 	choseRadiantAsWinner bool,
@@ -8029,10 +7778,9 @@ func (d *Dota2) SubmitDraftTriviaMatchAnswer(
 }
 
 // SubmitInfoPlayer submits a info player.
-// Request ID: k_EMsgGCPlayerInfoSubmit
-// Response ID: k_EMsgGCPlayerInfoSubmitResponse
-// Request type: CMsgGCPlayerInfoSubmit
-// Response type: CMsgGCPlayerInfoSubmitResponse
+//
+// Sends the GC message k_EMsgGCPlayerInfoSubmit (CMsgGCPlayerInfoSubmit) and awaits the response k_EMsgGCPlayerInfoSubmitResponse,
+// delivered as *CMsgGCPlayerInfoSubmitResponse.
 func (d *Dota2) SubmitInfoPlayer(
 	ctx context.Context,
 	req *protocol.CMsgGCPlayerInfoSubmit,
@@ -8049,10 +7797,9 @@ func (d *Dota2) SubmitInfoPlayer(
 }
 
 // SubmitLobbyMVPVote submits a lobby mvp vote.
-// Request ID: k_EMsgGCSubmitLobbyMVPVote
-// Response ID: k_EMsgGCSubmitLobbyMVPVoteResponse
-// Request type: CMsgDOTASubmitLobbyMVPVote
-// Response type: CMsgDOTASubmitLobbyMVPVoteResponse
+//
+// Sends the GC message k_EMsgGCSubmitLobbyMVPVote (CMsgDOTASubmitLobbyMVPVote) and awaits the response k_EMsgGCSubmitLobbyMVPVoteResponse,
+// delivered as *CMsgDOTASubmitLobbyMVPVoteResponse.
 func (d *Dota2) SubmitLobbyMVPVote(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -8072,10 +7819,9 @@ func (d *Dota2) SubmitLobbyMVPVote(
 }
 
 // SubmitOWConviction submits a ow conviction.
-// Request ID: k_EMsgClientToGCSubmitOWConviction
-// Response ID: k_EMsgClientToGCSubmitOWConvictionResponse
-// Request type: CMsgClientToGCSubmitOWConviction
-// Response type: CMsgClientToGCSubmitOWConvictionResponse
+//
+// Sends the GC message k_EMsgClientToGCSubmitOWConviction (CMsgClientToGCSubmitOWConviction) and awaits the response k_EMsgClientToGCSubmitOWConvictionResponse,
+// delivered as *CMsgClientToGCSubmitOWConvictionResponse.
 func (d *Dota2) SubmitOWConviction(
 	ctx context.Context,
 	overwatchReplayID uint64,
@@ -8101,10 +7847,9 @@ func (d *Dota2) SubmitOWConviction(
 }
 
 // SubmitPlayerInfoRanked submits a player info ranked.
-// Request ID: k_EMsgGCRankedPlayerInfoSubmit
-// Response ID: k_EMsgGCRankedPlayerInfoSubmitResponse
-// Request type: CMsgGCRankedPlayerInfoSubmit
-// Response type: CMsgGCRankedPlayerInfoSubmitResponse
+//
+// Sends the GC message k_EMsgGCRankedPlayerInfoSubmit (CMsgGCRankedPlayerInfoSubmit) and awaits the response k_EMsgGCRankedPlayerInfoSubmitResponse,
+// delivered as *CMsgGCRankedPlayerInfoSubmitResponse.
 func (d *Dota2) SubmitPlayerInfoRanked(
 	ctx context.Context,
 	name string,
@@ -8124,10 +7869,9 @@ func (d *Dota2) SubmitPlayerInfoRanked(
 }
 
 // SubmitPlayerMatchSurvey submits a player match survey.
-// Request ID: k_EMsgClientToGCSubmitPlayerMatchSurvey
-// Response ID: k_EMsgClientToGCSubmitPlayerMatchSurveyResponse
-// Request type: CMsgClientToGCSubmitPlayerMatchSurvey
-// Response type: CMsgClientToGCSubmitPlayerMatchSurveyResponse
+//
+// Sends the GC message k_EMsgClientToGCSubmitPlayerMatchSurvey (CMsgClientToGCSubmitPlayerMatchSurvey) and awaits the response k_EMsgClientToGCSubmitPlayerMatchSurveyResponse,
+// delivered as *CMsgClientToGCSubmitPlayerMatchSurveyResponse.
 func (d *Dota2) SubmitPlayerMatchSurvey(
 	ctx context.Context,
 	matchID uint64,
@@ -8151,10 +7895,9 @@ func (d *Dota2) SubmitPlayerMatchSurvey(
 }
 
 // SubmitPlayerReport submits a player report.
-// Request ID: k_EMsgGCSubmitPlayerReport
-// Response ID: k_EMsgGCSubmitPlayerReportResponse
-// Request type: CMsgDOTASubmitPlayerReport
-// Response type: CMsgDOTASubmitPlayerReportResponse
+//
+// Sends the GC message k_EMsgGCSubmitPlayerReport (CMsgDOTASubmitPlayerReport) and awaits the response k_EMsgGCSubmitPlayerReportResponse,
+// delivered as *CMsgDOTASubmitPlayerReportResponse.
 func (d *Dota2) SubmitPlayerReport(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -8180,8 +7923,9 @@ func (d *Dota2) SubmitPlayerReport(
 }
 
 // SubmitPlayerReportResponseV2 submits a player report response v 2.
-// Request ID: k_EMsgGCSubmitPlayerReportResponseV2
-// Request type: CMsgDOTASubmitPlayerReportResponseV2
+//
+// Sends the GC message k_EMsgGCSubmitPlayerReportResponseV2 (CMsgDOTASubmitPlayerReportResponseV2). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SubmitPlayerReportResponseV2(
 	targetAccountID uint32,
 	reportReason []uint32,
@@ -8198,8 +7942,9 @@ func (d *Dota2) SubmitPlayerReportResponseV2(
 }
 
 // SubmitPlayerReportV2 submits a player report v 2.
-// Request ID: k_EMsgGCSubmitPlayerReportV2
-// Request type: CMsgDOTASubmitPlayerReportV2
+//
+// Sends the GC message k_EMsgGCSubmitPlayerReportV2 (CMsgDOTASubmitPlayerReportV2). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) SubmitPlayerReportV2(
 	targetAccountID uint32,
 	reportReason []uint32,
@@ -8220,10 +7965,9 @@ func (d *Dota2) SubmitPlayerReportV2(
 }
 
 // SubmitPrivateCoachingSessionRating submits a private coaching session rating.
-// Request ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRating
-// Response ID: k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse
-// Request type: CMsgClientToGCSubmitPrivateCoachingSessionRating
-// Response type: CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse
+//
+// Sends the GC message k_EMsgClientToGCSubmitPrivateCoachingSessionRating (CMsgClientToGCSubmitPrivateCoachingSessionRating) and awaits the response k_EMsgClientToGCSubmitPrivateCoachingSessionRatingResponse,
+// delivered as *CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse.
 func (d *Dota2) SubmitPrivateCoachingSessionRating(
 	ctx context.Context,
 	coachingSessionID uint64,
@@ -8245,10 +7989,9 @@ func (d *Dota2) SubmitPrivateCoachingSessionRating(
 }
 
 // SubmitShowcaseReport submits a showcase report.
-// Request ID: k_EMsgClientToGCShowcaseSubmitReport
-// Response ID: k_EMsgClientToGCShowcaseSubmitReportResponse
-// Request type: CMsgClientToGCShowcaseSubmitReport
-// Response type: CMsgClientToGCShowcaseSubmitReportResponse
+//
+// Sends the GC message k_EMsgClientToGCShowcaseSubmitReport (CMsgClientToGCShowcaseSubmitReport) and awaits the response k_EMsgClientToGCShowcaseSubmitReportResponse,
+// delivered as *CMsgClientToGCShowcaseSubmitReportResponse.
 func (d *Dota2) SubmitShowcaseReport(
 	ctx context.Context,
 	targetAccountID uint32,
@@ -8272,10 +8015,9 @@ func (d *Dota2) SubmitShowcaseReport(
 }
 
 // SubmitTriviaQuestionAnswer submits a trivia question answer.
-// Request ID: k_EMsgSubmitTriviaQuestionAnswer
-// Response ID: k_EMsgSubmitTriviaQuestionAnswerResponse
-// Request type: CMsgDOTASubmitTriviaQuestionAnswer
-// Response type: CMsgDOTASubmitTriviaQuestionAnswerResponse
+//
+// Sends the GC message k_EMsgSubmitTriviaQuestionAnswer (CMsgDOTASubmitTriviaQuestionAnswer) and awaits the response k_EMsgSubmitTriviaQuestionAnswerResponse,
+// delivered as *CMsgDOTASubmitTriviaQuestionAnswerResponse.
 func (d *Dota2) SubmitTriviaQuestionAnswer(
 	ctx context.Context,
 	questionID uint32,
@@ -8297,18 +8039,18 @@ func (d *Dota2) SubmitTriviaQuestionAnswer(
 }
 
 // ToggleLobbyBroadcastChannelCameramanStatus toggles lobby broadcast channel cameraman status.
-// Request ID: k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus
-// Request type: CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus
+//
+// Sends the GC message k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus (CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus). No response is tracked; any result
+// arrives through the client event stream.
 func (d *Dota2) ToggleLobbyBroadcastChannelCameramanStatus() {
 	req := &protocol.CMsgPracticeLobbyToggleBroadcastChannelCameramanStatus{}
 	d.write(uint32(protocol.EDOTAGCMsg_k_EMsgGCPracticeLobbyToggleBroadcastChannelCameramanStatus), req)
 }
 
 // TransferTeamAdmin transfers a team admin.
-// Request ID: k_EMsgGCTransferTeamAdmin
-// Response ID: k_EMsgGCTransferTeamAdminResponse
-// Request type: CMsgDOTATransferTeamAdmin
-// Response type: CMsgDOTATransferTeamAdminResponse
+//
+// Sends the GC message k_EMsgGCTransferTeamAdmin (CMsgDOTATransferTeamAdmin) and awaits the response k_EMsgGCTransferTeamAdminResponse,
+// delivered as *CMsgDOTATransferTeamAdminResponse.
 func (d *Dota2) TransferTeamAdmin(
 	ctx context.Context,
 	newAdminAccountID uint32,
@@ -8330,10 +8072,9 @@ func (d *Dota2) TransferTeamAdmin(
 }
 
 // UpgradeLeagueItem upgrades a league item.
-// Request ID: k_EMsgUpgradeLeagueItem
-// Response ID: k_EMsgUpgradeLeagueItemResponse
-// Request type: CMsgUpgradeLeagueItem
-// Response type: CMsgUpgradeLeagueItemResponse
+//
+// Sends the GC message k_EMsgUpgradeLeagueItem (CMsgUpgradeLeagueItem) and awaits the response k_EMsgUpgradeLeagueItemResponse,
+// delivered as *CMsgUpgradeLeagueItemResponse.
 func (d *Dota2) UpgradeLeagueItem(
 	ctx context.Context,
 	matchID uint64,
@@ -8355,10 +8096,9 @@ func (d *Dota2) UpgradeLeagueItem(
 }
 
 // UpgradeToGcFantasyCraftingClientTablets upgrades to gc fantasy crafting client tablets.
-// Request ID: k_EMsgClientToGcFantasyCraftingUpgradeTablets
-// Response ID: k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse
-// Request type: CMsgClientToGcFantasyCraftingUpgradeTablets
-// Response type: CMsgClientToGcFantasyCraftingUpgradeTabletsResponse
+//
+// Sends the GC message k_EMsgClientToGcFantasyCraftingUpgradeTablets (CMsgClientToGcFantasyCraftingUpgradeTablets) and awaits the response k_EMsgClientToGcFantasyCraftingUpgradeTabletsResponse,
+// delivered as *CMsgClientToGcFantasyCraftingUpgradeTabletsResponse.
 func (d *Dota2) UpgradeToGcFantasyCraftingClientTablets(
 	ctx context.Context,
 	fantasyLeague uint32,
@@ -8378,10 +8118,9 @@ func (d *Dota2) UpgradeToGcFantasyCraftingClientTablets(
 }
 
 // VoteForArcana votes a for arcana.
-// Request ID: k_EMsgClientToGCVoteForArcana
-// Response ID: k_EMsgClientToGCVoteForArcanaResponse
-// Request type: CMsgClientToGCVoteForArcana
-// Response type: CMsgClientToGCVoteForArcanaResponse
+//
+// Sends the GC message k_EMsgClientToGCVoteForArcana (CMsgClientToGCVoteForArcana) and awaits the response k_EMsgClientToGCVoteForArcanaResponse,
+// delivered as *CMsgClientToGCVoteForArcanaResponse.
 func (d *Dota2) VoteForArcana(
 	ctx context.Context,
 	matches []*protocol.CMsgArcanaVoteMatchVotes,
@@ -8401,10 +8140,9 @@ func (d *Dota2) VoteForArcana(
 }
 
 // VoteForMVP votes a for mvp.
-// Request ID: k_EMsgClientToGCVoteForMVP
-// Response ID: k_EMsgClientToGCVoteForMVPResponse
-// Request type: CMsgClientToGCVoteForMVP
-// Response type: CMsgClientToGCVoteForMVPResponse
+//
+// Sends the GC message k_EMsgClientToGCVoteForMVP (CMsgClientToGCVoteForMVP) and awaits the response k_EMsgClientToGCVoteForMVPResponse,
+// delivered as *CMsgClientToGCVoteForMVPResponse.
 func (d *Dota2) VoteForMVP(
 	ctx context.Context,
 	matchID uint64,
@@ -8426,10 +8164,9 @@ func (d *Dota2) VoteForMVP(
 }
 
 // VoteMVPTimeout votes a mvp timeout.
-// Request ID: k_EMsgClientToGCMVPVoteTimeout
-// Response ID: k_EMsgClientToGCMVPVoteTimeoutResponse
-// Request type: CMsgClientToGCMVPVoteTimeout
-// Response type: CMsgClientToGCMVPVoteTimeoutResponse
+//
+// Sends the GC message k_EMsgClientToGCMVPVoteTimeout (CMsgClientToGCMVPVoteTimeout) and awaits the response k_EMsgClientToGCMVPVoteTimeoutResponse,
+// delivered as *CMsgClientToGCMVPVoteTimeoutResponse.
 func (d *Dota2) VoteMVPTimeout(
 	ctx context.Context,
 	matchID uint64,

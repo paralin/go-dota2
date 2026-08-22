@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	gcm "github.com/paralin/go-dota2/protocol"
 )
@@ -32,5 +33,14 @@ func buildGeneratedEventHandler(
 }
 
 func (g *generatedEventHandler) generateComment() string {
-	return fmt.Sprintf("// %s event.\n// MessageID: %s\n", g.eventName, g.msgID.String())
+	if doc, ok := msgEventDocOverrides[g.msgID]; ok {
+		return fmt.Sprintf(
+			"// %s\n",
+			strings.ReplaceAll(strings.TrimRight(doc, "\n"), "\n", "\n// "),
+		)
+	}
+	return fmt.Sprintf(
+		"// %s is an event delivered by the GC.\n//\n// Message: %s (%s).\n",
+		g.eventName, g.msgID.String(), g.eventType.TypeName,
+	)
 }

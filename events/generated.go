@@ -5,8 +5,9 @@ import (
 	"github.com/paralin/go-dota2/protocol"
 )
 
-// AccountGuildEventDataUpdated event.
-// MessageID: k_EMsgGCToClientAccountGuildEventDataUpdated
+// AccountGuildEventDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientAccountGuildEventDataUpdated (CMsgGCToClientAccountGuildEventDataUpdated).
 type AccountGuildEventDataUpdated struct {
 	protocol.CMsgGCToClientAccountGuildEventDataUpdated
 }
@@ -26,8 +27,9 @@ func (e *AccountGuildEventDataUpdated) GetEventName() string {
 	return "AccountGuildEventDataUpdated"
 }
 
-// ActiveGuildChallengeUpdated event.
-// MessageID: k_EMsgGCToClientActiveGuildChallengeUpdated
+// ActiveGuildChallengeUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientActiveGuildChallengeUpdated (CMsgGCToClientActiveGuildChallengeUpdated).
 type ActiveGuildChallengeUpdated struct {
 	protocol.CMsgGCToClientActiveGuildChallengeUpdated
 }
@@ -47,8 +49,9 @@ func (e *ActiveGuildChallengeUpdated) GetEventName() string {
 	return "ActiveGuildChallengeUpdated"
 }
 
-// ActiveGuildContractsUpdated event.
-// MessageID: k_EMsgGCToClientActiveGuildContractsUpdated
+// ActiveGuildContractsUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientActiveGuildContractsUpdated (CMsgGCToClientActiveGuildContractsUpdated).
 type ActiveGuildContractsUpdated struct {
 	protocol.CMsgGCToClientActiveGuildContractsUpdated
 }
@@ -68,8 +71,9 @@ func (e *ActiveGuildContractsUpdated) GetEventName() string {
 	return "ActiveGuildContractsUpdated"
 }
 
-// ArcanaVotesUpdate event.
-// MessageID: k_EMsgGCToClientArcanaVotesUpdate
+// ArcanaVotesUpdate is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientArcanaVotesUpdate (CMsgGCToClientArcanaVotesUpdate).
 type ArcanaVotesUpdate struct {
 	protocol.CMsgGCToClientArcanaVotesUpdate
 }
@@ -89,8 +93,9 @@ func (e *ArcanaVotesUpdate) GetEventName() string {
 	return "ArcanaVotesUpdate"
 }
 
-// BattlePassRollupListRequest event.
-// MessageID: k_EMsgGCToClientBattlePassRollupListRequest
+// BattlePassRollupListRequest is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientBattlePassRollupListRequest (CMsgGCToClientBattlePassRollupListRequest).
 type BattlePassRollupListRequest struct {
 	protocol.CMsgGCToClientBattlePassRollupListRequest
 }
@@ -110,8 +115,9 @@ func (e *BattlePassRollupListRequest) GetEventName() string {
 	return "BattlePassRollupListRequest"
 }
 
-// BattlePassRollupRequest event.
-// MessageID: k_EMsgGCToClientBattlePassRollupRequest
+// BattlePassRollupRequest is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientBattlePassRollupRequest (CMsgGCToClientBattlePassRollupRequest).
 type BattlePassRollupRequest struct {
 	protocol.CMsgGCToClientBattlePassRollupRequest
 }
@@ -131,8 +137,9 @@ func (e *BattlePassRollupRequest) GetEventName() string {
 	return "BattlePassRollupRequest"
 }
 
-// BingoUserDataUpdated event.
-// MessageID: k_EMsgGCToClientBingoUserDataUpdated
+// BingoUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientBingoUserDataUpdated (CMsgGCToClientBingoUserDataUpdated).
 type BingoUserDataUpdated struct {
 	protocol.CMsgGCToClientBingoUserDataUpdated
 }
@@ -152,8 +159,9 @@ func (e *BingoUserDataUpdated) GetEventName() string {
 	return "BingoUserDataUpdated"
 }
 
-// BroadcastNotification event.
-// MessageID: k_EMsgGCBroadcastNotification
+// BroadcastNotification is an event delivered by the GC.
+//
+// Message: k_EMsgGCBroadcastNotification (CMsgDOTABroadcastNotification).
 type BroadcastNotification struct {
 	protocol.CMsgDOTABroadcastNotification
 }
@@ -173,8 +181,9 @@ func (e *BroadcastNotification) GetEventName() string {
 	return "BroadcastNotification"
 }
 
-// CandyShopUserDataUpdated event.
-// MessageID: k_EMsgGCToClientCandyShopUserDataUpdated
+// CandyShopUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientCandyShopUserDataUpdated (CMsgGCToClientCandyShopUserDataUpdated).
 type CandyShopUserDataUpdated struct {
 	protocol.CMsgGCToClientCandyShopUserDataUpdated
 }
@@ -194,8 +203,9 @@ func (e *CandyShopUserDataUpdated) GetEventName() string {
 	return "CandyShopUserDataUpdated"
 }
 
-// CavernCrawlMapPathCompleted event.
-// MessageID: k_EMsgGCToClientCavernCrawlMapPathCompleted
+// CavernCrawlMapPathCompleted is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientCavernCrawlMapPathCompleted (CMsgGCToClientCavernCrawlMapPathCompleted).
 type CavernCrawlMapPathCompleted struct {
 	protocol.CMsgGCToClientCavernCrawlMapPathCompleted
 }
@@ -215,8 +225,9 @@ func (e *CavernCrawlMapPathCompleted) GetEventName() string {
 	return "CavernCrawlMapPathCompleted"
 }
 
-// CavernCrawlMapUpdated event.
-// MessageID: k_EMsgGCToClientCavernCrawlMapUpdated
+// CavernCrawlMapUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientCavernCrawlMapUpdated (CMsgGCToClientCavernCrawlMapUpdated).
 type CavernCrawlMapUpdated struct {
 	protocol.CMsgGCToClientCavernCrawlMapUpdated
 }
@@ -236,8 +247,9 @@ func (e *CavernCrawlMapUpdated) GetEventName() string {
 	return "CavernCrawlMapUpdated"
 }
 
-// ChatModeratorBan event.
-// MessageID: k_EMsgGCChatModeratorBan
+// ChatModeratorBan is an event delivered by the GC.
+//
+// Message: k_EMsgGCChatModeratorBan (CMsgDOTAChatModeratorBan).
 type ChatModeratorBan struct {
 	protocol.CMsgDOTAChatModeratorBan
 }
@@ -257,8 +269,9 @@ func (e *ChatModeratorBan) GetEventName() string {
 	return "ChatModeratorBan"
 }
 
-// ChatRegionsEnabled event.
-// MessageID: k_EMsgGCToClientChatRegionsEnabled
+// ChatRegionsEnabled is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientChatRegionsEnabled (CMsgDOTAChatRegionsEnabled).
 type ChatRegionsEnabled struct {
 	protocol.CMsgDOTAChatRegionsEnabled
 }
@@ -278,8 +291,9 @@ func (e *ChatRegionsEnabled) GetEventName() string {
 	return "ChatRegionsEnabled"
 }
 
-// ClaimEventActionUsingItemCompleted event.
-// MessageID: k_EMsgGCToClientClaimEventActionUsingItemCompleted
+// ClaimEventActionUsingItemCompleted is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientClaimEventActionUsingItemCompleted (CMsgGCToClientClaimEventActionUsingItemCompleted).
 type ClaimEventActionUsingItemCompleted struct {
 	protocol.CMsgGCToClientClaimEventActionUsingItemCompleted
 }
@@ -299,8 +313,8 @@ func (e *ClaimEventActionUsingItemCompleted) GetEventName() string {
 	return "ClaimEventActionUsingItemCompleted"
 }
 
-// ClientSuspended event.
-// MessageID: k_EMsgGCClientSuspended
+// ClientSuspended is emitted when the GC suspends new sessions, usually for
+// a scheduled update or maintenance.
 type ClientSuspended struct {
 	protocol.CMsgClientSuspended
 }
@@ -320,8 +334,9 @@ func (e *ClientSuspended) GetEventName() string {
 	return "ClientSuspended"
 }
 
-// CoachTeammateRatingsChanged event.
-// MessageID: k_EMsgGCToClientCoachTeammateRatingsChanged
+// CoachTeammateRatingsChanged is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientCoachTeammateRatingsChanged (CMsgGCToClientCoachTeammateRatingsChanged).
 type CoachTeammateRatingsChanged struct {
 	protocol.CMsgGCToClientCoachTeammateRatingsChanged
 }
@@ -341,8 +356,7 @@ func (e *CoachTeammateRatingsChanged) GetEventName() string {
 	return "CoachTeammateRatingsChanged"
 }
 
-// CommendNotification event.
-// MessageID: k_EMsgGCToClientCommendNotification
+// CommendNotification is emitted when another player commends your account.
 type CommendNotification struct {
 	protocol.CMsgGCToClientCommendNotification
 }
@@ -362,8 +376,9 @@ func (e *CommendNotification) GetEventName() string {
 	return "CommendNotification"
 }
 
-// CompendiumRemoveAllSelections event.
-// MessageID: k_EMsgGCCompendiumRemoveAllSelections
+// CompendiumRemoveAllSelections is an event delivered by the GC.
+//
+// Message: k_EMsgGCCompendiumRemoveAllSelections (CMsgDOTACompendiumRemoveAllSelections).
 type CompendiumRemoveAllSelections struct {
 	protocol.CMsgDOTACompendiumRemoveAllSelections
 }
@@ -383,8 +398,9 @@ func (e *CompendiumRemoveAllSelections) GetEventName() string {
 	return "CompendiumRemoveAllSelections"
 }
 
-// CraftworksUserDataUpdated event.
-// MessageID: k_EMsgGCToClientCraftworksUserDataUpdated
+// CraftworksUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientCraftworksUserDataUpdated (CMsgGCToClientCraftworksUserDataUpdated).
 type CraftworksUserDataUpdated struct {
 	protocol.CMsgGCToClientCraftworksUserDataUpdated
 }
@@ -404,8 +420,9 @@ func (e *CraftworksUserDataUpdated) GetEventName() string {
 	return "CraftworksUserDataUpdated"
 }
 
-// DOTAWeekendTourneySchedule event.
-// MessageID: k_EMsgDOTAWeekendTourneySchedule
+// DOTAWeekendTourneySchedule is an event delivered by the GC.
+//
+// Message: k_EMsgDOTAWeekendTourneySchedule (CMsgWeekendTourneySchedule).
 type DOTAWeekendTourneySchedule struct {
 	protocol.CMsgWeekendTourneySchedule
 }
@@ -425,8 +442,9 @@ func (e *DOTAWeekendTourneySchedule) GetEventName() string {
 	return "DOTAWeekendTourneySchedule"
 }
 
-// EmoticonData event.
-// MessageID: k_EMsgGCToClientEmoticonData
+// EmoticonData is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientEmoticonData (CMsgGCToClientEmoticonData).
 type EmoticonData struct {
 	protocol.CMsgGCToClientEmoticonData
 }
@@ -446,8 +464,9 @@ func (e *EmoticonData) GetEventName() string {
 	return "EmoticonData"
 }
 
-// FantasyFinalPlayerStats event.
-// MessageID: k_EMsgGCFantasyFinalPlayerStats
+// FantasyFinalPlayerStats is an event delivered by the GC.
+//
+// Message: k_EMsgGCFantasyFinalPlayerStats (CMsgDOTAFantasyFinalPlayerStats).
 type FantasyFinalPlayerStats struct {
 	protocol.CMsgDOTAFantasyFinalPlayerStats
 }
@@ -467,8 +486,9 @@ func (e *FantasyFinalPlayerStats) GetEventName() string {
 	return "FantasyFinalPlayerStats"
 }
 
-// FightingGameChallenge event.
-// MessageID: k_EMsgGCToClientFightingGameChallenge
+// FightingGameChallenge is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientFightingGameChallenge (CMsgGCToClientFightingGameChallenge).
 type FightingGameChallenge struct {
 	protocol.CMsgGCToClientFightingGameChallenge
 }
@@ -488,8 +508,9 @@ func (e *FightingGameChallenge) GetEventName() string {
 	return "FightingGameChallenge"
 }
 
-// FightingGameChallengeCanceled event.
-// MessageID: k_EMsgGCToClientFightingGameChallengeCanceled
+// FightingGameChallengeCanceled is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientFightingGameChallengeCanceled (CMsgGCToClientFightingGameChallengeCanceled).
 type FightingGameChallengeCanceled struct {
 	protocol.CMsgGCToClientFightingGameChallengeCanceled
 }
@@ -509,8 +530,9 @@ func (e *FightingGameChallengeCanceled) GetEventName() string {
 	return "FightingGameChallengeCanceled"
 }
 
-// FightingGameStartMatch event.
-// MessageID: k_EMsgGCToClientFightingGameStartMatch
+// FightingGameStartMatch is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientFightingGameStartMatch (CMsgGCToClientFightingGameStartMatch).
 type FightingGameStartMatch struct {
 	protocol.CMsgGCToClientFightingGameStartMatch
 }
@@ -530,8 +552,9 @@ func (e *FightingGameStartMatch) GetEventName() string {
 	return "FightingGameStartMatch"
 }
 
-// GuildDataUpdated event.
-// MessageID: k_EMsgGCToClientGuildDataUpdated
+// GuildDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientGuildDataUpdated (CMsgGCToClientGuildDataUpdated).
 type GuildDataUpdated struct {
 	protocol.CMsgGCToClientGuildDataUpdated
 }
@@ -551,8 +574,9 @@ func (e *GuildDataUpdated) GetEventName() string {
 	return "GuildDataUpdated"
 }
 
-// GuildFeedUpdated event.
-// MessageID: k_EMsgGCToClientGuildFeedUpdated
+// GuildFeedUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientGuildFeedUpdated (CMsgGCToClientGuildFeedUpdated).
 type GuildFeedUpdated struct {
 	protocol.CMsgGCToClientGuildFeedUpdated
 }
@@ -572,8 +596,9 @@ func (e *GuildFeedUpdated) GetEventName() string {
 	return "GuildFeedUpdated"
 }
 
-// GuildMembersDataUpdated event.
-// MessageID: k_EMsgGCToClientGuildMembersDataUpdated
+// GuildMembersDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientGuildMembersDataUpdated (CMsgGCToClientGuildMembersDataUpdated).
 type GuildMembersDataUpdated struct {
 	protocol.CMsgGCToClientGuildMembersDataUpdated
 }
@@ -593,8 +618,9 @@ func (e *GuildMembersDataUpdated) GetEventName() string {
 	return "GuildMembersDataUpdated"
 }
 
-// GuildMembershipUpdated event.
-// MessageID: k_EMsgGCToClientGuildMembershipUpdated
+// GuildMembershipUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientGuildMembershipUpdated (CMsgGCToClientGuildMembershipUpdated).
 type GuildMembershipUpdated struct {
 	protocol.CMsgGCToClientGuildMembershipUpdated
 }
@@ -614,8 +640,9 @@ func (e *GuildMembershipUpdated) GetEventName() string {
 	return "GuildMembershipUpdated"
 }
 
-// HeroStatueCreateResult event.
-// MessageID: k_EMsgGCToClientHeroStatueCreateResult
+// HeroStatueCreateResult is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientHeroStatueCreateResult (CMsgGCToClientHeroStatueCreateResult).
 type HeroStatueCreateResult struct {
 	protocol.CMsgGCToClientHeroStatueCreateResult
 }
@@ -635,8 +662,9 @@ func (e *HeroStatueCreateResult) GetEventName() string {
 	return "HeroStatueCreateResult"
 }
 
-// InviteToDemoMode event.
-// MessageID: k_EMsgGCToClientInviteToDemoMode
+// InviteToDemoMode is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientInviteToDemoMode (CMsgGCToClientInviteToDemoMode).
 type InviteToDemoMode struct {
 	protocol.CMsgGCToClientInviteToDemoMode
 }
@@ -656,8 +684,9 @@ func (e *InviteToDemoMode) GetEventName() string {
 	return "InviteToDemoMode"
 }
 
-// ItemBattlerUserDataUpdated event.
-// MessageID: k_EMsgGCToClientItemBattlerUserDataUpdated
+// ItemBattlerUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientItemBattlerUserDataUpdated (CMsgGCToClientItemBattlerUserDataUpdated).
 type ItemBattlerUserDataUpdated struct {
 	protocol.CMsgGCToClientItemBattlerUserDataUpdated
 }
@@ -677,8 +706,8 @@ func (e *ItemBattlerUserDataUpdated) GetEventName() string {
 	return "ItemBattlerUserDataUpdated"
 }
 
-// KickedFromMatchmakingQueue event.
-// MessageID: k_EMsgGCKickedFromMatchmakingQueue
+// KickedFromMatchmakingQueue is emitted when the GC removes the account from
+// a matchmaking queue it was waiting in.
 type KickedFromMatchmakingQueue struct {
 	protocol.CMsgDOTAKickedFromMatchmakingQueue
 }
@@ -698,8 +727,9 @@ func (e *KickedFromMatchmakingQueue) GetEventName() string {
 	return "KickedFromMatchmakingQueue"
 }
 
-// LeagueAdminList event.
-// MessageID: k_EMsgGCLeagueAdminList
+// LeagueAdminList is an event delivered by the GC.
+//
+// Message: k_EMsgGCLeagueAdminList (CMsgLeagueAdminList).
 type LeagueAdminList struct {
 	protocol.CMsgLeagueAdminList
 }
@@ -719,8 +749,8 @@ func (e *LeagueAdminList) GetEventName() string {
 	return "LeagueAdminList"
 }
 
-// LobbyMVPAwarded event.
-// MessageID: k_EMsgGCToClientLobbyMVPAwarded
+// LobbyMVPAwarded is emitted when the MVP votes for a finished lobby match
+// are awarded.
 type LobbyMVPAwarded struct {
 	protocol.CMsgDOTALobbyMVPAwarded
 }
@@ -740,8 +770,9 @@ func (e *LobbyMVPAwarded) GetEventName() string {
 	return "LobbyMVPAwarded"
 }
 
-// LobbyUpdateBroadcastChannelInfo event.
-// MessageID: k_EMsgGCLobbyUpdateBroadcastChannelInfo
+// LobbyUpdateBroadcastChannelInfo is an event delivered by the GC.
+//
+// Message: k_EMsgGCLobbyUpdateBroadcastChannelInfo (CMsgGCLobbyUpdateBroadcastChannelInfo).
 type LobbyUpdateBroadcastChannelInfo struct {
 	protocol.CMsgGCLobbyUpdateBroadcastChannelInfo
 }
@@ -761,8 +792,9 @@ func (e *LobbyUpdateBroadcastChannelInfo) GetEventName() string {
 	return "LobbyUpdateBroadcastChannelInfo"
 }
 
-// MatchGroupsVersion event.
-// MessageID: k_EMsgGCToClientMatchGroupsVersion
+// MatchGroupsVersion is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientMatchGroupsVersion (CMsgGCToClientMatchGroupsVersion).
 type MatchGroupsVersion struct {
 	protocol.CMsgGCToClientMatchGroupsVersion
 }
@@ -782,8 +814,9 @@ func (e *MatchGroupsVersion) GetEventName() string {
 	return "MatchGroupsVersion"
 }
 
-// MatchSignedOut event.
-// MessageID: k_EMsgGCToClientMatchSignedOut
+// MatchSignedOut is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientMatchSignedOut (CMsgGCToClientMatchSignedOut).
 type MatchSignedOut struct {
 	protocol.CMsgGCToClientMatchSignedOut
 }
@@ -803,8 +836,9 @@ func (e *MatchSignedOut) GetEventName() string {
 	return "MatchSignedOut"
 }
 
-// MergeGroupInviteReply event.
-// MessageID: k_EMsgGCToClientMergeGroupInviteReply
+// MergeGroupInviteReply is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientMergeGroupInviteReply (CMsgDOTAGroupMergeReply).
 type MergeGroupInviteReply struct {
 	protocol.CMsgDOTAGroupMergeReply
 }
@@ -824,8 +858,9 @@ func (e *MergeGroupInviteReply) GetEventName() string {
 	return "MergeGroupInviteReply"
 }
 
-// MergePartyResponseReply event.
-// MessageID: k_EMsgGCToClientMergePartyResponseReply
+// MergePartyResponseReply is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientMergePartyResponseReply (CMsgDOTAGroupMergeReply).
 type MergePartyResponseReply struct {
 	protocol.CMsgDOTAGroupMergeReply
 }
@@ -845,8 +880,9 @@ func (e *MergePartyResponseReply) GetEventName() string {
 	return "MergePartyResponseReply"
 }
 
-// MonsterHunterUserDataUpdated event.
-// MessageID: k_EMsgGCToClientMonsterHunterUserDataUpdated
+// MonsterHunterUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientMonsterHunterUserDataUpdated (CMsgGCToClientMonsterHunterUserDataUpdated).
 type MonsterHunterUserDataUpdated struct {
 	protocol.CMsgGCToClientMonsterHunterUserDataUpdated
 }
@@ -866,8 +902,9 @@ func (e *MonsterHunterUserDataUpdated) GetEventName() string {
 	return "MonsterHunterUserDataUpdated"
 }
 
-// NotificationsUpdated event.
-// MessageID: k_EMsgGCToClientNotificationsUpdated
+// NotificationsUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientNotificationsUpdated (CMsgGCNotificationsResponse).
 type NotificationsUpdated struct {
 	protocol.CMsgGCNotificationsResponse
 }
@@ -887,8 +924,9 @@ func (e *NotificationsUpdated) GetEventName() string {
 	return "NotificationsUpdated"
 }
 
-// NotifyAccountFlagsChange event.
-// MessageID: k_EMsgGCNotifyAccountFlagsChange
+// NotifyAccountFlagsChange is an event delivered by the GC.
+//
+// Message: k_EMsgGCNotifyAccountFlagsChange (CMsgDOTANotifyAccountFlagsChange).
 type NotifyAccountFlagsChange struct {
 	protocol.CMsgDOTANotifyAccountFlagsChange
 }
@@ -908,8 +946,9 @@ func (e *NotifyAccountFlagsChange) GetEventName() string {
 	return "NotifyAccountFlagsChange"
 }
 
-// OverwatchCasesAvailable event.
-// MessageID: k_EMsgGCToClientOverwatchCasesAvailable
+// OverwatchCasesAvailable is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientOverwatchCasesAvailable (CMsgGCToClientOverwatchCasesAvailable).
 type OverwatchCasesAvailable struct {
 	protocol.CMsgGCToClientOverwatchCasesAvailable
 }
@@ -929,8 +968,9 @@ func (e *OverwatchCasesAvailable) GetEventName() string {
 	return "OverwatchCasesAvailable"
 }
 
-// OverworldUserDataUpdated event.
-// MessageID: k_EMsgGCToClientOverworldUserDataUpdated
+// OverworldUserDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientOverworldUserDataUpdated (CMsgGCToClientOverworldUserDataUpdated).
 type OverworldUserDataUpdated struct {
 	protocol.CMsgGCToClientOverworldUserDataUpdated
 }
@@ -950,8 +990,9 @@ func (e *OverworldUserDataUpdated) GetEventName() string {
 	return "OverworldUserDataUpdated"
 }
 
-// PartyBeaconUpdate event.
-// MessageID: k_EMsgGCToClientPartyBeaconUpdate
+// PartyBeaconUpdate is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPartyBeaconUpdate (CMsgGCToClientPartyBeaconUpdate).
 type PartyBeaconUpdate struct {
 	protocol.CMsgGCToClientPartyBeaconUpdate
 }
@@ -971,8 +1012,9 @@ func (e *PartyBeaconUpdate) GetEventName() string {
 	return "PartyBeaconUpdate"
 }
 
-// PartyLeaderWatchGamePrompt event.
-// MessageID: k_EMsgGCPartyLeaderWatchGamePrompt
+// PartyLeaderWatchGamePrompt is an event delivered by the GC.
+//
+// Message: k_EMsgGCPartyLeaderWatchGamePrompt (CMsgPartyLeaderWatchGamePrompt).
 type PartyLeaderWatchGamePrompt struct {
 	protocol.CMsgPartyLeaderWatchGamePrompt
 }
@@ -992,8 +1034,9 @@ func (e *PartyLeaderWatchGamePrompt) GetEventName() string {
 	return "PartyLeaderWatchGamePrompt"
 }
 
-// PartySearchInvite event.
-// MessageID: k_EMsgGCToClientPartySearchInvite
+// PartySearchInvite is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPartySearchInvite (CMsgGCToClientPartySearchInvite).
 type PartySearchInvite struct {
 	protocol.CMsgGCToClientPartySearchInvite
 }
@@ -1013,8 +1056,9 @@ func (e *PartySearchInvite) GetEventName() string {
 	return "PartySearchInvite"
 }
 
-// PartySearchInvites event.
-// MessageID: k_EMsgGCToClientPartySearchInvites
+// PartySearchInvites is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPartySearchInvites (CMsgGCToClientPartySearchInvites).
 type PartySearchInvites struct {
 	protocol.CMsgGCToClientPartySearchInvites
 }
@@ -1034,8 +1078,9 @@ func (e *PartySearchInvites) GetEventName() string {
 	return "PartySearchInvites"
 }
 
-// PlayerBeaconState event.
-// MessageID: k_EMsgGCToClientPlayerBeaconState
+// PlayerBeaconState is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPlayerBeaconState (CMsgGCToClientPlayerBeaconState).
 type PlayerBeaconState struct {
 	protocol.CMsgGCToClientPlayerBeaconState
 }
@@ -1055,8 +1100,8 @@ func (e *PlayerBeaconState) GetEventName() string {
 	return "PlayerBeaconState"
 }
 
-// PlayerJoinedChannel event.
-// MessageID: k_EMsgGCOtherJoinedChannel
+// OtherJoinedChannel is emitted when another member joins a chat channel you
+// are in.
 type PlayerJoinedChannel struct {
 	protocol.CMsgDOTAOtherJoinedChatChannel
 }
@@ -1076,8 +1121,8 @@ func (e *PlayerJoinedChannel) GetEventName() string {
 	return "PlayerJoinedChannel"
 }
 
-// PlayerLeftChannel event.
-// MessageID: k_EMsgGCOtherLeftChannel
+// OtherLeftChannel is emitted when another member leaves a chat channel you
+// are in.
 type PlayerLeftChannel struct {
 	protocol.CMsgDOTAOtherLeftChatChannel
 }
@@ -1097,8 +1142,9 @@ func (e *PlayerLeftChannel) GetEventName() string {
 	return "PlayerLeftChannel"
 }
 
-// PlaytestStatus event.
-// MessageID: k_EMsgGCToClientPlaytestStatus
+// PlaytestStatus is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPlaytestStatus (CMsgGCToClientPlaytestStatus).
 type PlaytestStatus struct {
 	protocol.CMsgGCToClientPlaytestStatus
 }
@@ -1118,8 +1164,9 @@ func (e *PlaytestStatus) GetEventName() string {
 	return "PlaytestStatus"
 }
 
-// Popup event.
-// MessageID: k_EMsgGCPopup
+// Popup is an event delivered by the GC.
+//
+// Message: k_EMsgGCPopup (CMsgDOTAPopup).
 type Popup struct {
 	protocol.CMsgDOTAPopup
 }
@@ -1139,8 +1186,9 @@ func (e *Popup) GetEventName() string {
 	return "Popup"
 }
 
-// PrivateCoachingSessionUpdated event.
-// MessageID: k_EMsgGCToClientPrivateCoachingSessionUpdated
+// PrivateCoachingSessionUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientPrivateCoachingSessionUpdated (CMsgGCToClientPrivateCoachingSessionUpdated).
 type PrivateCoachingSessionUpdated struct {
 	protocol.CMsgGCToClientPrivateCoachingSessionUpdated
 }
@@ -1160,8 +1208,9 @@ func (e *PrivateCoachingSessionUpdated) GetEventName() string {
 	return "PrivateCoachingSessionUpdated"
 }
 
-// ProfileCardUpdated event.
-// MessageID: k_EMsgGCToClientProfileCardUpdated
+// ProfileCardUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientProfileCardUpdated (CMsgDOTAProfileCard).
 type ProfileCardUpdated struct {
 	protocol.CMsgDOTAProfileCard
 }
@@ -1181,8 +1230,9 @@ func (e *ProfileCardUpdated) GetEventName() string {
 	return "ProfileCardUpdated"
 }
 
-// QuestProgressUpdated event.
-// MessageID: k_EMsgGCToClientQuestProgressUpdated
+// QuestProgressUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientQuestProgressUpdated (CMsgGCToClientQuestProgressUpdated).
 type QuestProgressUpdated struct {
 	protocol.CMsgGCToClientQuestProgressUpdated
 }
@@ -1202,8 +1252,9 @@ func (e *QuestProgressUpdated) GetEventName() string {
 	return "QuestProgressUpdated"
 }
 
-// RankUpdate event.
-// MessageID: k_EMsgGCToClientRankUpdate
+// RankUpdate is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientRankUpdate (CMsgGCToClientRankUpdate).
 type RankUpdate struct {
 	protocol.CMsgGCToClientRankUpdate
 }
@@ -1223,8 +1274,9 @@ func (e *RankUpdate) GetEventName() string {
 	return "RankUpdate"
 }
 
-// ReadyUpStatus event.
-// MessageID: k_EMsgGCReadyUpStatus
+// ReadyUpStatus is an event delivered by the GC.
+//
+// Message: k_EMsgGCReadyUpStatus (CMsgReadyUpStatus).
 type ReadyUpStatus struct {
 	protocol.CMsgReadyUpStatus
 }
@@ -1244,8 +1296,9 @@ func (e *ReadyUpStatus) GetEventName() string {
 	return "ReadyUpStatus"
 }
 
-// RequestLaneSelection event.
-// MessageID: k_EMsgGCToClientRequestLaneSelection
+// RequestLaneSelection is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientRequestLaneSelection (CMsgGCToClientRequestLaneSelection).
 type RequestLaneSelection struct {
 	protocol.CMsgGCToClientRequestLaneSelection
 }
@@ -1265,8 +1318,9 @@ func (e *RequestLaneSelection) GetEventName() string {
 	return "RequestLaneSelection"
 }
 
-// RequestMMInfo event.
-// MessageID: k_EMsgGCToClientRequestMMInfo
+// RequestMMInfo is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientRequestMMInfo (CMsgGCToClientRequestMMInfo).
 type RequestMMInfo struct {
 	protocol.CMsgGCToClientRequestMMInfo
 }
@@ -1286,8 +1340,9 @@ func (e *RequestMMInfo) GetEventName() string {
 	return "RequestMMInfo"
 }
 
-// RoadToTIQuestDataUpdated event.
-// MessageID: k_EMsgGCToClientRoadToTIQuestDataUpdated
+// RoadToTIQuestDataUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientRoadToTIQuestDataUpdated (CMsgGCToClientRoadToTIQuestDataUpdated).
 type RoadToTIQuestDataUpdated struct {
 	protocol.CMsgGCToClientRoadToTIQuestDataUpdated
 }
@@ -1307,8 +1362,9 @@ func (e *RoadToTIQuestDataUpdated) GetEventName() string {
 	return "RoadToTIQuestDataUpdated"
 }
 
-// SteamDatagramTicket event.
-// MessageID: k_EMsgGCToClientSteamDatagramTicket
+// SteamDatagramTicket is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientSteamDatagramTicket (CMsgGCToClientSteamDatagramTicket).
 type SteamDatagramTicket struct {
 	protocol.CMsgGCToClientSteamDatagramTicket
 }
@@ -1328,8 +1384,9 @@ func (e *SteamDatagramTicket) GetEventName() string {
 	return "SteamDatagramTicket"
 }
 
-// TeamInfo event.
-// MessageID: k_EMsgGCToClientTeamInfo
+// TeamInfo is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientTeamInfo (CMsgDOTATeamInfo).
 type TeamInfo struct {
 	protocol.CMsgDOTATeamInfo
 }
@@ -1349,8 +1406,9 @@ func (e *TeamInfo) GetEventName() string {
 	return "TeamInfo"
 }
 
-// TeamInviteGCImmediateResponseToInviter event.
-// MessageID: k_EMsgGCTeamInvite_GCImmediateResponseToInviter
+// TeamInviteGCImmediateResponseToInviter is an event delivered by the GC.
+//
+// Message: k_EMsgGCTeamInvite_GCImmediateResponseToInviter (CMsgDOTATeamInvite_GCImmediateResponseToInviter).
 type TeamInviteGCImmediateResponseToInviter struct {
 	protocol.CMsgDOTATeamInvite_GCImmediateResponseToInviter
 }
@@ -1370,8 +1428,9 @@ func (e *TeamInviteGCImmediateResponseToInviter) GetEventName() string {
 	return "TeamInviteGCImmediateResponseToInviter"
 }
 
-// TeamInviteReceived event.
-// MessageID: k_EMsgGCTeamInvite_GCRequestToInvitee
+// TeamInviteReceived is an event delivered by the GC.
+//
+// Message: k_EMsgGCTeamInvite_GCRequestToInvitee (CMsgDOTATeamInvite_GCRequestToInvitee).
 type TeamInviteReceived struct {
 	protocol.CMsgDOTATeamInvite_GCRequestToInvitee
 }
@@ -1391,8 +1450,9 @@ func (e *TeamInviteReceived) GetEventName() string {
 	return "TeamInviteReceived"
 }
 
-// TeamInviteResponseReceived event.
-// MessageID: k_EMsgGCTeamInvite_GCResponseToInviter
+// TeamInviteResponseReceived is an event delivered by the GC.
+//
+// Message: k_EMsgGCTeamInvite_GCResponseToInviter (CMsgDOTATeamInvite_GCResponseToInviter).
 type TeamInviteResponseReceived struct {
 	protocol.CMsgDOTATeamInvite_GCResponseToInviter
 }
@@ -1412,8 +1472,9 @@ func (e *TeamInviteResponseReceived) GetEventName() string {
 	return "TeamInviteResponseReceived"
 }
 
-// TeamsInfo event.
-// MessageID: k_EMsgGCToClientTeamsInfo
+// TeamsInfo is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientTeamsInfo (CMsgDOTATeamsInfo).
 type TeamsInfo struct {
 	protocol.CMsgDOTATeamsInfo
 }
@@ -1433,8 +1494,9 @@ func (e *TeamsInfo) GetEventName() string {
 	return "TeamsInfo"
 }
 
-// TournamentItemDrop event.
-// MessageID: k_EMsgGCToClientTournamentItemDrop
+// TournamentItemDrop is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientTournamentItemDrop (CMsgGCToClientTournamentItemDrop).
 type TournamentItemDrop struct {
 	protocol.CMsgGCToClientTournamentItemDrop
 }
@@ -1454,8 +1516,9 @@ func (e *TournamentItemDrop) GetEventName() string {
 	return "TournamentItemDrop"
 }
 
-// TrophyAwarded event.
-// MessageID: k_EMsgGCToClientTrophyAwarded
+// TrophyAwarded is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientTrophyAwarded (CMsgGCToClientTrophyAwarded).
 type TrophyAwarded struct {
 	protocol.CMsgGCToClientTrophyAwarded
 }
@@ -1475,8 +1538,9 @@ func (e *TrophyAwarded) GetEventName() string {
 	return "TrophyAwarded"
 }
 
-// UnderDraftGoldUpdated event.
-// MessageID: k_EMsgGCToClientUnderDraftGoldUpdated
+// UnderDraftGoldUpdated is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientUnderDraftGoldUpdated (CMsgGCToClientGuildUnderDraftGoldUpdated).
 type UnderDraftGoldUpdated struct {
 	protocol.CMsgGCToClientGuildUnderDraftGoldUpdated
 }
@@ -1496,8 +1560,9 @@ func (e *UnderDraftGoldUpdated) GetEventName() string {
 	return "UnderDraftGoldUpdated"
 }
 
-// VACReminder event.
-// MessageID: k_EMsgGCToClientVACReminder
+// VACReminder is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientVACReminder (CMsgGCToClientVACReminder).
 type VACReminder struct {
 	protocol.CMsgGCToClientVACReminder
 }
@@ -1517,8 +1582,9 @@ func (e *VACReminder) GetEventName() string {
 	return "VACReminder"
 }
 
-// WageringUpdate event.
-// MessageID: k_EMsgGCToClientWageringUpdate
+// WageringUpdate is an event delivered by the GC.
+//
+// Message: k_EMsgGCToClientWageringUpdate (CMsgGCToClientWageringUpdate).
 type WageringUpdate struct {
 	protocol.CMsgGCToClientWageringUpdate
 }
@@ -1538,8 +1604,9 @@ func (e *WageringUpdate) GetEventName() string {
 	return "WageringUpdate"
 }
 
-// WatchDownloadedReplay event.
-// MessageID: k_EMsgGCWatchDownloadedReplay
+// WatchDownloadedReplay is an event delivered by the GC.
+//
+// Message: k_EMsgGCWatchDownloadedReplay (CMsgGCWatchDownloadedReplay).
 type WatchDownloadedReplay struct {
 	protocol.CMsgGCWatchDownloadedReplay
 }

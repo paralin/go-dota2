@@ -240,3 +240,70 @@ var msgEventNameOverrides = map[dm.EDOTAGCMsg]string{
 	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel:             "PlayerJoinedChannel",
 	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel:               "PlayerLeftChannel",
 }
+
+// msgDocOverrides contains handwritten godoc comments for request methods.
+// An entry replaces the entire generated comment for the method.
+var msgDocOverrides = map[dm.EDOTAGCMsg]string{
+	dm.EDOTAGCMsg_k_EMsgGCStartFindingMatch: `StartFindingMatch enters the matchmaking queue with the given options:
+match mode, map, team desirability, and lobby type.
+
+The GC confirms entry through the response and later reports the found match
+through the ready-up flow; see SendReadyUp.`,
+	dm.EDOTAGCMsg_k_EMsgGCStopFindingMatch: `StopFindingMatch leaves the matchmaking queue.`,
+	dm.EDOTAGCMsg_k_EMsgGCReadyUp: `SendReadyUp accepts (or declines) an incoming match. The GC assigns teams
+and broadcasts the game setup state once all players accept.
+
+A player who fails to ready up in time causes the match search to restart.`,
+	dm.EDOTAGCMsg_k_EMsgGCAbandonCurrentGame: `AbandonLobby abandons the current practice lobby or live game.`,
+	dm.EDOTAGCMsg_k_EMsgDestroyLobbyRequest: `DestroyLobby destroys the practice lobby you lead. Only the lobby leader
+can destroy it.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyLeave:  `LeaveLobby leaves the current practice lobby without destroying it.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyLaunch: `LaunchLobby starts the match for the practice lobby you lead.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyJoin:   `JoinLobby joins a practice lobby by ID, optionally with a pass key.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbyKick: `KickLobbyMember kicks a member from your practice lobby. Lobby leaders
+only.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetDetails: `SetLobbyDetails updates the details of the current practice lobby: game
+mode, map, server region, pass key, spectator policy, and cheat/bot settings.`,
+	dm.EDOTAGCMsg_k_EMsgGCPracticeLobbySetCoach: `SetLobbyCoach requests the coach slot for your team in the lobby.`,
+	dm.EDOTAGCMsg_k_EMsgGCFlipLobbyTeams: `FlipLobbyTeams swaps every member of the lobby between the Radiant and
+Dire teams.`,
+	dm.EDOTAGCMsg_k_EMsgGCBalancedShuffleLobby: `SendBalancedShuffleLobby shuffles the lobby members between teams while
+keeping the teams balanced by MMR.`,
+	dm.EDOTAGCMsg_k_EMsgGCChatMessage: `SendChatMessage sends a chat message to a joined chat channel or lobby.
+Use SendChannelMessage for plain text messages.`,
+	dm.EDOTAGCMsg_k_EMsgGCJoinChatChannel: `JoinChatChannel joins a chat channel by name and type. The response lists
+the channel members; other joins and leaves arrive as events.`,
+	dm.EDOTAGCMsg_k_EMsgGCLeaveChatChannel:       `LeaveChatChannel leaves a joined chat channel.`,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyLeader: `SetPartyLeader makes the given party member the party leader.`,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyOpen:   `SetPartyOpen opens or closes the party so that friends can join freely.`,
+	dm.EDOTAGCMsg_k_EMsgClientToGCCancelPartyInvites: `CancelPartyInvites cancels all outstanding party invites sent by your
+account.`,
+	dm.EDOTAGCMsg_k_EMsgPartyReadyCheckAcknowledge: `AckPartyReadyCheck acknowledges a party-wide ready check on behalf of your
+account.`,
+	dm.EDOTAGCMsg_k_EMsgPartyReadyCheckRequest: `SendPartyReadyCheck starts a ready check across the whole party.`,
+	dm.EDOTAGCMsg_k_EMsgClientToGCSetPartyBuilderOptions: `SetPartyBuilderOptions configures how the party enters matchmaking, such
+as the selected lanes or roles in role-queue modes.`,
+	dm.EDOTAGCMsg_k_EMsgClientToGCGetProfileCard: `GetProfileCard requests the profile card of an account.
+
+The card is not returned directly; watch for a ProfileCardUpdated event after
+sending this request.`,
+	dm.EDOTAGCMsg_k_EMsgDOTAGetPlayerMatchHistory: `GetPlayerMatchHistory returns a page of an account's match history with
+per-match results. Pass start_at_match_id from the previous response to page
+through older matches.`,
+}
+
+// msgEventDocOverrides contains handwritten godoc comments for events.
+// An entry replaces the entire generated comment for the event.
+var msgEventDocOverrides = map[dm.EDOTAGCMsg]string{
+	dm.EDOTAGCMsg_k_EMsgGCOtherJoinedChannel: `OtherJoinedChannel is emitted when another member joins a chat channel you
+are in.`,
+	dm.EDOTAGCMsg_k_EMsgGCOtherLeftChannel: `OtherLeftChannel is emitted when another member leaves a chat channel you
+are in.`,
+	dm.EDOTAGCMsg_k_EMsgGCToClientLobbyMVPAwarded: `LobbyMVPAwarded is emitted when the MVP votes for a finished lobby match
+are awarded.`,
+	dm.EDOTAGCMsg_k_EMsgGCToClientCommendNotification: `CommendNotification is emitted when another player commends your account.`,
+	dm.EDOTAGCMsg_k_EMsgGCClientSuspended: `ClientSuspended is emitted when the GC suspends new sessions, usually for
+a scheduled update or maintenance.`,
+	dm.EDOTAGCMsg_k_EMsgGCKickedFromMatchmakingQueue: `KickedFromMatchmakingQueue is emitted when the GC removes the account from
+a matchmaking queue it was waiting in.`,
+}
