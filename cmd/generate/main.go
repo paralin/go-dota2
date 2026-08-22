@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-const aptreModule = "github.com/aperturerobotics/common/cmd/aptre@v0.34.1"
+const aptreModule = "github.com/aperturerobotics/common/cmd/aptre"
 
 const protocolImportPrefix = "github.com/paralin/go-dota2/protocol/"
 
@@ -300,7 +300,7 @@ func generateProtos(ctx context.Context, repoRoot string, verbose bool) error {
 	args := []string{
 		"generate",
 		"--project-dir", repoRoot,
-		"--language", "go",
+		"--languages", "go",
 		"--rpc", "none",
 		"--targets", "protocol/*.proto",
 		"--force",
@@ -357,7 +357,7 @@ func runApigen(ctx context.Context, repoRoot string, verbose bool) error {
 }
 
 func runAptre(ctx context.Context, repoRoot string, verbose bool, args ...string) error {
-	goArgs := append([]string{"run", aptreModule}, args...)
+	goArgs := append([]string{"run", "-mod=mod", "-tags=purego", aptreModule}, args...)
 	return runCmd(ctx, repoRoot, verbose, "go", goArgs...)
 }
 

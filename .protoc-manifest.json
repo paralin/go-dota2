@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "protocFlagsHash": "79dd1f88aa323f0fd1bb3bf128c2fa3caae70bd283a4b8e92ae33b00862b5cc6",
-  "toolVersions": "protoc=embedded,protobuf-go-lite=v0.14.0,starpc=v0.49.18",
+  "protocFlagsHash": "3864ec2c1c9f86e1e12b0cc60cd7df8a4c0d922e1969991a622eb7e0795524c4",
+  "toolVersions": "protoc=embedded,protobuf-go-lite=v0.16.0,starpc=v0.49.21",
   "packages": {
     "github.com/paralin/go-dota2/protocol": {
       "hash": "a97777b0c7a05c4c5ccf505b2949cf30991f67c780062a8f8b2af6a7d5dcefa5",

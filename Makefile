@@ -1,7 +1,7 @@
 # https://github.com/aperturerobotics/template
 
 SHELL:=bash
-APTRE=go run github.com/aperturerobotics/common/cmd/aptre@v0.34.1
+APTRE=go run -mod=mod -tags=purego github.com/aperturerobotics/common/cmd/aptre
 
 export GO111MODULE=on
 undefine GOARCH
@@ -14,7 +14,7 @@ vendor:
 
 .PHONY: genproto
 genproto: vendor
-	$(APTRE) generate --language go --rpc none --targets 'protocol/*.proto' --force
+	$(APTRE) generate --languages go --rpc none --targets 'protocol/*.proto' --force
 
 .PHONY: updateproto
 updateproto:
