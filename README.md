@@ -10,6 +10,7 @@
 Games implemented:
 
  - [dota2](https://github.com/paralin/go-dota2)
+ - [deadlock](https://github.com/paralin/go-deadlock)
  - [underlords](https://github.com/paralin/go-underlords)
 
 Also see: the old [C#/SteamKit Implementation](https://github.com/paralin/Dota2).
