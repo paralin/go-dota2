@@ -3,8 +3,8 @@ module github.com/paralin/go-dota2
 go 1.25.0
 
 require (
-	github.com/aperturerobotics/protobuf-go-lite v0.17.0
-	github.com/paralin/go-steam v0.0.0-20260803213908-f6a3bac7966c // master
+	github.com/aperturerobotics/protobuf-go-lite v0.18.0
+	github.com/paralin/go-steam v0.0.0-20260830033757-395c15d0bac8 // master
 )
 
 require (
@@ -13,7 +13,7 @@ require (
 	github.com/golang/protobuf v1.5.4
 	github.com/pkg/errors v0.9.1
 	github.com/serenize/snaker v0.0.0-20201027110005-a7ad2135616e
-	github.com/sirupsen/logrus v1.9.5-0.20260629095817-a23d315dfebb
+	github.com/sirupsen/logrus v1.10.2
 	github.com/urfave/cli/v2 v2.27.7
 )
 
