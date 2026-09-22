@@ -2,66 +2,76 @@ package dota2
 
 import (
 	"context"
-	"errors"
 	"sync"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/paralin/go-steam"
-	"github.com/paralin/go-steam/protocol/gamecoordinator"
-	"github.com/sirupsen/logrus"
-
 	devents "github.com/paralin/go-dota2/events"
-	bgcm "github.com/paralin/go-dota2/protocol"
-	gcm "github.com/paralin/go-dota2/protocol"
-	gcsdkm "github.com/paralin/go-dota2/protocol"
 	gcsm "github.com/paralin/go-dota2/protocol"
 	"github.com/paralin/go-dota2/socache"
 	"github.com/paralin/go-dota2/state"
+	"github.com/paralin/go-steam"
+	steamprotocol "github.com/paralin/go-steam/protocol"
+	"github.com/paralin/go-steam/protocol/gamecoordinator"
+	"github.com/sirupsen/logrus"
 )
 
-// AppID is the ID for dota2
+// AppID is the Steam application ID for Dota2.
 const AppID = 570
-
-// ErrNotReady is returned when the dota client is not ready.
-var ErrNotReady = errors.New("the dota client is not ready to accept requests yet, or has just become unready")
 
 // handlerMap is the map of message types to handler functions.
 type handlerMap map[uint32]func(packet *gamecoordinator.GCPacket) error
 
-// Dota2 handles the dota game handler.
+// Dota2 owns the GC session and pending requests for one Steam connection.
 type Dota2 struct {
-	le     logrus.FieldLogger
-	client *steam.Client
-	cache  *socache.SOCache
-
-	connectionCtxMtx    sync.Mutex
-	connectionCtx       context.Context
-	connectionCtxCancel context.CancelFunc
-
-	stateMtx sync.Mutex
-	state    state.Dota2State
-
+	// le records protocol diagnostics without message bodies.
+	le logrus.FieldLogger
+	// coordinator transports messages to Steam.
+	coordinator Coordinator
+	// emit publishes events to the caller's continuously drained event stream.
+	emit func(any)
+	// cache retains coordinator shared objects.
+	cache *socache.SOCache
+	// handlers maps packet types to their decoders.
 	handlers handlerMap
-
-	pendReqMtx sync.Mutex
-	pendReqID  uint32
-	pendReq    map[uint32]map[uint32]responseHandler
+	// mtx guards session state, request registration and terminal closure.
+	mtx sync.Mutex
+	// connectionCtx lasts until the current GC session ends.
+	connectionCtx context.Context
+	// connectionCtxCancel interrupts requests when the session ends.
+	connectionCtxCancel context.CancelFunc
+	// state describes the current coordinator session.
+	state state.Dota2State
+	// closed prevents late packets from reopening a disposed client.
+	closed bool
+	// stopped rejects late welcomes after SetPlaying(false).
+	stopped bool
+	// nextJobID increases across GC sessions so late replies cannot match new work.
+	nextJobID steamprotocol.JobId
+	// pending routes each response to its original request's receiving goroutine.
+	pending map[steamprotocol.JobId]pendingRequest
 }
 
-// New builds a new Dota2 handler.
+// New registers a Dota2 handler on a Steam client before it connects.
+// The caller must continuously consume client.Events and Close on disconnect.
 func New(client *steam.Client, le logrus.FieldLogger) *Dota2 {
-	c := &Dota2{
-		le:      le,
-		cache:   socache.NewSOCache(le),
-		client:  client,
-		pendReq: make(map[uint32]map[uint32]responseHandler),
+	return NewWithCoordinator(NewSteamCoordinator(client), client.Emit, le)
+}
 
+// NewWithCoordinator attaches a Dota2 session to an alternate GC transport.
+// emit must continuously accept events; Close ends this handler's lifetime.
+func NewWithCoordinator(coordinator Coordinator, emit func(any), le logrus.FieldLogger) *Dota2 {
+	c := &Dota2{
+		le:          le,
+		cache:       socache.NewSOCache(le),
+		coordinator: coordinator,
+		emit:        emit,
+		pending:     make(map[steamprotocol.JobId]pendingRequest),
 		state: state.Dota2State{
-			ConnectionStatus: gcsdkm.GCConnectionStatus_GCConnectionStatus_NO_SESSION,
+			ConnectionStatus: gcsm.GCConnectionStatus_GCConnectionStatus_NO_SESSION,
 		},
 	}
 	c.buildHandlerMap()
-	client.GC.RegisterPacketHandler(c)
+	coordinator.RegisterPacketHandler(c)
 	return c
 }
 
@@ -70,13 +80,13 @@ func (d *Dota2) GetCache() *socache.SOCache {
 	return d.cache
 }
 
-// Close kills any ongoing calls.
+// Close cancels requests and permanently prevents further session admission.
+// It does not close the caller's Steam transport or event stream.
 func (d *Dota2) Close() {
-	d.connectionCtxMtx.Lock()
-	if d.connectionCtxCancel != nil {
-		d.connectionCtxCancel()
-	}
-	d.connectionCtxMtx.Unlock()
+	d.mtx.Lock()
+	d.closed = true
+	d.mtx.Unlock()
+	d.setConnectionStatus(gcsm.GCConnectionStatus_GCConnectionStatus_NO_SESSION, nil)
 }
 
 // buildHandlerMap builds the map of bound handler functions.
@@ -96,15 +106,15 @@ func (d *Dota2) buildHandlerMap() {
 		uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingRequest): d.handlePingRequest,
 
 		// Chat events
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCChatMessage): d.getEventEmitter(func() devents.Event {
+		uint32(gcsm.EDOTAGCMsg_k_EMsgGCChatMessage): d.getEventEmitter(func() devents.Event {
 			return &devents.ChatMessage{}
 		}),
-		uint32(gcm.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse): d.getEventEmitter(func() devents.Event {
+		uint32(gcsm.EDOTAGCMsg_k_EMsgGCJoinChatChannelResponse): d.getEventEmitter(func() devents.Event {
 			return &devents.JoinedChatChannel{}
 		}),
 
 		// Invites
-		uint32(bgcm.EGCBaseMsg_k_EMsgGCInvitationCreated): d.getEventEmitter(func() devents.Event {
+		uint32(gcsm.EGCBaseMsg_k_EMsgGCInvitationCreated): d.getEventEmitter(func() devents.Event {
 			return &devents.InvitationCreated{}
 		}),
 	}
@@ -114,31 +124,7 @@ func (d *Dota2) buildHandlerMap() {
 
 // write sends a message to the game coordinator.
 func (d *Dota2) write(messageType uint32, msg proto.Message) {
-	d.client.GC.Write(gamecoordinator.NewGCMsgProtobuf(AppID, messageType, msg))
-}
-
-// emit emits an event.
-func (d *Dota2) emit(event any) {
-	d.client.Emit(event)
-}
-
-// accessState safely accesses the Dota2 state. return true if the state was changed / otherwise updated during the call.
-func (d *Dota2) accessState(cb func(nextState *state.Dota2State) (bool, error)) error {
-	d.stateMtx.Lock()
-	defer d.stateMtx.Unlock()
-
-	lastState := d.state
-	changed, err := cb(&d.state)
-	if err != nil {
-		return err
-	}
-	if changed {
-		d.emit(devents.ClientStateChanged{
-			OldState: lastState,
-			NewState: d.state,
-		})
-	}
-	return nil
+	d.coordinator.Write(gamecoordinator.NewGCMsgProtobuf(AppID, messageType, msg))
 }
 
 // unmarshalBody attempts to unmarshal a packet body.
@@ -149,6 +135,10 @@ func (d *Dota2) unmarshalBody(packet *gamecoordinator.GCPacket, msg proto.Messag
 		}
 	}()
 
+	if decoder, ok := msg.(interface{ UnmarshalVT([]byte) error }); ok {
+		msg.Reset()
+		return decoder.UnmarshalVT(packet.Body)
+	}
 	return proto.Unmarshal(packet.Body, msg)
 }
 
@@ -158,6 +148,15 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 		return
 	}
 
+	// Ignore packets after the caller disposes this connection's handler.
+	d.mtx.Lock()
+	closed := d.closed
+	d.mtx.Unlock()
+	if closed {
+		return
+	}
+
+	// Decode protocol events before delivering a correlated response.
 	le := d.le.WithField("msgtype", packet.MsgType)
 	handler, ok := d.handlers[packet.MsgType]
 	if ok && handler != nil {
@@ -167,6 +166,7 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 		}
 	}
 
+	// Surface unsolicited packets without attributing them to another request.
 	respHandled := d.handleResponsePacket(packet)
 	if !ok && !respHandled {
 		le.Debug("unhandled gc packet")
@@ -178,7 +178,7 @@ func (d *Dota2) HandleGCPacket(packet *gamecoordinator.GCPacket) {
 
 // handlePingRequest handles an incoming ping request from the gc.
 func (d *Dota2) handlePingRequest(packet *gamecoordinator.GCPacket) error {
-	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsdkm.CMsgGCClientPing{})
+	d.write(uint32(gcsm.EGCBaseClientMsg_k_EMsgGCPingResponse), &gcsm.CMsgGCClientPing{})
 	return nil
 }
 
