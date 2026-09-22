@@ -3,8 +3,8 @@ module github.com/paralin/go-dota2
 go 1.26.0
 
 require (
-	github.com/aperturerobotics/protobuf-go-lite v0.18.0
-	github.com/paralin/go-steam v0.0.0-20260922065644-c82323035020 // master
+	github.com/aperturerobotics/protobuf-go-lite v0.18.1-0.20260922073011-561b6c171b0f
+	github.com/paralin/go-steam v0.0.0-20260922075330-336e824f8540 // master
 )
 
 require (
