@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	"github.com/paralin/go-dota2/protocol"
 )
 
@@ -9,8 +9,8 @@ import (
 type Event interface {
 	// GetDotaEventMsgID returns the DOTA event message ID.
 	GetDotaEventMsgID() protocol.EDOTAGCMsg
-	// GetEventBody event body.
-	GetEventBody() proto.Message
+	// GetEventBody returns the generated lite message.
+	GetEventBody() protobuf.Message
 	// GetEventName returns the event name.
 	GetEventName() string
 }

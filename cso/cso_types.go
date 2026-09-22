@@ -1,11 +1,8 @@
 package cso
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	bgcm "github.com/paralin/go-dota2/protocol"
-	gcclm "github.com/paralin/go-dota2/protocol"
-	gccm "github.com/paralin/go-dota2/protocol"
-	gcmm "github.com/paralin/go-dota2/protocol"
 	"github.com/pkg/errors"
 )
 
@@ -19,11 +16,11 @@ const (
 	EconItem CSOType = 1
 	// ItemRecipe is an item recipe.
 	ItemRecipe = 5
-	// EconGameAccountClient is a economy game account client..
+	// EconGameAccountClient is an economy game account client.
 	EconGameAccountClient = 7
 	// SelectedItemPreset is a selected item preset.
 	SelectedItemPreset = 35
-	// ItemPresetInstance is a instance of an item preset.
+	// ItemPresetInstance is an instance of an item preset.
 	ItemPresetInstance = 36
 	// DropRateBonus is an active drop rate bonus.
 	DropRateBonus = 38
@@ -49,49 +46,49 @@ const (
 	PlayerChallenge = 2010
 	// LobbyInvite is an invitation to a lobby.
 	LobbyInvite = 2011
-	// GameAccountPlus is the DOTA plus account
+	// GameAccountPlus is the Dota Plus account.
 	GameAccountPlus = 2012
 )
 
 // csoTypeCtors links type IDs to constructors.
-var csoTypeCtors = map[CSOType]func() proto.Message{
-	EconItem: func() proto.Message {
+var csoTypeCtors = map[CSOType]func() protobuf.Message{
+	EconItem: func() protobuf.Message {
 		return &bgcm.CSOEconItem{}
 	},
-	GameAccountClient: func() proto.Message {
-		return &gccm.CSODOTAGameAccountClient{}
+	GameAccountClient: func() protobuf.Message {
+		return &bgcm.CSODOTAGameAccountClient{}
 	},
-	Party: func() proto.Message {
-		return &gcmm.CSODOTAParty{}
+	Party: func() protobuf.Message {
+		return &bgcm.CSODOTAParty{}
 	},
-	Lobby: func() proto.Message {
-		return &gcmm.CSODOTALobby{}
+	Lobby: func() protobuf.Message {
+		return &bgcm.CSODOTALobby{}
 	},
-	PartyInvite: func() proto.Message {
-		return &gcmm.CSODOTAPartyInvite{}
+	PartyInvite: func() protobuf.Message {
+		return &bgcm.CSODOTAPartyInvite{}
 	},
-	GameHeroFavorites: func() proto.Message {
-		return &gcclm.CSODOTAGameHeroFavorites{}
+	GameHeroFavorites: func() protobuf.Message {
+		return &bgcm.CSODOTAGameHeroFavorites{}
 	},
-	MapLocationState: func() proto.Message {
-		return &gccm.CSODOTAMapLocationState{}
+	MapLocationState: func() protobuf.Message {
+		return &bgcm.CSODOTAMapLocationState{}
 	},
-	PlayerChallenge: func() proto.Message {
-		return &gccm.CSODOTAPlayerChallenge{}
+	PlayerChallenge: func() protobuf.Message {
+		return &bgcm.CSODOTAPlayerChallenge{}
 	},
-	LobbyInvite: func() proto.Message {
-		return &gcmm.CSODOTALobbyInvite{}
+	LobbyInvite: func() protobuf.Message {
+		return &bgcm.CSODOTALobbyInvite{}
 	},
-	DropRateBonus: func() proto.Message {
+	DropRateBonus: func() protobuf.Message {
 		return &bgcm.CSOEconItemDropRateBonus{}
 	},
-	GameAccountPlus: func() proto.Message {
-		return &gccm.CSODOTAGameAccountPlus{}
+	GameAccountPlus: func() protobuf.Message {
+		return &bgcm.CSODOTAGameAccountPlus{}
 	},
 }
 
 // NewSharedObject builds a new shared object from a type ID.
-func NewSharedObject(typ CSOType) (proto.Message, error) {
+func NewSharedObject(typ CSOType) (protobuf.Message, error) {
 	ctor, ok := csoTypeCtors[typ]
 	if !ok {
 		return nil, errors.Errorf("unknown shared object type id: %d", typ)

@@ -1,11 +1,12 @@
 package main
 
 import (
+	"cmp"
 	"context"
 	"fmt"
 	"go/types"
 	"io"
-	"sort"
+	"slices"
 	"strings"
 	"unicode"
 
@@ -30,7 +31,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 
 	eventsImports := make(map[string]struct{})
 	eventsImports["github.com/paralin/go-dota2/protocol"] = struct{}{}
-	eventsImports["github.com/golang/protobuf/proto"] = struct{}{}
+	eventsImports["github.com/aperturerobotics/protobuf-go-lite"] = struct{}{}
 
 	clientImports := make(map[string]struct{})
 	clientImports["context"] = struct{}{}
@@ -82,8 +83,8 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	}
 	fmt.Fprintf(clientOutput, ")\n")
 
-	sort.Slice(requestFuncs, func(i int, j int) bool {
-		return requestFuncs[i].methodName < requestFuncs[j].methodName
+	slices.SortFunc(requestFuncs, func(a, b *generatedRequestFunc) int {
+		return cmp.Compare(a.methodName, b.methodName)
 	})
 
 	steamIDFieldOverrides := make(map[string]string)
@@ -115,7 +116,6 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 			fmt.Fprintf(clientOutput, ",\n")
 		} else {
 			for reqField := range reqDs.Fields() {
-				reqField := reqField
 				if !reqField.Exported() {
 					continue
 				}
@@ -197,7 +197,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		}
 		fmt.Fprintf(clientOutput, "{\n")
 
-		// transform steam IDs
+		// Preserve Steam IDs as uint64 values on the wire.
 		for _, fieldName := range reqFieldsOrdered {
 			if _, ok := reqFields[fieldName]; !ok {
 				continue
@@ -245,8 +245,8 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		fmt.Fprintf(clientOutput, "}\n")
 	}
 
-	sort.Slice(eventHandlersOrdered, func(i int, j int) bool {
-		return eventHandlersOrdered[i].eventName < eventHandlersOrdered[j].eventName
+	slices.SortFunc(eventHandlersOrdered, func(a, b *generatedEventHandler) int {
+		return cmp.Compare(a.eventName, b.eventName)
 	})
 
 	fmt.Fprintf(clientOutput, "\n// registerGeneratedHandlers registers the auto-generated event handlers.\n")
@@ -274,7 +274,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 		fmt.Fprintf(eventsOutput, "}\n")
 
 		fmt.Fprintf(eventsOutput, "\n// GetEventBody returns the event body.\n")
-		fmt.Fprintf(eventsOutput, "func (e *%s) GetEventBody() proto.Message {\n", eventHandler.eventName)
+		fmt.Fprintf(eventsOutput, "func (e *%s) GetEventBody() protobuf_go_lite.Message {\n", eventHandler.eventName)
 		fmt.Fprintf(eventsOutput, "\treturn &e.%s\n", eventHandler.eventType.TypeName)
 		fmt.Fprintf(eventsOutput, "}\n")
 
@@ -295,6 +295,7 @@ func GenerateAPI(ctx context.Context, clientOutput, eventsOutput io.Writer) erro
 	return nil
 }
 
+// printFieldType writes the Go syntax for a supported protobuf field type.
 func printFieldType(output io.Writer, reqFieldType types.Type) error {
 	switch rft := reqFieldType.(type) {
 	case *types.Basic:

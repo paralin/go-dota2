@@ -8,7 +8,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang/protobuf/proto"
 	gcsm "github.com/paralin/go-dota2/protocol"
 	"github.com/paralin/go-steam"
 	"github.com/paralin/go-steam/protocol/gamecoordinator"
@@ -158,7 +157,7 @@ func TestSessionStop(t *testing.T) {
 func TestRequestEnvelope(t *testing.T) {
 	// Serialize through the same Steam envelope implementation used in production.
 	message := gamecoordinator.NewGCMsgProtobuf(AppID, 900000, &gcsm.CMsgClientHello{
-		Version: proto.Uint32(6689), Engine: gcsm.ESourceEngine_k_ESE_Source2.Enum(),
+		Version: new(uint32(6689)), Engine: gcsm.ESourceEngine_k_ESE_Source2.Enum(),
 	})
 	message.SetSourceJobId(73)
 	var buffer bytes.Buffer

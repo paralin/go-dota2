@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf_go_lite "github.com/aperturerobotics/protobuf-go-lite"
 	"github.com/paralin/go-dota2/protocol"
 )
 
@@ -18,7 +18,7 @@ func (e *AccountGuildEventDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *AccountGuildEventDataUpdated) GetEventBody() proto.Message {
+func (e *AccountGuildEventDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientAccountGuildEventDataUpdated
 }
 
@@ -40,7 +40,7 @@ func (e *ActiveGuildChallengeUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ActiveGuildChallengeUpdated) GetEventBody() proto.Message {
+func (e *ActiveGuildChallengeUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientActiveGuildChallengeUpdated
 }
 
@@ -62,7 +62,7 @@ func (e *ActiveGuildContractsUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ActiveGuildContractsUpdated) GetEventBody() proto.Message {
+func (e *ActiveGuildContractsUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientActiveGuildContractsUpdated
 }
 
@@ -84,7 +84,7 @@ func (e *ArcanaVotesUpdate) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ArcanaVotesUpdate) GetEventBody() proto.Message {
+func (e *ArcanaVotesUpdate) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientArcanaVotesUpdate
 }
 
@@ -106,7 +106,7 @@ func (e *BattlePassRollupListRequest) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *BattlePassRollupListRequest) GetEventBody() proto.Message {
+func (e *BattlePassRollupListRequest) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientBattlePassRollupListRequest
 }
 
@@ -128,7 +128,7 @@ func (e *BattlePassRollupRequest) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *BattlePassRollupRequest) GetEventBody() proto.Message {
+func (e *BattlePassRollupRequest) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientBattlePassRollupRequest
 }
 
@@ -150,7 +150,7 @@ func (e *BingoUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *BingoUserDataUpdated) GetEventBody() proto.Message {
+func (e *BingoUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientBingoUserDataUpdated
 }
 
@@ -172,7 +172,7 @@ func (e *BroadcastNotification) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *BroadcastNotification) GetEventBody() proto.Message {
+func (e *BroadcastNotification) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTABroadcastNotification
 }
 
@@ -194,7 +194,7 @@ func (e *CandyShopUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CandyShopUserDataUpdated) GetEventBody() proto.Message {
+func (e *CandyShopUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCandyShopUserDataUpdated
 }
 
@@ -216,7 +216,7 @@ func (e *CavernCrawlMapPathCompleted) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CavernCrawlMapPathCompleted) GetEventBody() proto.Message {
+func (e *CavernCrawlMapPathCompleted) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCavernCrawlMapPathCompleted
 }
 
@@ -238,7 +238,7 @@ func (e *CavernCrawlMapUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CavernCrawlMapUpdated) GetEventBody() proto.Message {
+func (e *CavernCrawlMapUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCavernCrawlMapUpdated
 }
 
@@ -260,7 +260,7 @@ func (e *ChatModeratorBan) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ChatModeratorBan) GetEventBody() proto.Message {
+func (e *ChatModeratorBan) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAChatModeratorBan
 }
 
@@ -282,7 +282,7 @@ func (e *ChatRegionsEnabled) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ChatRegionsEnabled) GetEventBody() proto.Message {
+func (e *ChatRegionsEnabled) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAChatRegionsEnabled
 }
 
@@ -304,7 +304,7 @@ func (e *ClaimEventActionUsingItemCompleted) GetDotaEventMsgID() protocol.EDOTAG
 }
 
 // GetEventBody returns the event body.
-func (e *ClaimEventActionUsingItemCompleted) GetEventBody() proto.Message {
+func (e *ClaimEventActionUsingItemCompleted) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientClaimEventActionUsingItemCompleted
 }
 
@@ -325,7 +325,7 @@ func (e *ClientSuspended) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ClientSuspended) GetEventBody() proto.Message {
+func (e *ClientSuspended) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgClientSuspended
 }
 
@@ -347,7 +347,7 @@ func (e *CoachTeammateRatingsChanged) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CoachTeammateRatingsChanged) GetEventBody() proto.Message {
+func (e *CoachTeammateRatingsChanged) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCoachTeammateRatingsChanged
 }
 
@@ -367,7 +367,7 @@ func (e *CommendNotification) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CommendNotification) GetEventBody() proto.Message {
+func (e *CommendNotification) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCommendNotification
 }
 
@@ -389,7 +389,7 @@ func (e *CompendiumRemoveAllSelections) GetDotaEventMsgID() protocol.EDOTAGCMsg 
 }
 
 // GetEventBody returns the event body.
-func (e *CompendiumRemoveAllSelections) GetEventBody() proto.Message {
+func (e *CompendiumRemoveAllSelections) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTACompendiumRemoveAllSelections
 }
 
@@ -411,7 +411,7 @@ func (e *CraftworksUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *CraftworksUserDataUpdated) GetEventBody() proto.Message {
+func (e *CraftworksUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientCraftworksUserDataUpdated
 }
 
@@ -433,7 +433,7 @@ func (e *DOTAWeekendTourneySchedule) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *DOTAWeekendTourneySchedule) GetEventBody() proto.Message {
+func (e *DOTAWeekendTourneySchedule) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgWeekendTourneySchedule
 }
 
@@ -455,7 +455,7 @@ func (e *EmoticonData) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *EmoticonData) GetEventBody() proto.Message {
+func (e *EmoticonData) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientEmoticonData
 }
 
@@ -477,7 +477,7 @@ func (e *FantasyFinalPlayerStats) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *FantasyFinalPlayerStats) GetEventBody() proto.Message {
+func (e *FantasyFinalPlayerStats) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAFantasyFinalPlayerStats
 }
 
@@ -499,7 +499,7 @@ func (e *FightingGameChallenge) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *FightingGameChallenge) GetEventBody() proto.Message {
+func (e *FightingGameChallenge) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientFightingGameChallenge
 }
 
@@ -521,7 +521,7 @@ func (e *FightingGameChallengeCanceled) GetDotaEventMsgID() protocol.EDOTAGCMsg 
 }
 
 // GetEventBody returns the event body.
-func (e *FightingGameChallengeCanceled) GetEventBody() proto.Message {
+func (e *FightingGameChallengeCanceled) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientFightingGameChallengeCanceled
 }
 
@@ -543,7 +543,7 @@ func (e *FightingGameStartMatch) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *FightingGameStartMatch) GetEventBody() proto.Message {
+func (e *FightingGameStartMatch) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientFightingGameStartMatch
 }
 
@@ -565,7 +565,7 @@ func (e *GuildDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *GuildDataUpdated) GetEventBody() proto.Message {
+func (e *GuildDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientGuildDataUpdated
 }
 
@@ -587,7 +587,7 @@ func (e *GuildFeedUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *GuildFeedUpdated) GetEventBody() proto.Message {
+func (e *GuildFeedUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientGuildFeedUpdated
 }
 
@@ -609,7 +609,7 @@ func (e *GuildMembersDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *GuildMembersDataUpdated) GetEventBody() proto.Message {
+func (e *GuildMembersDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientGuildMembersDataUpdated
 }
 
@@ -631,7 +631,7 @@ func (e *GuildMembershipUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *GuildMembershipUpdated) GetEventBody() proto.Message {
+func (e *GuildMembershipUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientGuildMembershipUpdated
 }
 
@@ -653,7 +653,7 @@ func (e *HeroStatueCreateResult) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *HeroStatueCreateResult) GetEventBody() proto.Message {
+func (e *HeroStatueCreateResult) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientHeroStatueCreateResult
 }
 
@@ -675,7 +675,7 @@ func (e *InviteToDemoMode) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *InviteToDemoMode) GetEventBody() proto.Message {
+func (e *InviteToDemoMode) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientInviteToDemoMode
 }
 
@@ -697,7 +697,7 @@ func (e *ItemBattlerUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ItemBattlerUserDataUpdated) GetEventBody() proto.Message {
+func (e *ItemBattlerUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientItemBattlerUserDataUpdated
 }
 
@@ -718,7 +718,7 @@ func (e *KickedFromMatchmakingQueue) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *KickedFromMatchmakingQueue) GetEventBody() proto.Message {
+func (e *KickedFromMatchmakingQueue) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAKickedFromMatchmakingQueue
 }
 
@@ -740,7 +740,7 @@ func (e *LeagueAdminList) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *LeagueAdminList) GetEventBody() proto.Message {
+func (e *LeagueAdminList) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgLeagueAdminList
 }
 
@@ -761,7 +761,7 @@ func (e *LobbyMVPAwarded) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *LobbyMVPAwarded) GetEventBody() proto.Message {
+func (e *LobbyMVPAwarded) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTALobbyMVPAwarded
 }
 
@@ -783,7 +783,7 @@ func (e *LobbyUpdateBroadcastChannelInfo) GetDotaEventMsgID() protocol.EDOTAGCMs
 }
 
 // GetEventBody returns the event body.
-func (e *LobbyUpdateBroadcastChannelInfo) GetEventBody() proto.Message {
+func (e *LobbyUpdateBroadcastChannelInfo) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCLobbyUpdateBroadcastChannelInfo
 }
 
@@ -805,7 +805,7 @@ func (e *MatchGroupsVersion) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *MatchGroupsVersion) GetEventBody() proto.Message {
+func (e *MatchGroupsVersion) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientMatchGroupsVersion
 }
 
@@ -827,7 +827,7 @@ func (e *MatchSignedOut) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *MatchSignedOut) GetEventBody() proto.Message {
+func (e *MatchSignedOut) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientMatchSignedOut
 }
 
@@ -849,7 +849,7 @@ func (e *MergeGroupInviteReply) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *MergeGroupInviteReply) GetEventBody() proto.Message {
+func (e *MergeGroupInviteReply) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAGroupMergeReply
 }
 
@@ -871,7 +871,7 @@ func (e *MergePartyResponseReply) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *MergePartyResponseReply) GetEventBody() proto.Message {
+func (e *MergePartyResponseReply) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAGroupMergeReply
 }
 
@@ -893,7 +893,7 @@ func (e *MonsterHunterUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *MonsterHunterUserDataUpdated) GetEventBody() proto.Message {
+func (e *MonsterHunterUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientMonsterHunterUserDataUpdated
 }
 
@@ -915,7 +915,7 @@ func (e *NotificationsUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *NotificationsUpdated) GetEventBody() proto.Message {
+func (e *NotificationsUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCNotificationsResponse
 }
 
@@ -937,7 +937,7 @@ func (e *NotifyAccountFlagsChange) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *NotifyAccountFlagsChange) GetEventBody() proto.Message {
+func (e *NotifyAccountFlagsChange) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTANotifyAccountFlagsChange
 }
 
@@ -959,7 +959,7 @@ func (e *OverwatchCasesAvailable) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *OverwatchCasesAvailable) GetEventBody() proto.Message {
+func (e *OverwatchCasesAvailable) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientOverwatchCasesAvailable
 }
 
@@ -981,7 +981,7 @@ func (e *OverworldUserDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *OverworldUserDataUpdated) GetEventBody() proto.Message {
+func (e *OverworldUserDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientOverworldUserDataUpdated
 }
 
@@ -1003,7 +1003,7 @@ func (e *PartyBeaconUpdate) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PartyBeaconUpdate) GetEventBody() proto.Message {
+func (e *PartyBeaconUpdate) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPartyBeaconUpdate
 }
 
@@ -1025,7 +1025,7 @@ func (e *PartyLeaderWatchGamePrompt) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PartyLeaderWatchGamePrompt) GetEventBody() proto.Message {
+func (e *PartyLeaderWatchGamePrompt) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgPartyLeaderWatchGamePrompt
 }
 
@@ -1047,7 +1047,7 @@ func (e *PartySearchInvite) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PartySearchInvite) GetEventBody() proto.Message {
+func (e *PartySearchInvite) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPartySearchInvite
 }
 
@@ -1069,7 +1069,7 @@ func (e *PartySearchInvites) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PartySearchInvites) GetEventBody() proto.Message {
+func (e *PartySearchInvites) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPartySearchInvites
 }
 
@@ -1091,7 +1091,7 @@ func (e *PlayerBeaconState) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PlayerBeaconState) GetEventBody() proto.Message {
+func (e *PlayerBeaconState) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPlayerBeaconState
 }
 
@@ -1112,7 +1112,7 @@ func (e *PlayerJoinedChannel) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PlayerJoinedChannel) GetEventBody() proto.Message {
+func (e *PlayerJoinedChannel) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAOtherJoinedChatChannel
 }
 
@@ -1133,7 +1133,7 @@ func (e *PlayerLeftChannel) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PlayerLeftChannel) GetEventBody() proto.Message {
+func (e *PlayerLeftChannel) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAOtherLeftChatChannel
 }
 
@@ -1155,7 +1155,7 @@ func (e *PlaytestStatus) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *PlaytestStatus) GetEventBody() proto.Message {
+func (e *PlaytestStatus) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPlaytestStatus
 }
 
@@ -1177,7 +1177,7 @@ func (e *Popup) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *Popup) GetEventBody() proto.Message {
+func (e *Popup) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAPopup
 }
 
@@ -1199,7 +1199,7 @@ func (e *PrivateCoachingSessionUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg 
 }
 
 // GetEventBody returns the event body.
-func (e *PrivateCoachingSessionUpdated) GetEventBody() proto.Message {
+func (e *PrivateCoachingSessionUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientPrivateCoachingSessionUpdated
 }
 
@@ -1221,7 +1221,7 @@ func (e *ProfileCardUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ProfileCardUpdated) GetEventBody() proto.Message {
+func (e *ProfileCardUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTAProfileCard
 }
 
@@ -1243,7 +1243,7 @@ func (e *QuestProgressUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *QuestProgressUpdated) GetEventBody() proto.Message {
+func (e *QuestProgressUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientQuestProgressUpdated
 }
 
@@ -1265,7 +1265,7 @@ func (e *RankUpdate) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *RankUpdate) GetEventBody() proto.Message {
+func (e *RankUpdate) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientRankUpdate
 }
 
@@ -1287,7 +1287,7 @@ func (e *ReadyUpStatus) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ReadyUpStatus) GetEventBody() proto.Message {
+func (e *ReadyUpStatus) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgReadyUpStatus
 }
 
@@ -1309,7 +1309,7 @@ func (e *RequestLaneSelection) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *RequestLaneSelection) GetEventBody() proto.Message {
+func (e *RequestLaneSelection) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientRequestLaneSelection
 }
 
@@ -1331,7 +1331,7 @@ func (e *RequestMMInfo) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *RequestMMInfo) GetEventBody() proto.Message {
+func (e *RequestMMInfo) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientRequestMMInfo
 }
 
@@ -1353,7 +1353,7 @@ func (e *RoadToTIQuestDataUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *RoadToTIQuestDataUpdated) GetEventBody() proto.Message {
+func (e *RoadToTIQuestDataUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientRoadToTIQuestDataUpdated
 }
 
@@ -1375,7 +1375,7 @@ func (e *SteamDatagramTicket) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *SteamDatagramTicket) GetEventBody() proto.Message {
+func (e *SteamDatagramTicket) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientSteamDatagramTicket
 }
 
@@ -1397,7 +1397,7 @@ func (e *TeamInfo) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TeamInfo) GetEventBody() proto.Message {
+func (e *TeamInfo) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTATeamInfo
 }
 
@@ -1419,7 +1419,7 @@ func (e *TeamInviteGCImmediateResponseToInviter) GetDotaEventMsgID() protocol.ED
 }
 
 // GetEventBody returns the event body.
-func (e *TeamInviteGCImmediateResponseToInviter) GetEventBody() proto.Message {
+func (e *TeamInviteGCImmediateResponseToInviter) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTATeamInvite_GCImmediateResponseToInviter
 }
 
@@ -1441,7 +1441,7 @@ func (e *TeamInviteReceived) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TeamInviteReceived) GetEventBody() proto.Message {
+func (e *TeamInviteReceived) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTATeamInvite_GCRequestToInvitee
 }
 
@@ -1463,7 +1463,7 @@ func (e *TeamInviteResponseReceived) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TeamInviteResponseReceived) GetEventBody() proto.Message {
+func (e *TeamInviteResponseReceived) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTATeamInvite_GCResponseToInviter
 }
 
@@ -1485,7 +1485,7 @@ func (e *TeamsInfo) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TeamsInfo) GetEventBody() proto.Message {
+func (e *TeamsInfo) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgDOTATeamsInfo
 }
 
@@ -1507,7 +1507,7 @@ func (e *TournamentItemDrop) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TournamentItemDrop) GetEventBody() proto.Message {
+func (e *TournamentItemDrop) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientTournamentItemDrop
 }
 
@@ -1529,7 +1529,7 @@ func (e *TrophyAwarded) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *TrophyAwarded) GetEventBody() proto.Message {
+func (e *TrophyAwarded) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientTrophyAwarded
 }
 
@@ -1551,7 +1551,7 @@ func (e *UnderDraftGoldUpdated) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *UnderDraftGoldUpdated) GetEventBody() proto.Message {
+func (e *UnderDraftGoldUpdated) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientGuildUnderDraftGoldUpdated
 }
 
@@ -1573,7 +1573,7 @@ func (e *VACReminder) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *VACReminder) GetEventBody() proto.Message {
+func (e *VACReminder) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientVACReminder
 }
 
@@ -1595,7 +1595,7 @@ func (e *WageringUpdate) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *WageringUpdate) GetEventBody() proto.Message {
+func (e *WageringUpdate) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCToClientWageringUpdate
 }
 
@@ -1617,7 +1617,7 @@ func (e *WatchDownloadedReplay) GetDotaEventMsgID() protocol.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *WatchDownloadedReplay) GetEventBody() proto.Message {
+func (e *WatchDownloadedReplay) GetEventBody() protobuf_go_lite.Message {
 	return &e.CMsgGCWatchDownloadedReplay
 }
 

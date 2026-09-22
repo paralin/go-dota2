@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	dm "github.com/paralin/go-dota2/protocol"
 )
 
@@ -159,7 +159,7 @@ var msgResponseOverrides = map[dm.EDOTAGCMsg]dm.EDOTAGCMsg{
 }
 
 // msgProtoTypeOverrides overrides the GC message to proto mapping.
-var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]proto.Message{
+var msgProtoTypeOverrides = map[dm.EDOTAGCMsg]protobuf.Message{
 	dm.EDOTAGCMsg_k_EMsgGCToClientTeamInfo: &dm.CMsgDOTATeamInfo{},
 
 	dm.EDOTAGCMsg_k_EMsgGCCompendiumSetSelection:         &dm.CMsgDOTACompendiumSelection{},

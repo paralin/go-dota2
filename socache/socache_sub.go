@@ -1,7 +1,7 @@
 package socache
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	"github.com/paralin/go-dota2/cso"
 )
 
@@ -23,7 +23,7 @@ type CacheEvent struct {
 	// EventType marks the type of event.
 	EventType EventType
 	// Object contains the affected object.
-	Object proto.Message
+	Object protobuf.Message
 }
 
 // CacheUnsubscribeFunc is called to unsubscribe a subscription.

@@ -3,17 +3,20 @@ package main
 import (
 	"bytes"
 	"context"
-	gofmt "go/format"
 	"os"
 
 	"github.com/urfave/cli/v2"
+	"golang.org/x/tools/imports"
 )
 
 var (
+	// clientOutFile selects the generated client implementation.
 	clientOutFile string
+	// eventsOutFile selects the generated event types.
 	eventsOutFile string
 )
 
+// init registers the deterministic API generation command.
 func init() {
 	commands = append(commands, &cli.Command{
 		Name:  "generate-api",
@@ -33,6 +36,7 @@ func init() {
 			},
 		},
 		Action: func(c *cli.Context) error {
+			// Generate both boundaries from the same schema snapshot.
 			clientFileBuf := &bytes.Buffer{}
 			eventsFileBuf := &bytes.Buffer{}
 
@@ -40,33 +44,21 @@ func init() {
 				return err
 			}
 
-			if err := os.WriteFile(clientOutFile, clientFileBuf.Bytes(), 0o655); err != nil {
-				return err
-			}
-
-			clientFileDat, err := gofmt.Source(clientFileBuf.Bytes())
+			// Format both outputs before replacing either generated file.
+			clientFileDat, err := imports.Process(clientOutFile, clientFileBuf.Bytes(), nil)
 			if err != nil {
-				clientFileDat = clientFileBuf.Bytes()
-			}
-
-			if err := os.WriteFile(clientOutFile, clientFileDat, 0o655); err != nil {
 				return err
 			}
-
+			eventsFileDat, err := imports.Process(eventsOutFile, eventsFileBuf.Bytes(), nil)
 			if err != nil {
 				return err
 			}
 
-			eventsFileDat, err := gofmt.Source(eventsFileBuf.Bytes())
-			if err != nil {
-				eventsFileDat = eventsFileBuf.Bytes()
-			}
-
-			if err := os.WriteFile(eventsOutFile, eventsFileDat, 0o655); err != nil {
+			// Retain generated source as ordinary non-executable files.
+			if err := os.WriteFile(clientOutFile, clientFileDat, 0o644); err != nil {
 				return err
 			}
-
-			return err
+			return os.WriteFile(eventsOutFile, eventsFileDat, 0o644)
 		},
 	})
 }

@@ -68,7 +68,7 @@ func (c *SOCache) HandleUnsubscribed(msg *gcsdkm.CMsgSOCacheUnsubscribed) error 
 	var retErr error
 	c.containerMap.Range(func(key any, value any) bool {
 		val := value.(*SOCacheContainer)
-		_, hasObj := val.objects.Load(msg.GetOwnerSoid().GetId())
+		_, hasObj := val.Get(msg.GetOwnerSoid().GetId())
 		if !hasObj {
 			return true
 		}

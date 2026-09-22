@@ -3,7 +3,7 @@ package dota2
 import (
 	"context"
 
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	"github.com/paralin/go-steam/protocol/gamecoordinator"
 )
 
@@ -21,10 +21,10 @@ type pendingRequest struct {
 func (d *Dota2) MakeRequest(
 	ctx context.Context,
 	reqMsgID uint32,
-	request proto.Message,
+	request protobuf.Message,
 	respMsgID uint32,
-	response proto.Message,
-	matchesRequest ...func(proto.Message) bool,
+	response protobuf.Message,
+	matchesRequest ...func(protobuf.Message) bool,
 ) error {
 	// Register the request against one ready session before publishing its job ID.
 	if err := ctx.Err(); err != nil {

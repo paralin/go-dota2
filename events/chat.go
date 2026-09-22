@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/golang/protobuf/proto"
+	protobuf "github.com/aperturerobotics/protobuf-go-lite"
 	gcmcc "github.com/paralin/go-dota2/protocol"
 )
 
@@ -16,7 +16,7 @@ func (e *ChatMessage) GetDotaEventMsgID() gcmcc.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *ChatMessage) GetEventBody() proto.Message {
+func (e *ChatMessage) GetEventBody() protobuf.Message {
 	return &e.CMsgDOTAChatMessage
 }
 
@@ -36,7 +36,7 @@ func (e *JoinedChatChannel) GetDotaEventMsgID() gcmcc.EDOTAGCMsg {
 }
 
 // GetEventBody returns the event body.
-func (e *JoinedChatChannel) GetEventBody() proto.Message {
+func (e *JoinedChatChannel) GetEventBody() protobuf.Message {
 	return &e.CMsgDOTAJoinChatChannelResponse
 }
 
