@@ -5,6 +5,8 @@ github.com/aperturerobotics/cli v1.1.0 h1:7a+YRC+EY3npAnTzhHV5gLCiw91KS0Ts3XwLIL
 github.com/aperturerobotics/cli v1.1.0/go.mod h1:M7BFP9wow5ytTzMyJQOOO991fGfsUqdTI7gGEsHfTQ8=
 github.com/aperturerobotics/common v0.35.2 h1:22QZHrc4TcWxufAZ/ZLyA4aFw7qXnnfnZyYx8QasDTs=
 github.com/aperturerobotics/common v0.35.2/go.mod h1:/sl0p5kW3P3I68AFSlr+KCQju14aUQuCdnxMJ+vzJF8=
+github.com/aperturerobotics/fastjson v0.1.2-0.20260705010846-94f343f5bb34 h1:F8iJTYsJtJHB7e+/Mf72RLYwZB/1VXXC2ppxPlfipXo=
+github.com/aperturerobotics/fastjson v0.1.2-0.20260705010846-94f343f5bb34/go.mod h1:ArP9Q7MVDi8jMPR3ljopH5drxs/qen12Hv2L7qRcPb4=
 github.com/aperturerobotics/go-protoc-gen-prost v0.0.0-20260705010911-9f53feac967b h1:MMk+AbWPCMfqc2Lm2bJl8lCCsuvlM2+C0CP10fpE3bc=
 github.com/aperturerobotics/go-protoc-gen-prost v0.0.0-20260705010911-9f53feac967b/go.mod h1:OBb/beWmr/pDIZAUfi86j/4tBh2v5ctTxKMqSnh9c/4=
 github.com/aperturerobotics/go-protoc-wasi v0.0.0-20260808023521-7b1595380c3f h1:UszdpmKBfQd0LdOZjypeRGrHz2tcPpmKpw6SV3DYyN0=
@@ -66,6 +68,8 @@ github.com/paralin/go-steam v0.0.0-20260803213908-f6a3bac7966c h1:X6mHENc9HcK60g
 github.com/paralin/go-steam v0.0.0-20260803213908-f6a3bac7966c/go.mod h1:dxsizUap1RMk1HAJj0Yd9hhdgKj2R1/aFlqGvd+IQNs=
 github.com/paralin/go-steam v0.0.0-20260830033757-395c15d0bac8 h1:EsBbxlexgaPBg/gR0mFlhnrRHSujTRmGqoxWcTR/+ig=
 github.com/paralin/go-steam v0.0.0-20260830033757-395c15d0bac8/go.mod h1:huKfQSS4OqoG7RaX9Hwlg7X3XK13r3ZrLFr0ZFvajYw=
+github.com/paralin/go-steam v0.0.0-20260922055213-e882f1724962 h1:TY+okn4cN5HRcJ+pQuWJuu+/dX0CYv7RyQDaHhb0STM=
+github.com/paralin/go-steam v0.0.0-20260922055213-e882f1724962/go.mod h1:00smpLjm6VAbso/DAOPbI+AGqz7JsxC8bu4kozb59d0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
