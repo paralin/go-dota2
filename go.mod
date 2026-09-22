@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/aperturerobotics/protobuf-go-lite v0.18.0
-	github.com/paralin/go-steam v0.0.0-20260922055213-e882f1724962 // master
+	github.com/paralin/go-steam v0.0.0-20260922060354-908c060af61e // master
 )
 
 require (

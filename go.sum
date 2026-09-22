@@ -70,6 +70,8 @@ github.com/paralin/go-steam v0.0.0-20260830033757-395c15d0bac8 h1:EsBbxlexgaPBg/
 github.com/paralin/go-steam v0.0.0-20260830033757-395c15d0bac8/go.mod h1:huKfQSS4OqoG7RaX9Hwlg7X3XK13r3ZrLFr0ZFvajYw=
 github.com/paralin/go-steam v0.0.0-20260922055213-e882f1724962 h1:TY+okn4cN5HRcJ+pQuWJuu+/dX0CYv7RyQDaHhb0STM=
 github.com/paralin/go-steam v0.0.0-20260922055213-e882f1724962/go.mod h1:00smpLjm6VAbso/DAOPbI+AGqz7JsxC8bu4kozb59d0=
+github.com/paralin/go-steam v0.0.0-20260922060354-908c060af61e h1:ZVMIGIH82X6UmVjmQ5p3KxPJigPNmHrwxkUz0p4Tcis=
+github.com/paralin/go-steam v0.0.0-20260922060354-908c060af61e/go.mod h1:00smpLjm6VAbso/DAOPbI+AGqz7JsxC8bu4kozb59d0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
